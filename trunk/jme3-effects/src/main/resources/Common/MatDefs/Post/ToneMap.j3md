@@ -1,0 +1,23 @@
+MaterialDef Default GUI {
+
+    MaterialParameters {
+        Int NumSamples
+        Int NumSamplesDepth
+        Texture2D Texture
+        Vector3 WhitePoint
+    }
+
+    Technique {
+        VertexShader GLSL100 GLSL150:   Common/MatDefs/Post/Post.vert
+        FragmentShader GLSL100 GLSL150: Common/MatDefs/Post/ToneMap.frag
+
+        WorldParameters {
+        }
+
+        Defines {
+            RESOLVE_MS : NumSamples
+        }
+
+    }
+
+}

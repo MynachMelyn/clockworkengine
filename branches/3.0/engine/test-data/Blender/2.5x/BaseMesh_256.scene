@@ -1,0 +1,35 @@
+<scene formatVersion="1.0.1" exported_by="Alex SSD" previous_export_time="0" export_time="1481806854.8598995" >
+  <nodes >
+    <node name="Armature" >
+      <position z="-0.000000" x="-1.000000" y="0.000000" />
+      <rotation qw="1.000000" qx="0.000000" qy="0.000000" qz="-0.000000" />
+      <scale z="1.000000" x="1.000000" y="1.000000" />
+      <user_data value='&lt;bpy id prop: owner="OBArmature", name="vs", address=0x000000000D431188&gt;' name="vs" type="IDPropertyGroup" />
+      <game >
+        <sensors />
+        <actuators />
+      </game>
+      <node name="BaseMesh_01" >
+        <position z="-0.000000" x="0.000000" y="0.000000" />
+        <rotation qw="1.000000" qx="0.000000" qy="0.000000" qz="-0.000000" />
+        <scale z="1.000000" x="1.000000" y="1.000000" />
+        <user_data value='&lt;bpy id prop: owner="OBBaseMesh_01", name="vs", address=0x00000000036641D8&gt;' name="vs" type="IDPropertyGroup" />
+        <game >
+          <sensors />
+          <actuators />
+        </game>
+        <entity velocity_min="0.0" friction_x="1.0" lock_rot_x="False" mass_radius="1.0" meshFile="BaseMesh_01.mesh" inertia_tensor="0.4000000059604645" mass="1.0" friction_z="1.0" lock_trans_x="False" lock_rot_z="False" damping_rot="0.10000000149011612" name="BaseMesh_01" physics_type="STATIC" anisotropic_friction="False" velocity_max="0.0" actor="False" ghost="False" friction_y="1.0" damping_trans="0.03999999910593033" lock_trans_z="False" lock_rot_y="False" lock_trans_y="False" />
+      </node>
+    </node>
+  </nodes>
+  <externals >
+    <item type="material" >
+      <file name="E:\JMonkeyEngine Source\jme3-testdata\src\main\resources\Blender\2.5x\BaseMesh_01.material" />
+    </item>
+  </externals>
+  <environment >
+    <colourBackground r="0.05656290054321289" b="0.4000000059604645" g="0.22081542015075684" />
+    <colourDiffuse r="0.05656290054321289" b="0.4000000059604645" g="0.22081542015075684" />
+    <colourAmbient r="0.0" b="0.0" g="0.0" />
+  </environment>
+</scene>
