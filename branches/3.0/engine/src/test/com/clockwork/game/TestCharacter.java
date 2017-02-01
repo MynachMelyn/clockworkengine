@@ -446,7 +446,7 @@ public class TestCharacter extends SimpleApplication implements AnimEventListene
         guiNode.attachChild(heavyhitText);
         
         zawarudoText = new BitmapText(guiFont);
-        zawarudoText.setColor(ColorRGBA.Black);
+        zawarudoText.setColor(ColorRGBA.White);
         zawarudoText.setLocalTranslation(0, zawarudoText.getLineHeight()*7f, 0);
         guiNode.attachChild(zawarudoText);
         

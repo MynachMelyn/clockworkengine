@@ -35,7 +35,7 @@ public class PhysicsTestHelper {
         rootNode.addLight(light);
 
         Material material = new Material(assetManager, "Common/MatDefs/Misc/Unshaded.j3md");
-        material.setTexture("ColorMap", assetManager.loadTexture("Interface/Logo/Monkey.jpg"));
+        material.setTexture("ColorMap", assetManager.loadTexture("Textures/Terrain/splat/road.jpg"));
 
         Box floorBox = new Box(140, 0.25f, 140);
         Geometry floorGeometry = new Geometry("Floor", floorBox);
@@ -77,7 +77,7 @@ public class PhysicsTestHelper {
         rootNode.addLight(light);
 
         Material material = new Material(assetManager, "Common/MatDefs/Misc/Unshaded.j3md");
-        material.setTexture("ColorMap", assetManager.loadTexture("Interface/Logo/Monkey.jpg"));
+        material.setTexture("ColorMap", assetManager.loadTexture("Textures/Terrain/splat/road.jpg"));
 
         Box floorBox = new Box(20, 0.25f, 20);
         Geometry floorGeometry = new Geometry("Floor", floorBox);
@@ -131,7 +131,7 @@ public class PhysicsTestHelper {
      */
     public static Geometry createPhysicsTestBox(AssetManager assetManager) {
         Material material = new Material(assetManager, "Common/MatDefs/Misc/Unshaded.j3md");
-        material.setTexture("ColorMap", assetManager.loadTexture("Interface/Logo/Monkey.jpg"));
+        material.setTexture("ColorMap", assetManager.loadTexture("Textures/Terrain/splat/road.jpg"));
         Box box = new Box(0.25f, 0.25f, 0.25f);
         Geometry boxGeometry = new Geometry("Box", box);
         boxGeometry.setMaterial(material);
@@ -147,7 +147,7 @@ public class PhysicsTestHelper {
      */
     public static Geometry createPhysicsTestSphere(AssetManager assetManager) {
         Material material = new Material(assetManager, "Common/MatDefs/Misc/Unshaded.j3md");
-        material.setTexture("ColorMap", assetManager.loadTexture("Interface/Logo/Monkey.jpg"));
+        material.setTexture("ColorMap", assetManager.loadTexture("Textures/Terrain/splat/road.jpg"));
         Sphere sphere = new Sphere(8, 8, 0.25f);
         Geometry boxGeometry = new Geometry("Sphere", sphere);
         boxGeometry.setMaterial(material);
