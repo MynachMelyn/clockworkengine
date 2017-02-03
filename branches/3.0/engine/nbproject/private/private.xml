@@ -6,8 +6,12 @@
             <file>file:/E:/NetBeansProjects/jme3/branches/3.0/engine/src/test/com/clockwork/game/TestCharacter.java</file>
         </group>
         <group>
+<<<<<<< HEAD
+            <file>file:/E:/NetBeansProjects/clockworkengine/branches/3.0/engine/src/test/com/clockwork/game/TestCharacter.java</file>
+=======
+            <file>file:/C:/Users/Alex/Desktop/NetBeansProjects/clockworkengine/branches/3.0/engine/src/test/com/clockwork/game/FighterNode.java</file>
             <file>file:/C:/Users/Alex/Desktop/NetBeansProjects/clockworkengine/branches/3.0/engine/src/test/com/clockwork/game/TestCharacter.java</file>
-            <file>file:/C:/Users/Alex/Desktop/NetBeansProjects/clockworkengine/branches/3.0/engine/src/test/com/clockwork/game/PhysicsTestHelper.java</file>
+>>>>>>> origin/master
         </group>
     </open-files>
 </project-private>

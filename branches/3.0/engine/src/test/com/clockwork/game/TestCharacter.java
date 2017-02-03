@@ -78,7 +78,7 @@ public class TestCharacter extends SimpleApplication implements AnimEventListene
             leftRotate = false, rightRotate = false, upRotate = false, downRotate = false;
     
     
-    public float speed_stand = 1.0f;
+    //public float speed_stand = 1.0f;
     
     public float defaultTPF = 0.0f;
     
@@ -86,8 +86,8 @@ public class TestCharacter extends SimpleApplication implements AnimEventListene
     
     public static float PIXELSMOVED_TO_RADIANSROTATED = 0.01f;
     
-    private AnimChannel channel;
-    private AnimControl control;
+    private AnimChannel channel_player;
+    private AnimControl control_player;
     
     private AnimChannel channel_stand;
     private AnimControl control_stand;
@@ -311,15 +311,15 @@ public class TestCharacter extends SimpleApplication implements AnimEventListene
         
         // Stand User
         
-        control = model.getControl(AnimControl.class);
-        control.addListener(this);
-        channel = control.createChannel();
+        control_player = model.getControl(AnimControl.class);
+        control_player.addListener(this);
+        channel_player = control_player.createChannel();
         
-        for (String anim : control.getAnimationNames()){
+        for (String anim : control_player.getAnimationNames()){
             System.out.println(anim);
         }
         
-        channel.setAnim("base_stand");
+        channel_player.setAnim("base_stand");
         //geom = (Geometry)((Node)model).getChild(0);
         //SkeletonControl skeletonControl = model.getControl(SkeletonControl.class);
         ////
@@ -585,10 +585,10 @@ public class TestCharacter extends SimpleApplication implements AnimEventListene
             walkDirection.addLocal(new Vector3f(temp_look.negate()).mult(speedFactor));
         }
         if(walkDirection.equals(Vector3f.ZERO)){
-            if (!channel.getAnimationName().equals("base_stand")){
-                channel.setAnim("base_stand", 0.50f);
-                channel.setLoopMode(LoopMode.Loop);
-                updateChannelSpeed(channel);
+            if (!channel_player.getAnimationName().equals("base_stand")){
+                channel_player.setAnim("base_stand", 0.50f);
+                channel_player.setLoopMode(LoopMode.Loop);
+                updateChannelSpeed(channel_player);
             }
         }
         //physicsCharacter.setWalkDirection(walkDirection.mult(speedFactor));
@@ -596,17 +596,17 @@ public class TestCharacter extends SimpleApplication implements AnimEventListene
         physicsCharacter.setWalkDirection(walkDirection);
        // physicsCharacter.setViewDirection(viewDirection);
         
-        if(channel.getAnimationName().equals("jump")){
-            if(physicsCharacter.isOnGround() && channel.getTime() >= channel.getAnimMaxTime()/2 ){
+        if(channel_player.getAnimationName().equals("jump")){
+            if(physicsCharacter.isOnGround() && channel_player.getTime() >= channel_player.getAnimMaxTime()/2 ){
                 if(physicsCharacter.getWalkDirection().x != 0 || physicsCharacter.getWalkDirection().z != 0){
-                    channel.setAnim("run_01", 0.50f);
-                    channel.setLoopMode(LoopMode.Loop);
-                    updateChannelSpeed(channel);
+                    channel_player.setAnim("run_01", 0.50f);
+                    channel_player.setLoopMode(LoopMode.Loop);
+                    updateChannelSpeed(channel_player);
                 }
                 else{
-                    channel.setAnim("base_stand", 0.50f);
-                    channel.setLoopMode(LoopMode.DontLoop);
-                    updateChannelSpeed(channel);
+                    channel_player.setAnim("base_stand", 0.50f);
+                    channel_player.setLoopMode(LoopMode.DontLoop);
+                    updateChannelSpeed(channel_player);
                 }
             }
         }
@@ -618,6 +618,7 @@ public class TestCharacter extends SimpleApplication implements AnimEventListene
         }
     }
     
+    @Override
     public void onAction(String binding, boolean value, float tpf) {
         
         
@@ -748,10 +749,10 @@ public class TestCharacter extends SimpleApplication implements AnimEventListene
         else*/ if (binding.equals("Right")) {
             if (value) {
                 forward = true;
-                if (!channel.getAnimationName().equals("run_01")){
-                    channel.setAnim("run_01", 0.50f);
-                    channel.setLoopMode(LoopMode.Loop);
-                    updateChannelSpeed(channel);
+                if (!channel_player.getAnimationName().equals("run_01")){
+                    channel_player.setAnim("run_01", 0.50f);
+                    channel_player.setLoopMode(LoopMode.Loop);
+                    updateChannelSpeed(channel_player);
                 }
             } else {
                 forward = false;
@@ -759,21 +760,21 @@ public class TestCharacter extends SimpleApplication implements AnimEventListene
         } else if (binding.equals("Left")) {
             if (value) {
                 backward = true;
-                if (!channel.getAnimationName().equals("run_01")){
-                    channel.setAnim("run_01", 0.50f);
-                    channel.setLoopMode(LoopMode.Loop);
-                    updateChannelSpeed(channel);
-                    channel.setSpeed(1);
+                if (!channel_player.getAnimationName().equals("run_01")){
+                    channel_player.setAnim("run_01", 0.50f);
+                    channel_player.setLoopMode(LoopMode.Loop);
+                    updateChannelSpeed(channel_player);
+                    channel_player.setSpeed(1);
                 }
             } else {
                 backward = false;
             }
         } else if (binding.equals("Up")) {
-            if (!channel.getAnimationName().equals("jump") && value){
-                channel.setAnim("jump", 0.05f);
+            if (!channel_player.getAnimationName().equals("jump") && value){
+                channel_player.setAnim("jump", 0.05f);
                 //channel.setLoopMode(LoopMode.Loop);
-                channel.setLoopMode(LoopMode.DontLoop);
-                updateChannelSpeed(channel);
+                channel_player.setLoopMode(LoopMode.DontLoop);
+                updateChannelSpeed(channel_player);
             }
             physicsCharacter.jump();
         }
@@ -788,7 +789,7 @@ public class TestCharacter extends SimpleApplication implements AnimEventListene
         this.getPhysicsSpace().setAccuracy((1/60f)*timescale);
         //channel_stand.setSpeed(1/timescale);
         //channel.setSpeed(1/timescale);
-        updateChannelSpeed(channel);
+        updateChannelSpeed(channel_player);
         updateChannelSpeed(channel_stand);
         //standNode.getControl(0).update(timescale * defaultTPF);
         //characterNode.getControl(0).update(timescale * defaultTPF);
@@ -809,7 +810,7 @@ public class TestCharacter extends SimpleApplication implements AnimEventListene
     private void ResumeTime(){
         speed = 1;
         this.getPhysicsSpace().setAccuracy((1/60f));
-        updateChannelSpeed(channel);
+        updateChannelSpeed(channel_player);
         updateChannelSpeed(channel_stand);
         //standNode.getControl(0).update(timescale * defaultTPF);
         //characterNode.getControl(0).update(timescale * defaultTPF);
