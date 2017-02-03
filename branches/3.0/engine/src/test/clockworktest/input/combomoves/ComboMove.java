@@ -39,6 +39,13 @@ public class ComboMove {
 
     private transient String[] pressed, unpressed;
     private transient float timeElapsed;
+    
+    private moveTypeList moveType;
+
+    public enum moveTypeList {
+        interruptable,
+        uninterruptable,
+    };
 
     public ComboMove(String moveName){
         this.moveName = moveName;
@@ -108,4 +115,11 @@ public class ComboMove {
         return moveName;
     }
     
+    public void setMoveType(moveTypeList moveType){
+        this.moveType = moveType;
+    }
+    
+    public moveTypeList getMoveType(){
+        return this.moveType;
+    }
 }
