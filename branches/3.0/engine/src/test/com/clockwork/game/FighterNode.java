@@ -38,6 +38,8 @@ public class FighterNode extends Node implements AnimEventListener, ActionListen
         downedMidAir                // Cannot recover until contact with ground - unlike downed, can still be hit in this state.
     }
     
+    protected currentAction fighterState;
+    
     protected ArrayList MoveSet;
     
     
@@ -91,6 +93,8 @@ public class FighterNode extends Node implements AnimEventListener, ActionListen
     public FighterNode(String name, boolean isPlayerControlled, Spatial model, InputManager inputManager){
         super(name);
         
+        fighterState = currentAction.idle;
+        
         this.movementSpeed = movementSpeedBase;
         this.jumpForce = jumpForceBase;
         this.facingRight = true;
@@ -119,6 +123,8 @@ public class FighterNode extends Node implements AnimEventListener, ActionListen
         } else if (backward) {
             walkDirection.addLocal(new Vector3f(0,0,(!facingRight) ? 1 : 0).mult(movementSpeed));
         }
+        
+        checkFighterState();
     }
     
     public void generateMoveList(){
@@ -217,6 +223,31 @@ public class FighterNode extends Node implements AnimEventListener, ActionListen
                 currentMoveCastTime = 0;
                 currentMove = null;
             }
+        }
+    }
+    
+    private void checkFighterState(){
+        // If grounded
+        if (physicsController.isOnGround()) {
+            // If stationary.
+            if (walkDirection.equals(Vector3f.ZERO)) {
+                fighterState = currentAction.idle;
+            } // If not stationary
+            else {
+                // If moving forward, relative to facing direction
+                if (forward) {
+                    fighterState = currentAction.moving;
+                    //ANIMATION
+                } // If moving backward, relative to facing direction
+                else if (backward) {
+                    fighterState = currentAction.moving;
+                    //ANIMATION
+                }
+            }
+        } 
+        // If airborne
+        else {
+               
         }
     }
     
