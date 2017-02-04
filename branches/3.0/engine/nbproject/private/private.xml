@@ -7,7 +7,12 @@
         </group>
         <group>
 <<<<<<< HEAD
+<<<<<<< HEAD
             <file>file:/E:/NetBeansProjects/clockworkengine/branches/3.0/engine/src/test/com/clockwork/game/TestCharacter.java</file>
+=======
+            <file>file:/C:/Users/Alex/Desktop/NetBeansProjects/clockworkengine/branches/3.0/engine/src/test/com/clockwork/game/FighterNode.java</file>
+            <file>file:/C:/Users/Alex/Desktop/NetBeansProjects/clockworkengine/branches/3.0/engine/src/test/com/clockwork/game/TestCharacter.java</file>
+>>>>>>> origin/master
 =======
             <file>file:/C:/Users/Alex/Desktop/NetBeansProjects/clockworkengine/branches/3.0/engine/src/test/com/clockwork/game/FighterNode.java</file>
             <file>file:/C:/Users/Alex/Desktop/NetBeansProjects/clockworkengine/branches/3.0/engine/src/test/com/clockwork/game/TestCharacter.java</file>
