@@ -9,7 +9,6 @@ import com.clockwork.scene.Spatial;
 import java.util.ArrayList;
 import clockworktest.input.combomoves.ComboMove.moveTypeList;
 import clockworktest.input.combomoves.ComboMoveExecution;
-<<<<<<< HEAD
 import com.clockwork.input.InputManager;
 import com.clockwork.animation.AnimEventListener;
 import com.clockwork.input.controls.ActionListener;
@@ -49,33 +48,12 @@ public class FighterNode extends Node implements AnimEventListener, ActionListen
      */
     private HashSet<String> pressedMappings = new java.util.HashSet<String>();
     
-=======
-
-public class FighterNode extends Node{
-   
-    /**
-     * Will the player's inputs control the Fighter, or are they autonomous?<br>
-     * Use for Stands.
-     */
-    protected boolean isPlayerControlled;
-    
-    protected enum currentAction{
-        doingInterruptableAttack,
-        doingUninterruptableAttack,
-        staggered,
-        downed,
-        downedMidAir
-    }
-    
-    protected ArrayList MoveSet;
-    
->>>>>>> origin/master
-    /**
+  
+   /**
      * The physics for the player. Not to be used for ghosts, only collision is needed for them.
      */
     protected BetterCharacterControl physicsController;
     
-<<<<<<< HEAD
     // Base versions of movement values - cannot be edited.
     // To actively and temporarily change a fighter's speed, use the next set of variables. *
     private final float movementSpeedBase = 10.0f;
@@ -122,18 +100,10 @@ public class FighterNode extends Node{
         this.jumpForce = jumpForceBase;
         this.facingRight = true;
         
-=======
-    protected AnimControl animControl;
-    protected AnimChannel animChannel;
-    
-    public FighterNode(String name, boolean isPlayerControlled, Spatial model){
-        super(name);
->>>>>>> origin/master
         this.isPlayerControlled = isPlayerControlled;
         animControl = model.getControl(AnimControl.class);
         animChannel = animControl.createChannel();
         
-<<<<<<< HEAD
         // If an Input Manager was not given during construction, then
         // assume this isn't a player character.
         if(inputManager == null){
@@ -156,11 +126,9 @@ public class FighterNode extends Node{
         }
         
         checkFighterState();
-=======
         if(isPlayerControlled){
             physicsController = new BetterCharacterControl(0.1f, 1f, 0.1f);
         }
->>>>>>> origin/master
     }
     
     public void generateMoveList(){
@@ -170,11 +138,8 @@ public class FighterNode extends Node{
     
     private void defaultMoveSet(){
         MoveSet = new ArrayList<ComboMove>();
-<<<<<<< HEAD
-=======
         ComboMove lightAttack, mediumAttack, heavyAttack, upperCut, punchBarrage, timeStop;       
         ComboMoveExecution lightAttackExec, mediumAttackExec, heavyAttackExec, upperCutExec, punchBarrageExec, timeStopExec;  
->>>>>>> origin/master
         
         lightAttack = new ComboMove("Light Attack");
         mediumAttack = new ComboMove("Medium Attack");
@@ -182,11 +147,6 @@ public class FighterNode extends Node{
         upperCut = new ComboMove("Uppercut");
         punchBarrage = new ComboMove("Punch Barrage");
         timeStop = new ComboMove("Time Stop");
-<<<<<<< HEAD
-
-=======
-        
->>>>>>> origin/master
         lightAttack.setMoveType(moveTypeList.interruptable);
         mediumAttack.setMoveType(moveTypeList.interruptable);
         heavyAttack.setMoveType(moveTypeList.uninterruptable);
@@ -198,21 +158,14 @@ public class FighterNode extends Node{
         punchBarrage.press("Right", "Down").done();
         punchBarrage.press("Right").notPress("Down").done();
         punchBarrage.press("Attack1").notPress("Down", "Right").done();
-<<<<<<< HEAD
         punchBarrage.notPress("Right", "Down").done();
-=======
         //punchBarrage.notPress("Right", "Down", "Attack1").done();
->>>>>>> origin/master
         punchBarrage.setUseFinalState(false); // no waiting on final state
         
         upperCut.press("Left").notPress("Down", "Attack1").done();
         upperCut.press("Down").notPress("Attack1").timeElapsed(0.11f).done();
         upperCut.press("Attack1").notPress("Left").timeElapsed(0.11f).done();
         upperCut.notPress("Left", "Down", "Attack1").done();
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/master
         
         timeStop.press("Right").notPress("Attack3", "Attack1").done();
         timeStop.press("Attack3").notPress("Attack1", "Right").timeElapsed(0.11f).done();
@@ -227,8 +180,7 @@ public class FighterNode extends Node{
         timeStopExec = new ComboMoveExecution(timeStop);
         punchBarrageExec = new ComboMoveExecution(punchBarrage);
         upperCutExec = new ComboMoveExecution(upperCut);
-<<<<<<< HEAD
-        
+       
         /*
         Key List:
         W A S D - Jump, Left, Crouch, Right
@@ -383,7 +335,5 @@ public class FighterNode extends Node{
     @Override
     public void onAnimChange(AnimControl control, AnimChannel channel, String animName) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-=======
->>>>>>> origin/master
     }
 }
