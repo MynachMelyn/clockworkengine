@@ -61,7 +61,7 @@ public class FighterNode extends Node implements AnimEventListener, ActionListen
 
     // Base versions of movement values - cannot be edited.
     // To actively and temporarily change a fighter's speed, use the next set of variables. *
-    private final float movementSpeedBase = 10.0f;
+    private final float movementSpeedBase = 3.0f;
     private final float jumpForceBase = 10.0f;
     // * These are referenced directly when moving/jumping etc.
     // Modify these to temporarily change the player's speed.
@@ -158,9 +158,9 @@ public class FighterNode extends Node implements AnimEventListener, ActionListen
         walkDirection.set(0f, 0f, 0f);
         
         if (forward) {
-            walkDirection.addLocal(new Vector3f(0, 0, (facingRight) ? 1 : 0).mult(movementSpeed));
+            walkDirection.addLocal(new Vector3f(0, 0, (facingRight) ? 1 : -1).mult(movementSpeed));
         } else if (backward) {
-            walkDirection.addLocal(new Vector3f(0, 0, (!facingRight) ? 1 : 0).mult(movementSpeed));
+            walkDirection.addLocal(new Vector3f(0, 0, (facingRight) ? -1 : 1).mult(movementSpeed));
         }
         
         checkForCombos(time, tpf);
@@ -187,6 +187,7 @@ public class FighterNode extends Node implements AnimEventListener, ActionListen
         upperCut = new ComboMove("Uppercut");
         punchBarrage = new ComboMove("Punch Barrage");
         timeStop = new ComboMove("Time Stop");
+        
         lightAttack.setMoveType(moveTypeList.interruptable);
         mediumAttack.setMoveType(moveTypeList.interruptable);
         heavyAttack.setMoveType(moveTypeList.uninterruptable);
@@ -194,6 +195,12 @@ public class FighterNode extends Node implements AnimEventListener, ActionListen
         punchBarrage.setMoveType(moveTypeList.uninterruptable);
         timeStop.setMoveType(moveTypeList.uninterruptable);
 
+        lightAttack.press("Attack1").done();
+        
+        mediumAttack.press("Attack2").done();
+        
+        heavyAttack.press("Attack3").done();
+        
         punchBarrage.press("Down").notPress("Right").done();
         punchBarrage.press("Right", "Down").done();
         punchBarrage.press("Right").notPress("Down").done();
