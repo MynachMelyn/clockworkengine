@@ -10,7 +10,7 @@ package com.clockwork.bounding;
 //import java.io.IOException;
 //import java.nio.FloatBuffer;
 //
-////import com.jme.scene.TriMesh;
+////import com.clockwork.scene.TriMesh;
 //
 ///**
 // * Started Date: Sep 5, 2004 <br>
@@ -801,7 +801,7 @@ package com.clockwork.bounding;
 //    /*
 //     * (non-Javadoc)
 //     *
-//     * @see com.jme.bounding.BoundingVolume#intersects(com.jme.bounding.BoundingVolume)
+//     * @see com.clockwork.bounding.BoundingVolume#intersects(com.clockwork.bounding.BoundingVolume)
 //     */
 //    public boolean intersects(BoundingVolume bv) {
 //        if (bv == null)
@@ -813,7 +813,7 @@ package com.clockwork.bounding;
 //    /*
 //     * (non-Javadoc)
 //     *
-//     * @see com.jme.bounding.BoundingVolume#intersectsSphere(com.jme.bounding.BoundingSphere)
+//     * @see com.clockwork.bounding.BoundingVolume#intersectsSphere(com.clockwork.bounding.BoundingSphere)
 //     */
 //    public boolean intersectsSphere(BoundingSphere bs) {
 //        if (!Vector3f.isValidVector(center) || !Vector3f.isValidVector(bs.center)) return false;
@@ -834,7 +834,7 @@ package com.clockwork.bounding;
 //    /*
 //     * (non-Javadoc)
 //     *
-//     * @see com.jme.bounding.BoundingVolume#intersectsBoundingBox(com.jme.bounding.BoundingBox)
+//     * @see com.clockwork.bounding.BoundingVolume#intersectsBoundingBox(com.clockwork.bounding.BoundingBox)
 //     */
 //    public boolean intersectsBoundingBox(BoundingBox bb) {
 //        if (!Vector3f.isValidVector(center) || !Vector3f.isValidVector(bb.center)) return false;
@@ -1037,7 +1037,7 @@ package com.clockwork.bounding;
 //    /*
 //     * (non-Javadoc)
 //     *
-//     * @see com.jme.bounding.BoundingVolume#intersectsOBB2(com.jme.bounding.OBB2)
+//     * @see com.clockwork.bounding.BoundingVolume#intersectsOBB2(com.clockwork.bounding.OBB2)
 //     */
 //    public boolean intersectsOrientedBoundingBox(OrientedBoundingBox obb) {
 //        if (!Vector3f.isValidVector(center) || !Vector3f.isValidVector(obb.center)) return false;
@@ -1240,7 +1240,7 @@ package com.clockwork.bounding;
 //    /*
 //     * (non-Javadoc)
 //     *
-//     * @see com.jme.bounding.BoundingVolume#intersects(com.jme.math.Ray)
+//     * @see com.clockwork.bounding.BoundingVolume#intersects(com.clockwork.math.Ray)
 //     */
 //    public boolean intersects(Ray ray) {
 //        if (!Vector3f.isValidVector(center)) return false;
@@ -1297,7 +1297,7 @@ package com.clockwork.bounding;
 //    }
 //
 //    /**
-//     * @see com.jme.bounding.BoundingVolume#intersectsWhere(com.jme.math.Ray)
+//     * @see com.clockwork.bounding.BoundingVolume#intersectsWhere(com.clockwork.math.Ray)
 //     */
 //    public IntersectionRecord intersectsWhere(Ray ray) {
 //        Vector3f diff = _compVect1.set(ray.origin).subtractLocal(center);

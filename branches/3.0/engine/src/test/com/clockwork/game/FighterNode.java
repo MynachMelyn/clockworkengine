@@ -70,6 +70,20 @@ public class FighterNode extends Node implements AnimEventListener, ActionListen
     private Vector3f walkDirection;
     private boolean facingRight;
 
+    // The default time that the fighter should be staggered for upon being attacked.
+    // To override, include a value when calling the stagger method.
+    private float staggerDurationDefault;
+
+    // The default time that the fighet should be downed for upon being knocked down.
+    // To override, include a value when calling the knock-down method.
+    private float downedDurationDefault;
+
+    private float currentStaggerDuration;
+    private float currentDownedDuration;
+
+    private float currentStaggerTime;
+    private float currentDownedTime;
+
     private boolean forward = false, backward = false;
 
     protected AnimControl animControl;
@@ -116,7 +130,10 @@ public class FighterNode extends Node implements AnimEventListener, ActionListen
         // Add a capsule-surrounded physics character controller to the scene node.
         if (this.isPlayerControlled) {
             physicsController = new BetterCharacterControl(0.1f, 1f, 0.1f);
+            this.addControl(physicsController);
         }
+
+        this.attachChild(model);
 
     }
 
@@ -236,7 +253,13 @@ public class FighterNode extends Node implements AnimEventListener, ActionListen
 
     private void checkFighterState() {
         // If grounded, and not doing something uninterruptable.
-        if (physicsController.isOnGround() && fighterState != currentAction.doingUninterruptableAttack && fighterState != currentAction.doingInterruptableAttack && fighterState != currentAction.downed && fighterState != currentAction.downedMidAir && fighterState != currentAction.staggered) {
+        if (physicsController.isOnGround()
+                && fighterState != currentAction.doingUninterruptableAttack
+                && fighterState != currentAction.doingInterruptableAttack
+                && fighterState != currentAction.downed
+                && fighterState != currentAction.downedMidAir
+                && fighterState != currentAction.staggered) {
+
             // If stationary.
             if (walkDirection.equals(Vector3f.ZERO)) {
                 fighterState = currentAction.idle;
@@ -258,6 +281,60 @@ public class FighterNode extends Node implements AnimEventListener, ActionListen
             if (fighterState != currentAction.downedMidAir) {
                 fighterState = currentAction.midAir;
             }
+        }
+    }
+
+    public void Stagger() {
+        Stagger(staggerDurationDefault);
+    }
+
+    public void Stagger(float duration) {
+        if (fighterState != currentAction.midAir) {
+            fighterState = currentAction.staggered;
+            // TODO ANIMATION
+        }
+        // TODO PARTICLE AND SOUND FX
+    }
+
+    public void knockDown() {
+        knockDown(downedDurationDefault);
+    }
+
+    public void knockDown(float duration) {
+        if (fighterState == currentAction.midAir) {
+            fighterState = currentAction.downedMidAir;
+        } else {
+            fighterState = currentAction.downed;
+        }
+    }
+
+    /**
+     * Update the debuffing effects like stagger and downed.
+     *
+     * @param timeElapsed
+     */
+    private void updateDebuffs(float timeElapsed) {
+        if (fighterState != currentAction.staggered && fighterState != currentAction.downed) {
+            currentStaggerTime = 0;
+            currentDownedTime = 0;
+            currentStaggerDuration = 0;
+            currentDownedDuration = 0;
+            return;
+        }
+
+        if (currentStaggerTime >= currentStaggerDuration || currentDownedTime >= currentDownedDuration) {
+            fighterState = currentAction.idle;
+            currentStaggerTime = 0;
+            currentDownedTime = 0;
+            currentStaggerDuration = 0;
+            currentDownedDuration = 0;
+        }
+
+        if (fighterState == currentAction.staggered) {
+            currentStaggerTime += timeElapsed;
+        } // Downed and on the ground - does not time out while in midair, must land first.
+        else if (fighterState == currentAction.downed) {
+            currentDownedTime += timeElapsed;
         }
     }
 

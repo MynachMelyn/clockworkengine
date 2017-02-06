@@ -36,7 +36,7 @@ import java.util.logging.Logger;
  * <p>
  * 4. "full class name" - 1...X bytes representing a String value, where X = the
  * number read in 3. The String is the fully qualified class name of the Savable
- * class, eg "<code>com.jme.math.Vector3f</code>"
+ * class, eg "<code>com.clockwork.math.Vector3f</code>"
  * </p>
  * <p>
  * 5. "number of fields" - four bytes - int value representing number of blocks
@@ -51,7 +51,7 @@ import java.util.logging.Logger;
  * <p>
  * 7. "field type" - 1 byte - a value representing the type of data a field
  * contains. This value is taken from the static fields of
- * <code>com.jme.util.export.binary.BinaryClassField</code>.
+ * <code>com.clockwork.util.export.binary.BinaryClassField</code>.
  * </p>
  * <p>
  * 8. "field name size" - 4 bytes - int value representing the size of the next

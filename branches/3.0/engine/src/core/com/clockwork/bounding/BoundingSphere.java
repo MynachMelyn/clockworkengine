@@ -629,7 +629,7 @@ public class BoundingSphere extends BoundingVolume {
     /*
      * (non-Javadoc)
      *
-     * @see com.jme.bounding.BoundingVolume#intersects(com.jme.bounding.BoundingVolume)
+     * @see com.clockwork.bounding.BoundingVolume#intersects(com.clockwork.bounding.BoundingVolume)
      */
     public boolean intersects(BoundingVolume bv) {
         return bv.intersectsSphere(this);
@@ -638,7 +638,7 @@ public class BoundingSphere extends BoundingVolume {
     /*
      * (non-Javadoc)
      *
-     * @see com.jme.bounding.BoundingVolume#intersectsSphere(com.jme.bounding.BoundingSphere)
+     * @see com.clockwork.bounding.BoundingVolume#intersectsSphere(com.clockwork.bounding.BoundingSphere)
      */
     public boolean intersectsSphere(BoundingSphere bs) {
         assert Vector3f.isValidVector(center) && Vector3f.isValidVector(bs.center);
@@ -655,7 +655,7 @@ public class BoundingSphere extends BoundingVolume {
     /*
      * (non-Javadoc)
      *
-     * @see com.jme.bounding.BoundingVolume#intersectsBoundingBox(com.jme.bounding.BoundingBox)
+     * @see com.clockwork.bounding.BoundingVolume#intersectsBoundingBox(com.clockwork.bounding.BoundingBox)
      */
     public boolean intersectsBoundingBox(BoundingBox bb) {
         assert Vector3f.isValidVector(center) && Vector3f.isValidVector(bb.center);
@@ -675,7 +675,7 @@ public class BoundingSphere extends BoundingVolume {
     /*
      * (non-Javadoc)
      *
-     * @see com.jme.bounding.BoundingVolume#intersectsOrientedBoundingBox(com.jme.bounding.OrientedBoundingBox)
+     * @see com.clockwork.bounding.BoundingVolume#intersectsOrientedBoundingBox(com.clockwork.bounding.OrientedBoundingBox)
      */
 //    public boolean intersectsOrientedBoundingBox(OrientedBoundingBox obb) {
 //        return obb.intersectsSphere(this);
@@ -684,7 +684,7 @@ public class BoundingSphere extends BoundingVolume {
     /*
      * (non-Javadoc)
      *
-     * @see com.jme.bounding.BoundingVolume#intersects(com.jme.math.Ray)
+     * @see com.clockwork.bounding.BoundingVolume#intersects(com.clockwork.math.Ray)
      */
     public boolean intersects(Ray ray) {
         assert Vector3f.isValidVector(center);
@@ -711,7 +711,7 @@ public class BoundingSphere extends BoundingVolume {
     /*
      * (non-Javadoc)
      *
-     * @see com.jme.bounding.BoundingVolume#intersectsWhere(com.jme.math.Ray)
+     * @see com.clockwork.bounding.BoundingVolume#intersectsWhere(com.clockwork.math.Ray)
      */
     private int collideWithRay(Ray ray, CollisionResults results) {
         TempVars vars = TempVars.get();

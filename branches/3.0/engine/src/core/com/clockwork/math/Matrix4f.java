@@ -2017,7 +2017,7 @@ public final class Matrix4f implements Savable, Cloneable, java.io.Serializable 
     /**
      * <code>toString</code> returns the string representation of this object.
      * It is in a format of a 4x4 matrix. For example, an identity matrix would
-     * be represented by the following string. com.jme.math.Matrix3f <br>[<br>
+     * be represented by the following string. com.clockwork.math.Matrix3f <br>[<br>
      * 1.0  0.0  0.0  0.0 <br>
      * 0.0  1.0  0.0  0.0 <br>
      * 0.0  0.0  1.0  0.0 <br>

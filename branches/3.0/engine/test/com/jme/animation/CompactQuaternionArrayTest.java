@@ -1,4 +1,4 @@
-package com.jme.animation;
+package com.clockwork.animation;
 
 import com.clockwork.animation.*;
 import java.util.*;

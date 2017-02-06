@@ -338,8 +338,8 @@ public class TestCharacter extends SimpleApplication implements AnimEventListene
         
         // STAND USER
         characterNode.addControl(physicsCharacter);
-        getPhysicsSpace().add(physicsCharacter);
-        rootNode.attachChild(characterNode);
+        getPhysicsSpace().add(physicsCharacter); //TODO
+        rootNode.attachChild(characterNode); //TODO
         characterNode.attachChild(model);
         physicsCharacter.warp(new Vector3f(0, 2, 0));
         

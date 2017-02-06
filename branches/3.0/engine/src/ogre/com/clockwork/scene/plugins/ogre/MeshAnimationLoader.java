@@ -10,7 +10,7 @@ package com.clockwork.scene.plugins.ogre;
 //
 //import org.w3c.dom.Node;
 //
-//import com.jme.math.Vector3f;
+//import com.clockwork.math.Vector3f;
 //import com.jmex.model.XMLUtil;
 //import com.jmex.model.ogrexml.anim.PoseTrack.PoseFrame;
 

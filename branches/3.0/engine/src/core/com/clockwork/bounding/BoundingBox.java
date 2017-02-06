@@ -14,7 +14,7 @@ import com.clockwork.scene.Mesh;
 import com.clockwork.util.TempVars;
 import java.io.IOException;
 import java.nio.FloatBuffer;
-//import com.jme.scene.TriMesh;
+//import com.clockwork.scene.TriMesh;
 
 /**
  * <code>BoundingBox</code> describes a bounding volume as an axis-aligned box.
@@ -605,7 +605,7 @@ public class BoundingBox extends BoundingVolume {
      * determines if this bounding box intersects with a given oriented bounding
      * box.
      * 
-     * @see com.jme.bounding.BoundingVolume#intersectsOrientedBoundingBox(com.jme.bounding.OrientedBoundingBox)
+     * @see com.clockwork.bounding.BoundingVolume#intersectsOrientedBoundingBox(com.clockwork.bounding.OrientedBoundingBox)
      */
 //    public boolean intersectsOrientedBoundingBox(OrientedBoundingBox obb) {
 //        return obb.intersectsBoundingBox(this);
@@ -686,7 +686,7 @@ public class BoundingBox extends BoundingVolume {
     }
 
     /**
-     * @see com.jme.bounding.BoundingVolume#intersectsWhere(com.jme.math.Ray)
+     * @see com.clockwork.bounding.BoundingVolume#intersectsWhere(com.clockwork.math.Ray)
      */
     private int collideWithRay(Ray ray, CollisionResults results) {
         TempVars vars = TempVars.get();

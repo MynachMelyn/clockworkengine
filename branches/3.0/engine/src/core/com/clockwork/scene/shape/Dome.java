@@ -48,7 +48,7 @@ public class Dome extends Mesh {
      *            Influences how round the base of the dome is.
      * @param radius
      *            Radius of the dome.
-     * @see #Dome(com.jme.math.Vector3f, int, int, float)
+     * @see #Dome(com.clockwork.math.Vector3f, int, int, float)
      */
     public Dome(int planes, int radialSamples, float radius) {
         this(new Vector3f(0, 0, 0), planes, radialSamples, radius);
