@@ -14,6 +14,8 @@ import com.clockwork.animation.AnimEventListener;
 import com.clockwork.input.controls.ActionListener;
 import java.util.HashSet;
 import com.clockwork.math.Vector3f;
+import com.clockwork.input.controls.KeyTrigger;
+import com.clockwork.input.KeyInput;
 
 public class FighterNode extends Node implements AnimEventListener, ActionListener {
 
@@ -67,16 +69,16 @@ public class FighterNode extends Node implements AnimEventListener, ActionListen
     private float movementSpeed;
     private float jumpForce;
 
-    private Vector3f walkDirection;
+    private Vector3f walkDirection = new Vector3f(0f, 0f, 0f);
     private boolean facingRight;
 
     // The default time that the fighter should be staggered for upon being attacked.
     // To override, include a value when calling the stagger method.
-    private float staggerDurationDefault;
+    private final float staggerDurationDefault = 10f;
 
     // The default time that the fighet should be downed for upon being knocked down.
     // To override, include a value when calling the knock-down method.
-    private float downedDurationDefault;
+    private final float downedDurationDefault = 10f;
 
     private float currentStaggerDuration;
     private float currentDownedDuration;
@@ -89,6 +91,8 @@ public class FighterNode extends Node implements AnimEventListener, ActionListen
     protected AnimControl animControl;
     protected AnimChannel animChannel;
     protected InputManager inputManager;
+    
+    private float time;
 
     ComboMove lightAttack, // Light jab - spammable
             mediumAttack, // Hook - slower, more powerful
@@ -106,11 +110,12 @@ public class FighterNode extends Node implements AnimEventListener, ActionListen
 
     private ComboMove currentMove = null;
     private float currentMoveCastTime = 0;
-    private float time = 0;
 
     public FighterNode(String name, boolean isPlayerControlled, Spatial model, InputManager inputManager) {
         super(name);
 
+        this.inputManager = inputManager;
+        
         fighterState = currentAction.idle;
 
         this.movementSpeed = movementSpeedBase;
@@ -120,6 +125,14 @@ public class FighterNode extends Node implements AnimEventListener, ActionListen
         this.isPlayerControlled = isPlayerControlled;
         animControl = model.getControl(AnimControl.class);
         animChannel = animControl.createChannel();
+        
+        for (String anim : animControl.getAnimationNames()){
+            System.out.println(anim);
+        }
+        animChannel.setAnim("base_stand");
+        
+        // May have to use parent application as the listener. 
+        animControl.addListener(this);
 
         // If an Input Manager was not given during construction, then
         // assume this isn't a player character.
@@ -135,20 +148,25 @@ public class FighterNode extends Node implements AnimEventListener, ActionListen
 
         this.attachChild(model);
 
+        generateMoveList();
     }
 
     // Called from main App's SimpleUpdate
-    public void simpleUpdate() {
+    public void simpleUpdate(float tpf) {
+        time += tpf;
+        
+        walkDirection.set(0f, 0f, 0f);
+        
         if (forward) {
             walkDirection.addLocal(new Vector3f(0, 0, (facingRight) ? 1 : 0).mult(movementSpeed));
         } else if (backward) {
             walkDirection.addLocal(new Vector3f(0, 0, (!facingRight) ? 1 : 0).mult(movementSpeed));
         }
+        
+        checkForCombos(time, tpf);
 
         checkFighterState();
-        if (isPlayerControlled) {
-            physicsController = new BetterCharacterControl(0.1f, 1f, 0.1f);
-        }
+        physicsController.setWalkDirection(walkDirection);
     }
 
     public void generateMoveList() {
@@ -158,8 +176,10 @@ public class FighterNode extends Node implements AnimEventListener, ActionListen
 
     private void defaultMoveSet() {
         MoveSet = new ArrayList<ComboMove>();
-        ComboMove lightAttack, mediumAttack, heavyAttack, upperCut, punchBarrage, timeStop;
-        ComboMoveExecution lightAttackExec, mediumAttackExec, heavyAttackExec, upperCutExec, punchBarrageExec, timeStopExec;
+        
+        // No, these should not be locally scoped.
+        //ComboMove lightAttack, mediumAttack, heavyAttack, upperCut, punchBarrage, timeStop;
+        //ComboMoveExecution lightAttackExec, mediumAttackExec, heavyAttackExec, upperCutExec, punchBarrageExec, timeStopExec;
 
         lightAttack = new ComboMove("Light Attack");
         mediumAttack = new ComboMove("Medium Attack");
@@ -209,20 +229,21 @@ public class FighterNode extends Node implements AnimEventListener, ActionListen
         
         String together in the predetermined ways to pull off combos.
          */
-        inputManager.addMapping("Left", new com.clockwork.input.controls.KeyTrigger(com.clockwork.input.KeyInput.KEY_A));
-        inputManager.addMapping("Right", new com.clockwork.input.controls.KeyTrigger(com.clockwork.input.KeyInput.KEY_D));
-        inputManager.addMapping("Up", new com.clockwork.input.controls.KeyTrigger(com.clockwork.input.KeyInput.KEY_W));
-        inputManager.addMapping("Down", new com.clockwork.input.controls.KeyTrigger(com.clockwork.input.KeyInput.KEY_S));
-        inputManager.addMapping("Attack1", new com.clockwork.input.controls.KeyTrigger(com.clockwork.input.KeyInput.KEY_J));
-        inputManager.addMapping("Attack2", new com.clockwork.input.controls.KeyTrigger(com.clockwork.input.KeyInput.KEY_I));
-        inputManager.addMapping("Attack3", new com.clockwork.input.controls.KeyTrigger(com.clockwork.input.KeyInput.KEY_L));
-        inputManager.addMapping("AttackSpecial", new com.clockwork.input.controls.KeyTrigger(com.clockwork.input.KeyInput.KEY_K));
+        inputManager.addMapping("Left", new KeyTrigger(KeyInput.KEY_A));
+        inputManager.addMapping("Right", new KeyTrigger(KeyInput.KEY_D));
+        inputManager.addMapping("Up", new KeyTrigger(KeyInput.KEY_W));
+        inputManager.addMapping("Down", new KeyTrigger(KeyInput.KEY_S));
+        inputManager.addMapping("Attack1", new KeyTrigger(KeyInput.KEY_J));
+        inputManager.addMapping("Attack2", new KeyTrigger(KeyInput.KEY_I));
+        inputManager.addMapping("Attack3", new KeyTrigger(KeyInput.KEY_L));
+        inputManager.addMapping("AttackSpecial", new KeyTrigger(KeyInput.KEY_K));
 
         inputManager.addListener(this, "Left", "Right", "Up", "Down", "Attack1", "Attack2", "Attack3", "AttackSpecial");
     }
 
     private void checkForCombos(float time, float tpf) {
         // Check every frame if any executions are expired
+        
         lightAttackExec.updateExpiration(time);
         //lightAttackText.setText("Shuriken Exec: " + lightAttack.getDebugString());
 
@@ -337,6 +358,13 @@ public class FighterNode extends Node implements AnimEventListener, ActionListen
             currentDownedTime += timeElapsed;
         }
     }
+    
+    public AnimControl getFighterAnimControl(){
+        return this.animControl;
+    }
+    public BetterCharacterControl getPhysicsControl(){
+        return physicsController;
+    }
 
     @Override
     public void onAction(String binding, boolean value, float tpf) {
@@ -410,11 +438,11 @@ public class FighterNode extends Node implements AnimEventListener, ActionListen
 
     @Override
     public void onAnimCycleDone(AnimControl control, AnimChannel channel, String animName) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public void onAnimChange(AnimControl control, AnimChannel channel, String animName) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
