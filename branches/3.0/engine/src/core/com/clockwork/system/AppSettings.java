@@ -46,9 +46,9 @@ public final class AppSettings extends HashMap<String, Object> {
      * Use LWJGL as the display system and force using the core OpenGL3.3 renderer.
      * <p>
      * If the underlying system does not support OpenGL3.2, then the context
-     * initialization will throw an exception. Note that currently jMonkeyEngine
-     * does not have any shaders that support OpenGL3.2 therefore this
-     * option is not useful.
+     * initialization will throw an exception.
+     * Does not have any shaders that support OpenGL3.2; this
+     * option is not really useful.
      * <p>
      * Note: OpenGL 3.2 is used to give 3.x support to Mac users.
      *
@@ -107,9 +107,9 @@ public final class AppSettings extends HashMap<String, Object> {
         defaults.put("AudioRenderer", LWJGL_OPENAL);
         defaults.put("DisableJoysticks", true);
         defaults.put("UseInput", true);
-        defaults.put("VSync", false);
+        defaults.put("VSync", true);
         defaults.put("FrameRate", -1);
-        defaults.put("SettingsDialogImage", "/com/clockwork/app/Monkey.png");
+      //  defaults.put("SettingsDialogImage", "/com/clockwork/app/Monkey.png");
         defaults.put("MinHeight", 0);
         defaults.put("MinWidth", 0);
       //  defaults.put("Icons", null);
@@ -687,7 +687,6 @@ public final class AppSettings extends HashMap<String, Object> {
      * The image will be displayed in the settings dialog when the
      * application is started.
      * </p>
-     * (Default: /com/clockwork/app/Monkey.png)
      *
      * @param path The path to the image in the classpath.
      */

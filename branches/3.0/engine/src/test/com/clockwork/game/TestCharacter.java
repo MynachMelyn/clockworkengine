@@ -80,6 +80,8 @@ public class TestCharacter extends SimpleApplication implements /*AnimEventListe
     private BitmapText heavyhitText;
     private BitmapText punchText;
     
+    private BitmapText fighterStateText;
+    
     private FighterNode playerNode;
     private FighterNode standNode;
     
@@ -88,6 +90,7 @@ public class TestCharacter extends SimpleApplication implements /*AnimEventListe
         
         app.setShowSettings(true);
         AppSettings settings = new AppSettings(true);
+        
         /*		settings.put("Width", 1280);
         settings.put("Height", 720);
         * */
@@ -145,6 +148,11 @@ public class TestCharacter extends SimpleApplication implements /*AnimEventListe
         playerNode.getPhysicsControl().warp(new Vector3f(0, 2, 0));
         
         setupChaseCamera(playerNode);
+        
+        fighterStateText = new BitmapText(guiFont);
+        fighterStateText.setColor(ColorRGBA.Orange);
+        fighterStateText.setLocalTranslation(0, fighterStateText.getLineHeight(), 0);
+        guiNode.attachChild(fighterStateText);
         
         //######################################################################
         
@@ -262,7 +270,9 @@ public class TestCharacter extends SimpleApplication implements /*AnimEventListe
     public void simpleUpdate(float tpf) {
         
         playerNode.simpleUpdate(tpf);
-
+        
+        
+        fighterStateText.setText(playerNode.fighterState.toString());
 //        if(walkDirection.equals(Vector3f.ZERO)){
 //            if (!channel_player.getAnimationName().equals("base_stand")){
 //                channel_player.setAnim("base_stand", 0.50f);

@@ -96,7 +96,7 @@ public abstract class SimpleApplication extends Application {
                 return;
             }
         }
-        //re-setting settings they can have been merged from the registry.
+        // re-setting settings they can have been merged from the registry.
         setSettings(settings);
         super.start();
     }

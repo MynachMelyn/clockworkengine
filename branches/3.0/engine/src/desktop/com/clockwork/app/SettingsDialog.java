@@ -112,6 +112,9 @@ public final class SettingsDialog extends JFrame {
         setAlwaysOnTop(true);
         setResizable(false);
 
+        // Should be changed to allow for more space, if more elements are added.
+        this.setPreferredSize(new Dimension(400, 150));
+        
         AppSettings registrySettings = new AppSettings(true);
 
         String appTitle;
@@ -281,11 +284,11 @@ public final class SettingsDialog extends JFrame {
 
         setTitle(MessageFormat.format(resourceBundle.getString("frame.title"), source.getTitle()));
         
-        // The buttons...
         JButton ok = new JButton(resourceBundle.getString("button.ok"));               
         JButton cancel = new JButton(resourceBundle.getString("button.cancel"));
 
-        icon = new JLabel(imageFile != null ? new ImageIcon(imageFile) : null);
+        // This line can be uncommented to allow for an image for the splash screen when loading
+        //icon = new JLabel(imageFile != null ? new ImageIcon(imageFile) : null);
 
         KeyListener aListener = new KeyAdapter() {
 
@@ -330,9 +333,10 @@ public final class SettingsDialog extends JFrame {
         gbc.gridy = 1;
         gbc.anchor = GridBagConstraints.EAST;
         mainPanel.add(fullscreenBox, gbc);
+        
         gbc = new GridBagConstraints();
         gbc.weightx = 0.5;
-        gbc.insets = new Insets(4, 16, 0, 4);
+        //gbc.insets = new Insets(4, 16, 0, 4); //TODO
         gbc.gridx = 2;
         gbc.gridwidth = 2;
         gbc.gridy = 1;
@@ -346,23 +350,27 @@ public final class SettingsDialog extends JFrame {
         gbc.anchor = GridBagConstraints.EAST;
         gbc.weightx = 0.5;
         mainPanel.add(new JLabel(resourceBundle.getString("label.resolutions")), gbc);
+        
         gbc = new GridBagConstraints();
         gbc.gridx = 1;
         gbc.gridy = 2;
         gbc.anchor = GridBagConstraints.WEST;
         mainPanel.add(displayResCombo, gbc);
+        
         gbc = new GridBagConstraints();
         gbc.insets = new Insets(4, 16, 4, 4);
         gbc.gridx = 2;
         gbc.gridy = 2;
         gbc.anchor = GridBagConstraints.EAST;
         mainPanel.add(new JLabel(resourceBundle.getString("label.colordepth")), gbc);
+        
         gbc = new GridBagConstraints();
         gbc.weightx = 0.5;
         gbc.gridx = 3;
         gbc.gridy = 2;
         gbc.anchor = GridBagConstraints.WEST;
         mainPanel.add(colorDepthCombo, gbc);
+        
         gbc = new GridBagConstraints();
         gbc.insets = new Insets(4, 4, 4, 4);
         gbc.weightx = 0.5;
@@ -370,17 +378,20 @@ public final class SettingsDialog extends JFrame {
         gbc.gridy = 3;
         gbc.anchor = GridBagConstraints.EAST;
         mainPanel.add(new JLabel(resourceBundle.getString("label.refresh")), gbc);
+        
         gbc = new GridBagConstraints();
         gbc.gridx = 1;
         gbc.gridy = 3;
         gbc.anchor = GridBagConstraints.WEST;
         mainPanel.add(displayFreqCombo, gbc);
+        
         gbc = new GridBagConstraints();
         gbc.insets = new Insets(4, 16, 4, 4);
         gbc.gridx = 2;
         gbc.gridy = 3;
         gbc.anchor = GridBagConstraints.EAST;
         mainPanel.add(new JLabel(resourceBundle.getString("label.antialias")), gbc);
+        
         gbc = new GridBagConstraints();
         gbc.weightx = 0.5;
         gbc.gridx = 3;

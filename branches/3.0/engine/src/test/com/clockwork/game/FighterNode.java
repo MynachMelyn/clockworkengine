@@ -16,6 +16,7 @@ import java.util.HashSet;
 import com.clockwork.math.Vector3f;
 import com.clockwork.input.controls.KeyTrigger;
 import com.clockwork.input.KeyInput;
+import com.clockwork.animation.LoopMode;
 
 public class FighterNode extends Node implements AnimEventListener, ActionListener {
 
@@ -154,13 +155,20 @@ public class FighterNode extends Node implements AnimEventListener, ActionListen
     // Called from main App's SimpleUpdate
     public void simpleUpdate(float tpf) {
         time += tpf;
+        if(fighterState != currentAction.midAir){
+            walkDirection.set(0f, 0f, 0f);
+        }
         
-        walkDirection.set(0f, 0f, 0f);
-        
-        if (forward) {
-            walkDirection.addLocal(new Vector3f(0, 0, (facingRight) ? 1 : -1).mult(movementSpeed));
-        } else if (backward) {
-            walkDirection.addLocal(new Vector3f(0, 0, (facingRight) ? -1 : 1).mult(movementSpeed));
+        if (fighterState == currentAction.moving || fighterState == currentAction.idle) {
+            if (forward) {
+                walkDirection.addLocal(new Vector3f(0, 0, (facingRight) ? 1 : -1).mult(movementSpeed));
+                //setAnimation("");
+            } else if (backward) {
+                walkDirection.addLocal(new Vector3f(0, 0, (facingRight) ? -1 : 1).mult(movementSpeed));
+                //setAnimation("");
+            } else {
+                setAnimation("base_stand", 0.5f, true);
+            }
         }
         
         checkForCombos(time, tpf);
@@ -280,34 +288,38 @@ public class FighterNode extends Node implements AnimEventListener, ActionListen
     }
 
     private void checkFighterState() {
-        // If grounded, and not doing something uninterruptable.
-        if (physicsController.isOnGround()
-                && fighterState != currentAction.doingUninterruptableAttack
+        if (fighterState != currentAction.doingUninterruptableAttack
                 && fighterState != currentAction.doingInterruptableAttack
                 && fighterState != currentAction.downed
                 && fighterState != currentAction.downedMidAir
                 && fighterState != currentAction.staggered) {
-
-            // If stationary.
-            if (walkDirection.equals(Vector3f.ZERO)) {
-                fighterState = currentAction.idle;
-            } // If not stationary
-            else {
-                // If moving forward, relative to facing direction
-                if (forward) {
-                    fighterState = currentAction.moving;
-                    //ANIMATION
-                } // If moving backward, relative to facing direction
-                else if (backward) {
-                    fighterState = currentAction.moving;
-                    //ANIMATION
+            // If grounded, and not doing something uninterruptable.
+            if (physicsController.isOnGround()) {
+                if (fighterState == currentAction.midAir) {
+                    fighterState = currentAction.idle;
                 }
-            }
-        } // If airborne
-        else {
-            // So long as the fighter is not downed in the air, switch to the midair state
-            if (fighterState != currentAction.downedMidAir) {
-                fighterState = currentAction.midAir;
+
+                // If stationary.
+                if (!forward && !backward) {
+                    fighterState = currentAction.idle;
+                } // If not stationary
+                else {
+                    // If moving forward, relative to facing direction
+                    if (forward) {
+                        fighterState = currentAction.moving;
+                        //ANIMATION
+                    } // If moving backward, relative to facing direction
+                    else if (backward) {
+                        fighterState = currentAction.moving;
+                        //ANIMATION
+                    }
+                }
+            } // If airborne
+            else {
+                // So long as the fighter is not downed in the air, switch to the midair state
+                if (fighterState != currentAction.downedMidAir) {
+                    fighterState = currentAction.midAir;
+                }
             }
         }
     }
@@ -348,9 +360,7 @@ public class FighterNode extends Node implements AnimEventListener, ActionListen
             currentStaggerDuration = 0;
             currentDownedDuration = 0;
             return;
-        }
-
-        if (currentStaggerTime >= currentStaggerDuration || currentDownedTime >= currentDownedDuration) {
+        } else if ((fighterState == currentAction.staggered && currentStaggerTime >= currentStaggerDuration) || (fighterState == currentAction.downed && currentDownedTime >= currentDownedDuration)) {
             fighterState = currentAction.idle;
             currentStaggerTime = 0;
             currentDownedTime = 0;
@@ -385,67 +395,104 @@ public class FighterNode extends Node implements AnimEventListener, ActionListen
         // The pressed mappings were changed. Update the combo executions.
         java.util.List<ComboMove> invokedMoves = new ArrayList<ComboMove>();
 
-        if (lightAttackExec.updateState(pressedMappings, time)) {
-            invokedMoves.add(lightAttack);
-        }
+        if (fighterState != currentAction.doingUninterruptableAttack
+                && fighterState != currentAction.downed
+                && fighterState != currentAction.downedMidAir
+                && fighterState != currentAction.staggered) {
 
-        if (mediumAttackExec.updateState(pressedMappings, time)) {
-            invokedMoves.add(mediumAttack);
-        }
+            if (lightAttackExec.updateState(pressedMappings, time)) {
+                invokedMoves.add(lightAttack);
+                fighterState = currentAction.doingInterruptableAttack;
+                setAnimation("base_LPunch", 0.05f, false);
+            }
 
-        if (heavyAttackExec.updateState(pressedMappings, time)) {
-            invokedMoves.add(heavyAttack);
-        }
+            if (mediumAttackExec.updateState(pressedMappings, time)) {
+                invokedMoves.add(mediumAttack);
+                fighterState = currentAction.doingInterruptableAttack;
+                setAnimation("base_MPunch", 0.15f, false);
+            }
 
-        if (punchBarrageExec.updateState(pressedMappings, time)) {
-            invokedMoves.add(punchBarrage);
-        }
+            if (heavyAttackExec.updateState(pressedMappings, time)) {
+                invokedMoves.add(heavyAttack);
+                fighterState = currentAction.doingUninterruptableAttack;
+                setAnimation("base_HPunch", 0.15f, false);
+            }
 
-        if (upperCutExec.updateState(pressedMappings, time)) {
-            invokedMoves.add(upperCut);
-        }
+            if (punchBarrageExec.updateState(pressedMappings, time)) {
+                invokedMoves.add(punchBarrage);
+            }
 
-        if (timeStopExec.updateState(pressedMappings, time)) {
-            invokedMoves.add(timeStop);
-        }
+            if (upperCutExec.updateState(pressedMappings, time)) {
+                invokedMoves.add(upperCut);
+            }
 
-        if (invokedMoves.size() > 0) {
-            // choose move with highest priority
-            float priority = 0;
-            ComboMove toExec = null;
-            for (ComboMove move : invokedMoves) {
-                if (move.getPriority() > priority) {
-                    priority = move.getPriority();
-                    toExec = move;
+            if (timeStopExec.updateState(pressedMappings, time)) {
+                invokedMoves.add(timeStop);
+            }
+
+            if (invokedMoves.size() > 0) {
+                // choose move with highest priority
+                float priority = 0;
+                ComboMove toExec = null;
+                for (ComboMove move : invokedMoves) {
+                    if (move.getPriority() > priority) {
+                        priority = move.getPriority();
+                        toExec = move;
+                    }
                 }
-            }
-            if (currentMove != null && currentMove.getPriority() > toExec.getPriority()) {
-                return;
-            }
+                if (currentMove != null && currentMove.getPriority() > toExec.getPriority()) {
+                    return;
+                }
 
-            currentMove = toExec;
-            currentMoveCastTime = currentMove.getCastTime();
+                currentMove = toExec;
+                currentMoveCastTime = currentMove.getCastTime();
+            }
+            if (binding.equals("Right")) {
+                if (value) {
+                    forward = true;
+                } else {
+                    forward = false;
+                }
+            } else if (binding.equals("Left")) {
+                if (value) {
+                    backward = true;
+                } else {
+                    backward = false;
+                }
+            } else if (binding.equals("Up")) {
+                physicsController.jump();
+            }
         }
-        if (binding.equals("Right")) {
-            if (value) {
-                forward = true;
-            } else {
-                forward = false;
+    }
+    
+    public void setAnimation(String animationName, float blendFactor, boolean loop) {
+        if (!animChannel.getAnimationName().equals(animationName)) {
+            animChannel.setAnim(animationName, blendFactor);
+            if(loop){
+                animChannel.setLoopMode(LoopMode.Loop);
             }
-        } else if (binding.equals("Left")) {
-            if (value) {
-                backward = true;
-            } else {
-                backward = false;
+            else{
+                animChannel.setLoopMode(LoopMode.DontLoop);
             }
-        } else if (binding.equals("Up")) {
-            physicsController.jump();
+            // Was only used for time slowing effects
+            //updateChannelSpeed(animChannel);
         }
     }
 
     @Override
     public void onAnimCycleDone(AnimControl control, AnimChannel channel, String animName) {
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        if(animChannel.getLoopMode() == LoopMode.DontLoop){
+            fighterState = currentAction.idle;
+            if(forward){
+            
+            }
+            else if(backward){
+            
+            }
+            else{
+                setAnimation("base_stand", 0.5f, true);
+            }
+        }
     }
 
     @Override
