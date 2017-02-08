@@ -149,10 +149,22 @@ public class TestCharacter extends SimpleApplication implements /*AnimEventListe
         
         setupChaseCamera(playerNode);
         
+        // Allows debugging of the player character's current state.
         fighterStateText = new BitmapText(guiFont);
         fighterStateText.setColor(ColorRGBA.Orange);
         fighterStateText.setLocalTranslation(0, fighterStateText.getLineHeight(), 0);
         guiNode.attachChild(fighterStateText);
+        
+        // STAND
+        Spatial standModel = assetManager.loadModel("/Blender/2.5x/export/BaseMesh_01.mesh.xml");
+        Material standMaterial = new Material(getAssetManager(), "Common/MatDefs/Light/Lighting.j3md");
+        fighterModel.setMaterial(standMaterial);
+        standNode = new FighterNode("Stand", false, standModel, null);
+       
+        playerNode.attachChild(standNode);
+        playerNode.setStand(standNode);
+        standNode.setLocalTranslation(new Vector3f(0,0.2f,-0.2f));
+        
         
         //######################################################################
         
@@ -227,7 +239,7 @@ public class TestCharacter extends SimpleApplication implements /*AnimEventListe
                 "Shuriken: Left, Down, Attack1(Z)\n"+
                 "Jab: Attack1(Z)\n"+
                 "Punch: Attack1(Z), Attack1(Z)\n"+
-                "The World: Right, Heavy, Jab, Right, Special (V)\n");
+                "The World: Right, Heavy, Jab, Right, Special\n");
         guiNode.attachChild(helpText);
         
    /*     fireballText = new BitmapText(guiFont);

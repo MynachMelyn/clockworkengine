@@ -100,17 +100,22 @@ public class FighterNode extends Node implements AnimEventListener, ActionListen
             heavyAttack, // Heavy swing - much slower, a lot more powerful. Leaves player vulnerable.
             upperCut, // Heavy upward punch, quick but with a lot of cooldown time afterward in comparison to heavy attack. Will knock enemy airborne and downed, breaks guard.
             punchBarrage, // Continuous barrage of punches from the Stand. Leaves player vulnerable, as it's uncancellable. High damage, decent duration, knocks airborne, ignores guard, constant stagger.
-            timeStop;       // Slow cast time, but stops time. Might be replaced with a ranged powerful attack, i.e. explosion.
+            timeStop,       // Slow cast time, but stops time. Might be replaced with a ranged powerful attack, i.e. explosion.
+            standToggle;    // Turns the Stand on/off
 
     ComboMoveExecution lightAttackExec,
             mediumAttackExec,
             heavyAttackExec,
             upperCutExec,
             punchBarrageExec,
-            timeStopExec;
+            timeStopExec,
+            standToggleExec;
 
     private ComboMove currentMove = null;
     private float currentMoveCastTime = 0;
+    
+    private FighterNode fighterStand = null;
+    private boolean enabled = true;
 
     public FighterNode(String name, boolean isPlayerControlled, Spatial model, InputManager inputManager) {
         super(name);
@@ -146,35 +151,39 @@ public class FighterNode extends Node implements AnimEventListener, ActionListen
             physicsController = new BetterCharacterControl(0.1f, 1f, 0.1f);
             this.addControl(physicsController);
         }
-
+        
         this.attachChild(model);
 
-        generateMoveList();
+        if(inputManager != null){
+            generateMoveList();
+        }
     }
 
     // Called from main App's SimpleUpdate
     public void simpleUpdate(float tpf) {
-        time += tpf;
-        if(fighterState != currentAction.midAir){
-            walkDirection.set(0f, 0f, 0f);
-        }
-        
-        if (fighterState == currentAction.moving || fighterState == currentAction.idle) {
-            if (forward) {
-                walkDirection.addLocal(new Vector3f(0, 0, (facingRight) ? 1 : -1).mult(movementSpeed));
-                //setAnimation("");
-            } else if (backward) {
-                walkDirection.addLocal(new Vector3f(0, 0, (facingRight) ? -1 : 1).mult(movementSpeed));
-                //setAnimation("");
-            } else {
-                setAnimation("base_stand", 0.5f, true);
+        if (isPlayerControlled) {
+            time += tpf;
+            if (fighterState != currentAction.midAir) {
+                walkDirection.set(0f, 0f, 0f);
             }
-        }
-        
-        checkForCombos(time, tpf);
 
-        checkFighterState();
-        physicsController.setWalkDirection(walkDirection);
+            if (fighterState == currentAction.moving || fighterState == currentAction.idle) {
+                if (forward) {
+                    walkDirection.addLocal(new Vector3f(0, 0, (facingRight) ? 1 : -1).mult(movementSpeed));
+                    //setAnimation("");
+                } else if (backward) {
+                    walkDirection.addLocal(new Vector3f(0, 0, (facingRight) ? -1 : 1).mult(movementSpeed));
+                    //setAnimation("");
+                } else {
+                    setAnimation("base_stand", 0.5f, true);
+                }
+            }
+
+            checkForCombos(time, tpf);
+
+            checkFighterState();
+            physicsController.setWalkDirection(walkDirection);
+        }
     }
 
     public void generateMoveList() {
@@ -195,6 +204,7 @@ public class FighterNode extends Node implements AnimEventListener, ActionListen
         upperCut = new ComboMove("Uppercut");
         punchBarrage = new ComboMove("Punch Barrage");
         timeStop = new ComboMove("Time Stop");
+        standToggle = new ComboMove("Stand On");
         
         lightAttack.setMoveType(moveTypeList.interruptable);
         mediumAttack.setMoveType(moveTypeList.interruptable);
@@ -202,12 +212,15 @@ public class FighterNode extends Node implements AnimEventListener, ActionListen
         upperCut.setMoveType(moveTypeList.uninterruptable);
         punchBarrage.setMoveType(moveTypeList.uninterruptable);
         timeStop.setMoveType(moveTypeList.uninterruptable);
-
+        standToggle.setMoveType(moveTypeList.uninterruptable);
+        
         lightAttack.press("Attack1").done();
         
         mediumAttack.press("Attack2").done();
         
         heavyAttack.press("Attack3").done();
+        
+        standToggle.press("AttackSpecial").done();
         
         punchBarrage.press("Down").notPress("Right").done();
         punchBarrage.press("Right", "Down").done();
@@ -232,6 +245,7 @@ public class FighterNode extends Node implements AnimEventListener, ActionListen
         lightAttackExec = new ComboMoveExecution(lightAttack);
         mediumAttackExec = new ComboMoveExecution(mediumAttack);
         heavyAttackExec = new ComboMoveExecution(heavyAttack);
+        standToggleExec = new ComboMoveExecution(standToggle);
         timeStopExec = new ComboMoveExecution(timeStop);
         punchBarrageExec = new ComboMoveExecution(punchBarrage);
         upperCutExec = new ComboMoveExecution(upperCut);
@@ -267,6 +281,8 @@ public class FighterNode extends Node implements AnimEventListener, ActionListen
 
         heavyAttackExec.updateExpiration(time);
         //lightAttackText.setText("Shuriken Exec: " + lightAttack.getDebugString());
+        
+        standToggleExec.updateExpiration(time);
 
         upperCutExec.updateExpiration(time);
         //lightAttackText.setText("Shuriken Exec: " + lightAttack.getDebugString());
@@ -382,6 +398,20 @@ public class FighterNode extends Node implements AnimEventListener, ActionListen
     public BetterCharacterControl getPhysicsControl(){
         return physicsController;
     }
+    
+    public void setStand(FighterNode stand){
+        // Shattering the bleak night;
+        // Hit by the blessed arrow,
+        // Mystic summoning.
+        //                      - Dio Brando, 1974
+        fighterStand = stand;
+        
+        // Remember to check for a Stand every time you set animations and states - downed/downedMidAir should hide the stand
+    }
+    
+    public FighterNode getStand(){
+        return fighterStand;
+    }
 
     @Override
     public void onAction(String binding, boolean value, float tpf) {
@@ -417,9 +447,18 @@ public class FighterNode extends Node implements AnimEventListener, ActionListen
                 fighterState = currentAction.doingUninterruptableAttack;
                 setAnimation("base_HPunch", 0.15f, false);
             }
+            
+            if(standToggleExec.updateState(pressedMappings, time)){
+                invokedMoves.add(standToggle);
+                getStand().enabled = !getStand().enabled;
+                //Trigger StandAnim
+                //Trigger Anim
+            }
 
             if (punchBarrageExec.updateState(pressedMappings, time)) {
                 invokedMoves.add(punchBarrage);
+                // Trigger Pose
+                // Trigger Stand Barrage
             }
 
             if (upperCutExec.updateState(pressedMappings, time)) {
