@@ -1,0 +1,47 @@
+<scene previous_export_time="1481917338.103701" exported_by="Alex SSD" formatVersion="1.0.1" export_time="1486580836.1178584" >
+  <nodes >
+    <node name="Camera" >
+      <position y="0.971266" x="-3.376798" z="0.000000" />
+      <rotation qx="0.500000" qz="0.500000" qw="0.500000" qy="-0.500000" />
+      <scale y="0.301174" x="0.301174" z="0.301174" />
+      <game >
+        <sensors />
+        <actuators />
+      </game>
+      <camera fov="0.6605947096585073" projectionType="perspective" name="Camera" >
+        <clipping near="0.10000000149011612" nearPlaneDist="0.10000000149011612" far="100.0" farPlaneDist="100.0" />
+      </camera>
+    </node>
+    <node name="Armature" >
+      <position y="0.000000" x="0.000000" z="-0.000000" />
+      <rotation qx="0.000000" qz="-0.000000" qw="1.000000" qy="0.000000" />
+      <scale y="1.000000" x="1.000000" z="1.000000" />
+      <user_data value='&lt;bpy id prop: owner="OBArmature", name="vs", address=0x000000000C001818&gt;' type="IDPropertyGroup" name="vs" />
+      <game >
+        <sensors />
+        <actuators />
+      </game>
+      <node name="BaseMesh_01" >
+        <position y="0.000000" x="0.000000" z="-0.000000" />
+        <rotation qx="0.000000" qz="-0.000000" qw="1.000000" qy="0.000000" />
+        <scale y="1.000000" x="1.000000" z="1.000000" />
+        <user_data value='&lt;bpy id prop: owner="OBBaseMesh_01", name="vs", address=0x000000000BFEB6D8&gt;' type="IDPropertyGroup" name="vs" />
+        <game >
+          <sensors />
+          <actuators />
+        </game>
+        <entity physics_type="STATIC" actor="False" friction_z="1.0" lock_trans_x="False" lock_trans_z="False" velocity_min="0.0" ghost="False" damping_trans="0.03999999910593033" meshFile="BaseMesh_01.mesh" lock_rot_x="False" inertia_tensor="0.4000000059604645" friction_x="1.0" velocity_max="0.0" mass_radius="1.0" mass="1.0" damping_rot="0.10000000149011612" anisotropic_friction="False" lock_trans_y="False" lock_rot_z="False" name="BaseMesh_01" friction_y="1.0" lock_rot_y="False" />
+      </node>
+    </node>
+  </nodes>
+  <externals >
+    <item type="material" >
+      <file name="C:\Users\Alex SSD\Desktop\WIP Models\BaseMesh_01.material" />
+    </item>
+  </externals>
+  <environment >
+    <colourAmbient r="0.0" b="0.0" g="0.0" />
+    <colourDiffuse r="0.05656290054321289" b="0.4000000059604645" g="0.22081542015075684" />
+    <colourBackground r="0.05656290054321289" b="0.4000000059604645" g="0.22081542015075684" />
+  </environment>
+</scene>

@@ -83,7 +83,7 @@ public class TestCharacter extends SimpleApplication implements /*AnimEventListe
     private BitmapText fighterStateText;
     
     private FighterNode playerNode;
-    private FighterNode standNode;
+    private StandNode standNode;
     
     public static void main(String[] args) {
         TestCharacter app = new TestCharacter();
@@ -159,11 +159,11 @@ public class TestCharacter extends SimpleApplication implements /*AnimEventListe
         Spatial standModel = assetManager.loadModel("/Blender/2.5x/export/BaseMesh_01.mesh.xml");
         Material standMaterial = new Material(getAssetManager(), "Common/MatDefs/Light/Lighting.j3md");
         fighterModel.setMaterial(standMaterial);
-        standNode = new FighterNode("Stand", false, standModel, null);
+        standNode = new StandNode("Stand", standModel, playerNode);
        
         playerNode.attachChild(standNode);
         playerNode.setStand(standNode);
-        standNode.setLocalTranslation(new Vector3f(0,0.2f,-0.2f));
+        standNode.setLocalTranslation(new Vector3f(0.35f,0.2f,-0.2f));
         
         
         //######################################################################

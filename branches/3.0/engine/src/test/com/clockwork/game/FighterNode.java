@@ -32,7 +32,7 @@ public class FighterNode extends Node implements AnimEventListener, ActionListen
      */
     protected boolean isPlayerControlled;
 
-    protected enum currentAction {
+    public enum currentAction {
         idle, // Standing still
         moving, // Moving left/right
         crouched, // Crouched on ground
@@ -114,7 +114,7 @@ public class FighterNode extends Node implements AnimEventListener, ActionListen
     private ComboMove currentMove = null;
     private float currentMoveCastTime = 0;
     
-    private FighterNode fighterStand = null;
+    private StandNode fighterStand = null;
     private boolean enabled = true;
 
     public FighterNode(String name, boolean isPlayerControlled, Spatial model, InputManager inputManager) {
@@ -399,7 +399,7 @@ public class FighterNode extends Node implements AnimEventListener, ActionListen
         return physicsController;
     }
     
-    public void setStand(FighterNode stand){
+    public void setStand(StandNode stand){
         // Shattering the bleak night;
         // Hit by the blessed arrow,
         // Mystic summoning.
@@ -425,40 +425,41 @@ public class FighterNode extends Node implements AnimEventListener, ActionListen
         // The pressed mappings were changed. Update the combo executions.
         java.util.List<ComboMove> invokedMoves = new ArrayList<ComboMove>();
 
-        if (fighterState != currentAction.doingUninterruptableAttack
-                && fighterState != currentAction.downed
+        if (fighterState != currentAction.downed
                 && fighterState != currentAction.downedMidAir
                 && fighterState != currentAction.staggered) {
 
-            if (lightAttackExec.updateState(pressedMappings, time)) {
-                invokedMoves.add(lightAttack);
-                fighterState = currentAction.doingInterruptableAttack;
-                setAnimation("base_LPunch", 0.05f, false);
-            }
+            if (fighterState != currentAction.doingUninterruptableAttack) {
+                if (lightAttackExec.updateState(pressedMappings, time)) {
+                    invokedMoves.add(lightAttack);
+                    fighterState = currentAction.doingInterruptableAttack;
+                    setAnimation("base_LPunch", 0.05f, false);
+                }
 
-            if (mediumAttackExec.updateState(pressedMappings, time)) {
-                invokedMoves.add(mediumAttack);
-                fighterState = currentAction.doingInterruptableAttack;
-                setAnimation("base_MPunch", 0.15f, false);
-            }
+                if (mediumAttackExec.updateState(pressedMappings, time)) {
+                    invokedMoves.add(mediumAttack);
+                    fighterState = currentAction.doingInterruptableAttack;
+                    setAnimation("base_MPunch", 0.15f, false);
+                }
 
-            if (heavyAttackExec.updateState(pressedMappings, time)) {
-                invokedMoves.add(heavyAttack);
-                fighterState = currentAction.doingUninterruptableAttack;
-                setAnimation("base_HPunch", 0.15f, false);
-            }
-            
-            if(standToggleExec.updateState(pressedMappings, time)){
-                invokedMoves.add(standToggle);
-                getStand().enabled = !getStand().enabled;
-                //Trigger StandAnim
-                //Trigger Anim
+                if (heavyAttackExec.updateState(pressedMappings, time)) {
+                    invokedMoves.add(heavyAttack);
+                    fighterState = currentAction.doingUninterruptableAttack;
+                    setAnimation("base_HPunch", 0.15f, false);
+                }
+
+                if (standToggleExec.updateState(pressedMappings, time)) {
+                    invokedMoves.add(standToggle);
+                    getStand().enabled = !getStand().enabled;
+                    //Trigger StandAnim
+                    //Trigger Anim
+                }
             }
 
             if (punchBarrageExec.updateState(pressedMappings, time)) {
                 invokedMoves.add(punchBarrage);
-                // Trigger Pose
-                // Trigger Stand Barrage
+                setAnimation("base_pose", 0.05f, false);
+                getStand().setAnimation("ghost_barrage", 0.05f, false);
             }
 
             if (upperCutExec.updateState(pressedMappings, time)) {
@@ -498,9 +499,14 @@ public class FighterNode extends Node implements AnimEventListener, ActionListen
                 } else {
                     backward = false;
                 }
-            } else if (binding.equals("Up")) {
+            } else if (binding.equals("Up") && fighterState != currentAction.doingInterruptableAttack) {
                 physicsController.jump();
             }
+        }
+        else{
+            // Don't move if downed, staggered, attacking etc.
+            forward = false;
+            backward = false;
         }
     }
     
@@ -520,6 +526,9 @@ public class FighterNode extends Node implements AnimEventListener, ActionListen
 
     @Override
     public void onAnimCycleDone(AnimControl control, AnimChannel channel, String animName) {
+        if(animChannel.getAnimationName().equals("base_pose")){
+            return;
+        }
         if(animChannel.getLoopMode() == LoopMode.DontLoop){
             fighterState = currentAction.idle;
             if(forward){
@@ -533,7 +542,7 @@ public class FighterNode extends Node implements AnimEventListener, ActionListen
             }
         }
     }
-
+    
     @Override
     public void onAnimChange(AnimControl control, AnimChannel channel, String animName) {
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
