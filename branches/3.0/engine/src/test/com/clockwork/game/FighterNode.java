@@ -62,7 +62,7 @@ public class FighterNode extends Node implements AnimEventListener, ActionListen
 
     // Base versions of movement values - cannot be edited.
     // To actively and temporarily change a fighter's speed, use the next set of variables. *
-    private final float movementSpeedBase = 3.0f;
+    private final float movementSpeedBase = 1.0f;
     private final float jumpForceBase = 10.0f;
     // * These are referenced directly when moving/jumping etc.
     // Modify these to temporarily change the player's speed.
@@ -170,10 +170,10 @@ public class FighterNode extends Node implements AnimEventListener, ActionListen
             if (fighterState == currentAction.moving || fighterState == currentAction.idle) {
                 if (forward) {
                     walkDirection.addLocal(new Vector3f(0, 0, (facingRight) ? 1 : -1).mult(movementSpeed));
-                    //setAnimation("");
+                    setAnimation("base_walkforward", 0.5f, true);
                 } else if (backward) {
                     walkDirection.addLocal(new Vector3f(0, 0, (facingRight) ? -1 : 1).mult(movementSpeed));
-                    //setAnimation("");
+                    setAnimation("base_walkforward", 0.5f, true);
                 } else {
                     setAnimation("base_stand", 0.5f, true);
                 }
