@@ -11,7 +11,7 @@ import java.io.IOException;
 /**
  * represents a mapping between 2 ShaderNodeVariables
  *
- * @author Nehon
+ * 
  */
 public class VariableMapping implements Savable {
 

@@ -12,7 +12,7 @@ import java.util.List;
  * This shader Generator can generate Vertex and Fragment shaders from
  * shadernodes for GLSL 1.0
  *
- * @author Nehon
+ * 
  */
 public class Glsl100ShaderGenerator extends ShaderGenerator {
 

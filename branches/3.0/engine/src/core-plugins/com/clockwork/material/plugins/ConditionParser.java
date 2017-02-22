@@ -13,7 +13,7 @@ import java.util.regex.Pattern;
  * extractDefines is able to get a list of defines in an expression and update
  * the formatter expression with upercased defines
  *
- * @author Nehon
+ * 
  */
 public class ConditionParser {
 

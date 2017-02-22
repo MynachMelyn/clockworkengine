@@ -22,7 +22,7 @@ import java.util.logging.Logger;
 /**
  * This modifier allows to add particles to the object.
  * 
- * @author Marcin Roguski (Kaelthas)
+ * 
  */
 /* package */class ParticlesModifier extends Modifier {
     private static final Logger LOGGER = Logger.getLogger(MirrorModifier.class.getName());

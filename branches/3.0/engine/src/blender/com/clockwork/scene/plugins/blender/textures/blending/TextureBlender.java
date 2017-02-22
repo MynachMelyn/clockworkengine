@@ -7,7 +7,7 @@ import com.clockwork.texture.Image;
  * An interface for texture blending classes (the classes that mix the texture
  * pixels with the material colors).
  * 
- * @author Marcin Roguski (Kaelthas)
+ * 
  */
 public interface TextureBlender {
     // types of blending

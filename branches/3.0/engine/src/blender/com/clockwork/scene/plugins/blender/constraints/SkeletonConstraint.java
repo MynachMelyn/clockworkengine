@@ -13,7 +13,7 @@ import com.clockwork.scene.plugins.blender.file.Structure;
  * skeleton movement is not supported by jme so the constraint will never be
  * applied.
  * 
- * @author Marcin Roguski (Kaelthas)
+ * 
  */
 /* package */class SkeletonConstraint extends Constraint {
     private static final Logger LOGGER = Logger.getLogger(SkeletonConstraint.class.getName());

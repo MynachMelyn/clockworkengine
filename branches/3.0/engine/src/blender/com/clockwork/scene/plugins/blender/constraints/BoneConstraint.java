@@ -16,7 +16,7 @@ import com.clockwork.scene.plugins.blender.file.Structure;
 /**
  * Constraint applied on the bone.
  * 
- * @author Marcin Roguski (Kaelthas)
+ * 
  */
 /* package */class BoneConstraint extends Constraint {
     private static final Logger LOGGER = Logger.getLogger(BoneConstraint.class.getName());

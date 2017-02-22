@@ -7,7 +7,7 @@ import com.clockwork.math.Transform;
  * supported by either importer ot jme. It only wirtes down a warning when
  * baking is called.
  * 
- * @author Marcin Roguski (Kaelthas)
+ * 
  */
 /* package */class UnsupportedConstraintDefinition extends ConstraintDefinition {
     private String typeName;

@@ -14,7 +14,7 @@ import java.util.logging.Logger;
  * islands, rock is deposited via lava, when the lava cools, it recedes
  * into the volcano, creating the caldera.
  *
- * @author Mark Powell
+ * 
  * @version $Id$
  */
 public class ParticleDepositionHeightMap extends AbstractHeightMap {

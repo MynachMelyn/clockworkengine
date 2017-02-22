@@ -33,7 +33,7 @@ import java.nio.ShortBuffer;
  * the strip to a new position while still maintaining the continuity of the overall mesh. These
  * degenerates are removed quickly by the video card.
  *
- * @author Brent Owens
+ * 
  */
 public class LODGeomap extends GeoMap {
 

@@ -25,7 +25,7 @@
  * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  * 
- * @author Anthyon
+ * 
  */
 package com.clockwork.terrain.noise;
 
@@ -42,7 +42,7 @@ import java.nio.ByteOrder;
  * Helper class containing useful functions explained in the book:
  * Texturing & Modeling - A Procedural Approach
  * 
- * @author Anthyon
+ * 
  * 
  */
 public class ShaderUtils {

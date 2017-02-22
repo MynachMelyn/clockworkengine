@@ -6,7 +6,7 @@ import com.clockwork.math.FastMath;
 /**
  * The class that stores the pixel values of a texture.
  * 
- * @author Marcin Roguski (Kaelthas)
+ * 
  */
 public class TexturePixel implements Cloneable {
     /** The pixel data. */

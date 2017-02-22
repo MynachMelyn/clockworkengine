@@ -6,7 +6,7 @@ import com.clockwork.texture.Image.Format;
 /**
  * The data that helps in bytes calculations for the result image.
  * 
- * @author Marcin Roguski (Kaelthas)
+ * 
  */
 /* package */class DDSTexelData {
     /** The colors of the texes. */

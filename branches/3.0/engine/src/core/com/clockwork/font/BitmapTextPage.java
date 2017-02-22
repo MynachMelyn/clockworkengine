@@ -15,7 +15,7 @@ import java.util.LinkedList;
 
 /**
  * One page per BitmapText Font Texture.
- * @author Lim, YongHoon
+ * 
  */
 class BitmapTextPage extends Geometry {
 

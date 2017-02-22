@@ -21,7 +21,7 @@ import com.clockwork.ui.Picture;
  * BasicShadowRenderer uses standard shadow mapping with one map
  * it's useful to render shadows in a small scene, but edges might look a bit jagged.
  * 
- * @author Kirill Vainer
+ * 
  * @deprecated use {@link DirectionalLightShadowRenderer} with one split.
  */
 @Deprecated

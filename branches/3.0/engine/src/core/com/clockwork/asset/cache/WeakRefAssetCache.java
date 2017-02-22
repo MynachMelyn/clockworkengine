@@ -19,7 +19,7 @@ import java.util.logging.Logger;
  * once the asset is no longer referenced in user code and memory is low,
  * e.g. the VM feels like purging the weak references for that asset.
  * 
- * @author Kirill Vainer
+ * 
  */
 public class WeakRefAssetCache implements AssetCache {
 

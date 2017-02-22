@@ -23,7 +23,7 @@ import com.clockwork.scene.plugins.blender.file.Structure;
  * This class defines the methods to calculate certain aspects of animation and
  * armature functionalities.
  * 
- * @author Marcin Roguski (Kaelthas)
+ * 
  */
 public class ArmatureHelper extends AbstractBlenderHelper {
     private static final Logger LOGGER               = Logger.getLogger(ArmatureHelper.class.getName());

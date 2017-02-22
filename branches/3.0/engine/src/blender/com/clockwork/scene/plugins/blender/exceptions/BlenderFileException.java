@@ -3,7 +3,7 @@ package com.clockwork.scene.plugins.blender.exceptions;
 
 /**
  * This exception is thrown when blend file data is somehow invalid.
- * @author Marcin Roguski
+ * 
  */
 public class BlenderFileException extends Exception {
 

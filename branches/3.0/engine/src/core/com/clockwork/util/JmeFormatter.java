@@ -30,19 +30,21 @@ public class JmeFormatter extends Formatter {
     public String format(LogRecord record) {
         StringBuilder sb = new StringBuilder();
 
+        // Get the current time and log it
         calendar.setTime(record.getMillis());
         args[0] = calendar;
         store.setLength(0);
         format.format(args, store, null);
 
-        String clazz = null;
+        String classStr = null;
         try{
-            clazz = Class.forName(record.getSourceClassName()).getSimpleName();
+            classStr = Class.forName(record.getSourceClassName()).getSimpleName();
         } catch (ClassNotFoundException ex){
+            // Simply trigger the exception in the compiler - no response needed.
         }
         
         sb.append(record.getLevel().getLocalizedName()).append(" ");
-        sb.append(clazz).append(" ");
+        sb.append(classStr).append(" ");
         sb.append(store.toString()).append(" ");
         sb.append(formatMessage(record)).append(lineSeperator);
 
@@ -54,6 +56,7 @@ public class JmeFormatter extends Formatter {
                 pw.close();
                 sb.append(sw.toString());
             } catch (Exception ex) {
+            
             }
         }
 

@@ -10,7 +10,7 @@ import java.util.logging.Logger;
  * Creates an heightmap based on the fault algorithm. Each iteration, a random line
  * crossing the map is generated. On one side height values are raised, on the other side
  * lowered.
- * @author cghislai
+ * 
  */
 public class FaultHeightMap extends AbstractHeightMap {
 

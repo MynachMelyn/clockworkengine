@@ -18,7 +18,7 @@ import com.clockwork.util.BufferUtils;
 /**
  * A builder class for meshes.
  * 
- * @author Marcin Roguski (Kaelthas)
+ * 
  */
 /* package */class MeshBuilder {
     private static final Logger                       LOGGER           = Logger.getLogger(MeshBuilder.class.getName());

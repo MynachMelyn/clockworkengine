@@ -16,8 +16,8 @@ import java.io.IOException;
  * a point is within the segment bounds.</p>
  *
  * @see Ray
- * @author Mark Powell
- * @author Joshua Slack
+ * 
+ * 
  */
 public class LineSegment implements Cloneable, Savable, java.io.Serializable {
 

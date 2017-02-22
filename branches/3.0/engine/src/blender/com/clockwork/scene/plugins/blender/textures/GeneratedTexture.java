@@ -22,7 +22,7 @@ import java.util.TreeSet;
  * after being read. This class rather stores all required data and can compute
  * a pixel in the required 3D space position.
  * 
- * @author Marcin Roguski (Kaelthas)
+ * 
  */
 /* package */class GeneratedTexture extends Texture {
     // flag values
@@ -141,7 +141,7 @@ import java.util.TreeSet;
     /**
      * Private class to give the format of the 'virtual' 3D texture image.
      * 
-     * @author Marcin Roguski (Kaelthas)
+     * 
      */
     private static class GeneratedTextureImage extends Image {
         public GeneratedTextureImage(Format imageFormat) {

@@ -11,7 +11,7 @@ import com.clockwork.scene.plugins.blender.file.Structure;
  * name. For example "ArmatureModifierData" type specified in blender is
  * represented by AnimData object from engine.
  * 
- * @author Marcin Roguski (Kaelthas)
+ * 
  */
 public abstract class Modifier {
     public static final String ARRAY_MODIFIER_DATA            = "ArrayModifierData";

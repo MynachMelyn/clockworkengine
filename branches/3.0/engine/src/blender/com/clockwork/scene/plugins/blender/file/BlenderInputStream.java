@@ -12,7 +12,7 @@ import com.clockwork.scene.plugins.blender.exceptions.BlenderFileException;
 
 /**
  * An input stream with random access to data.
- * @author Marcin Roguski
+ * 
  */
 public class BlenderInputStream extends InputStream {
 

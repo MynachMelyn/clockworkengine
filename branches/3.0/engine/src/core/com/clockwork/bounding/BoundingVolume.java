@@ -13,7 +13,7 @@ import java.nio.FloatBuffer;
  * <code>BoundingVolume</code> defines an interface for dealing with
  * containment of a collection of points.
  * 
- * @author Mark Powell
+ * 
  * @version $Id: BoundingVolume.java,v 1.24 2007/09/21 15:45:32 nca Exp $
  */
 public abstract class BoundingVolume implements Savable, Cloneable, Collidable {

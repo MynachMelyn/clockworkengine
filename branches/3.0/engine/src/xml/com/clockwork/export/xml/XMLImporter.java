@@ -15,9 +15,6 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import org.xml.sax.SAXException;
 
-/**
- * Part of the jME XML IO system as introduced in the google code jmexml project.
- */
 public class XMLImporter implements JmeImporter {
 
     private AssetManager assetManager;

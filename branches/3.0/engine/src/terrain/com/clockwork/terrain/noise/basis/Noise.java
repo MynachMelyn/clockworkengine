@@ -25,7 +25,7 @@
  * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  * 
- * @author Anthyon
+ * 
  */
 package com.clockwork.terrain.noise.basis;
 
@@ -39,7 +39,7 @@ import java.util.List;
 /**
  * Utility base class for Noise implementations
  * 
- * @author Anthyon
+ * 
  * 
  */
 public abstract class Noise implements Basis {

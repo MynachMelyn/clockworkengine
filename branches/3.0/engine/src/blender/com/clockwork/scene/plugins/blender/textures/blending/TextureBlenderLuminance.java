@@ -15,7 +15,7 @@ import java.util.logging.Logger;
 
 /**
  * The class that is responsible for blending the following texture types: <li>Luminance8 <li>Luminance8Alpha8 Not yet supported (but will be): <li>Luminance16: <li>Luminance16Alpha16: <li>Luminance16F: <li>Luminance16FAlpha16F: <li>Luminance32F:
- * @author Marcin Roguski (Kaelthas)
+ * 
  */
 public class TextureBlenderLuminance extends AbstractTextureBlender {
     private static final Logger LOGGER = Logger.getLogger(TextureBlenderLuminance.class.getName());

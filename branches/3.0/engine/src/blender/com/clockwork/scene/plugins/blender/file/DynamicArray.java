@@ -5,7 +5,7 @@ import com.clockwork.scene.plugins.blender.exceptions.BlenderFileException;
 
 /**
  * An array that can be dynamically modified/
- * @author Marcin Roguski
+ * 
  * @param <T>
  *            the type of stored data in the array
  */

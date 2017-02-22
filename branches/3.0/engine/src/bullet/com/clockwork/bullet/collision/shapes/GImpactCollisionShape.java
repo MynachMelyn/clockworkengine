@@ -18,7 +18,7 @@ import java.util.logging.Logger;
 
 /**
  * Basic mesh collision shape
- * @author normenhansen
+ * 
  */
 public class GImpactCollisionShape extends CollisionShape {
 

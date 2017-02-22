@@ -8,7 +8,7 @@ import com.clockwork.scene.plugins.blender.file.Structure;
 /**
  * A base class for all constraint definitions.
  * 
- * @author Marcin Roguski (Kaelthas)
+ * 
  */
 public abstract class ConstraintDefinition {
     /** Constraints flag. Used to load user's options applied to the constraint. */

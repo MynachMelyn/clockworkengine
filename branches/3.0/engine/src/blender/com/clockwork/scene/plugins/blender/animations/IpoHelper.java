@@ -18,7 +18,7 @@ import java.util.logging.Logger;
  * like animation or constraint influence. The curves are 3rd degree bezier
  * curves.
  * 
- * @author Marcin Roguski
+ * 
  */
 public class IpoHelper extends AbstractBlenderHelper {
     private static final Logger LOGGER = Logger.getLogger(IpoHelper.class.getName());
@@ -161,7 +161,7 @@ public class IpoHelper extends AbstractBlenderHelper {
      * type. This type of ipo cannot be used to calculate tracks. It should only
      * be used to calculate single value for a given frame.
      * 
-     * @author Marcin Roguski
+     * 
      */
     private class ConstIpo extends Ipo {
 

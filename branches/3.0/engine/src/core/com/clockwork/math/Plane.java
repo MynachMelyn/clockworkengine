@@ -11,8 +11,8 @@ import java.util.logging.Logger;
  * plane. The distance is pseudo due to the fact that it can be negative if the
  * point is on the non-normal side of the plane.
  * 
- * @author Mark Powell
- * @author Joshua Slack
+ * 
+ * 
  */
 public class Plane implements Savable, Cloneable, java.io.Serializable {
 

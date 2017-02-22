@@ -19,7 +19,7 @@ import java.util.logging.Logger;
 
 /**
  * A class that is used in light calculations.
- * @author Marcin Roguski
+ * 
  */
 public class LightHelper extends AbstractBlenderHelper {
 

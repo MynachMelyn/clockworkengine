@@ -15,7 +15,7 @@ import com.clockwork.scene.plugins.blender.file.Structure;
 /**
  * The implementation of a constraint.
  * 
- * @author Marcin Roguski (Kaelthas)
+ * 
  */
 public abstract class Constraint {
     private static final Logger          LOGGER = Logger.getLogger(Constraint.class.getName());

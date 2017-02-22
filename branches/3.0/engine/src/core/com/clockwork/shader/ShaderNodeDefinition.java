@@ -16,7 +16,7 @@ import java.util.List;
  * Shader node definition structure meant for holding loaded datat from a
  * material definition j3md file
  *
- * @author Nehon
+ * 
  */
 public class ShaderNodeDefinition implements Savable {
 

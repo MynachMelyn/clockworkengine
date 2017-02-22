@@ -44,7 +44,7 @@ import com.clockwork.util.BufferUtils;
 /**
  * A class that is used in mesh calculations.
  * 
- * @author Marcin Roguski (Kaelthas)
+ * 
  */
 public class CurvesHelper extends AbstractBlenderHelper {
     private static final Logger LOGGER                      = Logger.getLogger(CurvesHelper.class.getName());

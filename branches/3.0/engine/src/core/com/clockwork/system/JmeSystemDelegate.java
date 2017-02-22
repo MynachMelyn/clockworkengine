@@ -19,7 +19,7 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author Kirill Vainer, normenhansen
+ * 
  */
 public abstract class JmeSystemDelegate {
 

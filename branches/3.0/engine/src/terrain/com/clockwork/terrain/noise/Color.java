@@ -25,14 +25,14 @@
  * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  * 
- * @author Anthyon
+ * 
  */
 package com.clockwork.terrain.noise;
 
 /**
  * Helper class for working with colors and gradients
  * 
- * @author Anthyon
+ * 
  * 
  */
 public class Color {

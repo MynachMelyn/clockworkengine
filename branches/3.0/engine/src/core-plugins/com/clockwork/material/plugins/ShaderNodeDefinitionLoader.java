@@ -19,7 +19,7 @@ import java.util.List;
  * ShaderNodeDefinition{} block that contains several ShaderNodeDefinition{}
  * blocks
  *
- * @author Nehon
+ * 
  */
 public class ShaderNodeDefinitionLoader implements AssetLoader {
 

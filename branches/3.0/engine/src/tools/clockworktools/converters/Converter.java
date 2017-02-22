@@ -1,5 +1,3 @@
-
-
 package clockworktools.converters;
 
 import java.util.Map;

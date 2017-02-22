@@ -38,7 +38,7 @@ import java.util.logging.Logger;
  * shader.
  * <p/>
  * 
- * @author Kirill Vainer
+ * 
  */
 public class Material implements CloneableSmartAsset, Cloneable, Savable {
 

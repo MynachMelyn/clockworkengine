@@ -21,7 +21,7 @@ import java.util.logging.Logger;
  * extended by other classes to add features that were introducted after
  * Android rev 9.
  * 
- * @author iwgeric
+ * 
  */
 public class IosTouchHandler {
     private static final Logger logger = Logger.getLogger(IosTouchHandler.class.getName());

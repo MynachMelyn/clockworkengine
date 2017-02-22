@@ -8,7 +8,7 @@ import clockworktools.converters.RGB565;
 
 /**
  * Implemens read/write operations for AWT images.
- * @author Marcin Roguski (Kaelthas)
+ * 
  */
 /* package */class AWTPixelInputOutput implements PixelInputOutput {
     public void read(Image image, int layer, TexturePixel pixel, int index) {

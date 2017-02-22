@@ -9,7 +9,7 @@ import com.clockwork.scene.plugins.blender.file.Structure;
 /**
  * This class represents 'Dist limit' constraint type in blender.
  * 
- * @author Marcin Roguski (Kaelthas)
+ * 
  */
 /* package */class ConstraintDefinitionDistLimit extends ConstraintDefinition {
     private static final int LIMITDIST_INSIDE    = 0;

@@ -9,7 +9,7 @@ import com.clockwork.math.ColorRGBA;
  * Defines a String that is to be drawn in one block that can be constrained by a {@link Rectangle}. Also holds
  * formatting information for the StringBlock
  *
- * @author dhdd
+ * 
  */
 class StringBlock implements Cloneable {
 

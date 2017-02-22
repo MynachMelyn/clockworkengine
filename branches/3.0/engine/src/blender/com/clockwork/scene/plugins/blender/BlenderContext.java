@@ -31,7 +31,7 @@ import com.clockwork.scene.plugins.blender.meshes.MeshContext;
  * file. This class is intended to be used in a single loading thread. It holds
  * the state of loading operations.
  * 
- * @author Marcin Roguski (Kaelthas)
+ * 
  */
 public class BlenderContext {
     private static final Logger                 LOGGER                 = Logger.getLogger(BlenderContext.class.getName());
@@ -597,7 +597,7 @@ public class BlenderContext {
      * This enum defines what loaded data type user wants to retreive. It can be
      * either filled structure or already converted data.
      * 
-     * @author Marcin Roguski (Kaelthas)
+     * 
      */
     public static enum LoadedFeatureDataType {
 

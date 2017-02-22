@@ -20,7 +20,7 @@ import com.clockwork.scene.control.CameraControl.ControlDirection;
 
 /**
  * A walking physical character followed by a 3rd person camera. (No animation.)
- * @author normenhansen, zathras
+ * 
  */
 public class TestPhysicsCharacter extends SimpleApplication implements ActionListener {
 

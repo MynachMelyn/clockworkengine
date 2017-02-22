@@ -7,7 +7,7 @@ import java.util.Map;
 
 /**
  * Object is indexed and stored in primitive float[]
- * @author Lim, YongHoon
+ * 
  * @param <T>
  */
 public abstract class CompactArray<T> {

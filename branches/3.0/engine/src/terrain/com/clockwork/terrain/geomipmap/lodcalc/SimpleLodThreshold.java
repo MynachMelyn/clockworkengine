@@ -16,7 +16,7 @@ import java.io.IOException;
  * 
  * Set it higher to have the LOD change less frequently.
  * 
- * @author bowens
+ * 
  */
 public class SimpleLodThreshold implements LodThreshold {
 	

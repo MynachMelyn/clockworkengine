@@ -16,7 +16,7 @@ import com.clockwork.scene.plugins.blender.objects.Properties;
 /**
  * A purpose of the helper class is to split calculation code into several classes. Each helper after use should be cleared because it can
  * hold the state of the calculations.
- * @author Marcin Roguski
+ * 
  */
 public abstract class AbstractBlenderHelper {
     /** The blender context. */

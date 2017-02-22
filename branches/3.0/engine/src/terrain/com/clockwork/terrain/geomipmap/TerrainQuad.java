@@ -73,7 +73,7 @@ import java.util.logging.Logger;
  *  +---------> +z
  * (world coordinates)
  * </pre>
- * @author Brent Owens
+ * 
  */
 public class TerrainQuad extends Node implements Terrain {
     protected Vector2f offset;

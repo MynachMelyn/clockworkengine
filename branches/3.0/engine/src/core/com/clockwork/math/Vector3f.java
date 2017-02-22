@@ -16,8 +16,8 @@ import java.util.logging.Logger;
  * vertex, a normal, etc. Utility methods are also included to aid in
  * mathematical calculations.
  *
- * @author Mark Powell
- * @author Joshua Slack
+ * 
+ * 
  */
 public final class Vector3f implements Savable, Cloneable, java.io.Serializable {
 

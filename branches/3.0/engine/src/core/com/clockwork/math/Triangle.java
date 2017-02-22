@@ -11,8 +11,8 @@ import java.io.IOException;
  * The triangle is defined by a collection of three {@link Vector3f}
  * objects.
  * 
- * @author Mark Powell
- * @author Joshua Slack
+ * 
+ * 
  */
 public class Triangle extends AbstractTriangle implements Savable, java.io.Serializable {
 

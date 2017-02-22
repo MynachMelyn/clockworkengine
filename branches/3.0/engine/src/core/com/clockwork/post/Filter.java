@@ -28,7 +28,7 @@ import java.util.List;
  * Any filter holds a frameBuffer and a texture<br>
  * The getMaterial must return a Material that use a GLSL shader immplementing the desired effect<br>
  *
- * @author Rémy Bouquet aka Nehon
+ * 
  */
 public abstract class Filter implements Savable {
 

@@ -17,7 +17,7 @@ import java.util.Map;
  * This class represents a surface described by knots, weights and control points.
  * Currently the following types are supported:
  * a) NURBS
- * @author Marcin Roguski (Kealthas)
+ * 
  */
 public class Surface extends Mesh {
 

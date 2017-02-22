@@ -47,7 +47,7 @@ import java.util.List;
  * in the near future. Right now it defaults to just changing LOD every two patch sizes. So if a patch has a size of 65, 
  * then the LOD changes every 130 units away.
  * 
- * @author Brent Owens
+ * 
  */
 public class TerrainPatch extends Geometry {
 

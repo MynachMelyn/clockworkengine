@@ -16,7 +16,7 @@ import java.util.List;
  * a given list of uniforms based on the current state
  * of the manager.
  * 
- * @author Kirill Vainer
+ * 
  */
 public class UniformBindingManager {
 

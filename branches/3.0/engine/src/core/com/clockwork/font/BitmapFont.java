@@ -7,7 +7,7 @@ import java.io.IOException;
 
 /**
  * Represents a font within jME that is generated with the AngelCode Bitmap Font Generator
- * @author dhdd
+ * 
  */
 public class BitmapFont implements Savable {
 
@@ -231,7 +231,7 @@ public class BitmapFont implements Savable {
      * Merge two fonts.
      * If two font have the same style, merge will fail.
      * @param newFont Style must be assigned to this.
-     * @author Yonghoon
+     * 
      */
     public void merge(BitmapFont newFont) {
         charSet.merge(newFont.charSet);

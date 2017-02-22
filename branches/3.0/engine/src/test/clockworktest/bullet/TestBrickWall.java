@@ -28,7 +28,7 @@ import com.clockwork.texture.Texture.WrapMode;
 
 /**
  *
- * @author double1984
+ * 
  */
 public class TestBrickWall extends SimpleApplication {
 

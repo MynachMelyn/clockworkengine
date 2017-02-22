@@ -16,7 +16,7 @@ import java.util.logging.Logger;
 
 /**
  * <code>AndroidInput</code> is one of the main components that connect jme with android. Is derived from GLSurfaceView and handles all Inputs
- * @author larynx
+ * 
  *
  */
 public class AndroidInput implements

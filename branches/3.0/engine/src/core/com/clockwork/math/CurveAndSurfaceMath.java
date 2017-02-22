@@ -6,7 +6,7 @@ import java.util.List;
 
 /**
  * This class offers methods to help with curves and surfaces calculations.
- * @author Marcin Roguski (Kealthas)
+ * 
  */
 public class CurveAndSurfaceMath {
 	private static final float KNOTS_MINIMUM_DELTA = 0.0001f;

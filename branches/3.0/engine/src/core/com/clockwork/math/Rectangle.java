@@ -11,8 +11,8 @@ import java.io.IOException;
  * that is specified via three points (A, B, C). These three points define a
  * triangle with the fourth point defining the rectangle ((B + C) - A.
  * 
- * @author Mark Powell
- * @author Joshua Slack
+ * 
+ * 
  */
 
 public final class Rectangle implements Savable, Cloneable, java.io.Serializable {

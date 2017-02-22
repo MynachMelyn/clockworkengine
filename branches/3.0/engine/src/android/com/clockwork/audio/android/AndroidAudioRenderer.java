@@ -6,7 +6,7 @@ import com.clockwork.audio.AudioRenderer;
  * Android specific AudioRenderer interface that supports pausing and resuming
  * audio files when the app is minimized or placed in the background
  *
- * @author iwgeric
+ * 
  */
 public interface AndroidAudioRenderer extends AudioRenderer {
 

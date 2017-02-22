@@ -46,7 +46,7 @@ import java.util.logging.Logger;
  * reductionMethod<p>
  *
  *
- * @author Nehon
+ * 
  */
 public class LodGenerator {
     

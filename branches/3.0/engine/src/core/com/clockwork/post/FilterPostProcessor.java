@@ -20,7 +20,7 @@ import java.util.List;
 /**
  * A FilterPostProcessor is a processor that can apply several {@link Filter}s to a rendered scene<br>
  * It manages a list of filters that will be applied in the order in which they've been added to the list
- * @author Rémy Bouquet aka Nehon
+ * 
  */
 public class FilterPostProcessor implements SceneProcessor, Savable {
 

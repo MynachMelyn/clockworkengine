@@ -14,7 +14,7 @@ import java.util.List;
  * it contains basis mechnaism of generation, but no actual generation code.
  * This class is abstract, any Shader generator must extend it.
  *
- * @author Nehon
+ * 
  */
 public abstract class ShaderGenerator {
 

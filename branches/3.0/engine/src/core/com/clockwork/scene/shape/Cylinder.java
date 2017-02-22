@@ -20,7 +20,7 @@ import java.nio.FloatBuffer;
  * A simple cylinder, defined by it's height and radius.
  * (Ported to jME3)
  *
- * @author Mark Powell
+ * 
  * @version $Revision: 4131 $, $Date: 2009-03-19 16:15:28 -0400 (Thu, 19 Mar 2009) $
  */
 public class Cylinder extends Mesh {

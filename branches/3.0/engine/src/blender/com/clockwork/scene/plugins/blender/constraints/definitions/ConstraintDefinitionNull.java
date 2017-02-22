@@ -7,7 +7,7 @@ import com.clockwork.scene.plugins.blender.file.Structure;
 /**
  * This class represents 'Null' constraint type in blender.
  * 
- * @author Marcin Roguski (Kaelthas)
+ * 
  */
 /* package */class ConstraintDefinitionNull extends ConstraintDefinition {
 

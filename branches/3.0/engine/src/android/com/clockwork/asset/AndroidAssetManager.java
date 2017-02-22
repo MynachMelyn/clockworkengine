@@ -16,7 +16,7 @@ import java.util.logging.Logger;
 /**
  * <code>AndroidAssetManager</code> is an implementation of DesktopAssetManager for Android
  *
- * @author larynx
+ * 
  */
 public class AndroidAssetManager extends DesktopAssetManager {
 

@@ -27,7 +27,7 @@ import java.util.logging.Logger;
 /**
  * This modifier allows to array modifier to the object.
  * 
- * @author Marcin Roguski (Kaelthas)
+ * 
  */
 /* package */class ArrayModifier extends Modifier {
     private static final Logger LOGGER       = Logger.getLogger(ArrayModifier.class.getName());

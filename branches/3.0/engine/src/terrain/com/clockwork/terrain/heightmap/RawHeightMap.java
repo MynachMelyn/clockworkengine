@@ -12,7 +12,7 @@ import java.util.logging.Logger;
  * greyscale image denotes height based on the value of the pixel for each
  * point. Where pure black the lowest point and pure white denotes the highest.
  *
- * @author Mark Powell
+ * 
  * @version $Id$
  */
 public class RawHeightMap extends AbstractHeightMap {

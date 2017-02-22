@@ -29,8 +29,8 @@ import java.util.logging.Logger;
  * transforms. All other scene graph elements, such as {@link Node} and
  * {@link Geometry} are subclasses of <code>Spatial</code>.
  *
- * @author Mark Powell
- * @author Joshua Slack
+ * 
+ * 
  * @version $Revision: 4075 $, $Data$
  */
 public abstract class Spatial implements Savable, Cloneable, Collidable, CloneableSmartAsset {

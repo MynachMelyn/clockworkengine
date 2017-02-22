@@ -24,7 +24,7 @@ import java.util.logging.Logger;
  * either <code>containAABB</code> or <code>averagePoints</code>. A call to
  * <code>computeFramePoint</code> in turn calls <code>containAABB</code>.
  *
- * @author Mark Powell
+ * 
  * @version $Id: BoundingSphere.java,v 1.59 2007/08/17 10:34:26 rherlitz Exp $
  */
 public class BoundingSphere extends BoundingVolume {

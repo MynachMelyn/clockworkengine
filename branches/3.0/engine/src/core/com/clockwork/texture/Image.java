@@ -18,8 +18,8 @@ import java.util.List;
  * height must be greater than 0. The data is contained in a byte buffer, and
  * should be packed before creation of the image object.
  *
- * @author Mark Powell
- * @author Joshua Slack
+ * 
+ * 
  * @version $Id: Image.java 4131 2009-03-19 20:15:28Z blaine.dev $
  */
 public class Image extends NativeObject implements Savable /*, Cloneable*/ {

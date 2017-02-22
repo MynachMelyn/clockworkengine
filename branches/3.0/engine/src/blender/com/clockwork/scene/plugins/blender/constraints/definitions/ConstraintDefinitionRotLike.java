@@ -8,7 +8,7 @@ import com.clockwork.scene.plugins.blender.file.Structure;
 /**
  * This class represents 'Rot like' constraint type in blender.
  * 
- * @author Marcin Roguski (Kaelthas)
+ * 
  */
 /* package */class ConstraintDefinitionRotLike extends ConstraintDefinition {
     private static final int  ROTLIKE_X        = 0x01;

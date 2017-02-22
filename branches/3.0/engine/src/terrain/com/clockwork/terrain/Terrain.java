@@ -14,7 +14,7 @@ import java.util.List;
  * useLOD(boolean).
  * Terrain implementations should extend Node, or at least Spatial.
  *
- * @author bowens
+ * 
  */
 public interface Terrain {
 

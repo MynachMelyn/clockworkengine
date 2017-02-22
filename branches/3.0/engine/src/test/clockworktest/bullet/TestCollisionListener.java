@@ -14,7 +14,7 @@ import com.clockwork.scene.shape.Sphere.TextureMode;
 
 /**
  *
- * @author normenhansen
+ * 
  */
 public class TestCollisionListener extends SimpleApplication implements PhysicsCollisionListener {
 

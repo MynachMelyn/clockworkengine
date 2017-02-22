@@ -7,7 +7,7 @@ import java.io.IOException;
 
 /**
  * Serialize and compress Vector3f[] by indexing same values
- * @author Lim, YongHoon
+ * 
  */
 public class CompactVector3Array extends CompactArray<Vector3f> implements Savable {
 

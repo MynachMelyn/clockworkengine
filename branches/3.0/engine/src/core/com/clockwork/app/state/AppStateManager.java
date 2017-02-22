@@ -30,7 +30,7 @@ import java.util.List;
  *                 terminating.  
  * </ul> 
  *
- * @author Kirill Vainer, Paul Speed
+ * 
  */
 public class AppStateManager {
 

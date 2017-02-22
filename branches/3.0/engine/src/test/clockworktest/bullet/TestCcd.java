@@ -24,7 +24,7 @@ import com.clockwork.scene.shape.Sphere.TextureMode;
 
 /**
  *
- * @author normenhansen
+ * 
  */
 public class TestCcd extends SimpleApplication implements ActionListener {
 

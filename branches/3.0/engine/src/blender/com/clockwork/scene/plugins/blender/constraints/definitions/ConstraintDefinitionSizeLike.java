@@ -8,7 +8,7 @@ import com.clockwork.scene.plugins.blender.file.Structure;
 /**
  * This class represents 'Size like' constraint type in blender.
  * 
- * @author Marcin Roguski (Kaelthas)
+ * 
  */
 /* package */class ConstraintDefinitionSizeLike extends ConstraintDefinition {
     private static final int SIZELIKE_X     = 0x01;

@@ -18,7 +18,7 @@ import java.util.logging.Logger;
  * when all clones of the original asset are collected, will cause the 
  * asset to be automatically removed from the cache.
  * 
-* @author Kirill Vainer
+* 
  */
 public class WeakRefCloneAssetCache implements AssetCache {
 

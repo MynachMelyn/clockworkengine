@@ -12,7 +12,7 @@ import java.io.IOException;
  * allow manipulation of rendering features such as depth testing, alpha blending,
  * face culling, stencil operations, and much more.
  *
- * @author Kirill Vainer
+ * 
  */
 public class RenderState implements Cloneable, Savable {
 

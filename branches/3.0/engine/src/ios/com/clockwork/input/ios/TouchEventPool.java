@@ -17,7 +17,7 @@ import java.util.logging.Logger;
  * If the pool is full of unconsumed events, then a new event is created and provided.
  * 
  * 
- * @author iwgeric
+ * 
  */
 public class TouchEventPool {
     private static final Logger logger = Logger.getLogger(TouchEventPool.class.getName());

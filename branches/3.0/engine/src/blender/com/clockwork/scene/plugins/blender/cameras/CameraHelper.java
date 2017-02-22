@@ -13,7 +13,7 @@ import java.util.logging.Logger;
 
 /**
  * A class that is used to load cameras into the scene.
- * @author Marcin Roguski
+ * 
  */
 public class CameraHelper extends AbstractBlenderHelper {
 

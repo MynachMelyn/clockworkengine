@@ -25,7 +25,7 @@
  * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  * 
- * @author Anthyon
+ * 
  */
 package com.clockwork.terrain.noise.basis;
 
@@ -35,7 +35,7 @@ import com.clockwork.terrain.noise.Basis;
  * A simple aggregator basis. Takes two basis functions and a rate and return
  * some mixed values
  * 
- * @author Anthyon
+ * 
  * 
  */
 public class NoiseAggregator extends Noise {

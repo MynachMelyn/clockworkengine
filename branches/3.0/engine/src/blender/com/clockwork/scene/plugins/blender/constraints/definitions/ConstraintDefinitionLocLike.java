@@ -9,7 +9,7 @@ import com.clockwork.scene.plugins.blender.file.Structure;
 /**
  * This class represents 'Loc like' constraint type in blender.
  * 
- * @author Marcin Roguski (Kaelthas)
+ * 
  */
 /* package */class ConstraintDefinitionLocLike extends ConstraintDefinition {
     private static final int LOCLIKE_X        = 0x01;

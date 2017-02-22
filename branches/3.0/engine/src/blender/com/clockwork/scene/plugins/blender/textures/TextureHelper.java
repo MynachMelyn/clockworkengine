@@ -45,7 +45,7 @@ import com.clockwork.util.BufferUtils;
 /**
  * A class that is used in texture calculations.
  * 
- * @author Marcin Roguski
+ * 
  */
 public class TextureHelper extends AbstractBlenderHelper {
     private static final Logger     LOGGER           = Logger.getLogger(TextureHelper.class.getName());

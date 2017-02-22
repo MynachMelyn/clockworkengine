@@ -13,7 +13,7 @@ import clockworktools.converters.RGB565;
 
 /**
  * The class that is responsible for blending the following texture types: <li>DXT1 <li>DXT1A <li>DXT3 <li>DXT5
- * @author Marcin Roguski (Kaelthas)
+ * 
  */
 public class TextureBlenderDDS extends TextureBlenderAWT {
     public TextureBlenderDDS(int flag, boolean negateTexture, int blendType, float[] materialColor, float[] color, float blendFactor) {

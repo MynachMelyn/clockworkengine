@@ -11,10 +11,6 @@ import java.io.IOException;
 import java.io.OutputStream;
 import javax.xml.parsers.DocumentBuilderFactory;
 
-/**
- * Part of the jME XML IO system as introduced in the google code jmexml project.
- * 
- */
 public class XMLExporter implements JmeExporter {
     
     public static final String ELEMENT_MAPENTRY = "MapEntry";	
@@ -31,7 +27,7 @@ public class XMLExporter implements JmeExporter {
 
     public boolean save(Savable object, OutputStream f) throws IOException {
         try {
-            //Initialize Document when saving so we don't retain state of previous exports
+            // Initialize document when saving so state of previous exports isn't retained
             this.domOut = new DOMOutputCapsule(DocumentBuilderFactory.newInstance().newDocumentBuilder().newDocument(), this);
             domOut.write(object, object.getClass().getName(), null);
             DOMSerializer serializer = new DOMSerializer();

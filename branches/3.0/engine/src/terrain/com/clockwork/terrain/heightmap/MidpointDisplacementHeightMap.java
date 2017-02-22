@@ -10,7 +10,7 @@ import javax.management.JMException;
 /**
  * <code>MidpointDisplacementHeightMap</code> generates an heightmap based on
  * the midpoint displacement algorithm. See Constructor javadoc for more info.
- * @author cghislai
+ * 
  */
 public class MidpointDisplacementHeightMap extends AbstractHeightMap {
 

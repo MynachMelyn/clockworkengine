@@ -25,7 +25,7 @@
  * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  * 
- * @author Anthyon
+ * 
  */
 package com.clockwork.terrain.noise.fractal;
 
@@ -44,7 +44,7 @@ import com.clockwork.terrain.noise.basis.Noise;
  * between -1..1, there sum can easily be made to extend out of this range. To
  * handle this is up to the user.
  * 
- * @author Anthyon
+ * 
  * 
  */
 public class FractalSum extends Noise implements Fractal {

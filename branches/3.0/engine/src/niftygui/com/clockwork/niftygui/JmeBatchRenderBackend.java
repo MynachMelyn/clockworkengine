@@ -37,7 +37,7 @@ import de.lessvoid.nifty.tools.resourceloader.NiftyResourceLoader;
 
 /**
  * Nifty GUI BatchRenderBackend Implementation for jMonkeyEngine.
- * @author void
+ * 
  */
 public class JmeBatchRenderBackend implements BatchRenderBackend {
   private static Logger log = Logger.getLogger(JmeBatchRenderBackend.class.getName());
@@ -269,7 +269,7 @@ public class JmeBatchRenderBackend implements BatchRenderBackend {
    * Simple BatchRenderBackend.Image implementation that will transport the dimensions of an image as well as the
    * actual bytes from the loadImage() to the addImageToTexture() method.
    *
-   * @author void
+   * 
    */
   private static class ImageImpl implements BatchRenderBackend.Image {
     private final com.clockwork.texture.Image image;
@@ -299,7 +299,7 @@ public class JmeBatchRenderBackend implements BatchRenderBackend {
 
   /**
    * Used to delay ModifyTexture calls in case we don't have a JME3 Renderer yet.
-   * @author void
+   * 
    */
   private static class ModifyTexture {
     private Texture2D atlas;
@@ -324,7 +324,7 @@ public class JmeBatchRenderBackend implements BatchRenderBackend {
    * reused when needed. Each Batch instance provides room for a certain amount of vertices and we'll use a new Batch
    * when we exceed this amount of data.
    *
-   * @author void
+   * 
    */
   private class Batch {
     // 4 vertices per quad and 8 vertex attributes for each vertex:

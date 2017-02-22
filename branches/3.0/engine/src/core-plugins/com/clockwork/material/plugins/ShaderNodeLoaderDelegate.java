@@ -30,7 +30,7 @@ import java.util.Map;
  * ShaderNodes list of each technique and the ShaderGenerationInfo needed to
  * generate the sahders
  *
- * @author Nehon
+ * 
  */
 public class ShaderNodeLoaderDelegate {
 

@@ -7,7 +7,7 @@ import java.util.logging.Logger;
  
 /**
  * <code>AndroidGLSurfaceView</code> is derived from GLSurfaceView
- * @author iwgeric
+ * 
  *
  */
 public class AndroidGLSurfaceView extends GLSurfaceView {

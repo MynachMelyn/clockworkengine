@@ -10,7 +10,7 @@ import clockworktools.converters.MipMapGenerator;
  * An abstract class that contains the basic methods used by the classes that
  * will derive from it.
  * 
- * @author Marcin Roguski (Kaelthas)
+ * 
  */
 /* package */abstract class AbstractTextureBlender implements TextureBlender {
     private static final Logger LOGGER = Logger.getLogger(AbstractTextureBlender.class.getName());

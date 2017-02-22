@@ -14,7 +14,7 @@ import java.util.ArrayList;
 
 /**
  * The class that is responsible for blending the following texture types: <li>RGBA8 <li>ABGR8 <li>BGR8 <li>RGB8 Not yet supported (but will be): <li>ARGB4444: <li>RGB10: <li>RGB111110F: <li>RGB16: <li>RGB16F: <li>RGB16F_to_RGB111110F: <li>RGB16F_to_RGB9E5: <li>RGB32F: <li>RGB565: <li>RGB5A1: <li>RGB9E5: <li>RGBA16: <li>RGBA16F
- * @author Marcin Roguski (Kaelthas)
+ * 
  */
 public class TextureBlenderAWT extends AbstractTextureBlender {
     public TextureBlenderAWT(int flag, boolean negateTexture, int blendType, float[] materialColor, float[] color, float blendFactor) {

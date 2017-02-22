@@ -36,7 +36,7 @@ import com.clockwork.texture.Texture2D;
  * made of several textures (both 2D and 3D) that are merged together and
  * returned as a single texture.
  * 
- * @author Marcin Roguski (Kaelthas)
+ * 
  */
 public class CombinedTexture {
     private static final Logger LOGGER       = Logger.getLogger(CombinedTexture.class.getName());
@@ -446,7 +446,7 @@ public class CombinedTexture {
     /**
      * A simple class to aggregate the texture data (improves code quality).
      * 
-     * @author Marcin Roguski (Kaelthas)
+     * 
      */
     private static class TextureData {
         /** The texture. */

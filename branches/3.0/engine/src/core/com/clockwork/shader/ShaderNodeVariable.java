@@ -11,7 +11,7 @@ import java.io.IOException;
 /**
  * A shader node variable
  *
- * @author Nehon
+ * 
  */
 public class ShaderNodeVariable implements Savable, Cloneable {
 

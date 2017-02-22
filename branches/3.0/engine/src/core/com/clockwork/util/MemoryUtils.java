@@ -11,7 +11,7 @@ import javax.management.ObjectName;
 
 /**
  * See thread http://jmonkeyengine.org/forum/topic/monitor-direct-memory-usage-in-your-app/#post-205999
- * @author Paul Speed
+ * 
  */
 public class MemoryUtils {
     private static MBeanServer mbeans = ManagementFactory.getPlatformMBeanServer();

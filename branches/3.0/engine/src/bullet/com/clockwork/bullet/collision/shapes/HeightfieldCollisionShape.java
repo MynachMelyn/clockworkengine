@@ -23,7 +23,7 @@ import java.util.logging.Logger;
  *	equal on either side. If not, the whole collision box is shifted vertically and things don't collide
  *	as they should.
  * 
- * @author Brent Owens
+ * 
  */
 public class HeightfieldCollisionShape extends CollisionShape {
 

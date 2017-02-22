@@ -20,7 +20,7 @@ import java.nio.ShortBuffer;
  * <code>Sphere</code> represents a 3D object with all points equidistance
  * from a center point.
  * 
- * @author Joshua Slack
+ * 
  * @version $Revision: 4163 $, $Date: 2009-03-24 21:14:55 -0400 (Tue, 24 Mar 2009) $
  */
 public class Sphere extends Mesh {

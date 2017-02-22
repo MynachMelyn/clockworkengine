@@ -9,7 +9,7 @@ import clockworktools.converters.RGB565;
 /**
  * Implemens read/write operations for DDS images.
  * This class currently implements only read operation.
- * @author Marcin Roguski (Kaelthas)
+ * 
  */
 /* package */class DDSPixelInputOutput implements PixelInputOutput {
     /**

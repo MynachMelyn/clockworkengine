@@ -8,7 +8,7 @@ import java.io.IOException;
 /**
  * Serialize and compress {@link Quaternion}[] by indexing same values
  * It is converted to float[]
- * @author Lim, YongHoon
+ * 
  */
 public class CompactQuaternionArray extends CompactArray<Quaternion> implements Savable {
 

@@ -25,7 +25,7 @@ import com.clockwork.texture.Texture.WrapMode;
  * The only difference is it uses a much smaller heightmap so it won't use up
  * all of the android device's memory.
  *
- * @author bowens
+ * 
  */
 public class TerrainTestAndroid extends SimpleApplication {
 

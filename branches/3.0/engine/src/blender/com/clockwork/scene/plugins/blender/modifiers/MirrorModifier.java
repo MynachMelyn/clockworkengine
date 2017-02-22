@@ -28,7 +28,7 @@ import com.clockwork.scene.plugins.blender.objects.ObjectHelper;
 /**
  * This modifier allows to array modifier to the object.
  * 
- * @author Marcin Roguski (Kaelthas)
+ * 
  */
 /* package */class MirrorModifier extends Modifier {
     private static final Logger LOGGER       = Logger.getLogger(MirrorModifier.class.getName());

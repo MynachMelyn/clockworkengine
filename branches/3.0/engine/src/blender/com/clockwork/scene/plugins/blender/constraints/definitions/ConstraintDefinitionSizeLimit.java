@@ -8,7 +8,7 @@ import com.clockwork.scene.plugins.blender.file.Structure;
 /**
  * This class represents 'Size limit' constraint type in blender.
  * 
- * @author Marcin Roguski (Kaelthas)
+ * 
  */
 /* package */class ConstraintDefinitionSizeLimit extends ConstraintDefinition {
     private static final int      LIMIT_XMIN = 0x01;

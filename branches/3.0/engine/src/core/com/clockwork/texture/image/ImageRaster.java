@@ -31,7 +31,7 @@ import com.clockwork.texture.Image;
  * System.out.println( raster.getPixel(1, 5) ); // Will print [0.0, 1.0, 0.0, 1.0].
  * </code>
  * 
- * @author Kirill Vainer
+ * 
  */
 public abstract class ImageRaster {
 

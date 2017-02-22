@@ -16,7 +16,7 @@ import java.util.List;
  * in an appropriate way to ease the shader generation process and make it
  * faster.
  *
- * @author Nehon
+ * 
  */
 public class ShaderGenerationInfo implements Savable {
 

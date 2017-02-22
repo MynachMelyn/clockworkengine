@@ -10,7 +10,7 @@ import javax.microedition.khronos.egl.EGL11;
  * Utility class used by the {@link OGLESShaderRenderer renderer} and sister
  * classes.
  *
- * @author Kirill Vainer
+ * 
  */
 public class RendererUtil {
 

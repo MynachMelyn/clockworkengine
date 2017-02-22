@@ -30,7 +30,7 @@ import com.clockwork.scene.plugins.blender.objects.ObjectHelper;
 /**
  * This class should be used for constraint calculations.
  * 
- * @author Marcin Roguski (Kaelthas)
+ * 
  */
 public class ConstraintHelper extends AbstractBlenderHelper {
     private static final Logger     LOGGER                      = Logger.getLogger(ConstraintHelper.class.getName());
@@ -421,7 +421,7 @@ public class ConstraintHelper extends AbstractBlenderHelper {
     /**
      * The space of target or owner transformation.
      * 
-     * @author Marcin Roguski (Kaelthas)
+     * 
      */
     public static enum Space {
 

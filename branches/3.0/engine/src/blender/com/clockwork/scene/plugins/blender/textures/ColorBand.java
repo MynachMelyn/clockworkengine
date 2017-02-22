@@ -15,7 +15,7 @@ import java.util.logging.Logger;
 /**
  * A class constaining the colorband data.
  * 
- * @author Marcin Roguski (Kaelthas)
+ * 
  */
 public class ColorBand {
     private static final Logger LOGGER       = Logger.getLogger(ColorBand.class.getName());
@@ -274,7 +274,7 @@ public class ColorBand {
     /**
      * Class to store the single colorband cursor data.
      * 
-     * @author Marcin Roguski (Kaelthas)
+     * 
      */
     private static class ColorBandData implements Cloneable {
         public final float r, g, b, a;

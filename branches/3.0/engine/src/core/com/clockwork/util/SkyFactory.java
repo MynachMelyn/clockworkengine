@@ -18,10 +18,9 @@ import java.nio.ByteBuffer;
 import java.util.ArrayList;
 
 /**
- * <code>SkyFactory</code> is used to create jME {@link Spatial}s that can
+ * <code>SkyFactory</code> is used to create spatials that can
  * be attached to the scene to display a sky image in the background.
  * 
- * @author Kirill Vainer
  */
 public class SkyFactory {
 

@@ -43,7 +43,7 @@ import java.util.logging.Logger;
  * This camera reference has to be manually added in when you load the
  * terrain to the scene!
  * 
- * @author Brent Owens
+ * 
  */
 public class TerrainLodControl extends AbstractControl {
 

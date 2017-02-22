@@ -33,7 +33,7 @@ import java.util.Map.Entry;
  * 3) Attachments
  * 4) Add/remove skins
  *
- * @author Kirill Vainer
+ * 
  */
 public final class AnimControl extends AbstractControl implements Cloneable {
 
@@ -59,8 +59,7 @@ public final class AnimControl extends AbstractControl implements Cloneable {
 
     /**
      * Creates a new animation control for the given skeleton.
-     * The method {@link AnimControl#setAnimations(java.util.HashMap) }
-     * must be called after initialization in order for this class to be useful.
+     * The method setAnimations must be called after initialisation in order for this class to be useful.
      *
      * @param skeleton The skeleton to animate
      */

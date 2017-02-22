@@ -8,7 +8,7 @@ import java.util.List;
 
 /**
  * A class that represents a pointer of any level that can be stored in the file.
- * @author Marcin Roguski
+ * 
  */
 public class Pointer {
 

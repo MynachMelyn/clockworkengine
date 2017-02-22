@@ -25,7 +25,7 @@
  * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  * 
- * @author Anthyon
+ * 
  */
 package com.clockwork.terrain.noise;
 
@@ -54,7 +54,7 @@ import java.nio.FloatBuffer;
  * Fractals themselves are implementing the Basis interface as well, opening
  * an infinite range of results.
  * 
- * @author Anthyon
+ * 
  * 
  * @since 2011
  * 

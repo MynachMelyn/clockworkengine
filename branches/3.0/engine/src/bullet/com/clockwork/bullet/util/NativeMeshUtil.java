@@ -10,7 +10,7 @@ import java.nio.FloatBuffer;
 
 /**
  *
- * @author normenhansen
+ * 
  */
 public class NativeMeshUtil {
     

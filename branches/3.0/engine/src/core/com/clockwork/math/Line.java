@@ -11,8 +11,8 @@ import java.nio.FloatBuffer;
  * <code>Line</code> defines a line. Where a line is defined as infinite along
  * two points. The two points of the line are defined as the origin and direction.
  * 
- * @author Mark Powell
- * @author Joshua Slack
+ * 
+ * 
  */
 public class Line implements Savable, Cloneable, java.io.Serializable {
 

@@ -19,7 +19,7 @@ import com.clockwork.asset.AssetKey;
  * leaking following a successful {@link #addToCache(com.clockwork.asset.AssetKey, java.lang.Object) }
  * or {@link #getFromCache(com.clockwork.asset.AssetKey) } call!
  * 
- * @author Kirill Vainer
+ * 
  */
 public interface AssetCache {
     /**

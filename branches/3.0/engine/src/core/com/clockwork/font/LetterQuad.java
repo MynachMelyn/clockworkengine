@@ -8,7 +8,7 @@ import java.nio.ShortBuffer;
 
 /**
  * LetterQuad contains the position, color, and UV texture information for a character in text.
- * @author YongHoon
+ * 
  */
 class LetterQuad {
     private static final Rectangle UNBOUNDED = new Rectangle(0, 0, Float.MAX_VALUE, Float.MAX_VALUE);

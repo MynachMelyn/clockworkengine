@@ -25,7 +25,7 @@ import com.clockwork.scene.plugins.blender.objects.ObjectHelper;
 
 /**
  * This class converts blender file blocks into engine data structures.
- * @author Marcin Roguski (Kaelthas)
+ * 
  */
 /* package */abstract class AbstractBlenderLoader implements AssetLoader {
     private static final Logger LOGGER = Logger.getLogger(AbstractBlenderLoader.class.getName());

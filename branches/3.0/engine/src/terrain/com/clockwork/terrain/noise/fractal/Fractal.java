@@ -25,7 +25,7 @@
  * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  * 
- * @author Anthyon
+ * 
  */
 package com.clockwork.terrain.noise.fractal;
 
@@ -37,7 +37,7 @@ import com.clockwork.terrain.noise.Basis;
  * Takes any number of basis funcions to work with and a few common parameters
  * for noise fractals
  * 
- * @author Anthyon
+ * 
  * 
  */
 public interface Fractal extends Basis {

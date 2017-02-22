@@ -11,7 +11,7 @@ import com.clockwork.scene.VertexBuffer;
 /**
  * Class that holds information about the mesh.
  * 
- * @author Marcin Roguski (Kaelthas)
+ * 
  */
 public class MeshContext {
     /** A map between material index and the geometry. */

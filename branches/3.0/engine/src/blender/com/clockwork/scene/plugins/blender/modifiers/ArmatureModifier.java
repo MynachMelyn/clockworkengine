@@ -41,7 +41,7 @@ import com.clockwork.util.BufferUtils;
 /**
  * This modifier allows to add bone animation to the object.
  * 
- * @author Marcin Roguski (Kaelthas)
+ * 
  */
 /* package */class ArmatureModifier extends Modifier {
     private static final Logger LOGGER                     = Logger.getLogger(ArmatureModifier.class.getName());

@@ -10,7 +10,7 @@ import java.nio.ShortBuffer;
  * Stores a terrain patch's details so the LOD background thread can update
  * the actual terrain patch back on the ogl thread.
  *
- * @author Brent Owens
+ * 
  *
  */
 public class UpdatedTerrainPatch {

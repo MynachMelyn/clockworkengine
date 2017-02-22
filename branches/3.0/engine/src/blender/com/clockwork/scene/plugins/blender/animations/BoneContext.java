@@ -16,7 +16,7 @@ import com.clockwork.scene.plugins.blender.objects.ObjectHelper;
 /**
  * This class holds the basic data that describes a bone.
  * 
- * @author Marcin Roguski (Kaelthas)
+ * 
  */
 public class BoneContext {
     private BlenderContext    blenderContext;

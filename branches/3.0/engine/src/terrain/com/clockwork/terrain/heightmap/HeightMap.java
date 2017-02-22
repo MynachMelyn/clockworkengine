@@ -3,7 +3,7 @@ package com.clockwork.terrain.heightmap;
 
 /**
  *
- * @author cghislai
+ * 
  */
 public interface HeightMap {
 

@@ -10,7 +10,7 @@ import java.util.logging.Logger;
 /**
  * This class creates the texture blending class depending on the texture type.
  * 
- * @author Marcin Roguski (Kaelthas)
+ * 
  */
 public class TextureBlenderFactory {
     private static final Logger LOGGER = Logger.getLogger(TextureBlenderFactory.class.getName());

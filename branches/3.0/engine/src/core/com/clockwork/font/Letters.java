@@ -9,7 +9,7 @@ import java.util.LinkedList;
 
 /**
  * Manage and align LetterQuads
- * @author YongHoon
+ * 
  */
 class Letters {
     private final LetterQuad head;

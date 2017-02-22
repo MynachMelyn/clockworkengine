@@ -10,7 +10,7 @@ import java.util.concurrent.ConcurrentHashMap;
  * is expected to manually call {@link #deleteFromCache(com.clockwork.asset.AssetKey) }
  * to delete any assets.
  * 
- * @author Kirill Vainer
+ * 
  */
 public class SimpleAssetCache implements AssetCache {
 

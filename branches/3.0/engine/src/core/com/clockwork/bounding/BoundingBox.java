@@ -21,7 +21,7 @@ import java.nio.FloatBuffer;
  * <br>
  * Instances may be initialized by invoking the <code>containAABB</code> method.
  *
- * @author Joshua Slack
+ * 
  * @version $Id: BoundingBox.java,v 1.50 2007/09/22 16:46:35 irrisor Exp $
  */
 public class BoundingBox extends BoundingVolume {

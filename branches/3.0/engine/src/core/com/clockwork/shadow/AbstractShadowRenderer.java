@@ -40,7 +40,7 @@ import com.clockwork.ui.Picture;
  * abstract shadow renderer that holds commons feature to have for a shadow
  * renderer
  *
- * @author Rémy Bouquet aka Nehon
+ * 
  */
 public abstract class AbstractShadowRenderer implements SceneProcessor, Savable {
 

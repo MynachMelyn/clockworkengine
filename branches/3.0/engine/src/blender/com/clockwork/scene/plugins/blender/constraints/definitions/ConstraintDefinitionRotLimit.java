@@ -8,7 +8,7 @@ import com.clockwork.scene.plugins.blender.file.Structure;
 /**
  * This class represents 'Rot limit' constraint type in blender.
  * 
- * @author Marcin Roguski (Kaelthas)
+ * 
  */
 /* package */class ConstraintDefinitionRotLimit extends ConstraintDefinition {
     private static final int    LIMIT_XROT = 0x01;

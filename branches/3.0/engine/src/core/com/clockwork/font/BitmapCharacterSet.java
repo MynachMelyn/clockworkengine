@@ -150,7 +150,7 @@ public class BitmapCharacterSet implements Savable {
      * Merge two fonts.
      * If two font have the same style, merge will fail.
      * @param styleSet Style must be assigned to this.
-     * @author Yonghoon
+     * 
      */
     public void merge(BitmapCharacterSet styleSet) {
         if (this.renderedSize != styleSet.renderedSize) {

@@ -12,7 +12,7 @@ import java.util.logging.Logger;
  * value can be adjusted at will, as long as the two factors are equal
  * to 1.0.
  *
- * @author Mark Powell
+ * 
  * @version $Id$
  */
 public class CombinerHeightMap extends AbstractHeightMap {

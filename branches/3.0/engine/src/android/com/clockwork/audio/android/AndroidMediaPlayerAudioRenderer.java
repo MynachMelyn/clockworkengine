@@ -21,8 +21,8 @@ import java.util.logging.Logger;
 /**
  * This class is the android implementation for {@link AudioRenderer}
  *
- * @author larynx
- * @author plan_rich
+ * 
+ * 
  */
 public class AndroidMediaPlayerAudioRenderer implements AndroidAudioRenderer,
         SoundPool.OnLoadCompleteListener, MediaPlayer.OnCompletionListener {

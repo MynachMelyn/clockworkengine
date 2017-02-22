@@ -7,7 +7,7 @@ package com.clockwork.asset;
  * the given assets and those being generated automatically. Every generated
  * texture will have this kind of key attached.
  * 
- * @author Marcin Roguski (Kaelthas)
+ * 
  */
 public class GeneratedTextureKey extends TextureKey {
 

@@ -16,7 +16,7 @@ import java.io.IOException;
  * values. A call to clamp will assure that the values are within the
  * constraints.
  *
- * @author Mark Powell
+ * 
  * @version $Id: ColorRGBA.java,v 1.29 2007/09/09 18:25:14 irrisor Exp $
  */
 public final class ColorRGBA implements Savable, Cloneable, java.io.Serializable {

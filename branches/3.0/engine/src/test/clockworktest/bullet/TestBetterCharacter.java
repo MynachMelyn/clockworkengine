@@ -26,7 +26,7 @@ import com.clockwork.system.AppSettings;
 /**
  * A walking physical character followed by a 3rd person camera. (No animation.)
  *
- * @author normenhansen, zathras
+ * 
  */
 public class TestBetterCharacter extends SimpleApplication implements ActionListener {
 

@@ -11,7 +11,7 @@ import com.clockwork.shader.Shader;
  * loaded that are of that class will be processed by the assigned
  * processor.
  * 
- * @author Kirill Vainer
+ * 
  */
 public interface AssetProcessor {
     /**

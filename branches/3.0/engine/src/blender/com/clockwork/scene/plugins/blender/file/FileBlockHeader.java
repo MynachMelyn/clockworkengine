@@ -7,7 +7,7 @@ import com.clockwork.scene.plugins.blender.exceptions.BlenderFileException;
 /**
  * A class that holds the header data of a file block. The file block itself is not implemented. This class holds its
  * start position in the stream and using this the structure can fill itself with the proper data.
- * @author Marcin Roguski
+ * 
  */
 public class FileBlockHeader {
 

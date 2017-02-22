@@ -11,7 +11,7 @@ import com.clockwork.scene.plugins.blender.file.Structure;
  * Constraint applied on the spatial objects. This includes: nodes, cameras
  * nodes and light nodes.
  * 
- * @author Marcin Roguski (Kaelthas)
+ * 
  */
 /* package */class SpatialConstraint extends Constraint {
     public SpatialConstraint(Structure constraintStructure, Long ownerOMA, Ipo influenceIpo, BlenderContext blenderContext) throws BlenderFileException {

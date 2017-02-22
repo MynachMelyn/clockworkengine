@@ -22,7 +22,7 @@ import java.util.List;
  * This class is not intended to be used by JME users directly. It's the
  * stucture for loading shader nodes from a J3md ùaterial definition file
  *
- * @author Nehon
+ * 
  */
 public class ShaderNode implements Savable {
 

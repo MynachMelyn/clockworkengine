@@ -17,7 +17,7 @@ import java.io.IOException;
 
 /**
  * A camera that follows a spatial and can turn around it by dragging the mouse
- * @author nehon
+ * 
  */
 public class ChaseCamera implements ActionListener, AnalogListener, Control {
 

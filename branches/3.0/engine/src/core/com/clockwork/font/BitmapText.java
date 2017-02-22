@@ -12,7 +12,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * @author YongHoon
+ * 
  */
 public class BitmapText extends Node {
 

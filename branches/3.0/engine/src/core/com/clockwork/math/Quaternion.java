@@ -18,8 +18,8 @@ import java.util.logging.Logger;
  * <code>Quaternion</code> is defined by four floating point numbers: {x y z
  * w}.
  * 
- * @author Mark Powell
- * @author Joshua Slack
+ * 
+ * 
  */
 public final class Quaternion implements Savable, Cloneable, java.io.Serializable {
 

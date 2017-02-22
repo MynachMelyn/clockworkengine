@@ -38,7 +38,7 @@ import com.clockwork.util.BufferUtils;
  * helps to flatten 3D texture, merge 3D and 2D textures and merge 2D textures
  * with different UV coordinates.
  * 
- * @author Marcin Roguski (Kaelthas)
+ * 
  */
 /* package */class TriangulatedTexture extends Texture2D {
     /** The result image format. */
@@ -366,7 +366,7 @@ import com.clockwork.util.BufferUtils;
     /**
      * A class that represents an image for a single face of the mesh.
      * 
-     * @author Marcin Roguski (Kaelthas)
+     * 
      */
     /* package */static class TriangleTextureElement {
         /** The image for the face. */
@@ -626,7 +626,7 @@ import com.clockwork.util.BufferUtils;
      * A class that represents a flat rectangle in 3D space that is built on a
      * triangle in 3D space.
      * 
-     * @author Marcin Roguski (Kaelthas)
+     * 
      */
     private static class RectangleEnvelope {
         /** The minimum point of the rectangle. */

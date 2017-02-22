@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 /**
  * A collection of String utilities.
  *
- * @author Benjamin Jakobus
+ * 
  * @version 1.0
  */
 public class StringUtil {

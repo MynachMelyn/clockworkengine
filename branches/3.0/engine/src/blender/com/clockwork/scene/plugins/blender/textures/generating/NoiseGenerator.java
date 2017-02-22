@@ -16,7 +16,7 @@ import com.clockwork.scene.plugins.blender.textures.generating.TextureGeneratorM
  * This generator is responsible for creating various noises used to create
  * generated textures loaded from blender.
  * It is only used by TextureHelper.
- * @author Marcin Roguski (Kaelthas)
+ * 
  */
 /* package */class NoiseGenerator {
     private static final Logger LOGGER       = Logger.getLogger(NoiseGenerator.class.getName());
@@ -689,7 +689,7 @@ import com.clockwork.scene.plugins.blender.textures.generating.TextureGeneratorM
     /**
      * This class is abstract to the noise functions computations. It has two methods. One calculates the Signed (with
      * 'S' at the end) and the other Unsigned value.
-     * @author Marcin Roguski (Kaelthas)
+     * 
      */
     interface NoiseFunction {
 

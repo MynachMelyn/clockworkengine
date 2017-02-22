@@ -7,7 +7,7 @@ import java.util.Map;
 /**
  * This class creates a pixel IO object for the specified image format.
  * 
- * @author Marcin Roguski (Kaelthas)
+ * 
  */
 public class PixelIOFactory {
     private static final Map<Format, PixelInputOutput> PIXEL_INPUT_OUTPUT = new HashMap<Format, PixelInputOutput>();

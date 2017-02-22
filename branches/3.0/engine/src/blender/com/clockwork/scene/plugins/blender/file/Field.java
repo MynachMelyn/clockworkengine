@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * This class represents a single field in the structure. It can be either a primitive type or a table or a reference to
  * another structure.
- * @author Marcin Roguski
+ * 
  */
 /* package */
 class Field implements Cloneable {

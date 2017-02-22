@@ -15,7 +15,7 @@ import com.clockwork.scene.plugins.blender.curves.BezierCurve;
  * Ipo (interpolation object) consists of several b-spline curves (connected 3rd
  * degree bezier curves) of a different type.
  * 
- * @author Marcin Roguski
+ * 
  */
 public class Ipo {
     private static final Logger LOGGER    = Logger.getLogger(Ipo.class.getName());

@@ -9,7 +9,7 @@ import com.clockwork.scene.plugins.blender.file.Structure;
 /**
  * This class represents 'Loc limit' constraint type in blender.
  * 
- * @author Marcin Roguski (Kaelthas)
+ * 
  */
 /* package */class ConstraintDefinitionLocLimit extends ConstraintDefinition {
     private static final int LIMIT_XMIN = 0x01;

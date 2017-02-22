@@ -8,7 +8,7 @@ import java.nio.ByteBuffer;
 /**
  * Implemens read/write operations for luminance images.
  * 
- * @author Marcin Roguski (Kaelthas)
+ * 
  */
 /* package */class LuminancePixelInputOutput implements PixelInputOutput {
     public void read(Image image, int layer, TexturePixel pixel, int index) {

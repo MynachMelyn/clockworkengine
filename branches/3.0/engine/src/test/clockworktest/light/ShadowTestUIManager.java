@@ -21,7 +21,7 @@ import com.clockwork.shadow.EdgeFilteringMode;
 
 /**
  *
- * @author Nehon
+ * 
  */
 public class ShadowTestUIManager implements ActionListener {
 

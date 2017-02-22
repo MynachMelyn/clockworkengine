@@ -10,7 +10,7 @@ import com.clockwork.export.Savable;
  * using LOD will use this to determine when a patch of the 
  * terrain should switch Levels of Detail.
  * 
- * @author bowens
+ * 
  */
 public interface LodThreshold extends Savable, Cloneable {
 

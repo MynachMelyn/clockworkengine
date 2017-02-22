@@ -19,7 +19,7 @@ import java.util.logging.Logger;
 
 /**
  * Basic mesh collision shape
- * @author normenhansen
+ * 
  */
 public class MeshCollisionShape extends CollisionShape {
 

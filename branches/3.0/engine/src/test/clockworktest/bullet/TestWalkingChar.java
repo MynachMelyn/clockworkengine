@@ -49,7 +49,7 @@ import java.util.List;
 
 /**
  * A walking animated character followed by a 3rd person camera on a terrain with LOD.
- * @author normenhansen
+ * 
  */
 public class TestWalkingChar extends SimpleApplication implements ActionListener, PhysicsCollisionListener, AnimEventListener {
 

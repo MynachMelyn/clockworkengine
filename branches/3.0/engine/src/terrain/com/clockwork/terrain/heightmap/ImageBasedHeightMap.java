@@ -11,7 +11,7 @@ import com.clockwork.texture.image.ImageRaster;
  * and width, although future work could scale an incoming image to a specific
  * height and width.
  * 
- * @author Mike Kienenberger
+ * 
  * @version $id$
  */
 public class ImageBasedHeightMap extends AbstractHeightMap implements ImageHeightmap {

@@ -37,7 +37,7 @@ import com.clockwork.scene.plugins.blender.modifiers.ModifierHelper;
 /**
  * A class that is used in object calculations.
  * 
- * @author Marcin Roguski (Kaelthas)
+ * 
  */
 public class ObjectHelper extends AbstractBlenderHelper {
     private static final Logger LOGGER               = Logger.getLogger(ObjectHelper.class.getName());

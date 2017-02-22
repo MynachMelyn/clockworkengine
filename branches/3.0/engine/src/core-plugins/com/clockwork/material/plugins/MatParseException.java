@@ -8,7 +8,7 @@ import java.io.IOException;
  * Custom Exception to report a j3md Material definition file parsing error.
  * This exception reports the line number where the error occured.
  *
- * @author Nehon
+ * 
  */
 public class MatParseException extends IOException {
 

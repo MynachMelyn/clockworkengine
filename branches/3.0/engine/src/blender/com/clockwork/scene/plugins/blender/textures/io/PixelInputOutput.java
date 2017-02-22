@@ -6,7 +6,7 @@ import com.clockwork.texture.Image;
 /**
  * Implemens read/write operations for images.
  * 
- * @author Marcin Roguski (Kaelthas)
+ * 
  */
 public interface PixelInputOutput {
     /**

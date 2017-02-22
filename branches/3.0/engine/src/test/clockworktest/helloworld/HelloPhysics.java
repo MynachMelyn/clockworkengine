@@ -20,7 +20,7 @@ import com.clockwork.texture.Texture.WrapMode;
 
 /**
  * Example 12 - how to give objects physical properties so they bounce and fall.
- * @author base code by double1984, updated by zathras
+ * 
  */
 public class HelloPhysics extends SimpleApplication {
 

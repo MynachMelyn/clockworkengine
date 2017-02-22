@@ -18,7 +18,7 @@ import java.util.logging.Logger;
  * required attributes and calling <code>load</code> again to recreate a
  * heightfield with these new parameters.
  *
- * @author Mark Powell
+ * 
  * @version $Id: AbstractHeightMap.java 4133 2009-03-19 20:40:11Z blaine.dev $
  */
 public abstract class AbstractHeightMap implements HeightMap {

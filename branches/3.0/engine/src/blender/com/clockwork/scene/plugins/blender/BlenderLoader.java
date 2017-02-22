@@ -36,7 +36,7 @@ import com.clockwork.scene.plugins.blender.textures.TextureHelper;
 
 /**
  * This is the main loading class. Have in notice that asset manager needs to have loaders for resources like textures.
- * @author Marcin Roguski (Kaelthas)
+ * 
  */
 public class BlenderLoader extends AbstractBlenderLoader {
 

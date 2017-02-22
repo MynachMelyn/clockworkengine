@@ -15,7 +15,7 @@ import java.util.Arrays;
 /**
  * This class represents the track for spatial animation.
  * 
- * @author Marcin Roguski (Kaelthas)
+ * 
  */
 public class SpatialTrack implements Track {
     

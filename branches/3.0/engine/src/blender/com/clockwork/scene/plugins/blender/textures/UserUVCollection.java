@@ -11,7 +11,7 @@ import com.clockwork.math.Vector2f;
 /**
  * A collection of UV coordinates. The coords are stored in groups defined by the material index and their UV set name.
  * 
- * @author Kaelthas (Marcin Roguski)
+ * 
  */
 public class UserUVCollection {
     /** A map between material number and UV coordinates of mesh that has this material applied. */

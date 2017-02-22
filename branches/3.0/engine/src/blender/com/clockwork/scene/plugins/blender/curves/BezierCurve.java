@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * A class that helps to calculate the bezier curves calues. It uses doubles for performing calculations to minimize
  * floating point operations errors.
- * @author Marcin Roguski (Kaelthas)
+ * 
  */
 public class BezierCurve {
 

@@ -12,7 +12,7 @@ import java.util.regex.Pattern;
  *         \#rgba#
  *         \#rrggbb#
  *         \#rrggbbaa#
- * @author YongHoon
+ * 
  */
 class ColorTags {
     private static final Pattern colorPattern = Pattern.compile("\\\\#([0-9a-fA-F]{8})#|\\\\#([0-9a-fA-F]{6})#|" +

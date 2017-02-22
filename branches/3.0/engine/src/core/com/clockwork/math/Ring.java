@@ -10,8 +10,8 @@ import java.io.IOException;
  * space that is specified via the ring's center point, an up vector, an inner
  * radius, and an outer radius.
  * 
- * @author Andrzej Kapolka
- * @author Joshua Slack
+ * 
+ * 
  */
 
 public final class Ring implements Savable, Cloneable, java.io.Serializable {

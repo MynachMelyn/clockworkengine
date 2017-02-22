@@ -40,8 +40,8 @@ import java.util.logging.Logger;
  * <code>AndroidHarness</code> wraps a jme application object and runs it on
  * Android
  *
- * @author Kirill
- * @author larynx
+ * 
+ * 
  */
 public class AndroidHarness extends Activity implements TouchListener, DialogInterface.OnClickListener, SystemListener {
 

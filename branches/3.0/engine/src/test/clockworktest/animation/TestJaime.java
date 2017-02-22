@@ -38,7 +38,7 @@ import com.clockwork.shadow.SpotLightShadowRenderer;
 
 /**
  *
- * @author Nehon
+ * 
  */
 public class TestJaime  extends SimpleApplication {
 

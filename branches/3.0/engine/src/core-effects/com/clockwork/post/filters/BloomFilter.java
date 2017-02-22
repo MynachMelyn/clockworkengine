@@ -23,7 +23,7 @@ import java.util.ArrayList;
  * Object mode make objects glow according to their material's glowMap or their GlowColor<br>
  * @see <a href="http://jmonkeyengine.org/wiki/doku.php/jme3:advanced:bloom_and_glow">advanced:bloom_and_glow</a> for more details
  * 
- * @author Rémy Bouquet aka Nehon
+ * 
  */
 public class BloomFilter extends Filter {
 

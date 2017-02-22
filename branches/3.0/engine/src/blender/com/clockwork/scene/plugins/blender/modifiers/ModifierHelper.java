@@ -19,7 +19,7 @@ import java.util.logging.Logger;
 /**
  * A class that is used in modifiers calculations.
  * 
- * @author Marcin Roguski
+ * 
  */
 public class ModifierHelper extends AbstractBlenderHelper {
 

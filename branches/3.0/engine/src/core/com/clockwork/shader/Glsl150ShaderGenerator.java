@@ -9,7 +9,7 @@ import com.clockwork.shader.Shader.ShaderType;
  * This shader Generator can generate Vertex and Fragment shaders from
  * ShaderNodes for GLSL 1.5
  *
- * @author Nehon
+ * 
  */
 public class Glsl150ShaderGenerator extends Glsl100ShaderGenerator {
 

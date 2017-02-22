@@ -2,7 +2,7 @@ package com.clockwork.audio.android;
 
 /**
  *
- * @author iwgeric
+ * 
  */
 public class AL {
 
