@@ -45,7 +45,7 @@ public final class AnimControl extends AbstractControl implements Cloneable {
     @Deprecated
     private SkeletonControl skeletonControl;
     /**
-     * List of animations
+     * List of animations. 
      */
     HashMap<String, Animation> animationMap = new HashMap<String, Animation>();
     /**
