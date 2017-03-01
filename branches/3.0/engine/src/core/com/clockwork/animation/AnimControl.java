@@ -49,7 +49,9 @@ public final class AnimControl extends AbstractControl implements Cloneable {
      */
     HashMap<String, Animation> animationMap = new HashMap<String, Animation>();
     /**
-     * Animation channels
+     * Animation channels. Transient to avoid it being serialised (making an object's state persistent)
+     * Serialisation stores the object's state in byte form, deserialisation retrieves the state from the bytes.
+     * As a rule of thumb, any variable that can simply be calculated from other variables doesn't need to be serialised.
      */
     private transient ArrayList<AnimChannel> channels = new ArrayList<AnimChannel>();
     /**
