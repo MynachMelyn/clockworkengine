@@ -38,7 +38,7 @@ public class CameraControl extends AbstractControl {
     private ControlDirection controlDir = ControlDirection.SpatialToCamera;
 
     /**
-     * Constructor used for Serialization.
+     * Constructor used for Serialisation.
      */
     public CameraControl() {
     }

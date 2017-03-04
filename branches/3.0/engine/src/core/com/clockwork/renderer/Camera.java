@@ -172,7 +172,7 @@ public class Camera implements Savable, Cloneable {
     protected String name;
 
     /**
-     * Serialization only. Do not use.
+     * Serialisation only. Do not use.
      */
     public Camera() {
         worldPlane = new Plane[MAX_WORLD_PLANES];

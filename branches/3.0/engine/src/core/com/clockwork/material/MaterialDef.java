@@ -24,7 +24,7 @@ public class MaterialDef {
     private Map<String, MatParam> matParams;
 
     /**
-     * Serialization only. Do not use.
+     * Serialisation only. Do not use.
      */
     public MaterialDef(){
     }

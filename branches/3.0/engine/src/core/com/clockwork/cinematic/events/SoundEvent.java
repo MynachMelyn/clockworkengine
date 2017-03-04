@@ -113,7 +113,7 @@ public class SoundEvent extends AbstractCinematicEvent {
 
     /**
      * creates a sound event
-     * used for serialization
+     * used for serialisation
      */
     public SoundEvent() {
     }

@@ -116,7 +116,7 @@ public final class Bone implements Savable {
     }
 
     /**
-     * Serialization only. Do not use.
+     * Serialisation only. Do not use.
      */
     public Bone() {
     }

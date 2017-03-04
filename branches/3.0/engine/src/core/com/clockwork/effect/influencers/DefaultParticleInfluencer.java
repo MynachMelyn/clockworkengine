@@ -19,7 +19,7 @@ import java.io.IOException;
 public class DefaultParticleInfluencer implements ParticleInfluencer {
 
     //Version #1 : changed startVelocity to initialvelocity for consistency with accessors 
-    //and also changed it in serialization
+    //and also changed it in serialisation
     public static final int SAVABLE_VERSION = 1;
     /** Temporary variable used to help with calculations. */
     protected transient Vector3f temp = new Vector3f();

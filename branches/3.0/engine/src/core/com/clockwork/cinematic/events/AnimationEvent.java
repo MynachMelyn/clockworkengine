@@ -45,7 +45,7 @@ public class AnimationEvent extends AbstractCinematicEvent {
     protected Cinematic cinematic;
 
     /**
-     * used for serialization don't call directly use one of the following
+     * used for serialisation don't call directly use one of the following
      * contructors
      */
     public AnimationEvent() {

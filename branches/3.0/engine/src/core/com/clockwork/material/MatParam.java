@@ -36,7 +36,7 @@ public class MatParam implements Savable, Cloneable {
     }
 
     /**
-     * Serialization only. Do not use.
+     * Serialisation only. Do not use.
      */
     public MatParam() {
     }

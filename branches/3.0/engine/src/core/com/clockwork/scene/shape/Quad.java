@@ -18,7 +18,7 @@ public class Quad extends Mesh {
     private float height;
 
     /**
-     * Serialization only. Do not use.
+     * Serialisation only. Do not use.
      */
     public Quad(){
     }

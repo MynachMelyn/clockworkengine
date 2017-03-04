@@ -18,7 +18,7 @@ public class LightNode extends Node {
     private LightControl lightControl;
 
     /**
-     * Serialization only. Do not use.
+     * Serialisation only. Do not use.
      */
     public LightNode() {
     }

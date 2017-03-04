@@ -49,7 +49,7 @@ public class Geometry extends Spatial {
      */
     protected int startIndex;    
     /**
-     * Serialization only. Do not use.
+     * Serialisation only. Do not use.
      */
     public Geometry() {
     }

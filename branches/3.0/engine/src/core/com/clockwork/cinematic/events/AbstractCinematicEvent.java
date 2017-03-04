@@ -229,7 +229,7 @@ public abstract class AbstractCinematicEvent implements CinematicEvent {
     }
 
     /**
-     * Used for serialization only.
+     * Used for serialisation only.
      * @param ex exporter
      * @throws IOException 
      */
@@ -242,7 +242,7 @@ public abstract class AbstractCinematicEvent implements CinematicEvent {
     }
 
     /**
-     * Used for serialization only.
+     * Used for serialisation only.
      * @param im importer
      * @throws IOException 
      */

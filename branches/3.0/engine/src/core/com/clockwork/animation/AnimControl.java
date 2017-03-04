@@ -16,38 +16,31 @@ import java.util.HashMap;
 import java.util.Map.Entry;
 
 /**
- * <code>AnimControl</code> is a Spatial control that allows manipulation
- * of skeletal animation.
+ * Spatial control for use of skeletal animation.
  *
- * The control currently supports:
- * 1) Animation blending/transitions
- * 2) Multiple animation channels
- * 3) Multiple skins
- * 4) Animation event listeners
- * 5) Animated model cloning
- * 6) Animated model binary import/export
- *
- * Planned:
- * 1) Hardware skinning
- * 2) Morph/Pose animation
- * 3) Attachments
- * 4) Add/remove skins
- *
- * 
+ * Currently supports:
+ * Animation blending
+ * Multiple animation channels
+ * Multiple skins
+ * Event listeners
+ * Animated model cloning
+ * Animated model binary import/export (Serialisation)
  */
 public final class AnimControl extends AbstractControl implements Cloneable {
 
     /**
-     * Skeleton object must contain corresponding data for the targets' weight buffers.
+     * Skeleton object must contain corresponding data for the target's weight buffers.
      */
     Skeleton skeleton;
-    /** only used for backward compatibility */
+    /** Outdated, but in the case it is used in an older test, it's left in and marked as deprecated */
     @Deprecated
     private SkeletonControl skeletonControl;
+    
     /**
-     * List of animations. 
+     * List of animations. Hashmapped dictionary to allow association of a String name and an Animation.
      */
     HashMap<String, Animation> animationMap = new HashMap<String, Animation>();
+    
     /**
      * Animation channels. Transient to avoid it being serialised (making an object's state persistent)
      * Serialisation stores the object's state in byte form, deserialisation retrieves the state from the bytes.
@@ -60,10 +53,10 @@ public final class AnimControl extends AbstractControl implements Cloneable {
     private transient ArrayList<AnimEventListener> listeners = new ArrayList<AnimEventListener>();
 
     /**
-     * Creates a new animation control for the given skeleton.
-     * The method setAnimations must be called after initialisation in order for this class to be useful.
+     * Creates a new animation control the supplied skeleton.
+     * setAnimations should be called after the constructor in order for this class to be used at all.
      *
-     * @param skeleton The skeleton to animate
+     * @param skeleton The skeleton to be animated
      */
     public AnimControl(Skeleton skeleton) {
         this.skeleton = skeleton;
@@ -71,7 +64,7 @@ public final class AnimControl extends AbstractControl implements Cloneable {
     }
 
     /**
-     * Serialization only. Do not use.
+     * Serialisation only. Do not use.
      */
     public AnimControl() {
     }
@@ -90,7 +83,7 @@ public final class AnimControl extends AbstractControl implements Cloneable {
                 clone.skeleton = new Skeleton(skeleton);
             }
 
-            // animationMap is cloned, but only ClonableTracks will be cloned as they need a reference to a cloned spatial
+            // animationMap is cloned, but only ClonableTracks will be cloned as they need to reference a cloned spatial.
             for (Entry<String, Animation> animEntry : animationMap.entrySet()) {
                 clone.animationMap.put(animEntry.getKey(), animEntry.getValue().cloneForSpatial(spatial));
             }
@@ -243,9 +236,6 @@ public final class AnimControl extends AbstractControl implements Cloneable {
         }
     }
 
-    /**
-     * Internal use only.
-     */
     @Override
     public void setSpatial(Spatial spatial) {
         if (spatial == null && skeletonControl != null) {
@@ -259,7 +249,7 @@ public final class AnimControl extends AbstractControl implements Cloneable {
             spatial.addControl(skeletonControl);
         }
     }
-
+    
     final void reset() {
         if (skeleton != null) {
             skeleton.resetAndUpdate();

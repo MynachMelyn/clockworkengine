@@ -23,7 +23,7 @@ public class ConeCollisionShape extends CollisionShape {
     protected int axis;
 
     /**
-     * Serialization only, do not use.
+     * Serialisation only, do not use.
      */
     public ConeCollisionShape() {
     }

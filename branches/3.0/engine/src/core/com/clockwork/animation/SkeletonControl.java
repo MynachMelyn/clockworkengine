@@ -79,7 +79,7 @@ public class SkeletonControl extends AbstractControl implements Cloneable {
     private Set<Material> materials = new HashSet<Material>();
 
     /**
-     * Serialization only. Do not use.
+     * Serialisation only. Do not use.
      */
     public SkeletonControl() {
     }

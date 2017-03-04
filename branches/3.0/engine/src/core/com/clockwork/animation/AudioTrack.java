@@ -51,7 +51,7 @@ public class AudioTrack implements ClonableTrack {
     }
 
     /**
-     * default constructor for serialization only
+     * default constructor for serialisation only
      */
     public AudioTrack() {
     }
@@ -246,7 +246,7 @@ public class AudioTrack implements ClonableTrack {
     }
 
     /**
-     * Internal use only serialization
+     * Internal use only serialisation
      *
      * @param ex exporter
      * @throws IOException exception
@@ -259,7 +259,7 @@ public class AudioTrack implements ClonableTrack {
     }
 
     /**
-     * Internal use only serialization
+     * Internal use only serialisation
      *
      * @param im importer
      * @throws IOException Exception

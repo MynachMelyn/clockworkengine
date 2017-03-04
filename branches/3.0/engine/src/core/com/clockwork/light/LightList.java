@@ -36,7 +36,7 @@ public final class LightList implements Iterable<Light>, Savable, Cloneable {
     };
 
     /**
-     * Default constructor for serialization. Do not use
+     * Default constructor for serialisation. Do not use
      */
     public LightList(){
     }

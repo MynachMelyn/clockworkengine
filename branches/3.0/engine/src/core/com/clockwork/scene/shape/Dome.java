@@ -32,7 +32,7 @@ public class Dome extends Mesh {
     private boolean insideView = true;
 
     /**
-     * Serialization only. Do not use.
+     * Serialisation only. Do not use.
      */
     public Dome() {
     }

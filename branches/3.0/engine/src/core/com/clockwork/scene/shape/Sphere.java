@@ -52,7 +52,7 @@ public class Sphere extends Mesh {
     protected TextureMode textureMode = TextureMode.Original;
 
     /**
-     * Serialization only. Do not use.
+     * Serialisation only. Do not use.
      */
     public Sphere() {
     }

@@ -37,7 +37,7 @@ public class Cylinder extends Mesh {
     private boolean inverted;
 
     /**
-     * Default constructor for serialization only. Do not use.
+     * Default constructor for serialisation only. Do not use.
      */
     public Cylinder() {
     }

@@ -86,7 +86,7 @@ public abstract class AbstractShadowRenderer implements SceneProcessor, Savable 
 
     
     /**
-     * used for serialization
+     * used for serialisation
      */
     protected AbstractShadowRenderer(){        
     }    

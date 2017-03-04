@@ -96,7 +96,7 @@ public class Box extends AbstractBox {
     }
 
     /**
-     * Empty constructor for serialization only. Do not use.
+     * Empty constructor for serialisation only. Do not use.
      */
     public Box(){
         super();

@@ -91,7 +91,7 @@ public class Material implements CloneableSmartAsset, Cloneable, Savable {
     }
 
     /**
-     * Do not use this constructor. Serialization purposes only.
+     * Do not use this constructor. Serialisation purposes only.
      */
     public Material() {
     }

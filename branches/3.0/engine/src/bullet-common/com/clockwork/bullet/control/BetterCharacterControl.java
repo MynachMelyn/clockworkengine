@@ -88,7 +88,7 @@ public class BetterCharacterControl extends AbstractPhysicsControl implements Ph
     protected boolean wantToUnDuck = false;
 
     /**
-     * Only used for serialization, do not use this constructor.
+     * Only used for serialisation, do not use this constructor.
      */
     public BetterCharacterControl() {
         jumpForce = new Vector3f();

@@ -78,7 +78,7 @@ public class BlenderKey extends ModelKey {
     protected MipmapGenerationMethod mipmapGenerationMethod = MipmapGenerationMethod.GENERATE_WHEN_NEEDED;
 
     /**
-     * Constructor used by serialization mechanisms.
+     * Constructor used by serialisation mechanisms.
      */
     public BlenderKey() {
     }

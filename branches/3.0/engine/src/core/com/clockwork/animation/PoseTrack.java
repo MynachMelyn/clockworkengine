@@ -30,7 +30,7 @@ public final class PoseTrack implements Track {
         }
         
         /**
-         * Serialization-only. Do not use.
+         * Serialisation-only. Do not use.
          */
         public PoseFrame()
         {
@@ -82,7 +82,7 @@ public final class PoseTrack implements Track {
     }
     
     /**
-     * Serialization-only. Do not use.
+     * Serialisation-only. Do not use.
      */
     public PoseTrack()
     {

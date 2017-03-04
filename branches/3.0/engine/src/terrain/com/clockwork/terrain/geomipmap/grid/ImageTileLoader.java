@@ -140,10 +140,10 @@ public class ImageTileLoader implements TerrainGridTileLoader{
     }
 
     public void write(JmeExporter ex) throws IOException {
-        //TODO: serialization
+        //TODO: serialisation
     }
 
     public void read(JmeImporter im) throws IOException {
-        //TODO: serialization
+        //TODO: serialisation
     }
 }

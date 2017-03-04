@@ -674,7 +674,7 @@ public final class Vector2f implements Savable, Cloneable, java.io.Serializable 
     }
 
     /**
-     * Used with serialization. Not to be called manually.
+     * Used with serialisation. Not to be called manually.
      * 
      * @param in
      *            ObjectInput
@@ -689,7 +689,7 @@ public final class Vector2f implements Savable, Cloneable, java.io.Serializable 
     }
 
     /**
-     * Used with serialization. Not to be called manually.
+     * Used with serialisation. Not to be called manually.
      * 
      * @param out
      *            ObjectOutput

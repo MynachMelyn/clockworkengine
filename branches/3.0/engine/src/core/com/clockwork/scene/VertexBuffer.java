@@ -306,7 +306,7 @@ public class VertexBuffer extends NativeObject implements Savable, Cloneable {
     }
 
     /**
-     * Serialization only. Do not use.
+     * Serialisation only. Do not use.
      */
     public VertexBuffer(){
         super();

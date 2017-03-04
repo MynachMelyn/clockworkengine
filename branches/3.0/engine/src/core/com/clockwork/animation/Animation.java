@@ -27,7 +27,7 @@ public class Animation implements Savable, Cloneable {
     private SafeArrayList<Track> tracks = new SafeArrayList<Track>(Track.class);
 
     /**
-     * Serialization-only. Do not use.
+     * Serialisation-only. Do not use.
      */
     public Animation() {
     }

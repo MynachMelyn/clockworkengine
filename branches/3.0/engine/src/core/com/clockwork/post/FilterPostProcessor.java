@@ -60,7 +60,7 @@ public class FilterPostProcessor implements SceneProcessor, Savable {
 
     /**
      * Don't use this constructor, use {@link #FilterPostProcessor(AssetManager assetManager)}<br>
-     * This constructor is used for serialization only
+     * This constructor is used for serialisation only
      */
     public FilterPostProcessor() {
     }

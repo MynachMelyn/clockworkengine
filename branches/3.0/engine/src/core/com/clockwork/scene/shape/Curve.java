@@ -22,7 +22,7 @@ public class Curve extends Mesh {
     private Vector3f temp = new Vector3f();
 
     /**
-     * Serialization only. Do not use.
+     * Serialisation only. Do not use.
      */
     public Curve() {
     }

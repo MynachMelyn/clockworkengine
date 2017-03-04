@@ -5,7 +5,7 @@ import java.io.IOException;
 
 /**
  * <code>Savable</code> is an interface for objects that can be serialized
- * using jME's serialization system. 
+ * using jME's serialisation system. 
  * 
  */
 public interface Savable {

@@ -27,7 +27,7 @@ public class PointLightShadowRenderer extends AbstractShadowRenderer {
     private Geometry[] frustums = null;
 
     /**
-     * Used for serialization use
+     * Used for serialisation use
      * PointLightShadowRenderer"PointLightShadowRenderer(AssetManager
      * assetManager, int shadowMapSize)
      */

@@ -38,7 +38,7 @@ public class SpotLightShadowRenderer extends AbstractShadowRenderer {
 
     
     /**
-     * Used for serialization use SpotLightShadowRenderer#SpotLightShadowRenderer(AssetManager assetManager, int shadowMapSize)
+     * Used for serialisation use SpotLightShadowRenderer#SpotLightShadowRenderer(AssetManager assetManager, int shadowMapSize)
      */
     public SpotLightShadowRenderer() {
         super();

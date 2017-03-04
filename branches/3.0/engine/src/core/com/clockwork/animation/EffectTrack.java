@@ -115,7 +115,7 @@ public class EffectTrack implements ClonableTrack {
     }
 
     /**
-     * default constructor only for serialization
+     * default constructor only for serialisation
      */
     public EffectTrack() {
     }
@@ -134,7 +134,7 @@ public class EffectTrack implements ClonableTrack {
         //setting the emmitter to not emmit.
         this.emitter.setParticlesPerSec(0);
         this.length = length;
-        //Marking the emitter with a reference to this track for further use in deserialization.
+        //Marking the emitter with a reference to this track for further use in deserialisation.
         setUserData(this);
 
     }
@@ -358,7 +358,7 @@ public class EffectTrack implements ClonableTrack {
     }
 
     /**
-     * Internal use only serialization
+     * Internal use only serialisation
      *
      * @param ex exporter
      * @throws IOException exception
@@ -376,7 +376,7 @@ public class EffectTrack implements ClonableTrack {
     }
 
     /**
-     * Internal use only serialization
+     * Internal use only serialisation
      *
      * @param im importer
      * @throws IOException Exception

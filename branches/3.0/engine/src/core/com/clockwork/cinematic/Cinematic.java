@@ -69,7 +69,7 @@ public class Cinematic extends AbstractCinematicEvent implements AppState {
     private float nextEnqueue = 0;
 
     /**
-     * Used for serialization creates a cinematic, don't use this constructor
+     * Used for serialisation creates a cinematic, don't use this constructor
      * directly
      */
     public Cinematic() {
@@ -166,7 +166,7 @@ public class Cinematic extends AbstractCinematicEvent implements AppState {
     }
 
     /**
-     * used internally for serialization
+     * used internally for serialisation
      *
      * @param ex
      * @throws IOException

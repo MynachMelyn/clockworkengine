@@ -131,7 +131,7 @@ public abstract class Spatial implements Savable, Cloneable, Collidable, Cloneab
     protected transient int refreshFlags = 0;
 
     /**
-     * Serialization only. Do not use.
+     * Serialisation only. Do not use.
      */
     public Spatial() {
         localTransform = new Transform();

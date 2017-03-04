@@ -40,7 +40,7 @@ public class LightControl extends AbstractControl {
     private ControlDirection controlDir = ControlDirection.SpatialToLight;
 
     /**
-     * Constructor used for Serialization.
+     * Constructor used for Serialisation.
      */
     public LightControl() {
     }

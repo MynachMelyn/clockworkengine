@@ -29,7 +29,7 @@ public final class Pose implements Savable, Cloneable {
     }
 
     /**
-     * Serialization-only. Do not use.
+     * Serialisation-only. Do not use.
      */
     public Pose()
     {

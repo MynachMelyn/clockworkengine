@@ -50,7 +50,7 @@ public class Picture extends Geometry {
     }
 
     /*
-     * Serialization only. Do not use.
+     * Serialisation only. Do not use.
      */
     public Picture(){
     }

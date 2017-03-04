@@ -34,7 +34,7 @@ public class Node extends Spatial implements Savable {
     protected SafeArrayList<Spatial> children = new SafeArrayList<Spatial>(Spatial.class);
 
     /**
-     * Serialization only. Do not use.
+     * Serialisation only. Do not use.
      */
     public Node() {
     }

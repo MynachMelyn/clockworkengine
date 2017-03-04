@@ -200,7 +200,7 @@ public class ParticleEmitter extends Geometry {
     }
 
     /**
-     * For serialization only. Do not use.
+     * For serialisation only. Do not use.
      */
     public ParticleEmitter() {
         super();

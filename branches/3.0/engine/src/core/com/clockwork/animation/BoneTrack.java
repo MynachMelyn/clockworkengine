@@ -28,7 +28,7 @@ public final class BoneTrack implements Track {
     private float[] times;
     
     /**
-     * Serialization-only. Do not use.
+     * Serialisation-only. Do not use.
      */
     public BoneTrack() {
     }

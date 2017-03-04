@@ -82,7 +82,7 @@ public final class Skeleton implements Savable {
     }
 
     /**
-     * Serialization only. Do not use.
+     * Serialisation only. Do not use.
      */
     public Skeleton() {
     }
@@ -137,7 +137,7 @@ public final class Skeleton implements Savable {
     }
 
     /**
-     * Reset the skeleton to bind pose and updates the bones
+     * Reset the skeleton to base pose and updates the bones
      */
     public final void resetAndUpdate() {
         for (int i = rootBones.length - 1; i >= 0; i--) {

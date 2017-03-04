@@ -1199,7 +1199,7 @@ public final class Quaternion implements Savable, Cloneable, java.io.Serializabl
     /**
      * <code>readExternal</code> builds a quaternion from an
      * <code>ObjectInput</code> object. <br>
-     * NOTE: Used with serialization. Not to be called manually.
+     * NOTE: Used with serialisation. Not to be called manually.
      * 
      * @param in
      *            the ObjectInput value to read from.
@@ -1216,7 +1216,7 @@ public final class Quaternion implements Savable, Cloneable, java.io.Serializabl
 
     /**
      * <code>writeExternal</code> writes this quaternion out to a
-     * <code>ObjectOutput</code> object. NOTE: Used with serialization. Not to
+     * <code>ObjectOutput</code> object. NOTE: Used with serialisation. Not to
      * be called manually.
      * 
      * @param out

@@ -23,13 +23,13 @@ import com.clockwork.terrain.geomipmap.TerrainQuad;
 import com.clockwork.terrain.geomipmap.lodcalc.DistanceLodCalculator;
 import java.io.File;
 
-public class TerrainGridSerializationTest extends SimpleApplication {
+public class TerrainGridSerialisationTest extends SimpleApplication {
 
     private TerrainGrid terrain;
     private boolean usePhysics = true;
 
     public static void main(final String[] args) {
-        TerrainGridSerializationTest app = new TerrainGridSerializationTest();
+        TerrainGridSerialisationTest app = new TerrainGridSerialisationTest();
         app.start();
     }
     private CharacterControl player3;
@@ -123,30 +123,30 @@ public class TerrainGridSerializationTest extends SimpleApplication {
         public void onAction(final String name, final boolean keyPressed, final float tpf) {
             if (name.equals("Lefts")) {
                 if (keyPressed) {
-                    TerrainGridSerializationTest.this.left = true;
+                    TerrainGridSerialisationTest.this.left = true;
                 } else {
-                    TerrainGridSerializationTest.this.left = false;
+                    TerrainGridSerialisationTest.this.left = false;
                 }
             } else if (name.equals("Rights")) {
                 if (keyPressed) {
-                    TerrainGridSerializationTest.this.right = true;
+                    TerrainGridSerialisationTest.this.right = true;
                 } else {
-                    TerrainGridSerializationTest.this.right = false;
+                    TerrainGridSerialisationTest.this.right = false;
                 }
             } else if (name.equals("Ups")) {
                 if (keyPressed) {
-                    TerrainGridSerializationTest.this.up = true;
+                    TerrainGridSerialisationTest.this.up = true;
                 } else {
-                    TerrainGridSerializationTest.this.up = false;
+                    TerrainGridSerialisationTest.this.up = false;
                 }
             } else if (name.equals("Downs")) {
                 if (keyPressed) {
-                    TerrainGridSerializationTest.this.down = true;
+                    TerrainGridSerialisationTest.this.down = true;
                 } else {
-                    TerrainGridSerializationTest.this.down = false;
+                    TerrainGridSerialisationTest.this.down = false;
                 }
             } else if (name.equals("Jumps")) {
-                TerrainGridSerializationTest.this.player3.jump();
+                TerrainGridSerialisationTest.this.player3.jump();
             }
         }
     };

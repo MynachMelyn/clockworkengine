@@ -29,7 +29,7 @@ public class Arrow extends Mesh {
     };
 
     /**
-     * Serialization only. Do not use.
+     * Serialisation only. Do not use.
      */
     public Arrow() {
     }
