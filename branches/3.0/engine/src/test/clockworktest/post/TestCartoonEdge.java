@@ -70,6 +70,14 @@ public class TestCartoonEdge extends SimpleApplication {
 
     public void setupModel(){
         Spatial model = assetManager.loadModel("Models/MonkeyHead/MonkeyHead.mesh.xml");
+        
+        Material material = assetManager.loadMaterial("Models/MonkeyHead/MonkeyHead2.j3m");
+        material.setBoolean("UseMaterialColors", true);
+        material.setColor("Specular", ColorRGBA.Black);
+        material.setColor("Diffuse", ColorRGBA.White);
+        material.setBoolean("VertexLighting", true);
+        model.setMaterial(material);
+        
         makeToonish(model);
         model.rotate(0, FastMath.PI, 0);
 //        signpost.setLocalTranslation(12, 3.5f, 30);

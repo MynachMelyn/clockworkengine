@@ -1,0 +1,6 @@
+Material Monkey Head : Common/MatDefs/Light/Lighting.j3md {
+    MaterialParameters {
+	   Shininess   : 4.0
+	   DiffuseMap  : Models/MonkeyHead/tex.png
+    }
+}
