@@ -1,5 +1,3 @@
-
-
 package clockworktest.helloworld;
 
 import com.clockwork.animation.AnimChannel;
