@@ -154,22 +154,13 @@ public final class Transform implements Savable, Cloneable, java.io.Serializable
     }
 
     /**
-     * Changes the values of this matrix acording to it's parent.  Very similar to the concept of Node/Spatial transforms.
-     * @param parent The parent matrix.
-     * @return This matrix, after combining.
+     * Changes the values of this transformation matrix according to it's parent. 
+     * Akin to the concept of Node/Spatial transforms.
+     * @param parent The parent transform matrix.
      */
     public Transform combineWithParent(Transform parent) {
         scale.multLocal(parent.scale);
-//        rot.multLocal(parent.rot);
         parent.rot.mult(rot, rot);
-
-        // This here, is evil code
-//        parent
-//            .rot
-//            .multLocal(translation)
-//            .multLocal(parent.scale)
-//            .addLocal(parent.translation);
-
         translation.multLocal(parent.scale);
         parent
             .rot

@@ -483,17 +483,17 @@ public final class Vector3f implements Savable, Cloneable, java.io.Serializable 
     }
 
     /**
-     * <code>multLocal</code> multiplies a provided vector to this vector
+     * multLocal multiplies a provided vector to this vector
      * internally, and returns a handle to this vector for easy chaining of
      * calls. If the provided vector is null, null is returned.
      *
      * @param vec
-     *            the vector to mult to this vector.
+     *            the vector to multiply with this vector.
      * @return this
      */
     public Vector3f multLocal(Vector3f vec) {
         if (null == vec) {
-            logger.warning("Provided vector is null, null returned.");
+            logger.warning("Given vector is null.");
             return null;
         }
         x *= vec.x;
