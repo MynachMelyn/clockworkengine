@@ -39,7 +39,7 @@ import java.util.logging.Logger;
  * in the future it will use all of them to determine what
  * LOD to set.
  *
- * This control serializes, but it does not save the Camera reference.
+ * This control serialises, but it does not save the Camera reference.
  * This camera reference has to be manually added in when you load the
  * terrain to the scene!
  * 

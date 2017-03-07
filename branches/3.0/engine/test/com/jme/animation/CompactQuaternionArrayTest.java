@@ -22,7 +22,7 @@ public class CompactQuaternionArrayTest {
         CompactQuaternionArray compact = new CompactQuaternionArray();
         compact.add(objArray);
         assertTrue(Arrays.equals(compact.getIndex(objArray), new int[]{0, 1, 2, 1, 0}));
-        assertTrue(Arrays.equals(compact.getSerializedData(), new float[]{1, 0, 1, 1, 1, 1, 1, 0, 0, 1, 1, 0}));
+        assertTrue(Arrays.equals(compact.getSerialisedData(), new float[]{1, 0, 1, 1, 1, 1, 1, 0, 0, 1, 1, 0}));
     }
 
     @Test

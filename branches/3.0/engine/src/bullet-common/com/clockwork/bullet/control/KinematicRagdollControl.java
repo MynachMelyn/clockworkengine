@@ -775,7 +775,7 @@ public class KinematicRagdollControl extends AbstractPhysicsControl implements P
     }
 
     /**
-     * serialize this control
+     * serialise this control
      *
      * @param ex
      * @throws IOException
@@ -803,7 +803,7 @@ public class KinematicRagdollControl extends AbstractPhysicsControl implements P
     }
 
     /**
-     * de-serialize this control
+     * de-serialise this control
      *
      * @param im
      * @throws IOException

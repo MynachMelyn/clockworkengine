@@ -6,7 +6,7 @@ import com.clockwork.math.Vector3f;
 import java.io.IOException;
 
 /**
- * Serialize and compress Vector3f[] by indexing same values
+ * Serialise and compress Vector3f[] by indexing same values
  * 
  */
 public class CompactVector3Array extends CompactArray<Vector3f> implements Savable {
@@ -38,7 +38,7 @@ public class CompactVector3Array extends CompactArray<Vector3f> implements Savab
 
     @Override
     public void write(JmeExporter ex) throws IOException {
-        serialize();
+        serialise();
         OutputCapsule out = ex.getCapsule(this);
         out.write(array, "array", null);
         out.write(index, "index", null);
@@ -52,7 +52,7 @@ public class CompactVector3Array extends CompactArray<Vector3f> implements Savab
     }
     
     @Override
-    protected void serialize(int i, Vector3f store) {
+    protected void serialise(int i, Vector3f store) {
         int j = i*getTupleSize();
         array[j] = store.getX();
         array[j+1] = store.getY();
@@ -60,7 +60,7 @@ public class CompactVector3Array extends CompactArray<Vector3f> implements Savab
     }
 
     @Override
-    protected Vector3f deserialize(int i, Vector3f store) {
+    protected Vector3f deserialise(int i, Vector3f store) {
         int j = i*getTupleSize();
         store.set(array[j], array[j+1], array[j+2]);
         return store;

@@ -656,7 +656,7 @@ public class TextureHelper extends AbstractBlenderHelper {
      * This method loads the textre from outside the blend file using the
      * AssetManager that the blend file was loaded with. It returns a texture
      * with a full assetKey that references the original texture so it later
-     * doesn't need to ba packed when the model data is serialized. It searches
+     * doesn't need to ba packed when the model data is serialised. It searches
      * the AssetManager for the full path if the model file is a relative path
      * and will attempt to truncate the path if it is an absolute file path
      * until the path can be found in the AssetManager. If the texture can not

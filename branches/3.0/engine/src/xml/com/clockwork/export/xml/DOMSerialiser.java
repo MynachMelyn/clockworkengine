@@ -7,13 +7,13 @@ import java.nio.charset.Charset;
 import org.w3c.dom.*;
 
 /**
- * The DOMSerializer was based primarily off the DOMSerializer.java class from the 
+ * The DOMSerialiser was based primarily off the DOMSerialiser.java class from the 
  * "Java and XML" 3rd Edition book by Brett McLaughlin, and Justin Edelson. Some 
  * modifications were made to support formatting of elements and attributes.
  * 
  * @version $Revision: 4207 $, $Date: 2009-03-29 11:19:16 -0400 (Sun, 29 Mar 2009) $
  */
-public class DOMSerializer {
+public class DOMSerialiser {
 
     /** The encoding to use for output (default is UTF-8) */
     private Charset encoding = Charset.forName("utf-8");
@@ -48,31 +48,31 @@ public class DOMSerializer {
     }
 
     /**
-     * Serialize {@code doc} to {@code out}
+     * Serialise {@code doc} to {@code out}
      * 
-     * @param doc the document to serialize.
-     * @param file the file to serialize to.
+     * @param doc the document to serialise.
+     * @param file the file to serialise to.
      * @throws IOException
      */
-    public void serialize(Document doc, File file) throws IOException {
-        serialize(doc, new FileOutputStream(file));
+    public void serialise(Document doc, File file) throws IOException {
+        serialise(doc, new FileOutputStream(file));
     }
 
     /**
-     * Serialize {@code doc} to {@code out}
+     * Serialise {@code doc} to {@code out}
      * 
-     * @param doc the document to serialize.
-     * @param out the stream to serialize to.
+     * @param doc the document to serialise.
+     * @param out the stream to serialise to.
      * @throws IOException
      */
-    public void serialize(Document doc, OutputStream out) throws IOException {
+    public void serialise(Document doc, OutputStream out) throws IOException {
         Writer writer = new OutputStreamWriter(out, encoding);
         write(doc, writer, 0);
         writer.flush();
     }
 
     /**
-     * Set the encoding used by this serializer.
+     * Set the encoding used by this serialiser.
      * 
      * @param encoding the encoding to use, passing in {@code null} results in the
      *  default encoding (UTF-8) being set.
@@ -99,7 +99,7 @@ public class DOMSerializer {
     /**
      * Set the line separator that will be used when serializing documents.
      * <p>
-     * If this is not called then the serializer uses a default based on the
+     * If this is not called then the serialiser uses a default based on the
      * {@code line.separator} system property. 
      * 
      * @param lineSeparator the line separator to set.

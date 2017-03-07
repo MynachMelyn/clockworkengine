@@ -6,7 +6,7 @@ import com.clockwork.math.Quaternion;
 import java.io.IOException;
 
 /**
- * Serialize and compress {@link Quaternion}[] by indexing same values
+ * Serialise and compress {@link Quaternion}[] by indexing same values
  * It is converted to float[]
  * 
  */
@@ -39,7 +39,7 @@ public class CompactQuaternionArray extends CompactArray<Quaternion> implements 
 
     @Override
     public void write(JmeExporter ex) throws IOException {
-        serialize();
+        serialise();
         OutputCapsule out = ex.getCapsule(this);
         out.write(array, "array", null);
         out.write(index, "index", null);
@@ -53,7 +53,7 @@ public class CompactQuaternionArray extends CompactArray<Quaternion> implements 
     }
 
     @Override
-    protected void serialize(int i, Quaternion store) {
+    protected void serialise(int i, Quaternion store) {
         int j = i * getTupleSize();
         array[j] = store.getX();
         array[j + 1] = store.getY();
@@ -62,7 +62,7 @@ public class CompactQuaternionArray extends CompactArray<Quaternion> implements 
     }
 
     @Override
-    protected Quaternion deserialize(int i, Quaternion store) {
+    protected Quaternion deserialise(int i, Quaternion store) {
         int j = i * getTupleSize();
         store.set(array[j], array[j + 1], array[j + 2], array[j + 3]);
         return store;

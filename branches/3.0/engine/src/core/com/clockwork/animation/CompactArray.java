@@ -24,7 +24,7 @@ public abstract class CompactArray<T> {
     }
 
     /**
-     * create array using serialized data
+     * create array using serialised data
      * @param compressedArray
      * @param index
      */
@@ -35,7 +35,7 @@ public abstract class CompactArray<T> {
 
     /**
      * Add objects.
-     * They are serialized automatically when get() method is called.
+     * They are serialised automatically when get() method is called.
      * @param objArray
      */
     public void add(T... objArray) {
@@ -77,7 +77,7 @@ public abstract class CompactArray<T> {
      * add() method call is not allowed anymore.
      */
     public void freeze() {
-        serialize();
+        serialise();
         indexPool.clear();
     }
 
@@ -87,7 +87,7 @@ public abstract class CompactArray<T> {
      */
     public final void set(int index, T value) {
         int j = getCompactIndex(index);
-        serialize(j, value);
+        serialise(j, value);
     }
 
     /**
@@ -97,24 +97,24 @@ public abstract class CompactArray<T> {
      * @return 
      */
     public final T get(int index, T store) {
-        serialize();
+        serialise();
         int j = getCompactIndex(index);
-        return deserialize(j, store);
+        return deserialise(j, store);
     }
 
     /**
-     * return a float array of serialized data
+     * return a float array of serialised data
      * @return 
      */
-    public final float[] getSerializedData() {
-        serialize();
+    public final float[] getSerialisedData() {
+        serialise();
         return array;
     }
 
     /**
-     * serialize this compact array
+     * serialise this compact array
      */
-    public final void serialize() {
+    public final void serialise() {
         if (invalid) {
             int newSize = indexPool.size() * getTupleSize();
             if (array == null || Array.getLength(array) < newSize) {
@@ -122,7 +122,7 @@ public abstract class CompactArray<T> {
                 for (Map.Entry<T, Integer> entry : indexPool.entrySet()) {
                     int i = entry.getValue();
                     T obj = entry.getKey();
-                    serialize(i, obj);
+                    serialise(i, obj);
                 }
             }
             invalid = false;
@@ -132,8 +132,8 @@ public abstract class CompactArray<T> {
     /**
      * @return compacted array's primitive size
      */
-    protected final int getSerializedSize() {
-        return Array.getLength(getSerializedData());
+    protected final int getSerialisedSize() {
+        return Array.getLength(getSerialisedData());
     }
 
     /**
@@ -182,16 +182,16 @@ public abstract class CompactArray<T> {
      * @return uncompressed object size
      */
     public final int getTotalObjectSize() {
-        assert getSerializedSize() % getTupleSize() == 0;
-        return index != null ? index.length : getSerializedSize() / getTupleSize();
+        assert getSerialisedSize() % getTupleSize() == 0;
+        return index != null ? index.length : getSerialisedSize() / getTupleSize();
     }
 
     /**
      * @return compressed object size
      */
     public final int getCompactObjectSize() {
-        assert getSerializedSize() % getTupleSize() == 0;
-        return getSerializedSize() / getTupleSize();
+        assert getSerialisedSize() % getTupleSize() == 0;
+        return getSerialisedSize() / getTupleSize();
     }
 
     /**
@@ -200,10 +200,10 @@ public abstract class CompactArray<T> {
      */
     public final T[] toObjectArray() {
         try {
-            T[] compactArr = (T[]) Array.newInstance(getElementClass(), getSerializedSize() / getTupleSize());
+            T[] compactArr = (T[]) Array.newInstance(getElementClass(), getSerialisedSize() / getTupleSize());
             for (int i = 0; i < compactArr.length; i++) {
                 compactArr[i] = getElementClass().newInstance();
-                deserialize(i, compactArr[i]);
+                deserialise(i, compactArr[i]);
             }
 
             T[] objArr = (T[]) Array.newInstance(getElementClass(), getTotalObjectSize());
@@ -218,21 +218,21 @@ public abstract class CompactArray<T> {
     }
 
     /**
-     * serialize object
+     * serialise object
      * @param compactIndex compacted object index
      * @param store
      */
-    protected abstract void serialize(int compactIndex, T store);
+    protected abstract void serialise(int compactIndex, T store);
 
     /**
-     * deserialize object
+     * deserialise object
      * @param compactIndex compacted object index
      * @param store
      */
-    protected abstract T deserialize(int compactIndex, T store);
+    protected abstract T deserialise(int compactIndex, T store);
 
     /**
-     * serialized size of one object element
+     * serialised size of one object element
      */
     protected abstract int getTupleSize();
 

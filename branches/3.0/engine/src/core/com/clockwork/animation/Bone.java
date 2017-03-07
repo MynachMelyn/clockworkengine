@@ -641,7 +641,7 @@ public final class Bone implements Savable {
         }
 
         // NOTE: Parent skeleton will call update() then setBindingPose()
-        // after Skeleton has been de-serialized.
+        // after Skeleton has been de-serialised.
         // Therefore, worldBindInversePos and worldBindInverseRot
         // will be reconstructed based on that information.
     }

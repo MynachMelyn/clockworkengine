@@ -55,7 +55,7 @@ public class CompactVector3ArrayTest {
     private void _testAdd() {
         assertTrue(Arrays.equals(compact.getIndex(objArray1), index1));
         assertTrue(Arrays.equals(compact.getIndex(objArray2), index2));
-        assertTrue(Arrays.equals(compact.getSerializedData(), serialData));
+        assertTrue(Arrays.equals(compact.getSerialisedData(), serialData));
     }
 
     @Test

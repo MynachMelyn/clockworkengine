@@ -598,7 +598,7 @@ public abstract class AbstractShadowRenderer implements SceneProcessor, Savable 
     }
 
     /**
-     * De-serialize this instance, for example when loading from a J3O file.
+     * De-serialise this instance, for example when loading from a J3O file.
      *
      * @param im importer (not null)
      */
@@ -618,7 +618,7 @@ public abstract class AbstractShadowRenderer implements SceneProcessor, Savable 
     }
 
     /**
-     * Serialize this instance, for example when saving to a J3O file.
+     * Serialise this instance, for example when saving to a J3O file.
      *
      * @param ex exporter (not null)
      */
