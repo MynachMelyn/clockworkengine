@@ -1,3 +1,4 @@
+
 package com.clockwork.scene;
 
 import com.clockwork.asset.AssetKey;
@@ -43,7 +44,7 @@ public abstract class Spatial implements Savable, Cloneable, Collidable, Cloneab
     public enum CullHint {
 
         /** 
-         * Do whatever our parent does. If there isn't a parent, set to dynamic by default.
+         * Do whatever our parent does. If no parent, default to {@link #Dynamic}.
          */
         Inherit,
         /**
@@ -53,13 +54,13 @@ public abstract class Spatial implements Savable, Cloneable, Collidable, Cloneab
          */
         Dynamic,
         /** 
-         * Always cull this from the view, essentially throwing away this object
-         * and any children from rendering commands completely.
+         * Always cull this from the view, throwing away this object
+         * and any children from rendering commands.
          */
         Always,
         /**
          * Never cull this from view, always draw it. 
-         * This will still be culled if the parent is culled.
+         * Note that we will still get culled if our parent is culled.
          */
         Never;
     }
@@ -85,9 +86,9 @@ public abstract class Spatial implements Savable, Cloneable, Collidable, Cloneab
     /**
      * Refresh flag types
      */
-    protected static final int RF_TRANSFORM = 0x01, // Needs light resort + combine transforms
+    protected static final int RF_TRANSFORM = 0x01, // need light resort + combine transforms
                                RF_BOUND = 0x02,
-                               RF_LIGHTLIST = 0x04; // Changes in light lists 
+                               RF_LIGHTLIST = 0x04; // changes in light lists 
     
     protected CullHint cullHint = CullHint.Inherit;
     protected BatchHint batchHint = BatchHint.Inherit;
@@ -115,6 +116,8 @@ public abstract class Spatial implements Savable, Cloneable, Collidable, Cloneab
     protected HashMap<String, Savable> userData = null;
     /**
      * Used for smart asset caching
+     * 
+     * @see AssetKey#useSmartCache() 
      */
     protected AssetKey key;
     /** 
@@ -128,7 +131,7 @@ public abstract class Spatial implements Savable, Cloneable, Collidable, Cloneab
     protected transient int refreshFlags = 0;
 
     /**
-     * For serialisation only.
+     * Serialisation only. Do not use.
      */
     public Spatial() {
         localTransform = new Transform();
@@ -226,8 +229,8 @@ public abstract class Spatial implements Savable, Cloneable, Collidable, Cloneab
         if (refreshFlags != 0) {
             throw new IllegalStateException("Scene graph is not properly updated for rendering.\n"
                     + "State was changed after rootNode.updateGeometricState() call. \n"
-                    + "Do not modify this scene from a different thread.\n"
-                    + "Erroneous spatial name: " + getName());
+                    + "Make sure you do not modify the scene from another thread!\n"
+                    + "Problem spatial name: " + getName());
         }
 
         CullHint cm = getCullHint();
