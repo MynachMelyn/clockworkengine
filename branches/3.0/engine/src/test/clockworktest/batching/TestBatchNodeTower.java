@@ -138,14 +138,14 @@ public class TestBatchNodeTower extends SimpleApplication {
             } else {
                 tempY = brickHeight;
             }
-            // Alternate brick seams
+            // Brick seams
             angle = 360.0f / bricksPerLayer * i/2f;
             for (int j = 0; j < bricksPerLayer; j++){
               tempZ = Math.cos(Math.toRadians(angle))*radius;
               tempX = Math.sin(Math.toRadians(angle))*radius;
               System.out.println("x="+((float)(tempX))+" y="+((float)(tempY))+" z="+(float)(tempZ));
               Vector3f vt = new Vector3f((float)(tempX), (float)(tempY), (float)(tempZ));
-              // Add crenelation
+              // Crenelation
               if (i==brickLayers-1){
                 if (j%2 == 0){
                     addBrick(vt);

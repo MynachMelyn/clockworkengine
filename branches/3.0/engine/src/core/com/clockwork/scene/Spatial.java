@@ -24,27 +24,23 @@ import java.util.*;
 import java.util.logging.Logger;
 
 /**
- * <code>Spatial</code> defines the base class for scene graph nodes. It
+ * Spatial defines the base class for scene graph nodes. It
  * maintains a link to a parent, it's local transforms and the world's
- * transforms. All other scene graph elements, such as {@link Node} and
- * {@link Geometry} are subclasses of <code>Spatial</code>.
- *
- * 
- * 
- * @version $Revision: 4075 $, $Data$
+ * transforms. All other scene graph elements, such as Node and
+ * Geometry objects are subclasses of Spatial.
  */
 public abstract class Spatial implements Savable, Cloneable, Collidable, CloneableSmartAsset {
 
     private static final Logger logger = Logger.getLogger(Spatial.class.getName());
 
     /**
-     * Specifies how frustum culling should be handled by 
-     * this spatial.
+     * Defines how frustum culling is to be handled by 
+     * the spatial.
      */
     public enum CullHint {
 
         /** 
-         * Do whatever our parent does. If no parent, default to {@link #Dynamic}.
+         * Inherit the parent's method. If no parent exists, it is set to Dynamic by default.
          */
         Inherit,
         /**

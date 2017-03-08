@@ -1,4 +1,3 @@
-
 package clockworktest.effect;
 
 import com.clockwork.app.SimpleApplication;
@@ -20,9 +19,6 @@ import com.clockwork.scene.Geometry;
 import com.clockwork.scene.Node;
 import com.clockwork.scene.shape.Box;
 
-/**
- *
- */
 public class TestSoftParticles extends SimpleApplication {
 
     private boolean softParticles = true;
@@ -44,7 +40,7 @@ public class TestSoftParticles extends SimpleApplication {
         flyCam.setMoveSpeed(10);
 
 
-        // -------- floor
+        //floor
         Box b = new Box(Vector3f.ZERO, 10, 0.1f, 10);
         Geometry geom = new Geometry("Box", b);
         Material mat = new Material(assetManager, "Common/MatDefs/Misc/Unshaded.j3md");
@@ -88,11 +84,11 @@ public class TestSoftParticles extends SimpleApplication {
         }, "toggle");
         inputManager.addMapping("toggle", new KeyTrigger(KeyInput.KEY_SPACE));
         
-        // emit again
+        // Clear particles and emit a new set
         inputManager.addListener(new ActionListener() {
             public void onAction(String name, boolean isPressed, float tpf) {
                 if(isPressed && name.equals("refire")) {
-                    //fpp.removeFilter(tbf); // <-- add back in to fix
+                    //fpp.removeFilter(tbf); // Add back in to fix?
                     particleNode.detachAllChildren();
                     createParticles();
                     //fpp.addFilter(tbf);
@@ -143,6 +139,4 @@ public class TestSoftParticles extends SimpleApplication {
         
         particleNode.attachChild(smoke);
     }
-    
-    
 }
