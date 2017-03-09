@@ -32,7 +32,7 @@ public class TestCartoonEdge extends SimpleApplication {
             fpp=new FilterPostProcessor(assetManager);
             //fpp.setNumSamples(4);
             CartoonEdgeFilter toon=new CartoonEdgeFilter();
-            toon.setEdgeColor(ColorRGBA.Yellow);
+            toon.setEdgeColor(ColorRGBA.Black);
             fpp.addFilter(toon);
             viewPort.addProcessor(fpp);
         }

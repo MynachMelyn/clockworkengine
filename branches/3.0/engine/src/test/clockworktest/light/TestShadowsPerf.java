@@ -106,7 +106,7 @@ public class TestShadowsPerf extends SimpleApplication {
             public void onAction(String name, boolean isPressed, float tpf) {
                 if (name.equals("display") && isPressed) {
                      //pssmRenderer.debugFrustrums();
-                    System.out.println("tetetetet");
+                    System.out.println("test");
                 }
                 if (name.equals("add") && isPressed) {
                     createballs();

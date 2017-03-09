@@ -4,21 +4,6 @@ package com.clockwork.math;
 import com.clockwork.export.*;
 import java.io.IOException;
 
-/**
- * <code>ColorRGBA</code> defines a color made from a collection of red, green
- * and blue values. An alpha value determines is transparency. All values must
- * be between 0 and 1. If any value is set higher or lower than these
- * constraints they are clamped to the min or max. That is, if a value smaller
- * than zero is set the value clamps to zero. If a value higher than 1 is
- * passed, that value is clamped to 1. However, because the attributes r, g, b,
- * a are public for efficiency reasons, they can be directly modified with
- * invalid values. The client should take care when directly addressing the
- * values. A call to clamp will assure that the values are within the
- * constraints.
- *
- * 
- * @version $Id: ColorRGBA.java,v 1.29 2007/09/09 18:25:14 irrisor Exp $
- */
 public final class ColorRGBA implements Savable, Cloneable, java.io.Serializable {
 
     static final long serialVersionUID = 1;

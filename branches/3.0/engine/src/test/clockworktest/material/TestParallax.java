@@ -65,6 +65,7 @@ public class TestParallax extends SimpleApplication {
         //floorGeom.setLocalScale(100);
 
         floorGeom.setMaterial(mat);        
+        floorGeom.setShadowMode(ShadowMode.Receive);
         rootNode.attachChild(floorGeom);
     }
 

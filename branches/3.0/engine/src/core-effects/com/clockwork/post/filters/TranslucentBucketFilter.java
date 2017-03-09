@@ -19,8 +19,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * A filter to handle translucent objects when rendering a scene with filters that uses depth like WaterFilter and SSAOFilter
- * just create a TranslucentBucketFilter and add it to the Filter list of a FilterPostPorcessor
+ * This filter handles translucent objects when rendering a scene with filters that use depth like WaterFilter and SSAOFilter
+ * To use, instantiate a TranslucentBucketFilter and add it to the Filter list of a FilterPostProcessor
  */
 public final class TranslucentBucketFilter extends Filter {
 
