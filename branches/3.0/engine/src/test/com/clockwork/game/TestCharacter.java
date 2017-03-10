@@ -1,12 +1,6 @@
 package com.clockwork.game;
 
-
-/*	Introduce TestComboMoves to this, and physics with animation from TestBoneRagdoll
-* 	Make a better chase camera, over shoulder? Can aim, can strafe with AD, camera can be moved when still, but decides forward direction when moving
-*  (Camera like in old program)
-*
-*  Introduce SFX
-*/
+// Add posterization
 
 import com.clockwork.animation.AnimChannel;
 import com.clockwork.app.SimpleApplication;
@@ -32,14 +26,12 @@ import com.clockwork.texture.Texture.WrapMode;
 import com.clockwork.util.*;
 import java.util.HashSet;
 
-public class TestCharacter extends SimpleApplication implements /*AnimEventListener, */ActionListener {
+public class TestCharacter extends SimpleApplication implements ActionListener {
     
     private BulletAppState bulletAppState;
     private CameraNode camNode;
     boolean rotate = false;
    
-    //public float speed_stand = 1.0f;
-    
     public float defaultTPF = 0.0f;
     
     public static float PIXELSMOVED_TO_RADIANSROTATED = 0.01f;
@@ -48,13 +40,13 @@ public class TestCharacter extends SimpleApplication implements /*AnimEventListe
         
     private HashSet<String> pressedMappings = new HashSet<String>();
     
-    private BitmapText fireballText;    
-    private BitmapText zawarudoText;    
-    private BitmapText shurikenText;
-    private BitmapText jabText;
-    private BitmapText hookText;
-    private BitmapText heavyhitText;
-    private BitmapText punchText;
+    private BitmapText fireballText, 
+            zawarudoText,
+            shurikenText,
+            jabText,
+            hookText,
+            heavyhitText,
+            punchText;
     
     private BitmapText fighterStateText;
     
@@ -66,14 +58,13 @@ public class TestCharacter extends SimpleApplication implements /*AnimEventListe
         
         app.setShowSettings(true);
         AppSettings settings = new AppSettings(true);
-        
+        settings.put("VSync", true);
         /*		settings.put("Width", 1280);
         settings.put("Height", 720);
         * */
         /*settings.put("Width", 1900);
         settings.put("Height", 1060);
         settings.put("Title", "Test Game");
-        settings.put("VSync", true);
         settings.put("Fullscreen", false);*/
         
         //Anti-Aliasing - will not work on non-GPU PCs
@@ -108,7 +99,6 @@ public class TestCharacter extends SimpleApplication implements /*AnimEventListe
         //PhysicsTestHelper.createPhysicsTestWorldSoccer(rootNode, assetManager, bulletAppState.getPhysicsSpace());
         setupFloor();
                 
-        //######################################################################
         Spatial fighterModel = assetManager.loadModel("/Blender/2.5x/export/BaseMesh_01.mesh.xml");
         Material fighterMaterial = new Material(getAssetManager(), "Common/MatDefs/Light/Lighting.j3md");
         fighterMaterial.setColor("Diffuse", ColorRGBA.Blue);
@@ -143,32 +133,8 @@ public class TestCharacter extends SimpleApplication implements /*AnimEventListe
         playerNode.setStand(standNode);
         standNode.setLocalTranslation(new Vector3f(0.55f,0.2f,-0.2f));
         
-        
-        //######################################################################
-        
         setupFightingGame();
 
-        //Spatial stand_model = assetManager.loadModel("/Blender/2.5x/export/BaseMesh_01.mesh.xml");
-        //model.center();
-
-        /*Material standMaterial = new Material(getAssetManager(), "Common/MatDefs/Misc/Unshaded.j3md");
-        standMaterial.getAdditionalRenderState().setWireframe(true);
-        standMaterial.setColor("Color", ColorRGBA.Blue);
-        stand_model.setMaterial(standMaterial);*/
-        
-  
-//        stand_model.setShadowMode(RenderQueue.ShadowMode.CastAndReceive);
-        ////
-        
-        /*BlenderKey blenderKey = new BlenderKey("Blender/2.5x/BaseMesh_256.blend");
-        Spatial scene = (Spatial) assetManager.loadModel(blenderKey);
-        rootNode.attachChild(scene);
-        Spatial model = this.findNode(rootNode, "BaseMesh_01");
-        model.center();
-        control = model.getControl(AnimControl.class);
-        channel = control.createChannel();
-        channel.setAnim("run_01"); */
-        
         // Disable the default FPS fly cam (Don't forget this!)
         flyCam.setEnabled(false);
         
