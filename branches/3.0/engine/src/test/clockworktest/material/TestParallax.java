@@ -7,15 +7,15 @@ import com.clockwork.input.controls.ActionListener;
 import com.clockwork.input.controls.AnalogListener;
 import com.clockwork.input.controls.KeyTrigger;
 import com.clockwork.light.DirectionalLight;
-import com.clockwork.material.Material;
+import com.clockwork.material.*;
 import com.clockwork.math.*;
-import com.clockwork.post.FilterPostProcessor;
-import com.clockwork.post.filters.FXAAFilter;
+import com.clockwork.renderer.queue.*;
 import com.clockwork.renderer.queue.RenderQueue.ShadowMode;
 import com.clockwork.scene.Geometry;
 import com.clockwork.scene.Node;
 import com.clockwork.scene.Spatial;
 import com.clockwork.scene.shape.Quad;
+import com.clockwork.shadow.*;
 import com.clockwork.texture.Texture.WrapMode;
 import com.clockwork.util.SkyFactory;
 import com.clockwork.util.TangentBinormalGenerator;
@@ -68,6 +68,41 @@ public class TestParallax extends SimpleApplication {
         floorGeom.setShadowMode(ShadowMode.Receive);
         rootNode.attachChild(floorGeom);
     }
+    
+    public void setupPlants(){
+        Spatial trunkModel = assetManager.loadModel("Blender/Foliage/foliage/tree_oak_joined.mesh.xml");
+        Spatial leafModel = assetManager.loadModel("Blender/Foliage/foliage/tree_oak_joined_leaves.mesh.xml");
+        //Material ivyMaterial = assetManager.loadMaterial("Blender/Foliage/foliage/bark_brown.material");
+        Material barkMaterial = assetManager.loadMaterial("Blender/Foliage/foliage/bark_brown.j3m");
+        Material leafMaterial = assetManager.loadMaterial("Blender/Foliage/foliage/tree_leaves.j3m");
+        
+        leafMaterial.getTextureParam("DiffuseMap").getTextureValue().setWrap(WrapMode.Repeat);
+        leafMaterial.getTextureParam("NormalMap").getTextureValue().setWrap(WrapMode.Repeat);
+        leafMaterial.getTextureParam("AlphaMap").getTextureValue().setWrap(WrapMode.Repeat);
+        barkMaterial.getTextureParam("DiffuseMap").getTextureValue().setWrap(WrapMode.Repeat);
+        barkMaterial.getTextureParam("NormalMap").getTextureValue().setWrap(WrapMode.Repeat);
+        leafMaterial.getAdditionalRenderState().setBlendMode(RenderState.BlendMode.Alpha);
+        leafMaterial.getAdditionalRenderState().setFaceCullMode(RenderState.FaceCullMode.Off);
+        leafMaterial.getAdditionalRenderState().setAlphaTest(true);
+        //leafMaterial.setTransparent(true);        
+        //TangentBinormalGenerator.generate(ivyModel);
+        trunkModel.setMaterial(barkMaterial);
+        leafModel.setMaterial(leafMaterial);
+        
+        leafModel.setQueueBucket(RenderQueue.Bucket.Transparent);
+
+        Node tree_full = new Node("Complete Tree");
+        
+        tree_full.rotate(0, FastMath.HALF_PI, FastMath.HALF_PI);
+        tree_full.setLocalTranslation(18f, 18f, 8f);
+        tree_full.setLocalScale(4);
+        trunkModel.setShadowMode(ShadowMode.CastAndReceive);
+        leafModel.setShadowMode(ShadowMode.Cast);
+        
+        tree_full.attachChild(leafModel);
+        tree_full.attachChild(trunkModel);
+        rootNode.attachChild(tree_full);
+    }
 
     public void setupSignpost() {
         Spatial signpost = assetManager.loadModel("Models/Sign Post/Sign Post.mesh.xml");
@@ -79,6 +114,16 @@ public class TestParallax extends SimpleApplication {
         signpost.setLocalScale(4);
         signpost.setShadowMode(ShadowMode.CastAndReceive);
         rootNode.attachChild(signpost);
+    }
+    
+    private void setupShadows(DirectionalLight dl){
+        final DirectionalLightShadowRenderer pssmRenderer = new DirectionalLightShadowRenderer(assetManager, 1024, 4);
+        viewPort.addProcessor(pssmRenderer);
+        pssmRenderer.setLight(dl);
+        pssmRenderer.setLambda(0.55f);
+        pssmRenderer.setShadowIntensity(0.55f);
+        pssmRenderer.setShadowCompareMode(com.clockwork.shadow.CompareMode.Software);
+        pssmRenderer.setEdgeFilteringMode(EdgeFilteringMode.PCF4);
     }
 
     @Override
@@ -92,6 +137,8 @@ public class TestParallax extends SimpleApplication {
         setupSkyBox();
         setupFloor();
         setupSignpost();
+        setupPlants();
+        setupShadows(dl);
 
         inputManager.addListener(new AnalogListener() {
 

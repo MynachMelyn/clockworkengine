@@ -1,0 +1,7 @@
+Material Tree : Common/MatDefs/Light/Lighting.j3md {
+     MaterialParameters {
+         Shininess: 2.0
+         DiffuseMap :  Blender/Foliage/foliage/BarkMossy-tiled-c.png
+         NormalMap :   Blender/Foliage/foliage/BarkMossy-tiled-n.png
+     }
+}
