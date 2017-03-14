@@ -32,15 +32,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * PssmShadow renderer use Parrallel Split Shadow Mapping technique (pssm)<br>
+ * A Parrallel Split Shadow Mapping technique (PSSM)
  * It splits the view frustum in several parts and compute a shadow map for each
- * one.<br> splits are distributed so that the closer they are from the camera,
- * the smaller they are to maximize the resolution used of the shadow map.<br>
- * This result in a better quality shadow than standard shadow mapping.<br> for
- * more informations on this read this <a
- * href="http://http.developer.nvidia.com/GPUGems3/gpugems3_ch10.html">http://http.developer.nvidia.com/GPUGems3/gpugems3_ch10.html</a><br>
- * <p/>
- * @deprecated use {@link DirectionalLightShadowRenderer}
+ * one. Splits are distributed such that the closer they are from the camera,
+ * the smaller they are, to maximise the resolution used of the shadow map.
+ * This result in a better quality shadow than standard shadow mapping.
+ * http://http.developer.nvidia.com/GPUGems3/gpugems3_ch10.html
+ * @deprecated use DirectionalLightShadowRenderer
  */
 @Deprecated
 public class PssmShadowRenderer implements SceneProcessor {

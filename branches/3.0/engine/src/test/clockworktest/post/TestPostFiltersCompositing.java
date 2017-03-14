@@ -19,7 +19,7 @@ import com.clockwork.util.SkyFactory;
 
 /**
  * This test showcases the possibility to compose the post filtered outputs of several viewports.
- * The usual use case is when you want to apply some post process to the main viewport and then other post process to the gui viewport
+ * The usual use case is when you want to apply some post process to the main viewport and then other post process to the GUI viewport
  */
 public class TestPostFiltersCompositing extends SimpleApplication {
 

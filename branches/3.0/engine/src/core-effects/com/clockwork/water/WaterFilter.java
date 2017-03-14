@@ -26,9 +26,6 @@ import java.io.IOException;
 /**
  * The WaterFilter is a 2D post process that simulate water.
  * It renders water above and under water.
- * See this blog post for more info <a href="http://jmonkeyengine.org/2011/01/15/new-advanced-water-effect-for-jmonkeyengine-3/">http://jmonkeyengine.org/2011/01/15/new-advanced-water-effect-for-jmonkeyengine-3/</a>
- * 
- * 
  */
 public class WaterFilter extends Filter {
 
@@ -124,13 +121,13 @@ public class WaterFilter extends Filter {
 
         material.setFloat("WaterHeight", waterHeight);
 
-        //update reflection cam      
+        //Update reflection camera      
         plane = new Plane(Vector3f.UNIT_Y, new Vector3f(0, waterHeight, 0).dot(Vector3f.UNIT_Y));
         reflectionProcessor.setReflectionClipPlane(plane);        
         WaterUtils.updateReflectionCam(reflectionCam, plane, sceneCam);
       
 
-        //if we're under water no need to compute reflection
+        //Don't compute reflection when underwater
         if (sceneCam.getLocation().y >= waterHeight) {
             boolean rtb = true;
             if (!renderManager.isHandleTranslucentBucket()) {
@@ -143,7 +140,7 @@ public class WaterFilter extends Filter {
             }
             renderManager.setCamera(sceneCam, false);
             renderManager.getRenderer().setFrameBuffer(viewPort.getOutputFrameBuffer());
-
+            
 
             underWater = false;
         } else {
@@ -378,7 +375,7 @@ public class WaterFilter extends Filter {
 
     /**
      * Sets how fast will colours fade out. You can also think about this
-     * values as how clear water is. Therefore use smaller values (eg. 0.05)
+     * values as how clear water is. Therefore use smaller values (e.g. 0.05)
      * to have crystal clear water and bigger to achieve "muddy" water.
      * default is 0.1f
      * @param waterTransparency
@@ -631,7 +628,7 @@ public class WaterFilter extends Filter {
      * the first value is for red
      * the second is for green
      * the third is for blue
-     * Play with thos parameters to "trouble" the water
+     * Play with those parameters to "trouble" the water
      * default is (5.0, 20.0, 30.0f);
      * @param colorExtinction
      */

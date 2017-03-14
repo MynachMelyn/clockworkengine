@@ -17,9 +17,7 @@ import com.clockwork.renderer.queue.RenderQueue;
 import java.io.IOException;
 
 /**
- * LightScattering filters creates rays comming from a light sources 
- * This is often reffered as god rays.
- *
+ * Creates rays, god-rays, from light sources.
  */
 public class LightScatteringFilter extends Filter {
 

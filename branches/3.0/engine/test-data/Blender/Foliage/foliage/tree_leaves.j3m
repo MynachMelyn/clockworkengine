@@ -2,7 +2,7 @@ Material Leaves : Common/MatDefs/Light/Lighting.j3md {
      MaterialParameters {
          Shininess: 2.0
          DiffuseMap :  Blender/Foliage/foliage/leaf-mapple-green-yellow-c.png
-         NormalMap :   Blender/Foliage/foliage/leaf-mapple-yellow-ni.png
+	     NormalMap :   Blender/Foliage/foliage/leaf-mapple-yellow-ni.png
 		 AlphaMap :   Blender/Foliage/foliage/leaf-mapple-yellow-a.png
      }
 }

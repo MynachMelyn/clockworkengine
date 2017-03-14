@@ -24,10 +24,6 @@ import com.clockwork.water.WaterFilter;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * test
- *
- */
 public class TestMultiPostWater extends SimpleApplication {
 
     private Vector3f lightDir = new Vector3f(-4.9236743f, -1.27054665f, 5.896916f);

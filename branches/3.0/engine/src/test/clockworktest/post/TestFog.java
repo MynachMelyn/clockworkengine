@@ -49,11 +49,7 @@ public class TestFog extends SimpleApplication {
 
         // create the geometry and attach it
         // load the level from zip or http zip
-        if (useHttp) {
-            assetManager.registerLocator("http://jmonkeyengine.googlecode.com/files/wildhouse.zip", HttpZipLocator.class);
-        } else {
-            assetManager.registerLocator("wildhouse.zip", ZipLocator.class);
-        }
+        assetManager.registerLocator("wildhouse.zip", ZipLocator.class);
         Spatial scene = assetManager.loadModel("main.scene");
 
         DirectionalLight sun = new DirectionalLight();

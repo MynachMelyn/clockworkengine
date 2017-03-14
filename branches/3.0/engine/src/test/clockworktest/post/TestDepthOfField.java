@@ -24,9 +24,6 @@ import com.clockwork.util.SkyFactory;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * test
- */
 public class TestDepthOfField extends SimpleApplication {
 
     private FilterPostProcessor fpp;
@@ -42,8 +39,6 @@ public class TestDepthOfField extends SimpleApplication {
 
     @Override
     public void simpleInitApp() {
-
-
         Node mainScene = new Node("Main Scene");
         rootNode.attachChild(mainScene);
 
