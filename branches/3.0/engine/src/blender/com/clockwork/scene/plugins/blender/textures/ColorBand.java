@@ -59,7 +59,7 @@ public class ColorBand {
      * This method determines if the colorband has any transparencies or is not
      * transparent at all.
      * 
-     * @return <b>true</b> if the colorband has transparencies and <b>false</b>
+     * @return true if the colorband has transparencies and false
      *         otherwise
      */
     public boolean hasTransparencies() {

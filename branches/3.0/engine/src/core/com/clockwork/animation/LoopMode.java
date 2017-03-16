@@ -2,7 +2,7 @@
 package com.clockwork.animation;
 
 /**
- * <code>LoopMode</code> determines how animations repeat, or if they
+ * LoopMode determines how animations repeat, or if they
  * do not repeat.
  */
 public enum LoopMode {

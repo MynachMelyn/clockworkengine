@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import clockworktools.converters.RGB565;
 
 /**
- * The class that is responsible for blending the following texture types: <li>DXT1 <li>DXT1A <li>DXT3 <li>DXT5
+ * The class that is responsible for blending the following texture types: DXT1 DXT1A DXT3 DXT5
  * 
  */
 public class TextureBlenderDDS extends TextureBlenderAWT {

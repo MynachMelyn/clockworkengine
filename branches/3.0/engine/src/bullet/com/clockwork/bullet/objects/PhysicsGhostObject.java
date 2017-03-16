@@ -18,11 +18,11 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * <i>From Bullet manual:</i><br>
+ * <i>From Bullet manual:</i>
  * GhostObject can keep track of all objects that are overlapping.
  * By default, this overlap is based on the AABB.
  * This is useful for creating a character controller,
- * collision sensors/triggers, explosions etc.<br>
+ * collision sensors/triggers, explosions etc.
  */
 public class PhysicsGhostObject extends PhysicsCollisionObject {
 

@@ -23,13 +23,13 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * The <code>Application</code> class represents an instance of a
- * real-time 3D rendering jME application.
+ * The Application class represents an instance of a
+ * real-time 3D rendering application.
  *
- * An <code>Application</code> provides all the tools that are commonly used in jME3
+ * An Application provides all the tools that are commonly used in jME3
  * applications.
  *
- * jME3 applications *SHOULD NOT EXTEND* this class but extend {@link com.clockwork.app.SimpleApplication} instead.
+ * Applications *SHOULD NOT EXTEND* this class but extend com.clockwork.app.SimpleApplication instead.
  *
  */
 public class Application implements SystemListener {
@@ -64,7 +64,7 @@ public class Application implements SystemListener {
     private final ConcurrentLinkedQueue<AppTask<?>> taskQueue = new ConcurrentLinkedQueue<AppTask<?>>();
 
     /**
-     * Create a new instance of <code>Application</code>.
+     * Create a new instance of Application.
      */
     public Application(){
         initStateManager();
@@ -75,7 +75,7 @@ public class Application implements SystemListener {
      *
      * @return true if pause on lost focus is enabled
      *
-     * @see #setPauseOnLostFocus(boolean)
+     * see #setPauseOnLostFocus(boolean)
      */
     public boolean isPauseOnLostFocus() {
         return pauseOnFocus;
@@ -83,7 +83,7 @@ public class Application implements SystemListener {
 
     /**
      * Enable or disable pause on lost focus.
-     * <p>
+     * 
      * By default, pause on lost focus is enabled.
      * If enabled, the application will stop updating
      * when it loses focus or becomes inactive (e.g. alt-tab).
@@ -136,11 +136,11 @@ public class Application implements SystemListener {
 
     /**
      * Set the display settings to define the display created.
-     * <p>
+     * 
      * Examples of display parameters include display pixel width and height,
      * color bit depth, z-buffer bits, anti-aliasing samples, and update frequency.
      * If this method is called while the application is already running, then
-     * {@link #restart() } must be called to apply the settings to the display.
+     * #restart() } must be called to apply the settings to the display.
      *
      * @param settings The settings to set.
      */
@@ -265,72 +265,72 @@ public class Application implements SystemListener {
     }
 
     /**
-     * @return The {@link AssetManager asset manager} for this application.
+     * @return The AssetManager asset manager} for this application.
      */
     public AssetManager getAssetManager(){
         return assetManager;
     }
 
     /**
-     * @return the {@link InputManager input manager}.
+     * @return the InputManager input manager}.
      */
     public InputManager getInputManager(){
         return inputManager;
     }
 
     /**
-     * @return the {@link AppStateManager app state manager}
+     * @return the AppStateManager app state manager}
      */
     public AppStateManager getStateManager() {
         return stateManager;
     }
 
     /**
-     * @return the {@link RenderManager render manager}
+     * @return the RenderManager render manager}
      */
     public RenderManager getRenderManager() {
         return renderManager;
     }
 
     /**
-     * @return The {@link Renderer renderer} for the application
+     * @return The Renderer renderer} for the application
      */
     public Renderer getRenderer(){
         return renderer;
     }
 
     /**
-     * @return The {@link AudioRenderer audio renderer} for the application
+     * @return The AudioRenderer audio renderer} for the application
      */
     public AudioRenderer getAudioRenderer() {
         return audioRenderer;
     }
 
     /**
-     * @return The {@link Listener listener} object for audio
+     * @return The Listener listener} object for audio
      */
     public Listener getListener() {
         return listener;
     }
 
     /**
-     * @return The {@link JmeContext display context} for the application
+     * @return The JmeContext display context} for the application
      */
     public JmeContext getContext(){
         return context;
     }
 
     /**
-     * @return The {@link Camera camera} for the application
+     * @return The Camera camera} for the application
      */
     public Camera getCamera(){
         return cam;
     }
 
     /**
-     * Starts the application in {@link Type#Display display} mode.
+     * Starts the application in Type#Display display} mode.
      *
-     * @see #start(com.clockwork.system.JmeContext.Type)
+     * see #start(com.clockwork.system.JmeContext.Type)
      */
     public void start(){
         start(JmeContext.Type.Display);
@@ -359,18 +359,18 @@ public class Application implements SystemListener {
 
     /**
      * Initializes the application's canvas for use.
-     * <p>
-     * After calling this method, cast the {@link #getContext() context} to
-     * {@link JmeCanvasContext},
-     * then acquire the canvas with {@link JmeCanvasContext#getCanvas() }
+     * 
+     * After calling this method, cast the #getContext() context} to
+     * JmeCanvasContext},
+     * then acquire the canvas with JmeCanvasContext#getCanvas() }
      * and attach it to an AWT/Swing Frame.
      * The rendering thread will start when the canvas becomes visible on
      * screen, however if you wish to start the context immediately you
-     * may call {@link #startCanvas() } to force the rendering thread
+     * may call #startCanvas() } to force the rendering thread
      * to start.
      *
-     * @see JmeCanvasContext
-     * @see Type#Canvas
+     * see JmeCanvasContext
+     * see Type#Canvas
      */
     public void createCanvas(){
         if (context != null && context.isCreated()){
@@ -389,10 +389,10 @@ public class Application implements SystemListener {
 
     /**
      * Starts the rendering thread after createCanvas() has been called.
-     * <p>
+     * 
      * Same as calling startCanvas(false)
      *
-     * @see #startCanvas(boolean)
+     * see #startCanvas(boolean)
      */
     public void startCanvas(){
         startCanvas(false);
@@ -400,7 +400,7 @@ public class Application implements SystemListener {
 
     /**
      * Starts the rendering thread after createCanvas() has been called.
-     * <p>
+     * 
      * Calling this method is optional, the canvas will start automatically
      * when it becomes visible.
      *
@@ -420,8 +420,8 @@ public class Application implements SystemListener {
 
     /**
      * Restarts the context, applying any changed settings.
-     * <p>
-     * Changes to the {@link AppSettings} of this Application are not
+     * 
+     * Changes to the AppSettings} of this Application are not
      * applied immediately; calling this method forces the context
      * to restart, applying the new settings.
      */
@@ -436,7 +436,7 @@ public class Application implements SystemListener {
      *
      * Same as calling stop(false)
      *
-     * @see #stop(boolean)
+     * see #stop(boolean)
      */
     public void stop(){
         stop(false);
@@ -455,8 +455,8 @@ public class Application implements SystemListener {
     /**
      * Do not call manually.
      * Callback from ContextListener.
-     * <p>
-     * Initializes the <code>Application</code>, by creating a display and
+     * 
+     * Initializes the Application, by creating a display and
      * default camera. If display settings are not specified, a default
      * 640x480 display is created. Default values are used for the camera;
      * perspective projection with 45° field of view, with near
@@ -532,7 +532,7 @@ public class Application implements SystemListener {
     /**
      * Enqueues a task/callable object to execute in the jME3
      * rendering thread.
-     * <p>
+     * 
      * Callables are executed right at the beginning of the main loop.
      * They are executed even if the application is currently paused
      * or out of focus.
@@ -544,7 +544,7 @@ public class Application implements SystemListener {
     }
 
     /**
-     * Runs tasks enqueued via {@link #enqueue(Callable)}
+     * Runs tasks enqueued via #enqueue(Callable)}
      */
     protected void runQueuedTasks() {
 	  AppTask<?> task;

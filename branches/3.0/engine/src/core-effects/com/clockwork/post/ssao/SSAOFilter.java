@@ -158,8 +158,8 @@ public class SSAOFilter extends Filter {
     }
 
     /**
-     * Return the bias<br>
-     * see {@link  #setBias(float bias)}
+     * Return the bias
+     * see  #setBias(float bias)}
      * @return  bias
      */
     public float getBias() {
@@ -198,7 +198,7 @@ public class SSAOFilter extends Filter {
     }
 
     /**
-     * returns the sample radius<br>
+     * returns the sample radius
      * see {link setSampleRadius(float sampleRadius)}
      * @return the sample radius
      */
@@ -219,8 +219,8 @@ public class SSAOFilter extends Filter {
     }
 
     /**
-     * returns the scale<br>
-     * see {@link #setScale(float scale)}
+     * returns the scale
+     * see #setScale(float scale)}
      * @return scale
      */
     public float getScale() {

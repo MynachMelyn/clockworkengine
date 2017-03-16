@@ -2,7 +2,7 @@
 package com.clockwork.system;
 
 /**
- * The <code>ContextListener> provides a means for an application
+ * The ContextListener> provides a means for an application
  * to receive events relating to a context.
  */
 public interface SystemListener {

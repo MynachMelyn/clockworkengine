@@ -19,7 +19,7 @@ import java.util.logging.Logger;
 
 /**
  * 
- * <code>DDSLoader</code> is an image loader that reads in a DirectX DDS file.
+ * DDSLoader is an image loader that reads in a DirectX DDS file.
  * Supports DXT1, DXT3, DXT5, RGB, RGBA, Grayscale, Alpha pixel formats.
  * 2D images, mipmapped 2D images, and cubemaps.
  * 

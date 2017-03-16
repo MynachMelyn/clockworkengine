@@ -36,7 +36,7 @@ public class TechniqueDef implements Savable {
         
         /**
          * Enable light rendering by using a single pass. 
-         * <p>
+         * 
          * An array of light positions and light colors is passed to the shader
          * containing the world light list for the geometry being rendered.
          */
@@ -44,7 +44,7 @@ public class TechniqueDef implements Savable {
         
         /**
          * Enable light rendering by using multi-pass rendering.
-         * <p>
+         * 
          * The geometry will be rendered once for each light. Each time the
          * light position and light color uniforms are updated to contain
          * the values for the current light. The ambient light color uniform
@@ -55,9 +55,9 @@ public class TechniqueDef implements Savable {
         
         /**
          * Enable light rendering by using the 
-         * {@link Renderer#setLighting(com.clockwork.light.LightList) renderer's setLighting} 
+         * Renderer#setLighting(com.clockwork.light.LightList) renderer's setLighting} 
          * method.
-         * <p>
+         * 
          * The specific details of rendering the lighting is up to the 
          * renderer implementation.
          */
@@ -95,10 +95,10 @@ public class TechniqueDef implements Savable {
 
     /**
      * Creates a new technique definition.
-     * <p>
+     * 
      * Used internally by the J3M/J3MD loader.
      * 
-     * @param name The name of the technique, should be set to <code>null</code>
+     * @param name The name of the technique, should be set to null
      * for default techniques.
      */
     public TechniqueDef(String name){
@@ -124,7 +124,7 @@ public class TechniqueDef implements Savable {
     /**
      * Returns the light mode.
      * @return the light mode.
-     * @see LightMode
+     * see LightMode
      */
     public LightMode getLightMode() {
         return lightMode;
@@ -135,7 +135,7 @@ public class TechniqueDef implements Savable {
      * 
      * @param lightMode the light mode
      * 
-     * @see LightMode
+     * see LightMode
      */
     public void setLightMode(LightMode lightMode) {
         this.lightMode = lightMode;
@@ -154,7 +154,7 @@ public class TechniqueDef implements Savable {
      * 
      * @param shadowMode the shadow mode.
      * 
-     * @see ShadowMode
+     * see ShadowMode
      */
     public void setShadowMode(ShadowMode shadowMode) {
         this.shadowMode = shadowMode;
@@ -163,7 +163,7 @@ public class TechniqueDef implements Savable {
     /**
      * Returns the render state that this technique is using
      * @return the render state that this technique is using
-     * @see #setRenderState(com.clockwork.material.RenderState) 
+     * see #setRenderState(com.clockwork.material.RenderState) 
      */
     public RenderState getRenderState() {
         return renderState;
@@ -174,7 +174,7 @@ public class TechniqueDef implements Savable {
      * 
      * @param renderState the render state that this technique is using.
      * 
-     * @see RenderState
+     * see RenderState
      */
     public void setRenderState(RenderState renderState) {
         this.renderState = renderState;
@@ -185,7 +185,7 @@ public class TechniqueDef implements Savable {
      * 
      * @return true if this technique uses shaders, false otherwise.
      * 
-     * @see #setShaderFile(java.lang.String, java.lang.String, java.lang.String) 
+     * see #setShaderFile(java.lang.String, java.lang.String, java.lang.String) 
      */
     public boolean isUsingShaders(){
         return usesShaders;
@@ -202,7 +202,7 @@ public class TechniqueDef implements Savable {
     }
 
     /**
-     * Gets the {@link Caps renderer capabilities} that are required
+     * Gets the Caps renderer capabilities} that are required
      * by this technique.
      * 
      * @return the required renderer capabilities
@@ -239,7 +239,7 @@ public class TechniqueDef implements Savable {
      * @param paramName The parameter name to look up
      * @return The define name
      * 
-     * @see #addShaderParamDefine(java.lang.String, java.lang.String) 
+     * see #addShaderParamDefine(java.lang.String, java.lang.String) 
      */
     public String getShaderParamDefine(String paramName){
         if (defineParams == null) {
@@ -250,11 +250,11 @@ public class TechniqueDef implements Savable {
 
     /**
      * Adds a define linked to a material parameter.
-     * <p>
+     * 
      * Any time the material parameter on the parent material is altered,
      * the appropriate define on the technique will be modified as well. 
      * See the method 
-     * {@link DefineList#set(java.lang.String, com.clockwork.shader.VarType, java.lang.Object) }
+     * DefineList#set(java.lang.String, com.clockwork.shader.VarType, java.lang.Object) }
      * on the exact details of how the material parameter changes the define.
      * 
      * @param paramName The name of the material parameter to link to.
@@ -268,11 +268,11 @@ public class TechniqueDef implements Savable {
     }
 
     /**
-     * Returns the {@link DefineList} for the preset defines.
+     * Returns the DefineList} for the preset defines.
      * 
-     * @return the {@link DefineList} for the preset defines.
+     * @return the DefineList} for the preset defines.
      * 
-     * @see #addShaderPresetDefine(java.lang.String, com.clockwork.shader.VarType, java.lang.Object) 
+     * see #addShaderPresetDefine(java.lang.String, com.clockwork.shader.VarType, java.lang.Object) 
      */
     public DefineList getShaderPresetDefines() {
         return presetDefines;
@@ -280,13 +280,13 @@ public class TechniqueDef implements Savable {
     
     /**
      * Adds a preset define. 
-     * <p>
+     * 
      * Preset defines do not depend upon any parameters to be activated,
      * they are always passed to the shader as long as this technique is used.
      * 
      * @param defineName The name of the define parameter, e.g. USE_LIGHTING
      * @param type The type of the define. See 
-     * {@link DefineList#set(java.lang.String, com.clockwork.shader.VarType, java.lang.Object) }
+     * DefineList#set(java.lang.String, com.clockwork.shader.VarType, java.lang.Object) }
      * to see why it matters.
      * 
      * @param value The value of the define
@@ -320,7 +320,7 @@ public class TechniqueDef implements Savable {
     }
 
     /**
-     * @deprecated Use {@link #getVertexShaderLanguage() } instead.
+     * @deprecated Use #getVertexShaderLanguage() } instead.
      */
     @Deprecated
     public String getShaderLanguage() {

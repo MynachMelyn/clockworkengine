@@ -8,7 +8,7 @@ import com.clockwork.asset.plugins.ClasspathLocator;
 import com.clockwork.system.JmeSystem;
 
 /**
- * Demonstrates loading a file from a custom {@link AssetLoader}
+ * Demonstrates loading a file from a custom AssetLoader}
  */
 public class TestCustomLoader {
     public static void main(String[] args){

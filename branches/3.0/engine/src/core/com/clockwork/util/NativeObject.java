@@ -107,7 +107,7 @@ public abstract class NativeObject implements Cloneable {
     }
 
     /**
-     * Internal use only. Check if {@link #setUpdateNeeded()} was called before.
+     * Internal use only. Check if #setUpdateNeeded()} was called before.
      */
     public boolean isUpdateNeeded(){
         return updateNeeded;
@@ -137,7 +137,7 @@ public abstract class NativeObject implements Cloneable {
     }
 
     /**
-     * Deletes any associated native {@link Buffer buffers}.
+     * Deletes any associated native Buffer buffers}.
      * This is necessary because it is unlikely that native buffers
      * will be garbage collected naturally (due to how GC works), therefore
      * the collection must be handled manually.
@@ -151,8 +151,8 @@ public abstract class NativeObject implements Cloneable {
     }
     
     /**
-     * Package-private version of {@link #deleteNativeBuffers() }, to be used
-     * from the {@link NativeObjectManager}.
+     * Package-private version of #deleteNativeBuffers() }, to be used
+     * from the NativeObjectManager}.
      */
     void deleteNativeBuffersInternal() {
         deleteNativeBuffers();
@@ -189,7 +189,7 @@ public abstract class NativeObject implements Cloneable {
     /**
      * Reclaims native resources used by this NativeObject.
      * It should be safe to call this method or even use the object
-     * after it has been reclaimed, unless {@link NativeObjectManager#UNSAFE} is
+     * after it has been reclaimed, unless NativeObjectManager#UNSAFE} is
      * set to true, in that case native buffers are also reclaimed which may
      * introduce instability.
      */

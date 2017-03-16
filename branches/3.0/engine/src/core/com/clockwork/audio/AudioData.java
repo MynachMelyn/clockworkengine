@@ -4,7 +4,7 @@ package com.clockwork.audio;
 import com.clockwork.util.NativeObject;
 
 /**
- * <code>AudioData</code> is an abstract representation
+ * AudioData is an abstract representation
  * of audio data. There are two ways to handle audio data, short audio files
  * are to be stored entirely in memory, while long audio files (music) are
  * streamed from the hard drive as they are played.
@@ -30,7 +30,7 @@ public abstract class AudioData extends NativeObject {
     }
     
     /**
-     * @return The data type, either <code>Buffer</code> or <code>Stream</code>.
+     * @return The data type, either Buffer or Stream.
      */
     public abstract DataType getDataType();
 

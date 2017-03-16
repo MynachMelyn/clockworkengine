@@ -58,46 +58,46 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * <b><code>TextureAtlas</code></b> allows combining multiple textures to one texture atlas.
+ * TextureAtlas allows combining multiple textures to one texture atlas.
  * 
- * <p>After the TextureAtlas has been created with a certain size, textures can be added for
+ * After the TextureAtlas has been created with a certain size, textures can be added for
  * freely chosen "map names". The textures are automatically placed on the atlas map and the
  * image data is stored in a byte array for each map name. Later each map can be retrieved as
- * a Texture to be used further in materials.</p>
+ * a Texture to be used further in materials.
  * 
- * <p>The first map name used is the "master map" that defines new locations on the atlas. Secondary
+ * The first map name used is the "master map" that defines new locations on the atlas. Secondary
  * textures (other map names) have to reference a texture of the master map to position the texture
  * on the secondary map. This is necessary as the maps share texture coordinates and thus need to be
- * placed at the same location on both maps.</p>
+ * placed at the same location on both maps.
  * 
- * <p>The helper methods that work with <code>Geometry</code> objects handle the <em>DiffuseMap</em> or <em>ColorMap</em> as the master map and
- * additionally handle <em>NormalMap</em> and <em>SpecularMap</em> as secondary maps.</p>
+ * The helper methods that work with Geometry objects handle the <em>DiffuseMap</em> or <em>ColorMap</em> as the master map and
+ * additionally handle <em>NormalMap</em> and <em>SpecularMap</em> as secondary maps.
  * 
- * <p>The textures are referenced by their <b>asset key name</b> and for each texture the location
+ * The textures are referenced by their asset key name and for each texture the location
  * inside the atlas is stored. A texture with an existing key name is never added more than once
- * to the atlas. You can access the information for each texture or geometry texture via helper methods.</p>
+ * to the atlas. You can access the information for each texture or geometry texture via helper methods.
  * 
- * <p>The TextureAtlas also allows you to change the texture coordinates of a mesh or geometry
- * to point at the new locations of its texture inside the atlas (if the texture exists inside the atlas).</p>
+ * The TextureAtlas also allows you to change the texture coordinates of a mesh or geometry
+ * to point at the new locations of its texture inside the atlas (if the texture exists inside the atlas).
  * 
- * <p>Note that models that use texture coordinates outside the 0-1 range (repeating/wrapping textures)
+ * Note that models that use texture coordinates outside the 0-1 range (repeating/wrapping textures)
  * will not work correctly as their new coordinates leak into other parts of the atlas and thus display
- * other textures instead of repeating the texture.</p>
+ * other textures instead of repeating the texture.
  * 
- * <p>Also note that textures are not scaled and the atlas needs to be large enough to hold all textures.
+ * Also note that textures are not scaled and the atlas needs to be large enough to hold all textures.
  * All methods that allow adding textures return false if the texture could not be added due to the
  * atlas being full. Furthermore secondary textures (normal, spcular maps etc.) have to be the same size
- * as the main (e.g. DiffuseMap) texture.</p>
+ * as the main (e.g. DiffuseMap) texture.
  * 
- * <p><b>Usage examples</b></p>
+ * Usage examples
  * Create one geometry out of several geometries that are loaded from a j3o file:
- * <pre>
+ * 
  * Node scene = assetManager.loadModel("Scenes/MyScene.j3o");
  * Geometry geom = TextureAtlas.makeAtlasBatch(scene);
  * rootNode.attachChild(geom);
- * </pre>
+ * 
  * Create a texture atlas and change the texture coordinates of one geometry:
- * <pre>
+ * 
  * Node scene = assetManager.loadModel("Scenes/MyScene.j3o");
  * //either auto-create from node:
  * TextureAtlas atlas = TextureAtlas.createAtlas(scene);
@@ -112,7 +112,7 @@ import java.util.logging.Logger;
  * Geometry geom = scene.getChild("MyGeometry");
  * atlas.applyCoords(geom);
  * geom.setMaterial(mat);
- * </pre>
+ * 
  * 
  */
 public class TextureAtlas {
@@ -365,8 +365,8 @@ public class TextureAtlas {
     }
 
     /**
-     * Get the <code>TextureAtlasTile</code> for the given Texture
-     * @param texture The texture to retrieve the <code>TextureAtlasTile</code> for.
+     * Get the TextureAtlasTile for the given Texture
+     * @param texture The texture to retrieve the TextureAtlasTile for.
      * @return the atlas tile
      */
     public TextureAtlasTile getAtlasTile(Texture texture) {
@@ -378,8 +378,8 @@ public class TextureAtlas {
     }
 
     /**
-     * Get the <code>TextureAtlasTile</code> for the given Texture
-     * @param assetName The texture to retrieve the <code>TextureAtlasTile</code> for.
+     * Get the TextureAtlasTile for the given Texture
+     * @param assetName The texture to retrieve the TextureAtlasTile for.
      * @return 
      */
     private TextureAtlasTile getAtlasTile(String assetName) {

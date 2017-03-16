@@ -139,7 +139,7 @@ public class FlyByCamera implements AnalogListener, ActionListener {
 
     /**
      * @return If enabled
-     * @see FlyByCamera#setEnabled(boolean)
+     * see FlyByCamera#setEnabled(boolean)
      */
     public boolean isEnabled(){
         return enabled;
@@ -148,7 +148,7 @@ public class FlyByCamera implements AnalogListener, ActionListener {
     /**
      * @return If drag to rotate feature is enabled.
      *
-     * @see FlyByCamera#setDragToRotate(boolean) 
+     * see FlyByCamera#setDragToRotate(boolean) 
      */
     public boolean isDragToRotate() {
         return dragToRotate;

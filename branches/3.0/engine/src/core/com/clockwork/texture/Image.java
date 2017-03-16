@@ -13,7 +13,7 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * <code>Image</code> defines a data format for a graphical image. The image
+ * Image defines a data format for a graphical image. The image
  * is defined by a format, a height and width, and the image data. The width and
  * height must be greater than 0. The data is contained in a byte buffer, and
  * should be packed before creation of the image object.
@@ -180,8 +180,8 @@ public class Image extends NativeObject implements Savable /*, Cloneable*/ {
         Depth32F(32,true,false,true),
 
         /**
-         * Texture data is stored as {@link Format#RGB16F} in system memory,
-         * but will be converted to {@link Format#RGB111110F} when sent
+         * Texture data is stored as Format#RGB16F} in system memory,
+         * but will be converted to Format#RGB111110F} when sent
          * to the video hardware.
          */
         RGB16F_to_RGB111110F(48,true),
@@ -192,8 +192,8 @@ public class Image extends NativeObject implements Savable /*, Cloneable*/ {
         RGB111110F(32,true),
         
         /**
-         * Texture data is stored as {@link Format#RGB16F} in system memory,
-         * but will be converted to {@link Format#RGB9E5} when sent
+         * Texture data is stored as Format#RGB16F} in system memory,
+         * but will be converted to Format#RGB9E5} when sent
          * to the video hardware.
          */
         RGB16F_to_RGB9E5(48,true),
@@ -231,7 +231,7 @@ public class Image extends NativeObject implements Savable /*, Cloneable*/ {
         
         /**
          * 24-bit depth with 8-bit stencil. 
-         * Check the cap {@link Caps#PackedDepthStencilBuffer}.
+         * Check the cap Caps#PackedDepthStencilBuffer}.
          */
         Depth24Stencil8(32, true, false, false);
 
@@ -323,8 +323,8 @@ public class Image extends NativeObject implements Savable /*, Cloneable*/ {
     }
     
     /**
-     * (Package private) Called by {@link Texture} when 
-     * {@link #isMipmapsGenerated() } is false in order to generate
+     * (Package private) Called by Texture} when 
+     * #isMipmapsGenerated() } is false in order to generate
      * mipmaps for this image.
      */
     void setNeedGeneratedMipmaps() {
@@ -381,7 +381,7 @@ public class Image extends NativeObject implements Savable /*, Cloneable*/ {
     }
 
     /**
-     * Constructor instantiates a new <code>Image</code> object. All values
+     * Constructor instantiates a new Image object. All values
      * are undefined.
      */
     public Image() {
@@ -394,7 +394,7 @@ public class Image extends NativeObject implements Savable /*, Cloneable*/ {
     }
 
     /**
-     * Constructor instantiates a new <code>Image</code> object. The
+     * Constructor instantiates a new Image object. The
      * attributes of the image are defined during construction.
      *
      * @param format
@@ -429,7 +429,7 @@ public class Image extends NativeObject implements Savable /*, Cloneable*/ {
     }
 
     /**
-     * Constructor instantiates a new <code>Image</code> object. The
+     * Constructor instantiates a new Image object. The
      * attributes of the image are defined during construction.
      *
      * @param format
@@ -466,7 +466,7 @@ public class Image extends NativeObject implements Savable /*, Cloneable*/ {
     }
 
     /**
-     * Constructor instantiates a new <code>Image</code> object. The
+     * Constructor instantiates a new Image object. The
      * attributes of the image are defined during construction.
      *
      * @param format
@@ -483,7 +483,7 @@ public class Image extends NativeObject implements Savable /*, Cloneable*/ {
     }
 
     /**
-     * Constructor instantiates a new <code>Image</code> object. The
+     * Constructor instantiates a new Image object. The
      * attributes of the image are defined during construction.
      *
      * @param format
@@ -501,7 +501,7 @@ public class Image extends NativeObject implements Savable /*, Cloneable*/ {
 
     /**
      * @return The number of samples (for multisampled textures).
-     * @see Image#setMultiSamples(int)
+     * see Image#setMultiSamples(int)
      */
     public int getMultiSamples() {
         return multiSamples;
@@ -526,8 +526,8 @@ public class Image extends NativeObject implements Savable /*, Cloneable*/ {
     }
 
     /**
-     * <code>setData</code> sets the data that makes up the image. This data
-     * is packed into an array of <code>ByteBuffer</code> objects.
+     * setData sets the data that makes up the image. This data
+     * is packed into an array of ByteBuffer objects.
      *
      * @param data
      *            the data that contains the image information.
@@ -538,8 +538,8 @@ public class Image extends NativeObject implements Savable /*, Cloneable*/ {
     }
 
     /**
-     * <code>setData</code> sets the data that makes up the image. This data
-     * is packed into a single <code>ByteBuffer</code>.
+     * setData sets the data that makes up the image. This data
+     * is packed into a single ByteBuffer.
      *
      * @param data
      *            the data that contains the image information.
@@ -571,7 +571,7 @@ public class Image extends NativeObject implements Savable /*, Cloneable*/ {
 
     /**
      * Set the efficient data representation of this image.
-     * <p>
+     * 
      * Some system implementations are more efficient at operating
      * on data other than ByteBuffers, in that case, this method can be used.
      *
@@ -584,7 +584,7 @@ public class Image extends NativeObject implements Savable /*, Cloneable*/ {
 
     /**
      * @return The efficient data representation of this image.
-     * @see Image#setEfficentData(java.lang.Object)
+     * see Image#setEfficentData(java.lang.Object)
      */
     public Object getEfficentData(){
         return efficientData;
@@ -617,7 +617,7 @@ public class Image extends NativeObject implements Savable /*, Cloneable*/ {
     }
 
     /**
-     * <code>setHeight</code> sets the height value of the image. It is
+     * setHeight sets the height value of the image. It is
      * typically a good idea to try to keep this as a multiple of 2.
      *
      * @param height
@@ -629,7 +629,7 @@ public class Image extends NativeObject implements Savable /*, Cloneable*/ {
     }
 
     /**
-     * <code>setDepth</code> sets the depth value of the image. It is
+     * setDepth sets the depth value of the image. It is
      * typically a good idea to try to keep this as a multiple of 2. This is
      * used for 3d images.
      *
@@ -642,7 +642,7 @@ public class Image extends NativeObject implements Savable /*, Cloneable*/ {
     }
 
     /**
-     * <code>setWidth</code> sets the width value of the image. It is
+     * setWidth sets the width value of the image. It is
      * typically a good idea to try to keep this as a multiple of 2.
      *
      * @param width
@@ -654,13 +654,13 @@ public class Image extends NativeObject implements Savable /*, Cloneable*/ {
     }
 
     /**
-     * <code>setFormat</code> sets the image format for this image.
+     * setFormat sets the image format for this image.
      *
      * @param format
      *            the image format.
      * @throws NullPointerException
      *             if format is null
-     * @see Format
+     * see Format
      */
     public void setFormat(Format format) {
         if (format == null) {
@@ -672,17 +672,17 @@ public class Image extends NativeObject implements Savable /*, Cloneable*/ {
     }
 
     /**
-     * <code>getFormat</code> returns the image format for this image.
+     * getFormat returns the image format for this image.
      *
      * @return the image format.
-     * @see Format
+     * see Format
      */
     public Format getFormat() {
         return format;
     }
 
     /**
-     * <code>getWidth</code> returns the width of this image.
+     * getWidth returns the width of this image.
      *
      * @return the width of this image.
      */
@@ -691,7 +691,7 @@ public class Image extends NativeObject implements Savable /*, Cloneable*/ {
     }
 
     /**
-     * <code>getHeight</code> returns the height of this image.
+     * getHeight returns the height of this image.
      *
      * @return the height of this image.
      */
@@ -700,7 +700,7 @@ public class Image extends NativeObject implements Savable /*, Cloneable*/ {
     }
 
     /**
-     * <code>getDepth</code> returns the depth of this image (for 3d images).
+     * getDepth returns the depth of this image (for 3d images).
      *
      * @return the depth of this image.
      */
@@ -709,7 +709,7 @@ public class Image extends NativeObject implements Savable /*, Cloneable*/ {
     }
 
     /**
-     * <code>getData</code> returns the data for this image. If the data is
+     * getData returns the data for this image. If the data is
      * undefined, null will be returned.
      *
      * @return the data for this image.
@@ -719,7 +719,7 @@ public class Image extends NativeObject implements Savable /*, Cloneable*/ {
     }
 
     /**
-     * <code>getData</code> returns the data for this image. If the data is
+     * getData returns the data for this image. If the data is
      * undefined, null will be returned.
      *
      * @return the data for this image.

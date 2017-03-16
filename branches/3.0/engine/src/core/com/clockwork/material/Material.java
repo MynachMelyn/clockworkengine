@@ -30,9 +30,9 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * <code>Material</code> describes the rendering style for a given
- * {@link Geometry}.
- * <p>A material is essentially a list of {@link MatParam parameters},
+ * Material describes the rendering style for a given
+ * Geometry}.
+ * A material is essentially a list of MatParam parameters},
  * those parameters map to uniforms which are defined in a shader.
  * Setting the parameters can modify the behavior of a
  * shader.
@@ -99,7 +99,7 @@ public class Material implements CloneableSmartAsset, Cloneable, Savable {
     /**
      * Returns the asset key name of the asset from which this material was loaded.
      *
-     * <p>This value will be <code>null</code> unless this material was loaded
+     * This value will be null unless this material was loaded
      * from a .j3m file.
      *
      * @return Asset key name of the j3m file
@@ -136,7 +136,7 @@ public class Material implements CloneableSmartAsset, Cloneable, Savable {
     /**
      * Returns the sorting ID or sorting index for this material.
      *
-     * <p>The sorting ID is used internally by the system to sort rendering
+     * The sorting ID is used internally by the system to sort rendering
      * of geometries. It sorted to reduce shader switches, if the shaders
      * are equal, then it is sorted by textures.
      *
@@ -263,7 +263,7 @@ public class Material implements CloneableSmartAsset, Cloneable, Savable {
     }
 
     /**
-     * Works like {@link Object#hashCode() } except it may change together with the material as the material is mutable by definition.
+     * Works like Object#hashCode() } except it may change together with the material as the material is mutable by definition.
      */
     public int contentHashCode() {
         int hash = 7;
@@ -276,15 +276,15 @@ public class Material implements CloneableSmartAsset, Cloneable, Savable {
     
     /**
      * Returns the currently active technique.
-     * <p>
-     * The technique is selected automatically by the {@link RenderManager}
+     * 
+     * The technique is selected automatically by the RenderManager}
      * based on system capabilities. Users may select their own
      * technique by using
-     * {@link #selectTechnique(java.lang.String, com.clockwork.renderer.RenderManager) }.
+     * #selectTechnique(java.lang.String, com.clockwork.renderer.RenderManager) }.
      *
      * @return the currently active technique.
      *
-     * @see #selectTechnique(java.lang.String, com.clockwork.renderer.RenderManager)
+     * see #selectTechnique(java.lang.String, com.clockwork.renderer.RenderManager)
      */
     public Technique getActiveTechnique() {
         return technique;
@@ -293,7 +293,7 @@ public class Material implements CloneableSmartAsset, Cloneable, Savable {
     /**
      * Check if the transparent value marker is set on this material.
      * @return True if the transparent value marker is set on this material.
-     * @see #setTransparent(boolean)
+     * see #setTransparent(boolean)
      */
     public boolean isTransparent() {
         return transparent;
@@ -302,10 +302,10 @@ public class Material implements CloneableSmartAsset, Cloneable, Savable {
     /**
      * Set the transparent value marker.
      *
-     * <p>This value is merely a marker, by itself it does nothing.
+     * This value is merely a marker, by itself it does nothing.
      * Generally model loaders will use this marker to indicate further
      * up that the material is transparent and therefore any geometries
-     * using it should be put into the {@link Bucket#Transparent transparent
+     * using it should be put into the Bucket#Transparent transparent
      * bucket}.
      *
      * @param transparent the transparent value marker.
@@ -319,7 +319,7 @@ public class Material implements CloneableSmartAsset, Cloneable, Savable {
      *
      * @return True if the material should receive shadows.
      *
-     * @see Material#setReceivesShadows(boolean)
+     * see Material#setReceivesShadows(boolean)
      */
     public boolean isReceivesShadows() {
         return receivesShadows;
@@ -328,10 +328,10 @@ public class Material implements CloneableSmartAsset, Cloneable, Savable {
     /**
      * Set if the material should receive shadows or not.
      *
-     * <p>This value is merely a marker, by itself it does nothing.
+     * This value is merely a marker, by itself it does nothing.
      * Generally model loaders will use this marker to indicate
      * the material should receive shadows and therefore any
-     * geometries using it should have the {@link ShadowMode#Receive} set
+     * geometries using it should have the ShadowMode#Receive} set
      * on them.
      *
      * @param receivesShadows if the material should receive shadows or not.
@@ -341,10 +341,10 @@ public class Material implements CloneableSmartAsset, Cloneable, Savable {
     }
 
     /**
-     * Acquire the additional {@link RenderState render state} to apply
+     * Acquire the additional RenderState render state} to apply
      * for this material.
      *
-     * <p>The first call to this method will create an additional render
+     * The first call to this method will create an additional render
      * state which can be modified by the user to apply any render
      * states in addition to the ones used by the renderer. Only render
      * states which are modified in the additional render state will be applied.
@@ -359,7 +359,7 @@ public class Material implements CloneableSmartAsset, Cloneable, Savable {
     }
 
     /**
-     * Get the material definition (j3md file info) that <code>this</code>
+     * Get the material definition (j3md file info) that this
      * material is implementing.
      *
      * @return the material definition this material implements.
@@ -370,7 +370,7 @@ public class Material implements CloneableSmartAsset, Cloneable, Savable {
 
     /**
      * Returns the parameter set on this material with the given name,
-     * returns <code>null</code> if the parameter is not set.
+     * returns null if the parameter is not set.
      *
      * @param name The parameter name to look up.
      * @return The MatParam if set, or null if not set.
@@ -381,7 +381,7 @@ public class Material implements CloneableSmartAsset, Cloneable, Savable {
 
     /**
      * Returns the texture parameter set on this material with the given name,
-     * returns <code>null</code> if the parameter is not set.
+     * returns null if the parameter is not set.
      *
      * @param name The parameter name to look up.
      * @return The MatParamTexture if set, or null if not set.
@@ -399,7 +399,7 @@ public class Material implements CloneableSmartAsset, Cloneable, Savable {
      *
      * @return a collection of all parameters set on this material.
      *
-     * @see #setParam(java.lang.String, com.clockwork.shader.VarType, java.lang.Object)
+     * see #setParam(java.lang.String, com.clockwork.shader.VarType, java.lang.Object)
      */
     public Collection<MatParam> getParams() {
         return paramValues.values();
@@ -425,7 +425,7 @@ public class Material implements CloneableSmartAsset, Cloneable, Savable {
      * Pass a parameter to the material shader.
      *
      * @param name the name of the parameter defined in the material definition (j3md)
-     * @param type the type of the parameter {@link VarType}
+     * @param type the type of the parameter VarType}
      * @param value the value of the parameter
      */
     public void setParam(String name, VarType type, Object value) {
@@ -482,7 +482,7 @@ public class Material implements CloneableSmartAsset, Cloneable, Savable {
      * Set a texture parameter.
      *
      * @param name The name of the parameter
-     * @param type The variable type {@link VarType}
+     * @param type The variable type VarType}
      * @param value The texture value of the parameter.
      *
      * @throws IllegalArgumentException is value is null
@@ -636,17 +636,17 @@ public class Material implements CloneableSmartAsset, Cloneable, Savable {
     }
 
     /**
-     * Uploads the lights in the light list as two uniform arrays.<br/><br/> *
-     * <p>
-     * <code>uniform vec4 g_LightColor[numLights];</code><br/> //
-     * g_LightColor.rgb is the diffuse/specular color of the light.<br/> //
-     * g_Lightcolor.a is the type of light, 0 = Directional, 1 = Point, <br/> //
-     * 2 = Spot. <br/> <br/>
-     * <code>uniform vec4 g_LightPosition[numLights];</code><br/> //
-     * g_LightPosition.xyz is the position of the light (for point lights)<br/>
-     * // or the direction of the light (for directional lights).<br/> //
+     * Uploads the lights in the light list as two uniform arrays. *
+     * 
+     * uniform vec4 g_LightColor[numLights]; //
+     * g_LightColor.rgb is the diffuse/specular color of the light. //
+     * g_Lightcolor.a is the type of light, 0 = Directional, 1 = Point,  //
+     * 2 = Spot.  
+     * uniform vec4 g_LightPosition[numLights]; //
+     * g_LightPosition.xyz is the position of the light (for point lights)
+     * // or the direction of the light (for directional lights). //
      * g_LightPosition.w is the inverse radius (1/r) of the light (for
-     * attenuation) <br/> </p>
+     * attenuation)  
      */
     protected void updateLightListUniforms(Shader shader, Geometry g, int numLights) {
         if (numLights == 0) { // this shader does not do lighting, ignore.
@@ -821,19 +821,19 @@ public class Material implements CloneableSmartAsset, Cloneable, Savable {
 
     /**
      * Select the technique to use for rendering this material.
-     * <p>
-     * If <code>name</code> is "Default", then one of the
-     * {@link MaterialDef#getDefaultTechniques() default techniques}
+     * 
+     * If name is "Default", then one of the
+     * MaterialDef#getDefaultTechniques() default techniques}
      * on the material will be selected. Otherwise, the named technique
      * will be found in the material definition.
-     * <p>
+     * 
      * Any candidate technique for selection (either default or named)
      * must be verified to be compatible with the system, for that, the
-     * <code>renderManager</code> is queried for capabilities.
+     * renderManager is queried for capabilities.
      *
      * @param name The name of the technique to select, pass "Default" to
      * select one of the default techniques.
-     * @param renderManager The {@link RenderManager render manager}
+     * @param renderManager The RenderManager render manager}
      * to query for capabilities.
      *
      * @throws IllegalArgumentException If "Default" is passed and no default
@@ -911,7 +911,7 @@ public class Material implements CloneableSmartAsset, Cloneable, Savable {
 
     /**
      * Preloads this material for the given render manager.
-     * <p>
+     * 
      * Preloading the material can ensure that when the material is first
      * used for rendering, there won't be any delay since the material has
      * been already been setup for rendering.
@@ -965,58 +965,58 @@ public class Material implements CloneableSmartAsset, Cloneable, Savable {
     }
 
     /**
-     * Called by {@link RenderManager} to render the geometry by
+     * Called by RenderManager} to render the geometry by
      * using this material.
-     * <p>
+     * 
      * The material is rendered as follows:
-     * <ul>
-     * <li>Determine which technique to use to render the material - 
+     * 
+     * Determine which technique to use to render the material - 
      * either what the user selected via 
-     * {@link #selectTechnique(java.lang.String, com.clockwork.renderer.RenderManager) 
+     * #selectTechnique(java.lang.String, com.clockwork.renderer.RenderManager) 
      * Material.selectTechnique()}, 
      * or the first default technique that the renderer supports 
-     * (based on the technique's {@link TechniqueDef#getRequiredCaps() requested rendering capabilities})<ul>
-     * <li>If the technique has been changed since the last frame, then it is notified via 
-     * {@link Technique#makeCurrent(com.clockwork.asset.AssetManager, boolean, java.util.EnumSet) 
+     * (based on the technique's TechniqueDef#getRequiredCaps() requested rendering capabilities})
+     * If the technique has been changed since the last frame, then it is notified via 
+     * Technique#makeCurrent(com.clockwork.asset.AssetManager, boolean, java.util.EnumSet) 
      * Technique.makeCurrent()}. 
      * If the technique wants to use a shader to render the model, it should load it at this part - 
      * the shader should have all the proper defines as declared in the technique definition, 
      * including those that are bound to material parameters. 
      * The technique can re-use the shader from the last frame if 
-     * no changes to the defines occurred.</li></ul>
-     * <li>Set the {@link RenderState} to use for rendering. The render states are 
+     * no changes to the defines occurred.
+     * Set the RenderState} to use for rendering. The render states are 
      * applied in this order (later RenderStates override earlier RenderStates):<ol>
-     * <li>{@link TechniqueDef#getRenderState() Technique Definition's RenderState}
-     * - i.e. specific renderstate that is required for the shader.</li>
-     * <li>{@link #getAdditionalRenderState() Material Instance Additional RenderState}
-     * - i.e. ad-hoc renderstate set per model</li>
-     * <li>{@link RenderManager#getForcedRenderState() RenderManager's Forced RenderState}
-     * - i.e. renderstate requested by a {@link com.clockwork.post.SceneProcessor} or
-     * post-processing filter.</li></ol>
-     * <li>If the technique {@link TechniqueDef#isUsingShaders() uses a shader}, then the uniforms of the shader must be updated.<ul>
-     * <li>Uniforms bound to material parameters are updated based on the current material parameter values.</li>
-     * <li>Uniforms bound to world parameters are updated from the RenderManager.
-     * Internally {@link UniformBindingManager} is used for this task.</li>
-     * <li>Uniforms bound to textures will cause the texture to be uploaded as necessary. 
-     * The uniform is set to the texture unit where the texture is bound.</li></ul>
-     * <li>If the technique uses a shader, the model is then rendered according 
-     * to the lighting mode specified on the technique definition.<ul>
-     * <li>{@link LightMode#SinglePass single pass light mode} fills the shader's light uniform arrays 
-     * with the first 4 lights and renders the model once.</li>
-     * <li>{@link LightMode#MultiPass multi pass light mode} light mode renders the model multiple times, 
+     * TechniqueDef#getRenderState() Technique Definition's RenderState}
+     * - i.e. specific renderstate that is required for the shader.
+     * #getAdditionalRenderState() Material Instance Additional RenderState}
+     * - i.e. ad-hoc renderstate set per model
+     * RenderManager#getForcedRenderState() RenderManager's Forced RenderState}
+     * - i.e. renderstate requested by a com.clockwork.post.SceneProcessor} or
+     * post-processing filter.</ol>
+     * If the technique TechniqueDef#isUsingShaders() uses a shader}, then the uniforms of the shader must be updated.
+     * Uniforms bound to material parameters are updated based on the current material parameter values.
+     * Uniforms bound to world parameters are updated from the RenderManager.
+     * Internally UniformBindingManager} is used for this task.
+     * Uniforms bound to textures will cause the texture to be uploaded as necessary. 
+     * The uniform is set to the texture unit where the texture is bound.
+     * If the technique uses a shader, the model is then rendered according 
+     * to the lighting mode specified on the technique definition.
+     * LightMode#SinglePass single pass light mode} fills the shader's light uniform arrays 
+     * with the first 4 lights and renders the model once.
+     * LightMode#MultiPass multi pass light mode} light mode renders the model multiple times, 
      * for the first light it is rendered opaque, on subsequent lights it is 
-     * rendered with {@link BlendMode#AlphaAdditive alpha-additive} blending and depth writing disabled.</li>
-     * </ul>
-     * <li>For techniques that do not use shaders, 
-     * fixed function OpenGL is used to render the model (see {@link GL1Renderer} interface):<ul>
-     * <li>OpenGL state ({@link FixedFuncBinding}) that is bound to material parameters is updated. </li>
-     * <li>The texture set on the material is uploaded and bound. 
-     * Currently only 1 texture is supported for fixed function techniques.</li>
-     * <li>If the technique uses lighting, then OpenGL lighting state is updated 
-     * based on the light list on the geometry, otherwise OpenGL lighting is disabled.</li>
-     * <li>The mesh is uploaded and rendered.</li>
-     * </ul>
-     * </ul>
+     * rendered with BlendMode#AlphaAdditive alpha-additive} blending and depth writing disabled.
+     * 
+     * For techniques that do not use shaders, 
+     * fixed function OpenGL is used to render the model (see GL1Renderer} interface):
+     * OpenGL state (FixedFuncBinding}) that is bound to material parameters is updated. 
+     * The texture set on the material is uploaded and bound. 
+     * Currently only 1 texture is supported for fixed function techniques.
+     * If the technique uses lighting, then OpenGL lighting state is updated 
+     * based on the light list on the geometry, otherwise OpenGL lighting is disabled.
+     * The mesh is uploaded and rendered.
+     * 
+     * 
      *
      * @param geom The geometry to render
      * @param rm The render manager requesting the rendering

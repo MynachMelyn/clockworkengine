@@ -18,9 +18,8 @@ import java.util.Iterator;
 import java.util.List;
 
 /**
- * A FilterPostProcessor is a processor that can apply several {@link Filter}s to a rendered scene<br>
+ * A FilterPostProcessor is a processor that can apply several filters to a rendered scene
  * It manages a list of filters that will be applied in the order in which they've been added to the list
- * 
  */
 public class FilterPostProcessor implements SceneProcessor, Savable {
 
@@ -59,14 +58,14 @@ public class FilterPostProcessor implements SceneProcessor, Savable {
     }
 
     /**
-     * Don't use this constructor, use {@link #FilterPostProcessor(AssetManager assetManager)}<br>
+     * Don't use this constructor, use #FilterPostProcessor(AssetManager assetManager)}
      * This constructor is used for serialisation only
      */
     public FilterPostProcessor() {
     }
 
     /**
-     * Adds a filter to the filters list<br>
+     * Adds a filter to the filters list
      * @param filter the filter to add
      */
     public void addFilter(Filter filter) {
@@ -80,7 +79,6 @@ public class FilterPostProcessor implements SceneProcessor, Savable {
         }
 
         setFilterState(filter, filter.isEnabled());
-
     }
 
     /**
@@ -474,7 +472,7 @@ public class FilterPostProcessor implements SceneProcessor, Savable {
     }
 
     /**
-     * For internal use only<br>
+     * For internal use only
      * returns the depth texture of the scene
      * @return the depth texture
      */
@@ -483,7 +481,7 @@ public class FilterPostProcessor implements SceneProcessor, Savable {
     }
 
     /**
-     * For internal use only<br>
+     * For internal use only
      * returns the rendered texture of the scene
      * @return the filter texture
      */

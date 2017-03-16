@@ -3,7 +3,7 @@ package com.clockwork.input.event;
 
 /**
  * Mouse movement event.
- * <p>
+ * 
  * Movement events are only generated if the mouse is on-screen.
  * 
  */

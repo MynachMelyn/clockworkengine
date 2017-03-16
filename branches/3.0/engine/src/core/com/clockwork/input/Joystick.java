@@ -23,7 +23,7 @@ public interface Joystick {
      * @param mappingName The mapping to receive joystick button events.
      * @param buttonId The button index.
      *
-     * @see Joystick#getButtonCount()
+     * see Joystick#getButtonCount()
      * @deprecated Use JoystickButton.assignButton() instead.
      */
     public void assignButton(String mappingName, int buttonId);
@@ -35,7 +35,7 @@ public interface Joystick {
      * @param negativeMapping The mapping to receive events when the axis is positive
      * @param axisId The axis index.
      *
-     * @see Joystick#getAxisCount()
+     * see Joystick#getAxisCount()
      * @deprecated Use JoystickAxis.assignAxis() instead.
      */
     public void assignAxis(String positiveMapping, String negativeMapping, int axisId); 
@@ -67,18 +67,18 @@ public interface Joystick {
     /**
      * Returns the X axis for this joystick.
      *
-     * <p>E.g. for most gamepads, the left control stick X axis will be returned.
+     * E.g. for most gamepads, the left control stick X axis will be returned.
      *
-     * @see JoystickAxis#assignAxis(java.lang.String, java.lang.String)
+     * see JoystickAxis#assignAxis(java.lang.String, java.lang.String)
      */
     public JoystickAxis getXAxis();     
 
     /**
      * Returns the Y axis for this joystick.
      *
-     * <p>E.g. for most gamepads, the left control stick Y axis will be returned.
+     * E.g. for most gamepads, the left control stick Y axis will be returned.
      *
-     * @see JoystickAxis#assignAxis(java.lang.String, java.lang.String)
+     * see JoystickAxis#assignAxis(java.lang.String, java.lang.String)
      */
     public JoystickAxis getYAxis();     
 
@@ -86,7 +86,7 @@ public interface Joystick {
      * Returns the POV X axis for this joystick.  This is a convenience axis 
      * providing an x-axis subview of the HAT axis.
      *
-     * @see JoystickAxis#assignAxis(java.lang.String, java.lang.String)
+     * see JoystickAxis#assignAxis(java.lang.String, java.lang.String)
      */
     public JoystickAxis getPovXAxis();     
 
@@ -94,29 +94,29 @@ public interface Joystick {
      * Returns the POV Y axis for this joystick.  This is a convenience axis 
      * providing an y-axis subview of the HAT axis.
      *
-     * @see JoystickAxis#assignAxis(java.lang.String, java.lang.String)
+     * see JoystickAxis#assignAxis(java.lang.String, java.lang.String)
      */
     public JoystickAxis getPovYAxis();     
 
     /**
      * Gets the index number for the X axis on the joystick.
      *
-     * <p>E.g. for most gamepads, the left control stick X axis will be returned.
+     * E.g. for most gamepads, the left control stick X axis will be returned.
      *
      * @return The axis index for the X axis for this joystick.
      *
-     * @see Joystick#assignAxis(java.lang.String, java.lang.String, int)
+     * see Joystick#assignAxis(java.lang.String, java.lang.String, int)
      */
     public int getXAxisIndex();
 
     /**
      * Gets the index number for the Y axis on the joystick.
      *
-     * <p>E.g. for most gamepads, the left control stick Y axis will be returned.
+     * E.g. for most gamepads, the left control stick Y axis will be returned.
      *
      * @return The axis index for the Y axis for this joystick.
      *
-     * @see Joystick#assignAxis(java.lang.String, java.lang.String, int)
+     * see Joystick#assignAxis(java.lang.String, java.lang.String, int)
      */
     public int getYAxisIndex();
 

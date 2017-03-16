@@ -16,7 +16,7 @@ import java.nio.ShortBuffer;
 
 /**
  * An ordinary (single holed) torus.
- * <p>
+ * 
  * The center is by default the origin.
  * 
  * @version $Revision: 4131 $, $Date: 2009-03-19 16:15:28 -0400 (Thu, 19 Mar 2009) $

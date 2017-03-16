@@ -12,16 +12,16 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * <code>Texture</code> defines a texture object to be used to display an
+ * Texture defines a texture object to be used to display an
  * image on a piece of geometry. The image to be displayed is defined by the
- * <code>Image</code> class. All attributes required for texture mapping are
+ * Image class. All attributes required for texture mapping are
  * contained within this class. This includes mipmapping if desired,
  * magnificationFilter options, apply options and correction options. Default
  * values are as follows: minificationFilter - NearestNeighborNoMipMaps,
  * magnificationFilter - NearestNeighbor, wrap - EdgeClamp on S,T and R, apply -
  * Modulate, environment - None.
  *
- * @see com.clockwork.texture.Image
+ * see com.clockwork.texture.Image
  * @version $Id: Texture.java 4131 2009-03-19 20:15:28Z blaine.dev $
  */
 public abstract class Texture implements CloneableSmartAsset, Savable, Cloneable {
@@ -161,8 +161,8 @@ public abstract class Texture implements CloneableSmartAsset, Savable, Cloneable
         /**
          * mirrors and clamps the texture coordinate, where mirroring and
          * clamping a value f computes:
-         * <code>mirrorClamp(f) = min(1, max(1/(2*N),
-         * abs(f)))</code> where N
+         * mirrorClamp(f) = min(1, max(1/(2*N),
+         * abs(f))) where N
          * is the size of the one-, two-, or three-dimensional texture image in
          * the direction of wrapping. (Introduced after OpenGL1.4) Falls back on
          * Clamp if not supported.
@@ -178,7 +178,7 @@ public abstract class Texture implements CloneableSmartAsset, Savable, Cloneable
          * Wrap mode MIRROR_CLAMP_TO_BORDER_EXT mirrors and clamps to border the
          * texture coordinate, where mirroring and clamping to border a value f
          * computes:
-         * <code>mirrorClampToBorder(f) = min(1+1/(2*N), max(1/(2*N), abs(f)))</code>
+         * mirrorClampToBorder(f) = min(1+1/(2*N), max(1/(2*N), abs(f)))
          * where N is the size of the one-, two-, or three-dimensional texture
          * image in the direction of wrapping." (Introduced after OpenGL1.4)
          * Falls back on BorderClamp if not supported.
@@ -193,7 +193,7 @@ public abstract class Texture implements CloneableSmartAsset, Savable, Cloneable
         /**
          * mirrors and clamps to edge the texture coordinate, where mirroring
          * and clamping to edge a value f computes:
-         * <code>mirrorClampToEdge(f) = min(1-1/(2*N), max(1/(2*N), abs(f)))</code>
+         * mirrorClampToEdge(f) = min(1-1/(2*N), max(1/(2*N), abs(f)))
          * where N is the size of the one-, two-, or three-dimensional texture
          * image in the direction of wrapping. (Introduced after OpenGL1.4)
          * Falls back on EdgeClamp if not supported.
@@ -282,7 +282,7 @@ public abstract class Texture implements CloneableSmartAsset, Savable, Cloneable
     }
 
     /**
-     * Constructor instantiates a new <code>Texture</code> object with default
+     * Constructor instantiates a new Texture object with default
      * attributes.
      */
     public Texture() {
@@ -335,7 +335,7 @@ public abstract class Texture implements CloneableSmartAsset, Savable, Cloneable
 
     /**
      * @return The ShadowCompareMode of this texture.
-     * @see ShadowCompareMode
+     * see ShadowCompareMode
      */
     public ShadowCompareMode getShadowCompareMode(){
         return shadowCompareMode;
@@ -346,7 +346,7 @@ public abstract class Texture implements CloneableSmartAsset, Savable, Cloneable
      *            the new ShadowCompareMode for this texture.
      * @throws IllegalArgumentException
      *             if compareMode is null
-     * @see ShadowCompareMode
+     * see ShadowCompareMode
      */
     public void setShadowCompareMode(ShadowCompareMode compareMode){
         if (compareMode == null){
@@ -358,7 +358,7 @@ public abstract class Texture implements CloneableSmartAsset, Savable, Cloneable
     }
 
     /**
-     * <code>setImage</code> sets the image object that defines the texture.
+     * setImage sets the image object that defines the texture.
      *
      * @param image
      *            the image that defines the texture.
@@ -382,7 +382,7 @@ public abstract class Texture implements CloneableSmartAsset, Savable, Cloneable
     }
 
     /**
-     * <code>getImage</code> returns the image data that makes up this
+     * getImage returns the image data that makes up this
      * texture. If no image data has been set, this will return null.
      *
      * @return the image data that makes up the texture.
@@ -392,7 +392,7 @@ public abstract class Texture implements CloneableSmartAsset, Savable, Cloneable
     }
 
     /**
-     * <code>setWrap</code> sets the wrap mode of this texture for a
+     * setWrap sets the wrap mode of this texture for a
      * particular axis.
      *
      * @param axis
@@ -405,7 +405,7 @@ public abstract class Texture implements CloneableSmartAsset, Savable, Cloneable
     public abstract void setWrap(WrapAxis axis, WrapMode mode);
 
     /**
-     * <code>setWrap</code> sets the wrap mode of this texture for all axis.
+     * setWrap sets the wrap mode of this texture for all axis.
      *
      * @param mode
      *            the wrap mode for the given axis of the texture.
@@ -415,7 +415,7 @@ public abstract class Texture implements CloneableSmartAsset, Savable, Cloneable
     public abstract void setWrap(WrapMode mode);
 
     /**
-     * <code>getWrap</code> returns the wrap mode for a given coordinate axis
+     * getWrap returns the wrap mode for a given coordinate axis
      * on this texture.
      *
      * @param axis
@@ -519,7 +519,7 @@ public abstract class Texture implements CloneableSmartAsset, Savable, Cloneable
      *
      * @return Texture
      * 
-     * @deprecated Use {@link Texture#clone()} instead.
+     * @deprecated Use Texture#clone()} instead.
      */
     @Deprecated
     public Texture createSimpleClone(Texture rVal) {
@@ -534,7 +534,7 @@ public abstract class Texture implements CloneableSmartAsset, Savable, Cloneable
     }
 
     /**
-     * @deprecated Use {@link Texture#clone()} instead.
+     * @deprecated Use Texture#clone()} instead.
      */
     @Deprecated
     public abstract Texture createSimpleClone();

@@ -7,8 +7,8 @@ import com.clockwork.export.Savable;
 import java.io.IOException;
 
 /**
- * <code>Triangle</code> defines an object for containing triangle information.
- * The triangle is defined by a collection of three {@link Vector3f}
+ * Triangle defines an object for containing triangle information.
+ * The triangle is defined by a collection of three Vector3f}
  * objects.
  * 
  * 
@@ -30,7 +30,7 @@ public class Triangle extends AbstractTriangle implements Savable, java.io.Seria
     }
 
     /**
-     * Constructor instantiates a new <Code>Triangle</code> object with the
+     * Constructor instantiates a new Triangle object with the
      * supplied vectors as the points. It is recommended that the vertices
      * be supplied in a counter clockwise winding to support normals for a
      * right handed coordinate system.
@@ -46,7 +46,7 @@ public class Triangle extends AbstractTriangle implements Savable, java.io.Seria
 
     /**
      *
-     * <code>get</code> retrieves a point on the triangle denoted by the index
+     * get retrieves a point on the triangle denoted by the index
      * supplied.
      * @param i the index of the point.
      * @return the point.
@@ -78,7 +78,7 @@ public class Triangle extends AbstractTriangle implements Savable, java.io.Seria
 
     /**
      *
-     * <code>set</code> sets one of the triangle's points to that specified as
+     * set sets one of the triangle's points to that specified as
      * a parameter.
      * @param i the index to place the point.
      * @param point the point to set.
@@ -99,7 +99,7 @@ public class Triangle extends AbstractTriangle implements Savable, java.io.Seria
 
     /**
      *
-     * <code>set</code> sets one of the triangle's points to that specified as
+     * set sets one of the triangle's points to that specified as
      * a parameter.
      * @param i the index to place the point.
      */

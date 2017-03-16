@@ -39,7 +39,7 @@ public class Texture3D extends Texture {
      * Creates a new three-dimensional texture for the purpose of offscreen
      * rendering.
      *
-     * @see com.clockwork.texture.FrameBuffer
+     * see com.clockwork.texture.FrameBuffer
      *
      * @param width
      * @param height
@@ -54,7 +54,7 @@ public class Texture3D extends Texture {
      * Creates a new three-dimensional texture for the purpose of offscreen
      * rendering.
      *
-     * @see com.clockwork.texture.FrameBuffer
+     * see com.clockwork.texture.FrameBuffer
      *
      * @param width
      * @param height
@@ -82,7 +82,7 @@ public class Texture3D extends Texture {
     }
 
     /**
-     * <code>setWrap</code> sets the wrap mode of this texture for a
+     * setWrap sets the wrap mode of this texture for a
      * particular axis.
      *
      * @param axis
@@ -112,7 +112,7 @@ public class Texture3D extends Texture {
     }
 
     /**
-     * <code>setWrap</code> sets the wrap mode of this texture for all axis.
+     * setWrap sets the wrap mode of this texture for all axis.
      *
      * @param mode
      *            the wrap mode for the given axis of the texture.
@@ -129,7 +129,7 @@ public class Texture3D extends Texture {
     }
 
     /**
-     * <code>getWrap</code> returns the wrap mode for a given coordinate axis
+     * getWrap returns the wrap mode for a given coordinate axis
      * on this texture.
      *
      * @param axis

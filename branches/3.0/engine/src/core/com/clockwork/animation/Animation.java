@@ -33,7 +33,7 @@ public class Animation implements Savable, Cloneable {
     }
 
     /**
-     * Creates a new <code>Animation</code> with the given name and length.
+     * Creates a new Animation with the given name and length.
      * 
      * @param name The name of the animation.
      * @param length Length in seconds of the animation.
@@ -81,7 +81,7 @@ public class Animation implements Savable, Cloneable {
     }
 
     /**
-     * Set the {@link Track}s to be used by this animation.
+     * Set the Track}s to be used by this animation.
      * 
      * @param tracksArray The tracks to set.
      */
@@ -111,7 +111,7 @@ public class Animation implements Savable, Cloneable {
     }
 
     /**
-     * Returns the tracks set in {@link #setTracks(com.clockwork.animation.Track[]) }.
+     * Returns the tracks set in #setTracks(com.clockwork.animation.Track[]) }.
      * 
      * @return the tracks set previously
      */

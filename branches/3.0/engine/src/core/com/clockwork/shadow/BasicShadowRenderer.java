@@ -22,7 +22,7 @@ import com.clockwork.ui.Picture;
  * it's useful to render shadows in a small scene, but edges might look a bit jagged.
  * 
  * 
- * @deprecated use {@link DirectionalLightShadowRenderer} with one split.
+ * @deprecated use DirectionalLightShadowRenderer} with one split.
  */
 @Deprecated
 public class BasicShadowRenderer implements SceneProcessor {

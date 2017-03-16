@@ -25,19 +25,19 @@ import java.nio.*;
 import java.util.ArrayList;
 
 /**
- * <code>Mesh</code> is used to store rendering data.
- * <p>
+ * Mesh is used to store rendering data.
+ * 
  * All visible elements in a scene are represented by meshes.
  * Meshes may contain three types of geometric primitives:
- * <ul>
- * <li>Points - Every vertex represents a single point in space, 
- * the size of each point is specified via {@link Mesh#setPointSize(float) }.
- * Points can also be used for {@link RenderState#setPointSprite(boolean) point
- * sprite} mode.</li>
- * <li>Lines - 2 vertices represent a line segment, with the width specified
- * via {@link Mesh#setLineWidth(float) }.</li>
- * <li>Triangles - 3 vertices represent a solid triangle primitive. </li>
- * </ul>
+ * 
+ * Points - Every vertex represents a single point in space, 
+ * the size of each point is specified via Mesh#setPointSize(float) }.
+ * Points can also be used for RenderState#setPointSprite(boolean) point
+ * sprite} mode.
+ * Lines - 2 vertices represent a line segment, with the width specified
+ * via Mesh#setLineWidth(float) }.
+ * Triangles - 3 vertices represent a solid triangle primitive. 
+ * 
  * 
  */
 public class Mesh implements Savable, Cloneable {
@@ -49,13 +49,13 @@ public class Mesh implements Savable, Cloneable {
     public enum Mode {
         /**
          * A primitive is a single point in space. The size of the points 
-         * can be specified with {@link Mesh#setPointSize(float) }.
+         * can be specified with Mesh#setPointSize(float) }.
          */
         Points(true),
         
         /**
          * A primitive is a line segment. Every two vertices specify
-         * a single line. {@link Mesh#setLineWidth(float) } can be used 
+         * a single line. Mesh#setLineWidth(float) } can be used 
          * to set the width of the lines.
          */
         Lines(true),
@@ -63,15 +63,15 @@ public class Mesh implements Savable, Cloneable {
         /**
          * A primitive is a line segment. The first two vertices specify
          * a single line, while subsequent vertices are combined with the 
-         * previous vertex to make a line. {@link Mesh#setLineWidth(float) } can 
+         * previous vertex to make a line. Mesh#setLineWidth(float) } can 
          * be used to set the width of the lines.
          */
         LineStrip(false),
         
         /**
-         * Identical to {@link #LineStrip} except that at the end
+         * Identical to #LineStrip} except that at the end
          * the last vertex is connected with the first to form a line.
-         * {@link Mesh#setLineWidth(float) } can be used 
+         * Mesh#setLineWidth(float) } can be used 
          * to set the width of the lines.
          */
         LineLoop(false),
@@ -83,14 +83,14 @@ public class Mesh implements Savable, Cloneable {
         Triangles(true),
         
         /**
-         * Similar to {@link #Triangles}, the first 3 vertices 
+         * Similar to #Triangles}, the first 3 vertices 
          * specify a triangle, while subsequent vertices are combined with
          * the previous two to form a triangle. 
          */
         TriangleStrip(false),
         
         /**
-         * Similar to {@link #Triangles}, the first 3 vertices 
+         * Similar to #Triangles}, the first 3 vertices 
          * specify a triangle, each 2 subsequent vertices are combined
          * with the very first vertex to make a triangle.
          */
@@ -99,8 +99,8 @@ public class Mesh implements Savable, Cloneable {
         /**
          * A combination of various triangle modes. It is best to avoid
          * using this mode as it may not be supported by all renderers.
-         * The {@link Mesh#setModeStart(int[]) mode start points} and
-         * {@link Mesh#setElementLengths(int[]) element lengths} must 
+         * The Mesh#setModeStart(int[]) mode start points} and
+         * Mesh#setElementLengths(int[]) element lengths} must 
          * be specified for this mode.
          */
         Hybrid(false);
@@ -115,8 +115,8 @@ public class Mesh implements Savable, Cloneable {
          * Returns true if the specified mode is a list mode (meaning
          * ,it specifies the indices as a linear list and not some special 
          * format).
-         * Will return true for the types {@link #Points}, {@link #Lines} and
-         * {@link #Triangles}.
+         * Will return true for the types #Points}, #Lines} and
+         * #Triangles}.
          * 
          * @return true if the mode is a list type mode
          */
@@ -151,13 +151,13 @@ public class Mesh implements Savable, Cloneable {
     private Mode mode = Mode.Triangles;
 
     /**
-     * Creates a new mesh with no {@link VertexBuffer vertex buffers}.
+     * Creates a new mesh with no VertexBuffer vertex buffers}.
      */
     public Mesh(){
     }
 
     /**
-     * Create a shallow clone of this Mesh. The {@link VertexBuffer vertex
+     * Create a shallow clone of this Mesh. The VertexBuffer vertex
      * buffers} are shared between this and the clone mesh, the rest
      * of the data is cloned.
      * 
@@ -186,7 +186,7 @@ public class Mesh implements Savable, Cloneable {
 
     /**
      * Creates a deep clone of this mesh. 
-     * The {@link VertexBuffer vertex buffers} and the data inside them
+     * The VertexBuffer vertex buffers} and the data inside them
      * is cloned.
      * 
      * @return a deep clone of this mesh.
@@ -227,8 +227,8 @@ public class Mesh implements Savable, Cloneable {
     /**
      * Clone the mesh for animation use.
      * This creates a shallow clone of the mesh, sharing most
-     * of the {@link VertexBuffer vertex buffer} data, however the
-     * {@link Type#Position}, {@link Type#Normal}, and {@link Type#Tangent} buffers
+     * of the VertexBuffer vertex buffer} data, however the
+     * Type#Position}, Type#Normal}, and Type#Tangent} buffers
      * are deeply cloned.
      * 
      * @return A clone of the mesh for animation use.
@@ -261,8 +261,8 @@ public class Mesh implements Savable, Cloneable {
     }
 
     /**
-     * Generates the {@link Type#BindPosePosition}, {@link Type#BindPoseNormal},
-     * and {@link Type#BindPoseTangent} 
+     * Generates the Type#BindPosePosition}, Type#BindPoseNormal},
+     * and Type#BindPoseTangent} 
      * buffers for this mesh by duplicating them based on the position and normal
      * buffers already set on the mesh.
      * This method does nothing if the mesh has no bone weight or index
@@ -416,16 +416,16 @@ public class Mesh implements Savable, Cloneable {
      * @return The LOD index buffer at the index
      * 
      * @throws IndexOutOfBoundsException If the index is outside of the 
-     * range [0, {@link #getNumLodLevels()}].
+     * range [0, #getNumLodLevels()}].
      * 
-     * @see #setLodLevels(com.clockwork.scene.VertexBuffer[]) 
+     * see #setLodLevels(com.clockwork.scene.VertexBuffer[]) 
      */
     public VertexBuffer getLodLevel(int lod){
         return lodLevels[lod];
     }
     
     /**
-     * Get the element lengths for {@link Mode#Hybrid} mesh mode.
+     * Get the element lengths for Mode#Hybrid} mesh mode.
      * 
      * @return element lengths
      */
@@ -434,7 +434,7 @@ public class Mesh implements Savable, Cloneable {
     }
 
     /**
-     * Set the element lengths for {@link Mode#Hybrid} mesh mode.
+     * Set the element lengths for Mode#Hybrid} mesh mode.
      * 
      * @param elementLengths The element lengths to set
      */
@@ -443,7 +443,7 @@ public class Mesh implements Savable, Cloneable {
     }
 
     /**
-     * Set the mode start indices for {@link Mode#Hybrid} mesh mode.
+     * Set the mode start indices for Mode#Hybrid} mesh mode.
      * 
      * @return mode start indices
      */
@@ -452,7 +452,7 @@ public class Mesh implements Savable, Cloneable {
     }
 
     /**
-     * Get the mode start indices for {@link Mode#Hybrid} mesh mode.
+     * Get the mode start indices for Mode#Hybrid} mesh mode.
      */
     public void setModeStart(int[] modeStart) {
         this.modeStart = modeStart;
@@ -463,18 +463,18 @@ public class Mesh implements Savable, Cloneable {
      * 
      * @return the mesh mode
      * 
-     * @see #setMode(com.clockwork.scene.Mesh.Mode) 
+     * see #setMode(com.clockwork.scene.Mesh.Mode) 
      */
     public Mode getMode() {
         return mode;
     }
 
     /**
-     * Change the Mesh's mode. By default the mode is {@link Mode#Triangles}.
+     * Change the Mesh's mode. By default the mode is Mode#Triangles}.
      * 
      * @param mode The new mode to set
      * 
-     * @see Mode
+     * see Mode
      */
     public void setMode(Mode mode) {
         this.mode = mode;
@@ -486,7 +486,7 @@ public class Mesh implements Savable, Cloneable {
      * 
      * @return maximum number of weights per vertex
      * 
-     * @see #setMaxNumWeights(int) 
+     * see #setMaxNumWeights(int) 
      */
     public int getMaxNumWeights() {
         return maxNumWeights;
@@ -508,19 +508,19 @@ public class Mesh implements Savable, Cloneable {
      * 
      * @return the size of points
      * 
-     * @see #setPointSize(float) 
+     * see #setPointSize(float) 
      */
     public float getPointSize() {
         return pointSize;
     }
 
     /**
-     * Set the size of points for meshes of mode {@link Mode#Points}. 
+     * Set the size of points for meshes of mode Mode#Points}. 
      * The point size is specified as on-screen pixels, the default
      * value is 1.0. The point size
-     * does nothing if {@link RenderState#setPointSprite(boolean) point sprite}
+     * does nothing if RenderState#setPointSprite(boolean) point sprite}
      * render state is enabled, in that case, the vertex shader must specify the 
-     * point size by writing to <code>gl_PointSize</code>.
+     * point size by writing to gl_PointSize.
      * 
      * @param pointSize The size of points
      */
@@ -539,7 +539,7 @@ public class Mesh implements Savable, Cloneable {
 
     /**
      * Specify the line width for meshes of the line modes, such
-     * as {@link Mode#Lines}. The line width is specified as on-screen pixels, 
+     * as Mode#Lines}. The line width is specified as on-screen pixels, 
      * the default value is 1.0.
      * 
      * @param lineWidth The line width
@@ -550,8 +550,8 @@ public class Mesh implements Savable, Cloneable {
 
     /**
      * Indicates to the GPU that this mesh will not be modified (a hint). 
-     * Sets the usage mode to {@link Usage#Static}
-     * for all {@link VertexBuffer vertex buffers} on this Mesh.
+     * Sets the usage mode to Usage#Static}
+     * for all VertexBuffer vertex buffers} on this Mesh.
      */
     public void setStatic() {
         for (VertexBuffer vb : buffersList.getArray()){
@@ -561,8 +561,8 @@ public class Mesh implements Savable, Cloneable {
 
     /**
      * Indicates to the GPU that this mesh will be modified occasionally (a hint).
-     * Sets the usage mode to {@link Usage#Dynamic}
-     * for all {@link VertexBuffer vertex buffers} on this Mesh.
+     * Sets the usage mode to Usage#Dynamic}
+     * for all VertexBuffer vertex buffers} on this Mesh.
      */
     public void setDynamic() {
         for (VertexBuffer vb : buffersList.getArray()){
@@ -572,8 +572,8 @@ public class Mesh implements Savable, Cloneable {
 
     /**
      * Indicates to the GPU that this mesh will be modified every frame (a hint).
-     * Sets the usage mode to {@link Usage#Stream}
-     * for all {@link VertexBuffer vertex buffers} on this Mesh.
+     * Sets the usage mode to Usage#Stream}
+     * for all VertexBuffer vertex buffers} on this Mesh.
      */
     public void setStreamed(){
         for (VertexBuffer vb : buffersList.getArray()){
@@ -688,14 +688,14 @@ public class Mesh implements Savable, Cloneable {
     }
 
     /**
-     * Update the {@link #getVertexCount() vertex} and 
-     * {@link #getTriangleCount() triangle} counts for this mesh
+     * Update the #getVertexCount() vertex} and 
+     * #getTriangleCount() triangle} counts for this mesh
      * based on the current data. This method should be called
-     * after the {@link Buffer#capacity() capacities} of the mesh's
-     * {@link VertexBuffer vertex buffers} has been altered.
+     * after the Buffer#capacity() capacities} of the mesh's
+     * VertexBuffer vertex buffers} has been altered.
      * 
      * @throws IllegalStateException If this mesh is in 
-     * {@link #setInterleaved() interleaved} format.
+     * #setInterleaved() interleaved} format.
      */
     public void updateCounts(){
         if (getBuffer(Type.InterleavedData) != null)
@@ -737,7 +737,7 @@ public class Mesh implements Savable, Cloneable {
 
     /**
      * Returns how many triangles or elements are on this Mesh.
-     * This value is only updated when {@link #updateCounts() } is called.
+     * This value is only updated when #updateCounts() } is called.
      * If the mesh mode is not a triangle mode, then this returns the 
      * number of elements/primitives, e.g. how many lines or how many points,
      * instead of how many triangles.
@@ -764,7 +764,7 @@ public class Mesh implements Savable, Cloneable {
      * and stores them into the v1, v2, v3 arguments.
      * 
      * @param index The index of the triangle. 
-     * Should be between 0 and {@link #getTriangleCount()}.
+     * Should be between 0 and #getTriangleCount()}.
      * 
      * @param v1 Vector to contain first vertex position
      * @param v2 Vector to contain second vertex position
@@ -793,11 +793,11 @@ public class Mesh implements Savable, Cloneable {
     
     /**
      * Gets the triangle vertex positions at the given triangle index 
-     * and stores them into the {@link Triangle} argument.
-     * Also sets the triangle index to the <code>index</code> argument.
+     * and stores them into the Triangle} argument.
+     * Also sets the triangle index to the index argument.
      * 
      * @param index The index of the triangle. 
-     * Should be between 0 and {@link #getTriangleCount()}.
+     * Should be between 0 and #getTriangleCount()}.
      * 
      * @param tri The triangle to store the positions in
      */
@@ -812,7 +812,7 @@ public class Mesh implements Savable, Cloneable {
      * and stores them into the given int array.
      * 
      * @param index The index of the triangle. 
-     * Should be between 0 and {@link #getTriangleCount()}.
+     * Should be between 0 and #getTriangleCount()}.
      * 
      * @param indices Indices of the triangle's vertices
      */
@@ -845,7 +845,7 @@ public class Mesh implements Savable, Cloneable {
 
     /**
      * Generates a collision tree for the mesh.
-     * Called automatically by {@link #collideWith(com.clockwork.collision.Collidable, 
+     * Called automatically by #collideWith(com.clockwork.collision.Collidable, 
      * com.clockwork.math.Matrix4f, 
      * com.clockwork.bounding.BoundingVolume, 
      * com.clockwork.collision.CollisionResults) }.
@@ -859,7 +859,7 @@ public class Mesh implements Savable, Cloneable {
     /**
      * Handles collision detection, internal use only.
      * User code should only use collideWith() on scene
-     * graph elements such as {@link Spatial}s.
+     * graph elements such as Spatial}s.
      */
     public int collideWith(Collidable other, 
                            Matrix4f worldMatrix,
@@ -878,7 +878,7 @@ public class Mesh implements Savable, Cloneable {
     }
 
     /**
-     * Sets the {@link VertexBuffer} on the mesh.
+     * Sets the VertexBuffer} on the mesh.
      * This will update the vertex/triangle counts if needed.
      * 
      * @param vb The buffer to set
@@ -894,7 +894,7 @@ public class Mesh implements Savable, Cloneable {
     }
     
     /**
-     * Unsets the {@link VertexBuffer} set on this mesh
+     * Unsets the VertexBuffer} set on this mesh
      * with the given type. Does nothing if the vertex buffer type is not set 
      * initially.
      * 
@@ -909,7 +909,7 @@ public class Mesh implements Savable, Cloneable {
     }
     
     /**
-     * Creates a {@link VertexBuffer} for the mesh or modifies
+     * Creates a VertexBuffer} for the mesh or modifies
      * the existing one per the parameters given.
      * 
      * @param type The type of the buffer
@@ -937,10 +937,10 @@ public class Mesh implements Savable, Cloneable {
     }
     
     /**
-     * Set a floating point {@link VertexBuffer} on the mesh. 
+     * Set a floating point VertexBuffer} on the mesh. 
      * 
-     * @param type The type of {@link VertexBuffer}, 
-     * e.g. {@link Type#Position}, {@link Type#Normal}, etc.
+     * @param type The type of VertexBuffer}, 
+     * e.g. Type#Position}, Type#Normal}, etc.
      * 
      * @param components Number of components on the vertex buffer, should
      * be between 1 and 4.
@@ -980,7 +980,7 @@ public class Mesh implements Savable, Cloneable {
     }
 
     /**
-     * Get the {@link VertexBuffer} stored on this mesh with the given
+     * Get the VertexBuffer} stored on this mesh with the given
      * type.
      * 
      * @param type The type of VertexBuffer
@@ -991,7 +991,7 @@ public class Mesh implements Savable, Cloneable {
     }
 
     /**
-     * Get the {@link VertexBuffer} data stored on this mesh in float
+     * Get the VertexBuffer} data stored on this mesh in float
      * format.
      * 
      * @param type The type of VertexBuffer
@@ -1006,7 +1006,7 @@ public class Mesh implements Savable, Cloneable {
     }
     
     /**
-     * Get the {@link VertexBuffer} data stored on this mesh in short
+     * Get the VertexBuffer} data stored on this mesh in short
      * format.
      * 
      * @param type The type of VertexBuffer
@@ -1049,11 +1049,11 @@ public class Mesh implements Savable, Cloneable {
     
     /**
      * Get the index buffer for this mesh. 
-     * Will return <code>null</code> if no index buffer is set.
+     * Will return null if no index buffer is set.
      * 
      * @return The index buffer of this mesh.
      * 
-     * @see Type#Index
+     * see Type#Index
      */
     public IndexBuffer getIndexBuffer() {
         VertexBuffer vb = getBuffer(Type.Index);
@@ -1065,7 +1065,7 @@ public class Mesh implements Savable, Cloneable {
 
     /**
      * Extracts the vertex attributes from the given mesh into
-     * this mesh, by using this mesh's {@link #getIndexBuffer() index buffer}
+     * this mesh, by using this mesh's #getIndexBuffer() index buffer}
      * to index into the attributes of the other mesh.
      * Note that this will also change this mesh's index buffer so that
      * the references to the vertex data match the new indices.
@@ -1175,11 +1175,11 @@ public class Mesh implements Savable, Cloneable {
     /**
      * Scales the texture coordinate buffer on this mesh by the given
      * scale factor. 
-     * <p>
+     * 
      * Note that values above 1 will cause the 
      * texture to tile, while values below 1 will cause the texture 
      * to stretch.
-     * </p>
+     * 
      * 
      * @param scaleFactor The scale factor to scale by. Every texture
      * coordinate is multiplied by this vector to get the result.
@@ -1216,7 +1216,7 @@ public class Mesh implements Savable, Cloneable {
 
     /**
      * Updates the bounding volume of this mesh. 
-     * The method does nothing if the mesh has no {@link Type#Position} buffer.
+     * The method does nothing if the mesh has no Type#Position} buffer.
      * It is expected that the position buffer is a float buffer with 3 components.
      */
     public void updateBound(){
@@ -1227,8 +1227,8 @@ public class Mesh implements Savable, Cloneable {
     }
 
     /**
-     * Returns the {@link BoundingVolume} of this Mesh.
-     * By default the bounding volume is a {@link BoundingBox}.
+     * Returns the BoundingVolume} of this Mesh.
+     * By default the bounding volume is a BoundingBox}.
      * 
      * @return the bounding volume of this mesh
      */
@@ -1237,8 +1237,8 @@ public class Mesh implements Savable, Cloneable {
     }
 
     /**
-     * Sets the {@link BoundingVolume} for this Mesh.
-     * The bounding volume is recomputed by calling {@link #updateBound() }.
+     * Sets the BoundingVolume} for this Mesh.
+     * The bounding volume is recomputed by calling #updateBound() }.
      * 
      * @param modelBound The model bound to set
      */
@@ -1247,9 +1247,9 @@ public class Mesh implements Savable, Cloneable {
     }
 
     /**
-     * Returns a map of all {@link VertexBuffer vertex buffers} on this Mesh.
-     * The integer key for the map is the {@link Enum#ordinal() ordinal}
-     * of the vertex buffer's {@link Type}.
+     * Returns a map of all VertexBuffer vertex buffers} on this Mesh.
+     * The integer key for the map is the Enum#ordinal() ordinal}
+     * of the vertex buffer's Type}.
      * Note that the returned map is a reference to the map used internally, 
      * modifying it will cause undefined results.
      * 
@@ -1260,8 +1260,8 @@ public class Mesh implements Savable, Cloneable {
     }
     
     /**
-     * Returns a list of all {@link VertexBuffer vertex buffers} on this Mesh.
-     * Using a list instead an IntMap via the {@link #getBuffers() } method is
+     * Returns a list of all VertexBuffer vertex buffers} on this Mesh.
+     * Using a list instead an IntMap via the #getBuffers() } method is
      * better for iteration as there's no need to create an iterator instance.
      * Note that the returned list is a reference to the list used internally,
      * modifying it will cause undefined results.

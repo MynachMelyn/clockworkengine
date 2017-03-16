@@ -8,7 +8,7 @@ import java.io.IOException;
 
 /**
  * Abstract class for representing a light source.
- * <p>
+ * 
  * All light source types have a color.
  */
 public abstract class Light implements Savable, Cloneable {
@@ -21,20 +21,20 @@ public abstract class Light implements Savable, Cloneable {
         /**
          * Directional light
          * 
-         * @see DirectionalLight
+         * see DirectionalLight
          */
         Directional(0),
         
         /**
          * Point light
          * 
-         * @see PointLight
+         * see PointLight
          */
         Point(1),
         
         /**
          * Spot light.
-         * <p>
+         * 
          * Not supported by engine
          */
         Spot(2),
@@ -42,7 +42,7 @@ public abstract class Light implements Savable, Cloneable {
         /**
          * Ambient light
          * 
-         * @see AmbientLight
+         * see AmbientLight
          */
         Ambient(3);
 
@@ -131,7 +131,7 @@ public abstract class Light implements Savable, Cloneable {
      * 
      * @return true if the light is enabled
      * 
-     * @see Light#setEnabled(boolean)
+     * see Light#setEnabled(boolean)
      */
     /*
     public boolean isEnabled() {
@@ -172,7 +172,7 @@ public abstract class Light implements Savable, Cloneable {
      * 
      * @return the light type
      * 
-     * @see Type
+     * see Type
      */
     public abstract Type getType();
 

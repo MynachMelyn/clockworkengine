@@ -9,7 +9,7 @@ public class JoyAxisTrigger implements Trigger {
     private final boolean negative;
 
     /**
-     * Use {@link Joystick#assignAxis(java.lang.String, java.lang.String, int) }
+     * Use Joystick#assignAxis(java.lang.String, java.lang.String, int) }
      * instead.
      */
     public JoyAxisTrigger(int joyId, int axisId, boolean negative) {

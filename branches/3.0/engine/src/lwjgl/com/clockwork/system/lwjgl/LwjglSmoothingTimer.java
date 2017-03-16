@@ -9,10 +9,10 @@ import java.util.logging.Logger;
 import org.lwjgl.Sys;
 
 /**
- * <code>Timer</code> handles the system's time related functionality. This
+ * Timer handles the system's time related functionality. This
  * allows the calculation of the framerate. To keep the framerate calculation
- * accurate, a call to update each frame is required. <code>Timer</code> is a
- * singleton object and must be created via the <code>getTimer</code> method.
+ * accurate, a call to update each frame is required. Timer is a
+ * singleton object and must be created via the getTimer method.
  *
  * @version $Id: LWJGLTimer.java,v 1.21 2007/09/22 16:46:35 irrisor Exp $
  */
@@ -44,7 +44,7 @@ public class LwjglSmoothingTimer extends Timer {
     private boolean allSmooth = false;
 
     /**
-     * Constructor builds a <code>Timer</code> object. All values will be
+     * Constructor builds a Timer object. All values will be
      * initialized to it's default values.
      */
     public LwjglSmoothingTimer() {
@@ -75,22 +75,22 @@ public class LwjglSmoothingTimer extends Timer {
     }
 
     /**
-     * @see Timer#getTime() 
+     * see Timer#getTime() 
      */
     public long getTime() {
         return Sys.getTime() - startTime;
     }
 
     /**
-     * @see Timer#getResolution() 
+     * see Timer#getResolution() 
      */
     public long getResolution() {
         return LWJGL_TIMER_RES;
     }
 
     /**
-     * <code>getFrameRate</code> returns the current frame rate since the last
-     * call to <code>update</code>.
+     * getFrameRate returns the current frame rate since the last
+     * call to update.
      *
      * @return the current frame rate.
      */
@@ -103,7 +103,7 @@ public class LwjglSmoothingTimer extends Timer {
     }
 
     /**
-     * <code>update</code> recalulates the frame rate based on the previous
+     * update recalulates the frame rate based on the previous
      * call to update. It is assumed that update is called each frame.
      */
     public void update() {
@@ -159,12 +159,12 @@ public class LwjglSmoothingTimer extends Timer {
     }
 
     /**
-     * <code>toString</code> returns the string representation of this timer
-     * in the format: <br>
-     * <br>
-     * jme.utility.Timer@1db699b <br>
-     * Time: {LONG} <br>
-     * FPS: {LONG} <br>
+     * toString returns the string representation of this timer
+     * in the format: 
+     * 
+     * jme.utility.Timer@1db699b 
+     * Time: {LONG} 
+     * FPS: {LONG} 
      *
      * @return the string representation of this object.
      */

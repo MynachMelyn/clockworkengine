@@ -13,7 +13,7 @@ import java.nio.ByteBuffer;
 import java.util.ArrayList;
 
 /**
- * The class that is responsible for blending the following texture types: <li>RGBA8 <li>ABGR8 <li>BGR8 <li>RGB8 Not yet supported (but will be): <li>ARGB4444: <li>RGB10: <li>RGB111110F: <li>RGB16: <li>RGB16F: <li>RGB16F_to_RGB111110F: <li>RGB16F_to_RGB9E5: <li>RGB32F: <li>RGB565: <li>RGB5A1: <li>RGB9E5: <li>RGBA16: <li>RGBA16F
+ * The class that is responsible for blending the following texture types: RGBA8 ABGR8 BGR8 RGB8 Not yet supported (but will be): ARGB4444: RGB10: RGB111110F: RGB16: RGB16F: RGB16F_to_RGB111110F: RGB16F_to_RGB9E5: RGB32F: RGB565: RGB5A1: RGB9E5: RGBA16: RGBA16F
  * 
  */
 public class TextureBlenderAWT extends AbstractTextureBlender {

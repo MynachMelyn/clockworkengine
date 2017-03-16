@@ -5,9 +5,9 @@ import com.clockwork.asset.AssetKey;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
- * <code>SimpleAssetCache</code> is an asset cache
+ * SimpleAssetCache is an asset cache
  * that caches assets without any automatic removal policy. The user
- * is expected to manually call {@link #deleteFromCache(com.clockwork.asset.AssetKey) }
+ * is expected to manually call #deleteFromCache(com.clockwork.asset.AssetKey) }
  * to delete any assets.
  * 
  * 

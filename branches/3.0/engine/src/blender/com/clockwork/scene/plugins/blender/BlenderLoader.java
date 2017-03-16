@@ -119,8 +119,8 @@ public class BlenderLoader extends AbstractBlenderLoader {
      *            loading results containing the scene nodes
      * @param spatial
      *            spatial object
-     * @return <b>true</b> if the given spatial is a root object and
-     *         <b>false</b> otherwise
+     * @return true if the given spatial is a root object and
+     *         false otherwise
      */
     protected boolean isRootObject(LoadingResults loadingResults, Spatial spatial) {
         if (spatial.getParent() == null) {

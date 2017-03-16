@@ -20,11 +20,11 @@ import java.util.prefs.BackingStoreException;
 import javax.swing.*;
 
 /**
- * <code>PropertiesDialog</code> provides an interface to make use of the
- * <code>GameSettings</code> class. The <code>GameSettings</code> object
+ * PropertiesDialog provides an interface to make use of the
+ * GameSettings class. The GameSettings object
  * is still created by the client application, and passed during construction.
  * 
- * @see AppSettings
+ * see AppSettings
  */
 public final class SettingsDialog extends JFrame {
 
@@ -70,35 +70,35 @@ public final class SettingsDialog extends JFrame {
     private int minHeight = 0;
     
     /**
-     * Constructor for the <code>PropertiesDialog</code>. Creates a
+     * Constructor for the PropertiesDialog. Creates a
      * properties dialog initialized for the primary display.
      *
      * @param source
-     *            the <code>AppSettings</code> object to use for working with
+     *            the AppSettings object to use for working with
      *            the properties file.
      * @param imageFile
      *            the image file to use as the title of the dialog;
-     *            <code>null</code> will result in to image being displayed
+     *            null will result in to image being displayed
      * @throws NullPointerException
-     *             if the source is <code>null</code>
+     *             if the source is null
      */
     public SettingsDialog(AppSettings source, String imageFile, boolean loadSettings) {
         this(source, getURL(imageFile), loadSettings);
     }
 
     /**
-     * Constructor for the <code>PropertiesDialog</code>. Creates a
+     * Constructor for the PropertiesDialog. Creates a
      * properties dialog initialized for the primary display.
      * 
      * @param source
-     *            the <code>GameSettings</code> object to use for working with
+     *            the GameSettings object to use for working with
      *            the properties file.
      * @param imageFile
      *            the image file to use as the title of the dialog;
-     *            <code>null</code> will result in to image being displayed
+     *            null will result in to image being displayed
      * @param loadSettings 
      * @throws JmeException
-     *             if the source is <code>null</code>
+     *             if the source is null
      */
     public SettingsDialog(AppSettings source, URL imageFile, boolean loadSettings) {
         if (source == null) {
@@ -219,10 +219,10 @@ public final class SettingsDialog extends JFrame {
     
     
     /**
-     * <code>setImage</code> sets the background image of the dialog.
+     * setImage sets the background image of the dialog.
      * 
      * @param image
-     *            <code>String</code> representing the image file.
+     *            String representing the image file.
      */
     public void setImage(String image) {
         try {
@@ -234,10 +234,10 @@ public final class SettingsDialog extends JFrame {
     }
 
     /**
-     * <code>setImage</code> sets the background image of this dialog.
+     * setImage sets the background image of this dialog.
      * 
      * @param image
-     *            <code>URL</code> pointing to the image file.
+     *            URL pointing to the image file.
      */
     public void setImage(URL image) {
         icon.setIcon(new ImageIcon(image));
@@ -246,7 +246,7 @@ public final class SettingsDialog extends JFrame {
     }
 
     /**
-     * <code>showDialog</code> sets this dialog as visble, and brings it to
+     * showDialog sets this dialog as visble, and brings it to
      * the front.
      */
     public void showDialog() {
@@ -256,7 +256,7 @@ public final class SettingsDialog extends JFrame {
     }
    
     /**
-     * <code>init</code> creates the components to use the dialog.
+     * init creates the components to use the dialog.
      */
     private void createUI() {
         GridBagConstraints gbc;
@@ -485,7 +485,7 @@ public final class SettingsDialog extends JFrame {
     }
 
     /**
-     * <code>verifyAndSaveCurrentSelection</code> first verifies that the
+     * verifyAndSaveCurrentSelection first verifies that the
      * display mode is valid for this system, and then saves the current
      * selection as a properties.cfg file.
      * 
@@ -575,8 +575,8 @@ public final class SettingsDialog extends JFrame {
     }
 
     /**
-     * <code>setUpChooser</code> retrieves all available display modes and
-     * places them in a <code>JComboBox</code>. The resolution specified by
+     * setUpChooser retrieves all available display modes and
+     * places them in a JComboBox. The resolution specified by
      * GameSettings is used as the default value.
      * 
      * @return the combo box of display modes.
@@ -595,7 +595,7 @@ public final class SettingsDialog extends JFrame {
     }
 
     /**
-     * <code>updateDisplayChoices</code> updates the available color depth and
+     * updateDisplayChoices updates the available color depth and
      * display frequency options to match the currently selected resolution.
      */
     private void updateDisplayChoices() {
@@ -625,10 +625,10 @@ public final class SettingsDialog extends JFrame {
     }
 
     /**
-     * <code>updateResolutionChoices</code> updates the available resolutions
+     * updateResolutionChoices updates the available resolutions
      * list to match the currently selected window mode (fullscreen or
      * windowed). It then sets up a list of standard options (if windowed) or
-     * calls <code>updateDisplayChoices</code> (if fullscreen).
+     * calls updateDisplayChoices (if fullscreen).
      */
     private void updateResolutionChoices() {
         if (!fullscreenBox.isSelected()) {
@@ -685,7 +685,7 @@ public final class SettingsDialog extends JFrame {
     }
 
     /**
-     * Returns every unique resolution from an array of <code>DisplayMode</code>s
+     * Returns every unique resolution from an array of DisplayModes
      * where the resolution is greater than the configured minimums.
      */
     private String[] getResolutions(DisplayMode[] modes, int heightLimit, int widthLimit) {
@@ -718,7 +718,7 @@ public final class SettingsDialog extends JFrame {
     }
     
     /**
-     * Returns every unique resolution from an array of <code>DisplayMode</code>s
+     * Returns every unique resolution from an array of DisplayModes
      * where the resolution is greater than the configured minimums and the height
      * is less than the current screen resolution.
      */
@@ -795,13 +795,13 @@ public final class SettingsDialog extends JFrame {
     }
 
     /**
-     * Utility class for sorting <code>DisplayMode</code>s. Sorts by
+     * Utility class for sorting DisplayModes. Sorts by
      * resolution, then bit depth, and then finally refresh rate.
      */
     private class DisplayModeSorter implements Comparator<DisplayMode> {
 
         /**
-         * @see java.util.Comparator#compare(java.lang.Object, java.lang.Object)
+         * see java.util.Comparator#compare(java.lang.Object, java.lang.Object)
          */
         public int compare(DisplayMode a, DisplayMode b) {
             // Width

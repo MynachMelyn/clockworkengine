@@ -44,8 +44,8 @@ import java.util.List;
 public class PssmShadowRenderer implements SceneProcessor {
 
     /**
-     * <code>FilterMode</code> specifies how shadows are filtered
-     * @deprecated use {@link EdgeFilteringMode}
+     * FilterMode specifies how shadows are filtered
+     * @deprecated use EdgeFilteringMode}
      */
     @Deprecated
     public enum FilterMode{
@@ -84,7 +84,7 @@ public class PssmShadowRenderer implements SceneProcessor {
 
     /**
      * Specifies the shadow comparison mode
-     * @deprecated use {@link CompareMode}
+     * @deprecated use CompareMode}
      */
     @Deprecated
     public enum CompareMode {
@@ -220,7 +220,7 @@ public class PssmShadowRenderer implements SceneProcessor {
     }
 
     /**
-     * Sets the filtering mode for shadow edges see {@link FilterMode} for more
+     * Sets the filtering mode for shadow edges see FilterMode} for more
      * info
      *
      * @param filterMode
@@ -252,7 +252,7 @@ public class PssmShadowRenderer implements SceneProcessor {
     }
 
     /**
-     * sets the shadow compare mode see {@link CompareMode} for more info
+     * sets the shadow compare mode see CompareMode} for more info
      *
      * @param compareMode
      */
@@ -592,7 +592,7 @@ public class PssmShadowRenderer implements SceneProcessor {
     /**
      * How far the shadows are rendered in the view
      *
-     * @see #setShadowZExtend(float zFar)
+     * see #setShadowZExtend(float zFar)
      * @return shadowZExtend
      */
     public float getShadowZExtend() {
@@ -617,7 +617,7 @@ public class PssmShadowRenderer implements SceneProcessor {
     /**
      * returns the shdaow intensity
      *
-     * @see #setShadowIntensity(float shadowIntensity)
+     * see #setShadowIntensity(float shadowIntensity)
      * @return shadowIntensity
      */
     public float getShadowIntensity() {
@@ -640,7 +640,7 @@ public class PssmShadowRenderer implements SceneProcessor {
     /**
      * returns the edges thickness
      *
-     * @see #setEdgesThickness(int edgesThickness)
+     * see #setEdgesThickness(int edgesThickness)
      * @return edgesThickness
      */
     public int getEdgesThickness() {

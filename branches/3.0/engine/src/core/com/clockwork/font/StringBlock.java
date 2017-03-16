@@ -6,7 +6,7 @@ import com.clockwork.font.BitmapFont.VAlign;
 import com.clockwork.math.ColorRGBA;
 
 /**
- * Defines a String that is to be drawn in one block that can be constrained by a {@link Rectangle}. Also holds
+ * Defines a String that is to be drawn in one block that can be constrained by a Rectangle}. Also holds
  * formatting information for the StringBlock
  *
  * 
@@ -136,7 +136,7 @@ class StringBlock implements Cloneable {
     }
     
     /**
-     * available only when bounding is set. <code>setBox()</code> method call is needed in advance. 
+     * available only when bounding is set. setBox() method call is needed in advance. 
      * @param wrap true when word need not be split at the end of the line.
      */
     void setLineWrapMode(LineWrapMode wrap) {

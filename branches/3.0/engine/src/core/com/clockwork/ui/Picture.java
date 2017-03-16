@@ -13,7 +13,7 @@ import com.clockwork.scene.shape.Quad;
 import com.clockwork.texture.Texture2D;
 
 /**
- * A <code>Picture</code> represents a 2D image drawn on the screen.
+ * A Picture represents a 2D image drawn on the screen.
  * It can be used to represent sprites or other background elements.
  *
  */
@@ -94,7 +94,7 @@ public class Picture extends Geometry {
     /**
      * Set the image to put on the picture.
      * 
-     * @param assetManager The {@link AssetManager} to use to load the image.
+     * @param assetManager The AssetManager} to use to load the image.
      * @param imgName The image name.
      * @param useAlpha If true, the picture will appear transparent and allow
      * objects behind it to appear through. If false, the transparent
@@ -109,7 +109,7 @@ public class Picture extends Geometry {
     /**
      * Set the texture to put on the picture.
      * 
-     * @param assetManager The {@link AssetManager} to use to load the material.
+     * @param assetManager The AssetManager} to use to load the material.
      * @param tex The texture
      * @param useAlpha If true, the picture will appear transparent and allow
      * objects behind it to appear through. If false, the transparent

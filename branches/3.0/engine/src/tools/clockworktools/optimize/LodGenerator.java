@@ -27,23 +27,23 @@ import java.util.logging.Logger;
  * This is an utility class that allows to generated the lod levels for an
  * arbitrary mesh. It computes a collapse cost for each vertex and each edges.
  * The higher the cost the most likely collapsing the edge or the vertex will
- * produce artifacts on the mesh. <p>This class is the java implementation of
+ * produce artifacts on the mesh. This class is the java implementation of
  * the enhanced version of Ogre engine Lod generator, by Péter Szücs, originally
  * based on Stan Melax "easy mesh simplification". The MIT licenced C++ source
  * code can be found here
  * https://github.com/worldforge/ember/tree/master/src/components/ogre/lod more
  * informations can be found here http://www.melax.com/polychop
- * http://sajty.elementfx.com/progressivemesh/GSoC2012.pdf </p>
+ * http://sajty.elementfx.com/progressivemesh/GSoC2012.pdf 
  *
- * <p>The algorithm sort the vertice according to their collapsse cost
- * ascending. It collapse from the "cheapest" vertex to the more expensive.<br>
- * <strong>Usage : </strong><br>
- * <pre>
+ * The algorithm sort the vertice according to their collapsse cost
+ * ascending. It collapse from the "cheapest" vertex to the more expensive.
+ * <strong>Usage : </strong>
+ * 
  *      LodGenerator lODGenerator = new LodGenerator(geometry);
  *      lODGenerator.bakeLods(reductionMethod,reductionvalue);
- * </pre> redutionMethod type is VertexReductionMethod described here
- * {@link TriangleReductionMethod} reductionvalue depends on the
- * reductionMethod<p>
+ *  redutionMethod type is VertexReductionMethod described here
+ * TriangleReductionMethod} reductionvalue depends on the
+ * reductionMethod
  *
  *
  * 
@@ -65,10 +65,10 @@ public class LodGenerator {
     private Mesh mesh;
 
     /**
-     * Describe the way trinagles will be removed. <br> PROPORTIONAL :
+     * Describe the way trinagles will be removed.  PROPORTIONAL :
      * Percentage of triangles to be removed from the mesh. Valid range is a
-     * number between 0.0 and 1.0 <br> CONSTANT : Triangle count to be removed
-     * from the mesh. Pass only integers or it will be rounded. <br>
+     * number between 0.0 and 1.0  CONSTANT : Triangle count to be removed
+     * from the mesh. Pass only integers or it will be rounded. 
      * COLLAPSE_COST : Reduces the vertices, until the cost is bigger then the
      * given value. Collapse cost is equal to the amount of artifact the
      * reduction causes. This generates the best Lod output, but the collapse
@@ -477,12 +477,12 @@ public class LodGenerator {
 
     /**
      * Computes the lod and return a list of VertexBuffers that can then be used
-     * for lod (use Mesg.setLodLevels(VertexBuffer[]))<br>
+     * for lod (use Mesg.setLodLevels(VertexBuffer[]))
      *
      * This method must be fed with the reduction method
-     * {@link TriangleReductionMethod} and a list of reduction values.<br> for
-     * each value a lod will be generated. <br> The resulting array will always
-     * contain at index 0 the original index buffer of the mesh. <p>
+     * TriangleReductionMethod} and a list of reduction values. for
+     * each value a lod will be generated.  The resulting array will always
+     * contain at index 0 the original index buffer of the mesh. 
      * <strong>Important note :</strong> some meshes cannot be decimated, so the
      * result of this method can varry depending of the given mesh. Also the
      * reduction values are indicative and the produces mesh will not always
@@ -544,11 +544,11 @@ public class LodGenerator {
     }
 
     /**
-     * Computes the lods and bake them into the mesh<br>
+     * Computes the lods and bake them into the mesh
      *
      * This method must be fed with the reduction method
-     * {@link TriangleReductionMethod} and a list of reduction values.<br> for
-     * each value a lod will be generated. <p> <strong>Important note :</strong>
+     * TriangleReductionMethod} and a list of reduction values. for
+     * each value a lod will be generated.  <strong>Important note :</strong>
      * some meshes cannot be decimated, so the result of this method can varry
      * depending of the given mesh. Also the reduction values are indicative and
      * the produces mesh will not always meet the required reduction.

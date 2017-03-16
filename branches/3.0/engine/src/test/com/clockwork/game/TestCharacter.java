@@ -73,8 +73,8 @@ public class TestCharacter extends SimpleApplication implements ActionListener {
         app.start();
     }
     /**
-     * Sets up the camera to track the player from the rear. <br>
-     * Doesn't rotate the player unless they're moving. <br>
+     * Sets up the camera to track the player from the rear. 
+     * Doesn't rotate the player unless they're moving. 
      * @param target - The parent of the camera (The player).
      */
     private void setupChaseCamera(Node target) {

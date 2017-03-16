@@ -227,7 +227,7 @@ public class CombinedTexture {
      * @param uvSetName1 the user's UV coords set name (considered only for UVCoordinatesType.TEXCO_UV)
      * @param type2 the UV coord type
      * @param uvSetName2 the user's UV coords set name (considered only for UVCoordinatesType.TEXCO_UV)
-     * @return <b>true</b> if the types match and <b>false</b> otherwise
+     * @return true if the types match and false otherwise
      */
     private boolean isUVTypesMatch(UVCoordinatesType type1, String uvSetName1,
                                      UVCoordinatesType type2, String uvSetName2) {
@@ -286,7 +286,7 @@ public class CombinedTexture {
     }
 
     /**
-     * @return <b>true</b> if the texture has at least one generated texture component and <b>false</b> otherwise
+     * @return true if the texture has at least one generated texture component and false otherwise
      */
     public boolean hasGeneratedTextures() {
         if (textureDatas != null) {
@@ -337,7 +337,7 @@ public class CombinedTexture {
      * 
      * @param texture
      *            the texture to check for alpha channel
-     * @return <b>true</b> if the texture has no alpha channel and <b>false</b>
+     * @return true if the texture has no alpha channel and false
      *         otherwise
      */
     private boolean isWithoutAlpha(TextureData textureData, BlenderContext blenderContext) {

@@ -212,7 +212,7 @@ public abstract class AbstractCinematicEvent implements CinematicEvent {
 
     /**
      * Returns the loopMode of the animation.
-     * @see LoopMode
+     * see LoopMode
      * @return
      */
     public LoopMode getLoopMode() {
@@ -221,7 +221,7 @@ public abstract class AbstractCinematicEvent implements CinematicEvent {
 
     /**
      * Sets the loopMode of the animation.
-     * @see LoopMode
+     * see LoopMode
      * @param loopMode
      */
     public void setLoopMode(LoopMode loopMode) {

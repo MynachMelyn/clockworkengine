@@ -129,8 +129,8 @@ public abstract class ShaderGenerator {
      * removed from the main part. Each part is then respectively passed to
      * generateDeclarativeSection and generateNodeMainSection.
      *
-     * @see ShaderGenerator#generateDeclarativeSection
-     * @see ShaderGenerator#generateNodeMainSection
+     * see ShaderGenerator#generateDeclarativeSection
+     * see ShaderGenerator#generateNodeMainSection
      *
      * @param loadedSource the actual source code loaded for this node.
      * @param sourceDeclaration the Shader declaration part string builder.
@@ -195,8 +195,8 @@ public abstract class ShaderGenerator {
      * part. If needed the sahder type can be determined by fetching the
      * shaderNode's definition type.
      *
-     * @see ShaderNode#getDefinition()
-     * @see ShaderNodeDefinition#getType()
+     * see ShaderNode#getDefinition()
+     * see ShaderNodeDefinition#getType()
      *
      * @param source the StringBuilder to append generated code.
      * @param shaderNode the shaderNode.
@@ -232,8 +232,8 @@ public abstract class ShaderGenerator {
      * needed the sahder type can be determined by fetching the shaderNode's
      * definition type.
      *
-     * @see ShaderNode#getDefinition()
-     * @see ShaderNodeDefinition#getType()
+     * see ShaderNode#getDefinition()
+     * see ShaderNodeDefinition#getType()
      *
      * @param source the StringBuilder to append generated code.
      * @param shaderNode the shaderNode.

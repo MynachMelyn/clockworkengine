@@ -71,7 +71,7 @@ public class ReflectionProcessor implements SceneProcessor {
     }
 
     /**
-     * Internal use only<br>
+     * Internal use only
      * returns the frame buffer
      * @return 
      */
@@ -80,7 +80,7 @@ public class ReflectionProcessor implements SceneProcessor {
     }
 
     /**
-     * Internal use only<br>
+     * Internal use only
      * sets the frame buffer
      * @param reflectionBuffer 
      */

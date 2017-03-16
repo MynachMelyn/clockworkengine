@@ -23,18 +23,18 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**
- * An LRU cache, based on <code>LinkedHashMap</code>.
+ * An LRU cache, based on LinkedHashMap.
  * 
- * <p>
- * This cache has a fixed maximum number of elements (<code>cacheSize</code>).
+ * 
+ * This cache has a fixed maximum number of elements (cacheSize).
  * If the cache is full and another entry is added, the LRU (least recently
  * used) entry is dropped.
  * 
- * <p>
+ * 
  * This class is thread-safe. All methods of this class are synchronized.
  * 
- * <p>
- * Author: Christian d'Heureuse, Inventec Informatik AG, Zurich, Switzerland<br>
+ * 
+ * Author: Christian d'Heureuse, Inventec Informatik AG, Zurich, Switzerland
  * Multi-licensed: EPL / LGPL / GPL / AL / BSD.
  */
 public class LRUCache<K, V> {
@@ -65,7 +65,7 @@ public class LRUCache<K, V> {
     }
 
     /**
-     * Retrieves an entry from the cache.<br>
+     * Retrieves an entry from the cache.
      * The retrieved entry becomes the MRU (most recently used) entry.
      * 
      * @param key
@@ -111,10 +111,10 @@ public class LRUCache<K, V> {
     }
 
     /**
-     * Returns a <code>Collection</code> that contains a copy of all cache
+     * Returns a Collection that contains a copy of all cache
      * entries.
      * 
-     * @return a <code>Collection</code> with a copy of the cache content.
+     * @return a Collection with a copy of the cache content.
      */
     public synchronized Collection<Map.Entry<K, V>> getAll() {
         return new ArrayList<Map.Entry<K, V>>(this.map.entrySet());

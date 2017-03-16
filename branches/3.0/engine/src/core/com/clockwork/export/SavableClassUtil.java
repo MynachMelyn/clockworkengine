@@ -13,7 +13,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * <code>SavableClassUtil</code> contains various utilities to handle
+ * SavableClassUtil contains various utilities to handle
  * Savable classes. The methods are general enough to not be specific to any
  * particular implementation.
  * Currently it will remap any classes from old paths to new paths

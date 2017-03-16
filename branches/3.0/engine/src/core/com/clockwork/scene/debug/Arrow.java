@@ -9,7 +9,7 @@ import com.clockwork.scene.VertexBuffer.Type;
 import java.nio.FloatBuffer;
 
 /**
- * The <code>Arrow</code> debug shape represents an arrow.
+ * The Arrow debug shape represents an arrow.
  * An arrow is simply a line going from the original toward an extent
  * and at the tip there will be triangle-like shape.
  * 

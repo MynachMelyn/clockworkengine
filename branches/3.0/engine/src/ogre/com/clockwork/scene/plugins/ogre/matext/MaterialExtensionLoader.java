@@ -19,7 +19,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * Used internally by {@link MaterialLoader}
+ * Used internally by MaterialLoader}
  */
 public class MaterialExtensionLoader {
 

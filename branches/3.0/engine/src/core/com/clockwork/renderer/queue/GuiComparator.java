@@ -5,7 +5,7 @@ import com.clockwork.renderer.Camera;
 import com.clockwork.scene.Geometry;
 
 /**
- * <code>GuiComparator</code> sorts geometries back-to-front based
+ * GuiComparator sorts geometries back-to-front based
  * on their Z position.
  *
  */

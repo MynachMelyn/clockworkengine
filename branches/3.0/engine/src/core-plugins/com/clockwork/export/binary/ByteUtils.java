@@ -7,7 +7,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 
 /**
- * <code>ByteUtils</code> is a helper class for converting numeric primitives
+ * ByteUtils is a helper class for converting numeric primitives
  * to and from byte representations.
  * 
  */

@@ -158,8 +158,8 @@ public class SimulationNode {
      * 
      * @param constraint
      *            the constraint to be checked
-     * @return <b>true</b> if the constraint already is stored in the node and
-     *         <b>false</b> otherwise
+     * @return true if the constraint already is stored in the node and
+     *         false otherwise
      */
     public boolean contains(Constraint constraint) {
         boolean result = false;

@@ -13,7 +13,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * <i>From bullet manual:</i><br>
+ * <i>From bullet manual:</i>
  * The slider constraint allows the body to rotate around one axis and translate along this axis.
  */
 public class SliderJoint extends PhysicsJoint {

@@ -7,7 +7,7 @@ import java.io.IOException;
 
 /**
  * 
- * <code>Rectangle</code> defines a finite plane within three dimensional space
+ * Rectangle defines a finite plane within three dimensional space
  * that is specified via three points (A, B, C). These three points define a
  * triangle with the fourth point defining the rectangle ((B + C) - A.
  * 
@@ -22,7 +22,7 @@ public final class Rectangle implements Savable, Cloneable, java.io.Serializable
     private Vector3f a, b, c;
 
     /**
-     * Constructor creates a new <code>Rectangle</code> with no defined corners.
+     * Constructor creates a new Rectangle with no defined corners.
      * A, B, and C must be set to define a valid rectangle.
      * 
      */
@@ -33,7 +33,7 @@ public final class Rectangle implements Savable, Cloneable, java.io.Serializable
     }
 
     /**
-     * Constructor creates a new <code>Rectangle</code> with defined A, B, and C
+     * Constructor creates a new Rectangle with defined A, B, and C
      * points that define the area of the rectangle.
      * 
      * @param a
@@ -50,7 +50,7 @@ public final class Rectangle implements Savable, Cloneable, java.io.Serializable
     }
 
     /**
-     * <code>getA</code> returns the first point of the rectangle.
+     * getA returns the first point of the rectangle.
      * 
      * @return the first point of the rectangle.
      */
@@ -59,7 +59,7 @@ public final class Rectangle implements Savable, Cloneable, java.io.Serializable
     }
 
     /**
-     * <code>setA</code> sets the first point of the rectangle.
+     * setA sets the first point of the rectangle.
      * 
      * @param a
      *            the first point of the rectangle.
@@ -69,7 +69,7 @@ public final class Rectangle implements Savable, Cloneable, java.io.Serializable
     }
 
     /**
-     * <code>getB</code> returns the second point of the rectangle.
+     * getB returns the second point of the rectangle.
      * 
      * @return the second point of the rectangle.
      */
@@ -78,7 +78,7 @@ public final class Rectangle implements Savable, Cloneable, java.io.Serializable
     }
 
     /**
-     * <code>setB</code> sets the second point of the rectangle.
+     * setB sets the second point of the rectangle.
      * 
      * @param b
      *            the second point of the rectangle.
@@ -88,7 +88,7 @@ public final class Rectangle implements Savable, Cloneable, java.io.Serializable
     }
 
     /**
-     * <code>getC</code> returns the third point of the rectangle.
+     * getC returns the third point of the rectangle.
      * 
      * @return the third point of the rectangle.
      */
@@ -97,7 +97,7 @@ public final class Rectangle implements Savable, Cloneable, java.io.Serializable
     }
 
     /**
-     * <code>setC</code> sets the third point of the rectangle.
+     * setC sets the third point of the rectangle.
      * 
      * @param c
      *            the third point of the rectangle.
@@ -107,7 +107,7 @@ public final class Rectangle implements Savable, Cloneable, java.io.Serializable
     }
 
     /**
-     * <code>random</code> returns a random point within the plane defined by:
+     * random returns a random point within the plane defined by:
      * A, B, C, and (B + C) - A.
      * 
      * @return a random point within the rectangle.
@@ -117,7 +117,7 @@ public final class Rectangle implements Savable, Cloneable, java.io.Serializable
     }
 
     /**
-     * <code>random</code> returns a random point within the plane defined by:
+     * random returns a random point within the plane defined by:
      * A, B, C, and (B + C) - A.
      * 
      * @param result

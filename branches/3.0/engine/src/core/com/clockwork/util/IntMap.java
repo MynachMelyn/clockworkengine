@@ -6,7 +6,7 @@ import java.util.Iterator;
 import java.util.Map;
 
 /**
- * Similar to a {@link Map} except that ints are used as keys.
+ * Similar to a Map} except that ints are used as keys.
  * 
  * Taken from <a href="http://code.google.com/p/skorpios/">http://code.google.com/p/skorpios/</a>
  * 

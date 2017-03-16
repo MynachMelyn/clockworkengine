@@ -65,7 +65,7 @@ public interface CinematicEvent extends Savable {
      * playing.
      *
      * For more information, see the LoopMode enum class.
-     * @see LoopMode
+     * see LoopMode
      */
     public void setLoopMode(LoopMode loop);
 
@@ -75,7 +75,7 @@ public interface CinematicEvent extends Savable {
      * playing.
      *
      * For more information, see the LoopMode enum class.
-     * @see LoopMode
+     * see LoopMode
      */
     public LoopMode getLoopMode();
 

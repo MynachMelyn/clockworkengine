@@ -49,7 +49,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * <p>PhysicsSpace - The central jbullet-jme physics space</p>
+ * PhysicsSpace - The central jbullet-jme physics space
  */
 public class PhysicsSpace {
 
@@ -94,7 +94,7 @@ public class PhysicsSpace {
     private AssetManager debugManager;
 
     /**
-     * Get the current PhysicsSpace <b>running on this thread</b><br/>
+     * Get the current PhysicsSpace running on this thread
      * For parallel physics, this can also be called from the OpenGL thread to receive the PhysicsSpace
      * @return the PhysicsSpace running on this thread
      */
@@ -287,7 +287,7 @@ public class PhysicsSpace {
     }
 
     /**
-     * updates the physics space, uses maxSteps<br>
+     * updates the physics space, uses maxSteps
      * @param time the current time value
      * @param maxSteps
      */
@@ -662,7 +662,7 @@ public class PhysicsSpace {
     }
 
     /**
-     * Adds a listener for a specific collision group, such a listener can disable collisions when they happen.<br>
+     * Adds a listener for a specific collision group, such a listener can disable collisions when they happen.
      * There can be only one listener per collision group.
      * @param listener
      * @param collisionGroup
@@ -710,7 +710,7 @@ public class PhysicsSpace {
     }
 
     /**
-     * Performs a sweep collision test and returns the results as a list of PhysicsSweepTestResults<br/>
+     * Performs a sweep collision test and returns the results as a list of PhysicsSweepTestResults
      * You have to use different Transforms for start and end (at least distance > 0.4f).
      * SweepTest will not see a collision if it starts INSIDE an object and is moving AWAY from its center.
      */
@@ -726,7 +726,7 @@ public class PhysicsSpace {
     }
 
     /**
-     * Performs a sweep collision test and returns the results as a list of PhysicsSweepTestResults<br/>
+     * Performs a sweep collision test and returns the results as a list of PhysicsSweepTestResults
      * You have to use different Transforms for start and end (at least distance > 0.4f).
      * SweepTest will not see a collision if it starts INSIDE an object and is moving AWAY from its center.
      */
@@ -804,7 +804,7 @@ public class PhysicsSpace {
     }
 
     /**
-     * sets the accuracy of the physics computation, default=1/60s<br>
+     * sets the accuracy of the physics computation, default=1/60s
      * @param accuracy
      */
     public void setAccuracy(float accuracy) {
@@ -839,7 +839,7 @@ public class PhysicsSpace {
      * Enable debug display for physics.
      *
      * @deprecated in favor of BulletDebugAppState, use
-     * <code>BulletAppState.setDebugEnabled(boolean)</code> to add automatically
+     * BulletAppState.setDebugEnabled(boolean) to add automatically
      * @param manager AssetManager to use to create debug materials
      */
     @Deprecated

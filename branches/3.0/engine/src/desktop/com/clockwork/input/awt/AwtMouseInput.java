@@ -17,7 +17,7 @@ import java.util.logging.Logger;
 import javax.swing.SwingUtilities;
 
 /**
- * <code>AwtMouseInput</code>
+ * AwtMouseInput
  *
  *
  * @version $Revision$

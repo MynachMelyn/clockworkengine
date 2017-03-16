@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * <code>Skeleton</code> is a convenience class for managing a bone hierarchy.
+ * Skeleton is a convenience class for managing a bone hierarchy.
  * Skeleton updates the world transforms to reflect the current local
  * animated matrixes.
  * 
@@ -28,7 +28,7 @@ public final class Skeleton implements Savable {
     /**
      * Creates a skeleton from a bone list. 
      * The root bones are found automatically.
-     * <p>
+     * 
      * Note that using this constructor will cause the bones in the list
      * to have their bind pose recomputed based on their local transforms.
      * 
@@ -57,7 +57,7 @@ public final class Skeleton implements Savable {
 
     /**
      * Special-purpose copy constructor.
-     * <p>
+     * 
      * Shallow copies bind pose data from the source skeleton, does not
      * copy any other data.
      * 

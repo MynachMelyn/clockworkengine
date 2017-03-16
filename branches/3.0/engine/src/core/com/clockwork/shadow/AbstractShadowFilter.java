@@ -95,7 +95,7 @@ public abstract class AbstractShadowFilter<T extends AbstractShadowRenderer> ext
     /**
      * returns the shdaow intensity
      *
-     * @see #setShadowIntensity(float shadowIntensity)
+     * see #setShadowIntensity(float shadowIntensity)
      * @return shadowIntensity
      */
     public float getShadowIntensity() {
@@ -114,9 +114,9 @@ public abstract class AbstractShadowFilter<T extends AbstractShadowRenderer> ext
     }
 
     /**
-     * returns the edges thickness <br>
+     * returns the edges thickness 
      *
-     * @see #setEdgesThickness(int edgesThickness)
+     * see #setEdgesThickness(int edgesThickness)
      * @return edgesThickness
      */
     public int getEdgesThickness() {
@@ -154,7 +154,7 @@ public abstract class AbstractShadowFilter<T extends AbstractShadowRenderer> ext
     }
 
     /**
-     * sets the shadow compare mode see {@link CompareMode} for more info
+     * sets the shadow compare mode see CompareMode} for more info
      *
      * @param compareMode
      */
@@ -165,7 +165,7 @@ public abstract class AbstractShadowFilter<T extends AbstractShadowRenderer> ext
     /**
      * returns the shadow compare mode
      *
-     * @see CompareMode
+     * see CompareMode
      * @return the shadowCompareMode
      */
     public CompareMode getShadowCompareMode() {
@@ -173,7 +173,7 @@ public abstract class AbstractShadowFilter<T extends AbstractShadowRenderer> ext
     }
 
     /**
-     * Sets the filtering mode for shadow edges see {@link EdgeFilteringMode}
+     * Sets the filtering mode for shadow edges see EdgeFilteringMode}
      * for more info
      *
      * @param filterMode
@@ -185,7 +185,7 @@ public abstract class AbstractShadowFilter<T extends AbstractShadowRenderer> ext
     /**
      * returns the the edge filtering mode
      *
-     * @see EdgeFilteringMode
+     * see EdgeFilteringMode
      * @return
      */
     public EdgeFilteringMode getEdgeFilteringMode() {

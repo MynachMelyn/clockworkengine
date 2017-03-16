@@ -12,7 +12,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * <i>From bullet manual:</i><br>
+ * <i>From bullet manual:</i>
  * Hinge constraint, or revolute joint restricts two additional angular degrees of freedom,
  * so the body can only rotate around one axis, the hinge axis.
  * This can be useful to represent doors or wheels rotating around one axis.

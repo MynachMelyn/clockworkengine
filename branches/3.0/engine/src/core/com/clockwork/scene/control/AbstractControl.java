@@ -54,11 +54,11 @@ public abstract class AbstractControl implements Control {
     /**
      *  Default implementation of cloneForSpatial() that
      *  simply clones the control and sets the spatial.
-     *  <pre>
+     *  
      *  AbstractControl c = clone();
      *  c.spatial = null;
      *  c.setSpatial(spatial);
-     *  </pre>
+     *  
      *
      *  Controls that wish to be persisted must be Cloneable.
      */

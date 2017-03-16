@@ -22,7 +22,7 @@ public class JoyAxisEvent extends InputEvent {
     /**
      * Returns the JoystickAxis that triggered this event.
      *
-     * @see JoystickAxis#assignAxis(java.lang.String, java.lang.String, int) 
+     * see JoystickAxis#assignAxis(java.lang.String, java.lang.String, int) 
      */
     public JoystickAxis getAxis() {
         return axis;
@@ -33,7 +33,7 @@ public class JoyAxisEvent extends InputEvent {
      * 
      * @return joystick axis index.
      * 
-     * @see Joystick#assignAxis(java.lang.String, java.lang.String, int) 
+     * see Joystick#assignAxis(java.lang.String, java.lang.String, int) 
      */
     public int getAxisIndex() {
         return axis.getAxisId();
@@ -44,7 +44,7 @@ public class JoyAxisEvent extends InputEvent {
      * 
      * @return joystick index.
      * 
-     * @see InputManager#getJoysticks() 
+     * see InputManager#getJoysticks() 
      */
     public int getJoyIndex() {
         return axis.getJoystick().getJoyId();

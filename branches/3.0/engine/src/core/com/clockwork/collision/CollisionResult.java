@@ -7,8 +7,8 @@ import com.clockwork.scene.Geometry;
 import com.clockwork.scene.Mesh;
 
 /**
- * A <code>CollisionResult</code> represents a single collision instance
- * between two {@link Collidable}. A collision check can result in many 
+ * A CollisionResult represents a single collision instance
+ * between two Collidable}. A collision check can result in many 
  * collision instances (places where collision has occured).
  * 
  */

@@ -771,7 +771,7 @@ public class ChaseCamera implements ActionListener, AnalogListener, Control {
     /**
      * @return If drag to rotate feature is enabled.
      *
-     * @see FlyByCamera#setDragToRotate(boolean)
+     * see FlyByCamera#setDragToRotate(boolean)
      */
     public boolean isDragToRotate() {
         return dragToRotate;

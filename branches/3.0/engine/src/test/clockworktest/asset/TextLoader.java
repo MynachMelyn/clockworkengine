@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.util.Scanner;
 
 /**
- * An example implementation of {@link AssetLoader} to load text
+ * An example implementation of AssetLoader} to load text
  * files as strings.
  */
 public class TextLoader implements AssetLoader {

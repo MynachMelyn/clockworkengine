@@ -126,7 +126,7 @@ public class MapModel2D {
     /**
      * Converts a latitude/longitude position into a pixel co-ordinate
      * @param position the position to convert
-     * @return {@code Point} a pixel co-ordinate
+     * @return Point} a pixel co-ordinate
      * @since 1.0
      */
     public Point toPixel(Position position) {
@@ -200,9 +200,9 @@ public class MapModel2D {
 
     /**
      * Converts a pixel position into a mercator position
-     * @param p {@link Point} object that you wish to convert into
+     * @param p Point} object that you wish to convert into
      *        longitude / latiude
-     * @return the converted {@code Position} object
+     * @return the converted Position} object
      * @since 1.0
      */
     public Position toPosition(Point p) {
@@ -255,7 +255,7 @@ public class MapModel2D {
 
     /**
      * Defines the centre of the map in pixels
-     * @param p <code>Point</code> object denoting the map's new centre
+     * @param p Point object denoting the map's new centre
      * @since 1.0
      */
     public void setCentre(Point p) {
@@ -289,7 +289,7 @@ public class MapModel2D {
 
     /**
      * Returns the pixel (x,y) centre of the map
-     * @return {@link Point} object marking the map's (x,y) centre
+     * @return Point} object marking the map's (x,y) centre
      * @since 1.0
      */
     public Point getPixelCentre() {
@@ -297,8 +297,8 @@ public class MapModel2D {
     }
 
     /**
-     * Returns the {@code Position} centre of the map
-     * @return {@code Position} object marking the map's (lat, long) centre
+     * Returns the Position} centre of the map
+     * @return Position} object marking the map's (lat, long) centre
      * @since 1.0
      */
     public Position getCentre() {

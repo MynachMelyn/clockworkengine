@@ -9,8 +9,8 @@ import com.clockwork.scene.control.LightControl.ControlDirection;
 import java.io.IOException;
 
 /**
- * <code>LightNode</code> is used to link together a {@link Light} object
- * with a {@link Node} object. 
+ * LightNode is used to link together a Light} object
+ * with a Node} object. 
  *
  */
 public class LightNode extends Node {
@@ -34,7 +34,7 @@ public class LightNode extends Node {
     }
 
     /**
-     * Enable or disable the <code>LightNode</code> functionality.
+     * Enable or disable the LightNode functionality.
      * 
      * @param enabled If false, the functionality of LightNode will
      * be disabled.

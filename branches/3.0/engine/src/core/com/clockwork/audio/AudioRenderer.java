@@ -16,7 +16,7 @@ public interface AudioRenderer {
     /**
      * Sets the environment, used for reverb effects.
      *
-     * @see AudioSource#setReverbEnabled(boolean)
+     * see AudioSource#setReverbEnabled(boolean)
      * @param env The environment to set.
      */
     public void setEnvironment(Environment env);

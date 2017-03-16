@@ -95,7 +95,7 @@ public final class AnimControl extends AbstractControl implements Cloneable {
     }
 
     /**
-     * @param animations Set the animations that this <code>AnimControl</code>
+     * @param animations Set the animations that this AnimControl
      * will be capable of playing. The animations should be compatible
      * with the skeleton given in the constructor.
      */
@@ -115,7 +115,7 @@ public final class AnimControl extends AbstractControl implements Cloneable {
 
     /**
      * Adds an animation to be available for playing to this
-     * <code>AnimControl</code>.
+     * AnimControl.
      * @param anim The animation to add.
      */
     public void addAnim(Animation anim) {
@@ -139,7 +139,7 @@ public final class AnimControl extends AbstractControl implements Cloneable {
      * Create a new animation channel, by default assigned to all bones
      * in the skeleton.
      * 
-     * @return A new animation channel for this <code>AnimControl</code>.
+     * @return A new animation channel for this AnimControl.
      */
     public AnimChannel createChannel() {
         AnimChannel channel = new AnimChannel(this);
@@ -149,7 +149,7 @@ public final class AnimControl extends AbstractControl implements Cloneable {
 
     /**
      * Return the animation channel at the given index.
-     * @param index The index, starting at 0, to retrieve the <code>AnimChannel</code>.
+     * @param index The index, starting at 0, to retrieve the AnimChannel.
      * @return The animation channel at the given index, or throws an exception
      * if the index is out of bounds.
      *
@@ -161,9 +161,9 @@ public final class AnimControl extends AbstractControl implements Cloneable {
 
     /**
      * @return The number of channels that are controlled by this
-     * <code>AnimControl</code>.
+     * AnimControl.
      *
-     * @see AnimControl#createChannel()
+     * see AnimControl#createChannel()
      */
     public int getNumChannels() {
         return channels.size();
@@ -172,7 +172,7 @@ public final class AnimControl extends AbstractControl implements Cloneable {
     /**
      * Clears all the channels that were created.
      *
-     * @see AnimControl#createChannel()
+     * see AnimControl#createChannel()
      */
     public void clearChannels() {
         for (AnimChannel animChannel : channels) {
@@ -184,7 +184,7 @@ public final class AnimControl extends AbstractControl implements Cloneable {
     }
 
     /**
-     * @return The skeleton of this <code>AnimControl</code>.
+     * @return The skeleton of this AnimControl.
      */
     public Skeleton getSkeleton() {
         return skeleton;
@@ -206,7 +206,7 @@ public final class AnimControl extends AbstractControl implements Cloneable {
     /**
      * Removes the given listener from listening to events.
      * @param listener
-     * @see AnimControl#addListener(com.clockwork.animation.AnimEventListener)
+     * see AnimControl#addListener(com.clockwork.animation.AnimEventListener)
      */
     public void removeListener(AnimEventListener listener) {
         if (!listeners.remove(listener)) {
@@ -216,9 +216,9 @@ public final class AnimControl extends AbstractControl implements Cloneable {
     }
 
     /**
-     * Clears all the listeners added to this <code>AnimControl</code>
+     * Clears all the listeners added to this AnimControl
      *
-     * @see AnimControl#addListener(com.clockwork.animation.AnimEventListener)
+     * see AnimControl#addListener(com.clockwork.animation.AnimEventListener)
      */
     public void clearListeners() {
         listeners.clear();
@@ -257,7 +257,7 @@ public final class AnimControl extends AbstractControl implements Cloneable {
     }
 
     /**
-     * @return The names of all animations that this <code>AnimControl</code>
+     * @return The names of all animations that this AnimControl
      * can play.
      */
     public Collection<String> getAnimationNames() {

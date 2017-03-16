@@ -57,7 +57,7 @@ public class SpotLightShadowFilter extends AbstractShadowFilter<SpotLightShadowR
     /**
      * How far the shadows are rendered in the view
      *
-     * @see setShadowZExtend(float zFar)
+     * see setShadowZExtend(float zFar)
      * @return shadowZExtend
      */
     public float getShadowZExtend() {

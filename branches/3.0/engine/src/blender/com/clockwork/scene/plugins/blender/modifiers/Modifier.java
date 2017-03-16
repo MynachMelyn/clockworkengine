@@ -21,7 +21,7 @@ public abstract class Modifier {
     public static final String SUBSURF_MODIFIER_DATA          = "SubsurfModifierData";
     public static final String OBJECT_ANIMATION_MODIFIER_DATA = "ObjectAnimationModifierData";
 
-    /** This variable indicates if the modifier is invalid (<b>true</b>) or not (<b>false</b>). */
+    /** This variable indicates if the modifier is invalid (true) or not (false). */
     protected boolean          invalid;
     /**
      * A variable that tells if the modifier causes modification. Some modifiers like ArmatureModifier might have no
@@ -48,8 +48,8 @@ public abstract class Modifier {
      * 
      * @param modifierType
      *            the type name of the modifier
-     * @return <b>true</b> if the modifier can be applied many times and
-     *         <b>false</b> otherwise
+     * @return true if the modifier can be applied many times and
+     *         false otherwise
      */
     public static boolean canBeAppliedMultipleTimes(String modifierType) {
         return !(ARMATURE_MODIFIER_DATA.equals(modifierType) || OBJECT_ANIMATION_MODIFIER_DATA.equals(modifierType));
@@ -63,7 +63,7 @@ public abstract class Modifier {
     }
 
     /**
-     * @return <b>true</b> if the modifier causes feature's modification or <b>false</b> if not
+     * @return true if the modifier causes feature's modification or false if not
      */
     public boolean isModifying() {
         return modifying;

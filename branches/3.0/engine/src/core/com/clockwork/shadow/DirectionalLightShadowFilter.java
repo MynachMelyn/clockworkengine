@@ -59,7 +59,7 @@ public class DirectionalLightShadowFilter extends AbstractShadowFilter<Direction
     /**
      * returns the labda parameter
      *
-     * @see #setLambda(float lambda)
+     * see #setLambda(float lambda)
      * @return lambda
      */
     public float getLambda() {
@@ -84,7 +84,7 @@ public class DirectionalLightShadowFilter extends AbstractShadowFilter<Direction
     /**
      * How far the shadows are rendered in the view
      *
-     * @see setShadowZExtend(float zFar)
+     * see setShadowZExtend(float zFar)
      * @return shadowZExtend
      */
     public float getShadowZExtend() {

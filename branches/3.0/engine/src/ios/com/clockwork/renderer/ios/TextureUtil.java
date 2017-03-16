@@ -183,7 +183,7 @@ public class TextureUtil {
     }
 
     /**
-     * <code>uploadTextureBitmap</code> uploads a native android bitmap
+     * uploadTextureBitmap uploads a native android bitmap
      */
     /*
     public static void uploadTextureBitmap(final int target, Bitmap bitmap, boolean needMips) {
@@ -191,7 +191,7 @@ public class TextureUtil {
     }
 
     /**
-     * <code>uploadTextureBitmap</code> uploads a native android bitmap
+     * uploadTextureBitmap uploads a native android bitmap
      */
     /*
     public static void uploadTextureBitmap(final int target, Bitmap bitmap, boolean needMips, boolean subTexture, int x, int y) {

@@ -6,7 +6,7 @@ import com.clockwork.scene.Geometry;
 import com.clockwork.util.SortUtil;
 
 /**
- * This class is a special purpose list of {@link Geometry} objects for render
+ * This class is a special purpose list of Geometry} objects for render
  * queuing.
  *
  */
@@ -20,7 +20,7 @@ public class GeometryList {
     private GeometryComparator comparator;
 
     /**
-     * Initializes the GeometryList to use the given {@link GeometryComparator}
+     * Initializes the GeometryList to use the given GeometryComparator}
      * to use for comparing geometries.
      * 
      * @param comparator The comparator to use.
@@ -42,7 +42,7 @@ public class GeometryList {
 
     /**
      * Set the camera that will be set on the geometry comparators 
-     * via {@link GeometryComparator#setCamera(com.clockwork.renderer.Camera)}.
+     * via GeometryComparator#setCamera(com.clockwork.renderer.Camera)}.
      * 
      * @param cam Camera to use for sorting.
      */

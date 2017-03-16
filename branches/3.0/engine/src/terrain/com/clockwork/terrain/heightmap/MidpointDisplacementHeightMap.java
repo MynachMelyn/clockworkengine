@@ -8,7 +8,7 @@ import java.util.logging.Logger;
 import javax.management.JMException;
 
 /**
- * <code>MidpointDisplacementHeightMap</code> generates an heightmap based on
+ * MidpointDisplacementHeightMap generates an heightmap based on
  * the midpoint displacement algorithm. See Constructor javadoc for more info.
  * 
  */
@@ -24,9 +24,9 @@ public class MidpointDisplacementHeightMap extends AbstractHeightMap {
      * randomly given an height, the center will be heighted to the average of
      * the 4 corners to which a random value is added. Then other passes fill
      * the heightmap by the same principle.
-     * The random value is generated between the values <code>-range</code>
-     * and <code>range</code>. The <code>range</code> parameter is multiplied by
-     * the <code>persistence</code> parameter each pass to smoothen close cell heights.
+     * The random value is generated between the values -range
+     * and range. The range parameter is multiplied by
+     * the persistence parameter each pass to smoothen close cell heights.
      * Extends this class and override the getOffset function for more control of
      * the randomness (you can use the coordinates and/or the computed average height
      * to influence the random amount added.
@@ -61,9 +61,9 @@ public class MidpointDisplacementHeightMap extends AbstractHeightMap {
      * randomly given an height, the center will be heighted to the average of
      * the 4 corners to which a random value is added. Then other passes fill
      * the heightmap by the same principle.
-     * The random value is generated between the values <code>-range</code>
-     * and <code>range</code>. The <code>range</code> parameter is multiplied by
-     * the <code>persistence</code> parameter each pass to smoothen close cell heights.
+     * The random value is generated between the values -range
+     * and range. The range parameter is multiplied by
+     * the persistence parameter each pass to smoothen close cell heights.
      * @param size
      *          The size of the heightmap, must be 2^N+1
      * @param range

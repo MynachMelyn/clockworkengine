@@ -7,8 +7,8 @@ import com.clockwork.scene.Mesh.Mode;
 import java.io.IOException;
 
 /**
- * <code>RenderState</code> specifies material rendering properties that cannot
- * be controlled by a shader on a {@link Material}. The properties
+ * RenderState specifies material rendering properties that cannot
+ * be controlled by a shader on a Material}. The properties
  * allow manipulation of rendering features such as depth testing, alpha blending,
  * face culling, stencil operations, and much more.
  *
@@ -17,37 +17,37 @@ import java.io.IOException;
 public class RenderState implements Cloneable, Savable {
 
     /**
-     * The <code>DEFAULT</code> render state is the one used by default
+     * The DEFAULT render state is the one used by default
      * on all materials unless changed otherwise by the user.
      *
-     * <p>
+     * 
      * It has the following properties:
-     * <ul>
-     * <li>Back Face Culling</li>
-     * <li>Depth Testing Enabled</li>
-     * <li>Depth Writing Enabled</li>
-     * </ul>
+     * 
+     * Back Face Culling
+     * Depth Testing Enabled
+     * Depth Writing Enabled
+     * 
      */
     public static final RenderState DEFAULT = new RenderState();
     /**
-     * The <code>NULL</code> render state is identical to the {@link RenderState#DEFAULT}
+     * The NULL render state is identical to the RenderState#DEFAULT}
      * render state except that depth testing and face culling are disabled.
      */
     public static final RenderState NULL = new RenderState();
     /**
-     * The <code>ADDITIONAL</code> render state is identical to the
-     * {@link RenderState#DEFAULT} render state except that all apply
-     * values are set to false. This allows the <code>ADDITIONAL</code> render
+     * The ADDITIONAL render state is identical to the
+     * RenderState#DEFAULT} render state except that all apply
+     * values are set to false. This allows the ADDITIONAL render
      * state to be combined with other state but only influencing values
      * that were changed from the original.
      */
     public static final RenderState ADDITIONAL = new RenderState();
 
     /**
-     * <code>TestFunction</code> specifies the testing function for stencil test
+     * TestFunction specifies the testing function for stencil test
      * function and alpha test function.
      *
-     * <p>The functions work similarly as described except that for stencil
+     * The functions work similarly as described except that for stencil
      * test function, the reference value given in the stencil command is
      * the input value while the reference is the value already in the stencil
      * buffer.
@@ -91,9 +91,9 @@ public class RenderState implements Cloneable, Savable {
         Always,}
 
     /**
-     * <code>BlendMode</code> specifies the blending operation to use.
+     * BlendMode specifies the blending operation to use.
      *
-     * @see RenderState#setBlendMode(com.clockwork.material.RenderState.BlendMode)
+     * see RenderState#setBlendMode(com.clockwork.material.RenderState.BlendMode)
      */
     public enum BlendMode {
 
@@ -103,56 +103,56 @@ public class RenderState implements Cloneable, Savable {
         Off,
         /**
          * Additive blending. For use with glows and particle emitters.
-         * <p>
+         * 
          * Result = Source Color + Destination Color -> (GL_ONE, GL_ONE)
          */
         Additive,
         /**
          * Premultiplied alpha blending, for use with premult alpha textures.
-         * <p>
+         * 
          * Result = Source Color + (Dest Color * (1 - Source Alpha) ) -> (GL_ONE, GL_ONE_MINUS_SRC_ALPHA)
          */
         PremultAlpha,
         /**
          * Additive blending that is multiplied with source alpha.
          * For use with glows and particle emitters.
-         * <p>
+         * 
          * Result = (Source Alpha * Source Color) + Dest Color -> (GL_SRC_ALPHA, GL_ONE)
          */
         AlphaAdditive,
         /**
          * Color blending, blends in color from dest color
          * using source color.
-         * <p>
+         * 
          * Result = Source Color + (1 - Source Color) * Dest Color -> (GL_ONE, GL_ONE_MINUS_SRC_COLOR)
          */
         Color,
         /**
          * Alpha blending, interpolates to source color from dest color
          * using source alpha.
-         * <p>
+         * 
          * Result = Source Alpha * Source Color +
          *          (1 - Source Alpha) * Dest Color -> (GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA)
          */
         Alpha,
         /**
          * Multiplies the source and dest colors.
-         * <p>
+         * 
          * Result = Source Color * Dest Color -> (GL_DST_COLOR, GL_ZERO)
          */
         Modulate,
         /**
          * Multiplies the source and dest colors then doubles the result.
-         * <p>
+         * 
          * Result = 2 * Source Color * Dest Color -> (GL_DST_COLOR, GL_SRC_COLOR)
          */
         ModulateX2
     }
 
     /**
-     * <code>FaceCullMode</code> specifies the criteria for faces to be culled.
+     * FaceCullMode specifies the criteria for faces to be culled.
      *
-     * @see RenderState#setFaceCullMode(com.clockwork.material.RenderState.FaceCullMode)
+     * see RenderState#setFaceCullMode(com.clockwork.material.RenderState.FaceCullMode)
      */
     public enum FaceCullMode {
 
@@ -175,8 +175,8 @@ public class RenderState implements Cloneable, Savable {
     }
 
     /**
-     * <code>StencilOperation</code> specifies the stencil operation to use
-     * in a certain scenario as specified in {@link RenderState#setStencil(boolean,
+     * StencilOperation specifies the stencil operation to use
+     * in a certain scenario as specified in RenderState#setStencil(boolean,
      * com.clockwork.material.RenderState.StencilOperation,
      * com.clockwork.material.RenderState.StencilOperation,
      * com.clockwork.material.RenderState.StencilOperation,
@@ -351,7 +351,7 @@ public class RenderState implements Cloneable, Savable {
     }
 
     /**
-     * Create a clone of this <code>RenderState</code>
+     * Create a clone of this RenderState
      *
      * @return Clone of this render state.
      */
@@ -464,12 +464,12 @@ public class RenderState implements Cloneable, Savable {
     /**
      * Enables point sprite mode.
      *
-     * <p>When point sprite is enabled, any meshes
-     * with the type of {@link Mode#Points} will be rendered as 2D quads
+     * When point sprite is enabled, any meshes
+     * with the type of Mode#Points} will be rendered as 2D quads
      * with texturing enabled. Fragment shaders can write to the
-     * <code>gl_PointCoord</code> variable to manipulate the texture coordinate
+     * gl_PointCoord variable to manipulate the texture coordinate
      * for each pixel. The size of the 2D quad can be controlled by writing
-     * to the <code>gl_PointSize</code> variable in the vertex shader.
+     * to the gl_PointSize variable in the vertex shader.
      *
      * @param pointSprite Enables Point Sprite mode.
      */
@@ -482,14 +482,14 @@ public class RenderState implements Cloneable, Savable {
     /**
      * Sets the alpha fall off value for alpha testing.
      *
-     * <p>If the pixel's alpha value is greater than the
-     * <code>alphaFallOff</code> then the pixel will be rendered, otherwise
+     * If the pixel's alpha value is greater than the
+     * alphaFallOff then the pixel will be rendered, otherwise
      * the pixel will be discarded.
      *
      * @param alphaFallOff The alpha of all rendered pixels must be higher
      * than this value to be rendered. This value should be between 0 and 1.
      *
-     * @see RenderState#setAlphaTest(boolean)
+     * see RenderState#setAlphaTest(boolean)
      */
     public void setAlphaFallOff(float alphaFallOff) {
         applyAlphaFallOff = true;
@@ -500,14 +500,14 @@ public class RenderState implements Cloneable, Savable {
     /**
      * Enable alpha testing.
      *
-     * <p>When alpha testing is enabled, all input pixels' alpha are compared
-     * to the {@link RenderState#setAlphaFallOff(float) constant alpha falloff}.
+     * When alpha testing is enabled, all input pixels' alpha are compared
+     * to the RenderState#setAlphaFallOff(float) constant alpha falloff}.
      * If the input alpha is greater than the falloff, the pixel will be rendered,
      * otherwise it will be discarded.
      *
      * @param alphaTest Set to true to enable alpha testing.
      *
-     * @see RenderState#setAlphaFallOff(float)
+     * see RenderState#setAlphaFallOff(float)
      */
     public void setAlphaTest(boolean alphaTest) {
         applyAlphaTest = true;
@@ -518,8 +518,8 @@ public class RenderState implements Cloneable, Savable {
     /**
      * Enable writing color.
      *
-     * <p>When color write is enabled, the result of a fragment shader, the
-     * <code>gl_FragColor</code>, will be rendered into the color buffer
+     * When color write is enabled, the result of a fragment shader, the
+     * gl_FragColor, will be rendered into the color buffer
      * (including alpha).
      *
      * @param colorWrite Set to true to enable color writing.
@@ -533,7 +533,7 @@ public class RenderState implements Cloneable, Savable {
     /**
      * Set the face culling mode.
      *
-     * <p>See the {@link FaceCullMode} enum on what each value does.
+     * See the FaceCullMode} enum on what each value does.
      * Face culling will project the triangle's points onto the screen
      * and determine if the triangle is in counter-clockwise order or
      * clockwise order. If a triangle is in counter-clockwise order, then
@@ -551,15 +551,15 @@ public class RenderState implements Cloneable, Savable {
     /**
      * Set the blending mode.
      *
-     * <p>When blending is enabled, (<code>blendMode</code> is not {@link BlendMode#Off})
+     * When blending is enabled, (blendMode is not BlendMode#Off})
      * the input pixel will be blended with the pixel
      * already in the color buffer. The blending operation is determined
-     * by the {@link BlendMode}. For example, the {@link BlendMode#Additive}
+     * by the BlendMode}. For example, the BlendMode#Additive}
      * will add the input pixel's color to the color already in the color buffer:
-     * <br/>
-     * <code>Result = Source Color + Destination Color</code>
+     * 
+     * Result = Source Color + Destination Color
      *
-     * @param blendMode The blend mode to use. Set to {@link BlendMode#Off}
+     * @param blendMode The blend mode to use. Set to BlendMode#Off}
      * to disable blending.
      */
     public void setBlendMode(BlendMode blendMode) {
@@ -571,7 +571,7 @@ public class RenderState implements Cloneable, Savable {
     /**
      * Enable depth testing.
      *
-     * <p>When depth testing is enabled, a pixel must pass the depth test
+     * When depth testing is enabled, a pixel must pass the depth test
      * before it is written to the color buffer.
      * The input pixel's depth value must be less than or equal than
      * the value already in the depth buffer to pass the depth test.
@@ -587,7 +587,7 @@ public class RenderState implements Cloneable, Savable {
     /**
      * Enable depth writing.
      *
-     * <p>After passing the {@link RenderState#setDepthTest(boolean) depth test},
+     * After passing the RenderState#setDepthTest(boolean) depth test},
      * a pixel's depth value will be written into the depth buffer if
      * depth writing is enabled.
      *
@@ -602,7 +602,7 @@ public class RenderState implements Cloneable, Savable {
     /**
      * Enables wireframe rendering mode.
      *
-     * <p>When in wireframe mode, {@link Mesh meshes} rendered in triangle mode
+     * When in wireframe mode, Mesh meshes} rendered in triangle mode
      * will not be solid, but instead, only the edges of the triangles
      * will be rendered.
      *
@@ -622,7 +622,7 @@ public class RenderState implements Cloneable, Savable {
      * typically with positive Z pointing into the screen.
      * Typical values are (1.0f, 1.0f) or (-1.0f, -1.0f)
      *
-     * @see <a href="http://www.opengl.org/resources/faq/technical/polygonoffset.htm" rel="nofollow">http://www.opengl.org/resources/faq/technical/polygonoffset.htm</a>
+     * see <a href="http://www.opengl.org/resources/faq/technical/polygonoffset.htm" rel="nofollow">http://www.opengl.org/resources/faq/technical/polygonoffset.htm</a>
      * @param factor scales the maximum Z slope, with respect to X or Y of the polygon
      * @param units scales the minimum resolvable depth buffer value
      **/
@@ -641,7 +641,7 @@ public class RenderState implements Cloneable, Savable {
     /**
      * Enable stencil testing.
      *
-     * <p>Stencil testing can be used to filter pixels according to the stencil
+     * Stencil testing can be used to filter pixels according to the stencil
      * buffer. Objects can be rendered with some stencil operation to manipulate
      * the values in the stencil buffer, then, other objects can be rendered
      * to test against the values written previously.
@@ -701,7 +701,7 @@ public class RenderState implements Cloneable, Savable {
      *
      * @return the front stencil fail operation.
      *
-     * @see RenderState#setStencil(boolean,
+     * see RenderState#setStencil(boolean,
      * com.clockwork.material.RenderState.StencilOperation,
      * com.clockwork.material.RenderState.StencilOperation,
      * com.clockwork.material.RenderState.StencilOperation,
@@ -720,7 +720,7 @@ public class RenderState implements Cloneable, Savable {
      *
      * @return the front depth test fail operation.
      *
-     * @see RenderState#setStencil(boolean,
+     * see RenderState#setStencil(boolean,
      * com.clockwork.material.RenderState.StencilOperation,
      * com.clockwork.material.RenderState.StencilOperation,
      * com.clockwork.material.RenderState.StencilOperation,
@@ -739,7 +739,7 @@ public class RenderState implements Cloneable, Savable {
      *
      * @return the front depth test pass operation.
      *
-     * @see RenderState#setStencil(boolean,
+     * see RenderState#setStencil(boolean,
      * com.clockwork.material.RenderState.StencilOperation,
      * com.clockwork.material.RenderState.StencilOperation,
      * com.clockwork.material.RenderState.StencilOperation,
@@ -758,7 +758,7 @@ public class RenderState implements Cloneable, Savable {
      *
      * @return the back stencil fail operation.
      *
-     * @see RenderState#setStencil(boolean,
+     * see RenderState#setStencil(boolean,
      * com.clockwork.material.RenderState.StencilOperation,
      * com.clockwork.material.RenderState.StencilOperation,
      * com.clockwork.material.RenderState.StencilOperation,
@@ -777,7 +777,7 @@ public class RenderState implements Cloneable, Savable {
      *
      * @return the back depth test fail operation.
      *
-     * @see RenderState#setStencil(boolean,
+     * see RenderState#setStencil(boolean,
      * com.clockwork.material.RenderState.StencilOperation,
      * com.clockwork.material.RenderState.StencilOperation,
      * com.clockwork.material.RenderState.StencilOperation,
@@ -796,7 +796,7 @@ public class RenderState implements Cloneable, Savable {
      *
      * @return the back depth test pass operation.
      *
-     * @see RenderState#setStencil(boolean,
+     * see RenderState#setStencil(boolean,
      * com.clockwork.material.RenderState.StencilOperation,
      * com.clockwork.material.RenderState.StencilOperation,
      * com.clockwork.material.RenderState.StencilOperation,
@@ -815,7 +815,7 @@ public class RenderState implements Cloneable, Savable {
      *
      * @return the front stencil function.
      *
-     * @see RenderState#setStencil(boolean,
+     * see RenderState#setStencil(boolean,
      * com.clockwork.material.RenderState.StencilOperation,
      * com.clockwork.material.RenderState.StencilOperation,
      * com.clockwork.material.RenderState.StencilOperation,
@@ -834,7 +834,7 @@ public class RenderState implements Cloneable, Savable {
      *
      * @return the back stencil function.
      *
-     * @see RenderState#setStencil(boolean,
+     * see RenderState#setStencil(boolean,
      * com.clockwork.material.RenderState.StencilOperation,
      * com.clockwork.material.RenderState.StencilOperation,
      * com.clockwork.material.RenderState.StencilOperation,
@@ -862,7 +862,7 @@ public class RenderState implements Cloneable, Savable {
      *
      * @return True if point sprite mode is enabled.
      *
-     * @see RenderState#setPointSprite(boolean)
+     * see RenderState#setPointSprite(boolean)
      */
     public boolean isPointSprite() {
         return pointSprite;
@@ -873,7 +873,7 @@ public class RenderState implements Cloneable, Savable {
      *
      * @return True if alpha test is enabled.
      *
-     * @see RenderState#setAlphaTest(boolean)
+     * see RenderState#setAlphaTest(boolean)
      */
     public boolean isAlphaTest() {
         return alphaTest;
@@ -884,7 +884,7 @@ public class RenderState implements Cloneable, Savable {
      *
      * @return the face cull mode.
      *
-     * @see RenderState#setFaceCullMode(com.clockwork.material.RenderState.FaceCullMode)
+     * see RenderState#setFaceCullMode(com.clockwork.material.RenderState.FaceCullMode)
      */
     public FaceCullMode getFaceCullMode() {
         return cullMode;
@@ -895,7 +895,7 @@ public class RenderState implements Cloneable, Savable {
      *
      * @return True if depth test is enabled.
      *
-     * @see RenderState#setDepthTest(boolean)
+     * see RenderState#setDepthTest(boolean)
      */
     public boolean isDepthTest() {
         return depthTest;
@@ -906,7 +906,7 @@ public class RenderState implements Cloneable, Savable {
      *
      * @return True if depth write is enabled.
      *
-     * @see RenderState#setDepthWrite(boolean)
+     * see RenderState#setDepthWrite(boolean)
      */
     public boolean isDepthWrite() {
         return depthWrite;
@@ -917,7 +917,7 @@ public class RenderState implements Cloneable, Savable {
      *
      * @return True if wireframe mode is enabled.
      *
-     * @see RenderState#setWireframe(boolean)
+     * see RenderState#setWireframe(boolean)
      */
     public boolean isWireframe() {
         return wireframe;
@@ -928,7 +928,7 @@ public class RenderState implements Cloneable, Savable {
      *
      * @return True if color writing is enabled.
      *
-     * @see RenderState#setColorWrite(boolean)
+     * see RenderState#setColorWrite(boolean)
      */
     public boolean isColorWrite() {
         return colorWrite;
@@ -939,7 +939,7 @@ public class RenderState implements Cloneable, Savable {
      *
      * @return the poly offset factor value.
      *
-     * @see RenderState#setPolyOffset(float, float)
+     * see RenderState#setPolyOffset(float, float)
      */
     public float getPolyOffsetFactor() {
         return offsetFactor;
@@ -950,7 +950,7 @@ public class RenderState implements Cloneable, Savable {
      *
      * @return the poly offset units value.
      *
-     * @see RenderState#setPolyOffset(float, float)
+     * see RenderState#setPolyOffset(float, float)
      */
     public float getPolyOffsetUnits() {
         return offsetUnits;
@@ -961,7 +961,7 @@ public class RenderState implements Cloneable, Savable {
      *
      * @return True if polygon offset is enabled.
      *
-     * @see RenderState#setPolyOffset(float, float)
+     * see RenderState#setPolyOffset(float, float)
      */
     public boolean isPolyOffset() {
         return offsetEnabled;
@@ -972,7 +972,7 @@ public class RenderState implements Cloneable, Savable {
      *
      * @return the alpha falloff value.
      *
-     * @see RenderState#setAlphaFallOff(float)
+     * see RenderState#setAlphaFallOff(float)
      */
     public float getAlphaFallOff() {
         return alphaFallOff;
@@ -1051,25 +1051,25 @@ public class RenderState implements Cloneable, Savable {
     }
 
     /**
-     * Merges <code>this</code> state and <code>additionalState</code> into
-     * the parameter <code>state</code> based on a specific criteria.
+     * Merges this state and additionalState into
+     * the parameter state based on a specific criteria.
      *
-     * <p>The criteria for this merge is the following:<br/>
+     * The criteria for this merge is the following:
      * For every given property, such as alpha test or depth write, check
-     * if it was modified from the original in the <code>additionalState</code>
-     * if it was modified, then copy the property from the <code>additionalState</code>
-     * into the parameter <code>state</code>, otherwise, copy the property from <code>this</code>
-     * into the parameter <code>state</code>. If <code>additionalState</code>
-     * is <code>null</code>, then no modifications are made and <code>this</code> is returned,
-     * otherwise, the parameter <code>state</code> is returned with the result
+     * if it was modified from the original in the additionalState
+     * if it was modified, then copy the property from the additionalState
+     * into the parameter state, otherwise, copy the property from this
+     * into the parameter state. If additionalState
+     * is null, then no modifications are made and this is returned,
+     * otherwise, the parameter state is returned with the result
      * of the merge.
      *
-     * @param additionalState The <code>additionalState</code>, from which data is taken only
+     * @param additionalState The additionalState, from which data is taken only
      * if it was modified by the user.
-     * @param state Contains output of the method if <code>additionalState</code>
+     * @param state Contains output of the method if additionalState
      * is not null.
-     * @return <code>state</code> if <code>additionalState</code> is non-null,
-     * otherwise returns <code>this</code>
+     * @return state if additionalState is non-null,
+     * otherwise returns this
      */
     public RenderState copyMergedTo(RenderState additionalState, RenderState state) {
         if (additionalState == null) {

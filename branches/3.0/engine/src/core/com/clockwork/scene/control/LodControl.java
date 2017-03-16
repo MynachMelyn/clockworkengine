@@ -37,7 +37,7 @@ public class LodControl extends AbstractControl implements Cloneable {
 
     /**
      * Creates a new
-     * <code>LodControl</code>.
+     * LodControl.
      */
     public LodControl() {
     }
@@ -47,7 +47,7 @@ public class LodControl extends AbstractControl implements Cloneable {
      *
      * @return the distance tolerance for changing LOD.
      *
-     * @see #setDistTolerance(float)
+     * see #setDistTolerance(float)
      */
     public float getDistTolerance() {
         return distTolerance;
@@ -69,7 +69,7 @@ public class LodControl extends AbstractControl implements Cloneable {
      *
      * @return the triangles per pixel value.
      *
-     * @see #setTrisPerPixel(float)
+     * see #setTrisPerPixel(float)
      */
     public float getTrisPerPixel() {
         return trisPerPixel;
@@ -77,7 +77,7 @@ public class LodControl extends AbstractControl implements Cloneable {
 
     /**
      * Sets the triangles per pixel value. The
-     * <code>LodControl</code> will use this value as an error metric to
+     * LodControl will use this value as an error metric to
      * determine which LOD level to use based on the geometry's area on the
      * screen.
      *

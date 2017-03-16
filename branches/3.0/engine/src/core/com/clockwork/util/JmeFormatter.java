@@ -10,7 +10,7 @@ import java.util.logging.LogRecord;
 
 /**
  * More simple formatter than the default one used in Java logging.
- * Example output: <br/>
+ * Example output: 
  * INFO Display3D 12:00 PM: Display created.
  */
 public class JmeFormatter extends Formatter {

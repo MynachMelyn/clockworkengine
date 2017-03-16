@@ -12,7 +12,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * <codeWeakRefCloneAssetCache</code> caches cloneable assets in a weak-key
+ * <codeWeakRefCloneAssetCache caches cloneable assets in a weak-key
  * cache, allowing them to be collected when memory is low.
  * The cache stores weak references to the asset keys, so that
  * when all clones of the original asset are collected, will cause the 

@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.util.logging.Logger;
 
 /**
- * <code>Plane</code> defines a plane where Normal dot (x,y,z) = Constant.
+ * Plane defines a plane where Normal dot (x,y,z) = Constant.
  * This provides methods for calculating a "distance" of a point from this
  * plane. The distance is pseudo due to the fact that it can be negative if the
  * point is on the non-normal side of the plane.
@@ -38,14 +38,14 @@ public class Plane implements Savable, Cloneable, java.io.Serializable {
     protected float constant;
 
     /**
-     * Constructor instantiates a new <code>Plane</code> object. This is the
+     * Constructor instantiates a new Plane object. This is the
      * default object and contains a normal of (0,0,0) and a constant of 0.
      */
     public Plane() {
     }
 
     /**
-     * Constructor instantiates a new <code>Plane</code> object. The normal
+     * Constructor instantiates a new Plane object. The normal
      * and constant values are set at creation.
      * 
      * @param normal
@@ -63,7 +63,7 @@ public class Plane implements Savable, Cloneable, java.io.Serializable {
     }
 
     /**
-     * <code>setNormal</code> sets the normal of the plane.
+     * setNormal sets the normal of the plane.
      * 
      * @param normal
      *            the new normal of the plane.
@@ -76,7 +76,7 @@ public class Plane implements Savable, Cloneable, java.io.Serializable {
     }
 
     /**
-     * <code>setNormal</code> sets the normal of the plane.
+     * setNormal sets the normal of the plane.
      *
      */
     public void setNormal(float x, float y, float z) {
@@ -84,7 +84,7 @@ public class Plane implements Savable, Cloneable, java.io.Serializable {
     }
 
     /**
-     * <code>getNormal</code> retrieves the normal of the plane.
+     * getNormal retrieves the normal of the plane.
      * 
      * @return the normal of the plane.
      */
@@ -93,7 +93,7 @@ public class Plane implements Savable, Cloneable, java.io.Serializable {
     }
 
     /**
-     * <code>setConstant</code> sets the constant value that helps define the
+     * setConstant sets the constant value that helps define the
      * plane.
      * 
      * @param constant
@@ -104,7 +104,7 @@ public class Plane implements Savable, Cloneable, java.io.Serializable {
     }
 
     /**
-     * <code>getConstant</code> returns the constant of the plane.
+     * getConstant returns the constant of the plane.
      * 
      * @return the constant of the plane.
      */
@@ -134,7 +134,7 @@ public class Plane implements Savable, Cloneable, java.io.Serializable {
     }
 
     /**
-     * <code>pseudoDistance</code> calculates the distance from this plane to
+     * pseudoDistance calculates the distance from this plane to
      * a provided point. If the point is on the negative side of the plane the
      * distance returned is negative, otherwise it is positive. If the point is
      * on the plane, it is zero.
@@ -148,7 +148,7 @@ public class Plane implements Savable, Cloneable, java.io.Serializable {
     }
 
     /**
-     * <code>whichSide</code> returns the side at which a point lies on the
+     * whichSide returns the side at which a point lies on the
      * plane. The positive values returned are: NEGATIVE_SIDE, POSITIVE_SIDE and
      * NO_SIDE.
      * 
@@ -214,9 +214,9 @@ public class Plane implements Savable, Cloneable, java.io.Serializable {
     }
 
     /**
-     * <code>toString</code> returns a string thta represents the string
+     * toString returns a string thta represents the string
      * representation of this plane. It represents the normal as a
-     * <code>Vector3f</code> object, so the format is the following:
+     * Vector3f object, so the format is the following:
      * com.clockwork.math.Plane [Normal: org.jme.math.Vector3f [X=XX.XXXX, Y=YY.YYYY,
      * Z=ZZ.ZZZZ] - Constant: CC.CCCCC]
      * 

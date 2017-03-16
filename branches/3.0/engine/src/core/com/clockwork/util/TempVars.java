@@ -23,7 +23,7 @@ public class TempVars {
     private static final int STACK_SIZE = 5;
 
     /**
-     * <code>TempVarsStack</code> contains a stack of TempVars.
+     * TempVarsStack contains a stack of TempVars.
      * Every time TempVars.get() is called, a new entry is added to the stack,
      * and the index incremented.
      * When TempVars.release() is called, the entry is checked against

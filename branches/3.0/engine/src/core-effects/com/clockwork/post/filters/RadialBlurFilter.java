@@ -67,7 +67,7 @@ public class RadialBlurFilter extends Filter {
     /**
      * 
      * @return 
-     * @deprecated use {@link #getSampleDistance()}
+     * @deprecated use #getSampleDistance()}
      */
     @Deprecated
     public float getSampleDist() {
@@ -77,7 +77,7 @@ public class RadialBlurFilter extends Filter {
     /**
      * 
      * @param sampleDist
-     * @deprecated use {@link #setSampleDistance(float sampleDist)}
+     * @deprecated use #setSampleDistance(float sampleDist)}
      */
     @Deprecated
     public void setSampleDist(float sampleDist) {

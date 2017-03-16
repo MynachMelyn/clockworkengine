@@ -10,7 +10,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * <code>AssetKey</code> is a key that is used to
+ * AssetKey is a key that is used to
  * look up a resource from a cache. 
  * This class should be immutable.
  */
@@ -70,7 +70,7 @@ public class AssetKey<T> implements Savable, Cloneable {
     }
 
     /**
-     * @return The extension of the <code>AssetKey</code>'s name. For example,
+     * @return The extension of the AssetKey's name. For example,
      * the name "Interface/Logo/Monkey.png" has an extension of "png".
      */
     public String getExtension() {
@@ -79,7 +79,7 @@ public class AssetKey<T> implements Savable, Cloneable {
 
     /**
      * @return The folder in which the asset is located in.
-     * E.g. if the {@link #getName() name} is "Models/MyModel/MyModel.j3o" 
+     * E.g. if the #getName() name} is "Models/MyModel/MyModel.j3o" 
      * then "Models/MyModel/" is returned.
      */
     public String getFolder(){
@@ -92,7 +92,7 @@ public class AssetKey<T> implements Savable, Cloneable {
     /**
      * @return The preferred cache class for this asset type. Specify "null"
      * if caching is to be disabled. By default the 
-     * {@link SimpleAssetCache} is returned.
+     * SimpleAssetCache} is returned.
      */
     public Class<? extends AssetCache> getCacheType(){
         return SimpleAssetCache.class;

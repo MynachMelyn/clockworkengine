@@ -2,24 +2,24 @@
 package com.clockwork.scene;
 
 /**
- * <code>SceneGraphVisitorAdapter</code> is used to traverse the scene
+ * SceneGraphVisitorAdapter is used to traverse the scene
  * graph tree. The adapter version of the interface simply separates 
- * between the {@link Geometry geometries} and the {@link Node nodes} by
+ * between the Geometry geometries} and the Node nodes} by
  * supplying visit methods that take them.
- * Use by calling {@link Spatial#depthFirstTraversal(com.clockwork.scene.SceneGraphVisitor) }
- * or {@link Spatial#breadthFirstTraversal(com.clockwork.scene.SceneGraphVisitor)}.
+ * Use by calling Spatial#depthFirstTraversal(com.clockwork.scene.SceneGraphVisitor) }
+ * or Spatial#breadthFirstTraversal(com.clockwork.scene.SceneGraphVisitor)}.
  */
 public class SceneGraphVisitorAdapter implements SceneGraphVisitor {
     
     /**
-     * Called when a {@link Geometry} is visited.
+     * Called when a Geometry} is visited.
      * 
      * @param geom The visited geometry
      */
     public void visit(Geometry geom) {}
     
     /**
-     * Called when a {@link Node} is visited.
+     * Called when a Node} is visited.
      * 
      * @param geom The visited node
      */

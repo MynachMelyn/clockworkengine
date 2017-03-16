@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.util.*;
 
 /**
- * <code>LightList</code> is used internally by {@link Spatial}s to manage
+ * LightList is used internally by Spatial}s to manage
  * lights that are attached to them.
  * 
  */
@@ -42,7 +42,7 @@ public final class LightList implements Iterable<Light>, Savable, Cloneable {
     }
 
     /**
-     * Creates a <code>LightList</code> for the given {@link Spatial}.
+     * Creates a LightList for the given Spatial}.
      * 
      * @param owner The spatial owner
      */

@@ -20,10 +20,10 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * <code>Geometry</code> defines a leaf node of the scene graph. The leaf node
+ * Geometry defines a leaf node of the scene graph. The leaf node
  * contains the geometric data for rendering objects. It manages all rendering
- * information such as a {@link Material} object to define how the surface
- * should be shaded and the {@link Mesh} data to contain the actual geometry.
+ * information such as a Material} object to define how the surface
+ * should be shaded and the Mesh} data to contain the actual geometry.
  * 
  */
 public class Geometry extends Spatial {
@@ -85,7 +85,7 @@ public class Geometry extends Spatial {
     /**
      * @return If ignoreTransform mode is set.
      * 
-     * @see Geometry#setIgnoreTransform(boolean) 
+     * see Geometry#setIgnoreTransform(boolean) 
      */
     public boolean isIgnoreTransform() {
         return ignoreTransform;
@@ -102,7 +102,7 @@ public class Geometry extends Spatial {
      * Sets the LOD level to use when rendering the mesh of this geometry.
      * Level 0 indicates that the default index buffer should be used,
      * levels [1, LodLevels + 1] represent the levels set on the mesh
-     * with {@link Mesh#setLodLevels(com.clockwork.scene.VertexBuffer[]) }.
+     * with Mesh#setLodLevels(com.clockwork.scene.VertexBuffer[]) }.
      * 
      * @param lod The lod level to set
      */
@@ -120,7 +120,7 @@ public class Geometry extends Spatial {
     }
 
     /**
-     * Returns the LOD level set with {@link #setLodLevel(int) }.
+     * Returns the LOD level set with #setLodLevel(int) }.
      * 
      * @return the LOD level set
      */
@@ -133,7 +133,7 @@ public class Geometry extends Spatial {
      * 
      * @return this geometry's mesh vertex count.
      * 
-     * @see Mesh#getVertexCount() 
+     * see Mesh#getVertexCount() 
      */
     public int getVertexCount() {
         return mesh.getVertexCount();
@@ -144,7 +144,7 @@ public class Geometry extends Spatial {
      * 
      * @return this geometry's mesh triangle count.
      * 
-     * @see Mesh#getTriangleCount() 
+     * see Mesh#getTriangleCount() 
      */
     public int getTriangleCount() {
         return mesh.getTriangleCount();
@@ -174,7 +174,7 @@ public class Geometry extends Spatial {
      * 
      * @return the mseh to use for this geometry
      * 
-     * @see #setMesh(com.clockwork.scene.Mesh) 
+     * see #setMesh(com.clockwork.scene.Mesh) 
      */
     public Mesh getMesh() {
         return mesh;
@@ -198,7 +198,7 @@ public class Geometry extends Spatial {
      * 
      * @return the material that is used for this geometry
      * 
-     * @see #setMaterial(com.clockwork.material.Material) 
+     * see #setMaterial(com.clockwork.material.Material) 
      */
     public Material getMaterial() {
         return material;
@@ -221,11 +221,11 @@ public class Geometry extends Spatial {
     }
 
     /**
-     * <code>updateWorldBound</code> updates the bounding volume that contains
+     * updateWorldBound updates the bounding volume that contains
      * this geometry. The location of the geometry is based on the location of
      * all this node's parents.
      *
-     * @see Spatial#updateWorldBound()
+     * see Spatial#updateWorldBound()
      */
     @Override
     protected void updateWorldBound() {
@@ -309,7 +309,7 @@ public class Geometry extends Spatial {
 //        setBoundRefresh();
 //    }
     /**
-     * Recomputes the matrix returned by {@link Geometry#getWorldMatrix() }.
+     * Recomputes the matrix returned by Geometry#getWorldMatrix() }.
      * This will require a localized transform update for this geometry.
      */
     public void computeWorldMatrix() {
@@ -330,10 +330,10 @@ public class Geometry extends Spatial {
     }
 
     /**
-     * A {@link Matrix4f matrix} that transforms the {@link Geometry#getMesh() mesh}
+     * A Matrix4f matrix} that transforms the Geometry#getMesh() mesh}
      * from model space to world space. This matrix is computed based on the
-     * {@link Geometry#getWorldTransform() world transform} of this geometry.
-     * In order to receive updated values, you must call {@link Geometry#computeWorldMatrix() }
+     * Geometry#getWorldTransform() world transform} of this geometry.
+     * In order to receive updated values, you must call Geometry#computeWorldMatrix() }
      * before using this method.
      * 
      * @return Matrix to transform from local space to world space
@@ -345,7 +345,7 @@ public class Geometry extends Spatial {
     /**
      * Sets the model bound to use for this geometry.
      * This alters the bound used on the mesh as well via
-     * {@link Mesh#setBound(com.clockwork.bounding.BoundingVolume) } and
+     * Mesh#setBound(com.clockwork.bounding.BoundingVolume) } and
      * forces the world bounding volume to be recomputed.
      * 
      * @param modelBound The model bound to set

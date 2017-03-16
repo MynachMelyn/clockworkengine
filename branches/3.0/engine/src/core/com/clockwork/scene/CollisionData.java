@@ -8,7 +8,7 @@ import com.clockwork.export.Savable;
 import com.clockwork.math.Matrix4f;
 
 /**
- * <code>CollisionData</code> is an interface that can be used to 
+ * CollisionData is an interface that can be used to 
  * do triangle-accurate collision with bounding volumes and rays.
  *
  */

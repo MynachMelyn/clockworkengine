@@ -5,7 +5,7 @@ import com.clockwork.asset.*;
 import java.io.*;
 
 /**
- * <code>FileLocator</code> allows you to specify a folder where to
+ * FileLocator allows you to specify a folder where to
  * look for assets. 
  */
 public class FileLocator implements AssetLocator {

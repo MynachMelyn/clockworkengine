@@ -18,8 +18,8 @@ import java.util.logging.Logger;
  *  that both report their name in a unique way and require
  *  remapping to achieve a proper default layout.
  *
- *  <p>All mappings MUST be defined before the joystick support
- *  has been initialized in the InputManager.</p>
+ *  All mappings MUST be defined before the joystick support
+ *  has been initialized in the InputManager.
  *
  */
 public class JoystickCompatibilityMappings {

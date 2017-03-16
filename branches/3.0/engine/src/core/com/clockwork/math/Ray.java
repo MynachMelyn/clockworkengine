@@ -11,7 +11,7 @@ import com.clockwork.util.TempVars;
 import java.io.IOException;
 
 /**
- * <code>Ray</code> defines a line segment which has an origin and a direction.
+ * Ray defines a line segment which has an origin and a direction.
  * That is, a point and an infinite ray is cast from this point. The ray is
  * defined by the following equation: R(t) = origin + t*direction for t >= 0.
  * 
@@ -34,7 +34,7 @@ public final class Ray implements Savable, Cloneable, Collidable, java.io.Serial
     public float limit = Float.POSITIVE_INFINITY;
 
     /**
-     * Constructor instantiates a new <code>Ray</code> object. As default, the
+     * Constructor instantiates a new Ray object. As default, the
      * origin is (0,0,0) and the direction is (0,0,1).
      *
      */
@@ -42,7 +42,7 @@ public final class Ray implements Savable, Cloneable, Collidable, java.io.Serial
     }
 
     /**
-     * Constructor instantiates a new <code>Ray</code> object. The origin and
+     * Constructor instantiates a new Ray object. The origin and
      * direction are given.
      * @param origin the origin of the ray.
      * @param direction the direction the ray travels in.
@@ -53,7 +53,7 @@ public final class Ray implements Savable, Cloneable, Collidable, java.io.Serial
     }
 
     /**
-     * <code>intersect</code> determines if the Ray intersects a triangle.
+     * intersect determines if the Ray intersects a triangle.
      * @param t the Triangle to test against.
      * @return true if the ray collides.
      */
@@ -61,7 +61,7 @@ public final class Ray implements Savable, Cloneable, Collidable, java.io.Serial
 //        return intersect(t.get(0), t.get(1), t.get(2));
 //    }
     /**
-     * <code>intersect</code> determines if the Ray intersects a triangle
+     * intersect determines if the Ray intersects a triangle
      * defined by the specified points.
      *
      * @param v0
@@ -76,7 +76,7 @@ public final class Ray implements Savable, Cloneable, Collidable, java.io.Serial
 //        return intersectWhere(v0, v1, v2, null);
 //    }
     /**
-     * <code>intersectWhere</code> determines if the Ray intersects a triangle. It then
+     * intersectWhere determines if the Ray intersects a triangle. It then
      * stores the point of intersection in the given loc vector
      * @param t the Triangle to test against.
      * @param loc
@@ -89,7 +89,7 @@ public final class Ray implements Savable, Cloneable, Collidable, java.io.Serial
     }
 
     /**
-     * <code>intersectWhere</code> determines if the Ray intersects a triangle
+     * intersectWhere determines if the Ray intersects a triangle
      * defined by the specified points and if so it stores the point of
      * intersection in the given loc vector.
      *
@@ -110,7 +110,7 @@ public final class Ray implements Savable, Cloneable, Collidable, java.io.Serial
     }
 
     /**
-     * <code>intersectWherePlanar</code> determines if the Ray intersects a
+     * intersectWherePlanar determines if the Ray intersects a
      * triangle and if so it stores the point of
      * intersection in the given loc vector as t, u, v where t is the distance
      * from the origin to the point of intersection and u,v is the intersection
@@ -127,7 +127,7 @@ public final class Ray implements Savable, Cloneable, Collidable, java.io.Serial
     }
 
     /**
-     * <code>intersectWherePlanar</code> determines if the Ray intersects a
+     * intersectWherePlanar determines if the Ray intersects a
      * triangle defined by the specified points and if so it stores the point of
      * intersection in the given loc vector as t, u, v where t is the distance
      * from the origin to the point of intersection and u,v is the intersection
@@ -150,7 +150,7 @@ public final class Ray implements Savable, Cloneable, Collidable, java.io.Serial
     }
 
     /**
-     * <code>intersects</code> does the actual intersection work.
+     * intersects does the actual intersection work.
      *
      * @param v0
      *            first point of the triangle.
@@ -301,13 +301,13 @@ public final class Ray implements Savable, Cloneable, Collidable, java.io.Serial
     }
 
     /**
-     * <code>intersectWherePlanar</code> determines if the Ray intersects a
+     * intersectWherePlanar determines if the Ray intersects a
      * quad defined by the specified points and if so it stores the point of
      * intersection in the given loc vector as t, u, v where t is the distance
      * from the origin to the point of intersection and u,v is the intersection
      * point in terms of the quad plane.
      * One edge of the quad is [v0,v1], another one [v0,v2]. The behaviour thus is like
-     * {@link #intersectWherePlanar(Vector3f, Vector3f, Vector3f, Vector3f)} except for
+     * #intersectWherePlanar(Vector3f, Vector3f, Vector3f, Vector3f)} except for
      * the extended area, which is equivalent to the union of the triangles [v0,v1,v2]
      * and [-v0+v1+v2,v1,v2].
      *
@@ -392,7 +392,7 @@ public final class Ray implements Savable, Cloneable, Collidable, java.io.Serial
 
     /**
      *
-     * <code>getOrigin</code> retrieves the origin point of the ray.
+     * getOrigin retrieves the origin point of the ray.
      *
      * @return the origin of the ray.
      */
@@ -402,7 +402,7 @@ public final class Ray implements Savable, Cloneable, Collidable, java.io.Serial
 
     /**
      *
-     * <code>setOrigin</code> sets the origin of the ray.
+     * setOrigin sets the origin of the ray.
      * @param origin the origin of the ray.
      */
     public void setOrigin(Vector3f origin) {
@@ -410,9 +410,9 @@ public final class Ray implements Savable, Cloneable, Collidable, java.io.Serial
     }
 
     /**
-     * <code>getLimit</code> returns the limit of the ray, aka the length.
-     * If the limit is not infinity, then this ray is a line with length <code>
-     * limit</code>.
+     * getLimit returns the limit of the ray, aka the length.
+     * If the limit is not infinity, then this ray is a line with length 
+     * limit.
      * 
      * @return the limit of the ray, aka the length.
      */
@@ -421,9 +421,9 @@ public final class Ray implements Savable, Cloneable, Collidable, java.io.Serial
     }
 
     /**
-     * <code>setLimit</code> sets the limit of the ray.
+     * setLimit sets the limit of the ray.
      * @param limit the limit of the ray.
-     * @see Ray#getLimit() 
+     * see Ray#getLimit() 
      */
     public void setLimit(float limit) {
         this.limit = limit;
@@ -431,7 +431,7 @@ public final class Ray implements Savable, Cloneable, Collidable, java.io.Serial
 
     /**
      *
-     * <code>getDirection</code> retrieves the direction vector of the ray.
+     * getDirection retrieves the direction vector of the ray.
      * @return the direction of the ray.
      */
     public Vector3f getDirection() {
@@ -440,7 +440,7 @@ public final class Ray implements Savable, Cloneable, Collidable, java.io.Serial
 
     /**
      *
-     * <code>setDirection</code> sets the direction vector of the ray.
+     * setDirection sets the direction vector of the ray.
      * @param direction the direction of the ray.
      */
     public void setDirection(Vector3f direction) {

@@ -11,31 +11,31 @@ import com.clockwork.texture.Texture;
 import java.util.Collection;
 
 /**
- * <code>Caps</code> is an enum specifying a capability that the {@link Renderer}
+ * Caps is an enum specifying a capability that the Renderer}
  * supports.
  * 
  */
 public enum Caps {
 
     /**
-     * Supports {@link FrameBuffer FrameBuffers}.
-     * <p>
-     * OpenGL: Renderer exposes the GL_EXT_framebuffer_object extension.<br>
+     * Supports FrameBuffer FrameBuffers}.
+     * 
+     * OpenGL: Renderer exposes the GL_EXT_framebuffer_object extension.
      * OpenGL ES: Renderer supports OpenGL ES 2.0.
      */
     FrameBuffer,
 
     /**
      * Supports framebuffer Multiple Render Targets (MRT)
-     * <p>
+     * 
      * OpenGL: Renderer exposes the GL_ARB_draw_buffers extension
      */
     FrameBufferMRT,
 
     /**
      * Supports framebuffer multi-sampling
-     * <p>
-     * OpenGL: Renderer exposes the GL EXT framebuffer multisample extension<br>
+     * 
+     * OpenGL: Renderer exposes the GL EXT framebuffer multisample extension
      * OpenGL ES: Renderer exposes GL_APPLE_framebuffer_multisample or
      * GL_ANGLE_framebuffer_multisample.
      */
@@ -43,8 +43,8 @@ public enum Caps {
 
     /**
      * Supports texture multi-sampling
-     * <p>
-     * OpenGL: Renderer exposes the GL_ARB_texture_multisample extension<br>
+     * 
+     * OpenGL: Renderer exposes the GL_ARB_texture_multisample extension
      * OpenGL ES: Renderer exposes the GL_IMG_multisampled_render_to_texture
      * extension.
      */
@@ -77,7 +77,7 @@ public enum Caps {
 
     /**
      * Supports OpenGL ARB program.
-     * <p>
+     * 
      * OpenGL: Renderer exposes ARB_vertex_program and ARB_fragment_program
      * extensions.
      */
@@ -205,12 +205,12 @@ public enum Caps {
     /**
      * Returns true if given the renderer capabilities, the texture
      * can be supported by the renderer.
-     * <p>
+     * 
      * This only checks the format of the texture, non-power-of-2
      * textures are scaled automatically inside the renderer 
      * if are not supported natively.
      * 
-     * @param caps The collection of renderer capabilities {@link Renderer#getCaps() }.
+     * @param caps The collection of renderer capabilities Renderer#getCaps() }.
      * @param tex The texture to check
      * @return True if it is supported, false otherwise.
      */
@@ -272,7 +272,7 @@ public enum Caps {
      * Returns true if given the renderer capabilities, the framebuffer
      * can be supported by the renderer.
      * 
-     * @param caps The collection of renderer capabilities {@link Renderer#getCaps() }.
+     * @param caps The collection of renderer capabilities Renderer#getCaps() }.
      * @param fb The framebuffer to check
      * @return True if it is supported, false otherwise.
      */
@@ -311,7 +311,7 @@ public enum Caps {
      * Returns true if given the renderer capabilities, the shader
      * can be supported by the renderer.
      * 
-     * @param caps The collection of renderer capabilities {@link Renderer#getCaps() }.
+     * @param caps The collection of renderer capabilities Renderer#getCaps() }.
      * @param shader The shader to check
      * @return True if it is supported, false otherwise.
      */

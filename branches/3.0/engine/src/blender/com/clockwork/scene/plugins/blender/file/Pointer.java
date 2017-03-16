@@ -100,7 +100,7 @@ public class Pointer {
 
     /**
      * This method indicates if this pointer points to a function.
-     * @return <b>true</b> if this is a function pointer and <b>false</b> otherwise
+     * @return true if this is a function pointer and false otherwise
      */
     public boolean isFunction() {
         return function;
@@ -108,7 +108,7 @@ public class Pointer {
 
     /**
      * This method indicates if this is a null-pointer or not.
-     * @return <b>true</b> if the pointer is null and <b>false</b> otherwise
+     * @return true if the pointer is null and false otherwise
      */
     public boolean isNull() {
         return oldMemoryAddress == 0;
@@ -116,7 +116,7 @@ public class Pointer {
 
     /**
      * This method indicates if this is a null-pointer or not.
-     * @return <b>true</b> if the pointer is not null and <b>false</b> otherwise
+     * @return true if the pointer is not null and false otherwise
      */
     public boolean isNotNull() {
         return oldMemoryAddress != 0;

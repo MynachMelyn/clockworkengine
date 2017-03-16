@@ -1,9 +1,9 @@
 package checkers.quals;
 
 /**
- * Specifies the locations to which a {@link DefaultQualifier} annotation applies.
+ * Specifies the locations to which a DefaultQualifier annotation applies.
  *
- * @see DefaultQualifier
+ * see DefaultQualifier
  */
 public enum DefaultLocation {
 
@@ -21,5 +21,4 @@ public enum DefaultLocation {
     // Especially useful for parameterized classes that provide a lot of
     // static methods with the same generic parameters as the class.
     UPPER_BOUNDS;
-
 }

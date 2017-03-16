@@ -11,7 +11,7 @@ import com.clockwork.util.TempVars;
  * Geometries to be batched has to be attached directly to the BatchNode
  * You can't attach a Node to a SimpleBatchNode
  * SimpleBatchNode is recommended when you have a large number of geometries using the same material that does not require a complex scene graph structure.
- * @see BatchNode
+ * see BatchNode
  */
 public class SimpleBatchNode extends BatchNode {
 

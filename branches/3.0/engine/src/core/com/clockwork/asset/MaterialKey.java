@@ -6,7 +6,7 @@ import com.clockwork.asset.cache.WeakRefCloneAssetCache;
 import com.clockwork.material.Material;
 
 /**
- * Used for loading {@link Material materials} only (not material definitions!).
+ * Used for loading Material materials} only (not material definitions!).
  * Material instances use cloneable smart asset management so that they and any
  * referenced textures will be collected when all instances of the material
  * become unreachable.

@@ -4,7 +4,7 @@ package com.clockwork.terrain.heightmap;
 import java.util.logging.Logger;
 
 /**
- * <code>ParticleDepositionHeightMap</code> creates a heightmap based on the
+ * ParticleDepositionHeightMap creates a heightmap based on the
  * Particle Deposition algorithm based on Jason Shankel's paper from
  * "Game Programming Gems". A heightmap is created using a Molecular beam
  * epitaxy, or MBE, for depositing thin layers of atoms on a substrate.
@@ -89,9 +89,9 @@ public class ParticleDepositionHeightMap extends AbstractHeightMap {
     }
 
     /**
-     * <code>load</code> generates the heightfield using the Particle Deposition
-     * algorithm. <code>load</code> uses the latest attributes, so a call
-     * to <code>load</code> is recommended if attributes have changed using
+     * load generates the heightfield using the Particle Deposition
+     * algorithm. load uses the latest attributes, so a call
+     * to load is recommended if attributes have changed using
      * the set methods.
      */
     public boolean load() {
@@ -295,8 +295,8 @@ public class ParticleDepositionHeightMap extends AbstractHeightMap {
     }
 
     /**
-     * <code>setJumps</code> sets the number of jumps or peaks that will
-     * be created during the next call to <code>load</code>.
+     * setJumps sets the number of jumps or peaks that will
+     * be created during the next call to load.
      * @param jumps the number of jumps to use for next load.
      * @throws JmeException if jumps is less than zero.
      */
@@ -308,7 +308,7 @@ public class ParticleDepositionHeightMap extends AbstractHeightMap {
     }
 
     /**
-     * <code>setPeakWalk</code> sets how often the jump point will be
+     * setPeakWalk sets how often the jump point will be
      * aggitated. The lower the peakWalk, the more often the point will
      * be aggitated.
      *
@@ -324,7 +324,7 @@ public class ParticleDepositionHeightMap extends AbstractHeightMap {
     }
 
     /**
-     * <code>setCaldera</code> sets the level at which a peak will be
+     * setCaldera sets the level at which a peak will be
      * inverted.
      *
      * @param caldera the level at which a peak will be inverted. This must be
@@ -340,7 +340,7 @@ public class ParticleDepositionHeightMap extends AbstractHeightMap {
     }
 
     /**
-     * <code>setMaxParticles</code> sets the maximum number of particles
+     * setMaxParticles sets the maximum number of particles
      * for a single jump.
      * @param maxParticles the maximum number of particles for a single jump.
      * @throws JmeException if maxParticles is negative or less than
@@ -351,7 +351,7 @@ public class ParticleDepositionHeightMap extends AbstractHeightMap {
     }
 
     /**
-     * <code>setMinParticles</code> sets the minimum number of particles
+     * setMinParticles sets the minimum number of particles
      * for a single jump.
      * @param minParticles the minimum number of particles for a single jump.
      * @throws JmeException if minParticles are greater than

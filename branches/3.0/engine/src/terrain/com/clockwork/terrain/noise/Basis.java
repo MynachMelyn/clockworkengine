@@ -40,13 +40,13 @@ import java.nio.FloatBuffer;
  * The main concept is to look at noise as a basis for generating fractals.
  * Basis can be anything, like a simple:
  * 
- * <code>
+ * 
  * float value(float x, float y, float z) {
  * 		return 0; // a flat noise with 0 value everywhere
  * }
- * </code>
  * 
- * or a more complex perlin noise ({@link ImprovedNoise}
+ * 
+ * or a more complex perlin noise (ImprovedNoise}
  * 
  * Fractals use these functions to generate a more complex result based on some
  * frequency, roughness, etc values.

@@ -4,7 +4,7 @@ package com.clockwork.input.controls;
 import com.clockwork.input.KeyInput;
 
 /**
- * A <code>KeyTrigger</code> is used as a mapping to keyboard keys.
+ * A KeyTrigger is used as a mapping to keyboard keys.
  *
  */
 public class KeyTrigger implements Trigger {
@@ -12,9 +12,9 @@ public class KeyTrigger implements Trigger {
     private final int keyCode;
 
     /**
-     * Create a new <code>KeyTrigger</code> for the given keycode.
+     * Create a new KeyTrigger for the given keycode.
      * 
-     * @param keyCode the code for the key, see constants in {@link KeyInput}.
+     * @param keyCode the code for the key, see constants in KeyInput}.
      */
     public KeyTrigger(int keyCode){
         this.keyCode = keyCode;

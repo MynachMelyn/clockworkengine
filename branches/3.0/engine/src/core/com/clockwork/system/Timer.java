@@ -2,7 +2,7 @@
 package com.clockwork.system;
 
 /**
- * <code>Timer</code> is the base class for a high resolution timer. It is
+ * Timer is the base class for a high resolution timer. It is
  * created from getTimer("display system")
  *
  * @version $Id: Timer.java,v 1.18 2007/03/09 10:19:34 rherlitz Exp $
@@ -12,7 +12,7 @@ public abstract class Timer {
     /**
      * Returns the current time in ticks. A tick is an arbitrary measure of time
      * defined by the timer implementation. The number of ticks per second is
-     * given by <code>getResolution()</code>. The timer starts at 0 ticks.
+     * given by getResolution(). The timer starts at 0 ticks.
      *
      * @return a long value representing the current time
      */
@@ -51,7 +51,7 @@ public abstract class Timer {
     public abstract float getTimePerFrame();
 
     /**
-     * <code>update</code> recalculates the frame rate based on the previous
+     * update recalculates the frame rate based on the previous
      * call to update. It is assumed that update is called each frame.
      */
     public abstract void update();

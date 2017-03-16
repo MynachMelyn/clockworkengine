@@ -8,7 +8,7 @@ import java.net.URL;
 import java.util.logging.Logger;
 
 /**
- * <code>RawHeightMap</code> creates a height map from a RAW image file. The
+ * RawHeightMap creates a height map from a RAW image file. The
  * greyscale image denotes height based on the value of the pixel for each
  * point. Where pure black the lowest point and pure white denotes the highest.
  *
@@ -35,7 +35,7 @@ public class RawHeightMap extends AbstractHeightMap {
     private InputStream stream;
 
     /**
-     * Constructor creates a new <code>RawHeightMap</code> object and loads a
+     * Constructor creates a new RawHeightMap object and loads a
      * RAW image file to use as a height field. The greyscale image denotes the
      * height of the terrain, where dark is low point and bright is high point.
      * The values of the RAW correspond directly with the RAW values or 0 - 255.
@@ -106,7 +106,7 @@ public class RawHeightMap extends AbstractHeightMap {
     }
 
     /**
-     * <code>load</code> fills the height data array with the appropriate data
+     * load fills the height data array with the appropriate data
      * from the set RAW image. If the RAW image has not been set a JmeException
      * will be thrown.
      *
@@ -181,8 +181,8 @@ public class RawHeightMap extends AbstractHeightMap {
     }
 
     /**
-     * <code>setFilename</code> sets the file to use for the RAW data. A call
-     * to <code>load</code> is required to put the changes into effect.
+     * setFilename sets the file to use for the RAW data. A call
+     * to load is required to put the changes into effect.
      *
      * @param filename
      *            the new file to use for the height data.
@@ -201,8 +201,8 @@ public class RawHeightMap extends AbstractHeightMap {
     }
 
     /**
-     * <code>setHeightStream</code> sets the stream to use for the RAW data. A call
-     * to <code>load</code> is required to put the changes into effect.
+     * setHeightStream sets the stream to use for the RAW data. A call
+     * to load is required to put the changes into effect.
      *
      * @param stream
      *            the new stream to use for the height data.

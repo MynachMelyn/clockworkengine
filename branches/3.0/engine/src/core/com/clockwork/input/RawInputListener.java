@@ -10,15 +10,15 @@ public interface RawInputListener {
 
     /**
      * Called before a batch of input will be sent to this
-     * <code>RawInputListener</code>.
+     * RawInputListener.
      */
     public void beginInput();
 
     /**
      * Called after a batch of input was sent to this
-     * <code>RawInputListener</code>.
+     * RawInputListener.
      *
-     * The listener should set the {@link InputEvent#setConsumed() consumed flag}
+     * The listener should set the InputEvent#setConsumed() consumed flag}
      * on any events that have been consumed either at this call or previous calls.
      */
     public void endInput();

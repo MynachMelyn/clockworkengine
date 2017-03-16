@@ -12,7 +12,7 @@ import com.clockwork.math.Vector3f;
 import java.io.IOException;
 
 /**
- * <i>From bullet manual:</i><br>
+ * <i>From bullet manual:</i>
  * Point to point constraint, also known as ball socket joint limits the translation
  * so that the local pivot points of 2 rigidbodies match in worldspace.
  * A chain of rigidbodies can be connected using this constraint.

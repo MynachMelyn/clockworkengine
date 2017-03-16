@@ -6,9 +6,9 @@ import java.util.HashMap;
 import java.util.List;
 
 /**
- * <code>MaterialExtensionSet</code> is simply a container for several
- * {@link MaterialExtension}s so that it can be set globally for all
- * {@link OgreMaterialKey}s used.
+ * MaterialExtensionSet is simply a container for several
+ * MaterialExtension}s so that it can be set globally for all
+ * OgreMaterialKey}s used.
  */
 public class MaterialExtensionSet {
 
@@ -18,18 +18,18 @@ public class MaterialExtensionSet {
     /**
      * Adds a new material extension to the set of extensions.
      *
-     * @param extension The {@link MaterialExtension} to add.
+     * @param extension The MaterialExtension} to add.
      */
     public void addMaterialExtension(MaterialExtension extension) {
         extensions.put(extension.getBaseMaterialName(), extension);
     }
 
     /**
-     * Returns the {@link MaterialExtension} for a given Ogre3D base material
+     * Returns the MaterialExtension} for a given Ogre3D base material
      * name.
      *
      * @param baseMatName The ogre3D base material name.
-     * @return {@link MaterialExtension} that is set, or null if not set.
+     * @return MaterialExtension} that is set, or null if not set.
      */
     public MaterialExtension getMaterialExtension(String baseMatName) {
         return extensions.get(baseMatName);

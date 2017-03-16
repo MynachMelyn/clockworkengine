@@ -22,7 +22,7 @@ public class GLSLLoader implements AssetLoader {
     private Map<String, ShaderDependencyNode> dependCache = new HashMap<String, ShaderDependencyNode>();
 
     /**
-     * Used to load {@link ShaderDependencyNode}s.
+     * Used to load ShaderDependencyNode}s.
      * Asset caching is disabled.
      */
     private class ShaderDependencyKey extends AssetKey<Reader> {
@@ -39,7 +39,7 @@ public class GLSLLoader implements AssetLoader {
     }
 
     /**
-     * Creates a {@link ShaderDependencyNode} from a stream representing shader code.
+     * Creates a ShaderDependencyNode} from a stream representing shader code.
      * 
      * @param in The input stream containing shader code
      * @param nodeName

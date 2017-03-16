@@ -6,7 +6,7 @@ import com.clockwork.math.Quaternion;
 import java.io.IOException;
 
 /**
- * Serialise and compress {@link Quaternion}[] by indexing same values
+ * Serialise and compress Quaternion[] by indexing same values
  * It is converted to float[]
  * 
  */

@@ -84,7 +84,7 @@ public class NewtKeyInput implements KeyInput, KeyListener {
     }
 
     /**
-     * <code>convertJmeCode</code> converts KeyInput key codes to AWT key codes.
+     * convertJmeCode converts KeyInput key codes to AWT key codes.
      *
      * @param key jme KeyInput key code
      * @return awt KeyEvent key code
@@ -323,7 +323,7 @@ public class NewtKeyInput implements KeyInput, KeyListener {
     }
 
     /**
-     * <code>convertAwtKey</code> converts AWT key codes to KeyInput key codes.
+     * convertAwtKey converts AWT key codes to KeyInput key codes.
      *
      * @param key awt KeyEvent key code
      * @return jme KeyInput key code

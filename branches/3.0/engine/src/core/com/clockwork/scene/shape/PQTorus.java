@@ -33,7 +33,7 @@ public class PQTorus extends Mesh {
 
     /**
      * Creates a parameterized torus.
-     * <p>
+     * 
      * Steps and radialSamples are both degree of accuracy values.
      * 
      * @param p the x/z oscillation.

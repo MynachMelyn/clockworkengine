@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 /**
- * <code>Bone</code> describes a bone in the bone-weight skeletal animation
+ * Bone describes a bone in the bone-weight skeletal animation
  * system. A bone contains a name and an index, as well as relevant
  * transformation data.
  *
@@ -60,7 +60,7 @@ public final class Bone implements Savable {
     
     /**
      * Used to handle blending from one animation to another.
-     * See {@link #blendAnimTransforms(com.clockwork.math.Vector3f, com.clockwork.math.Quaternion, com.clockwork.math.Vector3f, float)}
+     * See #blendAnimTransforms(com.clockwork.math.Vector3f, com.clockwork.math.Quaternion, com.clockwork.math.Vector3f, float)}
      * on how this variable is used.
      */
     private transient float currentWeightSum = -1;
@@ -87,13 +87,13 @@ public final class Bone implements Savable {
 
     /**
      * Special-purpose copy constructor. 
-     * <p>
+     * 
      * Only copies the name and bind pose from the original.
-     * <p>
+     * 
      * WARNING: Local bind pose and world inverse bind pose transforms shallow 
      * copied. Modifying that data on the original bone will cause it to
      * be recomputed on any cloned bones.
-     * <p>
+     * 
      * The rest of the data is <em>NOT</em> copied, as it will be
      * generated automatically when the bone is animated.
      * 
@@ -203,7 +203,7 @@ public final class Bone implements Savable {
 
     /**
      * Returns the inverse world bind pose position.
-     * <p>
+     * 
      * The bind pose transform of the bone is its "default"
      * transform with no animation applied.
      * 
@@ -215,7 +215,7 @@ public final class Bone implements Savable {
 
     /**
      * Returns the inverse world bind pose rotation.
-     * <p>
+     * 
      * The bind pose transform of the bone is its "default"
      * transform with no animation applied.
      * 
@@ -227,7 +227,7 @@ public final class Bone implements Savable {
 
     /**
      * Returns the inverse world bind pose scale.
-     * <p>
+     * 
      * The bind pose transform of the bone is its "default"
      * transform with no animation applied.
      * 
@@ -239,7 +239,7 @@ public final class Bone implements Savable {
 
     /**
      * Returns the world bind pose position.
-     * <p>
+     * 
      * The bind pose transform of the bone is its "default"
      * transform with no animation applied.
      * 
@@ -251,7 +251,7 @@ public final class Bone implements Savable {
 
     /**
      * Returns the world bind pose rotation.
-     * <p>
+     * 
      * The bind pose transform of the bone is its "default"
      * transform with no animation applied.
      * 
@@ -263,7 +263,7 @@ public final class Bone implements Savable {
 
     /**
      * Returns the world bind pose scale.
-     * <p>
+     * 
      * The bind pose transform of the bone is its "default"
      * transform with no animation applied.
      * 
@@ -295,7 +295,7 @@ public final class Bone implements Savable {
     /**
      * Updates the world transforms for this bone, and, possibly the attach node
      * if not null.
-     * <p>
+     * 
      * The world transform of this bone is computed by combining the parent's
      * world transform with this bones' local transform.
      */
@@ -520,11 +520,11 @@ public final class Bone implements Savable {
 
     /**
      * Blends the given animation transform onto the bone's local transform.
-     * <p>
+     * 
      * Subsequent calls of this method stack up, with the final transformation
-     * of the bone computed at {@link #updateWorldVectors() } which resets
+     * of the bone computed at #updateWorldVectors() } which resets
      * the stack.
-     * <p>
+     * 
      * E.g. a single transform blend with weight = 0.5 followed by an
      * updateWorldVectors() call will result in final transform = transform * 0.5.
      * Two transform blends with weight = 0.5 each will result in the two

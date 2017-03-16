@@ -8,9 +8,9 @@ import com.clockwork.scene.Spatial;
 
 /**
  * An interface for scene-graph controls. 
- * <p>
- * <code>Control</code>s are used to specify certain update and render logic
- * for a {@link Spatial}. 
+ * 
+ * Controls are used to specify certain update and render logic
+ * for a Spatial}. 
  *
  */
 public interface Control extends Savable {

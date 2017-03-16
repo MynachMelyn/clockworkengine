@@ -15,9 +15,9 @@ import java.io.IOException;
 
 /**
  * Used to load textures from image files such as JPG or PNG. 
- * Note that texture loaders actually load the asset as an {@link Image}
- * object, which is then converted to a {@link Texture} in the 
- * {@link TextureProcessor#postProcess(com.clockwork.asset.AssetKey, java.lang.Object) }
+ * Note that texture loaders actually load the asset as an Image}
+ * object, which is then converted to a Texture} in the 
+ * TextureProcessor#postProcess(com.clockwork.asset.AssetKey, java.lang.Object) }
  * method. Since textures are cloneable smart assets, the texture stored
  * in the cache will be collected when all clones of the texture become
  * unreachable.

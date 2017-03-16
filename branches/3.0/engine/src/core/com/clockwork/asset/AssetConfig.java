@@ -8,13 +8,13 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * <code>AssetConfig</code> loads a config file to configure the asset manager.
- * <br/><br/>
+ * AssetConfig loads a config file to configure the asset manager.
+ * 
  * The config file is specified with the following format:
- * <code>
+ * 
  * "LOADER" <class> : (<extension> ",")* <extension>
  * "LOCATOR" <path> <class> : (<extension> ",")* <extension>
- * </code>
+ * 
  *
  */
 public class AssetConfig {

@@ -17,11 +17,11 @@ import com.clockwork.system.JmeContext.Type;
 import com.clockwork.system.JmeSystem;
 
 /**
- * <code>SimpleApplication</code> is the base class for all applications.
- * <code>SimpleApplication</code> will display a statistics view
- * using the {@link com.clockwork.app.StatsAppState} AppState. It will display
+ * SimpleApplication is the base class for all applications.
+ * SimpleApplication will display a statistics view
+ * using the com.clockwork.app.StatsAppState AppState. It will display
  * the current frames-per-second value on-screen in addition to the statistics.
- * Several keys have special functionality in <code>SimpleApplication</code>:<br/>
+ * Several keys have special functionality in SimpleApplication:
  *
  * <table>
  * <tr><td>Esc</td><td>- Close the application</td></tr>
@@ -29,8 +29,8 @@ import com.clockwork.system.JmeSystem;
  * <tr><td>M</td><td>- Display memory usage in the console.</td></tr>
  * </table>
  * 
- * A {@link com.clockwork.app.FlyCamAppState} is by default attached as well and can
- * be removed by calling <code>stateManager.detach( stateManager.getState(FlyCamAppState.class) );</code>
+ * A com.clockwork.app.FlyCamAppState is by default attached as well and can
+ * be removed by calling stateManager.detach( stateManager.getState(FlyCamAppState.class) );
  */
 public abstract class SimpleApplication extends Application {
 

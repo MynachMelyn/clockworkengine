@@ -10,18 +10,18 @@ import java.io.IOException;
 import java.nio.*;
 
 /**
- * A <code>VertexBuffer</code> contains a particular type of geometry
- * data used by {@link Mesh}es. Every VertexBuffer set on a <code>Mesh</code>
+ * A VertexBuffer contains a particular type of geometry
+ * data used by Mesh}es. Every VertexBuffer set on a Mesh
  * is sent as an attribute to the vertex shader to be processed.
- * <p>
+ * 
  * Several terms are used throughout the javadoc for this class, explanation:
- * <ul>
- * <li>Element - A single element is the largest individual object
+ * 
+ * Element - A single element is the largest individual object
  * inside a VertexBuffer. E.g. if the VertexBuffer is used to store 3D position
- * data, then an element will be a single 3D vector.</li>
- * <li>Component - A component represents the parts inside an element. 
- * For a 3D vector, a single component is one of the dimensions, X, Y or Z.</li>
- * </ul>
+ * data, then an element will be a single 3D vector.
+ * Component - A component represents the parts inside an element. 
+ * For a 3D vector, a single component is one of the dimensions, X, Y or Z.
+ * 
  */
 public class VertexBuffer extends NativeObject implements Savable, Cloneable {
   
@@ -87,18 +87,18 @@ public class VertexBuffer extends NativeObject implements Savable, Cloneable {
 
         /** 
          * Initial vertex position, used with animation.
-         * Should have the same format and size as {@link Type#Position}.
+         * Should have the same format and size as Type#Position}.
          * If used with software skinning, the usage should be 
-         * {@link Usage#CpuOnly}, and the buffer should be allocated
+         * Usage#CpuOnly}, and the buffer should be allocated
          * on the heap.
          */
         BindPosePosition,
 
         /** 
          * Initial vertex normals, used with animation.
-         * Should have the same format and size as {@link Type#Normal}.
+         * Should have the same format and size as Type#Normal}.
          * If used with software skinning, the usage should be 
-         * {@link Usage#CpuOnly}, and the buffer should be allocated
+         * Usage#CpuOnly}, and the buffer should be allocated
          * on the heap.
          */
         BindPoseNormal,      
@@ -106,7 +106,7 @@ public class VertexBuffer extends NativeObject implements Savable, Cloneable {
         /** 
          * Bone weights, used with animation (4 floats).
          * Only used for software skinning, the usage should be 
-         * {@link Usage#CpuOnly}, and the buffer should be allocated
+         * Usage#CpuOnly}, and the buffer should be allocated
          * on the heap.
          */
         BoneWeight,
@@ -114,7 +114,7 @@ public class VertexBuffer extends NativeObject implements Savable, Cloneable {
         /** 
          * Bone indices, used with animation (4 ubytes).
          * Only used for software skinning, the usage should be 
-         * {@link Usage#CpuOnly}, and the buffer should be allocated
+         * Usage#CpuOnly}, and the buffer should be allocated
          * on the heap as a ubytes buffer.
          */
         BoneIndex,
@@ -156,9 +156,9 @@ public class VertexBuffer extends NativeObject implements Savable, Cloneable {
         
         /** 
          * Initial vertex tangents, used with animation.
-         * Should have the same format and size as {@link Type#Tangent}.
+         * Should have the same format and size as Type#Tangent}.
          * If used with software skinning, the usage should be 
-         * {@link Usage#CpuOnly}, and the buffer should be allocated
+         * Usage#CpuOnly}, and the buffer should be allocated
          * on the heap.
          */
         BindPoseTangent,
@@ -209,9 +209,9 @@ public class VertexBuffer extends NativeObject implements Savable, Cloneable {
     /**
      * Specifies format of the data stored in the buffer.
      * This should directly correspond to the buffer's class, for example,
-     * an {@link Format#UnsignedShort} formatted buffer should use the
-     * class {@link ShortBuffer} (e.g. the closest resembling type).
-     * For the {@link Format#Half} type, {@link ByteBuffer}s should
+     * an Format#UnsignedShort} formatted buffer should use the
+     * class ShortBuffer} (e.g. the closest resembling type).
+     * For the Format#Half} type, ByteBuffer}s should
      * be used.
      */
     public static enum Format {
@@ -360,7 +360,7 @@ public class VertexBuffer extends NativeObject implements Savable, Cloneable {
     /**
      * @return The offset after which the data is sent to the GPU.
      * 
-     * @see #setOffset(int) 
+     * see #setOffset(int) 
      */
     public int getOffset() {
         return offset;
@@ -377,7 +377,7 @@ public class VertexBuffer extends NativeObject implements Savable, Cloneable {
     /**
      * @return The stride (in bytes) for the data. 
      * 
-     * @see #setStride(int) 
+     * see #setStride(int) 
      */
     public int getStride() {
         return stride;
@@ -385,7 +385,7 @@ public class VertexBuffer extends NativeObject implements Savable, Cloneable {
 
     /**
      * Set the stride (in bytes) for the data. 
-     * <p>
+     * 
      * If the data is packed in the buffer, then stride is 0, if there's other 
      * data that is between the current component and the next component in the 
      * buffer, then this specifies the size in bytes of that additional data.
@@ -404,7 +404,7 @@ public class VertexBuffer extends NativeObject implements Savable, Cloneable {
      * the more convenient getDataReadOnly() if the buffer may be accessed 
      * from multiple threads.
      * 
-     * @return A native buffer, in the specified {@link Format format}.
+     * @return A native buffer, in the specified Format format}.
      */
     public Buffer getData(){
         return data;
@@ -417,7 +417,7 @@ public class VertexBuffer extends NativeObject implements Savable, Cloneable {
      * This method provides a read-only buffer that is safe to _read_ from
      * a separate thread since it has its own book-keeping state (position, limit, etc.)
      *
-     * @return A rewound native buffer in the specified {@link Format format}
+     * @return A rewound native buffer in the specified Format format}
      *         that is safe to read from a separate thread from other readers. 
      */
     public Buffer getDataReadOnly() {
@@ -454,7 +454,7 @@ public class VertexBuffer extends NativeObject implements Savable, Cloneable {
     }
 
     /**
-     * @return The usage of this buffer. See {@link Usage} for more
+     * @return The usage of this buffer. See Usage} for more
      * information.
      */
     public Usage getUsage(){
@@ -462,7 +462,7 @@ public class VertexBuffer extends NativeObject implements Savable, Cloneable {
     }
 
     /**
-     * @param usage The usage of this buffer. See {@link Usage} for more
+     * @param usage The usage of this buffer. See Usage} for more
      * information.
      */
     public void setUsage(Usage usage){
@@ -476,7 +476,7 @@ public class VertexBuffer extends NativeObject implements Savable, Cloneable {
      * @param normalized Set to true if integer components should be converted
      * from their maximal range into the range 0.0 - 1.0 when converted to
      * a floating-point value for the shader.
-     * E.g. if the {@link Format} is {@link Format#UnsignedInt}, then
+     * E.g. if the Format} is Format#UnsignedInt}, then
      * the components will be converted to the range 0.0 - 1.0 by dividing
      * every integer by 2^32.
      */
@@ -486,7 +486,7 @@ public class VertexBuffer extends NativeObject implements Savable, Cloneable {
 
     /**
      * @return True if integer components should be converted to the range 0-1.
-     * @see VertexBuffer#setNormalized(boolean) 
+     * see VertexBuffer#setNormalized(boolean) 
      */
     public boolean isNormalized(){
         return normalized;
@@ -500,14 +500,14 @@ public class VertexBuffer extends NativeObject implements Savable, Cloneable {
     }
 
     /**
-     * @return The {@link Format format}, or data type of the data.
+     * @return The Format format}, or data type of the data.
      */
     public Format getFormat(){
         return format;
     }
 
     /**
-     * @return The number of components of the given {@link Format format} per
+     * @return The number of components of the given Format format} per
      * element.
      */
     public int getNumComponents(){
@@ -525,15 +525,15 @@ public class VertexBuffer extends NativeObject implements Savable, Cloneable {
     }
 
     /**
-     * Called to initialize the data in the <code>VertexBuffer</code>. Must only
+     * Called to initialize the data in the VertexBuffer. Must only
      * be called once.
      * 
      * @param usage The usage for the data, or how often will the data
-     * be updated per frame. See the {@link Usage} enum.
+     * be updated per frame. See the Usage} enum.
      * @param components The number of components per element.
-     * @param format The {@link Format format}, or data-type of a single
+     * @param format The Format format}, or data-type of a single
      * component.
-     * @param data A native buffer, the format of which matches the {@link Format}
+     * @param data A native buffer, the format of which matches the Format}
      * argument.
      */
     public void setupData(Usage usage, int components, Format format, Buffer data){
@@ -560,12 +560,12 @@ public class VertexBuffer extends NativeObject implements Savable, Cloneable {
 
     /**
      * Called to update the data in the buffer with new data. Can only
-     * be called after {@link VertexBuffer#setupData(com.clockwork.scene.VertexBuffer.Usage, int, com.clockwork.scene.VertexBuffer.Format, java.nio.Buffer) }
+     * be called after VertexBuffer#setupData(com.clockwork.scene.VertexBuffer.Usage, int, com.clockwork.scene.VertexBuffer.Format, java.nio.Buffer) }
      * has been called. Note that it is fine to call this method on the
      * data already set, e.g. vb.updateData(vb.getData()), this will just
      * set the proper update flag indicating the data should be sent to the GPU
      * again.
-     * <p>
+     * 
      * It is allowed to specify a buffer with different capacity than the
      * originally set buffer, HOWEVER, if you do so, you must
      * call Mesh.updateCounts() otherwise bizarre errors can occur.
@@ -609,7 +609,7 @@ public class VertexBuffer extends NativeObject implements Savable, Cloneable {
     }
 
     /**
-     * Converts single floating-point data to {@link Format#Half half} floating-point data.
+     * Converts single floating-point data to Format#Half half} floating-point data.
      */
     public void convertToHalf(){
         if (id != -1)
@@ -691,13 +691,13 @@ public class VertexBuffer extends NativeObject implements Savable, Cloneable {
 
     /**
      * Modify a component inside an element.
-     * The <code>val</code> parameter must be in the buffer's format:
-     * {@link Format}.
+     * The val parameter must be in the buffer's format:
+     * Format}.
      * 
      * @param elementIndex The element index to modify
      * @param componentIndex The component index to modify
      * @param val The value to set, either byte, short, int or float depending
-     * on the {@link Format}.
+     * on the Format}.
      */
     public void setElementComponent(int elementIndex, int componentIndex, Object val){
         int inPos = elementIndex * components;
@@ -778,7 +778,7 @@ public class VertexBuffer extends NativeObject implements Savable, Cloneable {
     }
 
     /**
-     * Copies a single element of data from this <code>VertexBuffer</code>
+     * Copies a single element of data from this VertexBuffer
      * to the given output VertexBuffer.
      * 
      * @param inIndex The input element index
@@ -793,7 +793,7 @@ public class VertexBuffer extends NativeObject implements Savable, Cloneable {
     }
 
     /**
-     * Copies a sequence of elements of data from this <code>VertexBuffer</code>
+     * Copies a sequence of elements of data from this VertexBuffer
      * to the given output VertexBuffer.
      * 
      * @param inIndex The input element index
@@ -867,9 +867,9 @@ public class VertexBuffer extends NativeObject implements Savable, Cloneable {
     }
 
     /**
-     * Creates a {@link Buffer} that satisfies the given type and size requirements
+     * Creates a Buffer} that satisfies the given type and size requirements
      * of the parameters. The buffer will be of the type specified by
-     * {@link Format format} and would be able to contain the given number
+     * Format format} and would be able to contain the given number
      * of elements with the given number of components in each element.
      */
     public static Buffer createBuffer(Format format, int components, int numElements){
@@ -900,7 +900,7 @@ public class VertexBuffer extends NativeObject implements Savable, Cloneable {
     }
 
     /**
-     * Creates a deep clone of the {@link VertexBuffer}.
+     * Creates a deep clone of the VertexBuffer}.
      * 
      * @return Deep clone of this buffer
      */
@@ -924,7 +924,7 @@ public class VertexBuffer extends NativeObject implements Savable, Cloneable {
 
     /**
      * Creates a deep clone of this VertexBuffer but overrides the
-     * {@link Type}.
+     * Type}.
      * 
      * @param overrideType The type of the cloned VertexBuffer
      * @return A deep clone of the buffer

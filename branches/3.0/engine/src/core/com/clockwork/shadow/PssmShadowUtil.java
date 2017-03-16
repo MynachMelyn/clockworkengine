@@ -12,17 +12,17 @@ import static java.lang.Math.min;
 /**
  * Includes various useful shadow mapping functions.
  *
- * @see
- * <ul>
- * <li><a href="http://appsrv.cse.cuhk.edu.hk/~fzhang/pssm_vrcia/">http://appsrv.cse.cuhk.edu.hk/~fzhang/pssm_vrcia/</a></li>
- * <li><a href="http://http.developer.nvidia.com/GPUGems3/gpugems3_ch10.html">http://http.developer.nvidia.com/GPUGems3/gpugems3_ch10.html</a></li>
- * </ul>
+ * see
+ * 
+ * <a href="http://appsrv.cse.cuhk.edu.hk/~fzhang/pssm_vrcia/">http://appsrv.cse.cuhk.edu.hk/~fzhang/pssm_vrcia/</a>
+ * <a href="http://http.developer.nvidia.com/GPUGems3/gpugems3_ch10.html">http://http.developer.nvidia.com/GPUGems3/gpugems3_ch10.html</a>
+ * 
  * for more info.
  */
 public final class PssmShadowUtil {
 
     /**
-     * Updates the frustum splits stores in <code>splits</code> using PSSM.
+     * Updates the frustum splits stores in splits using PSSM.
      */
     public static void updateFrustumSplits(float[] splits, float near, float far, float lambda) {
         for (int i = 0; i < splits.length; i++) {

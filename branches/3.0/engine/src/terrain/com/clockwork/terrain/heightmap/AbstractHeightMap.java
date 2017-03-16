@@ -9,13 +9,13 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * <code>AbstractHeightMap</code> provides a base implementation of height
+ * AbstractHeightMap provides a base implementation of height
  * data for terrain rendering. The loading of the data is dependent on the
  * subclass. The abstract implementation provides a means to retrieve the height
  * data and to save it.
  *
  * It is the general contract that any subclass provide a means of editing
- * required attributes and calling <code>load</code> again to recreate a
+ * required attributes and calling load again to recreate a
  * heightfield with these new parameters.
  *
  * 
@@ -36,7 +36,7 @@ public abstract class AbstractHeightMap implements HeightMap {
     public static float NORMALIZE_RANGE = 255f;
 
     /**
-     * <code>unloadHeightMap</code> clears the data of the height map. This
+     * unloadHeightMap clears the data of the height map. This
      * insures it is ready for reloading.
      */
     public void unloadHeightMap() {
@@ -44,7 +44,7 @@ public abstract class AbstractHeightMap implements HeightMap {
     }
 
     /**
-     * <code>setHeightScale</code> sets the scale of the height values.
+     * setHeightScale sets the scale of the height values.
      * Typically, the height is a little too extreme and should be scaled to a
      * smaller value (i.e. 0.25), to produce cleaner slopes.
      *
@@ -56,7 +56,7 @@ public abstract class AbstractHeightMap implements HeightMap {
     }
 
     /**
-     * <code>setHeightAtPoint</code> sets the height value for a given
+     * setHeightAtPoint sets the height value for a given
      * coordinate. It is recommended that the height value be within the 0 - 255
      * range.
      *
@@ -72,7 +72,7 @@ public abstract class AbstractHeightMap implements HeightMap {
     }
 
     /**
-     * <code>setSize</code> sets the size of the terrain where the area is
+     * setSize sets the size of the terrain where the area is
      * size x size.
      *
      * @param size
@@ -91,7 +91,7 @@ public abstract class AbstractHeightMap implements HeightMap {
     }
 
     /**
-     * <code>setFilter</code> sets the erosion value for the filter. This
+     * setFilter sets the erosion value for the filter. This
      * value must be between 0 and 1, where 0.2 - 0.4 produces arguably the best
      * results.
      *
@@ -109,7 +109,7 @@ public abstract class AbstractHeightMap implements HeightMap {
     }
 
     /**
-     * <code>getTrueHeightAtPoint</code> returns the non-scaled value at the
+     * getTrueHeightAtPoint returns the non-scaled value at the
      * point provided.
      *
      * @param x
@@ -124,7 +124,7 @@ public abstract class AbstractHeightMap implements HeightMap {
     }
 
     /**
-     * <code>getScaledHeightAtPoint</code> returns the scaled value at the
+     * getScaledHeightAtPoint returns the scaled value at the
      * point provided.
      *
      * @param x
@@ -138,7 +138,7 @@ public abstract class AbstractHeightMap implements HeightMap {
     }
 
     /**
-     * <code>getInterpolatedHeight</code> returns the height of a point that
+     * getInterpolatedHeight returns the height of a point that
      * does not fall directly on the height posts.
      *
      * @param x
@@ -176,7 +176,7 @@ public abstract class AbstractHeightMap implements HeightMap {
     }
 
     /**
-     * <code>getHeightMap</code> returns the entire grid of height data.
+     * getHeightMap returns the entire grid of height data.
      *
      * @return the grid of height data.
      */
@@ -197,7 +197,7 @@ public abstract class AbstractHeightMap implements HeightMap {
     }
 
     /**
-     * <code>getSize</code> returns the size of one side the height map. Where
+     * getSize returns the size of one side the height map. Where
      * the area of the height map is size x size.
      *
      * @return the size of a single side.
@@ -207,7 +207,7 @@ public abstract class AbstractHeightMap implements HeightMap {
     }
 
     /**
-     * <code>save</code> will save the heightmap data into a new RAW file
+     * save will save the heightmap data into a new RAW file
      * denoted by the supplied filename.
      *
      * @param filename
@@ -257,8 +257,8 @@ public abstract class AbstractHeightMap implements HeightMap {
     }
 
     /**
-     * <code>normalizeTerrain</code> takes the current terrain data and
-     * converts it to values between 0 and <code>value</code>.
+     * normalizeTerrain takes the current terrain data and
+     * converts it to values between 0 and value.
      *
      * @param value
      *            the value to normalize to.
@@ -320,10 +320,10 @@ public abstract class AbstractHeightMap implements HeightMap {
     }
 
     /**
-     * <code>erodeTerrain</code> is a convenience method that applies the FIR
+     * erodeTerrain is a convenience method that applies the FIR
      * filter to a given height map. This simulates water errosion.
      *
-     * @see setFilter
+     * see setFilter
      */
     public void erodeTerrain() {
         //erode left to right
@@ -407,7 +407,7 @@ public abstract class AbstractHeightMap implements HeightMap {
     /**
      * Smooth the terrain. For each node, its 8 neighbors heights
      * are averaged and will participate in the  node new height
-     * by a factor <code>np</code> between 0 and 1
+     * by a factor np between 0 and 1
      * 
      * You must first load() the heightmap data before this will have any effect.
      * 
@@ -423,7 +423,7 @@ public abstract class AbstractHeightMap implements HeightMap {
     /**
      * Smooth the terrain. For each node, its X(determined by radius) neighbors heights
      * are averaged and will participate in the  node new height
-     * by a factor <code>np</code> between 0 and 1
+     * by a factor np between 0 and 1
      *
      * You must first load() the heightmap data before this will have any effect.
      * 

@@ -6,7 +6,7 @@ import com.clockwork.util.TempVars;
 import java.util.BitSet;
 
 /**
- * <code>AnimChannel</code> provides controls, such as play, pause,
+ * AnimChannel provides controls, such as play, pause,
  * fast forward, etc, for an animation. The animation
  * channel may influence the entire model or specific bones of the model's
  * skeleton. A single model may have multiple animation channels influencing
@@ -103,7 +103,7 @@ public final class AnimChannel {
      * Returns the parent control of this AnimChannel.
      * 
      * @return the parent control of this AnimChannel.
-     * @see AnimControl
+     * see AnimControl
      */
     public AnimControl getControl() {
         return control;
@@ -113,7 +113,7 @@ public final class AnimChannel {
      * @return The name of the currently playing animation, or null if
      * none is assigned.
      *
-     * @see AnimChannel#setAnim(java.lang.String) 
+     * see AnimChannel#setAnim(java.lang.String) 
      */
     public String getAnimationName() {
         return animation != null ? animation.getName() : null;
@@ -125,8 +125,8 @@ public final class AnimChannel {
      * playing.
      * 
      * For more information, see the LoopMode enum class.
-     * @see LoopMode
-     * @see AnimChannel#setLoopMode(com.clockwork.animation.LoopMode)
+     * see LoopMode
+     * see AnimChannel#setLoopMode(com.clockwork.animation.LoopMode)
      */
     public LoopMode getLoopMode() {
         return loopMode;
@@ -138,7 +138,7 @@ public final class AnimChannel {
      * playing.
      *
      * For more information, see the LoopMode enum class.
-     * @see LoopMode
+     * see LoopMode
      */
     public void setLoopMode(LoopMode loopMode) {
         this.loopMode = loopMode;
@@ -149,7 +149,7 @@ public final class AnimChannel {
      * is a scale value starting from 0.0, at 1.0 the animation will play
      * at its default speed.
      *
-     * @see AnimChannel#setSpeed(float)
+     * see AnimChannel#setSpeed(float)
      */
     public float getSpeed() {
         return speed;
@@ -173,7 +173,7 @@ public final class AnimChannel {
      * @return The time of the currently playing animation. The time
      * starts at 0 and continues on until getAnimMaxTime().
      *
-     * @see AnimChannel#setTime(float)
+     * see AnimChannel#setTime(float)
      */
     public float getTime() {
         return time;
@@ -181,7 +181,7 @@ public final class AnimChannel {
 
     /**
      * @param time Set the time of the currently playing animation, the time
-     * is clamped from 0 to {@link #getAnimMaxTime()}. 
+     * is clamped from 0 to #getAnimMaxTime()}. 
      */
     public void setTime(float time) {
         this.time = FastMath.clamp(time, 0, getAnimMaxTime());
@@ -191,7 +191,7 @@ public final class AnimChannel {
      * @return The length of the currently playing animation, or zero
      * if no animation is playing.
      *
-     * @see AnimChannel#getTime()
+     * see AnimChannel#getTime()
      */
     public float getAnimMaxTime(){
         return animation != null ? animation.getLength() : 0f;
@@ -199,9 +199,9 @@ public final class AnimChannel {
 
     /**
      * Set the current animation that is played by this AnimChannel.
-     * <p>
+     * 
      * This resets the time to zero, and optionally blends the animation
-     * over <code>blendTime</code> seconds with the currently playing animation.
+     * over blendTime seconds with the currently playing animation.
      * Notice that this method will reset the control's speed to 1.0.
      *
      * @param name The name of the animation to play
@@ -245,8 +245,8 @@ public final class AnimChannel {
 
     /**
      * Set the current animation that is played by this AnimChannel.
-     * <p>
-     * See {@link #setAnim(java.lang.String, float)}.
+     * 
+     * See #setAnim(java.lang.String, float)}.
      * The blendTime argument by default is 150 milliseconds.
      * 
      * @param name The name of the animation to play

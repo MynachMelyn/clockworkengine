@@ -146,8 +146,8 @@ public class VehicleWheel implements Savable {
 
     /**
      * the damping coefficient for when the suspension is compressed.
-     * Set to k * 2.0 * FastMath.sqrt(m_suspensionStiffness) so k is proportional to critical damping.<br>
-     * k = 0.0 undamped & bouncy, k = 1.0 critical damping<br>
+     * Set to k * 2.0 * FastMath.sqrt(m_suspensionStiffness) so k is proportional to critical damping.
+     * k = 0.0 undamped & bouncy, k = 1.0 critical damping
      * 0.1 to 0.3 are good values
      * @param wheelsDampingCompression
      */
@@ -294,7 +294,7 @@ public class VehicleWheel implements Savable {
     }
 
     /**
-     * returns how much the wheel skids on the ground (for skid sounds/smoke etc.)<br>
+     * returns how much the wheel skids on the ground (for skid sounds/smoke etc.)
      * 0.0 = wheels are sliding, 1.0 = wheels have traction.
      */
     public float getSkidInfo() {

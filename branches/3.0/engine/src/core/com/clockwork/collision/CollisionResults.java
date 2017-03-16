@@ -6,8 +6,8 @@ import java.util.Collections;
 import java.util.Iterator;
 
 /**
- * <code>CollisionResults</code> is a collection returned as a result of a 
- * collision detection operation done by {@link Collidable}.
+ * CollisionResults is a collection returned as a result of a 
+ * collision detection operation done by Collidable}.
  * 
  */
 public class CollisionResults implements Iterable<CollisionResult> {

@@ -64,7 +64,7 @@ public class Cylinder extends Mesh {
     /**
      * Creates a new Cylinder. By default its center is the origin. Usually, a
      * higher sample number creates a better looking cylinder, but at the cost
-     * of more vertex information. <br>
+     * of more vertex information. 
      * If the cylinder is closed the texture is split into axisSamples parts:
      * top most and bottom most part is used for top and bottom of the cylinder,
      * rest of the texture for the cylinder wall. The middle of the top is
@@ -90,7 +90,7 @@ public class Cylinder extends Mesh {
     /**
      * Creates a new Cylinder. By default its center is the origin. Usually, a
      * higher sample number creates a better looking cylinder, but at the cost
-     * of more vertex information. <br>
+     * of more vertex information. 
      * If the cylinder is closed the texture is split into axisSamples parts:
      * top most and bottom most part is used for top and bottom of the cylinder,
      * rest of the texture for the cylinder wall. The middle of the top is

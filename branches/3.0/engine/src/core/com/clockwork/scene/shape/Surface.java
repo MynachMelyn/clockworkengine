@@ -249,7 +249,7 @@ public class Surface extends Mesh {
     }
 
     /**
-     * This method validates the input data. It throws {@link IllegalArgumentException} if
+     * This method validates the input data. It throws IllegalArgumentException} if
      * the data is invalid.
      * @param controlPoints space control points
      * @param nurbKnots knots of the surface

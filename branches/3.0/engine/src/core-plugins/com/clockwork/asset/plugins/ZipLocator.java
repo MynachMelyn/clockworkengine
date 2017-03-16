@@ -10,7 +10,7 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
 /**
- * <code>ZipLocator</code> is a locator that looks up resources in a .ZIP file.
+ * ZipLocator is a locator that looks up resources in a .ZIP file.
  */
 public class ZipLocator implements AssetLocator {
 

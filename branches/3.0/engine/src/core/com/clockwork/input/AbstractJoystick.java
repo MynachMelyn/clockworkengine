@@ -63,7 +63,7 @@ public abstract class AbstractJoystick implements Joystick {
      * @param mappingName The mapping to receive joystick button events.
      * @param buttonId The button index.
      *
-     * @see Joystick#getButtonCount()
+     * see Joystick#getButtonCount()
      * @deprecated Use JoystickButton.assignButton() instead.
      */
     @Override
@@ -81,7 +81,7 @@ public abstract class AbstractJoystick implements Joystick {
      * @param negativeMapping The mapping to receive events when the axis is positive
      * @param axisId The axis index.
      *
-     * @see Joystick#getAxisCount()
+     * see Joystick#getAxisCount()
      * @deprecated Use JoystickAxis.assignAxis() instead.
      */
     @Override
@@ -175,11 +175,11 @@ public abstract class AbstractJoystick implements Joystick {
     /**
      * Gets the index number for the X axis on the joystick.
      *
-     * <p>E.g. for most gamepads, the left control stick X axis will be returned.
+     * E.g. for most gamepads, the left control stick X axis will be returned.
      *
      * @return The axis index for the X axis for this joystick.
      *
-     * @see Joystick#assignAxis(java.lang.String, java.lang.String, int)
+     * see Joystick#assignAxis(java.lang.String, java.lang.String, int)
      */
     @Override
     public int getXAxisIndex(){
@@ -189,11 +189,11 @@ public abstract class AbstractJoystick implements Joystick {
     /**
      * Gets the index number for the Y axis on the joystick.
      *
-     * <p>E.g. for most gamepads, the left control stick Y axis will be returned.
+     * E.g. for most gamepads, the left control stick Y axis will be returned.
      *
      * @return The axis index for the Y axis for this joystick.
      *
-     * @see Joystick#assignAxis(java.lang.String, java.lang.String, int)
+     * see Joystick#assignAxis(java.lang.String, java.lang.String, int)
      */
     @Override
     public int getYAxisIndex(){

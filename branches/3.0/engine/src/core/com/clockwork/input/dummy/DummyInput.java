@@ -5,7 +5,7 @@ import com.clockwork.input.Input;
 import com.clockwork.input.RawInputListener;
 
 /**
- * DummyInput as an implementation of <code>Input</code> that raises no
+ * DummyInput as an implementation of Input that raises no
  * input events.
  * 
  */

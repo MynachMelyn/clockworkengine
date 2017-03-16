@@ -48,7 +48,7 @@ public class Dome extends Mesh {
      *            Influences how round the base of the dome is.
      * @param radius
      *            Radius of the dome.
-     * @see #Dome(com.clockwork.math.Vector3f, int, int, float)
+     * see #Dome(com.clockwork.math.Vector3f, int, int, float)
      */
     public Dome(int planes, int radialSamples, float radius) {
         this(new Vector3f(0, 0, 0), planes, radialSamples, radius);
@@ -56,7 +56,7 @@ public class Dome extends Mesh {
 
     /**
      * Constructs a dome visible from the inside, e.g. for use as a SkyDome. 
-     * All geometry data buffers are updated automatically. <br>
+     * All geometry data buffers are updated automatically. 
      * For a cone, set planes=2. For a pyramid, set radialSamples=4 and planes=2.
      * Increasing planes and radialSamples increase the quality of the dome.
      * 
@@ -79,7 +79,7 @@ public class Dome extends Mesh {
 
     /**
      * Constructs a dome. Use this constructor for half-sphere, pyramids, or cones. 
-     * All geometry data buffers are updated automatically. <br>
+     * All geometry data buffers are updated automatically. 
      * For a cone, set planes=2. For a pyramid, set radialSamples=4 and planes=2.
      * Setting higher values for planes and radialSamples increases 
      * the quality of the half-sphere.

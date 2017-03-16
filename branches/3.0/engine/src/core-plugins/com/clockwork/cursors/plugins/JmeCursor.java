@@ -29,7 +29,7 @@ public class JmeCursor {
 
     /**
      * Queries the cursor's images' data.
-     * @return An {@link IntBuffer} containing the cursor's image(s) data in
+     * @return An IntBuffer} containing the cursor's image(s) data in
      * sequence.
      */
     public IntBuffer getImagesData() {
@@ -38,7 +38,7 @@ public class JmeCursor {
 
     /**
      * Queries the cursor's delay for each frame.
-     * @return An {@link IntBuffer} containing the cursor's delay in
+     * @return An IntBuffer} containing the cursor's delay in
      * sequence. The delay is expressed in milliseconds.
      */
     public IntBuffer getImagesDelay() {
@@ -93,10 +93,10 @@ public class JmeCursor {
 
     /**
      * Sets the cursor's image(s) data. Each image data should be consecutively
-     * stored in the {@link IntBuffer} if more tha one image is contained in the
+     * stored in the IntBuffer} if more tha one image is contained in the
      * cursor.
      * @param imagesData the cursor's image(s) data. Each image data should be consecutively
-     * stored in the {@link IntBuffer} if more than one image is contained in the
+     * stored in the IntBuffer} if more than one image is contained in the
      * cursor.
      */
     public void setImagesData(IntBuffer imagesData) {

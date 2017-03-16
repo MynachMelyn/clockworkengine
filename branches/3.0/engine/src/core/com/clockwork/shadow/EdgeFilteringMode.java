@@ -2,7 +2,7 @@
 package com.clockwork.shadow;
 
 /**
- * <code>ShadowEdgeFiltering</code> specifies how shadows are filtered
+ * ShadowEdgeFiltering specifies how shadows are filtered
  */
 public enum EdgeFilteringMode {
 

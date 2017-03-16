@@ -5,9 +5,9 @@ import com.clockwork.export.*;
 import java.io.IOException;
 
 /**
- * <code>UserData</code> is used to contain user data objects
+ * UserData is used to contain user data objects
  * set on spatials (primarily primitives) that do not implement
- * the {@link Savable} interface. Note that attempting
+ * the Savable} interface. Note that attempting
  * to export any models which have non-savable objects
  * attached to them will fail.
  */
@@ -32,7 +32,7 @@ public final class UserData implements Savable {
     }
 
     /**
-     * Creates a new <code>UserData</code> with the given 
+     * Creates a new UserData with the given 
      * type and value.
      * 
      * @param type Type of data, should be between 0 and 4.

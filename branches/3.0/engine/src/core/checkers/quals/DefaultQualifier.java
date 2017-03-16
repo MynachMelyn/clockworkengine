@@ -13,14 +13,14 @@ import java.lang.annotation.Target;
  * annotation is explicitly written.
  * If multiple DefaultQualifier annotations are in scope, the innermost one
  * takes precedence.
- * DefaultQualifier takes precedence over {@link DefaultQualifierInHierarchy}.
- * <p>
+ * DefaultQualifier takes precedence over DefaultQualifierInHierarchy.
+ * 
  *
  * If you wish to write multiple @DefaultQualifier annotations (for
- * unrelated type systems, or with different {@code locations} fields) at
- * the same location, use {@link DefaultQualifiers}.
+ * unrelated type systems, or with different locations fields) at
+ * the same location, use DefaultQualifiers.
  *
- * @see DefaultLocation
+ * see DefaultLocation
  */
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
@@ -31,7 +31,7 @@ public @interface DefaultQualifier {
      * The name of the default annotation.  It may be a short name like
      * "NonNull", if an appropriate import statement exists.  Otherwise, it
      * should be fully-qualified, like "checkers.nullness.quals.NonNull".
-     * <p>
+     * 
      *
      * To prevent affecting other type systems, always specify an annotation
      * in your own type hierarchy.  (For example, do not set

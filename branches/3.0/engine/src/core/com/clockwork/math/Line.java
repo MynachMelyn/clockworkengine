@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.nio.FloatBuffer;
 
 /**
- * <code>Line</code> defines a line. Where a line is defined as infinite along
+ * Line defines a line. Where a line is defined as infinite along
  * two points. The two points of the line are defined as the origin and direction.
  * 
  * 
@@ -22,7 +22,7 @@ public class Line implements Savable, Cloneable, java.io.Serializable {
     private Vector3f direction;
 
     /**
-     * Constructor instantiates a new <code>Line</code> object. The origin and
+     * Constructor instantiates a new Line object. The origin and
      * direction are set to defaults (0,0,0).
      *
      */
@@ -32,7 +32,7 @@ public class Line implements Savable, Cloneable, java.io.Serializable {
     }
 
     /**
-     * Constructor instantiates a new <code>Line</code> object. The origin
+     * Constructor instantiates a new Line object. The origin
      * and direction are set via the parameters.
      * @param origin the origin of the line.
      * @param direction the direction of the line.
@@ -44,7 +44,7 @@ public class Line implements Savable, Cloneable, java.io.Serializable {
 
     /**
      *
-     * <code>getOrigin</code> returns the origin of the line.
+     * getOrigin returns the origin of the line.
      * @return the origin of the line.
      */
     public Vector3f getOrigin() {
@@ -53,7 +53,7 @@ public class Line implements Savable, Cloneable, java.io.Serializable {
 
     /**
      *
-     * <code>setOrigin</code> sets the origin of the line.
+     * setOrigin sets the origin of the line.
      * @param origin the origin of the line.
      */
     public void setOrigin(Vector3f origin) {
@@ -62,7 +62,7 @@ public class Line implements Savable, Cloneable, java.io.Serializable {
 
     /**
      *
-     * <code>getDirection</code> returns the direction of the line.
+     * getDirection returns the direction of the line.
      * @return the direction of the line.
      */
     public Vector3f getDirection() {
@@ -71,7 +71,7 @@ public class Line implements Savable, Cloneable, java.io.Serializable {
 
     /**
      *
-     * <code>setDirection</code> sets the direction of the line.
+     * setDirection sets the direction of the line.
      * @param direction the direction of the line.
      */
     public void setDirection(Vector3f direction) {
@@ -157,7 +157,7 @@ public class Line implements Savable, Cloneable, java.io.Serializable {
 
     /**
      *
-     * <code>random</code> determines a random point along the line.
+     * random determines a random point along the line.
      * @return a random point on the line.
      */
     public Vector3f random() {
@@ -165,7 +165,7 @@ public class Line implements Savable, Cloneable, java.io.Serializable {
     }
 
     /**
-     * <code>random</code> determines a random point along the line.
+     * random determines a random point along the line.
      * 
      * @param result Vector to store result in
      * @return a random point on the line.

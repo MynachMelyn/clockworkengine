@@ -5,7 +5,7 @@ import com.clockwork.math.ColorRGBA;
 import com.clockwork.math.Vector3f;
 
 /**
- * Represents a single particle in a {@link ParticleEmitter}.
+ * Represents a single particle in a ParticleEmitter}.
  * 
  */
 public class Particle {

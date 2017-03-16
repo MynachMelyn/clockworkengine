@@ -29,7 +29,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * <p>PhysicsSpace - The central jbullet-jme physics space</p>
+ * PhysicsSpace - The central jbullet-jme physics space
  *
  */
 public class PhysicsSpace {
@@ -77,7 +77,7 @@ public class PhysicsSpace {
     }
 
     /**
-     * Get the current PhysicsSpace <b>running on this thread</b><br/> For
+     * Get the current PhysicsSpace running on this thread For
      * parallel physics, this can also be called from the OpenGL thread to
      * receive the PhysicsSpace
      *
@@ -191,115 +191,7 @@ public class PhysicsSpace {
         return false;
     }
 
-//    private void setOverlapFilterCallback() {
-//        OverlapFilterCallback callback = new OverlapFilterCallback() {
-//
-//            public boolean needBroadphaseCollision(BroadphaseProxy bp, BroadphaseProxy bp1) {
-//                boolean collides = (bp.collisionFilterGroup & bp1.collisionFilterMask) != 0;
-//                if (collides) {
-//                    collides = (bp1.collisionFilterGroup & bp.collisionFilterMask) != 0;
-//                }
-//                if (collides) {
-//                    assert (bp.clientObject instanceof com.bulletphysics.collision.dispatch.CollisionObject && bp.clientObject instanceof com.bulletphysics.collision.dispatch.CollisionObject);
-//                    com.bulletphysics.collision.dispatch.CollisionObject colOb = (com.bulletphysics.collision.dispatch.CollisionObject) bp.clientObject;
-//                    com.bulletphysics.collision.dispatch.CollisionObject colOb1 = (com.bulletphysics.collision.dispatch.CollisionObject) bp1.clientObject;
-//                    assert (colOb.getUserPointer() != null && colOb1.getUserPointer() != null);
-//                    PhysicsCollisionObject collisionObject = (PhysicsCollisionObject) colOb.getUserPointer();
-//                    PhysicsCollisionObject collisionObject1 = (PhysicsCollisionObject) colOb1.getUserPointer();
-//                    if ((collisionObject.getCollideWithGroups() & collisionObject1.getCollisionGroup()) > 0
-//                            || (collisionObject1.getCollideWithGroups() & collisionObject.getCollisionGroup()) > 0) {
-//                        PhysicsCollisionGroupListener listener = collisionGroupListeners.get(collisionObject.getCollisionGroup());
-//                        PhysicsCollisionGroupListener listener1 = collisionGroupListeners.get(collisionObject1.getCollisionGroup());
-//                        if (listener != null) {
-//                            return listener.collide(collisionObject, collisionObject1);
-//                        } else if (listener1 != null) {
-//                            return listener1.collide(collisionObject, collisionObject1);
-//                        }
-//                        return true;
-//                    } else {
-//                        return false;
-//                    }
-//                }
-//                return collides;
-//            }
-//        };
-//        dynamicsWorld.getPairCache().setOverlapFilterCallback(callback);
-//    }
-//    private void setTickCallback() {
-//        final PhysicsSpace space = this;
-//        InternalTickCallback callback2 = new InternalTickCallback() {
-//
-//            @Override
-//            public void internalTick(DynamicsWorld dw, float f) {
-//                //execute task list
-//                AppTask task = pQueue.poll();
-//                task = pQueue.poll();
-//                while (task != null) {
-//                    while (task.isCancelled()) {
-//                        task = pQueue.poll();
-//                    }
-//                    try {
-//                        task.invoke();
-//                    } catch (Exception ex) {
-//                        logger.log(Level.SEVERE, null, ex);
-//                    }
-//                    task = pQueue.poll();
-//                }
-//                for (Iterator<PhysicsTickListener> it = tickListeners.iterator(); it.hasNext();) {
-//                    PhysicsTickListener physicsTickCallback = it.next();
-//                    physicsTickCallback.prePhysicsTick(space, f);
-//                }
-//            }
-//        };
-//        dynamicsWorld.setPreTickCallback(callback2);
-//        InternalTickCallback callback = new InternalTickCallback() {
-//
-//            @Override
-//            public void internalTick(DynamicsWorld dw, float f) {
-//                for (Iterator<PhysicsTickListener> it = tickListeners.iterator(); it.hasNext();) {
-//                    PhysicsTickListener physicsTickCallback = it.next();
-//                    physicsTickCallback.physicsTick(space, f);
-//                }
-//            }
-//        };
-//        dynamicsWorld.setInternalTickCallback(callback, this);
-//    }
-//    private void setContactCallbacks() {
-//        BulletGlobals.setContactAddedCallback(new ContactAddedCallback() {
-//
-//            public boolean contactAdded(ManifoldPoint cp, com.bulletphysics.collision.dispatch.CollisionObject colObj0,
-//                    int partId0, int index0, com.bulletphysics.collision.dispatch.CollisionObject colObj1, int partId1,
-//                    int index1) {
-//                System.out.println("contact added");
-//                return true;
-//            }
-//        });
-//
-//        BulletGlobals.setContactProcessedCallback(new ContactProcessedCallback() {
-//
-//            public boolean contactProcessed(ManifoldPoint cp, Object body0, Object body1) {
-//                if (body0 instanceof CollisionObject && body1 instanceof CollisionObject) {
-//                    PhysicsCollisionObject node = null, node1 = null;
-//                    CollisionObject rBody0 = (CollisionObject) body0;
-//                    CollisionObject rBody1 = (CollisionObject) body1;
-//                    node = (PhysicsCollisionObject) rBody0.getUserPointer();
-//                    node1 = (PhysicsCollisionObject) rBody1.getUserPointer();
-//                    collisionEvents.add(eventFactory.getEvent(PhysicsCollisionEvent.TYPE_PROCESSED, node, node1, cp));
-//                }
-//                return true;
-//            }
-//        });
-//
-//        BulletGlobals.setContactDestroyedCallback(new ContactDestroyedCallback() {
-//
-//            public boolean contactDestroyed(Object userPersistentData) {
-//                System.out.println("contact destroyed");
-//                return true;
-//            }
-//        });
-//    }
     private void addCollisionEvent_native(PhysicsCollisionObject node, PhysicsCollisionObject node1, long manifoldPointObjectId) {
-//        System.out.println("addCollisionEvent:"+node.getObjectId()+" "+ node1.getObjectId());
         collisionEvents.add(eventFactory.getEvent(PhysicsCollisionEvent.TYPE_PROCESSED, node, node1, manifoldPointObjectId));
     }
 
@@ -313,7 +205,7 @@ public class PhysicsSpace {
     }
 
     /**
-     * updates the physics space, uses maxSteps<br>
+     * updates the physics space, uses maxSteps
      *
      * @param time the current time value
      * @param maxSteps
@@ -732,7 +624,7 @@ public class PhysicsSpace {
 
     /**
      * Adds a listener for a specific collision group, such a listener can
-     * disable collisions when they happen.<br> There can be only one listener
+     * disable collisions when they happen. There can be only one listener
      * per collision group.
      *
      * @param listener
@@ -785,7 +677,7 @@ public class PhysicsSpace {
 //    }
     /**
      * Performs a sweep collision test and returns the results as a list of
-     * PhysicsSweepTestResults<br/> You have to use different Transforms for
+     * PhysicsSweepTestResults You have to use different Transforms for
      * start and end (at least distance > 0.4f). SweepTest will not see a
      * collision if it starts INSIDE an object and is moving AWAY from its
      * center.
@@ -803,7 +695,7 @@ public class PhysicsSpace {
 
     /**
      * Performs a sweep collision test and returns the results as a list of
-     * PhysicsSweepTestResults<br/> You have to use different Transforms for
+     * PhysicsSweepTestResults You have to use different Transforms for
      * start and end (at least distance > 0.4f). SweepTest will not see a
      * collision if it starts INSIDE an object and is moving AWAY from its
      * center.
@@ -885,7 +777,7 @@ public class PhysicsSpace {
     }
 
     /**
-     * sets the accuracy of the physics computation, default=1/60s<br>
+     * sets the accuracy of the physics computation, default=1/60s
      *
      * @param accuracy
      */
@@ -923,7 +815,7 @@ public class PhysicsSpace {
      * Enable debug display for physics.
      *
      * @deprecated in favor of BulletDebugAppState, use
-     * <code>BulletAppState.setDebugEnabled(boolean)</code> to add automatically
+     * BulletAppState.setDebugEnabled(boolean) to add automatically
      * @param manager AssetManager to use to create debug materials
      */
     @Deprecated

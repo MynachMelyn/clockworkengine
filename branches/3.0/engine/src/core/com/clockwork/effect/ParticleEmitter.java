@@ -27,17 +27,17 @@ import com.clockwork.util.TempVars;
 import java.io.IOException;
 
 /**
- * <code>ParticleEmitter</code> is a special kind of geometry which simulates
+ * ParticleEmitter is a special kind of geometry which simulates
  * a particle system.
- * <p>
+ * 
  * Particle emitters can be used to simulate various kinds of phenomena,
  * such as fire, smoke, explosions and much more.
- * <p>
+ * 
  * Particle emitters have many properties which are used to control the 
  * simulation. The interpretation of these properties depends on the 
- * {@link ParticleInfluencer} that has been assigned to the emitter via
- * {@link ParticleEmitter#setParticleInfluencer(com.clockwork.effect.influencers.ParticleInfluencer) }.
- * By default the implementation {@link DefaultParticleInfluencer} is used.
+ * ParticleInfluencer} that has been assigned to the emitter via
+ * ParticleEmitter#setParticleInfluencer(com.clockwork.effect.influencers.ParticleInfluencer) }.
+ * By default the implementation DefaultParticleInfluencer} is used.
  * 
  */
 public class ParticleEmitter extends Geometry {
@@ -216,25 +216,25 @@ public class ParticleEmitter extends Geometry {
     }
 
     /**
-     * Set the {@link ParticleInfluencer} to influence this particle emitter.
+     * Set the ParticleInfluencer} to influence this particle emitter.
      * 
-     * @param particleInfluencer the {@link ParticleInfluencer} to influence 
+     * @param particleInfluencer the ParticleInfluencer} to influence 
      * this particle emitter.
      * 
-     * @see ParticleInfluencer
+     * see ParticleInfluencer
      */
     public void setParticleInfluencer(ParticleInfluencer particleInfluencer) {
         this.particleInfluencer = particleInfluencer;
     }
 
     /**
-     * Returns the {@link ParticleInfluencer} that influences this 
+     * Returns the ParticleInfluencer} that influences this 
      * particle emitter.
      * 
-     * @return the {@link ParticleInfluencer} that influences this 
+     * @return the ParticleInfluencer} that influences this 
      * particle emitter.
      * 
-     * @see ParticleInfluencer
+     * see ParticleInfluencer
      */
     public ParticleInfluencer getParticleInfluencer() {
         return particleInfluencer;
@@ -246,8 +246,8 @@ public class ParticleEmitter extends Geometry {
      * 
      * @return the mesh type used by the particle emitter.
      * 
-     * @see #setMeshType(com.clockwork.effect.ParticleMesh.Type)
-     * @see ParticleEmitter#ParticleEmitter(java.lang.String, com.clockwork.effect.ParticleMesh.Type, int) 
+     * see #setMeshType(com.clockwork.effect.ParticleMesh.Type)
+     * see ParticleEmitter#ParticleEmitter(java.lang.String, com.clockwork.effect.ParticleMesh.Type, int) 
      */
     public ParticleMesh.Type getMeshType() {
         return meshType;
@@ -279,7 +279,7 @@ public class ParticleEmitter extends Geometry {
      * 
      * @return true if particles should spawn in world space. 
      * 
-     * @see ParticleEmitter#setInWorldSpace(boolean) 
+     * see ParticleEmitter#setInWorldSpace(boolean) 
      */
     public boolean isInWorldSpace() {
         return worldSpace;
@@ -288,7 +288,7 @@ public class ParticleEmitter extends Geometry {
     /**
      * Set to true if particles should spawn in world space. 
      * 
-     * <p>If set to true and the particle emitter is moved in the scene,
+     * If set to true and the particle emitter is moved in the scene,
      * then particles that have already spawned won't be effected by this
      * motion. If set to false, the particles will emit in local space
      * and when the emitter is moved, so are all the particles that
@@ -338,10 +338,10 @@ public class ParticleEmitter extends Geometry {
     /**
      * Returns a list of all particles (shouldn't be used in most cases).
      * 
-     * <p>
+     * 
      * This includes both existing and non-existing particles.
-     * The size of the array is set to the <code>numParticles</code> value
-     * specified in the constructor or {@link ParticleEmitter#setNumParticles(int) }
+     * The size of the array is set to the numParticles value
+     * specified in the constructor or ParticleEmitter#setNumParticles(int) }
      * method. 
      * 
      * @return a list of all particles.
@@ -355,7 +355,7 @@ public class ParticleEmitter extends Geometry {
      * 
      * @return the normal which particles are facing. 
      * 
-     * @see ParticleEmitter#setFaceNormal(com.clockwork.math.Vector3f) 
+     * see ParticleEmitter#setFaceNormal(com.clockwork.math.Vector3f) 
      */
     public Vector3f getFaceNormal() {
         if (Vector3f.isValidVector(faceNormal)) {
@@ -368,13 +368,13 @@ public class ParticleEmitter extends Geometry {
     /**
      * Sets the normal which particles are facing. 
      * 
-     * <p>By default, particles
+     * By default, particles
      * will face the camera, but for some effects (e.g shockwave) it may
      * be necessary to face a specific direction instead. To restore
-     * normal functionality, provide <code>null</code> as the argument for
-     * <code>faceNormal</code>.
+     * normal functionality, provide null as the argument for
+     * faceNormal.
      *
-     * @param faceNormal The normals particles should face, or <code>null</code>
+     * @param faceNormal The normals particles should face, or null
      * if particles should face the camera.
      */
     public void setFaceNormal(Vector3f faceNormal) {
@@ -390,7 +390,7 @@ public class ParticleEmitter extends Geometry {
      * 
      * @return the rotation speed in radians/sec for particles.
      * 
-     * @see ParticleEmitter#setRotateSpeed(float) 
+     * see ParticleEmitter#setRotateSpeed(float) 
      */
     public float getRotateSpeed() {
         return rotateSpeed;
@@ -414,7 +414,7 @@ public class ParticleEmitter extends Geometry {
      * @return true if every particle spawned
      * should have a random facing angle. 
      * 
-     * @see ParticleEmitter#setRandomAngle(boolean) 
+     * see ParticleEmitter#setRandomAngle(boolean) 
      */
     public boolean isRandomAngle() {
         return randomAngle;
@@ -438,7 +438,7 @@ public class ParticleEmitter extends Geometry {
      * @return True if every particle spawned should get a random
      * image.
      * 
-     * @see ParticleEmitter#setSelectRandomImage(boolean) 
+     * see ParticleEmitter#setSelectRandomImage(boolean) 
      */
     public boolean isSelectRandomImage() {
         return selectRandomImage;
@@ -449,9 +449,9 @@ public class ParticleEmitter extends Geometry {
      * should get a random image from a pool of images constructed from
      * the texture, with X by Y possible images.
      * 
-     * <p>By default, X and Y are equal
+     * By default, X and Y are equal
      * to 1, thus allowing only 1 possible image to be selected, but if the
-     * particle is configured with multiple images by using {@link ParticleEmitter#setImagesX(int) }
+     * particle is configured with multiple images by using ParticleEmitter#setImagesX(int) }
      * and {#link ParticleEmitter#setImagesY(int) } methods, then multiple images
      * can be selected. Setting to false will cause each particle to have an animation
      * of images displayed, starting at image 1, and going until image X*Y when
@@ -469,7 +469,7 @@ public class ParticleEmitter extends Geometry {
      * 
      * @return True if particles spawned should face their velocity.
      * 
-     * @see ParticleEmitter#setFacingVelocity(boolean) 
+     * see ParticleEmitter#setFacingVelocity(boolean) 
      */
     public boolean isFacingVelocity() {
         return facingVelocity;
@@ -479,7 +479,7 @@ public class ParticleEmitter extends Geometry {
      * Set to true if particles spawned should face
      * their velocity (or direction to which they are moving towards).
      * 
-     * <p>This is typically used for e.g spark effects.
+     * This is typically used for e.g spark effects.
      * 
      * @param followVelocity True if particles spawned should face their velocity.
      * 
@@ -493,7 +493,7 @@ public class ParticleEmitter extends Geometry {
      * 
      * @return the end color of the particles spawned.
      * 
-     * @see ParticleEmitter#setEndColor(com.clockwork.math.ColorRGBA) 
+     * see ParticleEmitter#setEndColor(com.clockwork.math.ColorRGBA) 
      */
     public ColorRGBA getEndColor() {
         return endColor;
@@ -502,7 +502,7 @@ public class ParticleEmitter extends Geometry {
     /**
      * Set the end color of the particles spawned.
      * 
-     * <p>The
+     * The
      * particle color at any time is determined by blending the start color
      * and end color based on the particle's current time of life relative
      * to its end of life.
@@ -518,7 +518,7 @@ public class ParticleEmitter extends Geometry {
      * 
      * @return the end size of the particles spawned.
      * 
-     * @see ParticleEmitter#setEndSize(float) 
+     * see ParticleEmitter#setEndSize(float) 
      */
     public float getEndSize() {
         return endSize;
@@ -527,7 +527,7 @@ public class ParticleEmitter extends Geometry {
     /**
      * Set the end size of the particles spawned.
      * 
-     * <p>The
+     * The
      * particle size at any time is determined by blending the start size
      * and end size based on the particle's current time of life relative
      * to its end of life.
@@ -543,7 +543,7 @@ public class ParticleEmitter extends Geometry {
      * 
      * @return the gravity vector.
      * 
-     * @see ParticleEmitter#setGravity(com.clockwork.math.Vector3f) 
+     * see ParticleEmitter#setGravity(com.clockwork.math.Vector3f) 
      */
     public Vector3f getGravity() {
         return gravity;
@@ -576,7 +576,7 @@ public class ParticleEmitter extends Geometry {
      * 
      * @return the high value of life.
      * 
-     * @see ParticleEmitter#setHighLife(float) 
+     * see ParticleEmitter#setHighLife(float) 
      */
     public float getHighLife() {
         return highLife;
@@ -585,7 +585,7 @@ public class ParticleEmitter extends Geometry {
     /**
      * Set the high value of life.
      * 
-     * <p>The particle's lifetime/expiration
+     * The particle's lifetime/expiration
      * is determined by randomly selecting a time between low life and high life.
      * 
      * @param highLife the high value of life.
@@ -599,7 +599,7 @@ public class ParticleEmitter extends Geometry {
      * 
      * @return the number of images along the X axis (width).
      * 
-     * @see ParticleEmitter#setImagesX(int) 
+     * see ParticleEmitter#setImagesX(int) 
      */
     public int getImagesX() {
         return imagesX;
@@ -608,9 +608,9 @@ public class ParticleEmitter extends Geometry {
     /**
      * Set the number of images along the X axis (width).
      * 
-     * <p>To determine
+     * To determine
      * how multiple particle images are selected and used, see the
-     * {@link ParticleEmitter#setSelectRandomImage(boolean) } method.
+     * ParticleEmitter#setSelectRandomImage(boolean) } method.
      * 
      * @param imagesX the number of images along the X axis (width).
      */
@@ -624,7 +624,7 @@ public class ParticleEmitter extends Geometry {
      * 
      * @return the number of images along the Y axis (height).
      * 
-     * @see ParticleEmitter#setImagesY(int) 
+     * see ParticleEmitter#setImagesY(int) 
      */
     public int getImagesY() {
         return imagesY;
@@ -633,8 +633,8 @@ public class ParticleEmitter extends Geometry {
     /**
      * Set the number of images along the Y axis (height).
      * 
-     * <p>To determine how multiple particle images are selected and used, see the
-     * {@link ParticleEmitter#setSelectRandomImage(boolean) } method.
+     * To determine how multiple particle images are selected and used, see the
+     * ParticleEmitter#setSelectRandomImage(boolean) } method.
      * 
      * @param imagesY the number of images along the Y axis (height).
      */
@@ -648,7 +648,7 @@ public class ParticleEmitter extends Geometry {
      * 
      * @return the low value of life.
      * 
-     * @see ParticleEmitter#setLowLife(float) 
+     * see ParticleEmitter#setLowLife(float) 
      */
     public float getLowLife() {
         return lowLife;
@@ -657,7 +657,7 @@ public class ParticleEmitter extends Geometry {
     /**
      * Set the low value of life.
      * 
-     * <p>The particle's lifetime/expiration
+     * The particle's lifetime/expiration
      * is determined by randomly selecting a time between low life and high life.
      * 
      * @param lowLife the low value of life.
@@ -673,7 +673,7 @@ public class ParticleEmitter extends Geometry {
      * @return the number of particles to spawn per
      * second.
      * 
-     * @see ParticleEmitter#setParticlesPerSec(float) 
+     * see ParticleEmitter#setParticlesPerSec(float) 
      */
     public float getParticlesPerSec() {
         return particlesPerSec;
@@ -696,7 +696,7 @@ public class ParticleEmitter extends Geometry {
      * 
      * @return the start color of the particles spawned.
      * 
-     * @see ParticleEmitter#setStartColor(com.clockwork.math.ColorRGBA) 
+     * see ParticleEmitter#setStartColor(com.clockwork.math.ColorRGBA) 
      */
     public ColorRGBA getStartColor() {
         return startColor;
@@ -705,7 +705,7 @@ public class ParticleEmitter extends Geometry {
     /**
      * Set the start color of the particles spawned.
      * 
-     * <p>The particle color at any time is determined by blending the start color
+     * The particle color at any time is determined by blending the start color
      * and end color based on the particle's current time of life relative
      * to its end of life.
      * 
@@ -720,7 +720,7 @@ public class ParticleEmitter extends Geometry {
      * 
      * @return the start color of the particles spawned.
      * 
-     * @see ParticleEmitter#setStartSize(float) 
+     * see ParticleEmitter#setStartSize(float) 
      */
     public float getStartSize() {
         return startSize;
@@ -729,7 +729,7 @@ public class ParticleEmitter extends Geometry {
     /**
      * Set the start size of the particles spawned.
      * 
-     * <p>The particle size at any time is determined by blending the start size
+     * The particle size at any time is determined by blending the start size
      * and end size based on the particle's current time of life relative
      * to its end of life.
      * 
@@ -750,7 +750,7 @@ public class ParticleEmitter extends Geometry {
     /**
      * @param initialVelocity Set the initial velocity a particle is spawned with,
      * the initial velocity given in the parameter will be varied according
-     * to the velocity variation set in {@link ParticleEmitter#setVelocityVariation(float) }.
+     * to the velocity variation set in ParticleEmitter#setVelocityVariation(float) }.
      * A particle will move toward its velocity unless it is effected by the
      * gravity.
      *
@@ -758,8 +758,8 @@ public class ParticleEmitter extends Geometry {
      * This method is deprecated. 
      * Use ParticleEmitter.getParticleInfluencer().setInitialVelocity(initialVelocity); instead.
      *
-     * @see ParticleEmitter#setVelocityVariation(float) 
-     * @see ParticleEmitter#setGravity(float)
+     * see ParticleEmitter#setVelocityVariation(float) 
+     * see ParticleEmitter#setGravity(float)
      */
     @Deprecated
     public void setInitialVelocity(Vector3f initialVelocity) {
@@ -779,9 +779,9 @@ public class ParticleEmitter extends Geometry {
 
     /**
      * @param variation Set the variation by which the initial velocity
-     * of the particle is determined. <code>variation</code> should be a value
+     * of the particle is determined. variation should be a value
      * from 0 to 1, where 0 means particles are to spawn with exactly
-     * the velocity given in {@link ParticleEmitter#setStartVel(com.clockwork.math.Vector3f) },
+     * the velocity given in ParticleEmitter#setStartVel(com.clockwork.math.Vector3f) },
      * and 1 means particles are to spawn with a completely random velocity.
      * 
      * @deprecated
@@ -881,7 +881,7 @@ public class ParticleEmitter extends Geometry {
      * Kills the particle at the given index.
      * 
      * @param index The index of the particle to kill
-     * @see #getParticles() 
+     * see #getParticles() 
      */
     public void killParticle(int index){
         freeParticle(index);
@@ -997,7 +997,7 @@ public class ParticleEmitter extends Geometry {
     /**
      * Set to enable or disable the particle emitter
      * 
-     * <p>When a particle is
+     * When a particle is
      * disabled, it will be "frozen in time" and not update.
      * 
      * @param enabled True to enable the particle emitter
@@ -1011,7 +1011,7 @@ public class ParticleEmitter extends Geometry {
      * 
      * @return True if a particle emitter is enabled for update.
      * 
-     * @see ParticleEmitter#setEnabled(boolean) 
+     * see ParticleEmitter#setEnabled(boolean) 
      */
     public boolean isEnabled() {
         return enabled;

@@ -15,8 +15,8 @@ import java.io.InputStream;
 import java.nio.ByteBuffer;
 
 /**
- * <code>TextureManager</code> provides static methods for building a
- * <code>Texture</code> object. Typically, the information supplied is the
+ * TextureManager provides static methods for building a
+ * Texture object. Typically, the information supplied is the
  * filename and the texture properties.
  * 
  * @version $Id: TGALoader.java 4131 2009-03-19 20:15:28Z blaine.dev $
@@ -57,7 +57,7 @@ public final class TGALoader implements AssetLoader {
     }
 
     /**
-     * <code>loadImage</code> is a manual image loader which is entirely
+     * loadImage is a manual image loader which is entirely
      * independent of AWT. OUT: RGB888 or RGBA8888 Image object
      * 
      * 
@@ -66,7 +66,7 @@ public final class TGALoader implements AssetLoader {
      *            InputStream of an uncompressed 24b RGB or 32b RGBA TGA
      * @param flip
      *            Flip the image vertically
-     * @return <code>Image</code> object that contains the
+     * @return Image object that contains the
      *         image, either as a RGB888 or RGBA8888
      * @throws java.io.IOException
      */
@@ -471,7 +471,7 @@ public final class TGALoader implements AssetLoader {
     }
 
     /**
-     * <code>flipEndian</code> is used to flip the endian bit of the header
+     * flipEndian is used to flip the endian bit of the header
      * file.
      * 
      * @param signedShort

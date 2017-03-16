@@ -970,7 +970,7 @@ final class BinaryInputCapsule implements InputCapsule {
             return null;
 
         /*
-         * @see ISSUE 276
+         * see ISSUE 276
          *
          * We'll transfer the bytes into a seperate byte array.
          * While we do that we'll take the opportunity to check if the byte data is valid UTF-8.

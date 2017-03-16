@@ -5,7 +5,7 @@ import java.nio.Buffer;
 import java.nio.IntBuffer;
 
 /**
- * IndexBuffer implementation for {@link IntBuffer}s.
+ * IndexBuffer implementation for IntBuffer}s.
  * 
  */
 public class IndexIntBuffer extends IndexBuffer {

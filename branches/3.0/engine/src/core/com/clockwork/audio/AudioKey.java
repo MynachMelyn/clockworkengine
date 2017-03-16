@@ -12,7 +12,7 @@ import com.clockwork.export.OutputCapsule;
 import java.io.IOException;
 
 /**
- * <code>AudioKey</code> is extending AssetKey by holding stream flag.
+ * AudioKey is extending AssetKey by holding stream flag.
  *
  */
 public class AudioKey extends AssetKey<AudioData> {
@@ -66,8 +66,8 @@ public class AudioKey extends AssetKey<AudioData> {
     }
 
     /**
-     * @return True if the loaded audio should be a {@link AudioStream} or
-     * false if it should be a {@link AudioBuffer}.
+     * @return True if the loaded audio should be a AudioStream} or
+     * false if it should be a AudioBuffer}.
      */
     public boolean isStream() {
         return stream;

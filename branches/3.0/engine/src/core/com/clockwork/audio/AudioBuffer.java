@@ -7,9 +7,9 @@ import com.clockwork.util.NativeObject;
 import java.nio.ByteBuffer;
 
 /**
- * An <code>AudioBuffer</code> is an implementation of AudioData
+ * An AudioBuffer is an implementation of AudioData
  * where the audio is buffered (stored in memory). All parts of it
- * are accessible at any time. <br/>
+ * are accessible at any time. 
  * AudioBuffers are useful for short sounds, like effects, etc.
  *
  */

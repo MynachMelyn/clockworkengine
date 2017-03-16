@@ -31,7 +31,7 @@ public class CursorLoader implements AssetLoader {
 
     /**
      * Loads and return a cursor file of one of the following format: .ani, .cur and .ico.
-     * @param info The {@link AssetInfo} describing the cursor file.
+     * @param info The AssetInfo} describing the cursor file.
      * @return A JmeCursor representation of the LWJGL's Cursor.
      * @throws IOException if the file is not found.
      */

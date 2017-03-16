@@ -7,44 +7,44 @@ import com.clockwork.renderer.RenderManager;
 /**
  * AppState represents continously executing code inside the main loop.
  * 
- * An <code>AppState</code> can track when it is attached to the 
- * {@link AppStateManager} or when it is detached. 
+ * An AppState can track when it is attached to the 
+ * AppStateManager or when it is detached. 
  * 
- * <br/><code>AppState</code>s are initialized in the render thread, upon a call to 
- * {@link AppState#initialize(com.clockwork.app.state.AppStateManager, com.clockwork.app.Application) }
- * and are de-initialized upon a call to {@link AppState#cleanup()}. 
+ * AppStates are initialised in the render thread, upon a call to 
+ * AppState#initialise(com.clockwork.app.state.AppStateManager, com.clockwork.app.Application)
+ * and are de-initialised upon a call to AppState#cleanup(). 
  * Implementations should return the correct value with a call to 
- * {@link AppState#isInitialized() } as specified above.<br/>
+ * AppState#isInitialized() as specified above.
  * 
- * <ul>
- * <li>If a detached AppState is attached then <code>initialize()</code> will be called
+ * 
+ * If a detached AppState is attached then initialise() will be called
  * on the following render pass.
- * </li>
- * <li>If an attached AppState is detached then <code>cleanup()</code> will be called
+ * 
+ * If an attached AppState is detached then cleanup() will be called
  * on the following render pass.
- * </li>
- * <li>If you attach an already-attached <code>AppState</code> then the second attach
+ * 
+ * If you attach an already-attached AppState then the second attach
  * is a no-op and will return false.
- * </li>
- * <li>If you both attach and detach an <code>AppState</code> within one frame then
- * neither <code>initialize()</code> or <code>cleanup()</code> will be called,
+ * 
+ * If you both attach and detach an AppState within one frame then
+ * neither initialise() or cleanup() will be called,
  * although if either is called both will be.
- * </li>
- * <li>If you both detach and then re-attach an <code>AppState</code> within one frame
- * then on the next update pass its <code>cleanup()</code> and <code>initialize()</code>
+ * 
+ * If you both detach and then re-attach an AppState within one frame
+ * then on the next update pass its cleanup() and initialise()
  * methods will be called in that order.
- * </li>
- * </ul>
+ * 
+ * 
  */
 public interface AppState {
 
     /**
-     * Called by {@link AppStateManager} when transitioning this {@code AppState}
-     * from <i>initializing</i> to <i>running</i>.<br>
+     * Called by AppStateManager} when transitioning this AppState}
+     * from <i>initialising</i> to <i>running</i>.
      * This will happen on the next iteration through the update loop after
-     * {@link AppStateManager#attach()} was called.
-     * <p>
-     * <code>AppStateManager</code> will call this only from the update loop
+     * AppStateManager#attach()} was called.
+     * 
+     * AppStateManager will call this only from the update loop
      * inside the rendering thread. This means is it safe to modify the scene 
      * graph from this method.
      *
@@ -54,38 +54,38 @@ public interface AppState {
     public void initialize(AppStateManager stateManager, Application app);
 
     /**
-     * @return True if <code>initialize()</code> was called on the state,
+     * @return True if initialise() was called on the state,
      * false otherwise.
      */
     public boolean isInitialized();
 
     /**
-     * Enable or disable the functionality of the <code>AppState</code>.
+     * Enable or disable the functionality of the AppState.
      * The effect of this call depends on implementation. An 
-     * <code>AppState</code> starts as being enabled by default.
-     * A disabled <code>AppState</code>s does not get calls to
-     * {@link #update(float)}, {@link #render(RenderManager)}, or
-     * {@link #postRender()} from its {@link AppStateManager}.
+     * AppState starts as being enabled by default.
+     * A disabled AppStates does not get calls to
+     * #update(float)}, #render(RenderManager)}, or
+     * #postRender()} from its AppStateManager}.
      * 
      * @param active activate the AppState or not.
      */
     public void setEnabled(boolean active);
     
     /**
-     * @return True if the <code>AppState</code> is enabled, false otherwise.
+     * @return True if the AppState is enabled, false otherwise.
      * 
-     * @see AppState#setEnabled(boolean)
+     * see AppState#setEnabled(boolean)
      */
     public boolean isEnabled();
 
     /**
-     * Called by {@link AppStateManager#attach()} when transitioning this
-     * <code>AppState</code> from <i>detached</i> to <i>initializing</i>.
-     * <p>
+     * Called by AppStateManager#attach()} when transitioning this
+     * AppState from <i>detached</i> to <i>initialising</i>.
+     * 
      * There is no assumption about the thread from which this function is
-     * called, therefore it is <b>unsafe</b> to modify the scene graph
+     * called, therefore it is unsafe to modify the scene graph
      * from this method. Please use 
-     * {@link #initialize(com.clockwork.app.state.AppStateManager, com.clockwork.app.Application) }
+     * #initialise(com.clockwork.app.state.AppStateManager, com.clockwork.app.Application) }
      * instead.
      *
      * @param stateManager State manager to which the state was attached to.
@@ -93,13 +93,13 @@ public interface AppState {
     public void stateAttached(AppStateManager stateManager);
 
    /**
-    * Called by {@link AppStateManager#detach()} when transitioning this
-    * <code>AppState</code> from <i>running</i> to <i>terminating</i>.
-    * <p>
+    * Called by AppStateManager#detach()} when transitioning this
+    * AppState from <i>running</i> to <i>terminating</i>.
+    * 
     * There is no assumption about the thread from which this function is
-    * called, therefore it is <b>unsafe</b> to modify the scene graph
+    * called, therefore it is unsafe to modify the scene graph
     * from this method. Please use 
-    * {@link #cleanup() }
+    * #cleanup() }
     * instead.
     * 
     * @param stateManager The state manager from which the state was detached from.
@@ -107,8 +107,8 @@ public interface AppState {
     public void stateDetached(AppStateManager stateManager);
 
     /**
-     * Called to update the <code>AppState</code>. This method will be called 
-     * every render pass if the <code>AppState</code> is both attached and enabled.
+     * Called to update the AppState. This method will be called 
+     * every render pass if the AppState is both attached and enabled.
      *
      * @param tpf Time since the last call to update(), in seconds.
      */
@@ -116,7 +116,7 @@ public interface AppState {
 
     /**
      * Render the state. This method will be called 
-     * every render pass if the <code>AppState</code> is both attached and enabled.
+     * every render pass if the AppState is both attached and enabled.
      *
      * @param rm RenderManager
      */
@@ -124,16 +124,16 @@ public interface AppState {
 
     /**
      * Called after all rendering commands are flushed. This method will be called 
-     * every render pass if the <code>AppState</code> is both attached and enabled.
+     * every render pass if the AppState is both attached and enabled.
      */
     public void postRender();
 
     /**
-     * Called by {@link AppStateManager} when transitioning this
-     * <code>AppState</code> from <i>terminating</i> to <i>detached</i>. This
-     * method is called the following render pass after the <code>AppState</code> has 
+     * Called by AppStateManager} when transitioning this
+     * AppState from <i>terminating</i> to <i>detached</i>. This
+     * method is called the following render pass after the AppState has 
      * been detached and is always called once and only once for each time
-     * <code>initialize()</code> is called. Either when the <code>AppState</code>
+     * initialise() is called. Either when the AppState
      * is detached or when the application terminates (if it terminates normally).
      */
     public void cleanup();

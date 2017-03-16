@@ -16,17 +16,17 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * <p>PhysicsVehicleNode - Special PhysicsNode that implements vehicle functions</p>
- * <p>
- * <i>From bullet manual:</i><br>
+ * PhysicsVehicleNode - Special PhysicsNode that implements vehicle functions
+ * 
+ * <i>From bullet manual:</i>
  * For most vehicle simulations, it is recommended to use the simplified Bullet
  * vehicle model as provided in btRaycastVehicle. Instead of simulation each wheel
  * and chassis as separate rigid bodies, connected by constraints, it uses a simplified model.
- * This simplified model has many benefits, and is widely used in commercial driving games.<br>
+ * This simplified model has many benefits, and is widely used in commercial driving games.
  * The entire vehicle is represented as a single rigidbody, the chassis.
  * The collision detection of the wheels is approximated by ray casts,
  * and the tire friction is a basic anisotropic friction model.
- * </p>
+ * 
  */
 public class PhysicsVehicle extends PhysicsRigidBody {
 
@@ -190,7 +190,7 @@ public class PhysicsVehicle extends PhysicsRigidBody {
 
     /**
      * Use before adding wheels, this is the default used when adding wheels.
-     * After adding the wheel, use direct wheel access.<br>
+     * After adding the wheel, use direct wheel access.
      * The coefficient of friction between the tyre and the ground.
      * Should be about 0.8 for realistic cars, but can increased for better handling.
      * Set large (10000.0) for kart racers
@@ -230,7 +230,7 @@ public class PhysicsVehicle extends PhysicsRigidBody {
 
     /**
      * Use before adding wheels, this is the default used when adding wheels.
-     * After adding the wheel, use direct wheel access.<br>
+     * After adding the wheel, use direct wheel access.
      * The maximum distance the suspension can be compressed (centimetres)
      * @param maxSuspensionTravelCm the maxSuspensionTravelCm to set
      */
@@ -279,10 +279,10 @@ public class PhysicsVehicle extends PhysicsRigidBody {
 
     /**
      * Use before adding wheels, this is the default used when adding wheels.
-     * After adding the wheel, use direct wheel access.<br>
+     * After adding the wheel, use direct wheel access.
      * The damping coefficient for when the suspension is compressed.
-     * Set to k * 2.0 * FastMath.sqrt(m_suspensionStiffness) so k is proportional to critical damping.<br>
-     * k = 0.0 undamped & bouncy, k = 1.0 critical damping<br>
+     * Set to k * 2.0 * FastMath.sqrt(m_suspensionStiffness) so k is proportional to critical damping.
+     * k = 0.0 undamped & bouncy, k = 1.0 critical damping
      * 0.1 to 0.3 are good values
      * @param suspensionCompression the suspensionCompression to set
      */
@@ -292,8 +292,8 @@ public class PhysicsVehicle extends PhysicsRigidBody {
 
     /**
      * The damping coefficient for when the suspension is compressed.
-     * Set to k * 2.0 * FastMath.sqrt(m_suspensionStiffness) so k is proportional to critical damping.<br>
-     * k = 0.0 undamped & bouncy, k = 1.0 critical damping<br>
+     * Set to k * 2.0 * FastMath.sqrt(m_suspensionStiffness) so k is proportional to critical damping.
+     * k = 0.0 undamped & bouncy, k = 1.0 critical damping
      * 0.1 to 0.3 are good values
      * @param wheel
      * @param suspensionCompression
@@ -311,7 +311,7 @@ public class PhysicsVehicle extends PhysicsRigidBody {
 
     /**
      * Use before adding wheels, this is the default used when adding wheels.
-     * After adding the wheel, use direct wheel access.<br>
+     * After adding the wheel, use direct wheel access.
      * The damping coefficient for when the suspension is expanding.
      * See the comments for setSuspensionCompression for how to set k.
      * @param suspensionDamping the suspensionDamping to set
@@ -339,7 +339,7 @@ public class PhysicsVehicle extends PhysicsRigidBody {
 
     /**
      * Use before adding wheels, this is the default used when adding wheels.
-     * After adding the wheel, use direct wheel access.<br>
+     * After adding the wheel, use direct wheel access.
      * The stiffness constant for the suspension.  10.0 - Offroad buggy, 50.0 - Sports car, 200.0 - F1 Car
      * @param suspensionStiffness 
      */

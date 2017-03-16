@@ -18,7 +18,7 @@ import java.nio.ByteBuffer;
 import java.util.ArrayList;
 
 /**
- * <code>SkyFactory</code> is used to create spatials that can
+ * SkyFactory is used to create spatials that can
  * be attached to the scene to display a sky image in the background.
  * 
  */
@@ -35,15 +35,15 @@ public class SkyFactory {
      * @param normalScale The normal scale is multiplied by the 3D normal to get
      * a texture coordinate. Use Vector3f.UNIT_XYZ to not apply and
      * transformation to the normal.
-     * @param sphereMap determines how the texture is used:<br>
-     * <ul>
-     * <li>true: The texture is a Texture2D with the pixels arranged for
+     * @param sphereMap determines how the texture is used:
+     * 
+     * true: The texture is a Texture2D with the pixels arranged for
      * <a href="http://en.wikipedia.org/wiki/Sphere_mapping">sphere
-     * mapping</a>.</li>
-     * <li>false: The texture is either a TextureCubeMap or Texture2D. If it is
+     * mapping</a>.
+     * false: The texture is either a TextureCubeMap or Texture2D. If it is
      * a Texture2D then the image is taken from it and is inserted into a
-     * TextureCubeMap</li>
-     * </ul>
+     * TextureCubeMap
+     * 
      * @return a new spatial representing the sky, ready to be attached to the
      * scene graph
      */
@@ -60,15 +60,15 @@ public class SkyFactory {
      * @param normalScale The normal scale is multiplied by the 3D normal to get
      * a texture coordinate. Use Vector3f.UNIT_XYZ to not apply and
      * transformation to the normal.
-     * @param sphereMap determines how the texture is used:<br>
-     * <ul>
-     * <li>true: The texture is a Texture2D with the pixels arranged for
+     * @param sphereMap determines how the texture is used:
+     * 
+     * true: The texture is a Texture2D with the pixels arranged for
      * <a href="http://en.wikipedia.org/wiki/Sphere_mapping">sphere
-     * mapping</a>.</li>
-     * <li>false: The texture is either a TextureCubeMap or Texture2D. If it is
+     * mapping</a>.
+     * false: The texture is either a TextureCubeMap or Texture2D. If it is
      * a Texture2D then the image is taken from it and is inserted into a
-     * TextureCubeMap</li>
-     * </ul>
+     * TextureCubeMap
+     * 
      * @param sphereRadius the sky sphere's radius: for the sky to be visible,
      * its radius must fall between the near and far planes of the camera's
      * frustrum

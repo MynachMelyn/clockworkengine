@@ -7,7 +7,7 @@ import com.clockwork.bounding.BoundingVolume;
 import com.clockwork.math.FastMath;
 
 /**
- * <code>AreaUtils</code> is used to calculate the area of various objects, such as bounding volumes.  These
+ * AreaUtils is used to calculate the area of various objects, such as bounding volumes.  These
  * functions are very loose approximations.
  * @version $Id: AreaUtils.java 4131 2009-03-19 20:15:28Z blaine.dev $
  */

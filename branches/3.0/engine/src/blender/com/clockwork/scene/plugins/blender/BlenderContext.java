@@ -453,7 +453,7 @@ public class BlenderContext {
 
     /**
      * This method returns the mesh context for the given mesh old memory
-     * address. If no context exists then <b>null</b> is returned.
+     * address. If no context exists then null is returned.
      * 
      * @param meshOMA
      *            the mesh's old memory address
@@ -478,7 +478,7 @@ public class BlenderContext {
 
     /**
      * This method returns the bone context for the given bone old memory
-     * address. If no context exists then <b>null</b> is returned.
+     * address. If no context exists then null is returned.
      * 
      * @param boneOMA
      *            the bone's old memory address

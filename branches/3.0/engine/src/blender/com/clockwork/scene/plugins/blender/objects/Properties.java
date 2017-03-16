@@ -194,13 +194,13 @@ public class Properties implements Cloneable {
      * This method returns the same as getValue if the current property is of
      * other type than IDP_GROUP and its name matches 'propertyName' param. If
      * this property is a group property the method tries to find subproperty
-     * value of the given name. The first found value is returnes os <b>use this
-     * method wisely</b>. If no property of a given name is foung - <b>null</b>
+     * value of the given name. The first found value is returnes os use this
+     * method wisely. If no property of a given name is foung - null
      * is returned.
      * 
      * @param propertyName
      *            the name of the property
-     * @return found property value or <b>null</b>
+     * @return found property value or null
      */
     @SuppressWarnings("unchecked")
     public Object findValue(String propertyName) {

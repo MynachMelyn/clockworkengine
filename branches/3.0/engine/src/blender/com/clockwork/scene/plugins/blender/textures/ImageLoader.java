@@ -58,7 +58,7 @@ import java.util.logging.Logger;
      * @param inputStream
      *            the input stream we read the image from
      * @param imageType
-     *            the type of the image {@link ImageType}
+     *            the type of the image ImageType}
      * @param flipY
      *            if the image should be flipped (does not work with DirectX image)
      * @return loaded image or null if it could not be loaded

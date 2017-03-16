@@ -9,8 +9,8 @@ import java.util.HashSet;
 
 /**
  * The statistics class allows tracking of real-time rendering statistics.
- * <p>
- * The <code>Statistics</code> can be retrieved by using {@link Renderer#getStatistics() }.
+ * 
+ * The Statistics can be retrieved by using Renderer#getStatistics() }.
  * 
  */
 public class Statistics {
@@ -38,7 +38,7 @@ public class Statistics {
      * 
      * @return a list of labels corresponding to each statistic.
      * 
-     * @see #getData(int[]) 
+     * see #getData(int[]) 
      */
     public String[] getLabels(){
         return new String[]{ "Vertices",
@@ -64,7 +64,7 @@ public class Statistics {
     /**
      * Retrieves the statistics data into the given array.
      * The array should be as large as the array given in 
-     * {@link #getLabels() }.
+     * #getLabels() }.
      * 
      * @param data The data array to write to
      */

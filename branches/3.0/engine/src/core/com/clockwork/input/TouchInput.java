@@ -45,7 +45,7 @@ public interface TouchInput extends Input {
     
     /**
      * Get if mouse events are generated
-     * @deprecated Use {@link #isSimulateMouse() }.
+     * @deprecated Use #isSimulateMouse() }.
      */
     @Deprecated
     public boolean getSimulateMouse();
@@ -64,7 +64,7 @@ public interface TouchInput extends Input {
     
     /**
      * Set if historic android events should be transmitted, can be used to get better performance and less mem
-     * @see <a href="http://developer.android.com/reference/android/view/MotionEvent.html#getHistoricalX%28int,%20int%29">
+     * see <a href="http://developer.android.com/reference/android/view/MotionEvent.html#getHistoricalX%28int,%20int%29">
      * http://developer.android.com/reference/android/view/MotionEvent.html#getHistoricalX%28int,%20int%29</a>
      * @param dontSendHistory turn of historic events if true, false else and default
      */

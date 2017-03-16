@@ -15,40 +15,40 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * The <code>InputManager</code> is responsible for converting input events
+ * The InputManager is responsible for converting input events
  * received from the Key, Mouse and Joy Input implementations into an
  * abstract, input device independent representation that user code can use.
- * <p>
- * By default an <code>InputManager</code> is included with every Application instance for use
+ * 
+ * By default an InputManager is included with every Application instance for use
  * in user code to query input, unless the Application is created as headless
  * or with input explicitly disabled.
- * <p>
- * The input manager has two concepts, a {@link Trigger} and a mapping.
+ * 
+ * The input manager has two concepts, a Trigger} and a mapping.
  * A trigger represents a specific input trigger, such as a key button,
  * or a mouse axis. A mapping represents a link onto one or several triggers,
  * when the appropriate trigger is activated (e.g. a key is pressed), the
  * mapping will be invoked. Any listeners registered to receive an event
  * from the mapping will have an event raised.
- * <p>
- * There are two types of events that {@link InputListener input listeners}
- * can receive, one is {@link ActionListener#onAction(java.lang.String, boolean, float) action}
- * events and another is {@link AnalogListener#onAnalog(java.lang.String, float, float) analog}
+ * 
+ * There are two types of events that InputListener input listeners}
+ * can receive, one is ActionListener#onAction(java.lang.String, boolean, float) action}
+ * events and another is AnalogListener#onAnalog(java.lang.String, float, float) analog}
  * events.
- * <p>
- * <code>onAction</code> events are raised when the specific input
- * activates or deactivates. For a digital input such as key press, the <code>onAction()</code>
- * event will be raised with the <code>isPressed</code> argument equal to true,
- * when the key is released, <code>onAction</code> is called again but this time
- * with the <code>isPressed</code> argument set to false.
- * For analog inputs, the <code>onAction</code> method will be called any time
+ * 
+ * onAction events are raised when the specific input
+ * activates or deactivates. For a digital input such as key press, the onAction()
+ * event will be raised with the isPressed argument equal to true,
+ * when the key is released, onAction is called again but this time
+ * with the isPressed argument set to false.
+ * For analog inputs, the onAction method will be called any time
  * the input is non-zero, however an exception to this is for joystick axis inputs,
- * which are only called when the input is above the {@link InputManager#setAxisDeadZone(float) dead zone}.
- * <p>
- * <code>onAnalog</code> events are raised every frame while the input is activated.
+ * which are only called when the input is above the InputManager#setAxisDeadZone(float) dead zone}.
+ * 
+ * onAnalog events are raised every frame while the input is activated.
  * For digital inputs, every frame that the input is active will cause the
- * <code>onAnalog</code> method to be called, the argument <code>value</code>
+ * onAnalog method to be called, the argument value
  * argument will equal to the frame's time per frame (TPF) value but only
- * for digital inputs. For analog inputs however, the <code>value</code> argument
+ * for digital inputs. For analog inputs however, the value argument
  * will equal the actual analog value.
  */
 public class InputManager implements RawInputListener {
@@ -91,7 +91,7 @@ public class InputManager implements RawInputListener {
     /**
      * Initializes the InputManager.
      *
-     * <p>This should only be called internally in {@link Application}.
+     * This should only be called internally in Application}.
      *
      * @param mouse
      * @param keys
@@ -376,11 +376,11 @@ public class InputManager implements RawInputListener {
     /**
      * Sets the mouse cursor image or animation.
      * Set cursor to null to show default system cursor.
-     * To hide the cursor completely, use {@link #setCursorVisible(boolean) }.
+     * To hide the cursor completely, use #setCursorVisible(boolean) }.
      *
      * @param jmeCursor The cursor to set, or null to reset to system cursor.
      *
-     * @see JmeCursor
+     * see JmeCursor
      */
     public void setMouseCursor(JmeCursor jmeCursor) {
         mouse.setNativeCursor(jmeCursor);
@@ -440,9 +440,9 @@ public class InputManager implements RawInputListener {
     /**
      * Set the deadzone for joystick axes.
      *
-     * <p>{@link ActionListener#onAction(java.lang.String, boolean, float) }
+     * ActionListener#onAction(java.lang.String, boolean, float) }
      * events will only be raised if the joystick axis value is greater than
-     * the <code>deadZone</code>.
+     * the deadZone.
      *
      * @param deadZone the deadzone for joystick axes.
      */
@@ -462,12 +462,12 @@ public class InputManager implements RawInputListener {
     /**
      * Adds a new listener to receive events on the given mappings.
      *
-     * <p>The given InputListener will be registered to receive events
+     * The given InputListener will be registered to receive events
      * on the specified mapping names. When a mapping raises an event, the
      * listener will have its appropriate method invoked, either
-     * {@link ActionListener#onAction(java.lang.String, boolean, float) }
-     * or {@link AnalogListener#onAnalog(java.lang.String, float, float) }
-     * depending on which interface the <code>listener</code> implements.
+     * ActionListener#onAction(java.lang.String, boolean, float) }
+     * or AnalogListener#onAnalog(java.lang.String, float, float) }
+     * depending on which interface the listener implements.
      * If the listener implements both interfaces, then it will receive the
      * appropriate event for each method.
      *
@@ -475,7 +475,7 @@ public class InputManager implements RawInputListener {
      * @param mappingNames The mapping names which the listener will receive
      * events from.
      *
-     * @see InputManager#removeListener(com.clockwork.input.controls.InputListener)
+     * see InputManager#removeListener(com.clockwork.input.controls.InputListener)
      */
     public void addListener(InputListener listener, String... mappingNames) {
         for (String mappingName : mappingNames) {
@@ -493,13 +493,13 @@ public class InputManager implements RawInputListener {
     /**
      * Removes a listener from receiving events.
      *
-     * <p>This will unregister the listener from any mappings that it
+     * This will unregister the listener from any mappings that it
      * was previously registered with via
-     * {@link InputManager#addListener(com.clockwork.input.controls.InputListener, java.lang.String[]) }.
+     * InputManager#addListener(com.clockwork.input.controls.InputListener, java.lang.String[]) }.
      *
      * @param listener The listener to unregister.
      *
-     * @see InputManager#addListener(com.clockwork.input.controls.InputListener, java.lang.String[])
+     * see InputManager#addListener(com.clockwork.input.controls.InputListener, java.lang.String[])
      */
     public void removeListener(InputListener listener) {
         for (Mapping mapping : mappings.values()) {
@@ -510,7 +510,7 @@ public class InputManager implements RawInputListener {
     /**
      * Create a new mapping to the given triggers.
      *
-     * <p>
+     * 
      * The given mapping will be assigned to the given triggers, when
      * any of the triggers given raise an event, the listeners
      * registered to the mappings will receive appropriate events.
@@ -518,7 +518,7 @@ public class InputManager implements RawInputListener {
      * @param mappingName The mapping name to assign.
      * @param triggers The triggers to which the mapping is to be registered.
      *
-     * @see InputManager#deleteMapping(java.lang.String)
+     * see InputManager#deleteMapping(java.lang.String)
      */
     public void addMapping(String mappingName, Trigger... triggers) {
         Mapping mapping = mappings.get(mappingName);
@@ -549,8 +549,8 @@ public class InputManager implements RawInputListener {
      *
      * @param mappingName The mapping name to check.
      *
-     * @see InputManager#addMapping(java.lang.String, com.clockwork.input.controls.Trigger[])
-     * @see InputManager#deleteMapping(java.lang.String)
+     * see InputManager#addMapping(java.lang.String, com.clockwork.input.controls.Trigger[])
+     * see InputManager#deleteMapping(java.lang.String)
      */
     public boolean hasMapping(String mappingName) {
         return mappings.containsKey(mappingName);
@@ -559,13 +559,13 @@ public class InputManager implements RawInputListener {
     /**
      * Deletes a mapping from receiving trigger events.
      *
-     * <p>
+     * 
      * The given mapping will no longer be assigned to receive trigger
      * events.
      *
      * @param mappingName The mapping name to unregister.
      *
-     * @see InputManager#addMapping(java.lang.String, com.clockwork.input.controls.Trigger[])
+     * see InputManager#addMapping(java.lang.String, com.clockwork.input.controls.Trigger[])
      */
     public void deleteMapping(String mappingName) {
         Mapping mapping = mappings.remove(mappingName);
@@ -586,7 +586,7 @@ public class InputManager implements RawInputListener {
     /**
      * Deletes a specific trigger registered to a mapping.
      *
-     * <p>
+     * 
      * The given mapping will no longer receive events raised by the
      * trigger.
      *
@@ -628,11 +628,11 @@ public class InputManager implements RawInputListener {
     /**
      * Returns whether the mouse cursor is visible or not.
      *
-     * <p>By default the cursor is visible.
+     * By default the cursor is visible.
      *
      * @return whether the mouse cursor is visible or not.
      *
-     * @see InputManager#setCursorVisible(boolean)
+     * see InputManager#setCursorVisible(boolean)
      */
     public boolean isCursorVisible() {
         return mouseVisible;
@@ -670,24 +670,24 @@ public class InputManager implements RawInputListener {
     }
 
     /**
-     * Adds a {@link RawInputListener} to receive raw input events.
+     * Adds a RawInputListener} to receive raw input events.
      *
-     * <p>
-     * Any raw input listeners registered to this <code>InputManager</code>
+     * 
+     * Any raw input listeners registered to this InputManager
      * will receive raw input events first, before they get handled
-     * by the <code>InputManager</code> itself. The listeners are
+     * by the InputManager itself. The listeners are
      * each processed in the order they were added, e.g. FIFO.
-     * <p>
+     * 
      * If a raw input listener has handled the event and does not wish
      * other listeners down the list to process the event, it may set the
-     * {@link InputEvent#setConsumed() consumed flag} to indicate the
+     * InputEvent#setConsumed() consumed flag} to indicate the
      * event was consumed and shouldn't be processed any further.
      * The listener may do this either at each of the event callbacks
-     * or at the {@link RawInputListener#endInput() } method.
+     * or at the RawInputListener#endInput() } method.
      *
      * @param listener A listener to receive raw input events.
      *
-     * @see RawInputListener
+     * see RawInputListener
      */
     public void addRawInputListener(RawInputListener listener) {
         rawListeners.add(listener);
@@ -695,12 +695,12 @@ public class InputManager implements RawInputListener {
     }
 
     /**
-     * Removes a {@link RawInputListener} so that it no longer
+     * Removes a RawInputListener} so that it no longer
      * receives raw input events.
      *
      * @param listener The listener to cease receiving raw input events.
      *
-     * @see InputManager#addRawInputListener(com.clockwork.input.RawInputListener)
+     * see InputManager#addRawInputListener(com.clockwork.input.RawInputListener)
      */
     public void removeRawInputListener(RawInputListener listener) {
         rawListeners.remove(listener);
@@ -708,9 +708,9 @@ public class InputManager implements RawInputListener {
     }
 
     /**
-     * Clears all {@link RawInputListener}s.
+     * Clears all RawInputListener}s.
      *
-     * @see InputManager#addRawInputListener(com.clockwork.input.RawInputListener)
+     * see InputManager#addRawInputListener(com.clockwork.input.RawInputListener)
      */
     public void clearRawInputListeners() {
         rawListeners.clear();
@@ -821,7 +821,7 @@ public class InputManager implements RawInputListener {
     }
 
     /**
-     * Updates the <code>InputManager</code>.
+     * Updates the InputManager.
      * This will query current input devices and send
      * appropriate events to registered listeners.
      *

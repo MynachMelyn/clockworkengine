@@ -21,7 +21,7 @@ import org.xml.sax.XMLReader;
 import org.xml.sax.helpers.DefaultHandler;
 
 /**
- * This is a utility class to load a {@link MaterialList} from a 
+ * This is a utility class to load a MaterialList} from a 
  * .scene file. It is only needed because the parsing method
  * used by the SceneLoader doesn't support reading bottom XML nodes
  * before reading the top nodes.

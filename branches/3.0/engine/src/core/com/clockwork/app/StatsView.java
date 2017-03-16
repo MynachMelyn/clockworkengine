@@ -13,20 +13,20 @@ import com.clockwork.scene.Spatial;
 import com.clockwork.scene.control.Control;
 
 /**
- * The <code>StatsView</code> provides a heads-up display (HUD) of various
+ * The StatsView provides a heads-up display (HUD) of various
  * statistics of rendering. The data is retrieved every frame from a
- * {@link com.clockwork.renderer.Statistics} and then displayed on screen.<br/>
- * <br/>
- * Usage:<br/>
+ * com.clockwork.renderer.Statistics and then displayed on screen.
+ * 
+ * Usage:
  * To use the stats view, you need to retrieve the
- * {@link com.clockwork.renderer.Statistics} from the
- * {@link com.clockwork.renderer.Renderer} used by the application. Then, attach
- * the <code>StatsView</code> to the scene graph.<br/>
- * <code><br/>
- * Statistics stats = renderer.getStatistics();<br/>
- * StatsView statsView = new StatsView("MyStats", assetManager, stats);<br/>
- * rootNode.attachChild(statsView);<br/>
- * </code>
+ * com.clockwork.renderer.Statistics from the
+ * com.clockwork.renderer.Renderer used by the application. Then, attach
+ * the StatsView to the scene graph.
+ * 
+ * Statistics stats = renderer.getStatistics();
+ * StatsView statsView = new StatsView("MyStats", assetManager, stats);
+ * rootNode.attachChild(statsView);
+ * 
  */
 public class StatsView extends Node implements Control {
 

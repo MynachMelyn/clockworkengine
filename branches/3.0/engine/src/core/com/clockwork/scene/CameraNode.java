@@ -9,7 +9,7 @@ import com.clockwork.scene.control.CameraControl.ControlDirection;
 import java.io.IOException;
 
 /**
- * <code>CameraNode</code> simply uses {@link CameraControl} to implement
+ * CameraNode simply uses CameraControl} to implement
  * linking of camera and node data.
  *
  */

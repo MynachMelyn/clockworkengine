@@ -26,7 +26,7 @@ import com.clockwork.util.TempVars;
  * It's pretty basic, but much faster than the WaterFilter
  * It's useful if you aim low specs hardware and still want a good looking water.
  * Usage is :
- * <code>
+ * 
  *      SimpleWaterProcessor waterProcessor = new SimpleWaterProcessor(assetManager);
  *      //setting the scene to use for reflection
  *      waterProcessor.setReflectionScene(mainScene);
@@ -54,7 +54,7 @@ import com.clockwork.util.TempVars;
  *
  *      //attaching the water to the root node
  *      rootNode.attachChild(water);
- * </code>
+ * 
  */
 public class SimpleWaterProcessor implements SceneProcessor {
 

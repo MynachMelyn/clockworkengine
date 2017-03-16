@@ -21,7 +21,7 @@ public class JoyButtonEvent extends InputEvent {
     /**
      * Returns the JoystickButton that triggered this event.
      *
-     * @see JoystickAxis#assignAxis(java.lang.String, java.lang.String, int) 
+     * see JoystickAxis#assignAxis(java.lang.String, java.lang.String, int) 
      */
     public JoystickButton getButton() {
         return button;
@@ -32,7 +32,7 @@ public class JoyButtonEvent extends InputEvent {
      * 
      * @return button index.
      * 
-     * @see Joystick#assignButton(java.lang.String, int) 
+     * see Joystick#assignButton(java.lang.String, int) 
      */
     public int getButtonIndex() {
         return button.getButtonId();
@@ -43,7 +43,7 @@ public class JoyButtonEvent extends InputEvent {
      * 
      * @return joystick index.
      * 
-     * @see com.clockwork.input.InputManager#getJoysticks() 
+     * see com.clockwork.input.InputManager#getJoysticks() 
      */
     public int getJoyIndex() {
         return button.getJoystick().getJoyId();

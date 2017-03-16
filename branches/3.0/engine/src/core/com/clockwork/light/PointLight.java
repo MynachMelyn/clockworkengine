@@ -14,7 +14,7 @@ import java.io.IOException;
  * Represents a point light.
  * A point light emits light from a given position into all directions in space.
  * E.g a lamp or a bright effect. Point light positions are in world space.
- * <p>
+ * 
  * In addition to a position, point lights also have a radius which 
  * can be used to attenuate the influence of the light depending on the 
  * distance between the light and the effected object.
@@ -41,7 +41,7 @@ public class PointLight extends Light {
      * 
      * @return the world space position of the light.
      * 
-     * @see PointLight#setPosition(com.clockwork.math.Vector3f) 
+     * see PointLight#setPosition(com.clockwork.math.Vector3f) 
      */
     public Vector3f getPosition() {
         return position;
@@ -68,7 +68,7 @@ public class PointLight extends Light {
 
     /**
      * Set the radius of the light influence.
-     * <p>
+     * 
      * Setting a non-zero radius indicates the light should use attenuation.
      * If a pixel's distance to this light's position
      * is greater than the light's radius, then the pixel will not be

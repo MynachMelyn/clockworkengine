@@ -9,10 +9,10 @@ import com.clockwork.system.Timer;
 import java.util.List;
 
 /**
- * <code>UniformBindingManager</code> helps {@link RenderManager} to manage
- * {@link UniformBinding uniform bindings}.
+ * UniformBindingManager helps RenderManager} to manage
+ * UniformBinding uniform bindings}.
  * 
- * The {@link #updateUniformBindings(java.util.List) } will update
+ * The #updateUniformBindings(java.util.List) } will update
  * a given list of uniforms based on the current state
  * of the manager.
  * 
@@ -50,7 +50,7 @@ public class UniformBindingManager {
 
     /**
      * Internal use only.
-     * Updates the given list of uniforms with {@link UniformBinding uniform bindings}
+     * Updates the given list of uniforms with UniformBinding uniform bindings}
      * based on the current world state.
      */
     public void updateUniformBindings(List<Uniform> params) {
@@ -181,8 +181,8 @@ public class UniformBindingManager {
     /**
      * Internal use only. Sets the world matrix to use for future
      * rendering. This has no effect unless objects are rendered manually
-     * using {@link Material#render(com.clockwork.scene.Geometry, com.clockwork.renderer.RenderManager) }.
-     * Using {@link #renderGeometry(com.clockwork.scene.Geometry) } will 
+     * using Material#render(com.clockwork.scene.Geometry, com.clockwork.renderer.RenderManager) }.
+     * Using #renderGeometry(com.clockwork.scene.Geometry) } will 
      * override this value.
      * 
      * @param mat The world matrix to set
@@ -193,7 +193,7 @@ public class UniformBindingManager {
 
     /**
      * Set the timer that should be used to query the time based
-     * {@link UniformBinding}s for material world parameters.
+     * UniformBinding}s for material world parameters.
      * 
      * @param timer The timer to query time world parameters
      */

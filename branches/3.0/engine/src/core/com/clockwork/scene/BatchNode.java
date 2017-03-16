@@ -23,9 +23,9 @@ import java.util.logging.Logger;
  * BatchNode holds geometries that are a batched version of all the geometries that are in its sub scenegraph.
  * There is one geometry per different material in the sub tree.
  * The geometries are directly attached to the node in the scene graph.
- * Usage is like any other node except you have to call the {@link #batch()} method once all the geometries have been attached to the sub scene graph and their material set
+ * Usage is like any other node except you have to call the #batch()} method once all the geometries have been attached to the sub scene graph and their material set
  * (see todo more automagic for further enhancements)
- * All the geometries that have been batched are set to {@link CullHint#Always} to not render them.
+ * All the geometries that have been batched are set to CullHint#Always} to not render them.
  * The sub geometries can be transformed as usual, their transforms are used to update the mesh of the geometryBatch.
  * Sub geoms can be removed but it may be slower than the normal spatial removing
  * Sub geoms can be added after the batch() method has been called but won't be batched and will just be rendered as normal geometries.
@@ -338,7 +338,7 @@ public class BatchNode extends Node implements Savable {
      * 
      * @return the material that is used for the first batch of this BatchNode
      * 
-     * @see #setMaterial(com.clockwork.material.Material) 
+     * see #setMaterial(com.clockwork.material.Material) 
      */
     public Material getMaterial() {
         if (!batches.isEmpty()) {
@@ -368,7 +368,7 @@ public class BatchNode extends Node implements Savable {
 //     * 
 //     * @return the material that is used for the first batch of this BatchNode
 //     * 
-//     * @see #setMaterial(com.clockwork.material.Material) 
+//     * see #setMaterial(com.clockwork.material.Material) 
 //     */
 //    public Material getMaterial(int batchIndex) {
 //        if (!batches.isEmpty()) {

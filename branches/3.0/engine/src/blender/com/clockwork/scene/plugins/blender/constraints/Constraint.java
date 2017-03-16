@@ -85,7 +85,7 @@ public abstract class Constraint {
     }
 
     /**
-     * @return <b>true</b> if the constraint is implemented and <b>false</b>
+     * @return true if the constraint is implemented and false
      *         otherwise
      */
     public boolean isImplemented() {

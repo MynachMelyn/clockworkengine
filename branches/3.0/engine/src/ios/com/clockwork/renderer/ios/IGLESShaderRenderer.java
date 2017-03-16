@@ -32,7 +32,7 @@ import java.util.logging.Logger;
 import jme3tools.shader.ShaderDebug;
 
 /**
- * The <code>Renderer</code> is responsible for taking rendering commands and
+ * The Renderer is responsible for taking rendering commands and
  * executing them on the underlying video hardware.
  * 
  */
@@ -91,7 +91,7 @@ public class IGLESShaderRenderer implements Renderer {
      * The statistics allow tracking of how data
      * per frame, such as number of objects rendered, number of triangles, etc.
      * These are updated when the Renderer's methods are used, make sure
-     * to call {@link Statistics#clearFrame() } at the appropriate time
+     * to call Statistics#clearFrame() } at the appropriate time
      * to get accurate info per frame.
      */
     public Statistics getStatistics() {
@@ -145,7 +145,7 @@ public class IGLESShaderRenderer implements Renderer {
     }
 
     /**
-     * Applies the given {@link RenderState}, making the necessary
+     * Applies the given RenderState}, making the necessary
      * GL calls so that the state is applied.
      */
     public void applyRenderState(RenderState state) {
@@ -400,7 +400,7 @@ public class IGLESShaderRenderer implements Renderer {
 
     /**
      * Clears the clipping rectangle set with 
-     * {@link #setClipRect(int, int, int, int) }.
+     * #setClipRect(int, int, int, int) }.
      */
     public void clearClipRect() {
         logger.log(Level.FINE, "IGLESShaderRenderer clearClipRect");
@@ -420,7 +420,7 @@ public class IGLESShaderRenderer implements Renderer {
      * Set lighting state.
      * Does nothing if the renderer is shader based.
      * The lights should be provided in world space. 
-     * Specify <code>null</code> to disable lighting.
+     * Specify null to disable lighting.
      * 
      * @param lights The light list to set.
      */
@@ -924,15 +924,15 @@ public class IGLESShaderRenderer implements Renderer {
     }
 
     /**
-     * Renders <code>count</code> meshes, with the geometry data supplied.
-     * The shader which is currently set with <code>setShader</code> is
+     * Renders count meshes, with the geometry data supplied.
+     * The shader which is currently set with setShader is
      * responsible for transforming the input verticies into clip space
      * and shading it based on the given vertex attributes.
      * The int variable gl_InstanceID can be used to access the current
      * instance of the mesh being rendered inside the vertex shader.
      *
      * @param mesh The mesh to render
-     * @param lod The LOD level to use, see {@link Mesh#setLodLevels(com.clockwork.scene.VertexBuffer[]) }.
+     * @param lod The LOD level to use, see Mesh#setLodLevels(com.clockwork.scene.VertexBuffer[]) }.
      * @param count Number of mesh instances to render
      */
     public void renderMesh(Mesh mesh, int lod, int count) {
@@ -966,12 +966,12 @@ public class IGLESShaderRenderer implements Renderer {
     }
 
     /**
-     * Resets all previously used {@link NativeObject Native Objects} on this Renderer.
+     * Resets all previously used NativeObject Native Objects} on this Renderer.
      * The state of the native objects is reset in such way, that using
      * them again will cause the renderer to reupload them.
      * Call this method when you know the GL context is going to shutdown.
      * 
-     * @see NativeObject#resetObject() 
+     * see NativeObject#resetObject() 
      */
     public void resetGLObjects() {
         logger.log(Level.FINE, "IGLESShaderRenderer resetGLObjects");
@@ -983,11 +983,11 @@ public class IGLESShaderRenderer implements Renderer {
     }
 
     /**
-     * Deletes all previously used {@link NativeObject Native Objects} on this Renderer, and
+     * Deletes all previously used NativeObject Native Objects} on this Renderer, and
      * then resets the native objects.
      * 
-     * @see #resetGLObjects() 
-     * @see NativeObject#deleteObject(java.lang.Object) 
+     * see #resetGLObjects() 
+     * see NativeObject#deleteObject(java.lang.Object) 
      */
     public void cleanup() {
         logger.log(Level.FINE, "IGLESShaderRenderer cleanup");
@@ -997,16 +997,16 @@ public class IGLESShaderRenderer implements Renderer {
     
     /**
      * Sets the alpha to coverage state.
-     * <p>
+     * 
      * When alpha coverage and multi-sampling is enabled, 
      * each pixel will contain alpha coverage in all
      * of its subsamples, which is then combined when
      * other future alpha-blended objects are rendered.
-     * </p>
-     * <p>
+     * 
+     * 
      * Alpha-to-coverage is useful for rendering transparent objects
      * without having to worry about sorting them.
-     * </p>
+     * 
      */
     public void setAlphaToCoverage(boolean value) {
         logger.log(Level.FINE, "IGLESShaderRenderer setAlphaToCoverage");

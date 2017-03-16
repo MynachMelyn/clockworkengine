@@ -125,7 +125,7 @@ public class MapModel3D {
     /**
      * Sets the map's centre.
      *
-     * @param centre            The <code>Position</code> denoting the map's
+     * @param centre            The Position denoting the map's
      *                          desired centre.
      * @since 1.0
      */
@@ -156,8 +156,8 @@ public class MapModel3D {
     /**
      * Converts a latitude/longitude position into a WU coordinate.
      *
-     * @param position          The <code>Position</code> to convert.
-     * @return                  The <code>Point</code> a pixel coordinate.
+     * @param position          The Position to convert.
+     * @return                  The Point a pixel coordinate.
      * @since 1.0
      */
     public Vector3f toWorldUnit(Position position) {
@@ -232,10 +232,10 @@ public class MapModel3D {
     /**
      * Converts a world position into a Mercator position.
      *
-     * @param posVec                     <code>Vector</code> containing the world unit 
+     * @param posVec                     Vector containing the world unit 
      *                              coordinates that are to be converted into
      *                              longitude / latitude coordinates.
-     * @return                      The resulting <code>Position</code> in degrees of
+     * @return                      The resulting Position in degrees of
      *                              latitude and longitude.
      * @since 1.0
      */
@@ -291,7 +291,7 @@ public class MapModel3D {
     /**
      * Defines the centre of the map in pixels.
      *
-     * @param posVec             <code>Vector3f</code> object denoting the map's new centre.
+     * @param posVec             Vector3f object denoting the map's new centre.
      * @since 1.0
      */
     public void setCentre(Vector3f posVec) {
@@ -308,7 +308,7 @@ public class MapModel3D {
     /**
      * Returns the WU (x,y,z) centre of the map.
      * 
-     * @return              <code>Vector3f</code> object marking the map's (x,y) centre.
+     * @return              Vector3f object marking the map's (x,y) centre.
      * @since 1.0
      */
     public Vector3f getCentreWu() {
@@ -316,9 +316,9 @@ public class MapModel3D {
     }
 
     /**
-     * Returns the <code>Position</code> centre of the map.
+     * Returns the Position centre of the map.
      *
-     * @return              <code>Position</code> object marking the map's (lat, long)
+     * @return              Position object marking the map's (lat, long)
      *                      centre.
      * @since 1.0
      */

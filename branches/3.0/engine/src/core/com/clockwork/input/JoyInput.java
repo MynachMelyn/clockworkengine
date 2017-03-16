@@ -17,7 +17,7 @@ public interface JoyInput extends Input {
     public static final int AXIS_POV_Y = 255;
 
     /**
-     * Causes the joystick at <code>joyId</code> index to rumble with
+     * Causes the joystick at joyId index to rumble with
      * the given amount.
      * 
      * @param joyId The joystick index

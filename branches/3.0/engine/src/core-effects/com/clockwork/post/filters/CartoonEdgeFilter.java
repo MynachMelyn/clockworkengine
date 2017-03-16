@@ -75,8 +75,8 @@ public class CartoonEdgeFilter extends Filter {
     }
 
     /**
-     * Return the depth sensitivity<br>
-     * for more details see {@link #setDepthSensitivity(float depthSensitivity)}
+     * Return the depth sensitivity
+     * for more details see #setDepthSensitivity(float depthSensitivity)}
      * @return 
      */
     public float getDepthSensitivity() {
@@ -84,7 +84,7 @@ public class CartoonEdgeFilter extends Filter {
     }
 
     /**
-     * sets the depth sensitivity<br>
+     * sets the depth sensitivity
      * defines how much depth will influence edges, default is 10
      * @param depthSensitivity 
      */
@@ -96,8 +96,8 @@ public class CartoonEdgeFilter extends Filter {
     }
 
     /**
-     * returns the depth threshold<br>
-     * for more details see {@link #setDepthThreshold(float depthThreshold)}
+     * returns the depth threshold
+     * for more details see #setDepthThreshold(float depthThreshold)}
      * @return 
      */
     public float getDepthThreshold() {
@@ -105,7 +105,7 @@ public class CartoonEdgeFilter extends Filter {
     }
 
     /**
-     * sets the depth threshold<br>
+     * sets the depth threshold
      * Defines at what threshold of difference of depth an edge is outlined default is 0.1f
      * @param depthThreshold 
      */
@@ -117,8 +117,8 @@ public class CartoonEdgeFilter extends Filter {
     }
 
     /**
-     * returns the edge intensity<br>
-     * for more details see {@link #setEdgeIntensity(float edgeIntensity) }
+     * returns the edge intensity
+     * for more details see #setEdgeIntensity(float edgeIntensity) }
      * @return 
      */
     public float getEdgeIntensity() {
@@ -126,7 +126,7 @@ public class CartoonEdgeFilter extends Filter {
     }
 
     /**
-     * sets the edge intensity<br>
+     * sets the edge intensity
      * Defineshow visilble will be the outlined edges
      * @param edgeIntensity 
      */
@@ -158,8 +158,8 @@ public class CartoonEdgeFilter extends Filter {
     }
 
     /**
-     * returns the normals sensitivity<br>
-     * form more details see {@link #setNormalSensitivity(float normalSensitivity)}
+     * returns the normals sensitivity
+     * form more details see #setNormalSensitivity(float normalSensitivity)}
      * @return 
      */
     public float getNormalSensitivity() {
@@ -178,8 +178,8 @@ public class CartoonEdgeFilter extends Filter {
     }
 
     /**
-     * returns the normal threshold<br>
-     * for more details see {@link #setNormalThreshold(float normalThreshold)}
+     * returns the normal threshold
+     * for more details see #setNormalThreshold(float normalThreshold)}
      * 
      * @return 
      */

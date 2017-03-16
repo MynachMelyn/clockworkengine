@@ -12,7 +12,7 @@ import java.io.IOException;
  * Represents a spot light.
  * A spot light emmit a cone of light from a position and in a direction.
  * It can be used to fake torch lights or car's lights.
- * <p>
+ * 
  * In addition to a position and a direction, spot lights also have a range which 
  * can be used to attenuate the influence of the light depending on the 
  * distance between the light and the effected object.
@@ -85,7 +85,7 @@ public class SpotLight extends Light implements Savable {
 
     /**
      * Set the range of the light influence.
-     * <p>
+     * 
      * Setting a non-zero range indicates the light should use attenuation.
      * If a pixel's distance to this light's position
      * is greater than the light's range, then the pixel will not be

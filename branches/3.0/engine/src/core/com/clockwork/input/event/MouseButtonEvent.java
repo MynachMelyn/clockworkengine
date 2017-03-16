@@ -23,8 +23,8 @@ public class MouseButtonEvent extends InputEvent {
 
     /**
      * Returns the mouse button index.
-     * <p>
-     * See constants in {@link MouseInput}.
+     * 
+     * See constants in MouseInput}.
      * 
      * @return the mouse button index.
      */

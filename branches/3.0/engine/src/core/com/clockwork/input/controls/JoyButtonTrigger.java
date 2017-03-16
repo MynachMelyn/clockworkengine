@@ -8,7 +8,7 @@ public class JoyButtonTrigger implements Trigger {
     private final int joyId, buttonId;
 
     /**
-     * Use {@link Joystick#assignButton(java.lang.String, int) } instead.
+     * Use Joystick#assignButton(java.lang.String, int) } instead.
      * 
      * @param joyId
      * @param axisId 

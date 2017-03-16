@@ -288,7 +288,7 @@ public final class MaterialContext {
     }
 
     /**
-     * @return <b>true</b> if the material has at least one generated texture and <b>false</b> otherwise
+     * @return true if the material has at least one generated texture and false otherwise
      */
     public boolean hasGeneratedTextures() {
         if (loadedTextures != null) {

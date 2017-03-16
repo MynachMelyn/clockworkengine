@@ -9,7 +9,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * <code>AudioStream</code> is an implementation of AudioData that
+ * AudioStream is an implementation of AudioData that
  * acquires the audio from an InputStream. Audio can be streamed
  * from network, hard drive etc. It is assumed the data coming
  * from the input stream is uncompressed.
@@ -68,7 +68,7 @@ public class AudioStream extends AudioData implements Closeable{
     /**
      * Reads samples from the stream.
      *
-     * @see AudioStream#readSamples(byte[], int, int)
+     * see AudioStream#readSamples(byte[], int, int)
      * @param buf Buffer where to read the samples
      * @return number of bytes read.
      */

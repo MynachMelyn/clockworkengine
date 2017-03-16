@@ -8,7 +8,7 @@ import com.clockwork.math.Vector3f;
 import java.io.IOException;
 
 /**
- * <p>PhysicsJoint - Basic Phyiscs Joint</p>
+ * PhysicsJoint - Basic Phyiscs Joint
  */
 public abstract class PhysicsJoint implements Savable {
 
@@ -54,7 +54,7 @@ public abstract class PhysicsJoint implements Savable {
     }
 
     /**
-     * toggles collisions between linked bodys<br>
+     * toggles collisions between linked bodys
      * joint has to be removed from and added to PhyiscsSpace to apply this.
      * @param collisionBetweenLinkedBodys set to false to have no collisions between linked bodys
      */

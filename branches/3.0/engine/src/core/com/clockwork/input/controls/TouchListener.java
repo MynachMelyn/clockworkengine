@@ -4,7 +4,7 @@ package com.clockwork.input.controls;
 import com.clockwork.input.event.TouchEvent;
 
 /**
- * <code>TouchListener</code> is used to receive events of inputs from smartphone touch devices 
+ * TouchListener is used to receive events of inputs from smartphone touch devices 
  *
  */
 public interface TouchListener extends InputListener {

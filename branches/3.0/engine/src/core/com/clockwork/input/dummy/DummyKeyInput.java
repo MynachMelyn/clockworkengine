@@ -4,7 +4,7 @@ package com.clockwork.input.dummy;
 import com.clockwork.input.KeyInput;
 
 /**
- * DummyKeyInput as an implementation of <code>KeyInput</code> that raises no
+ * DummyKeyInput as an implementation of KeyInput that raises no
  * input events.
  * 
  */

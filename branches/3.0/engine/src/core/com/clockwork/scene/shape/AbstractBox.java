@@ -11,12 +11,12 @@ import java.io.IOException;
 
 /**
  * An eight sided box.
- * <p>
- * A {@code Box} is defined by a minimal point and a maximal point. The eight
+ * 
+ * A Box} is defined by a minimal point and a maximal point. The eight
  * vertices that make the box are then computed, they are computed in such
  * a way as to generate an axis-aligned box.
- * <p>
- * This class does not control how the geometry data is generated, see {@link Box}
+ * 
+ * This class does not control how the geometry data is generated, see Box}
  * for that.
  *
  * @version $Revision: 4131 $, $Date: 2009-03-19 16:15:28 -0400 (Thu, 19 Mar 2009) $
@@ -66,7 +66,7 @@ public abstract class AbstractBox extends Mesh {
 
     /**
      * Update the points that define the texture of the box.
-     * <p>
+     * 
      * It's a one-to-one ratio, where each plane of the box has it's own copy
      * of the texture. That is, the texture is repeated one time for each face.
      */
@@ -74,7 +74,7 @@ public abstract class AbstractBox extends Mesh {
 
     /**
      * Update the position of the vertices that define the box.
-     * <p>
+     * 
      * These eight points are determined from the minimum and maximum point.
      */
     protected abstract void duUpdateGeometryVertices();
@@ -109,8 +109,8 @@ public abstract class AbstractBox extends Mesh {
     
     /**
      * Rebuilds the box after a property has been directly altered.
-     * <p>
-     * For example, if you call {@code getXExtent().x = 5.0f} then you will
+     * 
+     * For example, if you call getXExtent().x = 5.0f} then you will
      * need to call this method afterwards in order to update the box.
      */
     public final void updateGeometry() {
@@ -122,7 +122,7 @@ public abstract class AbstractBox extends Mesh {
 
     /**
      * Rebuilds this box based on a new set of parameters.
-     * <p>
+     * 
      * Note that the actual sides will be twice the given extent values because
      * the box extends in both directions from the center for each extent.
      * 
@@ -141,9 +141,9 @@ public abstract class AbstractBox extends Mesh {
 
     /**
      * Rebuilds this box based on a new set of parameters.
-     * <p>
-     * The box is updated so that the two opposite corners are {@code minPoint}
-     * and {@code maxPoint}, the other corners are created from those two positions.
+     * 
+     * The box is updated so that the two opposite corners are minPoint}
+     * and maxPoint}, the other corners are created from those two positions.
      * 
      * @param minPoint the new minimum point of the box.
      * @param maxPoint the new maximum point of the box.

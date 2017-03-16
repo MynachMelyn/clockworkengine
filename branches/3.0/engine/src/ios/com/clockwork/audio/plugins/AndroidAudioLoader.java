@@ -6,8 +6,8 @@ import com.clockwork.audio.android.AndroidAudioData;
 import java.io.IOException;
 
 /**
- * <code>AndroidAudioLoader</code> will create an 
- * {@link AndroidAudioData} object with the specified asset key.
+ * AndroidAudioLoader will create an 
+ * AndroidAudioData} object with the specified asset key.
  */
 public class AndroidAudioLoader implements AssetLoader {
 

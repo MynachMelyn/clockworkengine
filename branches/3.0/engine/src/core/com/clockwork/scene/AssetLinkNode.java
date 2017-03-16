@@ -88,7 +88,7 @@ public class AssetLinkNode extends Node {
     }
 
     /**
-     * Loads the linked children AssetKeys from the AssetManager and attaches them to the Node<br>
+     * Loads the linked children AssetKeys from the AssetManager and attaches them to the Node
      * If they are already attached, they will be reloaded.
      * @param manager
      */

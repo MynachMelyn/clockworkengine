@@ -2,7 +2,7 @@
 package com.clockwork.material;
 
 /**
- * Fixed function binding is used to specify a binding for a {@link MatParam}
+ * Fixed function binding is used to specify a binding for a MatParam}
  * in case that shaders are not supported on the system.
  * 
  */
@@ -27,7 +27,7 @@ public enum FixedFuncBinding {
     
     /**
      * Specifies the color of the object.
-     * <p>
+     * 
      * Used only for non-lit materials.
      */
     Color,
@@ -42,13 +42,13 @@ public enum FixedFuncBinding {
     /**
      * Use vertex color as an additional diffuse color, if lighting is enabled.
      * If lighting is disabled, vertex color is modulated with
-     * {@link #Color material color}.
+     * #Color material color}.
      */
     UseVertexColor,
     
     /**
      * Set the alpha threshold to discard pixels.
-     * @see RenderState#setAlphaFallOff
+     * see RenderState#setAlphaFallOff
      */
     AlphaTestFallOff
 }

@@ -13,7 +13,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * <code>UrlLocator</code> is a locator that combines a root URL
+ * UrlLocator is a locator that combines a root URL
  * and the given path in the AssetKey to construct a new URL
  * that allows locating the asset.
  */

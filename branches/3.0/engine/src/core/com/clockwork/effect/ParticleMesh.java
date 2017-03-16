@@ -7,8 +7,8 @@ import com.clockwork.renderer.Camera;
 import com.clockwork.scene.Mesh;
 
 /**
- * The <code>ParticleMesh</code> is the underlying visual implementation of a 
- * {@link ParticleEmitter particle emitter}.
+ * The ParticleMesh is the underlying visual implementation of a 
+ * ParticleEmitter particle emitter}.
  * 
  */
 public abstract class ParticleMesh extends Mesh {
@@ -19,7 +19,7 @@ public abstract class ParticleMesh extends Mesh {
     public enum Type {
         /**
          * The particle mesh is composed of points. Each particle is a point.
-         * This can be used in conjuction with {@link RenderState#setPointSprite(boolean) point sprites}
+         * This can be used in conjuction with RenderState#setPointSprite(boolean) point sprites}
          * to render particles the usual way.
          */
         Point,
@@ -34,7 +34,7 @@ public abstract class ParticleMesh extends Mesh {
     /**
      * Initialize mesh data.
      * 
-     * @param emitter The emitter which will use this <code>ParticleMesh</code>.
+     * @param emitter The emitter which will use this ParticleMesh.
      * @param numParticles The maxmimum number of particles to simulate
      */
     public abstract void initParticleData(ParticleEmitter emitter, int numParticles);

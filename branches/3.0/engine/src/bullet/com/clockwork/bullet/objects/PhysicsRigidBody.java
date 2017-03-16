@@ -21,7 +21,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * <p>PhysicsRigidBody - Basic physics object</p>
+ * PhysicsRigidBody - Basic physics object
  */
 public class PhysicsRigidBody extends PhysicsCollisionObject {
 
@@ -241,7 +241,7 @@ public class PhysicsRigidBody extends PhysicsCollisionObject {
     private native void setCcdSweptSphereRadius(long objectId, float radius);
 
     /**
-     * Sets the amount of motion that has to happen in one physics tick to trigger the continuous motion detection<br/>
+     * Sets the amount of motion that has to happen in one physics tick to trigger the continuous motion detection
      * This avoids the problem of fast objects moving through other objects, set to zero to disable (default)
      * @param threshold
      */
@@ -313,7 +313,7 @@ public class PhysicsRigidBody extends PhysicsCollisionObject {
     private native void getGravity(long objectId, Vector3f gravity);
 
     /**
-     * Set the local gravity of this PhysicsRigidBody<br/>
+     * Set the local gravity of this PhysicsRigidBody
      * Set this after adding the node to the PhysicsSpace,
      * the PhysicsSpace assigns its current gravity to the physics node when its added.
      * @param gravity the gravity vector to set
@@ -456,7 +456,7 @@ public class PhysicsRigidBody extends PhysicsCollisionObject {
 
     /**
      * Apply a force to the PhysicsRigidBody, only applies force if the next physics update call
-     * updates the physics space.<br>
+     * updates the physics space.
      * To apply an impulse, use applyImpulse, use applyContinuousForce to apply continuous force.
      * @param force the force
      * @param location the location of the force
@@ -470,7 +470,7 @@ public class PhysicsRigidBody extends PhysicsCollisionObject {
 
     /**
      * Apply a force to the PhysicsRigidBody, only applies force if the next physics update call
-     * updates the physics space.<br>
+     * updates the physics space.
      * To apply an impulse, use applyImpulse.
      * 
      * @param force the force
@@ -484,7 +484,7 @@ public class PhysicsRigidBody extends PhysicsCollisionObject {
 
     /**
      * Apply a force to the PhysicsRigidBody, only applies force if the next physics update call
-     * updates the physics space.<br>
+     * updates the physics space.
      * To apply an impulse, use applyImpulse.
      * 
      * @param torque the torque

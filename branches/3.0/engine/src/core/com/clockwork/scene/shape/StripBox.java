@@ -42,7 +42,7 @@ public class StripBox extends AbstractBox {
     
     /**
      * Creates a new box.
-     * <p>
+     * 
      * The box has a center of 0,0,0 and extends in the out from the center by
      * the given amount in <em>each</em> direction. So, for example, a box
      * with extent of 0.5 would be the unit cube.
@@ -58,7 +58,7 @@ public class StripBox extends AbstractBox {
 
     /**
      * Creates a new box.
-     * <p>
+     * 
      * The box has the given center and extends in the out from the center by
      * the given amount in <em>each</em> direction. So, for example, a box
      * with extent of 0.5 would be the unit cube.
@@ -74,11 +74,11 @@ public class StripBox extends AbstractBox {
     }
 
     /**
-     * Constructor instantiates a new <code>Box</code> object.
-     * <p>
+     * Constructor instantiates a new Box object.
+     * 
      * The minimum and maximum point are provided, these two points define the
      * shape and size of the box but not it’s orientation or position. You should
-     * use the {@link com.clockwork.scene.Spatial#setLocalTranslation(com.clockwork.math.Vector3f) } and {@link com.clockwork.scene.Spatial#setLocalRotation(com.clockwork.math.Quaternion) }
+     * use the com.clockwork.scene.Spatial#setLocalTranslation(com.clockwork.math.Vector3f) } and com.clockwork.scene.Spatial#setLocalRotation(com.clockwork.math.Quaternion) }
      * methods to define those properties.
      * 
      * @param min the minimum point that defines the box.
@@ -98,7 +98,7 @@ public class StripBox extends AbstractBox {
 
     /**
      * Creates a clone of this box.
-     * <p>
+     * 
      * The cloned box will have ‘_clone’ appended to it’s name, but all other
      * properties will be the same as this box.
      */

@@ -2,7 +2,7 @@
 package com.clockwork.collision;
 
 /**
- * Thrown by {@link Collidable} when the requested collision query could not
+ * Thrown by Collidable} when the requested collision query could not
  * be completed because one of the collidables does not support colliding with
  * the other.
  * 

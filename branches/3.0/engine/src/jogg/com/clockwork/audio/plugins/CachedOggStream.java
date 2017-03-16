@@ -14,7 +14,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *  Implementation of the <code>PhysicalOggStream</code> interface for reading
+ *  Implementation of the PhysicalOggStream interface for reading
  *  and caching an Ogg stream from a URL. This class reads the data as fast as
  *  possible from the URL, caches it locally either in memory or on disk, and
  *  supports seeking within the available data.

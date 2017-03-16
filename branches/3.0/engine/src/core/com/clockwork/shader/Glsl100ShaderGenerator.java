@@ -174,23 +174,23 @@ public class Glsl100ShaderGenerator extends ShaderGenerator {
      *
      * this methods does things in this order : 
      * 
-     * 1. declaring and mapping input<br>
+     * 1. declaring and mapping input
      * variables : variable replaced with MatParams or WorldParams are not
      * declared and are replaced by the parma acual name in the code. For others
      * variables, the name space is appended with a "_" before the variable name
-     * in the code to avoid names collision between shaderNodes. <br>
+     * in the code to avoid names collision between shaderNodes. 
      * 
-     * 2. declaring output variables : <br>
+     * 2. declaring output variables : 
      * variables are declared if they were not already
      * declared as input (inputs can also be outputs) or if they are not
      * declared as varyings. The variable name is also prefixed with the s=name
-     * space and "_" in the shaderNode code <br>
+     * space and "_" in the shaderNode code 
      * 
-     * 3. append of the actual ShaderNode code <br>
+     * 3. append of the actual ShaderNode code 
      * 
-     * 4. mapping outputs to global output if needed<br>
+     * 4. mapping outputs to global output if needed
      * 
-     *<br>
+     *
      * All of this is embed in a #if coditional statement if needed
      */
     @Override

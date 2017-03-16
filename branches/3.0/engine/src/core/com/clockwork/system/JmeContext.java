@@ -28,14 +28,14 @@ public interface JmeContext {
 
         /**
          * A canvas type context makes a rendering surface available as an
-         * AWT {@link java.awt.Canvas} object that can be embedded in a Swing/AWT
+         * AWT java.awt.Canvas} object that can be embedded in a Swing/AWT
          * frame. To retrieve the Canvas object, you should cast the context
-         * to {@link JmeCanvasContext}.
+         * to JmeCanvasContext}.
          */
         Canvas,
 
         /**
-         * An <code>OffscreenSurface</code> is a context that is not visible
+         * An OffscreenSurface is a context that is not visible
          * by the user. The application can use the offscreen surface to do
          * General Purpose GPU computations or render a scene into a buffer
          * in order to save it as a screenshot, video or send through a network.
@@ -43,7 +43,7 @@ public interface JmeContext {
         OffscreenSurface,
 
         /**
-         * A <code>Headless</code> context is not visible and does not have
+         * A Headless context is not visible and does not have
          * any drawable surface. The implementation does not provide any
          * display, input, or sound support.
          */
@@ -57,7 +57,7 @@ public interface JmeContext {
 
     /**
      * @param settings the display settings to use for the created context. If
-     * the context has already been created, then <code>restart()</code> must be called
+     * the context has already been created, then restart() must be called
      * for the changes to be applied.
      */
     public void setSettings(AppSettings settings);
@@ -119,8 +119,8 @@ public interface JmeContext {
 
     /**
      * @return True if the context contains a valid render surface,
-     * if any of the rendering methods in {@link Renderer} are called
-     * while this is <code>false</code>, then the result is undefined.
+     * if any of the rendering methods in Renderer} are called
+     * while this is false, then the result is undefined.
      */
     public boolean isRenderable();
 

@@ -1,35 +1,7 @@
-
-
 package clockworktools.converters.model.strip;
 
 import java.util.Arrays;
 
-/**
- * To use, call generateStrips method, passing your triangle index list and 
- * then construct geometry/render resulting PrimitiveGroup objects.
- * Features:
- * <ul> 
- * <li>generates strips from arbitrary geometry. 
- * <li>flexibly optimizes for post TnL vertex caches (16 on GeForce1/2, 24 on GeForce3). 
- * <li>can stitch together strips using degenerate triangles, or not. 
- * <li>can output lists instead of strips. 
- * <li>can optionally throw excessively small strips into a list instead. 
- * <li>can remap indices to improve spatial locality in your vertex buffers.
- * </ul>
- * On cache sizes: Note that it's better to UNDERESTIMATE the cache size
- * instead of OVERESTIMATING. So, if you're targetting GeForce1, 2, and 3, be
- * conservative and use the GeForce1_2 cache size, NOT the GeForce3 cache size.
- * This will make sure you don't "blow" the cache of the GeForce1 and 2. Also
- * note that the cache size you specify is the "actual" cache size, not the
- * "effective" cache size you may have heard about. This is 16 for GeForce1 and 2,
- * and 24 for GeForce3.
- * 
- * Credit goes to Curtis Beeson and Joe Demers for the basis for this
- * stripifier and to Jason Regier and Jon Stone at Blizzard for providing a
- * much cleaner version of CreateStrips().
- * 
- * Ported to java by Artur Biesiadowski <abies@pg.gda.pl> 
- */
 public class TriStrip {
 
     public static final int CACHESIZE_GEFORCE1_2 = 16;
@@ -39,39 +11,18 @@ public class TriStrip {
     boolean bStitchStrips = true;
     int minStripSize = 0;
     boolean bListsOnly = false;
-
-    /**
-	 *  
-	 */
     public TriStrip() {
         super();
     }
 
-    /**
-	 * If set to true, will return an optimized list, with no strips at all.
-	 * Default value: false
-	 */
     public void setListsOnly(boolean _bListsOnly) {
         bListsOnly = _bListsOnly;
     }
 
-    /**
-	 * Sets the cache size which the stripfier uses to optimize the data.
-	 * Controls the length of the generated individual strips. This is the
-	 * "actual" cache size, so 24 for GeForce3 and 16 for GeForce1/2 You may
-	 * want to play around with this number to tweak performance. Default
-	 * value: 16
-	 */
     public void setCacheSize(int _cacheSize) {
         cacheSize = _cacheSize;
     }
 
-    /**
-	 * bool to indicate whether to stitch together strips into one huge strip
-	 * or not. If set to true, you'll get back one huge strip stitched together
-	 * using degenerate triangles. If set to false, you'll get back a large
-	 * number of separate strips. Default value: true
-	 */
     public void setStitchStrips(boolean _bStitchStrips) {
         bStitchStrips = _bStitchStrips;
     }

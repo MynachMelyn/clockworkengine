@@ -32,8 +32,8 @@ public class KeyInputEvent extends InputEvent {
 
     /**
      * The key code.
-     * <p>
-     * See KEY_*** constants in {@link KeyInput}.
+     * 
+     * See KEY_*** constants in KeyInput}.
      * 
      * @return key code.
      */

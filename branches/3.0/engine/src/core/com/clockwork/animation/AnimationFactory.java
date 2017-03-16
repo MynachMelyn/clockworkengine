@@ -10,13 +10,13 @@ import com.clockwork.math.Vector3f;
  * A convenience class to easily setup a spatial keyframed animation
  * you can add some keyFrames for a given time or a given keyFrameIndex, for translation rotation and scale.
  * The animationHelper will then generate an appropriate SpatialAnimation by interpolating values between the keyFrames.
- * <br><br>
- * Usage is : <br>
- * - Create the AnimationHelper<br>
- * - add some keyFrames<br>
- * - call the buildAnimation() method that will retruna new Animation<br>
- * - add the generated Animation to any existing AnimationControl<br>
- * <br><br>
+ * 
+ * Usage is : 
+ * - Create the AnimationHelper
+ * - add some keyFrames
+ * - call the buildAnimation() method that will retruna new Animation
+ * - add the generated Animation to any existing AnimationControl
+ * 
  * Note that the first keyFrame (index 0) is defaulted with the identy transforms.
  * If you want to change that you have to replace this keyFrame with any transform you want.
  * 
@@ -188,24 +188,24 @@ public class AnimationFactory {
     }
 
     /**
-     * Adds a key frame for the given rotation at the given time<br>
-     * This can't be used if the interpolated angle is higher than PI (180°)<br>
-     * Use {@link #addTimeRotationAngles(float time, float x, float y, float z)}  instead that uses Euler angles rotations.<br>     * 
+     * Adds a key frame for the given rotation at the given time
+     * This can't be used if the interpolated angle is higher than PI (180°)
+     * Use #addTimeRotationAngles(float time, float x, float y, float z)}  instead that uses Euler angles rotations.     * 
      * @param time the time at which the keyFrame must be inserted
      * @param rotation the rotation Quaternion to use for this keyFrame
-     * @see #addTimeRotationAngles(float time, float x, float y, float z) 
+     * see #addTimeRotationAngles(float time, float x, float y, float z) 
      */
     public void addTimeRotation(float time, Quaternion rotation) {
         addKeyFrameRotation((int) (time / tpf), rotation);
     }
 
     /**
-     * Adds a key frame for the given rotation at the given keyFrame index<br>
-     * This can't be used if the interpolated angle is higher than PI (180°)<br>
-     * Use {@link #addKeyFrameRotationAngles(int keyFrameIndex, float x, float y, float z)} instead that uses Euler angles rotations.
+     * Adds a key frame for the given rotation at the given keyFrame index
+     * This can't be used if the interpolated angle is higher than PI (180°)
+     * Use #addKeyFrameRotationAngles(int keyFrameIndex, float x, float y, float z)} instead that uses Euler angles rotations.
      * @param keyFrameIndex the index at which the keyFrame must be inserted
      * @param rotation the rotation Quaternion to use for this keyFrame
-     * @see #addKeyFrameRotationAngles(int keyFrameIndex, float x, float y, float z) 
+     * see #addKeyFrameRotationAngles(int keyFrameIndex, float x, float y, float z) 
      */
     public void addKeyFrameRotation(int keyFrameIndex, Quaternion rotation) {
         Rotation r = getRotationForFrame(keyFrameIndex);
@@ -213,10 +213,10 @@ public class AnimationFactory {
     }
 
     /**
-     * Adds a key frame for the given rotation at the given time.<br>
-     * Rotation is expressed by Euler angles values in radians.<br>
-     * Note that the generated rotation will be stored as a quaternion and interpolated using a spherical linear interpolation (slerp)<br>
-     * Hence, this method may create intermediate keyFrames if the interpolation angle is higher than PI to ensure continuity in animation<br>
+     * Adds a key frame for the given rotation at the given time.
+     * Rotation is expressed by Euler angles values in radians.
+     * Note that the generated rotation will be stored as a quaternion and interpolated using a spherical linear interpolation (slerp)
+     * Hence, this method may create intermediate keyFrames if the interpolation angle is higher than PI to ensure continuity in animation
      * 
      * @param time the time at which the keyFrame must be inserted
      * @param x the rotation around the x axis (aka yaw) in radians
@@ -228,10 +228,10 @@ public class AnimationFactory {
     }
 
     /**
-     * Adds a key frame for the given rotation at the given key frame index.<br>
-     * Rotation is expressed by Euler angles values in radians.<br>
-     * Note that the generated rotation will be stored as a quaternion and interpolated using a spherical linear interpolation (slerp)<br>
-     * Hence, this method may create intermediate keyFrames if the interpolation angle is higher than PI to ensure continuity in animation<br>
+     * Adds a key frame for the given rotation at the given key frame index.
+     * Rotation is expressed by Euler angles values in radians.
+     * Note that the generated rotation will be stored as a quaternion and interpolated using a spherical linear interpolation (slerp)
+     * Hence, this method may create intermediate keyFrames if the interpolation angle is higher than PI to ensure continuity in animation
      * 
      * @param keyFrameIndex the index at which the keyFrame must be inserted
      * @param x the rotation around the x axis (aka yaw) in radians

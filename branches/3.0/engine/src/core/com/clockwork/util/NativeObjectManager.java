@@ -13,7 +13,7 @@ import java.util.logging.Logger;
 
 /**
  * GLObjectManager tracks all GLObjects used by the Renderer. Using a
- * <code>ReferenceQueue</code> the <code>GLObjectManager</code> can delete
+ * ReferenceQueue the GLObjectManager can delete
  * unused objects from GPU when their counterparts on the CPU are no longer used.
  *
  * On restart, the renderer may request the objects to be reset, thus allowing
@@ -24,9 +24,9 @@ public class NativeObjectManager {
     private static final Logger logger = Logger.getLogger(NativeObjectManager.class.getName());
     
     /**
-     * Set to <code>true</code> to enable deletion of native buffers together with GL objects
+     * Set to true to enable deletion of native buffers together with GL objects
      * when requested. Note that usage of object after deletion could cause undefined results
-     * or native crashes, therefore by default this is set to <code>false</code>.
+     * or native crashes, therefore by default this is set to false.
      */
     public static boolean UNSAFE = false;
     
@@ -37,7 +37,7 @@ public class NativeObjectManager {
     private static final int MAX_REMOVES_PER_FRAME = 100;
     
     /**
-     * Reference queue for {@link NativeObjectRef native object references}.
+     * Reference queue for NativeObjectRef native object references}.
      */
     private ReferenceQueue<Object> refQueue = new ReferenceQueue<Object>();
 
@@ -67,7 +67,7 @@ public class NativeObjectManager {
     }
 
     /**
-     * (Internal use only) Register a <code>NativeObject</code> with the manager.
+     * (Internal use only) Register a NativeObject with the manager.
      */
     public void registerObject(NativeObject obj) {
         if (obj.getId() <= 0) {
@@ -135,10 +135,10 @@ public class NativeObjectManager {
     
     /**
      * (Internal use only) Deletes unused NativeObjects.
-     * Will delete at most {@link #MAX_REMOVES_PER_FRAME} objects.
+     * Will delete at most #MAX_REMOVES_PER_FRAME} objects.
      * 
      * @param rendererObject The renderer object. 
-     * For graphics objects, {@link Renderer} is used, for audio, {#link AudioRenderer} is used.
+     * For graphics objects, Renderer} is used, for audio, {#link AudioRenderer} is used.
      */
     public void deleteUnused(Object rendererObject){
         int removed = 0;
@@ -177,11 +177,11 @@ public class NativeObjectManager {
     }
 
     /**
-     * Marks the given <code>NativeObject</code> as unused, 
+     * Marks the given NativeObject as unused, 
      * to be deleted on the next frame. 
      * Usage of this object after deletion will cause an exception. 
      * Note that native buffers are only reclaimed if 
-     * {@link #UNSAFE} is set to <code>true</code>.
+     * #UNSAFE} is set to true.
      * 
      * @param obj The object to mark as unused.
      */
@@ -190,7 +190,7 @@ public class NativeObjectManager {
     }
     
     /**
-     * (Internal use only) Resets all {@link NativeObject}s.
+     * (Internal use only) Resets all NativeObject}s.
      * This is typically called when the context is restarted.
      */
     public void resetObjects(){

@@ -8,7 +8,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * <code>AppTask</code> is used in <code>AppTaskQueue</code> to manage tasks that have
+ * AppTask is used in AppTaskQueue to manage tasks that have
  * yet to be accomplished. The AppTask system is used to execute tasks either
  * in the OpenGL/Render thread, or outside of it.
  *
@@ -26,8 +26,8 @@ public class AppTask<V> implements Future<V> {
     private final Condition finishedCondition = stateLock.newCondition();
 
     /**
-     * Create an <code>AppTask</code> that will execute the given 
-     * {@link Callable}.
+     * Create an AppTask that will execute the given 
+     * Callable}.
      * 
      * @param callable The callable to be executed
      */

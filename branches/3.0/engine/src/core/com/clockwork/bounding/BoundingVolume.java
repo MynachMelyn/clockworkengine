@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.nio.FloatBuffer;
 
 /**
- * <code>BoundingVolume</code> defines an interface for dealing with
+ * BoundingVolume defines an interface for dealing with
  * containment of a collection of points.
  * 
  * 
@@ -23,12 +23,12 @@ public abstract class BoundingVolume implements Savable, Cloneable, Collidable {
      */
     public enum Type {
         /**
-         * {@link BoundingSphere}
+         * BoundingSphere}
          */
         Sphere, 
         
         /**
-         * {@link BoundingBox}.
+         * BoundingBox}.
          */
         AABB, 
         
@@ -72,7 +72,7 @@ public abstract class BoundingVolume implements Savable, Cloneable, Collidable {
 
     /**
      *
-     * <code>transform</code> alters the location of the bounding volume by a
+     * transform alters the location of the bounding volume by a
      * rotation, translation and a scalar.
      *
      * @param trans
@@ -85,7 +85,7 @@ public abstract class BoundingVolume implements Savable, Cloneable, Collidable {
 
     /**
      *
-     * <code>transform</code> alters the location of the bounding volume by a
+     * transform alters the location of the bounding volume by a
      * rotation, translation and a scalar.
      *
      * @param trans
@@ -100,7 +100,7 @@ public abstract class BoundingVolume implements Savable, Cloneable, Collidable {
 
     /**
      *
-     * <code>whichSide</code> returns the side on which the bounding volume
+     * whichSide returns the side on which the bounding volume
      * lies on a plane. Possible values are POSITIVE_SIDE, NEGATIVE_SIDE, and
      * NO_SIDE.
      *
@@ -112,7 +112,7 @@ public abstract class BoundingVolume implements Savable, Cloneable, Collidable {
 
     /**
      *
-     * <code>computeFromPoints</code> generates a bounding volume that
+     * computeFromPoints generates a bounding volume that
      * encompasses a collection of points.
      *
      * @param points
@@ -121,7 +121,7 @@ public abstract class BoundingVolume implements Savable, Cloneable, Collidable {
     public abstract void computeFromPoints(FloatBuffer points);
 
     /**
-     * <code>merge</code> combines two bounding volumes into a single bounding
+     * merge combines two bounding volumes into a single bounding
      * volume that contains both this bounding volume and the parameter volume.
      *
      * @param volume
@@ -131,7 +131,7 @@ public abstract class BoundingVolume implements Savable, Cloneable, Collidable {
     public abstract BoundingVolume merge(BoundingVolume volume);
 
     /**
-     * <code>mergeLocal</code> combines two bounding volumes into a single
+     * mergeLocal combines two bounding volumes into a single
      * bounding volume that contains both this bounding volume and the parameter
      * volume. The result is stored locally.
      *
@@ -142,7 +142,7 @@ public abstract class BoundingVolume implements Savable, Cloneable, Collidable {
     public abstract BoundingVolume mergeLocal(BoundingVolume volume);
 
     /**
-     * <code>clone</code> creates a new BoundingVolume object containing the
+     * clone creates a new BoundingVolume object containing the
      * same data as this one.
      *
      * @param store

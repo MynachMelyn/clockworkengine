@@ -8,7 +8,7 @@ package com.clockwork.terrain.heightmap;
 public interface HeightMap {
 
     /**
-     * <code>getHeightMap</code> returns the entire grid of height data.
+     * getHeightMap returns the entire grid of height data.
      *
      * @return the grid of height data.
      */
@@ -17,7 +17,7 @@ public interface HeightMap {
     float[] getScaledHeightMap();
 
     /**
-     * <code>getInterpolatedHeight</code> returns the height of a point that
+     * getInterpolatedHeight returns the height of a point that
      * does not fall directly on the height posts.
      *
      * @param x
@@ -29,7 +29,7 @@ public interface HeightMap {
     float getInterpolatedHeight(float x, float z);
 
     /**
-     * <code>getScaledHeightAtPoint</code> returns the scaled value at the
+     * getScaledHeightAtPoint returns the scaled value at the
      * point provided.
      *
      * @param x
@@ -41,7 +41,7 @@ public interface HeightMap {
     float getScaledHeightAtPoint(int x, int z);
 
     /**
-     * <code>getSize</code> returns the size of one side the height map. Where
+     * getSize returns the size of one side the height map. Where
      * the area of the height map is size x size.
      *
      * @return the size of a single side.
@@ -49,7 +49,7 @@ public interface HeightMap {
     int getSize();
 
     /**
-     * <code>getTrueHeightAtPoint</code> returns the non-scaled value at the
+     * getTrueHeightAtPoint returns the non-scaled value at the
      * point provided.
      *
      * @param x
@@ -61,7 +61,7 @@ public interface HeightMap {
     float getTrueHeightAtPoint(int x, int z);
 
     /**
-     * <code>load</code> populates the height map data. This is dependent on
+     * load populates the height map data. This is dependent on
      * the subclass's implementation.
      *
      * @return true if the load was successful, false otherwise.
@@ -69,7 +69,7 @@ public interface HeightMap {
     boolean load();
 
     /**
-     * <code>setHeightAtPoint</code> sets the height value for a given
+     * setHeightAtPoint sets the height value for a given
      * coordinate. It is recommended that the height value be within the 0 - 255
      * range.
      *
@@ -83,7 +83,7 @@ public interface HeightMap {
     void setHeightAtPoint(float height, int x, int z);
 
     /**
-     * <code>setHeightScale</code> sets the scale of the height values.
+     * setHeightScale sets the scale of the height values.
      * Typically, the height is a little too extreme and should be scaled to a
      * smaller value (i.e. 0.25), to produce cleaner slopes.
      *
@@ -93,7 +93,7 @@ public interface HeightMap {
     void setHeightScale(float scale);
 
     /**
-     * <code>setFilter</code> sets the erosion value for the filter. This
+     * setFilter sets the erosion value for the filter. This
      * value must be between 0 and 1, where 0.2 - 0.4 produces arguably the best
      * results.
      *
@@ -106,7 +106,7 @@ public interface HeightMap {
     void setMagnificationFilter(float filter) throws Exception;
 
     /**
-     * <code>setSize</code> sets the size of the terrain where the area is
+     * setSize sets the size of the terrain where the area is
      * size x size.
      *
      * @param size
@@ -119,7 +119,7 @@ public interface HeightMap {
     void setSize(int size) throws Exception;
 
     /**
-     * <code>unloadHeightMap</code> clears the data of the height map. This
+     * unloadHeightMap clears the data of the height map. This
      * insures it is ready for reloading.
      */
     void unloadHeightMap();

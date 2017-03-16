@@ -7,28 +7,28 @@ import static java.lang.annotation.ElementType.FIELD;
  * Declares that the field may not be accessed if the receiver is of the
  * specified qualifier type (or any supertype).
  *
- * This property is verified by the checker that type-checks the {@code
- * when} element value qualifier.
+ * This property is verified by the checker that type-checks the
+ * when element value qualifier.
  *
- * <p><b>Example</b>
- * Consider a class, {@code Table}, with a locking field, {@code lock}.  The
- * lock is used when a {@code Table} instance is shared across threads.  When
- * running in a local thread, the {@code lock} field ought not to be used.
+ * Example
+ * Consider a class, Table, with a locking field, lock.  The
+ * lock is used when a Table instance is shared across threads.  When
+ * running in a local thread, the lock} field ought not to be used.
  *
- * You can declare this behavior in the following way:
+ * You can declare this behaviour in the following way:
  *
- * <pre><code>
+ * 
  * class Table {
  *   private @Unused(when=LocalToThread.class) final Lock lock;
  *   ...
  * }
- * </code></pre>
+ * 
  *
- * The checker for {@code @LocalToThread} would issue an error for the following code:
+ * The checker for @LocalToThread would issue an error for the following code:
  *
- * <pre>  @LocalToThread Table table = ...;
+ *   @LocalToThread Table table = ...;
  *   ... table.lock ...;
- * </pre>
+ * 
  *
  */
 @Documented

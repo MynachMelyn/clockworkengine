@@ -143,7 +143,7 @@ public class ConstraintHelper extends AbstractBlenderHelper {
 
     /**
      * This method creates a proper constraint object depending on the object's
-     * data type. Supported data types: <li>Mesh <li>Armature <li>Camera <li>
+     * data type. Supported data types: Mesh Armature Camera 
      * Lamp Bone constraints are created in a different place.
      * 
      * @param dataType

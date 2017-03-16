@@ -99,9 +99,9 @@ public class TerrainPatch extends Geometry {
     }
 
     /**
-     * Constructor instantiates a new <code>TerrainPatch</code> object. The
+     * Constructor instantiates a new TerrainPatch object. The
      * parameters and heightmap data are then processed to generate a
-     * <code>TriMesh</code> object for rendering.
+     * TriMesh object for rendering.
      *
      * @param name
      *			the name of the terrain patch.
@@ -120,9 +120,9 @@ public class TerrainPatch extends Geometry {
     }
 
     /**
-     * Constructor instantiates a new <code>TerrainPatch</code> object. The
+     * Constructor instantiates a new TerrainPatch object. The
      * parameters and heightmap data are then processed to generate a
-     * <code>TriMesh</code> object for renderering.
+     * TriMesh object for renderering.
      *
      * @param name
      *			the name of the terrain patch.
@@ -136,7 +136,7 @@ public class TerrainPatch extends Geometry {
      *			the origin offset of the patch.
      * @param totalSize
      *			the total size of the terrain. (Higher if the patch is part of
-     *			a <code>TerrainQuad</code> tree.
+     *			a TerrainQuad tree.
      * @param offset
      *			the offset for texture coordinates.
      * @param offsetAmount
@@ -645,7 +645,7 @@ public class TerrainPatch extends Geometry {
 
     /**
      * Sets the value for the current offset amount to use when building texture
-     * coordinates. Note that this does <b>NOT </b> rebuild the terrain at all.
+     * coordinates. Note that this does NOT  rebuild the terrain at all.
      * This is mostly used for outside constructors of terrain patches.
      *
      * @param offset
@@ -656,7 +656,7 @@ public class TerrainPatch extends Geometry {
     }
 
     /**
-     * Sets the size of this terrain patch. Note that this does <b>NOT </b>
+     * Sets the size of this terrain patch. Note that this does NOT 
      * rebuild the terrain at all. This is mostly used for outside constructors
      * of terrain patches.
      *
@@ -670,7 +670,7 @@ public class TerrainPatch extends Geometry {
     }
 
     /**
-     * Sets the total size of the terrain . Note that this does <b>NOT </b>
+     * Sets the total size of the terrain . Note that this does NOT 
      * rebuild the terrain at all. This is mostly used for outside constructors
      * of terrain patches.
      *
@@ -683,7 +683,7 @@ public class TerrainPatch extends Geometry {
 
     /**
      * Sets the step scale of this terrain patch's height map. Note that this
-     * does <b>NOT </b> rebuild the terrain at all. This is mostly used for
+     * does NOT  rebuild the terrain at all. This is mostly used for
      * outside constructors of terrain patches.
      *
      * @param stepScale
@@ -694,8 +694,8 @@ public class TerrainPatch extends Geometry {
     }
 
     /**
-     * Sets the offset of this terrain texture map. Note that this does <b>NOT
-     * </b> rebuild the terrain at all. This is mostly used for outside
+     * Sets the offset of this terrain texture map. Note that this does NOT
+     *  rebuild the terrain at all. This is mostly used for outside
      * constructors of terrain patches.
      *
      * @param offsetAmount

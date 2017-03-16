@@ -13,14 +13,14 @@ import java.util.ArrayList;
  * Describes a cubemap texture.
  * The image specified by setImage must contain 6 data units,
  * each data contains a 2D image representing a cube's face.
- * The slices are specified in this order:<br/>
- * <br/>
- * 0 => Positive X (+x)<br/>
- * 1 => Negative X (-x)<br/>
- * 2 => Positive Y (+y)<br/>
- * 3 => Negative Y (-y)<br/>
- * 4 => Positive Z (+z)<br/>
- * 5 => Negative Z (-z)<br/>
+ * The slices are specified in this order:
+ * 
+ * 0 => Positive X (+x)
+ * 1 => Negative X (-x)
+ * 2 => Positive Y (+y)
+ * 3 => Negative Y (-y)
+ * 4 => Positive Z (+z)
+ * 5 => Negative Z (-z)
  *
  */
 public class TextureCubeMap extends Texture {
@@ -74,7 +74,7 @@ public class TextureCubeMap extends Texture {
     }
     
     /**
-     * <code>setWrap</code> sets the wrap mode of this texture for a
+     * setWrap sets the wrap mode of this texture for a
      * particular axis.
      * 
      * @param axis
@@ -104,7 +104,7 @@ public class TextureCubeMap extends Texture {
     }
 
     /**
-     * <code>setWrap</code> sets the wrap mode of this texture for all axis.
+     * setWrap sets the wrap mode of this texture for all axis.
      * 
      * @param mode
      *            the wrap mode for the given axis of the texture.
@@ -121,7 +121,7 @@ public class TextureCubeMap extends Texture {
     }
 
     /**
-     * <code>getWrap</code> returns the wrap mode for a given coordinate axis
+     * getWrap returns the wrap mode for a given coordinate axis
      * on this texture.
      * 
      * @param axis

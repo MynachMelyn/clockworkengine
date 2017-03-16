@@ -2,9 +2,9 @@
 package com.clockwork.asset;
 
 /**
- * <code>AssetNotFoundException</code> is thrown when the {@link AssetManager}
+ * AssetNotFoundException is thrown when the AssetManager}
  * is unable to locate the requested asset using any of the registered
- * {@link AssetLocator}s.
+ * AssetLocator}s.
  *
  */
 public class AssetNotFoundException extends RuntimeException {

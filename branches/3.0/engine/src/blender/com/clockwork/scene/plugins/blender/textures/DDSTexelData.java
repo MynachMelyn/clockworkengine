@@ -102,7 +102,7 @@ import com.clockwork.texture.Image.Format;
      *            the y coordinate of the pixel
      * @param result
      *            the table where the result is stored
-     * @return <b>true</b> if the pixel was correctly read and <b>false</b> if
+     * @return true if the pixel was correctly read and false if
      *         the position was outside the image sizes
      */
     public boolean getRGBA8(int x, int y, byte[] result) {

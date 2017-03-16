@@ -31,7 +31,7 @@ public interface ParticleInfluencer extends Savable, Cloneable {
      * @param initialVelocity
      *        Set the initial velocity a particle is spawned with,
      *        the initial velocity given in the parameter will be varied according
-     *        to the velocity variation set in {@link ParticleEmitter#setVelocityVariation(float) }.
+     *        to the velocity variation set in ParticleEmitter#setVelocityVariation(float) }.
      *        A particle will move toward its velocity unless it is effected by the
      *        gravity.
      */
@@ -46,9 +46,9 @@ public interface ParticleInfluencer extends Savable, Cloneable {
     /**
      * @param variation
      *        Set the variation by which the initial velocity
-     *        of the particle is determined. <code>variation</code> should be a value
+     *        of the particle is determined. variation should be a value
      *        from 0 to 1, where 0 means particles are to spawn with exactly
-     *        the velocity given in {@link ParticleEmitter#setInitialVelocity(com.clockwork.math.Vector3f) },
+     *        the velocity given in ParticleEmitter#setInitialVelocity(com.clockwork.math.Vector3f) },
      *        and 1 means particles are to spawn with a completely random velocity.
      */
     void setVelocityVariation(float variation);

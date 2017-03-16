@@ -18,7 +18,7 @@ import java.util.logging.Logger;
 
 
 /**
- * <code>Node</code> defines an internal node of a scene graph. The internal
+ * Node defines an internal node of a scene graph. The internal
  * node maintains a collection of children and handles merging said children
  * into a single bound to allow for very fast culling of multiple nodes. Node
  * allows for any number of children to be attached.
@@ -40,7 +40,7 @@ public class Node extends Spatial implements Savable {
     }
 
     /**
-     * Constructor instantiates a new <code>Node</code> with a default empty
+     * Constructor instantiates a new Node with a default empty
      * list for containing children.
      * 
      * @param name
@@ -53,7 +53,7 @@ public class Node extends Spatial implements Savable {
 
     /**
      * 
-     * <code>getQuantity</code> returns the number of children this node
+     * getQuantity returns the number of children this node
      * maintains.
      * 
      * @return the number of children this node maintains.
@@ -151,7 +151,7 @@ public class Node extends Spatial implements Savable {
     }
 
     /**
-     * <code>getTriangleCount</code> returns the number of triangles contained
+     * getTriangleCount returns the number of triangles contained
      * in all sub-branches of this node that contain geometry.
      * 
      * @return the triangle count of this branch.
@@ -169,7 +169,7 @@ public class Node extends Spatial implements Savable {
     }
     
     /**
-     * <code>getVertexCount</code> returns the number of vertices contained
+     * getVertexCount returns the number of vertices contained
      * in all sub-branches of this node that contain geometry.
      * 
      * @return the vertex count of this branch.
@@ -187,10 +187,10 @@ public class Node extends Spatial implements Savable {
     }
 
     /**
-     * <code>attachChild</code> attaches a child to this node. This node
+     * attachChild attaches a child to this node. This node
      * becomes the child's parent. The current number of children maintained is
      * returned.
-     * <br>
+     * 
      * If the child already had a parent it is detached from that former parent.
      * 
      * @param child
@@ -225,10 +225,10 @@ public class Node extends Spatial implements Savable {
     
     /**
      * 
-     * <code>attachChildAt</code> attaches a child to this node at an index. This node
+     * attachChildAt attaches a child to this node at an index. This node
      * becomes the child's parent. The current number of children maintained is
      * returned.
-     * <br>
+     * 
      * If the child already had a parent it is detached from that former parent.
      * 
      * @param child
@@ -258,7 +258,7 @@ public class Node extends Spatial implements Savable {
     }
 
     /**
-     * <code>detachChild</code> removes a given child from the node's list.
+     * detachChild removes a given child from the node's list.
      * This child will no longer be maintained.
      * 
      * @param child
@@ -281,7 +281,7 @@ public class Node extends Spatial implements Savable {
     }
 
     /**
-     * <code>detachChild</code> removes a given child from the node's list.
+     * detachChild removes a given child from the node's list.
      * This child will no longe be maintained. Only the first child with a
      * matching name is removed.
      * 
@@ -305,7 +305,7 @@ public class Node extends Spatial implements Savable {
 
     /**
      * 
-     * <code>detachChildAt</code> removes a child at a given index. That child
+     * detachChildAt removes a child at a given index. That child
      * is returned for saving purposes.
      * 
      * @param index
@@ -334,7 +334,7 @@ public class Node extends Spatial implements Savable {
 
     /**
      * 
-     * <code>detachAllChildren</code> removes all children attached to this
+     * detachAllChildren removes all children attached to this
      * node.
      */
     public void detachAllChildren() {
@@ -345,7 +345,7 @@ public class Node extends Spatial implements Savable {
     }
 
     /**
-     * <code>getChildIndex</code> returns the index of the given spatial
+     * getChildIndex returns the index of the given spatial
      * in this node's list of children.
      * @param sp
      *          The spatial to look up
@@ -373,7 +373,7 @@ public class Node extends Spatial implements Savable {
 
     /**
      * 
-     * <code>getChild</code> returns a child at a given index.
+     * getChild returns a child at a given index.
      * 
      * @param i
      *            the index to retrieve the child from.
@@ -384,7 +384,7 @@ public class Node extends Spatial implements Savable {
     }
 
     /**
-     * <code>getChild</code> returns the first child found with exactly the
+     * getChild returns the first child found with exactly the
      * given name (case sensitive.) This method does a depth first recursive
      * search of all descendants of this node, it will return the first spatial
      * found with a matching name.
@@ -467,22 +467,22 @@ public class Node extends Spatial implements Savable {
      /**
      * Returns flat list of Spatials implementing the specified class AND
      * with name matching the specified pattern.
-     * </P> <P>
+     *  
      * Note that we are <i>matching</i> the pattern, therefore the pattern
      * must match the entire pattern (i.e. it behaves as if it is sandwiched
      * between "^" and "$").
      * You can set regex modes, like case insensitivity, by using the (?X)
      * or (?X:Y) constructs.
-     * </P> <P>
-     * By design, it is always safe to code loops like:<CODE><PRE>
+     *  
+     * By design, it is always safe to code loops like:
      *     for (Spatial spatial : node.descendantMatches(AClass.class, "regex"))
-     * </PRE></CODE>
-     * </P> <P>
+     * 
+     *  
      * "Descendants" does not include self, per the definition of the word.
      * To test for descendants AND self, you must do a
-     * <code>node.matches(aClass, aRegex)</code> +
-     * <code>node.descendantMatches(aClass, aRegex)</code>.
-     * <P>
+     * node.matches(aClass, aRegex) +
+     * node.descendantMatches(aClass, aRegex).
+     * 
      *
      * @param spatialSubclass Subclass which matching Spatials must implement.
      *                        Null causes all Spatials to qualify.
@@ -490,8 +490,8 @@ public class Node extends Spatial implements Savable {
      *                        Null causes all Names to qualify.
      * @return Non-null, but possibly 0-element, list of matching Spatials (also Instances extending Spatials).
      *
-     * @see java.util.regex.Pattern
-     * @see Spatial#matches(java.lang.Class, java.lang.String) 
+     * see java.util.regex.Pattern
+     * see Spatial#matches(java.lang.Class, java.lang.String) 
      */
     @SuppressWarnings("unchecked")
     public <T extends Spatial>List<T> descendantMatches(
@@ -511,7 +511,7 @@ public class Node extends Spatial implements Savable {
     /**
      * Convenience wrapper.
      *
-     * @see #descendantMatches(java.lang.Class, java.lang.String) 
+     * see #descendantMatches(java.lang.Class, java.lang.String) 
      */
     public <T extends Spatial>List<T> descendantMatches(
             Class<T> spatialSubclass) {
@@ -521,7 +521,7 @@ public class Node extends Spatial implements Savable {
     /**
      * Convenience wrapper.
      *
-     * @see #descendantMatches(java.lang.Class, java.lang.String) 
+     * see #descendantMatches(java.lang.Class, java.lang.String) 
      */
     public <T extends Spatial>List<T> descendantMatches(String nameRegex) {
         return descendantMatches(null, nameRegex);

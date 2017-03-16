@@ -30,7 +30,7 @@ import java.io.IOException;
  * 
  * API is basically the same as the PssmShadowRenderer;
  * 
- * @deprecated use {@link DirectionalLightShadowFilter}
+ * @deprecated use DirectionalLightShadowFilter}
  */
 @Deprecated
 public class PssmShadowFilter extends Filter {
@@ -110,7 +110,7 @@ public class PssmShadowFilter extends Filter {
 
     /**
      * returns the labda parameter
-     * @see #setLambda(float lambda)
+     * see #setLambda(float lambda)
      * @return lambda
      */
     public float getLambda() {
@@ -131,7 +131,7 @@ public class PssmShadowFilter extends Filter {
 
     /**
      * How far the shadows are rendered in the view
-     * @see setShadowZExtend(float zFar)
+     * see setShadowZExtend(float zFar)
      * @return shadowZExtend
      */
     public float getShadowZExtend() {
@@ -149,7 +149,7 @@ public class PssmShadowFilter extends Filter {
 
     /**
      * returns the shdaow intensity
-     * @see #setShadowIntensity(float shadowIntensity)
+     * see #setShadowIntensity(float shadowIntensity)
      * @return shadowIntensity
      */
     public float getShadowIntensity() {
@@ -168,8 +168,8 @@ public class PssmShadowFilter extends Filter {
     }
 
     /**
-     * returns the edges thickness <br>
-     * @see #setEdgesThickness(int edgesThickness)
+     * returns the edges thickness 
+     * see #setEdgesThickness(int edgesThickness)
      * @return edgesThickness
      */
     public int getEdgesThickness() {
@@ -202,7 +202,7 @@ public class PssmShadowFilter extends Filter {
     }
 
     /**
-     * sets the shadow compare mode see {@link CompareMode} for more info
+     * sets the shadow compare mode see CompareMode} for more info
      * @param compareMode 
      */
     final public void setCompareMode(CompareMode compareMode) {
@@ -210,7 +210,7 @@ public class PssmShadowFilter extends Filter {
     }
     
     /**
-     * Sets the filtering mode for shadow edges see {@link FilterMode} for more info
+     * Sets the filtering mode for shadow edges see FilterMode} for more info
      * @param filterMode 
      */
     final public void setFilterMode(FilterMode filterMode) {

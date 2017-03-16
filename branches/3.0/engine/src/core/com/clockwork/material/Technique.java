@@ -58,7 +58,7 @@ public class Technique /* implements Savable */ {
 
     /**
      * Returns the shader currently used by this technique instance.
-     * <p>
+     * 
      * Shaders are typically loaded dynamically when the technique is first
      * used, therefore, this variable will most likely be null most of the time.
      * 
@@ -80,7 +80,7 @@ public class Technique /* implements Savable */ {
 
     /**
      * Called by the material to tell the technique a parameter was modified.
-     * Specify <code>null</code> for value if the param is to be cleared.
+     * Specify null for value if the param is to be cleared.
      */
     void notifyParamChanged(String paramName, VarType type, Object value) {
         // Check if there's a define binding associated with this
@@ -125,9 +125,9 @@ public class Technique /* implements Savable */ {
 
     /**
      * Returns true if the technique must be reloaded.
-     * <p>
-     * If a technique needs to reload, then the {@link Material} should
-     * call {@link #makeCurrent(com.clockwork.asset.AssetManager) } on this
+     * 
+     * If a technique needs to reload, then the Material} should
+     * call #makeCurrent(com.clockwork.asset.AssetManager) } on this
      * technique.
      * 
      * @return true if the technique must be reloaded.

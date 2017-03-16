@@ -105,7 +105,7 @@ public class CollisionShapeFactory {
 
     /**
      * This type of collision shape is mesh-accurate and meant for immovable "world objects".
-     * Examples include terrain, houses or whole shooter levels.<br>
+     * Examples include terrain, houses or whole shooter levels.
      * Objects with "mesh" type collision shape will not collide with each other.
      */
     private static CompoundCollisionShape createMeshCompoundShape(Node rootNode) {
@@ -124,8 +124,8 @@ public class CollisionShapeFactory {
 
     /**
      * This type of collision shape is mesh-accurate and meant for immovable "world objects".
-     * Examples include terrain, houses or whole shooter levels.<br/>
-     * Objects with "mesh" type collision shape will not collide with each other.<br/>
+     * Examples include terrain, houses or whole shooter levels.
+     * Objects with "mesh" type collision shape will not collide with each other.
      * Creates a HeightfieldCollisionShape if the supplied spatial is a TerrainQuad.
      * @return A MeshCollisionShape or a CompoundCollisionShape with MeshCollisionShapes as children if the supplied spatial is a Node. A HeightieldCollisionShape if a TerrainQuad was supplied.
      */
@@ -146,7 +146,7 @@ public class CollisionShapeFactory {
     }
 
     /**
-     * This method creates a hull shape for the given Spatial.<br>
+     * This method creates a hull shape for the given Spatial.
      * If you want to have mesh-accurate dynamic shapes (CPU intense!!!) use GImpact shapes, its probably best to do so with a low-poly version of your model.
      * @return A HullCollisionShape or a CompoundCollisionShape with HullCollisionShapes as children if the supplied spatial is a Node.
      */
@@ -173,7 +173,7 @@ public class CollisionShapeFactory {
 
     /**
      * This type of collision shape is mesh-accurate and meant for immovable "world objects".
-     * Examples include terrain, houses or whole shooter levels.<br>
+     * Examples include terrain, houses or whole shooter levels.
      * Objects with "mesh" type collision shape will not collide with each other.
      */
     private static MeshCollisionShape createSingleMeshShape(Geometry geom, Spatial parent) {
@@ -201,7 +201,7 @@ public class CollisionShapeFactory {
     }
 
     /**
-     * This method creates a hull collision shape for the given mesh.<br>
+     * This method creates a hull collision shape for the given mesh.
      */
     private static HullCollisionShape createSingleDynamicMeshShape(Geometry geom, Spatial parent) {
         Mesh mesh = geom.getMesh();

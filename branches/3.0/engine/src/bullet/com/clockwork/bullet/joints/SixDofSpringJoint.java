@@ -6,7 +6,7 @@ import com.clockwork.math.Matrix3f;
 import com.clockwork.math.Vector3f;
 
 /**
- * <i>From bullet manual:</i><br>
+ * <i>From bullet manual:</i>
  * This generic constraint can emulate a variety of standard constraints,
  * by configuring each of the 6 degrees of freedom (dof).
  * The first 3 dof axis are linear axis, which represent translation of rigidbodies,

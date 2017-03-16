@@ -2,7 +2,7 @@
 package com.clockwork.input.event;
 
 /**
- * <code>TouchEvent</code> represents a single event from multi-touch input devices
+ * TouchEvent represents a single event from multi-touch input devices
  */
 public class TouchEvent extends InputEvent {
 

@@ -24,11 +24,11 @@ import java.util.logging.Logger;
  * waves, lightnings etc...
  *
  * usage is
- * <pre>
+ * 
  * AnimControl control model.getControl(AnimControl.class);
  * EffectTrack track = new EffectTrack(existingEmmitter, control.getAnim("TheAnim").getLength());
  * control.getAnim("TheAnim").addTrack(track);
- * </pre>
+ * 
  *
  * if the emitter has emmits 0 particles per seconds emmitAllPArticles will be
  * called on it at time 0 + startOffset. if it he it has more it will start
@@ -156,7 +156,7 @@ public class EffectTrack implements ClonableTrack {
     /**
      * Internal use only
      *
-     * @see Track#setTime(float, float, com.clockwork.animation.AnimControl,
+     * see Track#setTime(float, float, com.clockwork.animation.AnimControl,
      * com.clockwork.animation.AnimChannel, com.clockwork.util.TempVars)
      */
     public void setTime(float time, float weight, AnimControl control, AnimChannel channel, TempVars vars) {

@@ -6,13 +6,13 @@ import java.io.IOException;
 import java.io.OutputStream;
 
 /**
- * <code>JmeExporter</code> specifies an export implementation for jME3 
+ * JmeExporter specifies an export implementation for jME3 
  * data.
  */
 public interface JmeExporter {
     
     /**
-     * Export the {@link Savable} to an OutputStream.
+     * Export the Savable} to an OutputStream.
      * 
      * @param object The savable to export
      * @param f The output stream
@@ -23,7 +23,7 @@ public interface JmeExporter {
     public boolean save(Savable object, OutputStream f) throws IOException;
     
     /**
-     * Export the {@link Savable} to a file.
+     * Export the Savable} to a file.
      * 
      * @param object The savable to export
      * @param f The file to export to
@@ -34,10 +34,10 @@ public interface JmeExporter {
     public boolean save(Savable object, File f) throws IOException;
     
     /**
-     * Returns the {@link OutputCapsule} for the given savable object.
+     * Returns the OutputCapsule} for the given savable object.
      * 
      * @param object The object to retrieve an output capsule for.
-     * @return  the {@link OutputCapsule} for the given savable object.
+     * @return  the OutputCapsule} for the given savable object.
      */
     public OutputCapsule getCapsule(Savable object);
 }

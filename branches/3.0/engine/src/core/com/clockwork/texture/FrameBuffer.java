@@ -8,14 +8,14 @@ import com.clockwork.util.NativeObject;
 import java.util.ArrayList;
 
 /**
- * <p>
- * <code>FrameBuffer</code>s are rendering surfaces allowing
+ * 
+ * FrameBuffers are rendering surfaces allowing
  * off-screen rendering and render-to-texture functionality.
  * Instead of the scene rendering to the screen, it is rendered into the 
  * FrameBuffer, the result can be either a texture or a buffer.
- * <p>
- * A <code>FrameBuffer</code> supports two methods of rendering, 
- * using a {@link Texture} or using a buffer. 
+ * 
+ * A FrameBuffer supports two methods of rendering, 
+ * using a Texture} or using a buffer. 
  * When using a texture, the result of the rendering will be rendered
  * onto the texture, after which the texture can be placed on an object
  * and rendered as if the texture was uploaded from disk.
@@ -26,18 +26,18 @@ import java.util.ArrayList;
  * depth testing (which requires a depth buffer). 
  * Buffers can be copied to other framebuffers
  * including the main screen, by using 
- * {@link Renderer#copyFrameBuffer(com.clockwork.texture.FrameBuffer, com.clockwork.texture.FrameBuffer) }.
- * The content of a {@link RenderBuffer} can be retrieved by using 
- * {@link Renderer#readFrameBuffer(com.clockwork.texture.FrameBuffer, java.nio.ByteBuffer) }.
- * <p>
- * <code>FrameBuffer</code>s have several attachment points, there are 
+ * Renderer#copyFrameBuffer(com.clockwork.texture.FrameBuffer, com.clockwork.texture.FrameBuffer) }.
+ * The content of a RenderBuffer} can be retrieved by using 
+ * Renderer#readFrameBuffer(com.clockwork.texture.FrameBuffer, java.nio.ByteBuffer) }.
+ * 
+ * FrameBuffers have several attachment points, there are 
  * several <em>color</em> attachment points and a single <em>depth</em> 
  * attachment point.
  * The color attachment points support image formats such as
- * {@link Format#RGBA8}, allowing rendering the color content of the scene.
+ * Format#RGBA8}, allowing rendering the color content of the scene.
  * The depth attachment point requires a depth image format. 
  * 
- * @see Renderer#setFrameBuffer(com.clockwork.texture.FrameBuffer) 
+ * see Renderer#setFrameBuffer(com.clockwork.texture.FrameBuffer) 
  * 
  */
 public class FrameBuffer extends NativeObject {
@@ -50,9 +50,9 @@ public class FrameBuffer extends NativeObject {
     private int colorBufIndex = 0;
 
     /**
-     * <code>RenderBuffer</code> represents either a texture or a 
-     * buffer that will be rendered to. <code>RenderBuffer</code>s
-     * are attached to an attachment slot on a <code>FrameBuffer</code>.
+     * RenderBuffer represents either a texture or a 
+     * buffer that will be rendered to. RenderBuffers
+     * are attached to an attachment slot on a FrameBuffer.
      */
     public class RenderBuffer {
 
@@ -70,7 +70,7 @@ public class FrameBuffer extends NativeObject {
         }
 
         /**
-         * @return The texture to render to for this <code>RenderBuffer</code>
+         * @return The texture to render to for this RenderBuffer
          * or null if content should be rendered into a buffer.
          */
         public Texture getTexture(){
@@ -127,13 +127,13 @@ public class FrameBuffer extends NativeObject {
     }
 
     /**
-     * <p>
+     * 
      * Creates a new FrameBuffer with the given width, height, and number
      * of samples. If any textures are attached to this FrameBuffer, then
      * they must have the same number of samples as given in this constructor.
-     * <p>
-     * Note that if the {@link Renderer} does not expose the 
-     * {@link Caps#NonPowerOfTwoTextures}, then an exception will be thrown
+     * 
+     * Note that if the Renderer} does not expose the 
+     * Caps#NonPowerOfTwoTextures}, then an exception will be thrown
      * if the width and height arguments are not power of two.
      * 
      * @param width The width to use
@@ -167,10 +167,10 @@ public class FrameBuffer extends NativeObject {
     }
 
     /**
-     * Enables the use of a depth buffer for this <code>FrameBuffer</code>.
+     * Enables the use of a depth buffer for this FrameBuffer.
      * 
      * @param format The format to use for the depth buffer.
-     * @throws IllegalArgumentException If <code>format</code> is not a depth format.
+     * @throws IllegalArgumentException If format is not a depth format.
      */
     public void setDepthBuffer(Image.Format format){
         if (id != -1)
@@ -185,10 +185,10 @@ public class FrameBuffer extends NativeObject {
     }
 
     /**
-     * Enables the use of a color buffer for this <code>FrameBuffer</code>.
+     * Enables the use of a color buffer for this FrameBuffer.
      * 
      * @param format The format to use for the color buffer.
-     * @throws IllegalArgumentException If <code>format</code> is not a color format.
+     * @throws IllegalArgumentException If format is not a color format.
      */
     public void setColorBuffer(Image.Format format){
         if (id != -1)
@@ -225,9 +225,9 @@ public class FrameBuffer extends NativeObject {
     }
 
     /**
-     * If enabled, any shaders rendering into this <code>FrameBuffer</code>
+     * If enabled, any shaders rendering into this FrameBuffer
      * will be able to write several results into the renderbuffers
-     * by using the <code>gl_FragData</code> array. Every slot in that
+     * by using the gl_FragData array. Every slot in that
      * array maps into a color buffer attached to this framebuffer.
      * 
      * @param enabled True to enable MRT (multiple rendering targets).
@@ -239,16 +239,16 @@ public class FrameBuffer extends NativeObject {
 
     /**
      * @return True if MRT (multiple rendering targets) is enabled.
-     * @see FrameBuffer#setMultiTarget(boolean)
+     * see FrameBuffer#setMultiTarget(boolean)
      */
     public boolean isMultiTarget(){
         return colorBufIndex == -1;
     }
     
     /**
-     * If MRT is not enabled ({@link FrameBuffer#setMultiTarget(boolean) } is false)
+     * If MRT is not enabled (FrameBuffer#setMultiTarget(boolean) } is false)
      * then this specifies the color target to which the scene should be rendered.
-     * <p>
+     * 
      * By default the value is 0.
      * 
      * @param index The color attachment index.
@@ -269,7 +269,7 @@ public class FrameBuffer extends NativeObject {
     /**
      * @return The color target to which the scene should be rendered.
      * 
-     * @see FrameBuffer#setTargetIndex(int) 
+     * see FrameBuffer#setTargetIndex(int) 
      */
     public int getTargetIndex(){
         return colorBufIndex;
@@ -278,7 +278,7 @@ public class FrameBuffer extends NativeObject {
     /**
      * Set the color texture to use for this framebuffer.
      * This automatically clears all existing textures added previously
-     * with {@link FrameBuffer#addColorTexture } and adds this texture as the
+     * with FrameBuffer#addColorTexture } and adds this texture as the
      * only target.
      * 
      * @param tex The color texture to set.
@@ -291,7 +291,7 @@ public class FrameBuffer extends NativeObject {
     /**
      * Set the color texture to use for this framebuffer.
      * This automatically clears all existing textures added previously
-     * with {@link FrameBuffer#addColorTexture } and adds this texture as the
+     * with FrameBuffer#addColorTexture } and adds this texture as the
      * only target.
      *
      * @param tex The cube-map texture to set.
@@ -312,8 +312,8 @@ public class FrameBuffer extends NativeObject {
     /**
      * Add a color texture to use for this framebuffer.
      * If MRT is enabled, then each subsequently added texture can be
-     * rendered to through a shader that writes to the array <code>gl_FragData</code>.
-     * If MRT is not enabled, then the index set with {@link FrameBuffer#setTargetIndex(int) }
+     * rendered to through a shader that writes to the array gl_FragData.
+     * If MRT is not enabled, then the index set with FrameBuffer#setTargetIndex(int) }
      * is rendered to by the shader.
      * 
      * @param tex The texture to add.
@@ -336,8 +336,8 @@ public class FrameBuffer extends NativeObject {
      /**
      * Add a color texture to use for this framebuffer.
      * If MRT is enabled, then each subsequently added texture can be
-     * rendered to through a shader that writes to the array <code>gl_FragData</code>.
-     * If MRT is not enabled, then the index set with {@link FrameBuffer#setTargetIndex(int) }
+     * rendered to through a shader that writes to the array gl_FragData.
+     * If MRT is not enabled, then the index set with FrameBuffer#setTargetIndex(int) }
      * is rendered to by the shader.
      *
      * @param tex The cube-map texture to add.

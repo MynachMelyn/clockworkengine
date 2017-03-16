@@ -9,7 +9,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * The <code>iOS GLES interface</code> iOS alternative to Android's GLES20 class
+ * The iOS GLES interface iOS alternative to Android's GLES20 class
  * 
  */
 public class JmeIosGLES {

@@ -4,9 +4,9 @@ package com.clockwork.input;
 /**
  * Abstract interface for an input device.
  * 
- * @see MouseInput
- * @see KeyInput
- * @see JoyInput
+ * see MouseInput
+ * see KeyInput
+ * see JoyInput
  */
 public interface Input {
 
@@ -19,7 +19,7 @@ public interface Input {
      * Queries the device for input. All events should be sent to the
      * RawInputListener set with setInputListener.
      *
-     * @see #setInputListener(com.clockwork.input.RawInputListener)
+     * see #setInputListener(com.clockwork.input.RawInputListener)
      */
     public void update();
 
@@ -30,8 +30,8 @@ public interface Input {
 
     /**
      * @return True if the device has been initialized and not destroyed.
-     * @see #initialize()
-     * @see #destroy() 
+     * see #initialize()
+     * see #destroy() 
      */
     public boolean isInitialized();
 

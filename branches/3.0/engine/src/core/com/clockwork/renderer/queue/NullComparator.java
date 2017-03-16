@@ -5,7 +5,7 @@ import com.clockwork.renderer.Camera;
 import com.clockwork.scene.Geometry;
 
 /**
- * <code>NullComparator</code> does not sort geometries. They will be in
+ * NullComparator does not sort geometries. They will be in
  * arbitrary order.
  * 
  */

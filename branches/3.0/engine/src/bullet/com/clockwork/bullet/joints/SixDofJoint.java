@@ -17,7 +17,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * <i>From bullet manual:</i><br>
+ * <i>From bullet manual:</i>
  * This generic constraint can emulate a variety of standard constraints,
  * by configuring each of the 6 degrees of freedom (dof).
  * The first 3 dof axis are linear axis, which represent translation of rigidbodies,

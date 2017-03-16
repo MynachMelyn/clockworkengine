@@ -4,7 +4,7 @@ package com.clockwork.input.controls;
 import com.clockwork.input.MouseInput;
 
 /**
- * A <code>MouseAxisTrigger</code> is used as a mapping to mouse axis,
+ * A MouseAxisTrigger is used as a mapping to mouse axis,
  * a mouse axis is movement along the X axis (left/right), Y axis (up/down)
  * and the mouse wheel (scroll up/down).
  *
@@ -15,9 +15,9 @@ public class MouseAxisTrigger implements Trigger {
     private boolean negative;
 
     /**
-     * Create a new <code>MouseAxisTrigger</code>.
-     * <p>
-     * @param mouseAxis Mouse axis. See AXIS_*** constants in {@link MouseInput}
+     * Create a new MouseAxisTrigger.
+     * 
+     * @param mouseAxis Mouse axis. See AXIS_*** constants in MouseInput}
      * @param negative True if listen to negative axis events, false if
      * listen to positive axis events.
      */

@@ -82,7 +82,7 @@ public class AnimationEvent extends AbstractCinematicEvent {
      * @param model the model on which the animation will be played
      * @param animationName the name of the animation to play
      * @param loopMode the loopMode
-     * @see LoopMode
+     * see LoopMode
      */
     public AnimationEvent(Spatial model, String animationName, LoopMode loopMode) {
         super(loopMode);
@@ -98,7 +98,7 @@ public class AnimationEvent extends AbstractCinematicEvent {
      * @param animationName the name of the animation to play
      * @param initialDuration the initialduration of the event
      * @param loopMode the loopMode
-     * @see LoopMode
+     * see LoopMode
      */
     public AnimationEvent(Spatial model, String animationName, float initialDuration, LoopMode loopMode) {
         super(initialDuration, loopMode);
@@ -113,7 +113,7 @@ public class AnimationEvent extends AbstractCinematicEvent {
      * @param animationName the name of the animation to play
      * @param initialDuration the initialduration of the event
      * @param blendTime the time during the animation are gonna be blended
-     * @see AnimChannel#setAnim(java.lang.String, float)
+     * see AnimChannel#setAnim(java.lang.String, float)
      */
     public AnimationEvent(Spatial model, String animationName, float initialDuration, float blendTime) {
         super(initialDuration);
@@ -128,9 +128,9 @@ public class AnimationEvent extends AbstractCinematicEvent {
      * @param model the model on which the animation will be played
      * @param animationName the name of the animation to play
      * @param loopMode the loopMode
-     * @see LoopMode
+     * see LoopMode
      * @param blendTime the time during the animation are gonna be blended
-     * @see AnimChannel#setAnim(java.lang.String, float)
+     * see AnimChannel#setAnim(java.lang.String, float)
      */
     public AnimationEvent(Spatial model, String animationName, LoopMode loopMode, float blendTime) {
         super(loopMode);
@@ -147,9 +147,9 @@ public class AnimationEvent extends AbstractCinematicEvent {
      * @param animationName the name of the animation to play
      * @param initialDuration the initialduration of the event
      * @param loopMode the loopMode
-     * @see LoopMode
+     * see LoopMode
      * @param blendTime the time during the animation are gonna be blended
-     * @see AnimChannel#setAnim(java.lang.String, float)
+     * see AnimChannel#setAnim(java.lang.String, float)
      */
     public AnimationEvent(Spatial model, String animationName, float initialDuration, LoopMode loopMode, float blendTime) {
         super(initialDuration, loopMode);
@@ -164,7 +164,7 @@ public class AnimationEvent extends AbstractCinematicEvent {
      * @param model the model on which the animation will be played
      * @param animationName the name of the animation to play
      * @param loopMode the loopMode
-     * @see LoopMode
+     * see LoopMode
      * @param channelIndex the index of the channel default is 0. Events on the
      * same channelIndex will use the same channel.
      */
@@ -214,7 +214,7 @@ public class AnimationEvent extends AbstractCinematicEvent {
      * @param animationName the name of the animation to play
      * @param initialDuration the initialduration of the event
      * @param loopMode the loopMode
-     * @see LoopMode
+     * see LoopMode
      * @param channelIndex the index of the channel default is 0. Events on the
      * same channelIndex will use the same channel.
      */

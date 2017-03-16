@@ -234,7 +234,7 @@ public class MeshHelper extends AbstractBlenderHelper {
      * 
      * @param meshStructure
      *            the mesh structure
-     * @return <b>true</b> if BMesh is supported and <b>false</b> otherwise
+     * @return true if BMesh is supported and false otherwise
      */
     private boolean isBMeshCompatible(Structure meshStructure) {
         Pointer pMLoop = (Pointer) meshStructure.getFieldValue("mloop");
@@ -440,7 +440,7 @@ public class MeshHelper extends AbstractBlenderHelper {
     }
 
     /**
-     * @return <b>true</b> if the material has at least one generated component and <b>false</b> otherwise
+     * @return true if the material has at least one generated component and false otherwise
      */
     private boolean areGeneratedTexturesPresent(MaterialContext[] materials) {
         if (materials != null) {

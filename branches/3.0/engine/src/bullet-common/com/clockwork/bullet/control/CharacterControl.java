@@ -17,7 +17,7 @@ import com.clockwork.scene.control.Control;
 import java.io.IOException;
 
 /**
- * @deprecated in favor of <code>BetterCharacterControl</code>
+ * @deprecated in favor of BetterCharacterControl
  */
 @Deprecated
 public class CharacterControl extends PhysicsCharacter implements PhysicsControl {

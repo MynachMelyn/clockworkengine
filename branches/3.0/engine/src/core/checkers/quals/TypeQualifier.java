@@ -6,7 +6,7 @@ import java.lang.annotation.*;
  * A meta-annotation indicating that the annotated annotation is a type
  * qualifier.
  *
- * Examples of such qualifiers: {@code @ReadOnly}, {@code @NonNull}
+ * Examples of such qualifiers: @ReadOnly}, @NonNull}
  */
 @Documented
 @Retention(RetentionPolicy.RUNTIME)

@@ -29,7 +29,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * <code>AssetManager</code> is the primary method for managing and loading
+ * AssetManager is the primary method for managing and loading
  * assets inside jME.
  *
  */
@@ -359,7 +359,7 @@ public class DesktopAssetManager implements AssetManager {
      * Load a vertex/fragment shader combo.
      *
      * @param key
-     * @return the loaded {@link Shader}
+     * @return the loaded Shader}
      */
     public Shader loadShader(ShaderKey key){
         // cache abuse in method

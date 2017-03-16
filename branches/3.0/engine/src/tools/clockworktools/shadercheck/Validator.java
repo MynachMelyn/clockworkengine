@@ -25,7 +25,7 @@ public interface Validator {
     
     /**
      * Validates the given shader to make sure it follows all requirements
-     * of the shader language specified as {@link Shader#getLanguage() }.
+     * of the shader language specified as Shader#getLanguage() }.
      * The results of the validation will be written into the 
      * results argument.
      * 

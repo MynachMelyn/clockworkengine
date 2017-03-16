@@ -71,37 +71,37 @@ public class BetterChaseCamera implements ActionListener, AnalogListener, Contro
     protected boolean invertXaxis = false;
     
     /**
-     * @deprecated use {@link CameraInput#CHASECAM_DOWN}
+     * @deprecated use CameraInput#CHASECAM_DOWN}
      */
     @Deprecated
     public final static String ChaseCamDown = "ChaseCamDown";
     /**
-     * @deprecated use {@link CameraInput#CHASECAM_UP}
+     * @deprecated use CameraInput#CHASECAM_UP}
      */
     @Deprecated
     public final static String ChaseCamUp = "ChaseCamUp";
     /**
-     * @deprecated use {@link CameraInput#CHASECAM_ZOOMIN}
+     * @deprecated use CameraInput#CHASECAM_ZOOMIN}
      */
     @Deprecated
     public final static String ChaseCamZoomIn = "ChaseCamZoomIn";
     /**
-     * @deprecated use {@link CameraInput#CHASECAM_ZOOMOUT}
+     * @deprecated use CameraInput#CHASECAM_ZOOMOUT}
      */
     @Deprecated
     public final static String ChaseCamZoomOut = "ChaseCamZoomOut";
     /**
-     * @deprecated use {@link CameraInput#CHASECAM_MOVELEFT}
+     * @deprecated use CameraInput#CHASECAM_MOVELEFT}
      */
     @Deprecated
     public final static String ChaseCamMoveLeft = "ChaseCamMoveLeft";
     /**
-     * @deprecated use {@link CameraInput#CHASECAM_MOVERIGHT}
+     * @deprecated use CameraInput#CHASECAM_MOVERIGHT}
      */
     @Deprecated
     public final static String ChaseCamMoveRight = "ChaseCamMoveRight";
     /**
-     * @deprecated use {@link CameraInput#CHASECAM_TOGGLEROTATE}
+     * @deprecated use CameraInput#CHASECAM_TOGGLEROTATE}
      */
     @Deprecated
     public final static String ChaseCamToggleRotate = "ChaseCamToggleRotate";
@@ -863,7 +863,7 @@ public class BetterChaseCamera implements ActionListener, AnalogListener, Contro
     /**
      * @return If drag to rotate feature is enabled.
      *
-     * @see FlyByCamera#setDragToRotate(boolean)
+     * see FlyByCamera#setDragToRotate(boolean)
      */
     public boolean isDragToRotate() {
         return dragToRotate;

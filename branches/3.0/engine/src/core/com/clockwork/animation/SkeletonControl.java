@@ -59,12 +59,12 @@ public class SkeletonControl extends AbstractControl implements Cloneable {
     
     /**
      * Hardware skinning was tested on this GPU, results
-     * are stored in {@link #hwSkinningSupported} variable.
+     * are stored in #hwSkinningSupported} variable.
      */
     private transient boolean hwSkinningTested = false;
     
     /**
-     * If hardware skinning was {@link #hwSkinningTested tested}, then
+     * If hardware skinning was #hwSkinningTested tested}, then
      * this variable will be set to true if supported, and false if otherwise.
      */
     private transient boolean hwSkinningSupported = false;
@@ -140,7 +140,7 @@ public class SkeletonControl extends AbstractControl implements Cloneable {
      * supported by GPU, it shall be enabled, if its not preferred, or not
      * supported by GPU, then it shall be disabled.
      * 
-     * @see #isHardwareSkinningUsed() 
+     * see #isHardwareSkinningUsed() 
      */
     public void setHardwareSkinningPreferred(boolean preferred) {
         hwSkinningDesired = preferred;
@@ -150,7 +150,7 @@ public class SkeletonControl extends AbstractControl implements Cloneable {
      * @return True if hardware skinning is preferable to software skinning.
      * Set to false by default.
      * 
-     * @see #setHardwareSkinningPreferred(boolean) 
+     * see #setHardwareSkinningPreferred(boolean) 
      */
     public boolean isHardwareSkinningPreferred() {
         return hwSkinningDesired;

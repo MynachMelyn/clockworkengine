@@ -14,7 +14,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * The class that is responsible for blending the following texture types: <li>Luminance8 <li>Luminance8Alpha8 Not yet supported (but will be): <li>Luminance16: <li>Luminance16Alpha16: <li>Luminance16F: <li>Luminance16FAlpha16F: <li>Luminance32F:
+ * The class that is responsible for blending the following texture types: Luminance8 Luminance8Alpha8 Not yet supported (but will be): Luminance16: Luminance16Alpha16: Luminance16F: Luminance16FAlpha16F: Luminance32F:
  * 
  */
 public class TextureBlenderLuminance extends AbstractTextureBlender {

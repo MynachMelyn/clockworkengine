@@ -11,7 +11,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * <code>ImplHandler</code> manages the asset loader and asset locator
+ * ImplHandler manages the asset loader and asset locator
  * implementations in a thread safe way. This allows implementations
  * which store local persistent data to operate with a multi-threaded system.
  * This is done by keeping an instance of each asset loader and asset
@@ -102,8 +102,8 @@ public class ImplHandler {
 
     /**
      * Establishes the asset key that is used for tracking dependent assets
-     * that have failed to load. When set, the {@link DesktopAssetManager}
-     * gets a hint that it should suppress {@link AssetNotFoundException}s
+     * that have failed to load. When set, the DesktopAssetManager}
+     * gets a hint that it should suppress AssetNotFoundException}s
      * and instead call the listener callback (if set).
      * 
      * @param parentKey The parent key  

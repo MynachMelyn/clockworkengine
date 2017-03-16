@@ -15,11 +15,11 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * An <code>AudioNode</code> is a scene Node which can play audio assets. 
+ * An AudioNode is a scene Node which can play audio assets. 
  * 
  * An AudioNode is either positional or ambient, with positional being the 
  * default. Once a positional node is attached to the scene, its location and 
- * velocity relative to the {@link Listener} affect how it sounds when played. 
+ * velocity relative to the Listener} affect how it sounds when played. 
  * Positional nodes can only play monoaural (single-channel) assets, not stereo 
  * ones. 
  * 
@@ -28,7 +28,7 @@ import java.util.logging.Logger;
  * play stereo assets. 
  * 
  * The "positional" property of an AudioNode can be set via 
- * {@link AudioNode#setPositional(boolean) }.
+ * AudioNode#setPositional(boolean) }.
  * 
  */
 public class AudioNode extends Node implements AudioSource {
@@ -56,14 +56,14 @@ public class AudioNode extends Node implements AudioSource {
     protected boolean positional = true;
 
     /**
-     * <code>Status</code> indicates the current status of the audio node.
+     * Status indicates the current status of the audio node.
      * @deprecated - use AudioSource.Status instead
      */
     @Deprecated
     public enum Status {
         /**
          * The audio node is currently playing. This will be set if
-         * {@link AudioNode#play() } is called.
+         * AudioNode#play() } is called.
          */
         Playing,
         
@@ -74,20 +74,20 @@ public class AudioNode extends Node implements AudioSource {
         
         /**
          * The audio node is currently stopped.
-         * This will be set if {@link AudioNode#stop() } is called 
+         * This will be set if AudioNode#stop() } is called 
          * or the audio has reached the end of the file.
          */
         Stopped,
     }
 
     /**
-     * Creates a new <code>AudioNode</code> without any audio data set.
+     * Creates a new AudioNode without any audio data set.
      */
     public AudioNode() {
     }
 
     /**
-     * Creates a new <code>AudioNode</code> with the given data and key.
+     * Creates a new AudioNode with the given data and key.
      * 
      * @param audioData The audio data contains the audio track to play.
      * @param audioKey The audio key that was used to load the AudioData
@@ -97,7 +97,7 @@ public class AudioNode extends Node implements AudioSource {
     }
 
     /**
-     * Creates a new <code>AudioNode</code> with the given audio file.
+     * Creates a new AudioNode with the given audio file.
      * 
      * @param assetManager The asset manager to use to load the audio file
      * @param name The filename of the audio file
@@ -114,7 +114,7 @@ public class AudioNode extends Node implements AudioSource {
     }
 
     /**
-     * Creates a new <code>AudioNode</code> with the given audio file.
+     * Creates a new AudioNode with the given audio file.
      * 
      * @param assetManager The asset manager to use to load the audio file
      * @param name The filename of the audio file
@@ -126,7 +126,7 @@ public class AudioNode extends Node implements AudioSource {
     }
 
     /**
-     * Creates a new <code>AudioNode</code> with the given audio file.
+     * Creates a new AudioNode with the given audio file.
      * 
      * @param audioRenderer The audio renderer to use for playing. Cannot be null.
      * @param assetManager The asset manager to use to load the audio file
@@ -139,7 +139,7 @@ public class AudioNode extends Node implements AudioSource {
     }
     
     /**
-     * Creates a new <code>AudioNode</code> with the given audio file.
+     * Creates a new AudioNode with the given audio file.
      * 
      * @param assetManager The asset manager to use to load the audio file
      * @param name The filename of the audio file
@@ -167,7 +167,7 @@ public class AudioNode extends Node implements AudioSource {
 
     /**
      * Start playing an instance of this audio. This method can be used
-     * to play the same <code>AudioNode</code> multiple times. Note
+     * to play the same AudioNode multiple times. Note
      * that changes to the parameters of this AudioNode will not effect the 
      * instances already playing.
      */
@@ -179,14 +179,14 @@ public class AudioNode extends Node implements AudioSource {
     }
     
     /**
-     * Stop playing the audio that was started with {@link AudioNode#play() }.
+     * Stop playing the audio that was started with AudioNode#play() }.
      */
     public void stop(){
         getRenderer().stopSource(this);
     }
     
     /**
-     * Pause the audio that was started with {@link AudioNode#play() }.
+     * Pause the audio that was started with AudioNode#play() }.
      */
     public void pause(){
         getRenderer().pauseSource(this);
@@ -212,7 +212,7 @@ public class AudioNode extends Node implements AudioSource {
 
     /**
      * @return The {#link Filter dry filter} that is set.
-     * @see AudioNode#setDryFilter(com.clockwork.audio.Filter) 
+     * see AudioNode#setDryFilter(com.clockwork.audio.Filter) 
      */
     public Filter getDryFilter() {
         return dryFilter;
@@ -221,11 +221,11 @@ public class AudioNode extends Node implements AudioSource {
     /**
      * Set the dry filter to use for this audio node.
      * 
-     * When {@link AudioNode#setReverbEnabled(boolean) reverb} is used, 
+     * When AudioNode#setReverbEnabled(boolean) reverb} is used, 
      * the dry filter will only influence the "dry" portion of the audio, 
      * e.g. not the reverberated parts of the AudioNode playing.
      * 
-     * See the relevent documentation for the {@link Filter} to determine
+     * See the relevent documentation for the Filter} to determine
      * the effect.
      * 
      * @param dryFilter The filter to set, or null to disable dry filter.
@@ -239,7 +239,7 @@ public class AudioNode extends Node implements AudioSource {
     /**
      * Set the audio data to use for the audio. Note that this method
      * can only be called once, if for example the audio node was initialized
-     * without an {@link AudioData}.
+     * without an AudioData}.
      * 
      * @param audioData The audio data contains the audio track to play.
      * @param audioKey The audio key that was used to load the AudioData
@@ -254,8 +254,8 @@ public class AudioNode extends Node implements AudioSource {
     }
 
     /**
-     * @return The {@link AudioData} set previously with 
-     * {@link AudioNode#setAudioData(com.clockwork.audio.AudioData, com.clockwork.audio.AudioKey) }
+     * @return The AudioData} set previously with 
+     * AudioNode#setAudioData(com.clockwork.audio.AudioData, com.clockwork.audio.AudioKey) }
      * or any of the constructors that initialize the audio data.
      */
     public AudioData getAudioData() {
@@ -263,9 +263,9 @@ public class AudioNode extends Node implements AudioSource {
     }
 
     /**
-     * @return The {@link Status} of the audio node. 
-     * The status will be changed when either the {@link AudioNode#play() }
-     * or {@link AudioNode#stop() } methods are called.
+     * @return The Status} of the audio node. 
+     * The status will be changed when either the AudioNode#play() }
+     * or AudioNode#stop() } methods are called.
      */
     public AudioSource.Status getStatus() {
         return status;
@@ -281,7 +281,7 @@ public class AudioNode extends Node implements AudioSource {
     /**
      * @return True if the audio will keep looping after it is done playing,
      * otherwise, false.
-     * @see AudioNode#setLooping(boolean)
+     * see AudioNode#setLooping(boolean)
      */
     public boolean isLooping() {
         return loop;
@@ -301,7 +301,7 @@ public class AudioNode extends Node implements AudioSource {
     /**
      * @return The pitch of the audio, also the speed of playback.
      * 
-     * @see AudioNode#setPitch(float) 
+     * see AudioNode#setPitch(float) 
      */
     public float getPitch() {
         return pitch;
@@ -327,7 +327,7 @@ public class AudioNode extends Node implements AudioSource {
     /**
      * @return The volume of this audio node.
      * 
-     * @see AudioNode#setVolume(float)
+     * see AudioNode#setVolume(float)
      */
     public float getVolume() {
         return volume;
@@ -385,7 +385,7 @@ public class AudioNode extends Node implements AudioSource {
     /**
      * @return The velocity of the audio node.
      * 
-     * @see AudioNode#setVelocity(com.clockwork.math.Vector3f)
+     * see AudioNode#setVelocity(com.clockwork.math.Vector3f)
      */
     public Vector3f getVelocity() {
         return velocity;
@@ -396,7 +396,7 @@ public class AudioNode extends Node implements AudioSource {
      * to be in meters. Does nothing if the audio node is not positional.
      * 
      * @param velocity The velocity to set.
-     * @see AudioNode#setPositional(boolean)
+     * see AudioNode#setPositional(boolean)
      */
     public void setVelocity(Vector3f velocity) {
         this.velocity.set(velocity);
@@ -407,7 +407,7 @@ public class AudioNode extends Node implements AudioSource {
     /**
      * @return True if reverb is enabled, otherwise false.
      * 
-     * @see AudioNode#setReverbEnabled(boolean)
+     * see AudioNode#setReverbEnabled(boolean)
      */
     public boolean isReverbEnabled() {
         return reverbEnabled;
@@ -416,9 +416,9 @@ public class AudioNode extends Node implements AudioSource {
     /**
      * Set to true to enable reverberation effects for this audio node.
      * Does nothing if the audio node is not positional.
-     * <br/>
+     * 
      * When enabled, the audio environment set with 
-     * {@link AudioRenderer#setEnvironment(com.clockwork.audio.Environment) }
+     * AudioRenderer#setEnvironment(com.clockwork.audio.Environment) }
      * will apply a reverb effect to the audio playing from this audio node.
      * 
      * @param reverbEnabled True to enable reverb.
@@ -433,7 +433,7 @@ public class AudioNode extends Node implements AudioSource {
     /**
      * @return Filter for the reverberations of this audio node.
      * 
-     * @see AudioNode#setReverbFilter(com.clockwork.audio.Filter) 
+     * see AudioNode#setReverbFilter(com.clockwork.audio.Filter) 
      */
     public Filter getReverbFilter() {
         return reverbFilter;
@@ -441,13 +441,13 @@ public class AudioNode extends Node implements AudioSource {
 
     /**
      * Set the reverb filter for this audio node.
-     * <br/>
+     * 
      * The reverb filter will influence the reverberations
      * of the audio node playing. This only has an effect if
      * reverb is enabled.
      * 
      * @param reverbFilter The reverb filter to set.
-     * @see AudioNode#setDryFilter(com.clockwork.audio.Filter)
+     * see AudioNode#setDryFilter(com.clockwork.audio.Filter)
      */
     public void setReverbFilter(Filter reverbFilter) {
         this.reverbFilter = reverbFilter;
@@ -458,7 +458,7 @@ public class AudioNode extends Node implements AudioSource {
     /**
      * @return Max distance for this audio node.
      * 
-     * @see AudioNode#setMaxDistance(float)
+     * see AudioNode#setMaxDistance(float)
      */
     public float getMaxDistance() {
         return maxDistance;
@@ -467,7 +467,7 @@ public class AudioNode extends Node implements AudioSource {
     /**
      * Set the maximum distance for the attenuation of the audio node.
      * Does nothing if the audio node is not positional.
-     * <br/>
+     * 
      * The maximum distance is the distance beyond which the audio
      * node will no longer be attenuated.  Normal attenuation is logarithmic
      * from refDistance (it reduces by half when the distance doubles).
@@ -492,7 +492,7 @@ public class AudioNode extends Node implements AudioSource {
     /**
      * @return The reference playing distance for the audio node.
      * 
-     * @see AudioNode#setRefDistance(float) 
+     * see AudioNode#setRefDistance(float) 
      */
     public float getRefDistance() {
         return refDistance;
@@ -501,7 +501,7 @@ public class AudioNode extends Node implements AudioSource {
     /**
      * Set the reference playing distance for the audio node.
      * Does nothing if the audio node is not positional.
-     * <br/>
+     * 
      * The reference playing distance is the distance at which the
      * audio node will be exactly half of its volume.
      * 
@@ -521,7 +521,7 @@ public class AudioNode extends Node implements AudioSource {
     /**
      * @return True if the audio node is directional
      * 
-     * @see AudioNode#setDirectional(boolean) 
+     * see AudioNode#setDirectional(boolean) 
      */
     public boolean isDirectional() {
         return directional;
@@ -530,9 +530,9 @@ public class AudioNode extends Node implements AudioSource {
     /**
      * Set the audio node to be directional.
      * Does nothing if the audio node is not positional.
-     * <br/>
+     * 
      * After setting directional, you should call 
-     * {@link AudioNode#setDirection(com.clockwork.math.Vector3f) }
+     * AudioNode#setDirection(com.clockwork.math.Vector3f) }
      * to set the audio node's direction.
      * 
      * @param directional If the audio node is directional
@@ -546,7 +546,7 @@ public class AudioNode extends Node implements AudioSource {
     /**
      * @return The direction of this audio node.
      * 
-     * @see AudioNode#setDirection(com.clockwork.math.Vector3f)
+     * see AudioNode#setDirection(com.clockwork.math.Vector3f)
      */
     public Vector3f getDirection() {
         return direction;
@@ -557,7 +557,7 @@ public class AudioNode extends Node implements AudioSource {
      * Does nothing if the audio node is not directional.
      * 
      * @param direction 
-     * @see AudioNode#setDirectional(boolean) 
+     * see AudioNode#setDirectional(boolean) 
      */
     public void setDirection(Vector3f direction) {
         this.direction = direction;
@@ -568,7 +568,7 @@ public class AudioNode extends Node implements AudioSource {
     /**
      * @return The directional audio node, cone inner angle.
      * 
-     * @see AudioNode#setInnerAngle(float) 
+     * see AudioNode#setInnerAngle(float) 
      */
     public float getInnerAngle() {
         return innerAngle;
@@ -589,7 +589,7 @@ public class AudioNode extends Node implements AudioSource {
     /**
      * @return The directional audio node, cone outer angle.
      * 
-     * @see AudioNode#setOuterAngle(float) 
+     * see AudioNode#setOuterAngle(float) 
      */
     public float getOuterAngle() {
         return outerAngle;
@@ -610,7 +610,7 @@ public class AudioNode extends Node implements AudioSource {
     /**
      * @return True if the audio node is positional.
      * 
-     * @see AudioNode#setPositional(boolean) 
+     * see AudioNode#setPositional(boolean) 
      */
     public boolean isPositional() {
         return positional;

@@ -5,7 +5,7 @@ import java.nio.Buffer;
 import java.nio.ShortBuffer;
 
 /**
- * IndexBuffer implementation for {@link ShortBuffer}s.
+ * IndexBuffer implementation for ShortBuffer}s.
  * 
  */
 public class IndexShortBuffer extends IndexBuffer {

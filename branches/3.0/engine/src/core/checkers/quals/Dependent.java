@@ -10,15 +10,15 @@ import java.lang.annotation.RetentionPolicy;
  * qualified type of the receiver.  The annotation declares a relationship
  * between multiple type qualifier hierarchies.
  *
- * <p><b>Example:</b>
- * Consider a field, {@code lock}, that is only initialized if the
- * enclosing object (the receiver), is marked as {@code ThreadSafe}.
+ * Example:
+ * Consider a field, lock, that is only initialised if the
+ * enclosing object (the receiver), is marked as ThreadSafe.
  * Such a field can be declared as:
  *
- * <pre><code>
+ * 
  *   private @Nullable @Dependent(result=NonNull.class, when=ThreadSafe.class)
  *     Lock lock;
- * </code></pre>
+ * 
  */
 @Documented
 @Retention(RetentionPolicy.RUNTIME)
@@ -31,7 +31,7 @@ public @interface Dependent {
     Class<? extends Annotation> result();
 
     /**
-     * The qualifier class of the receiver that causes the {@code result}
+     * The qualifier class of the receiver that causes the result}
      * qualifier to be applied.
      */
     Class<? extends Annotation> when();

@@ -949,7 +949,7 @@ public class WaterFilter extends Filter {
 
     /**
      * returns the reflection displace
-     * see {@link #setReflectionDisplace(float) }
+     * see #setReflectionDisplace(float) }
      * @return 
      */
     public float getReflectionDisplace() {

@@ -5,7 +5,7 @@ import com.clockwork.export.*;
 import java.io.IOException;
 
 /**
- * Started Date: Jul 16, 2004<br><br>
+ * Started Date: Jul 16, 2004
  * Represents a translation, rotation and scale in one object.
  * 
  */

@@ -8,27 +8,27 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * The <code>AppStateManager</code> holds a list of {@link AppState}s which
- * it will update and render.<br/>
- * When an {@link AppState} is attached or detached, the
- * {@link AppState#stateAttached(com.clockwork.app.state.AppStateManager) } and
- * {@link AppState#stateDetached(com.clockwork.app.state.AppStateManager) } methods
+ * The AppStateManager holds a list of AppState}s which
+ * it will update and render.
+ * When an AppState} is attached or detached, the
+ * AppState#stateAttached(com.clockwork.app.state.AppStateManager) } and
+ * AppState#stateDetached(com.clockwork.app.state.AppStateManager) } methods
  * will be called respectively.
  *
- * <p>The lifecycle for an attached AppState is as follows:</p>
- * <ul>
- * <li>stateAttached() : called when the state is attached on the thread on which
+ * The lifecycle for an attached AppState is as follows:
+ * 
+ * stateAttached() : called when the state is attached on the thread on which
  *                       the state was attached.
- * <li>initialize() : called ONCE on the render thread at the beginning of the next
+ * initialize() : called ONCE on the render thread at the beginning of the next
  *                    AppStateManager.update().
- * <li>stateDetached() : called when the state is detached on the thread on which
+ * stateDetached() : called when the state is detached on the thread on which
  *                       the state was detached.  This is not necessarily on the
  *                       render thread and it is not necessarily safe to modify
  *                       the scene graph, etc..
- * <li>cleanup() : called ONCE on the render thread at the beginning of the next update
+ * cleanup() : called ONCE on the render thread at the beginning of the next update
  *                 after the state has been detached or when the application is 
  *                 terminating.  
- * </ul> 
+ *  
  *
  * 
  */
@@ -165,7 +165,7 @@ public class AppStateManager {
      * @param state The state to check
      * @return True if the state is currently attached to this AppStateManager.
      * 
-     * @see AppStateManager#attach(com.clockwork.app.state.AppState)
+     * see AppStateManager#attach(com.clockwork.app.state.AppState)
      */
     public boolean hasState(AppState state){
         synchronized (states){

@@ -4,7 +4,7 @@ package com.clockwork.asset;
 import java.util.concurrent.*;
 
 /**
- * <code>ThreadingManager</code> manages the threads used to load content
+ * ThreadingManager manages the threads used to load content
  * within the Content Manager system. A pool of threads and a task queue
  * is used to load resource data and perform I/O while the application's
  * render thread is active. 

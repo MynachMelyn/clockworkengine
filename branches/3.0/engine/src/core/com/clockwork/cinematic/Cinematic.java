@@ -32,27 +32,27 @@ import java.util.logging.Logger;
  *
  * Two main methods can be used to add an event :
  *
- * @see Cinematic#addCinematicEvent(float,
+ * see Cinematic#addCinematicEvent(float,
  * com.clockwork.cinematic.events.CinematicEvent) , that adds an event at the given
  * time form the cinematic start.
  *
- * @see
+ * see
  * Cinematic#enqueueCinematicEvent(com.clockwork.cinematic.events.CinematicEvent)
  * that enqueue events one after the other according to their initialDuration
  *
  * a cinematic has convenient mathods to handle the playback :
- * @see Cinematic#play()
- * @see Cinematic#pause()
- * @see Cinematic#stop()
+ * see Cinematic#play()
+ * see Cinematic#pause()
+ * see Cinematic#stop()
  *
  * A cinematic is itself a CinematicEvent, meaning you can embed several
  * Cinematics Embed cinematics must not be added to the stateManager though.
  *
  * Cinematic has a way to handle several point of view by creating CameraNode
  * over a cam and activating them on schedule.
- * @see Cinematic#bindCamera(java.lang.String, com.clockwork.renderer.Camera)
- * @see Cinematic#activateCamera(float, java.lang.String)
- * @see Cinematic#setActiveCamera(java.lang.String)
+ * see Cinematic#bindCamera(java.lang.String, com.clockwork.renderer.Camera)
+ * see Cinematic#activateCamera(float, java.lang.String)
+ * see Cinematic#setActiveCamera(java.lang.String)
  *
  */
 public class Cinematic extends AbstractCinematicEvent implements AppState {
@@ -439,7 +439,7 @@ public class Cinematic extends AbstractCinematicEvent implements AppState {
     /**
      * called internally
      *
-     * @see AppState#render()
+     * see AppState#render()
      */
     public void render(RenderManager rm) {
     }
@@ -447,7 +447,7 @@ public class Cinematic extends AbstractCinematicEvent implements AppState {
     /**
      * called internally
      *
-     * @see AppState#postRender()
+     * see AppState#postRender()
      */
     public void postRender() {
     }
@@ -455,7 +455,7 @@ public class Cinematic extends AbstractCinematicEvent implements AppState {
     /**
      * called internally
      *
-     * @see AppState#cleanup()
+     * see AppState#cleanup()
      */
     public void cleanup() {
     }

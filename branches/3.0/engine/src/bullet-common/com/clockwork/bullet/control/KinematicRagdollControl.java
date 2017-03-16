@@ -36,28 +36,28 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * <strong>This control is still a WIP, use it at your own risk</strong><br> To
+ * <strong>This control is still a WIP, use it at your own risk</strong> To
  * use this control you need a model with an AnimControl and a
- * SkeletonControl.<br> This should be the case if you imported an animated
- * model from Ogre or blender.<br> Note enabling/disabling the control
- * add/removes it from the physic space<br> <p> This control creates collision
+ * SkeletonControl. This should be the case if you imported an animated
+ * model from Ogre or blender. Note enabling/disabling the control
+ * add/removes it from the physic space  This control creates collision
  * shapes for each bones of the skeleton when you call
- * spatial.addControl(ragdollControl). <ul> <li>The shape is HullCollision shape
+ * spatial.addControl(ragdollControl).  The shape is HullCollision shape
  * based on the vertices associated with each bone and based on a tweakable
- * weight threshold (see setWeightThreshold)</li> <li>If you don't want each
+ * weight threshold (see setWeightThreshold) If you don't want each
  * bone to be a collision shape, you can specify what bone to use by using the
- * addBoneName method<br> By using this method, bone that are not used to create
- * a shape, are "merged" to their parent to create the collision shape. </li>
- * </ul> </p> <p> There are 2 modes for this control : <ul> <li><strong>The
- * kinematic modes :</strong><br> this is the default behavior, this means that
+ * addBoneName method By using this method, bone that are not used to create
+ * a shape, are "merged" to their parent to create the collision shape. 
+ * There are 2 modes for this control :  <strong>The
+ * kinematic modes :</strong> this is the default behavior, this means that
  * the collision shapes of the body are able to interact with physics enabled
  * objects. in this mode physic shapes follow the moovements of the animated
  * skeleton (for example animated by a key framed animation) this mode is
- * enabled by calling setKinematicMode(); </li> <li><strong>The ragdoll modes
- * :</strong><br> To enable this behavior, you need to call setRagdollMode()
+ * enabled by calling setKinematicMode();  <strong>The ragdoll modes
+ * :</strong> To enable this behavior, you need to call setRagdollMode()
  * method. In this mode the charater is entirely controled by physics, so it
- * will fall under the gravity and move if any force is applied to it. </li>
- * </ul> </p>
+ * will fall under the gravity and move if any force is applied to it. 
+ *  
  *
  */
 public class KinematicRagdollControl extends AbstractPhysicsControl implements PhysicsCollisionListener {
@@ -720,7 +720,7 @@ public class KinematicRagdollControl extends AbstractPhysicsControl implements P
     /**
      * Set the CcdMotionThreshold of all the bone's rigidBodies of the ragdoll
      *
-     * @see PhysicsRigidBody#setCcdMotionThreshold(float)
+     * see PhysicsRigidBody#setCcdMotionThreshold(float)
      * @param value
      */
     public void setCcdMotionThreshold(float value) {
@@ -732,7 +732,7 @@ public class KinematicRagdollControl extends AbstractPhysicsControl implements P
     /**
      * Set the CcdSweptSphereRadius of all the bone's rigidBodies of the ragdoll
      *
-     * @see PhysicsRigidBody#setCcdSweptSphereRadius(float)
+     * see PhysicsRigidBody#setCcdSweptSphereRadius(float)
      * @param value
      */
     public void setCcdSweptSphereRadius(float value) {

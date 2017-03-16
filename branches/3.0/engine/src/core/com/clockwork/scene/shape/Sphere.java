@@ -17,7 +17,7 @@ import java.nio.FloatBuffer;
 import java.nio.ShortBuffer;
 
 /**
- * <code>Sphere</code> represents a 3D object with all points equidistance
+ * Sphere represents a 3D object with all points equidistance
  * from a center point.
  * 
  * 

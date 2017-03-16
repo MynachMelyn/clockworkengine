@@ -10,9 +10,9 @@ import com.clockwork.scene.Spatial;
 import java.io.IOException;
 
 /**
- * <code>DirectionalLight</code> is a light coming from a certain direction in world space. 
+ * DirectionalLight is a light coming from a certain direction in world space. 
  * E.g sun or moon light.
- * <p>
+ * 
  * Directional lights have no specific position in the scene, they always 
  * come from their direction regardless of where an object is placed.
  */
@@ -30,7 +30,7 @@ public class DirectionalLight extends Light {
      * 
      * @return The direction vector of the light.
      * 
-     * @see DirectionalLight#setDirection(com.clockwork.math.Vector3f) 
+     * see DirectionalLight#setDirection(com.clockwork.math.Vector3f) 
      */
     public Vector3f getDirection() {
         return direction;
@@ -38,7 +38,7 @@ public class DirectionalLight extends Light {
 
     /**
      * Sets the direction of the light.
-     * <p>
+     * 
      * Represents the direction the light is shining.
      * (1, 0, 0) would represent light shining in the +X direction.
      * 

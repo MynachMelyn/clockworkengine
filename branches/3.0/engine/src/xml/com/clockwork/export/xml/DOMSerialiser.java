@@ -48,7 +48,7 @@ public class DOMSerialiser {
     }
 
     /**
-     * Serialise {@code doc} to {@code out}
+     * Serialise doc} to out}
      * 
      * @param doc the document to serialise.
      * @param file the file to serialise to.
@@ -59,7 +59,7 @@ public class DOMSerialiser {
     }
 
     /**
-     * Serialise {@code doc} to {@code out}
+     * Serialise doc} to out}
      * 
      * @param doc the document to serialise.
      * @param out the stream to serialise to.
@@ -74,7 +74,7 @@ public class DOMSerialiser {
     /**
      * Set the encoding used by this serialiser.
      * 
-     * @param encoding the encoding to use, passing in {@code null} results in the
+     * @param encoding the encoding to use, passing in null} results in the
      *  default encoding (UTF-8) being set.
      * @throws IllegalCharsetNameException if the given charset name is illegal.
      * @throws UnsupportedCharsetException if the given charset is not supported by the
@@ -86,7 +86,7 @@ public class DOMSerialiser {
 
     /**
      * Set the number of spaces to use for indentation.
-     * <p>
+     * 
      * The default is to use 4 spaces.
      * 
      * @param indent the number of spaces to use for indentation, values less than or
@@ -98,9 +98,9 @@ public class DOMSerialiser {
 
     /**
      * Set the line separator that will be used when serializing documents.
-     * <p>
+     * 
      * If this is not called then the serialiser uses a default based on the
-     * {@code line.separator} system property. 
+     * line.separator} system property. 
      * 
      * @param lineSeparator the line separator to set.
      */

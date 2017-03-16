@@ -165,7 +165,7 @@ public abstract class AbstractShadowRenderer implements SceneProcessor, Savable 
     }
 
     /**
-     * Sets the filtering mode for shadow edges. See {@link EdgeFilteringMode}
+     * Sets the filtering mode for shadow edges. See EdgeFilteringMode}
      * for more info.
      *
      * @param filterMode the desired filter mode (not null)
@@ -194,7 +194,7 @@ public abstract class AbstractShadowRenderer implements SceneProcessor, Savable 
     /**
      * returns the edge filtering mode
      *
-     * @see EdgeFilteringMode
+     * see EdgeFilteringMode
      * @return
      */
     public EdgeFilteringMode getEdgeFilteringMode() {
@@ -202,7 +202,7 @@ public abstract class AbstractShadowRenderer implements SceneProcessor, Savable 
     }
 
     /**
-     * Sets the shadow compare mode. See {@link CompareMode} for more info.
+     * Sets the shadow compare mode. See CompareMode} for more info.
      *
      * @param compareMode the desired compare mode (not null)
      */
@@ -234,7 +234,7 @@ public abstract class AbstractShadowRenderer implements SceneProcessor, Savable 
     /**
      * returns the shadow compare mode
      *
-     * @see CompareMode
+     * see CompareMode
      * @return the shadowCompareMode
      */
     public CompareMode getShadowCompareMode() {
@@ -536,7 +536,7 @@ public abstract class AbstractShadowRenderer implements SceneProcessor, Savable 
     /**
      * Returns the shadow intensity.
      *
-     * @see #setShadowIntensity(float shadowIntensity)
+     * see #setShadowIntensity(float shadowIntensity)
      * @return shadowIntensity
      */
     public float getShadowIntensity() {
@@ -558,7 +558,7 @@ public abstract class AbstractShadowRenderer implements SceneProcessor, Savable 
     /**
      * returns the edges thickness
      *
-     * @see #setEdgesThickness(int edgesThickness)
+     * see #setEdgesThickness(int edgesThickness)
      * @return edgesThickness
      */
     public int getEdgesThickness() {

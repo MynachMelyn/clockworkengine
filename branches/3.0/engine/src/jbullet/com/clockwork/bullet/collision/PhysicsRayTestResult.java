@@ -5,7 +5,7 @@ import com.clockwork.math.Vector3f;
 
 /**
  * Contains the results of a PhysicsSpace rayTest.
- * <b>Read data only in callback method, object is reused</b>
+ * Read data only in callback method, object is reused
  */
 public class PhysicsRayTestResult {
 

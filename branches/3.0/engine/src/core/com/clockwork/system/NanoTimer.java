@@ -2,7 +2,7 @@
 package com.clockwork.system;
 
 /**
- * <code>NanoTimer</code> is a System.nanoTime implementation of <code>Timer</code>.
+ * NanoTimer is a System.nanoTime implementation of Timer.
  * This is primarily useful for headless applications running on a server.
  * 
  */

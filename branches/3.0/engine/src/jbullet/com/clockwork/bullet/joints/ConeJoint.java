@@ -14,7 +14,7 @@ import com.clockwork.math.Vector3f;
 import java.io.IOException;
 
 /**
- * <i>From bullet manual:</i><br>
+ * <i>From bullet manual:</i>
  * To create ragdolls, the conve twist constraint is very useful for limbs like the upper arm.
  * It is a special point to point constraint that adds cone and twist axis limits.
  * The x-axis serves as twist axis.

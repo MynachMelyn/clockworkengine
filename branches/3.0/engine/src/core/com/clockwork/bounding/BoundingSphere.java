@@ -16,13 +16,13 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * <code>BoundingSphere</code> defines a sphere that defines a container for a
+ * BoundingSphere defines a sphere that defines a container for a
  * group of vertices of a particular piece of geometry. This sphere defines a
- * radius and a center. <br>
- * <br>
+ * radius and a center. 
+ * 
  * A typical usage is to allow the class define the center and radius by calling
- * either <code>containAABB</code> or <code>averagePoints</code>. A call to
- * <code>computeFramePoint</code> in turn calls <code>containAABB</code>.
+ * either containAABB or averagePoints. A call to
+ * computeFramePoint in turn calls containAABB.
  *
  * 
  * @version $Id: BoundingSphere.java,v 1.59 2007/08/17 10:34:26 rherlitz Exp $
@@ -35,14 +35,14 @@ public class BoundingSphere extends BoundingVolume {
     private static final float RADIUS_EPSILON = 1f + 0.00001f;
 
     /**
-     * Default contstructor instantiates a new <code>BoundingSphere</code>
+     * Default contstructor instantiates a new BoundingSphere
      * object.
      */
     public BoundingSphere() {
     }
 
     /**
-     * Constructor instantiates a new <code>BoundingSphere</code> object.
+     * Constructor instantiates a new BoundingSphere object.
      *
      * @param r
      *            the radius of the sphere.
@@ -59,7 +59,7 @@ public class BoundingSphere extends BoundingVolume {
     }
 
     /**
-     * <code>getRadius</code> returns the radius of the bounding sphere.
+     * getRadius returns the radius of the bounding sphere.
      *
      * @return the radius of the bounding sphere.
      */
@@ -68,7 +68,7 @@ public class BoundingSphere extends BoundingVolume {
     }
 
     /**
-     * <code>setRadius</code> sets the radius of this bounding sphere.
+     * setRadius sets the radius of this bounding sphere.
      *
      * @param radius
      *            the new radius of the bounding sphere.
@@ -78,8 +78,8 @@ public class BoundingSphere extends BoundingVolume {
     }
 
     /**
-     * <code>computeFromPoints</code> creates a new Bounding Sphere from a
-     * given set of points. It uses the <code>calcWelzl</code> method as
+     * computeFromPoints creates a new Bounding Sphere from a
+     * given set of points. It uses the calcWelzl method as
      * default.
      *
      * @param points
@@ -90,7 +90,7 @@ public class BoundingSphere extends BoundingVolume {
     }
 
     /**
-     * <code>computeFromTris</code> creates a new Bounding Box from a given
+     * computeFromTris creates a new Bounding Box from a given
      * set of triangles. It is used in OBBTree calculations.
      *
      * @param tris
@@ -114,7 +114,7 @@ public class BoundingSphere extends BoundingVolume {
     }
 //
 //    /**
-//     * <code>computeFromTris</code> creates a new Bounding Box from a given
+//     * computeFromTris creates a new Bounding Box from a given
 //     * set of triangles. It is used in OBBTree calculations.
 //     *
 //	 * @param indices
@@ -143,9 +143,9 @@ public class BoundingSphere extends BoundingVolume {
     /**
      * Calculates a minimum bounding sphere for the set of points. The algorithm
      * was originally found in C++ at
-     * <p><a href="http://www.flipcode.com/cgi-bin/msg.cgi?showThread=COTD-SmallestEnclosingSpheres&forum=cotd&id=-1">
-     * http://www.flipcode.com/cgi-bin/msg.cgi?showThread=COTD-SmallestEnclosingSpheres&forum=cotd&id=-1</a><br><strong>broken link</strong></p>
-     * <p>and translated to java by Cep21</p>
+     * <a href="http://www.flipcode.com/cgi-bin/msg.cgi?showThread=COTD-SmallestEnclosingSpheres&forum=cotd&id=-1">
+     * http://www.flipcode.com/cgi-bin/msg.cgi?showThread=COTD-SmallestEnclosingSpheres&forum=cotd&id=-1</a><strong>broken link</strong>
+     * and translated to java by Cep21
      *
      * @param points
      *            The points to calculate the minimum bounds from.
@@ -174,7 +174,7 @@ public class BoundingSphere extends BoundingVolume {
      *            sphere.
      * @param ap
      *            A variable simulating pointer arithmatic from C++, and offset
-     *            in <code>points</code>.
+     *            in points.
      */
     private void recurseMini(FloatBuffer points, int p, int b, int ap) {
         //TempVars vars = TempVars.get();
@@ -240,7 +240,7 @@ public class BoundingSphere extends BoundingVolume {
      *            The 3rd point inside the sphere.
      * @param C
      *            The 4th point inside the sphere.
-     * @see #calcWelzl(java.nio.FloatBuffer)
+     * see #calcWelzl(java.nio.FloatBuffer)
      */
     private void setSphere(Vector3f O, Vector3f A, Vector3f B, Vector3f C) {
         Vector3f a = A.subtract(O);
@@ -273,7 +273,7 @@ public class BoundingSphere extends BoundingVolume {
      *            The 2nd point inside the sphere.
      * @param B
      *            The 3rd point inside the sphere.
-     * @see #calcWelzl(java.nio.FloatBuffer)
+     * see #calcWelzl(java.nio.FloatBuffer)
      */
     private void setSphere(Vector3f O, Vector3f A, Vector3f B) {
         Vector3f a = A.subtract(O);
@@ -301,7 +301,7 @@ public class BoundingSphere extends BoundingVolume {
      *            The 1st point inside the sphere.
      * @param A
      *            The 2nd point inside the sphere.
-     * @see #calcWelzl(java.nio.FloatBuffer)
+     * see #calcWelzl(java.nio.FloatBuffer)
      */
     private void setSphere(Vector3f O, Vector3f A) {
         radius = FastMath.sqrt(((A.x - O.x) * (A.x - O.x) + (A.y - O.y)
@@ -310,7 +310,7 @@ public class BoundingSphere extends BoundingVolume {
     }
 
     /**
-     * <code>averagePoints</code> selects the sphere center to be the average
+     * averagePoints selects the sphere center to be the average
      * of the points and the sphere radius to be the smallest value to enclose
      * all points.
      *
@@ -342,7 +342,7 @@ public class BoundingSphere extends BoundingVolume {
     }
 
     /**
-     * <code>transform</code> modifies the center of the sphere to reflect the
+     * transform modifies the center of the sphere to reflect the
      * change made via a rotation, translation and scale.
      *
      * @param trans
@@ -403,7 +403,7 @@ public class BoundingSphere extends BoundingVolume {
     }
 
     /**
-     * <code>whichSide</code> takes a plane (typically provided by a view
+     * whichSide takes a plane (typically provided by a view
      * frustum) to determine which side this bound is on.
      *
      * @param plane
@@ -423,7 +423,7 @@ public class BoundingSphere extends BoundingVolume {
     }
 
     /**
-     * <code>merge</code> combines this sphere with a second bounding sphere.
+     * merge combines this sphere with a second bounding sphere.
      * This new sphere contains both bounding spheres and is returned.
      *
      * @param volume
@@ -467,7 +467,7 @@ public class BoundingSphere extends BoundingVolume {
     }
 
     /**
-     * <code>mergeLocal</code> combines this sphere with a second bounding
+     * mergeLocal combines this sphere with a second bounding
      * sphere locally. Altering this sphere to contain both the original and the
      * additional sphere volumes;
      *
@@ -590,7 +590,7 @@ public class BoundingSphere extends BoundingVolume {
     }
 
     /**
-     * <code>clone</code> creates a new BoundingSphere object containing the
+     * clone creates a new BoundingSphere object containing the
      * same data as this one.
      *
      * @param store
@@ -615,7 +615,7 @@ public class BoundingSphere extends BoundingVolume {
     }
 
     /**
-     * <code>toString</code> returns the string representation of this object.
+     * toString returns the string representation of this object.
      * The form is: "Radius: RRR.SSSS Center: <Vector>".
      *
      * @return the string representation of this.
@@ -629,7 +629,7 @@ public class BoundingSphere extends BoundingVolume {
     /*
      * (non-Javadoc)
      *
-     * @see com.clockwork.bounding.BoundingVolume#intersects(com.clockwork.bounding.BoundingVolume)
+     * see com.clockwork.bounding.BoundingVolume#intersects(com.clockwork.bounding.BoundingVolume)
      */
     public boolean intersects(BoundingVolume bv) {
         return bv.intersectsSphere(this);
@@ -638,7 +638,7 @@ public class BoundingSphere extends BoundingVolume {
     /*
      * (non-Javadoc)
      *
-     * @see com.clockwork.bounding.BoundingVolume#intersectsSphere(com.clockwork.bounding.BoundingSphere)
+     * see com.clockwork.bounding.BoundingVolume#intersectsSphere(com.clockwork.bounding.BoundingSphere)
      */
     public boolean intersectsSphere(BoundingSphere bs) {
         assert Vector3f.isValidVector(center) && Vector3f.isValidVector(bs.center);
@@ -655,7 +655,7 @@ public class BoundingSphere extends BoundingVolume {
     /*
      * (non-Javadoc)
      *
-     * @see com.clockwork.bounding.BoundingVolume#intersectsBoundingBox(com.clockwork.bounding.BoundingBox)
+     * see com.clockwork.bounding.BoundingVolume#intersectsBoundingBox(com.clockwork.bounding.BoundingBox)
      */
     public boolean intersectsBoundingBox(BoundingBox bb) {
         assert Vector3f.isValidVector(center) && Vector3f.isValidVector(bb.center);
@@ -675,7 +675,7 @@ public class BoundingSphere extends BoundingVolume {
     /*
      * (non-Javadoc)
      *
-     * @see com.clockwork.bounding.BoundingVolume#intersectsOrientedBoundingBox(com.clockwork.bounding.OrientedBoundingBox)
+     * see com.clockwork.bounding.BoundingVolume#intersectsOrientedBoundingBox(com.clockwork.bounding.OrientedBoundingBox)
      */
 //    public boolean intersectsOrientedBoundingBox(OrientedBoundingBox obb) {
 //        return obb.intersectsSphere(this);
@@ -684,7 +684,7 @@ public class BoundingSphere extends BoundingVolume {
     /*
      * (non-Javadoc)
      *
-     * @see com.clockwork.bounding.BoundingVolume#intersects(com.clockwork.math.Ray)
+     * see com.clockwork.bounding.BoundingVolume#intersects(com.clockwork.math.Ray)
      */
     public boolean intersects(Ray ray) {
         assert Vector3f.isValidVector(center);
@@ -711,7 +711,7 @@ public class BoundingSphere extends BoundingVolume {
     /*
      * (non-Javadoc)
      *
-     * @see com.clockwork.bounding.BoundingVolume#intersectsWhere(com.clockwork.math.Ray)
+     * see com.clockwork.bounding.BoundingVolume#intersectsWhere(com.clockwork.math.Ray)
      */
     private int collideWithRay(Ray ray, CollisionResults results) {
         TempVars vars = TempVars.get();

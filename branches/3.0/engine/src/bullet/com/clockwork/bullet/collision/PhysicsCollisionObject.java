@@ -62,10 +62,10 @@ public abstract class PhysicsCollisionObject implements Savable {
     }
 
     /**
-     * Sets the collision group number for this physics object. <br>
+     * Sets the collision group number for this physics object. 
      * The groups are integer bit masks and some pre-made variables are available in CollisionObject.
-     * All physics objects are by default in COLLISION_GROUP_01.<br>
-     * Two object will collide when <b>one</b> of the partys has the
+     * All physics objects are by default in COLLISION_GROUP_01.
+     * Two object will collide when one of the partys has the
      * collisionGroup of the other in its collideWithGroups set.
      * @param collisionGroup the collisionGroup to set
      */
@@ -77,9 +77,9 @@ public abstract class PhysicsCollisionObject implements Savable {
     }
 
     /**
-     * Add a group that this object will collide with.<br>
-     * Two object will collide when <b>one</b> of the partys has the
-     * collisionGroup of the other in its collideWithGroups set.<br>
+     * Add a group that this object will collide with.
+     * Two object will collide when one of the partys has the
+     * collisionGroup of the other in its collideWithGroups set.
      * @param collisionGroup
      */
     public void addCollideWithGroup(int collisionGroup) {

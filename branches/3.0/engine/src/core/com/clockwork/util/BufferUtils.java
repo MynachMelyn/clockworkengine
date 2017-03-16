@@ -25,7 +25,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * <code>BufferUtils</code> is a helper class for generating nio buffers from
+ * BufferUtils is a helper class for generating nio buffers from
  * jME data classes such as Vectors and ColorRGBA.
  * 
  * 
@@ -269,7 +269,7 @@ public final class BufferUtils {
      * specified index.
      * 
      * @param quat
-     *            the {@link Quaternion} to insert
+     *            the Quaternion} to insert
      * @param buf
      *            the buffer to insert into
      * @param index
@@ -289,7 +289,7 @@ public final class BufferUtils {
      * specified index.
      *
      * @param vec
-     *            the {@link Vector4f} to insert
+     *            the Vector4f} to insert
      * @param buf
      *            the buffer to insert into
      * @param index
@@ -1067,11 +1067,11 @@ public final class BufferUtils {
     }
 
     /**
-     * Ensures there is at least the <code>required</code> number of entries left after the current position of the
+     * Ensures there is at least the required number of entries left after the current position of the
      * buffer. If the buffer is too small a larger one is created and the old one copied to the new buffer.
      * @param buffer buffer that should be checked/copied (may be null)
      * @param required minimum number of elements that should be remaining in the returned buffer
-     * @return a buffer large enough to receive at least the <code>required</code> number of entries, same position as
+     * @return a buffer large enough to receive at least the required number of entries, same position as
      * the input buffer, not null
      */
     public static FloatBuffer ensureLargeEnough(FloatBuffer buffer, int required) {

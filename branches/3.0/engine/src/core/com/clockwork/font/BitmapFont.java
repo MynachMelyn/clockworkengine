@@ -14,7 +14,7 @@ public class BitmapFont implements Savable {
     /**
      * Specifies horizontal alignment for text.
      * 
-     * @see BitmapText#setAlignment(com.clockwork.font.BitmapFont.Align) 
+     * see BitmapText#setAlignment(com.clockwork.font.BitmapFont.Align) 
      */
     public enum Align {
         
@@ -37,7 +37,7 @@ public class BitmapFont implements Savable {
     /**
      * Specifies vertical alignment for text.
      * 
-     * @see BitmapText#setVerticalAlignment(com.clockwork.font.BitmapFont.VAlign) 
+     * see BitmapText#setVerticalAlignment(com.clockwork.font.BitmapFont.VAlign) 
      */
     public enum VAlign {
         /**

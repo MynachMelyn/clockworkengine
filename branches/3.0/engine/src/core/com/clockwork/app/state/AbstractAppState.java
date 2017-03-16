@@ -5,15 +5,15 @@ import com.clockwork.app.Application;
 import com.clockwork.renderer.RenderManager;
 
 /**
- * <code>AbstractAppState</code> implements some common methods
+ * AbstractAppState implements some common methods
  * that make creation of AppStates easier.
  */
 public class AbstractAppState implements AppState {
 
     /**
-     * <code>initialized</code> is set to true when the method
-     * {@link AbstractAppState#initialize(com.clockwork.app.state.AppStateManager, com.clockwork.app.Application) }
-     * is called. When {@link AbstractAppState#cleanup() } is called, <code>initialized</code>
+     * initialized is set to true when the method
+     * AbstractAppState#initialize(com.clockwork.app.state.AppStateManager, com.clockwork.app.Application) }
+     * is called. When AbstractAppState#cleanup() } is called, initialized
      * is set back to false.
      */
     protected boolean initialized = false;

@@ -58,7 +58,7 @@ public class TriangleCollector {
     }
 
     /**
-     * Grabs all the triangles specified in <code>tris</code> from the input array
+     * Grabs all the triangles specified in tris from the input array
      * (using the indices OCTTriangle.getGeometryIndex() & OCTTriangle.getTriangleIndex())
      * then organizes them into output geometry.
      *

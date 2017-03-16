@@ -4,7 +4,7 @@ package com.clockwork.math;
 import java.util.Random;
 
 /**
- * <code>FastMath</code> provides 'fast' math approximations and float equivalents of Math
+ * FastMath provides 'fast' math approximations and float equivalents of Math
  * functions.  These are all used as static values and functions.
  *
  * 
@@ -380,13 +380,13 @@ final public class FastMath {
     }
 
     /**
-     * Returns the arc cosine of a value.<br>
+     * Returns the arc cosine of a value.
      * Special cases:
-     * <ul><li>If fValue is smaller than -1, then the result is PI.
-     * <li>If the argument is greater than 1, then the result is 0.</ul>
+     * If fValue is smaller than -1, then the result is PI.
+     * If the argument is greater than 1, then the result is 0.
      * @param fValue The value to arc cosine.
      * @return The angle, in radians.
-     * @see java.lang.Math#acos(double)
+     * see java.lang.Math#acos(double)
      */
     public static float acos(float fValue) {
         if (-1.0f < fValue) {
@@ -401,13 +401,13 @@ final public class FastMath {
     }
 
     /**
-     * Returns the arc sine of a value.<br>
+     * Returns the arc sine of a value.
      * Special cases:
-     * <ul><li>If fValue is smaller than -1, then the result is -HALF_PI.
-     * <li>If the argument is greater than 1, then the result is HALF_PI.</ul>
+     * If fValue is smaller than -1, then the result is -HALF_PI.
+     * If the argument is greater than 1, then the result is HALF_PI.
      * @param fValue The value to arc sine.
      * @return the angle in radians.
-     * @see java.lang.Math#asin(double)
+     * see java.lang.Math#asin(double)
      */
     public static float asin(float fValue) {
         if (-1.0f < fValue) {
@@ -422,10 +422,10 @@ final public class FastMath {
     }
 
     /**
-     * Returns the arc tangent of an angle given in radians.<br>
+     * Returns the arc tangent of an angle given in radians.
      * @param fValue The angle, in radians.
      * @return fValue's atan
-     * @see java.lang.Math#atan(double)
+     * see java.lang.Math#atan(double)
      */
     public static float atan(float fValue) {
         return (float) Math.atan(fValue);
@@ -436,7 +436,7 @@ final public class FastMath {
      * @param fY
      * @param fX
      * @return Math.atan2(fY,fX)
-     * @see java.lang.Math#atan2(double, double)
+     * see java.lang.Math#atan2(double, double)
      */
     public static float atan2(float fY, float fX) {
         return (float) Math.atan2(fY, fX);
@@ -446,7 +446,7 @@ final public class FastMath {
      * Rounds a fValue up.  A call to Math.ceil
      * @param fValue The value.
      * @return The fValue rounded up
-     * @see java.lang.Math#ceil(double)
+     * see java.lang.Math#ceil(double)
      */
     public static float ceil(float fValue) {
         return (float) Math.ceil(fValue);
@@ -454,7 +454,7 @@ final public class FastMath {
 
     /**
      * Returns cosine of an angle. Direct call to java.lang.Math
-     * @see Math#cos(double) 
+     * see Math#cos(double) 
      * @param v The angle to cosine.
      * @return  the cosine of the angle.
      */
@@ -464,7 +464,7 @@ final public class FastMath {
 
     /**
      * Returns the sine of an angle. Direct call to java.lang.Math
-     * @see Math#sin(double) 
+     * see Math#sin(double) 
      * @param v The angle to sine.
      * @return the sine of the angle.
      */
@@ -476,7 +476,7 @@ final public class FastMath {
      * Returns E^fValue
      * @param fValue Value to raise to a power.
      * @return The value E^fValue
-     * @see java.lang.Math#exp(double)
+     * see java.lang.Math#exp(double)
      */
     public static float exp(float fValue) {
         return (float) Math.exp(fValue);
@@ -486,7 +486,7 @@ final public class FastMath {
      * Returns Absolute value of a float.
      * @param fValue The value to abs.
      * @return The abs of the value.
-     * @see java.lang.Math#abs(float)
+     * see java.lang.Math#abs(float)
      */
     public static float abs(float fValue) {
         if (fValue < 0) {
@@ -499,7 +499,7 @@ final public class FastMath {
      * Returns a number rounded down.
      * @param fValue The value to round
      * @return The given number rounded down
-     * @see java.lang.Math#floor(double)
+     * see java.lang.Math#floor(double)
      */
     public static float floor(float fValue) {
         return (float) Math.floor(fValue);
@@ -509,7 +509,7 @@ final public class FastMath {
      * Returns 1/sqrt(fValue)
      * @param fValue The value to process.
      * @return 1/sqrt(fValue)
-     * @see java.lang.Math#sqrt(double)
+     * see java.lang.Math#sqrt(double)
      */
     public static float invSqrt(float fValue) {
         return (float) (1.0f / Math.sqrt(fValue));
@@ -528,7 +528,7 @@ final public class FastMath {
      * Returns the log base E of a value.
      * @param fValue The value to log.
      * @return The log of fValue base E
-     * @see java.lang.Math#log(double)
+     * see java.lang.Math#log(double)
      */
     public static float log(float fValue) {
         return (float) Math.log(fValue);
@@ -550,7 +550,7 @@ final public class FastMath {
      * @param fBase The base value (IE 2)
      * @param fExponent The exponent value (IE 3)
      * @return base raised to exponent (IE 8)
-     * @see java.lang.Math#pow(double, double)
+     * see java.lang.Math#pow(double, double)
      */
     public static float pow(float fBase, float fExponent) {
         return (float) Math.pow(fBase, fExponent);
@@ -569,7 +569,7 @@ final public class FastMath {
      * Returns the square root of a given value.
      * @param fValue The value to sqrt.
      * @return The square root of the given value.
-     * @see java.lang.Math#sqrt(double)
+     * see java.lang.Math#sqrt(double)
      */
     public static float sqrt(float fValue) {
         return (float) Math.sqrt(fValue);
@@ -580,7 +580,7 @@ final public class FastMath {
      * is returned.  Otherwise, a direct value is used.
      * @param fValue The value to tangent, in radians.
      * @return The tangent of fValue.
-     * @see java.lang.Math#tan(double)
+     * see java.lang.Math#tan(double)
      */
     public static float tan(float fValue) {
         return (float) Math.tan(fValue);
@@ -875,8 +875,8 @@ final public class FastMath {
      * Converts a single precision (32 bit) floating point value
      * into half precision (16 bit).
      *
-     * <p>Source: <a href="http://www.fox-toolkit.org/ftp/fasthalffloatconversion.pdf">
-     * http://www.fox-toolkit.org/ftp/fasthalffloatconversion.pdf</a><br><strong>broken link</strong>
+     * Source: <a href="http://www.fox-toolkit.org/ftp/fasthalffloatconversion.pdf">
+     * http://www.fox-toolkit.org/ftp/fasthalffloatconversion.pdf</a><strong>broken link</strong>
      *
      * @param half The half floating point value as a short.
      * @return floating point value of the half.

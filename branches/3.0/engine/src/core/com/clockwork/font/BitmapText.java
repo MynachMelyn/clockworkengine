@@ -316,7 +316,7 @@ public class BitmapText extends Node {
     }
 
     /**
-     * Available only when bounding is set. <code>setBox()</code> method call is needed in advance.
+     * Available only when bounding is set. setBox() method call is needed in advance.
      * true when
      * @param wrap NoWrap   : Letters over the text bound is not shown. the last character is set to '...'(0x2026)
      *             Character: Character is split at the end of the line.

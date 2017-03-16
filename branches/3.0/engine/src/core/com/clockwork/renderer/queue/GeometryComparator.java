@@ -6,8 +6,8 @@ import com.clockwork.scene.Geometry;
 import java.util.Comparator;
 
 /**
- * <code>GeometryComparator</code> is a special version of {@link Comparator}
- * that is used to sort geometries for rendering in the {@link RenderQueue}.
+ * GeometryComparator is a special version of Comparator}
+ * that is used to sort geometries for rendering in the RenderQueue}.
  * 
  */
 public interface GeometryComparator extends Comparator<Geometry> {

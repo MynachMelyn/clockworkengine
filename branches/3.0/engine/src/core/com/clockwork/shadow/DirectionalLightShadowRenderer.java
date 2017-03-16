@@ -18,12 +18,12 @@ import java.io.IOException;
 
 /**
  * DirectionalLightShadowRenderer renderer use Parrallel Split Shadow Mapping
- * technique (pssm)<br> It splits the view frustum in several parts and compute
- * a shadow map for each one.<br> splits are distributed so that the closer they
+ * technique (pssm) It splits the view frustum in several parts and compute
+ * a shadow map for each one. splits are distributed so that the closer they
  * are from the camera, the smaller they are to maximize the resolution used of
- * the shadow map.<br> This result in a better quality shadow than standard
- * shadow mapping.<br> for more informations on this read this <a
- * href="http://http.developer.nvidia.com/GPUGems3/gpugems3_ch10.html">http://http.developer.nvidia.com/GPUGems3/gpugems3_ch10.html</a><br>
+ * the shadow map. This result in a better quality shadow than standard
+ * shadow mapping. for more informations on this read this <a
+ * href="http://http.developer.nvidia.com/GPUGems3/gpugems3_ch10.html">http://http.developer.nvidia.com/GPUGems3/gpugems3_ch10.html</a>
  * <p/>
  */
 public class DirectionalLightShadowRenderer extends AbstractShadowRenderer {
@@ -195,7 +195,7 @@ public class DirectionalLightShadowRenderer extends AbstractShadowRenderer {
     /**
      * How far the shadows are rendered in the view
      *
-     * @see #setShadowZExtend(float zFar)
+     * see #setShadowZExtend(float zFar)
      * @return shadowZExtend
      */
     public float getShadowZExtend() {

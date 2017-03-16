@@ -199,7 +199,7 @@ public class UVCoordinatesGenerator {
      * 
      * @param texco
      *            the texture coordinates type
-     * @return <b>true</b> if the type is supported and false otherwise
+     * @return true if the type is supported and false otherwise
      */
     public static boolean isTextureCoordinateTypeSupported(UVCoordinatesType texco) {
         switch (texco) {

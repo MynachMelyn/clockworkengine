@@ -8,8 +8,8 @@ import com.clockwork.scene.Geometry;
 import com.clockwork.scene.Spatial;
 
 /**
- * <code>RenderQueue</code> is used to queue up and sort 
- * {@link Geometry geometries} for rendering.
+ * RenderQueue is used to queue up and sort 
+ * Geometry geometries} for rendering.
  * 
  */
 public class RenderQueue {
@@ -23,8 +23,8 @@ public class RenderQueue {
     private GeometryList shadowCast;
 
     /**
-     * Creates a new RenderQueue, the default {@link GeometryComparator comparators}
-     * are used for all {@link GeometryList geometry lists}.
+     * Creates a new RenderQueue, the default GeometryComparator comparators}
+     * are used for all GeometryList geometry lists}.
      */
     public RenderQueue() {
         this.opaqueList = new GeometryList(new OpaqueComparator());
@@ -37,12 +37,12 @@ public class RenderQueue {
     }
 
     /**
-     * The render queue <code>Bucket</code> specifies the bucket
+     * The render queue Bucket specifies the bucket
      * to which the spatial will be placed when rendered. 
-     * <p>
+     * 
      * The behavior of the rendering will differ depending on which 
      * bucket the spatial is placed. A spatial's queue bucket can be set
-     * via {@link Spatial#setQueueBucket(com.clockwork.renderer.queue.RenderQueue.Bucket) }.
+     * via Spatial#setQueueBucket(com.clockwork.renderer.queue.RenderQueue.Bucket) }.
      */
     public enum Bucket {
         /**
@@ -74,7 +74,7 @@ public class RenderQueue {
         
         /**
          * A special mode used for rendering transparent objects that
-         * should not be effected by {@link SceneProcessor}. 
+         * should not be effected by SceneProcessor}. 
          * Generally this would contain translucent objects, and
          * also objects that do not write to the depth buffer such as
          * particle emitters.
@@ -99,7 +99,7 @@ public class RenderQueue {
     }
 
     /**
-     * <code>ShadowMode</code> is a marker used to specify how shadow
+     * ShadowMode is a marker used to specify how shadow
      * effects should treat the spatial.
      */
     public enum ShadowMode {
@@ -125,7 +125,7 @@ public class RenderQueue {
         CastAndReceive,
         
         /**
-         * Inherit the <code>ShadowMode</code> from the parent node.
+         * Inherit the ShadowMode from the parent node.
          */
         Inherit
     }
@@ -136,23 +136,23 @@ public class RenderQueue {
      *  used to sort the accumulated list of geometries before actual rendering
      *  occurs.
      *
-     *  <p>The most significant comparator is the one for the transparent
+     *  The most significant comparator is the one for the transparent
      *  bucket since there is no correct way to sort the transparent bucket
      *  that will handle all geometry all the time.  In certain cases, the
      *  application may know the best way to sort and now has the option of
-     *  configuring a specific implementation.</p>
+     *  configuring a specific implementation.
      *
-     *  <p>The default comparators are:</p>
-     *  <ul>
-     *  <li>Bucket.Opaque: {@link com.clockwork.renderer.queue.OpaqueComparator} which sorts
+     *  The default comparators are:
+     *  
+     *  Bucket.Opaque: com.clockwork.renderer.queue.OpaqueComparator} which sorts
      *                     by material first and front to back within the same material.
-     *  <li>Bucket.Transparent: {@link com.clockwork.renderer.queue.TransparentComparator} which
+     *  Bucket.Transparent: com.clockwork.renderer.queue.TransparentComparator} which
      *                     sorts purely back to front by leading bounding edge with no material sort.
-     *  <li>Bucket.Translucent: {@link com.clockwork.renderer.queue.TransparentComparator} which
+     *  Bucket.Translucent: com.clockwork.renderer.queue.TransparentComparator} which
      *                     sorts purely back to front by leading bounding edge with no material sort. this bucket is rendered after post processors.
-     *  <li>Bucket.Sky: {@link com.clockwork.renderer.queue.NullComparator} which does no sorting
+     *  Bucket.Sky: com.clockwork.renderer.queue.NullComparator} which does no sorting
      *                     at all.
-     *  <li>Bucket.Gui: {@link com.clockwork.renderer.queue.GuiComparator} sorts geometries back to
+     *  Bucket.Gui: com.clockwork.renderer.queue.GuiComparator} sorts geometries back to
      *                     front based on their Z values.
      */
     public void setGeometryComparator(Bucket bucket, GeometryComparator c) {
@@ -201,14 +201,14 @@ public class RenderQueue {
     /**
      * Adds a geometry to a shadow bucket.
      * Note that this operation is done automatically by the
-     * {@link RenderManager}. {@link SceneProcessor}s that handle
+     * RenderManager}. SceneProcessor}s that handle
      * shadow rendering should fetch the queue by using
-     * {@link #getShadowQueueContent(com.clockwork.renderer.queue.RenderQueue.ShadowMode) },
+     * #getShadowQueueContent(com.clockwork.renderer.queue.RenderQueue.ShadowMode) },
      * by default no action is taken on the shadow queues.
      * 
      * @param g The geometry to add
      * @param shadBucket The shadow bucket type, if it is
-     * {@link ShadowMode#CastAndReceive}, it is added to both the cast
+     * ShadowMode#CastAndReceive}, it is added to both the cast
      * and the receive buckets.
      */
     public void addToShadowQueue(Geometry g, ShadowMode shadBucket) {
@@ -234,13 +234,13 @@ public class RenderQueue {
 
     /**
      * Adds a geometry to the given bucket.
-     * The {@link RenderManager} automatically handles this task
+     * The RenderManager} automatically handles this task
      * when flattening the scene graph. The bucket to add
-     * the geometry is determined by {@link Geometry#getQueueBucket() }.
+     * the geometry is determined by Geometry#getQueueBucket() }.
      * 
      * @param g  The geometry to add
      * @param bucket The bucket to add to, usually 
-     * {@link Geometry#getQueueBucket() }.
+     * Geometry#getQueueBucket() }.
      */
     public void addToQueue(Geometry g, Bucket bucket) {
         switch (bucket) {
@@ -266,10 +266,10 @@ public class RenderQueue {
 
     /**
      * 
-     * @param shadBucket The shadow mode to retrieve the {@link GeometryList
-     * queue content} for.  Only {@link ShadowMode#Cast Cast} and
-     * {@link ShadowMode#Receive Receive} are valid.
-     * @return The cast or receive {@link GeometryList}
+     * @param shadBucket The shadow mode to retrieve the GeometryList
+     * queue content} for.  Only ShadowMode#Cast Cast} and
+     * ShadowMode#Receive Receive} are valid.
+     * @return The cast or receive GeometryList}
      */
     public GeometryList getShadowQueueContent(ShadowMode shadBucket) {
         switch (shadBucket) {

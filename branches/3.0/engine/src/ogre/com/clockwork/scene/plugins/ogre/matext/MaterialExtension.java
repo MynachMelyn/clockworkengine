@@ -4,7 +4,7 @@ package com.clockwork.scene.plugins.ogre.matext;
 import java.util.HashMap;
 
 /**
- * <code>MaterialExtension</code> defines a mapping from an Ogre3D "base" material
+ * MaterialExtension defines a mapping from an Ogre3D "base" material
  * to a jME3 material definition.
  */
 public class MaterialExtension {

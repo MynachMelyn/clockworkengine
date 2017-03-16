@@ -2,7 +2,7 @@
 package com.clockwork.asset;
 
 /**
- * <code>CloneableAssetProcessor</code> simply calls {@link Object#clone() }
+ * CloneableAssetProcessor simply calls Object#clone() }
  * on assets to clone them. No processing is applied.
  * 
  * 

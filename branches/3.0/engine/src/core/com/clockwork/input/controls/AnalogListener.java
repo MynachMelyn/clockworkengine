@@ -2,7 +2,7 @@
 package com.clockwork.input.controls;
 
 /**
- * <code>AnalogListener</code> is used to receive events of inputs
+ * AnalogListener is used to receive events of inputs
  * in analog format. 
  *
  */

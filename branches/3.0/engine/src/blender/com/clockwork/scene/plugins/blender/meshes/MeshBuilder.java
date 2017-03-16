@@ -313,7 +313,7 @@ import com.clockwork.util.BufferUtils;
     }
 
     /**
-     * @return <b>true</b> if the mesh has no vertices and <b>false</b> otherwise
+     * @return true if the mesh has no vertices and false otherwise
      */
     public boolean isEmpty() {
         return vertexMap.size() == 0;

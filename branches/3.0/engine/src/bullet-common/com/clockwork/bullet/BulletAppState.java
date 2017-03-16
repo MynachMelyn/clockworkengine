@@ -13,7 +13,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * <code>BulletAppState</code> allows using bullet physics in an Application.
+ * BulletAppState allows using bullet physics in an Application.
  *
  */
 public class BulletAppState implements AppState, PhysicsTickListener {
@@ -309,7 +309,7 @@ public class BulletAppState implements AppState, PhysicsTickListener {
         SEQUENTIAL,
         /**
          * Parallel threaded mode; physics update and rendering are executed in
-         * parallel, update order is kept.<br/> Multiple BulletAppStates will
+         * parallel, update order is kept. Multiple BulletAppStates will
          * execute in parallel in this mode.
          */
         PARALLEL,

@@ -4,36 +4,36 @@ package com.clockwork.util;
 import java.util.*;
 
 /**
- *  <p>Provides a list with similar modification semantics to java.util.concurrent's
+ *  Provides a list with similar modification semantics to java.util.concurrent's
  *  CopyOnWriteArrayList except that it is not concurrent and also provides
  *  direct access to the current array.  This List allows modification of the
  *  contents while iterating as any iterators will be looking at a snapshot of
  *  the list at the time they were created.  Similarly, access the raw internal
  *  array is only presenting a snap shot and so can be safely iterated while
- *  the list is changing.</p>
+ *  the list is changing.
  *
- *  <p>All modifications, including set() operations will cause a copy of the
+ *  All modifications, including set() operations will cause a copy of the
  *  data to be created that replaces the old version.  Because this list is 
  *  not designed for threading concurrency it further optimizes the "many modifications"
  *  case by buffering them as a normal ArrayList until the next time the contents
- *  are accessed.</p>
+ *  are accessed.
  *
- *  <p>Normal list modification performance should be equal to ArrayList in a
+ *  Normal list modification performance should be equal to ArrayList in a
  *  many situations and always better than CopyOnWriteArrayList.  Optimum usage
  *  is when modifications are done infrequently or in batches... as is often the
  *  case in a scene graph.  Read operations perform superior to all other methods
- *  as the array can be accessed directly.</p>
+ *  as the array can be accessed directly.
  *
- *  <p>Important caveats over normal java.util.Lists:</p>
- *  <ul>
- *  <li>Even though this class supports modifying the list, the subList() method
- *  returns a read-only list.  This technically breaks the List contract.</li>
- *  <li>The ListIterators returned by this class only support the remove()
+ *  Important caveats over normal java.util.Lists:
+ *  
+ *  Even though this class supports modifying the list, the subList() method
+ *  returns a read-only list.  This technically breaks the List contract.
+ *  The ListIterators returned by this class only support the remove()
  *  modification method.  add() and set() are not supported on the iterator.
  *  Even after ListIterator.remove() or Iterator.remove() is called, this change
- *  is not reflected in the iterator instance as it is still refering to its
+ *  is not reflected in the iterator instance as it is still referring to its
  *  original snapshot.
- *  </ul>  
+ *    
  *
  *  @version   $Revision$
  */

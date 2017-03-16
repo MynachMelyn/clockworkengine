@@ -6,7 +6,7 @@ import com.clockwork.shader.ShaderNodeDefinition;
 import java.util.List;
 
 /**
- * Used for loading {@link ShaderNodeDefinition shader nodes definition}
+ * Used for loading ShaderNodeDefinition shader nodes definition}
  *
  * Tells if the defintion has to be loaded with or without its documentation
  *

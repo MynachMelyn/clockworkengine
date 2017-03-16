@@ -16,95 +16,95 @@ import java.util.logging.Logger;
 /**
  * Exports to the jME Binary Format. Format descriptor: (each numbered item
  * denotes a series of bytes that follows sequentially one after the next.)
- * <p>
+ * 
  * 1. "number of classes" - four bytes - int value representing the number of
  * entries in the class lookup table.
- * </p>
- * <p>
+ * 
+ * 
  * CLASS TABLE: There will be X blocks each consisting of numbers 2 thru 9,
  * where X = the number read in 1.
- * </p>
- * <p>
+ * 
+ * 
  * 2. "class alias" - 1...X bytes, where X = ((int) FastMath.log(aliasCount,
  * 256) + 1) - an alias used when writing object data to match an object to its
  * appropriate object class type.
- * </p>
- * <p>
+ * 
+ * 
  * 3. "full class name size" - four bytes - int value representing number of
  * bytes to read in for next field.
- * </p>
- * <p>
+ * 
+ * 
  * 4. "full class name" - 1...X bytes representing a String value, where X = the
  * number read in 3. The String is the fully qualified class name of the Savable
- * class, eg "<code>com.clockwork.math.Vector3f</code>"
- * </p>
- * <p>
+ * class, eg "com.clockwork.math.Vector3f"
+ * 
+ * 
  * 5. "number of fields" - four bytes - int value representing number of blocks
  * to read in next (numbers 6 - 9), where each block represents a field in this
  * class.
- * </p>
- * <p>
+ * 
+ * 
  * 6. "field alias" - 1 byte - the alias used when writing out fields in a
  * class. Because it is a single byte, a single class can not save out more than
  * a total of 256 fields.
- * </p>
- * <p>
+ * 
+ * 
  * 7. "field type" - 1 byte - a value representing the type of data a field
  * contains. This value is taken from the static fields of
- * <code>com.clockwork.util.export.binary.BinaryClassField</code>.
- * </p>
- * <p>
+ * com.clockwork.util.export.binary.BinaryClassField.
+ * 
+ * 
  * 8. "field name size" - 4 bytes - int value representing the size of the next
  * field.
- * </p>
- * <p>
+ * 
+ * 
  * 9. "field name" - 1...X bytes representing a String value, where X = the
  * number read in 8. The String is the full String value used when writing the
  * current field.
- * </p>
- * <p>
+ * 
+ * 
  * 10. "number of unique objects" - four bytes - int value representing the
  * number of data entries in this file.
- * </p>
- * <p>
+ * 
+ * 
  * DATA LOOKUP TABLE: There will be X blocks each consisting of numbers 11 and
  * 12, where X = the number read in 10.
- * </p>
- * <p>
+ * 
+ * 
  * 11. "data id" - four bytes - int value identifying a single unique object
  * that was saved in this data file.
- * </p>
- * <p>
+ * 
+ * 
  * 12. "data location" - four bytes - int value representing the offset in the
  * object data portion of this file where the object identified in 11 is
  * located.
- * </p>
- * <p>
+ * 
+ * 
  * 13. "future use" - four bytes - hardcoded int value 1.
- * </p>
- * <p>
+ * 
+ * 
  * 14. "root id" - four bytes - int value identifying the top level object.
- * </p>
- * <p>
+ * 
+ * 
  * OBJECT DATA SECTION: There will be X blocks each consisting of numbers 15
  * thru 19, where X = the number of unique location values named in 12.
- * <p>
+ * 
  * 15. "class alias" - see 2.
- * </p>
- * <p>
+ * 
+ * 
  * 16. "data length" - four bytes - int value representing the length in bytes
  * of data stored in fields 17 and 18 for this object.
- * </p>
- * <p>
+ * 
+ * 
  * FIELD ENTRY: There will be X blocks each consisting of numbers 18 and 19
- * </p>
- * <p>
+ * 
+ * 
  * 17. "field alias" - see 6.
- * </p>
- * <p>
+ * 
+ * 
  * 18. "field data" - 1...X bytes representing the field data. The data length
  * is dependent on the field type and contents.
- * </p>
+ * 
  *
  */
 

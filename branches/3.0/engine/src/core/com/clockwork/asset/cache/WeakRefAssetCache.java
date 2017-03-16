@@ -13,7 +13,7 @@ import java.util.logging.Logger;
  * A garbage collector bound asset cache that handles non-clonable objects.
  * This cache assumes that the asset given to the user is the same asset
  * that has been stored in the cache, in other words, 
- * {@link AssetProcessor#createClone(java.lang.Object) } for that asset
+ * AssetProcessor#createClone(java.lang.Object) } for that asset
  * returns the same object as the argument.
  * This implementation will remove the asset from the cache 
  * once the asset is no longer referenced in user code and memory is low,

@@ -60,7 +60,7 @@ public abstract class ConstraintDefinition {
     }
 
     /**
-     * @return <b>true</b> if the definition is implemented and <b>false</b>
+     * @return true if the definition is implemented and false
      *         otherwise
      */
     public boolean isImplemented() {

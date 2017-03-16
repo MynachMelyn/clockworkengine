@@ -5,13 +5,13 @@ import java.util.Random;
 import java.util.logging.Logger;
 
 /**
- * <code>FluidSimHeightMap</code> generates a height map based using some
+ * FluidSimHeightMap generates a height map based using some
  * sort of fluid simulation. The heightmap is treated as a highly viscous and
  * rubbery fluid enabling to fine tune the generated heightmap using a number
  * of parameters.
  *
  * 
- * @see <a href="http://www.gamedev.net/reference/articles/article2001.asp">Terrain Generation Using Fluid Simulation</a>
+ * see <a href="http://www.gamedev.net/reference/articles/article2001.asp">Terrain Generation Using Fluid Simulation</a>
  * @version $Id$
  *
  */
@@ -218,7 +218,7 @@ public class FluidSimHeightMap extends AbstractHeightMap {
      *
      * @param maxInitialHeight
      *                        the maximum initial height
-     * @see #setMinInitialHeight(int)
+     * see #setMinInitialHeight(int)
      */
     public void setMaxInitialHeight(float maxInitialHeight) {
         this.maxInitialHeight = maxInitialHeight;
@@ -229,7 +229,7 @@ public class FluidSimHeightMap extends AbstractHeightMap {
      *
      * @param minInitialHeight
      *                        the minimum initial height
-     * @see #setMaxInitialHeight(int)
+     * see #setMaxInitialHeight(int)
      */
     public void setMinInitialHeight(float minInitialHeight) {
         this.minInitialHeight = minInitialHeight;

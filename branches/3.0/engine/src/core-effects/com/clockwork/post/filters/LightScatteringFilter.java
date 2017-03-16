@@ -99,7 +99,7 @@ public class LightScatteringFilter extends Filter {
 
     /**
      * returns the blur start of the scattering 
-     * see {@link #setBlurStart(float blurStart)}
+     * see #setBlurStart(float blurStart)}
      * @return 
      */
     public float getBlurStart() {
@@ -107,7 +107,7 @@ public class LightScatteringFilter extends Filter {
     }
 
     /**
-     * sets the blur start<br>
+     * sets the blur start
      * at which distance from the light source the effect starts default is 0.02
      * @param blurStart 
      */
@@ -116,8 +116,8 @@ public class LightScatteringFilter extends Filter {
     }
 
     /**
-     * returns the blur width<br>
-     * see {@link #setBlurWidth(float blurWidth)}
+     * returns the blur width
+     * see #setBlurWidth(float blurWidth)}
      * @return 
      */
     public float getBlurWidth() {
@@ -134,7 +134,7 @@ public class LightScatteringFilter extends Filter {
 
     /**
      * returns the light density
-     * see {@link #setLightDensity(float lightDensity)}
+     * see #setLightDensity(float lightDensity)}
      * 
      * @return 
      */

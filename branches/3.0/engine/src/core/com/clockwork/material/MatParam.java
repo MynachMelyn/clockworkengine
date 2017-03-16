@@ -87,7 +87,7 @@ public class MatParam implements Savable, Cloneable {
 
     /**
      * Returns the value of this material parameter.
-     * <p>
+     * 
      * Material parameters that are used for material definitions
      * will not have a value, unless there's a default value declared
      * in the definition.
@@ -100,8 +100,8 @@ public class MatParam implements Savable, Cloneable {
 
     /**
      * Sets the value of this material parameter.
-     * <p>
-     * It is assumed the value is of the same {@link MatParam#getVarType() type}
+     * 
+     * It is assumed the value is of the same MatParam#getVarType() type}
      * as this material parameter.
      *
      * @param value the value of this material parameter.
@@ -122,15 +122,15 @@ public class MatParam implements Savable, Cloneable {
 
     /**
      * Returns the material parameter value as it would appear in a J3M
-     * file. E.g.<br/>
-     * <code>
-     * MaterialParameters {<br/>
-     *     ABC : 1 2 3 4<br/>
-     * }<br/>
-     * </code>
+     * file. E.g.
+     * 
+     * MaterialParameters {
+     *     ABC : 1 2 3 4
+     * }
+     * 
      * Assuming "ABC" is a Vector4 parameter, then the value
      * "1 2 3 4" would be returned by this method.
-     * <br/><br/>
+     * 
      * @return material parameter value as it would appear in a J3M file.
      */
     public String getValueAsString() {

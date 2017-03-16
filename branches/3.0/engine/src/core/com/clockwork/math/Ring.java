@@ -6,7 +6,7 @@ import java.io.IOException;
 
 
 /**
- * <code>Ring</code> defines a flat ring or disk within three dimensional
+ * Ring defines a flat ring or disk within three dimensional
  * space that is specified via the ring's center point, an up vector, an inner
  * radius, and an outer radius.
  * 
@@ -23,7 +23,7 @@ public final class Ring implements Savable, Cloneable, java.io.Serializable {
     private transient static Vector3f b1 = new Vector3f(), b2 = new Vector3f();
 
     /**
-     * Constructor creates a new <code>Ring</code> lying on the XZ plane,
+     * Constructor creates a new Ring lying on the XZ plane,
      * centered at the origin, with an inner radius of zero and an outer radius
      * of one (a unit disk).
      */
@@ -35,7 +35,7 @@ public final class Ring implements Savable, Cloneable, java.io.Serializable {
     }
 
     /**
-     * Constructor creates a new <code>Ring</code> with defined center point,
+     * Constructor creates a new Ring with defined center point,
      * up vector, and inner and outer radii.
      * 
      * @param center
@@ -56,7 +56,7 @@ public final class Ring implements Savable, Cloneable, java.io.Serializable {
     }
 
     /**
-     * <code>getCenter</code> returns the center of the ring.
+     * getCenter returns the center of the ring.
      * 
      * @return the center of the ring.
      */
@@ -65,7 +65,7 @@ public final class Ring implements Savable, Cloneable, java.io.Serializable {
     }
 
     /**
-     * <code>setCenter</code> sets the center of the ring.
+     * setCenter sets the center of the ring.
      * 
      * @param center
      *            the center of the ring.
@@ -75,7 +75,7 @@ public final class Ring implements Savable, Cloneable, java.io.Serializable {
     }
 
     /**
-     * <code>getUp</code> returns the ring's up vector.
+     * getUp returns the ring's up vector.
      * 
      * @return the ring's up vector.
      */
@@ -84,7 +84,7 @@ public final class Ring implements Savable, Cloneable, java.io.Serializable {
     }
 
     /**
-     * <code>setUp</code> sets the ring's up vector.
+     * setUp sets the ring's up vector.
      * 
      * @param up
      *            the ring's up vector.
@@ -94,7 +94,7 @@ public final class Ring implements Savable, Cloneable, java.io.Serializable {
     }
 
     /**
-     * <code>getInnerRadius</code> returns the ring's inner radius.
+     * getInnerRadius returns the ring's inner radius.
      * 
      * @return the ring's inner radius.
      */
@@ -103,7 +103,7 @@ public final class Ring implements Savable, Cloneable, java.io.Serializable {
     }
 
     /**
-     * <code>setInnerRadius</code> sets the ring's inner radius.
+     * setInnerRadius sets the ring's inner radius.
      * 
      * @param innerRadius
      *            the ring's inner radius.
@@ -113,7 +113,7 @@ public final class Ring implements Savable, Cloneable, java.io.Serializable {
     }
 
     /**
-     * <code>getOuterRadius</code> returns the ring's outer radius.
+     * getOuterRadius returns the ring's outer radius.
      * 
      * @return the ring's outer radius.
      */
@@ -122,7 +122,7 @@ public final class Ring implements Savable, Cloneable, java.io.Serializable {
     }
 
     /**
-     * <code>setOuterRadius</code> sets the ring's outer radius.
+     * setOuterRadius sets the ring's outer radius.
      * 
      * @param outerRadius
      *            the ring's outer radius.
@@ -133,7 +133,7 @@ public final class Ring implements Savable, Cloneable, java.io.Serializable {
 
     /**
      * 
-     * <code>random</code> returns a random point within the ring.
+     * random returns a random point within the ring.
      * 
      * @return a random point within the ring.
      */
@@ -143,7 +143,7 @@ public final class Ring implements Savable, Cloneable, java.io.Serializable {
 
     /**
      * 
-     * <code>random</code> returns a random point within the ring.
+     * random returns a random point within the ring.
      * 
      * @param result Vector to store result in
      * @return a random point within the ring.

@@ -6,7 +6,7 @@ import com.clockwork.texture.Image;
 import com.clockwork.texture.image.ImageRaster;
 
 /**
- * <code>ImageBasedHeightMap</code> is a height map created from the grayscale
+ * ImageBasedHeightMap is a height map created from the grayscale
  * conversion of an image. The image used currently must have an equal height
  * and width, although future work could scale an incoming image to a specific
  * height and width.

@@ -17,9 +17,9 @@ import java.nio.FloatBuffer;
 //import com.clockwork.scene.TriMesh;
 
 /**
- * <code>BoundingBox</code> describes a bounding volume as an axis-aligned box.
- * <br>
- * Instances may be initialized by invoking the <code>containAABB</code> method.
+ * BoundingBox describes a bounding volume as an axis-aligned box.
+ * 
+ * Instances may be initialized by invoking the containAABB method.
  *
  * 
  * @version $Id: BoundingBox.java,v 1.50 2007/09/22 16:46:35 irrisor Exp $
@@ -39,13 +39,13 @@ public class BoundingBox extends BoundingVolume {
     float zExtent;
     
     /**
-     * Instantiate a <code>BoundingBox</code> without initializing it.
+     * Instantiate a BoundingBox without initializing it.
      */
     public BoundingBox() {
     }
 
     /**
-     * Instantiate a <code>BoundingBox</code> with given center and extents.
+     * Instantiate a BoundingBox with given center and extents.
      *
      * @param c the coordinates of the center of the box (not null, not altered)
      * @param x the X-extent of the box (>=0, may be +Infinity)
@@ -60,7 +60,7 @@ public class BoundingBox extends BoundingVolume {
     }
 
     /**
-     * Instantiate a <code>BoundingBox</code> equivalent to an existing box.
+     * Instantiate a BoundingBox equivalent to an existing box.
      *
      * @param source the existing box (not null, not altered)
      */
@@ -80,8 +80,8 @@ public class BoundingBox extends BoundingVolume {
     }
 
     /**
-     * <code>computeFromPoints</code> creates a new Bounding Box from a given
-     * set of points. It uses the <code>containAABB</code> method as default.
+     * computeFromPoints creates a new Bounding Box from a given
+     * set of points. It uses the containAABB method as default.
      * 
      * @param points
      *            the points to contain.
@@ -91,7 +91,7 @@ public class BoundingBox extends BoundingVolume {
     }
 
     /**
-     * <code>computeFromTris</code> creates a new Bounding Box from a given
+     * computeFromTris creates a new Bounding Box from a given
      * set of triangles. It is used in OBBTree calculations.
      * 
      * @param tris
@@ -185,7 +185,7 @@ public class BoundingBox extends BoundingVolume {
     }
 
     /**
-     * <code>containAABB</code> creates a minimum-volume axis-aligned bounding
+     * containAABB creates a minimum-volume axis-aligned bounding
      * box of the points, then selects the smallest enclosing sphere of the box
      * with the sphere centered at the boxes center.
      * 
@@ -254,7 +254,7 @@ public class BoundingBox extends BoundingVolume {
     }
 
     /**
-     * <code>transform</code> modifies the center of the box to reflect the
+     * transform modifies the center of the box to reflect the
      * change made via a rotation, translation and scale.
      * 
      * @param trans 
@@ -328,7 +328,7 @@ public class BoundingBox extends BoundingVolume {
     }
 
     /**
-     * <code>whichSide</code> takes a plane (typically provided by a view
+     * whichSide takes a plane (typically provided by a view
      * frustum) to determine which side this bound is on.
      * 
      * @param plane
@@ -352,7 +352,7 @@ public class BoundingBox extends BoundingVolume {
     }
 
     /**
-     * <code>merge</code> combines this bounding box locally with a second
+     * merge combines this bounding box locally with a second
      * bounding volume. The result contains both the original box and the second
      * volume.
      *
@@ -366,7 +366,7 @@ public class BoundingBox extends BoundingVolume {
     }
 
     /**
-     * <code>mergeLocal</code> combines this bounding box locally with a second
+     * mergeLocal combines this bounding box locally with a second
      * bounding volume. The result contains both the original box and the second
      * volume.
      *
@@ -444,7 +444,7 @@ public class BoundingBox extends BoundingVolume {
 //        return this;
 //    }
     /**
-     * <code>mergeLocal</code> combines this bounding box locally with a second
+     * mergeLocal combines this bounding box locally with a second
      * bounding box described by its center and extents.
      *
      * @param c the center of the second box (not null, not altered)
@@ -509,7 +509,7 @@ public class BoundingBox extends BoundingVolume {
     }
 
     /**
-     * <code>clone</code> creates a new BoundingBox object containing the same
+     * clone creates a new BoundingBox object containing the same
      * data as this one.
      * 
      * @param store
@@ -534,7 +534,7 @@ public class BoundingBox extends BoundingVolume {
     }
 
     /**
-     * <code>toString</code> returns the string representation of this object.
+     * toString returns the string representation of this object.
      * The form is: "[Center: <Vector> xExtent: X.XX yExtent: Y.YY zExtent:
      * Z.ZZ]".
      *
@@ -551,7 +551,7 @@ public class BoundingBox extends BoundingVolume {
      * intersects determines if this Bounding Box intersects with another given
      * bounding volume. If so, true is returned, otherwise, false is returned.
      * 
-     * @see BoundingVolume#intersects(com.clockwork.bounding.BoundingVolume) 
+     * see BoundingVolume#intersects(com.clockwork.bounding.BoundingVolume) 
      */
     public boolean intersects(BoundingVolume bv) {
         return bv.intersectsBoundingBox(this);
@@ -560,7 +560,7 @@ public class BoundingBox extends BoundingVolume {
     /**
      * determines if this bounding box intersects a given bounding sphere.
      * 
-     * @see BoundingVolume#intersectsSphere(com.clockwork.bounding.BoundingSphere)
+     * see BoundingVolume#intersectsSphere(com.clockwork.bounding.BoundingSphere)
      */
     public boolean intersectsSphere(BoundingSphere bs) {
         assert Vector3f.isValidVector(center) && Vector3f.isValidVector(bs.center);
@@ -582,7 +582,7 @@ public class BoundingBox extends BoundingVolume {
      * two boxes intersect in any way, true is returned. Otherwise, false is
      * returned.
      * 
-     * @see BoundingVolume#intersectsBoundingBox(com.clockwork.bounding.BoundingBox)
+     * see BoundingVolume#intersectsBoundingBox(com.clockwork.bounding.BoundingBox)
      */
     public boolean intersectsBoundingBox(BoundingBox bb) {
         assert Vector3f.isValidVector(center) && Vector3f.isValidVector(bb.center);
@@ -605,7 +605,7 @@ public class BoundingBox extends BoundingVolume {
      * determines if this bounding box intersects with a given oriented bounding
      * box.
      * 
-     * @see com.clockwork.bounding.BoundingVolume#intersectsOrientedBoundingBox(com.clockwork.bounding.OrientedBoundingBox)
+     * see com.clockwork.bounding.BoundingVolume#intersectsOrientedBoundingBox(com.clockwork.bounding.OrientedBoundingBox)
      */
 //    public boolean intersectsOrientedBoundingBox(OrientedBoundingBox obb) {
 //        return obb.intersectsBoundingBox(this);
@@ -614,7 +614,7 @@ public class BoundingBox extends BoundingVolume {
      * determines if this bounding box intersects with a given ray object. If an
      * intersection has occurred, true is returned, otherwise false is returned.
      * 
-     * @see BoundingVolume#intersects(com.clockwork.math.Ray) 
+     * see BoundingVolume#intersects(com.clockwork.math.Ray) 
      */
     public boolean intersects(Ray ray) {
         assert Vector3f.isValidVector(center);
@@ -686,7 +686,7 @@ public class BoundingBox extends BoundingVolume {
     }
 
     /**
-     * @see com.clockwork.bounding.BoundingVolume#intersectsWhere(com.clockwork.math.Ray)
+     * see com.clockwork.bounding.BoundingVolume#intersectsWhere(com.clockwork.math.Ray)
      */
     private int collideWithRay(Ray ray, CollisionResults results) {
         TempVars vars = TempVars.get();
@@ -819,7 +819,7 @@ public class BoundingBox extends BoundingVolume {
     }
 
     /**
-     * <code>clip</code> determines if a line segment intersects the current
+     * clip determines if a line segment intersects the current
      * test plane.
      * 
      * @param denom

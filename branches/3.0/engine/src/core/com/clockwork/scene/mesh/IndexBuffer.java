@@ -8,7 +8,7 @@ import java.nio.IntBuffer;
 import java.nio.ShortBuffer;
 
 /**
- * <code>IndexBuffer</code> is an abstraction for integer index buffers,
+ * IndexBuffer is an abstraction for integer index buffers,
  * it is used to retrieve indices without knowing in which format they 
  * are stored (ushort or uint).
  *
@@ -30,7 +30,7 @@ public abstract class IndexBuffer {
     /**
      * Creates an index buffer that can contain the given amount
      * of vertices.
-     * Returns {@link IndexShortBuffer}
+     * Returns IndexShortBuffer}
      * 
      * @param vertexCount The amount of vertices to contain
      * @param indexCount The amount of indices
@@ -55,7 +55,7 @@ public abstract class IndexBuffer {
     
     /**
      * Puts the vertex index at the index buffer's index.
-     * Implementations may throw an {@link UnsupportedOperationException}
+     * Implementations may throw an UnsupportedOperationException}
      * if modifying the IndexBuffer is not supported (e.g. virtual index
      * buffers).
      */
@@ -69,11 +69,11 @@ public abstract class IndexBuffer {
     public abstract int size();
     
     /**
-     * Returns the underlying data-type specific {@link Buffer}.
+     * Returns the underlying data-type specific Buffer}.
      * Implementations may return null if there's no underlying
      * buffer.
      * 
-     * @return the underlying {@link Buffer}.
+     * @return the underlying Buffer}.
      */
     public abstract Buffer getBuffer();
 }

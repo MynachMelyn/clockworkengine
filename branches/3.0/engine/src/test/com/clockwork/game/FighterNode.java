@@ -21,12 +21,12 @@ import com.clockwork.animation.LoopMode;
 public class FighterNode extends Node implements AnimEventListener, ActionListener {
 
     /**
-     * Will the player's inputs control the Fighter, or are they autonomous?<br>
-     * Use for Stands.<br>
+     * Will the player's inputs control the Fighter, or are they autonomous?
+     * Use for Stands.
      * Stands should not be controlled as players are. They should be Transform
-     * parented, have their animations set in parallel to the player parent.<br>
+     * parented, have their animations set in parallel to the player parent.
      * Stands should not have the same interruptables/uninterruptables as a
-     * player, and instead the player's current move should decide it.<br>
+     * player, and instead the player's current move should decide it.
      * Do this by setting the Stand's move/animation at the same time as the
      * player's. The attack hit-box can then be put on the Stand's hand.
      */

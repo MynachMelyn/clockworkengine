@@ -25,8 +25,8 @@ public class DebugShapeFactory {
 //    private static final Vector3f aabbMin = new Vector3f(-1e30f, -1e30f, -1e30f);
 
     /**
-     * Creates a debug shape from the given collision shape. This is mostly used internally.<br>
-     * To attach a debug shape to a physics object, call <code>attachDebugShape(AssetManager manager);</code> on it.
+     * Creates a debug shape from the given collision shape. This is mostly used internally.
+     * To attach a debug shape to a physics object, call attachDebugShape(AssetManager manager); on it.
      * @param collisionShape
      * @return
      */

@@ -10,7 +10,7 @@ import java.net.URL;
 import java.util.logging.Logger;
 
 /**
- * The <code>ClasspathLocator</code> looks up an asset in the classpath.
+ * The ClasspathLocator looks up an asset in the classpath.
  */
 public class ClasspathLocator implements AssetLocator {
 

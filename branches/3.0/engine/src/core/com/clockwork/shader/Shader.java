@@ -168,7 +168,7 @@ public final class Shader extends NativeObject {
     }
     
     /**
-     * Creates a new shader, {@link #initialize() } must be called
+     * Creates a new shader, #initialize() } must be called
      * after this constructor for the shader to be usable.
      */
     public Shader(){

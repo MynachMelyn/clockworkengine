@@ -210,7 +210,7 @@ public class StringUtil {
     }
 
     /**
-     * Right aligns a {@link String} with zeros for printing
+     * Right aligns a String} with zeros for printing
      *
      * @param input the String to be aligned
      * @param wholeLen the total length of the padded string

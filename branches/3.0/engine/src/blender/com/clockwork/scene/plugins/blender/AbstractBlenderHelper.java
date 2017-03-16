@@ -56,7 +56,7 @@ public abstract class AbstractBlenderHelper {
      * being created and stored in the memory. It can be unwise especially inside loops.
      * @param text
      *            the text to be checked
-     * @return <b>true</b> if the text is blank and <b>false</b> otherwise
+     * @return true if the text is blank and false otherwise
      */
     protected boolean isBlank(String text) {
         if (text != null) {
@@ -131,7 +131,7 @@ public abstract class AbstractBlenderHelper {
      *            structure to be analyzed
      * @param blenderContext
      *            the blender context
-     * @return <b>true</b> if the feature should be loaded and false otherwise
+     * @return true if the feature should be loaded and false otherwise
      */
     public abstract boolean shouldBeLoaded(Structure structure, BlenderContext blenderContext);
 }

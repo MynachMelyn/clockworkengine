@@ -81,7 +81,7 @@ public class ShaderKey extends AssetKey<Shader> {
     }
 
     /**
-     * @deprecated Use {@link #getVertexShaderLanguage() } instead.
+     * @deprecated Use #getVertexShaderLanguage() } instead.
      */
     @Deprecated
     public String getLanguage() {

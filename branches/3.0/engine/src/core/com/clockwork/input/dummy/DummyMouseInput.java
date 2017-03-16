@@ -5,7 +5,7 @@ import com.clockwork.cursors.plugins.JmeCursor;
 import com.clockwork.input.MouseInput;
 
 /**
- * DummyMouseInput as an implementation of <code>MouseInput</code> that raises no
+ * DummyMouseInput as an implementation of MouseInput that raises no
  * input events.
  *
  */

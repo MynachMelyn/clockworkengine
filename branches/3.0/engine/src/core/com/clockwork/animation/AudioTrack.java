@@ -18,11 +18,11 @@ import java.util.logging.Logger;
  * an animations for example : gun shot, foot step, shout, etc...
  *
  * usage is
- * <pre>
+ * 
  * AnimControl control model.getControl(AnimControl.class);
  * AudioTrack track = new AudioTrack(existionAudioNode, control.getAnim("TheAnim").getLength());
  * control.getAnim("TheAnim").addTrack(track);
- * </pre>
+ * 
  *
  * This is mostly intended for short sounds, playInstance will be called on the
  * AudioNode at time 0 + startOffset.
@@ -86,7 +86,7 @@ public class AudioTrack implements ClonableTrack {
     /**
      * Internal use only
      *
-     * @see Track#setTime(float, float, com.clockwork.animation.AnimControl,
+     * see Track#setTime(float, float, com.clockwork.animation.AnimControl,
      * com.clockwork.animation.AnimChannel, com.clockwork.util.TempVars)
      */
     public void setTime(float time, float weight, AnimControl control, AnimChannel channel, TempVars vars) {
