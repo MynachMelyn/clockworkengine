@@ -3,7 +3,7 @@
 package clockworktest.niftygui;
 
 import com.clockwork.app.SimpleApplication;
-import com.clockwork.niftygui.NiftyJmeDisplay;
+import com.clockwork.niftygui.NiftyCWDisplay;
 import de.lessvoid.nifty.Nifty;
 
 public class TestNiftyExamples extends SimpleApplication {
@@ -17,7 +17,7 @@ public class TestNiftyExamples extends SimpleApplication {
     }
 
     public void simpleInitApp() {
-        NiftyJmeDisplay niftyDisplay = new NiftyJmeDisplay(assetManager,
+        NiftyCWDisplay niftyDisplay = new NiftyCWDisplay(assetManager,
                                                           inputManager,
                                                           audioRenderer,
                                                           guiViewPort);

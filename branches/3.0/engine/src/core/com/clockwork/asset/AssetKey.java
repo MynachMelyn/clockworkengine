@@ -161,12 +161,12 @@ public class AssetKey<T> implements Savable, Cloneable {
         return name;
     }
 
-    public void write(JmeExporter ex) throws IOException {
+    public void write(CWExporter ex) throws IOException {
         OutputCapsule oc = ex.getCapsule(this);
         oc.write(name, "name", null);
     }
 
-    public void read(JmeImporter im) throws IOException {
+    public void read(CWImporter im) throws IOException {
         InputCapsule ic = im.getCapsule(this);
         name = reducePath(ic.readString("name", null));
         extension = getExtension(name);

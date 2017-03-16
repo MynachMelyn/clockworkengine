@@ -122,12 +122,12 @@ public class MaterialHelper extends AbstractBlenderHelper {
     }
 
     /**
-     * This method converts the material structure to jme Material.
+     * This method converts the material structure to CW Material.
      * @param structure
      *            structure with material data
      * @param blenderContext
      *            the blender context
-     * @return jme material
+     * @return CW material
      * @throws BlenderFileException
      *             an exception is throw when problems with blend file occur
      */

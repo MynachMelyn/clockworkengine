@@ -10,8 +10,8 @@ import java.io.IOException;
  * 
  */
 public class NullSavable implements Savable {
-    public void write(JmeExporter ex) throws IOException {
+    public void write(CWExporter ex) throws IOException {
     }
-    public void read(JmeImporter im) throws IOException {
+    public void read(CWImporter im) throws IOException {
     }
 }

@@ -1043,7 +1043,7 @@ final class BinaryInputCapsule implements InputCapsule {
                 logger.log(
                         Level.WARNING,
                         "Your export has been saved with an incorrect encoding for it's String fields which means it might not load correctly " +
-                        "due to encoding issues. You should probably re-export your work. See ISSUE 276 in the jME issue tracker."
+                        "due to encoding issues. You should probably re-export your work. See ISSUE 276 in the CW issue tracker."
                 );
                 // We use ISO8859_1 to be consistent across platforms. We could default to native encoding, but this would lead to inconsistent
                 // behaviour across platforms!
@@ -1060,7 +1060,7 @@ final class BinaryInputCapsule implements InputCapsule {
                     Level.SEVERE,
                     "Your export has been saved with an incorrect encoding or your version of Java is unable to decode the stored string. " +
                     "While your export may load correctly by falling back, using it on different platforms or java versions might lead to "+
-                    "very strange inconsitenties. You should probably re-export your work. See ISSUE 276 in the jME issue tracker."
+                    "very strange inconsitenties. You should probably re-export your work. See ISSUE 276 in the CW issue tracker."
             );
             return new String(bytes);
         }

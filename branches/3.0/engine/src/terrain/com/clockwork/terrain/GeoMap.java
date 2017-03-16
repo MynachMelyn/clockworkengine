@@ -308,7 +308,7 @@ public class GeoMap implements Savable {
         return m;
     }
     
-    public void write(JmeExporter ex) throws IOException {
+    public void write(CWExporter ex) throws IOException {
         OutputCapsule oc = ex.getCapsule(this);
         oc.write(hdata, "hdataarray", null);
         oc.write(width, "width", 0);
@@ -316,7 +316,7 @@ public class GeoMap implements Savable {
         oc.write(maxval, "maxval", 0);
     }
 
-    public void read(JmeImporter im) throws IOException {
+    public void read(CWImporter im) throws IOException {
         InputCapsule ic = im.getCapsule(this);
         hdata = ic.readFloatArray("hdataarray", null);
         if (hdata == null) {

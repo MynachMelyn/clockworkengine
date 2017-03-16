@@ -3,8 +3,8 @@ package com.clockwork.animation;
 
 import com.clockwork.effect.ParticleEmitter;
 import com.clockwork.export.InputCapsule;
-import com.clockwork.export.JmeExporter;
-import com.clockwork.export.JmeImporter;
+import com.clockwork.export.CWExporter;
+import com.clockwork.export.CWImporter;
 import com.clockwork.export.OutputCapsule;
 import com.clockwork.renderer.RenderManager;
 import com.clockwork.renderer.ViewPort;
@@ -363,7 +363,7 @@ public class EffectTrack implements ClonableTrack {
      * @param ex exporter
      * @throws IOException exception
      */
-    public void write(JmeExporter ex) throws IOException {
+    public void write(CWExporter ex) throws IOException {
         OutputCapsule out = ex.getCapsule(this);
         //reseting the particle emission rate on the emitter before saving.
         emitter.setParticlesPerSec(particlesPerSeconds);
@@ -381,7 +381,7 @@ public class EffectTrack implements ClonableTrack {
      * @param im importer
      * @throws IOException Exception
      */
-    public void read(JmeImporter im) throws IOException {
+    public void read(CWImporter im) throws IOException {
         InputCapsule in = im.getCapsule(this);
         this.particlesPerSeconds = in.readFloat("particlesPerSeconds", 0);
         //reading the emitter even if the track will then reference its cloned counter part if it's loaded with the assetManager.

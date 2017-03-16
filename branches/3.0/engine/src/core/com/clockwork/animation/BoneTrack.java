@@ -253,7 +253,7 @@ public final class BoneTrack implements Track {
     }
     
     @Override
-    public void write(JmeExporter ex) throws IOException {
+    public void write(CWExporter ex) throws IOException {
         OutputCapsule oc = ex.getCapsule(this);
         oc.write(targetBoneIndex, "boneIndex", 0);
         oc.write(translations, "translations", null);
@@ -263,7 +263,7 @@ public final class BoneTrack implements Track {
     }
 
     @Override
-    public void read(JmeImporter im) throws IOException {
+    public void read(CWImporter im) throws IOException {
         InputCapsule ic = im.getCapsule(this);
         targetBoneIndex = ic.readInt("boneIndex", 0);
 

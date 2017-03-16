@@ -81,7 +81,7 @@ public final class BIHNode implements Savable {
         this.rightPlane = rightPlane;
     }
 
-    public void write(JmeExporter ex) throws IOException {
+    public void write(CWExporter ex) throws IOException {
         OutputCapsule oc = ex.getCapsule(this);
         oc.write(leftIndex, "left_index", 0);
         oc.write(rightIndex, "right_index", 0);
@@ -92,7 +92,7 @@ public final class BIHNode implements Savable {
         oc.write(right, "right_node", null);
     }
 
-    public void read(JmeImporter im) throws IOException {
+    public void read(CWImporter im) throws IOException {
         InputCapsule ic = im.getCapsule(this);
         leftIndex = ic.readInt("left_index", 0);
         rightIndex = ic.readInt("right_index", 0);

@@ -758,7 +758,7 @@ public final class Vector3f implements Savable, Cloneable, java.io.Serializable 
      */
     public Vector3f normalizeLocal() {
         // NOTE: this implementation is more optimized
-        // than the old jme normalize as this method
+        // than the old CW normalize as this method
         // is commonly used.
         float length = x * x + y * y + z * z;
         if (length != 1f && length != 0f){
@@ -958,7 +958,7 @@ public final class Vector3f implements Savable, Cloneable, java.io.Serializable 
      * toString returns the string representation of this vector.
      * The format is:
      *
-     * org.jme.math.Vector3f [X=XX.XXXX, Y=YY.YYYY, Z=ZZ.ZZZZ]
+     * org.CW.math.Vector3f [X=XX.XXXX, Y=YY.YYYY, Z=ZZ.ZZZZ]
      *
      * @return the string representation of this vector.
      */
@@ -966,14 +966,14 @@ public final class Vector3f implements Savable, Cloneable, java.io.Serializable 
         return "(" + x + ", " + y + ", " + z + ")";
     }
 
-    public void write(JmeExporter e) throws IOException {
+    public void write(CWExporter e) throws IOException {
         OutputCapsule capsule = e.getCapsule(this);
         capsule.write(x, "x", 0);
         capsule.write(y, "y", 0);
         capsule.write(z, "z", 0);
     }
 
-    public void read(JmeImporter e) throws IOException {
+    public void read(CWImporter e) throws IOException {
         InputCapsule capsule = e.getCapsule(this);
         x = capsule.readFloat("x", 0);
         y = capsule.readFloat("y", 0);

@@ -1,8 +1,8 @@
 
 package com.clockwork.math;
 
-import com.clockwork.export.JmeExporter;
-import com.clockwork.export.JmeImporter;
+import com.clockwork.export.CWExporter;
+import com.clockwork.export.CWImporter;
 import com.clockwork.export.Savable;
 import java.io.IOException;
 
@@ -245,13 +245,13 @@ public class Triangle extends AbstractTriangle implements Savable, java.io.Seria
         return store.normalizeLocal();
     }
 
-    public void write(JmeExporter e) throws IOException {
+    public void write(CWExporter e) throws IOException {
         e.getCapsule(this).write(pointa, "pointa", Vector3f.ZERO);
         e.getCapsule(this).write(pointb, "pointb", Vector3f.ZERO);
         e.getCapsule(this).write(pointc, "pointc", Vector3f.ZERO);
     }
 
-    public void read(JmeImporter e) throws IOException {
+    public void read(CWImporter e) throws IOException {
         pointa = (Vector3f) e.getCapsule(this).readSavable("pointa", Vector3f.ZERO.clone());
         pointb = (Vector3f) e.getCapsule(this).readSavable("pointb", Vector3f.ZERO.clone());
         pointc = (Vector3f) e.getCapsule(this).readSavable("pointc", Vector3f.ZERO.clone());

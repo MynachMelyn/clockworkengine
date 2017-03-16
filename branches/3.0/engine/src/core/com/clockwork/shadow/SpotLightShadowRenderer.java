@@ -3,8 +3,8 @@ package com.clockwork.shadow;
 
 import com.clockwork.asset.AssetManager;
 import com.clockwork.export.InputCapsule;
-import com.clockwork.export.JmeExporter;
-import com.clockwork.export.JmeImporter;
+import com.clockwork.export.CWExporter;
+import com.clockwork.export.CWImporter;
 import com.clockwork.export.OutputCapsule;
 import com.clockwork.light.SpotLight;
 import com.clockwork.material.Material;
@@ -197,7 +197,7 @@ public class SpotLightShadowRenderer extends AbstractShadowRenderer {
     }
     
     @Override
-    public void read(JmeImporter im) throws IOException {
+    public void read(CWImporter im) throws IOException {
         super.read(im);
         InputCapsule ic = (InputCapsule) im.getCapsule(this);
         zFarOverride = ic.readInt("zFarOverride", 0);
@@ -209,7 +209,7 @@ public class SpotLightShadowRenderer extends AbstractShadowRenderer {
     }
 
     @Override
-    public void write(JmeExporter ex) throws IOException {
+    public void write(CWExporter ex) throws IOException {
         super.write(ex);
         OutputCapsule oc = (OutputCapsule) ex.getCapsule(this);        
         oc.write(zFarOverride, "zFarOverride", 0);

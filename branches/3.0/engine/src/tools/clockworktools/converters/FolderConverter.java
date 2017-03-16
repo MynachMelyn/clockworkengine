@@ -3,7 +3,7 @@
 package clockworktools.converters;
 
 import com.clockwork.asset.AssetManager;
-import com.clockwork.system.JmeSystem;
+import com.clockwork.system.CWSystem;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -39,7 +39,7 @@ public class FolderConverter {
         FileOutputStream out = new FileOutputStream(jarFile);
         jarOut = new JarOutputStream(out);
 
-        assetManager = JmeSystem.newAssetManager();
+        assetManager = CWSystem.newAssetManager();
         assetManager.registerLocator(sourceRoot.toString(), 
                                      "com.clockwork.asset.plugins.FileSystemLocator");
         for (File f : sourceRoot.listFiles()){

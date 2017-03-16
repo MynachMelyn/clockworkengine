@@ -14,7 +14,7 @@ import java.util.prefs.Preferences;
  * AppSettings provides a store of configuration
  * to be used by the application.
  * 
- * By default only the JmeContext context} uses the configuration,
+ * By default only the CWContext context} uses the configuration,
  * however the user may set and retrieve the settings as well.
  * The settings can be stored either in the Java preferences
  * (using #save(java.lang.String) } or
@@ -221,7 +221,7 @@ public final class AppSettings extends HashMap<String, Object> {
             }
             props.setProperty(entry.getKey() + type, val.toString());
         }
-        props.store(out, "jME3 AppSettings");
+        props.store(out, "CW AppSettings");
     }
 
     /**
@@ -485,11 +485,11 @@ public final class AppSettings extends HashMap<String, Object> {
 
     /**
      * Set a custom graphics renderer to use. The class should implement
-     * the JmeContext} interface.
+     * the CWContext} interface.
      * @param clazz The custom context class.
      * (Default: not set)
      */
-    public void setCustomRenderer(Class<? extends JmeContext> clazz){
+    public void setCustomRenderer(Class<? extends CWContext> clazz){
         put("Renderer", "CUSTOM" + clazz.getName());
     }
 

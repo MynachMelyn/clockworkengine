@@ -10,7 +10,7 @@ import com.clockwork.scene.plugins.blender.file.Structure;
 /**
  * Constraint applied on the skeleton. This constraint is here only to make the
  * application not crash when loads constraints applied to armature. But
- * skeleton movement is not supported by jme so the constraint will never be
+ * skeleton movement is not supported by CW so the constraint will never be
  * applied.
  * 
  * 

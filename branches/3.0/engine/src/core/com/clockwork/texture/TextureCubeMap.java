@@ -2,8 +2,8 @@
 package com.clockwork.texture;
 
 import com.clockwork.export.InputCapsule;
-import com.clockwork.export.JmeExporter;
-import com.clockwork.export.JmeImporter;
+import com.clockwork.export.CWExporter;
+import com.clockwork.export.CWImporter;
 import com.clockwork.export.OutputCapsule;
 import java.io.IOException;
 import java.nio.ByteBuffer;
@@ -172,7 +172,7 @@ public class TextureCubeMap extends Texture {
     }
 
     @Override
-    public void write(JmeExporter e) throws IOException {
+    public void write(CWExporter e) throws IOException {
         super.write(e);
         OutputCapsule capsule = e.getCapsule(this);
         capsule.write(wrapS, "wrapS", WrapMode.EdgeClamp);
@@ -181,7 +181,7 @@ public class TextureCubeMap extends Texture {
     }
 
     @Override
-    public void read(JmeImporter e) throws IOException {
+    public void read(CWImporter e) throws IOException {
         super.read(e);
         InputCapsule capsule = e.getCapsule(this);
         wrapS = capsule.readEnum("wrapS", WrapMode.class, WrapMode.EdgeClamp);

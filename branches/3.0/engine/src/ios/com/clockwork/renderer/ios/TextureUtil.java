@@ -3,10 +3,10 @@ package com.clockwork.renderer.ios;
 //import android.graphics.Bitmap;
 //import android.opengl.ETC1;
 //import android.opengl.ETC1Util.ETC1Texture;
-//import android.opengl.JmeIosGLES;
+//import android.opengl.CWIosGLES;
 //import android.opengl.GLUtils;
 //import com.clockwork.asset.AndroidImageInfo;
-import com.clockwork.renderer.ios.JmeIosGLES;
+import com.clockwork.renderer.ios.CWIosGLES;
 import com.clockwork.math.FastMath;
 import com.clockwork.renderer.RendererException;
 import com.clockwork.texture.Image;
@@ -71,16 +71,16 @@ public class TextureUtil {
 
         logger.log(Level.FINEST, " - Generating mipmaps for bitmap using SOFTWARE");
 
-        JmeIosGLES.glPixelStorei(JmeIosGLES.GL_UNPACK_ALIGNMENT, 1);
+        CWIosGLES.glPixelStorei(CWIosGLES.GL_UNPACK_ALIGNMENT, 1);
 
         while (height >= 1 || width >= 1) {
             //First of all, generate the texture from our bitmap and set it to the according level
             if (compress) {
                 logger.log(Level.FINEST, " - Uploading LOD level {0} ({1}x{2}) with compression.", new Object[]{level, width, height});
-                uploadBitmapAsCompressed(JmeIosGLES.GL_TEXTURE_2D, level, bitmap, false, 0, 0);
+                uploadBitmapAsCompressed(CWIosGLES.GL_TEXTURE_2D, level, bitmap, false, 0, 0);
             } else {
                 logger.log(Level.FINEST, " - Uploading LOD level {0} ({1}x{2}) directly.", new Object[]{level, width, height});
-                GLUtils.texImage2D(JmeIosGLES.GL_TEXTURE_2D, level, bitmap, 0);
+                GLUtils.texImage2D(CWIosGLES.GL_TEXTURE_2D, level, bitmap, 0);
             }
 
             if (height == 1 || width == 1) {
@@ -109,10 +109,10 @@ public class TextureUtil {
             logger.log(Level.FINEST, " - Uploading bitmap directly. Cannot compress as alpha present.");
             if (subTexture) {
                 GLUtils.texSubImage2D(target, level, x, y, bitmap);
-                JmeIosGLES.checkGLError();
+                CWIosGLES.checkGLError();
             } else {
                 GLUtils.texImage2D(target, level, bitmap, 0);
-                JmeIosGLES.checkGLError();
+                CWIosGLES.checkGLError();
             }
         } else {
             // Convert to RGB565
@@ -148,7 +148,7 @@ public class TextureUtil {
                 int newSize = compressedImage.capacity();
                 logger.log(Level.FINEST, " - Uploading compressed image to GL, oldSize = {0}, newSize = {1}, ratio = {2}", new Object[]{oldSize, newSize, (float) oldSize / newSize});
                 if (subTexture) {
-                    JmeIosGLES.glCompressedTexSubImage2D(target,
+                    CWIosGLES.glCompressedTexSubImage2D(target,
                             level,
                             x, y,
                             bitmap.getWidth(),
@@ -157,9 +157,9 @@ public class TextureUtil {
                             etc1tex.getData().capacity(),
                             etc1tex.getData());
                     
-                    JmeIosGLES.checkGLError();
+                    CWIosGLES.checkGLError();
                 } else {
-                    JmeIosGLES.glCompressedTexImage2D(target,
+                    CWIosGLES.glCompressedTexImage2D(target,
                             level,
                             ETC1.ETC1_RGB8_OES,
                             bitmap.getWidth(),
@@ -168,14 +168,14 @@ public class TextureUtil {
                             etc1tex.getData().capacity(),
                             etc1tex.getData());
                     
-                    JmeIosGLES.checkGLError();
+                    CWIosGLES.checkGLError();
                 }
 
-//                ETC1Util.loadTexture(target, level, 0, JmeIosGLES.GL_RGB,
-//                        JmeIosGLES.GL_UNSIGNED_SHORT_5_6_5, etc1Texture);
+//                ETC1Util.loadTexture(target, level, 0, CWIosGLES.GL_RGB,
+//                        CWIosGLES.GL_UNSIGNED_SHORT_5_6_5, etc1Texture);
 //            } else if (bytesPerPixel == 3) {
-//                ETC1Util.loadTexture(target, level, 0, JmeIosGLES.GL_RGB,
-//                        JmeIosGLES.GL_UNSIGNED_BYTE, etc1Texture);
+//                ETC1Util.loadTexture(target, level, 0, CWIosGLES.GL_RGB,
+//                        CWIosGLES.GL_UNSIGNED_BYTE, etc1Texture);
             }
 
             BufferUtils.destroyDirectBuffer(compressedImage);
@@ -218,17 +218,17 @@ public class TextureUtil {
                 if (subTexture) {
                     System.err.println("x : " + x + " y :" + y + " , " + bitmap.getWidth() + "/" + bitmap.getHeight());
                     GLUtils.texSubImage2D(target, 0, x, y, bitmap);
-                    JmeIosGLES.checkGLError();
+                    CWIosGLES.checkGLError();
                 } else {
                     GLUtils.texImage2D(target, 0, bitmap, 0);
-                    JmeIosGLES.checkGLError();
+                    CWIosGLES.checkGLError();
                 }
 
                 if (needMips) {
                     // No pregenerated mips available,
                     // generate from base level if required
-                    JmeIosGLES.glGenerateMipmap(target);
-                    JmeIosGLES.checkGLError();
+                    CWIosGLES.glGenerateMipmap(target);
+                    CWIosGLES.checkGLError();
                 }
             }
         }
@@ -268,8 +268,8 @@ public class TextureUtil {
             if (wantGeneratedMips) {
                 // No pregenerated mips available,
                 // generate from base level if required
-                JmeIosGLES.glGenerateMipmap(target);
-                JmeIosGLES.checkGLError();
+                CWIosGLES.glGenerateMipmap(target);
+                CWIosGLES.checkGLError();
             }
         //}
     }
@@ -292,75 +292,75 @@ public class TextureUtil {
                 throw new UnsupportedOperationException("The image format '"
                         + fmt + "' is not supported by OpenGL ES 2.0 specification.");
             case Alpha8:
-                imageFormat.format = JmeIosGLES.GL_ALPHA;
-                imageFormat.dataType = JmeIosGLES.GL_UNSIGNED_BYTE;
+                imageFormat.format = CWIosGLES.GL_ALPHA;
+                imageFormat.dataType = CWIosGLES.GL_UNSIGNED_BYTE;
                 if (RGBA8) {
                     imageFormat.renderBufferStorageFormat = GL_RGBA8;
                 } else {
                     // Highest precision alpha supported by vanilla OGLES2
-                    imageFormat.renderBufferStorageFormat = JmeIosGLES.GL_RGBA4;
+                    imageFormat.renderBufferStorageFormat = CWIosGLES.GL_RGBA4;
                 }
                 break;
             case Luminance8:
-                imageFormat.format = JmeIosGLES.GL_LUMINANCE;
-                imageFormat.dataType = JmeIosGLES.GL_UNSIGNED_BYTE;
+                imageFormat.format = CWIosGLES.GL_LUMINANCE;
+                imageFormat.dataType = CWIosGLES.GL_UNSIGNED_BYTE;
                 if (RGBA8) {
                     imageFormat.renderBufferStorageFormat = GL_RGBA8;
                 } else {
                     // Highest precision luminance supported by vanilla OGLES2
-                    imageFormat.renderBufferStorageFormat = JmeIosGLES.GL_RGB565;
+                    imageFormat.renderBufferStorageFormat = CWIosGLES.GL_RGB565;
                 }
                 break;
             case Luminance8Alpha8:
-                imageFormat.format = JmeIosGLES.GL_LUMINANCE_ALPHA;
-                imageFormat.dataType = JmeIosGLES.GL_UNSIGNED_BYTE;
+                imageFormat.format = CWIosGLES.GL_LUMINANCE_ALPHA;
+                imageFormat.dataType = CWIosGLES.GL_UNSIGNED_BYTE;
                 if (RGBA8) {
                     imageFormat.renderBufferStorageFormat = GL_RGBA8;
                 } else {
-                    imageFormat.renderBufferStorageFormat = JmeIosGLES.GL_RGBA4;
+                    imageFormat.renderBufferStorageFormat = CWIosGLES.GL_RGBA4;
                 }
                 break;
             case RGB565:
-                imageFormat.format = JmeIosGLES.GL_RGB;
-                imageFormat.dataType = JmeIosGLES.GL_UNSIGNED_SHORT_5_6_5;
-                imageFormat.renderBufferStorageFormat = JmeIosGLES.GL_RGB565;
+                imageFormat.format = CWIosGLES.GL_RGB;
+                imageFormat.dataType = CWIosGLES.GL_UNSIGNED_SHORT_5_6_5;
+                imageFormat.renderBufferStorageFormat = CWIosGLES.GL_RGB565;
                 break;
             case ARGB4444:
-                imageFormat.format = JmeIosGLES.GL_RGBA4;
-                imageFormat.dataType = JmeIosGLES.GL_UNSIGNED_SHORT_4_4_4_4;
-                imageFormat.renderBufferStorageFormat = JmeIosGLES.GL_RGBA4;
+                imageFormat.format = CWIosGLES.GL_RGBA4;
+                imageFormat.dataType = CWIosGLES.GL_UNSIGNED_SHORT_4_4_4_4;
+                imageFormat.renderBufferStorageFormat = CWIosGLES.GL_RGBA4;
                 break;
             case RGB5A1:
-                imageFormat.format = JmeIosGLES.GL_RGBA;
-                imageFormat.dataType = JmeIosGLES.GL_UNSIGNED_SHORT_5_5_5_1;
-                imageFormat.renderBufferStorageFormat = JmeIosGLES.GL_RGB5_A1;
+                imageFormat.format = CWIosGLES.GL_RGBA;
+                imageFormat.dataType = CWIosGLES.GL_UNSIGNED_SHORT_5_5_5_1;
+                imageFormat.renderBufferStorageFormat = CWIosGLES.GL_RGB5_A1;
                 break;
             case RGB8:
-                imageFormat.format = JmeIosGLES.GL_RGB;
-                imageFormat.dataType = JmeIosGLES.GL_UNSIGNED_BYTE;
+                imageFormat.format = CWIosGLES.GL_RGB;
+                imageFormat.dataType = CWIosGLES.GL_UNSIGNED_BYTE;
                 if (RGBA8) {
                     imageFormat.renderBufferStorageFormat = GL_RGBA8;
                 } else {
                     // Fallback: Use RGB565 if RGBA8 is not available.
-                    imageFormat.renderBufferStorageFormat = JmeIosGLES.GL_RGB565;
+                    imageFormat.renderBufferStorageFormat = CWIosGLES.GL_RGB565;
                 }
                 break;
             case BGR8:
-                imageFormat.format = JmeIosGLES.GL_RGB;
-                imageFormat.dataType = JmeIosGLES.GL_UNSIGNED_BYTE;
+                imageFormat.format = CWIosGLES.GL_RGB;
+                imageFormat.dataType = CWIosGLES.GL_UNSIGNED_BYTE;
                 if (RGBA8) {
                     imageFormat.renderBufferStorageFormat = GL_RGBA8;
                 } else {
-                    imageFormat.renderBufferStorageFormat = JmeIosGLES.GL_RGB565;
+                    imageFormat.renderBufferStorageFormat = CWIosGLES.GL_RGB565;
                 }
                 break;
             case RGBA8:
-                imageFormat.format = JmeIosGLES.GL_RGBA;
-                imageFormat.dataType = JmeIosGLES.GL_UNSIGNED_BYTE;
+                imageFormat.format = CWIosGLES.GL_RGBA;
+                imageFormat.dataType = CWIosGLES.GL_UNSIGNED_BYTE;
                 if (RGBA8) {
                     imageFormat.renderBufferStorageFormat = GL_RGBA8;
                 } else {
-                    imageFormat.renderBufferStorageFormat = JmeIosGLES.GL_RGBA4;
+                    imageFormat.renderBufferStorageFormat = CWIosGLES.GL_RGBA4;
                 }
                 break;
             case Depth:
@@ -368,9 +368,9 @@ public class TextureUtil {
                 if (!DEPTH_TEXTURE) {
                     unsupportedFormat(fmt);
                 }
-                imageFormat.format = JmeIosGLES.GL_DEPTH_COMPONENT;
-                imageFormat.dataType = JmeIosGLES.GL_UNSIGNED_SHORT;
-                imageFormat.renderBufferStorageFormat = JmeIosGLES.GL_DEPTH_COMPONENT16;
+                imageFormat.format = CWIosGLES.GL_DEPTH_COMPONENT;
+                imageFormat.dataType = CWIosGLES.GL_UNSIGNED_SHORT;
+                imageFormat.renderBufferStorageFormat = CWIosGLES.GL_DEPTH_COMPONENT16;
                 break;
             case Depth24:
             case Depth24Stencil8:
@@ -384,9 +384,9 @@ public class TextureUtil {
                     imageFormat.renderBufferStorageFormat = GL_DEPTH24_STENCIL8_OES;
                 } else {
                     // Vanilla OGLES2, only Depth16 available.
-                    imageFormat.format = JmeIosGLES.GL_DEPTH_COMPONENT;
-                    imageFormat.dataType = JmeIosGLES.GL_UNSIGNED_SHORT;
-                    imageFormat.renderBufferStorageFormat = JmeIosGLES.GL_DEPTH_COMPONENT16;
+                    imageFormat.format = CWIosGLES.GL_DEPTH_COMPONENT;
+                    imageFormat.dataType = CWIosGLES.GL_UNSIGNED_SHORT;
+                    imageFormat.renderBufferStorageFormat = CWIosGLES.GL_DEPTH_COMPONENT16;
                 }
                 break;
             case DXT1:
@@ -394,7 +394,7 @@ public class TextureUtil {
                     unsupportedFormat(fmt);
                 }
                 imageFormat.format = GL_DXT1;
-                imageFormat.dataType = JmeIosGLES.GL_UNSIGNED_BYTE;
+                imageFormat.dataType = CWIosGLES.GL_UNSIGNED_BYTE;
                 imageFormat.compress = true;
                 break;
             case DXT1A:
@@ -402,7 +402,7 @@ public class TextureUtil {
                     unsupportedFormat(fmt);
                 }
                 imageFormat.format = GL_DXT1A;
-                imageFormat.dataType = JmeIosGLES.GL_UNSIGNED_BYTE;
+                imageFormat.dataType = CWIosGLES.GL_UNSIGNED_BYTE;
                 imageFormat.compress = true;
                 break;
             default:
@@ -454,8 +454,8 @@ public class TextureUtil {
         IosGLImageFormat imageFormat = getImageFormat(fmt);
 
         if (data != null) {
-            JmeIosGLES.glPixelStorei(JmeIosGLES.GL_UNPACK_ALIGNMENT, 1);
-            JmeIosGLES.checkGLError();
+            CWIosGLES.glPixelStorei(CWIosGLES.GL_UNPACK_ALIGNMENT, 1);
+            CWIosGLES.checkGLError();
         }
 
         int[] mipSizes = img.getMipMapSizes();
@@ -478,7 +478,7 @@ public class TextureUtil {
             }
 
             if (imageFormat.compress && data != null) {
-                JmeIosGLES.glCompressedTexImage2D(target,
+                CWIosGLES.glCompressedTexImage2D(target,
                         i,
                         imageFormat.format,
                         mipWidth,
@@ -487,7 +487,7 @@ public class TextureUtil {
                         data.remaining(),
                         data);
             } else {
-                JmeIosGLES.glTexImage2D(target,
+                CWIosGLES.glTexImage2D(target,
                         i,
                         imageFormat.format,
                         mipWidth,
@@ -497,7 +497,7 @@ public class TextureUtil {
                         imageFormat.dataType,
                         data);
             }
-            JmeIosGLES.checkGLError();
+            CWIosGLES.checkGLError();
 
             pos += mipSizes[i];
         }
@@ -554,8 +554,8 @@ public class TextureUtil {
         IosGLImageFormat imageFormat = getImageFormat(fmt);
 
         if (data != null) {
-            JmeIosGLES.glPixelStorei(JmeIosGLES.GL_UNPACK_ALIGNMENT, 1);
-            JmeIosGLES.checkGLError();
+            CWIosGLES.glPixelStorei(CWIosGLES.GL_UNPACK_ALIGNMENT, 1);
+            CWIosGLES.checkGLError();
         }
 
         int[] mipSizes = img.getMipMapSizes();
@@ -578,11 +578,11 @@ public class TextureUtil {
             }
 
             if (imageFormat.compress && data != null) {
-                JmeIosGLES.glCompressedTexSubImage2D(target, i, x, y, mipWidth, mipHeight, imageFormat.format, data.remaining(), data);
-                JmeIosGLES.checkGLError();
+                CWIosGLES.glCompressedTexSubImage2D(target, i, x, y, mipWidth, mipHeight, imageFormat.format, data.remaining(), data);
+                CWIosGLES.checkGLError();
             } else {
-                JmeIosGLES.glTexSubImage2D(target, i, x, y, mipWidth, mipHeight, imageFormat.format, imageFormat.dataType, data);
-                JmeIosGLES.checkGLError();
+                CWIosGLES.glTexSubImage2D(target, i, x, y, mipWidth, mipHeight, imageFormat.format, imageFormat.dataType, data);
+                CWIosGLES.checkGLError();
             }
 
             pos += mipSizes[i];

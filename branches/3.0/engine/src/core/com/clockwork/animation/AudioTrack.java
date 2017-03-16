@@ -3,8 +3,8 @@ package com.clockwork.animation;
 
 import com.clockwork.audio.AudioNode;
 import com.clockwork.export.InputCapsule;
-import com.clockwork.export.JmeExporter;
-import com.clockwork.export.JmeImporter;
+import com.clockwork.export.CWExporter;
+import com.clockwork.export.CWImporter;
 import com.clockwork.export.OutputCapsule;
 import com.clockwork.scene.Node;
 import com.clockwork.scene.Spatial;
@@ -251,7 +251,7 @@ public class AudioTrack implements ClonableTrack {
      * @param ex exporter
      * @throws IOException exception
      */
-    public void write(JmeExporter ex) throws IOException {
+    public void write(CWExporter ex) throws IOException {
         OutputCapsule out = ex.getCapsule(this);
         out.write(audio, "audio", null);
         out.write(length, "length", 0);
@@ -264,7 +264,7 @@ public class AudioTrack implements ClonableTrack {
      * @param im importer
      * @throws IOException Exception
      */
-    public void read(JmeImporter im) throws IOException {
+    public void read(CWImporter im) throws IOException {
         InputCapsule in = im.getCapsule(this);
         audio = (AudioNode) in.readSavable("audio", null);
         length = in.readFloat("length", length);

@@ -400,7 +400,7 @@ public class Spline implements Savable {
 	}
 
     @Override
-    public void write(JmeExporter ex) throws IOException {
+    public void write(CWExporter ex) throws IOException {
         OutputCapsule oc = ex.getCapsule(this);
         oc.writeSavableArrayList((ArrayList) controlPoints, "controlPoints", null);
         oc.write(type, "type", SplineType.CatmullRom);
@@ -420,7 +420,7 @@ public class Spline implements Savable {
     }
 
     @Override
-    public void read(JmeImporter im) throws IOException {
+    public void read(CWImporter im) throws IOException {
         InputCapsule in = im.getCapsule(this);
 
         controlPoints = (ArrayList<Vector3f>) in.readSavableArrayList("wayPoints", null);

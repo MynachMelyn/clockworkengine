@@ -164,7 +164,7 @@ public class SpotLight extends Light implements Savable {
     
 
     @Override
-    public void write(JmeExporter ex) throws IOException {
+    public void write(CWExporter ex) throws IOException {
         super.write(ex);
         OutputCapsule oc = ex.getCapsule(this);
         oc.write(direction, "direction", new Vector3f());
@@ -175,7 +175,7 @@ public class SpotLight extends Light implements Savable {
     }
 
     @Override
-    public void read(JmeImporter im) throws IOException {
+    public void read(CWImporter im) throws IOException {
         super.read(im);
         InputCapsule ic = im.getCapsule(this);
         spotInnerAngle = ic.readFloat("spotInnerAngle", FastMath.QUARTER_PI / 8);

@@ -276,7 +276,7 @@ public class RenderState implements Cloneable, Savable {
     TestFunction backStencilFunction = TestFunction.Always;
     int cachedHashCode = -1;
 
-    public void write(JmeExporter ex) throws IOException {
+    public void write(CWExporter ex) throws IOException {
         OutputCapsule oc = ex.getCapsule(this);
         oc.write(pointSprite, "pointSprite", false);
         oc.write(wireframe, "wireframe", false);
@@ -314,7 +314,7 @@ public class RenderState implements Cloneable, Savable {
 
     }
 
-    public void read(JmeImporter im) throws IOException {
+    public void read(CWImporter im) throws IOException {
         InputCapsule ic = im.getCapsule(this);
         pointSprite = ic.readBoolean("pointSprite", false);
         wireframe = ic.readBoolean("wireframe", false);

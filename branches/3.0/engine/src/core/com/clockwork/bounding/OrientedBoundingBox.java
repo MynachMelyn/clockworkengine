@@ -1465,7 +1465,7 @@ package com.clockwork.bounding;
 //        return FastMath.sqrt(sqrDistance);
 //    }
 //
-//    public void write(JMEExporter e) throws IOException {
+//    public void write(CWExporter e) throws IOException {
 //        super.write(e);
 //        OutputCapsule capsule = e.getCapsule(this);
 //        capsule.write(xAxis, "xAxis", Vector3f.UNIT_X);
@@ -1474,7 +1474,7 @@ package com.clockwork.bounding;
 //        capsule.write(extent, "extent", Vector3f.ZERO);
 //    }
 //
-//    public void read(JMEImporter e) throws IOException {
+//    public void read(CWImporter e) throws IOException {
 //        super.read(e);
 //        InputCapsule capsule = e.getCapsule(this);
 //        xAxis.set((Vector3f) capsule.readSavable("xAxis", Vector3f.UNIT_X.clone()));

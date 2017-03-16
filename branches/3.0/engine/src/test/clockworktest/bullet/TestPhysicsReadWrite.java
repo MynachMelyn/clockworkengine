@@ -23,7 +23,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * This is a basic Test of jbullet-jme functions
+ * This is a basic Test of jbullet-CW functions
  *
  */
 public class TestPhysicsReadWrite extends SimpleApplication{

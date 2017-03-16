@@ -92,7 +92,7 @@ public class LwjglTimer extends Timer {
      * toString returns the string representation of this timer
      * in the format: 
      * 
-     * jme.utility.Timer@1db699b 
+     * CW.utility.Timer@1db699b 
      * Time: {LONG} 
      * FPS: {LONG} 
      *

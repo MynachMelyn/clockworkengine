@@ -2,8 +2,8 @@
 package com.clockwork.input;
 
 import com.clockwork.export.InputCapsule;
-import com.clockwork.export.JmeExporter;
-import com.clockwork.export.JmeImporter;
+import com.clockwork.export.CWExporter;
+import com.clockwork.export.CWImporter;
 import com.clockwork.export.OutputCapsule;
 import com.clockwork.input.controls.*;
 import com.clockwork.math.FastMath;
@@ -550,7 +550,7 @@ public class ChaseCamera implements ActionListener, AnalogListener, Control {
      * @param ex the exporter
      * @throws IOException
      */
-    public void write(JmeExporter ex) throws IOException {
+    public void write(CWExporter ex) throws IOException {
         OutputCapsule capsule = ex.getCapsule(this);
         capsule.write(maxDistance, "maxDistance", 40);
         capsule.write(minDistance, "minDistance", 1);
@@ -561,7 +561,7 @@ public class ChaseCamera implements ActionListener, AnalogListener, Control {
      * @param im
      * @throws IOException
      */
-    public void read(JmeImporter im) throws IOException {
+    public void read(CWImporter im) throws IOException {
         InputCapsule ic = im.getCapsule(this);
         maxDistance = ic.readFloat("maxDistance", 40);
         minDistance = ic.readFloat("minDistance", 1);

@@ -172,7 +172,7 @@ public class Cinematic extends AbstractCinematicEvent implements AppState {
      * @throws IOException
      */
     @Override
-    public void write(JmeExporter ex) throws IOException {
+    public void write(CWExporter ex) throws IOException {
         super.write(ex);
         OutputCapsule oc = ex.getCapsule(this);
 
@@ -189,7 +189,7 @@ public class Cinematic extends AbstractCinematicEvent implements AppState {
      * @throws IOException
      */
     @Override
-    public void read(JmeImporter im) throws IOException {
+    public void read(CWImporter im) throws IOException {
         super.read(im);
         InputCapsule ic = im.getCapsule(this);
 

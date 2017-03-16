@@ -33,7 +33,7 @@ public final class Natives {
                 setStorageExtractionDir();
             } else {
                 try {
-                    File file = new File(workingFolder.getAbsolutePath() + File.separator + ".jmetestwrite");
+                    File file = new File(workingFolder.getAbsolutePath() + File.separator + ".CWtestwrite");
                     file.createNewFile();
                     file.delete();
                     extractionDir = workingFolder;
@@ -47,7 +47,7 @@ public final class Natives {
 
     private static void setStorageExtractionDir() {
         logger.log(Level.WARNING, "Working directory is not writable. Using home directory instead.");
-        extractionDir = new File(JmeSystem.getStorageFolder(),
+        extractionDir = new File(CWSystem.getStorageFolder(),
                 "natives_" + Integer.toHexString(computeNativesHash()));
         if (!extractionDir.exists()) {
             extractionDir.mkdir();
@@ -235,7 +235,7 @@ public final class Natives {
                     extractNativeLib("windows", "jinput-raw_64");
                 }
                 if (needNativeBullet) {
-                    extractNativeLib("windows", "bulletjme64", true, false);
+                    extractNativeLib("windows", "bulletCW64", true, false);
                 }
                 break;
             case Windows32:
@@ -250,7 +250,7 @@ public final class Natives {
                     extractNativeLib("windows", "jinput-raw");
                 }
                 if (needNativeBullet) {
-                    extractNativeLib("windows", "bulletjme", true, false);
+                    extractNativeLib("windows", "bulletCW", true, false);
                 }
                 break;
             case Linux64:
@@ -264,7 +264,7 @@ public final class Natives {
                     extractNativeLib("linux", "openal64");
                 }
                 if (needNativeBullet) {
-                    extractNativeLib("linux", "bulletjme64", true, false);
+                    extractNativeLib("linux", "bulletCW64", true, false);
                 }
                 break;
             case Linux32:
@@ -278,7 +278,7 @@ public final class Natives {
                     extractNativeLib("linux", "openal");
                 }
                 if (needNativeBullet) {
-                    extractNativeLib("linux", "bulletjme", true, false);
+                    extractNativeLib("linux", "bulletCW", true, false);
                 }
                 break;
             case MacOSX_PPC32:
@@ -295,7 +295,7 @@ public final class Natives {
                     extractNativeLib("macosx", "jinput-osx");
                 }
                 if (needNativeBullet) {
-                    extractNativeLib("macosx", "bulletjme", true, false);
+                    extractNativeLib("macosx", "bulletCW", true, false);
                 }
                 break;
         }

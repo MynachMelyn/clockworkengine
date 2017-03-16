@@ -5,10 +5,10 @@ import java.io.IOException;
 
 /**
  * Savable is an interface for objects that can be serialised
- * using jME's serialisation system. 
+ * using CW's serialisation system. 
  * 
  */
 public interface Savable {
-    void write(JmeExporter ex) throws IOException;
-    void read(JmeImporter im) throws IOException;
+    void write(CWExporter ex) throws IOException;
+    void read(CWImporter im) throws IOException;
 }

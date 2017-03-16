@@ -8,8 +8,8 @@ import com.clockwork.effect.influencers.ParticleInfluencer;
 import com.clockwork.effect.shapes.EmitterPointShape;
 import com.clockwork.effect.shapes.EmitterShape;
 import com.clockwork.export.InputCapsule;
-import com.clockwork.export.JmeExporter;
-import com.clockwork.export.JmeImporter;
+import com.clockwork.export.CWExporter;
+import com.clockwork.export.CWImporter;
 import com.clockwork.export.OutputCapsule;
 import com.clockwork.math.ColorRGBA;
 import com.clockwork.math.FastMath;
@@ -111,10 +111,10 @@ public class ParticleEmitter extends Geometry {
             parentEmitter.renderFromControl(rm, vp);
         }
 
-        public void write(JmeExporter ex) throws IOException {
+        public void write(CWExporter ex) throws IOException {
         }
 
-        public void read(JmeImporter im) throws IOException {
+        public void read(CWImporter im) throws IOException {
         }
     }
 
@@ -1063,7 +1063,7 @@ public class ParticleEmitter extends Geometry {
     }
 
     @Override
-    public void write(JmeExporter ex) throws IOException {
+    public void write(CWExporter ex) throws IOException {
         super.write(ex);
         OutputCapsule oc = ex.getCapsule(this);
         oc.write(shape, "shape", DEFAULT_SHAPE);
@@ -1092,7 +1092,7 @@ public class ParticleEmitter extends Geometry {
     }
 
     @Override
-    public void read(JmeImporter im) throws IOException {
+    public void read(CWImporter im) throws IOException {
         super.read(im);
         InputCapsule ic = im.getCapsule(this);
         shape = (EmitterShape) ic.readSavable("shape", DEFAULT_SHAPE);

@@ -255,14 +255,14 @@ public final class Transform implements Savable, Cloneable, java.io.Serializable
         return this;
     }
 
-    public void write(JmeExporter e) throws IOException {
+    public void write(CWExporter e) throws IOException {
         OutputCapsule capsule = e.getCapsule(this);
         capsule.write(rot, "rot", new Quaternion());
         capsule.write(translation, "translation", Vector3f.ZERO);
         capsule.write(scale, "scale", Vector3f.UNIT_XYZ);
     }
 
-    public void read(JmeImporter e) throws IOException {
+    public void read(CWImporter e) throws IOException {
         InputCapsule capsule = e.getCapsule(this);
         
         rot = (Quaternion)capsule.readSavable("rot", new Quaternion());

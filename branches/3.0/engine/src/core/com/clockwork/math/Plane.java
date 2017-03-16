@@ -217,7 +217,7 @@ public class Plane implements Savable, Cloneable, java.io.Serializable {
      * toString returns a string thta represents the string
      * representation of this plane. It represents the normal as a
      * Vector3f object, so the format is the following:
-     * com.clockwork.math.Plane [Normal: org.jme.math.Vector3f [X=XX.XXXX, Y=YY.YYYY,
+     * com.clockwork.math.Plane [Normal: org.CW.math.Vector3f [X=XX.XXXX, Y=YY.YYYY,
      * Z=ZZ.ZZZZ] - Constant: CC.CCCCC]
      * 
      * @return the string representation of this plane.
@@ -228,13 +228,13 @@ public class Plane implements Savable, Cloneable, java.io.Serializable {
                 + constant + "]";
     }
 
-    public void write(JmeExporter e) throws IOException {
+    public void write(CWExporter e) throws IOException {
         OutputCapsule capsule = e.getCapsule(this);
         capsule.write(normal, "normal", Vector3f.ZERO);
         capsule.write(constant, "constant", 0);
     }
 
-    public void read(JmeImporter e) throws IOException {
+    public void read(CWImporter e) throws IOException {
         InputCapsule capsule = e.getCapsule(this);
         normal = (Vector3f) capsule.readSavable("normal", Vector3f.ZERO.clone());
         constant = capsule.readFloat("constant", 0);

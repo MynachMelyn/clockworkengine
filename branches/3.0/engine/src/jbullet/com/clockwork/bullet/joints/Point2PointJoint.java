@@ -5,8 +5,8 @@ import com.bulletphysics.dynamics.constraintsolver.Point2PointConstraint;
 import com.clockwork.bullet.objects.PhysicsRigidBody;
 import com.clockwork.bullet.util.Converter;
 import com.clockwork.export.InputCapsule;
-import com.clockwork.export.JmeExporter;
-import com.clockwork.export.JmeImporter;
+import com.clockwork.export.CWExporter;
+import com.clockwork.export.CWImporter;
 import com.clockwork.export.OutputCapsule;
 import com.clockwork.math.Vector3f;
 import java.io.IOException;
@@ -56,7 +56,7 @@ public class Point2PointJoint extends PhysicsJoint {
     }
 
     @Override
-    public void write(JmeExporter ex) throws IOException {
+    public void write(CWExporter ex) throws IOException {
         super.write(ex);
         OutputCapsule cap = ex.getCapsule(this);
         cap.write(getDamping(), "damping", 1.0f);
@@ -65,7 +65,7 @@ public class Point2PointJoint extends PhysicsJoint {
     }
 
     @Override
-    public void read(JmeImporter im) throws IOException {
+    public void read(CWImporter im) throws IOException {
         super.read(im);
         createJoint();
         InputCapsule cap=im.getCapsule(this);

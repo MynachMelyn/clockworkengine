@@ -2,7 +2,7 @@
 package com.clockwork.export.binary;
 
 import com.clockwork.export.FormatVersion;
-import com.clockwork.export.JmeExporter;
+import com.clockwork.export.CWExporter;
 import com.clockwork.export.Savable;
 import com.clockwork.export.SavableClassUtil;
 import com.clockwork.math.FastMath;
@@ -14,7 +14,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * Exports to the jME Binary Format. Format descriptor: (each numbered item
+ * Exports to the CW Binary Format. Format descriptor: (each numbered item
  * denotes a series of bytes that follows sequentially one after the next.)
  * 
  * 1. "number of classes" - four bytes - int value representing the number of
@@ -108,7 +108,7 @@ import java.util.logging.Logger;
  *
  */
 
-public class BinaryExporter implements JmeExporter {
+public class BinaryExporter implements CWExporter {
     private static final Logger logger = Logger.getLogger(BinaryExporter.class
             .getName());
 
@@ -169,7 +169,7 @@ public class BinaryExporter implements JmeExporter {
             os.write(aliasBytes);
             classTableSize += aliasSize;
             
-            // jME3 NEW: Write class hierarchy version numbers
+            // CW NEW: Write class hierarchy version numbers
             os.write( bco.classHierarchyVersions.length );
             for (int version : bco.classHierarchyVersions){
                 os.write(ByteUtils.convertToBytes(version));

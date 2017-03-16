@@ -37,7 +37,7 @@ public class CompactVector3Array extends CompactArray<Vector3f> implements Savab
     }
 
     @Override
-    public void write(JmeExporter ex) throws IOException {
+    public void write(CWExporter ex) throws IOException {
         serialise();
         OutputCapsule out = ex.getCapsule(this);
         out.write(array, "array", null);
@@ -45,7 +45,7 @@ public class CompactVector3Array extends CompactArray<Vector3f> implements Savab
     }
 
     @Override
-    public void read(JmeImporter im) throws IOException {
+    public void read(CWImporter im) throws IOException {
         InputCapsule in = im.getCapsule(this);
         array = in.readFloatArray("array", null);
         index = in.readIntArray("index", null);

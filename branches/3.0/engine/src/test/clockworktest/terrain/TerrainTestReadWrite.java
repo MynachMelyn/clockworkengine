@@ -117,7 +117,7 @@ public class TerrainTestReadWrite extends SimpleApplication {
             e.printStackTrace();
         }
 
-        if (new File("terrainsave.jme").exists()) {
+        if (new File("terrainsave.CW").exists()) {
             loadTerrain();
         } else {
             // create the terrain as normal, and give it a control for LOD management
@@ -170,7 +170,7 @@ public class TerrainTestReadWrite extends SimpleApplication {
                 FileOutputStream fos = null;
                 try {
                     long start = System.currentTimeMillis();
-                    fos = new FileOutputStream(new File("terrainsave.jme"));
+                    fos = new FileOutputStream(new File("terrainsave.CW"));
 
                     // we just use the exporter and pass in the terrain
                     BinaryExporter.getInstance().save((Savable)terrain, new BufferedOutputStream(fos));
@@ -207,7 +207,7 @@ public class TerrainTestReadWrite extends SimpleApplication {
             }
 
             // import the saved terrain, and attach it back to the root node
-            File f = new File("terrainsave.jme");
+            File f = new File("terrainsave.CW");
             fis = new FileInputStream(f);
             BinaryImporter imp = BinaryImporter.getInstance();
             imp.setAssetManager(assetManager);

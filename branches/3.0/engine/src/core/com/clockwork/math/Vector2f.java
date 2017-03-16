@@ -701,13 +701,13 @@ public final class Vector2f implements Savable, Cloneable, java.io.Serializable 
         out.writeFloat(y);
     }
 
-    public void write(JmeExporter e) throws IOException {
+    public void write(CWExporter e) throws IOException {
         OutputCapsule capsule = e.getCapsule(this);
         capsule.write(x, "x", 0);
         capsule.write(y, "y", 0);
     }
 
-    public void read(JmeImporter e) throws IOException {
+    public void read(CWImporter e) throws IOException {
         InputCapsule capsule = e.getCapsule(this);
         x = capsule.readFloat("x", 0);
         y = capsule.readFloat("y", 0);

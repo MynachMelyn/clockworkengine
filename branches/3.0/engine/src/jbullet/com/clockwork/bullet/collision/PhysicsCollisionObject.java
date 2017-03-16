@@ -119,7 +119,7 @@ public abstract class PhysicsCollisionObject implements Savable {
     }
 
     @Override
-    public void write(JmeExporter e) throws IOException {
+    public void write(CWExporter e) throws IOException {
         OutputCapsule capsule = e.getCapsule(this);
         capsule.write(collisionGroup, "collisionGroup", 0x00000001);
         capsule.write(collisionGroupsMask, "collisionGroupsMask", 0x00000001);
@@ -127,7 +127,7 @@ public abstract class PhysicsCollisionObject implements Savable {
     }
 
     @Override
-    public void read(JmeImporter e) throws IOException {
+    public void read(CWImporter e) throws IOException {
         InputCapsule capsule = e.getCapsule(this);
         collisionGroup = capsule.readInt("collisionGroup", 0x00000001);
         collisionGroupsMask = capsule.readInt("collisionGroupsMask", 0x00000001);

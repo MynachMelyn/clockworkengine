@@ -6,8 +6,8 @@ import com.bulletphysics.collision.shapes.IndexedMesh;
 import com.bulletphysics.collision.shapes.TriangleIndexVertexArray;
 import com.clockwork.bullet.util.Converter;
 import com.clockwork.export.InputCapsule;
-import com.clockwork.export.JmeExporter;
-import com.clockwork.export.JmeImporter;
+import com.clockwork.export.CWExporter;
+import com.clockwork.export.CWImporter;
 import com.clockwork.export.OutputCapsule;
 import com.clockwork.math.Vector3f;
 import com.clockwork.scene.Mesh;
@@ -47,13 +47,13 @@ public class MeshCollisionShape extends CollisionShape {
     }
 
     /**
-     * creates a jme mesh from the collision shape, only needed for debugging
+     * creates a CW mesh from the collision shape, only needed for debugging
      */
-    public Mesh createJmeMesh(){
+    public Mesh createCWMesh(){
         return Converter.convert(bulletMesh);
     }
 
-    public void write(JmeExporter ex) throws IOException {
+    public void write(CWExporter ex) throws IOException {
         super.write(ex);
         OutputCapsule capsule = ex.getCapsule(this);
         capsule.write(numVertices, "numVertices", 0);
@@ -65,7 +65,7 @@ public class MeshCollisionShape extends CollisionShape {
         capsule.write(vertexBase.array(), "vertexBase", new byte[0]);
     }
 
-    public void read(JmeImporter im) throws IOException {
+    public void read(CWImporter im) throws IOException {
         super.read(im);
         InputCapsule capsule = im.getCapsule(this);
         numVertices = capsule.readInt("numVertices", 0);

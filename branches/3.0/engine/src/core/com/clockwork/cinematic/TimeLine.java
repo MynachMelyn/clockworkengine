@@ -73,14 +73,14 @@ public class TimeLine extends HashMap<Integer, KeyFrame> implements Savable {
         return lastKeyFrameIndex;
     }
 
-    public void write(JmeExporter ex) throws IOException {
+    public void write(CWExporter ex) throws IOException {
         OutputCapsule oc = ex.getCapsule(this);
         ArrayList list = new ArrayList();
         list.addAll(values());
         oc.writeSavableArrayList(list, "keyFrames", null);
     }
 
-    public void read(JmeImporter im) throws IOException {
+    public void read(CWImporter im) throws IOException {
         InputCapsule ic = im.getCapsule(this);
         ArrayList list = ic.readSavableArrayList("keyFrames", null);
         for (Iterator it = list.iterator(); it.hasNext();) {

@@ -6,7 +6,7 @@ import com.clockwork.util.RingBuffer;
 import java.util.logging.Logger;
 
 /**
- * TouchEventPool provides a RingBuffer of jME TouchEvents to help with garbage
+ * TouchEventPool provides a RingBuffer of CW TouchEvents to help with garbage
  * collection on Android.  Each TouchEvent is stored in the RingBuffer and is 
  * reused if the TouchEvent has been consumed.
  * 

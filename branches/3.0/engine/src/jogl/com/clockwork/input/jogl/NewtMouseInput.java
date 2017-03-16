@@ -2,7 +2,7 @@
 
 package com.clockwork.input.jogl;
 
-import com.clockwork.cursors.plugins.JmeCursor;
+import com.clockwork.cursors.plugins.CWCursor;
 import com.clockwork.input.MouseInput;
 import com.clockwork.input.RawInputListener;
 import com.clockwork.input.event.MouseButtonEvent;
@@ -141,12 +141,12 @@ public class NewtMouseInput  implements MouseInput, MouseListener {
     }
 
     public void mouseClicked(MouseEvent awtEvt) {
-//        MouseButtonEvent evt = new MouseButtonEvent(getJMEButtonIndex(arg0), false);
+//        MouseButtonEvent evt = new MouseButtonEvent(getCWButtonIndex(arg0), false);
 //        listener.onMouseButtonEvent(evt);
     }
 
     public void mousePressed(MouseEvent awtEvt) {
-        MouseButtonEvent evt = new MouseButtonEvent(getJMEButtonIndex(awtEvt), true, awtEvt.getX(), awtEvt.getY());
+        MouseButtonEvent evt = new MouseButtonEvent(getCWButtonIndex(awtEvt), true, awtEvt.getX(), awtEvt.getY());
         evt.setTime(awtEvt.getWhen());
         synchronized (eventQueue) {
             eventQueue.add(evt);
@@ -154,7 +154,7 @@ public class NewtMouseInput  implements MouseInput, MouseListener {
     }
 
     public void mouseReleased(MouseEvent awtEvt) {
-        MouseButtonEvent evt = new MouseButtonEvent(getJMEButtonIndex(awtEvt), false, awtEvt.getX(), awtEvt.getY());
+        MouseButtonEvent evt = new MouseButtonEvent(getCWButtonIndex(awtEvt), false, awtEvt.getX(), awtEvt.getY());
         evt.setTime(awtEvt.getWhen());
         synchronized (eventQueue) {
             eventQueue.add(evt);
@@ -224,7 +224,7 @@ public class NewtMouseInput  implements MouseInput, MouseListener {
         component.warpPointer(centerLocationOnScreen.getX(), centerLocationOnScreen.getY());
     }
 
-    private int getJMEButtonIndex(MouseEvent awtEvt) {
+    private int getCWButtonIndex(MouseEvent awtEvt) {
         int index;
         switch (awtEvt.getButton()) {
             default:
@@ -250,6 +250,6 @@ public class NewtMouseInput  implements MouseInput, MouseListener {
         return index;
     }
 
-    public void setNativeCursor(JmeCursor cursor) {
+    public void setNativeCursor(CWCursor cursor) {
     }
 }

@@ -27,10 +27,10 @@ public class UserUVCollection {
      *            the UV set name
      * @param uv
      *            the added UV coordinates
-     * @param jmeVertexIndex
-     *            the index of the vertex in result jme mesh
+     * @param CWVertexIndex
+     *            the index of the vertex in result CW mesh
      */
-    public void addUV(int materialIndex, String uvSetName, Vector2f uv, int jmeVertexIndex) {
+    public void addUV(int materialIndex, String uvSetName, Vector2f uv, int CWVertexIndex) {
         // first get all UV sets for the specified material ...
         LinkedHashMap<String, List<Vector2f>> uvsForMaterial = uvCoordinates.get(materialIndex);
         if (uvsForMaterial == null) {
@@ -54,14 +54,14 @@ public class UserUVCollection {
             uvToVertexIndexMapping = new HashMap<Integer, Vector2f>();
             uvsMap.put(uvSetName, uvToVertexIndexMapping);
         }
-        uvToVertexIndexMapping.put(jmeVertexIndex, uv);
+        uvToVertexIndexMapping.put(CWVertexIndex, uv);
     }
 
     /**
      * @param uvSetName
      *            the name of the UV set
      * @param vertexIndex
-     *            the vertex index corresponds to the index in jme mesh and not the original one in blender
+     *            the vertex index corresponds to the index in CW mesh and not the original one in blender
      * @return
      */
     public Vector2f getUVForVertex(String uvSetName, int vertexIndex) {

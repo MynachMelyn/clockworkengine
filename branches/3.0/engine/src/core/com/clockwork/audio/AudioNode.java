@@ -4,8 +4,8 @@ package com.clockwork.audio;
 import com.clockwork.asset.AssetManager;
 import com.clockwork.asset.AssetNotFoundException;
 import com.clockwork.export.InputCapsule;
-import com.clockwork.export.JmeExporter;
-import com.clockwork.export.JmeImporter;
+import com.clockwork.export.CWExporter;
+import com.clockwork.export.CWImporter;
 import com.clockwork.export.OutputCapsule;
 import com.clockwork.math.Vector3f;
 import com.clockwork.scene.Node;
@@ -655,7 +655,7 @@ public class AudioNode extends Node implements AudioSource {
     }
     
     @Override
-    public void write(JmeExporter ex) throws IOException {
+    public void write(CWExporter ex) throws IOException {
         super.write(ex);
         OutputCapsule oc = ex.getCapsule(this);
         oc.write(audioKey, "audio_key", null);
@@ -680,11 +680,11 @@ public class AudioNode extends Node implements AudioSource {
     }
 
     @Override
-    public void read(JmeImporter im) throws IOException {
+    public void read(CWImporter im) throws IOException {
         super.read(im);
         InputCapsule ic = im.getCapsule(this);
         
-        // NOTE: In previous versions of jME3, audioKey was actually
+        // NOTE: In previous versions of CW, audioKey was actually
         // written with the name "key". This has been changed
         // to "audio_key" in case Spatial's key will be written as "key".
         if (ic.getSavableVersion(AudioNode.class) == 0){

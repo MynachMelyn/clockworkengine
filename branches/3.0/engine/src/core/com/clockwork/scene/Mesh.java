@@ -1277,7 +1277,7 @@ public class Mesh implements Savable, Cloneable {
     }
 
 
-    public void write(JmeExporter ex) throws IOException {
+    public void write(CWExporter ex) throws IOException {
         OutputCapsule out = ex.getCapsule(this);
 
 //        HashMap<String, VertexBuffer> map = new HashMap<String, VertexBuffer>();
@@ -1322,7 +1322,7 @@ public class Mesh implements Savable, Cloneable {
         out.write(lodLevels, "lodLevels", null);
     }
 
-    public void read(JmeImporter im) throws IOException {
+    public void read(CWImporter im) throws IOException {
         InputCapsule in = im.getCapsule(this);
         meshBound = (BoundingVolume) in.readSavable("modelBound", null);
         vertCount = in.readInt("vertCount", -1);

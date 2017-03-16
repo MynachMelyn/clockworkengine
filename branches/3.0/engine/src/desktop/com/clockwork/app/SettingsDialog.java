@@ -97,7 +97,7 @@ public final class SettingsDialog extends JFrame {
      *            the image file to use as the title of the dialog;
      *            null will result in to image being displayed
      * @param loadSettings 
-     * @throws JmeException
+     * @throws CWException
      *             if the source is null
      */
     public SettingsDialog(AppSettings source, URL imageFile, boolean loadSettings) {

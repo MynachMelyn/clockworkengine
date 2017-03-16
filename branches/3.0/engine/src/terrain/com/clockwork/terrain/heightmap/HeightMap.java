@@ -100,7 +100,7 @@ public interface HeightMap {
      * @param filter
      * the erosion value.
      * @throws Exception
-     * @throws JmeException
+     * @throws CWException
      * if filter is less than 0 or greater than 1.
      */
     void setMagnificationFilter(float filter) throws Exception;
@@ -113,7 +113,7 @@ public interface HeightMap {
      * the new size of the terrain.
      * @throws Exception
      *
-     * @throws JmeException
+     * @throws CWException
      * if the size is less than or equal to zero.
      */
     void setSize(int size) throws Exception;

@@ -4,8 +4,8 @@ package com.clockwork.bullet.objects;
 import com.clockwork.bullet.collision.PhysicsCollisionObject;
 import com.clockwork.bullet.collision.shapes.CollisionShape;
 import com.clockwork.export.InputCapsule;
-import com.clockwork.export.JmeExporter;
-import com.clockwork.export.JmeImporter;
+import com.clockwork.export.CWExporter;
+import com.clockwork.export.CWImporter;
 import com.clockwork.export.OutputCapsule;
 import com.clockwork.math.Matrix3f;
 import com.clockwork.math.Quaternion;
@@ -248,7 +248,7 @@ public class PhysicsGhostObject extends PhysicsCollisionObject {
     private native float getCcdSquareMotionThreshold(long objectId);
 
     @Override
-    public void write(JmeExporter e) throws IOException {
+    public void write(CWExporter e) throws IOException {
         super.write(e);
         OutputCapsule capsule = e.getCapsule(this);
         capsule.write(getPhysicsLocation(new Vector3f()), "physicsLocation", new Vector3f());
@@ -258,7 +258,7 @@ public class PhysicsGhostObject extends PhysicsCollisionObject {
     }
 
     @Override
-    public void read(JmeImporter e) throws IOException {
+    public void read(CWImporter e) throws IOException {
         super.read(e);
         InputCapsule capsule = e.getCapsule(this);
         buildObject();

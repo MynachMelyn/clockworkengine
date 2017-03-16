@@ -17,7 +17,7 @@ import com.clockwork.scene.shape.Cylinder;
 import com.clockwork.scene.shape.Torus;
 
 /**
- * This is a basic Test of jbullet-jme functions
+ * This is a basic Test of jbullet-CW functions
  *
  */
 public class TestCollisionShapeFactory extends SimpleApplication {

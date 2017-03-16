@@ -148,14 +148,14 @@ public abstract class Light implements Savable, Cloneable {
         }
     }
 
-    public void write(JmeExporter ex) throws IOException {
+    public void write(CWExporter ex) throws IOException {
         OutputCapsule oc = ex.getCapsule(this);
         oc.write(color, "color", null);
         oc.write(enabled, "enabled", true);
         oc.write(name, "name", null);
     }
 
-    public void read(JmeImporter im) throws IOException {
+    public void read(CWImporter im) throws IOException {
         InputCapsule ic = im.getCapsule(this);
         color = (ColorRGBA) ic.readSavable("color", null);
         enabled = ic.readBoolean("enabled", true);

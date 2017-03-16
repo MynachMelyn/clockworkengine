@@ -3,12 +3,43 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/E:/NetBeansProjects/clockworkengine/branches/3.0/engine/src/test/clockworktest/effect/TestSoftParticles.java</file>
-            <file>file:/E:/NetBeansProjects/clockworkengine/branches/3.0/engine/src/test/com/clockwork/game/TestCharacter.java</file>
+            <file>file:/E:/NetBeansProjects/clockworkengine/branches/3.0/engine/src/core/com/clockwork/asset/CloneableSmartAsset.java</file>
+            <file>file:/E:/NetBeansProjects/clockworkengine/branches/3.0/engine/src/core/com/clockwork/asset/ThreadingManager.java</file>
+            <file>file:/E:/NetBeansProjects/clockworkengine/branches/3.0/engine/src/core/com/clockwork/shadow/ShadowUtil.java</file>
+            <file>file:/E:/NetBeansProjects/clockworkengine/branches/3.0/engine/src/core/com/clockwork/scene/VertexBuffer.java</file>
+            <file>file:/E:/NetBeansProjects/clockworkengine/branches/3.0/engine/src/terrain/com/clockwork/terrain/geomipmap/TerrainQuad.java</file>
             <file>file:/E:/NetBeansProjects/clockworkengine/branches/3.0/engine/src/core-effects/com/clockwork/water/WaterFilter.java</file>
-            <file>file:/E:/NetBeansProjects/clockworkengine/branches/3.0/engine/src/test/clockworktest/post/TestMultiplesFilters.java</file>
+            <file>file:/E:/NetBeansProjects/clockworkengine/branches/3.0/engine/src/bullet-common/com/clockwork/bullet/control/KinematicRagdollControl.java</file>
             <file>file:/E:/NetBeansProjects/clockworkengine/branches/3.0/engine/src/test/clockworktest/material/TestParallax.java</file>
+            <file>file:/E:/NetBeansProjects/clockworkengine/branches/3.0/engine/src/core/com/clockwork/scene/mesh/VirtualIndexBuffer.java</file>
+            <file>file:/E:/NetBeansProjects/clockworkengine/branches/3.0/engine/src/core/checkers/quals/Unused.java</file>
+            <file>file:/E:/NetBeansProjects/clockworkengine/branches/3.0/engine/src/core/com/clockwork/app/state/AppState.java</file>
+            <file>file:/E:/NetBeansProjects/clockworkengine/branches/3.0/engine/src/tools/clockworktools/converters/model/strip/TriStrip.java</file>
+            <file>file:/E:/NetBeansProjects/clockworkengine/branches/3.0/engine/src/core/com/clockwork/material/Material.java</file>
+            <file>file:/E:/NetBeansProjects/clockworkengine/branches/3.0/engine/src/core/com/clockwork/system/AppSettings.java</file>
+            <file>file:/E:/NetBeansProjects/clockworkengine/branches/3.0/engine/src/test/com/clockwork/game/TestCharacter.java</file>
+            <file>file:/E:/NetBeansProjects/clockworkengine/branches/3.0/engine/src/terrain/com/clockwork/terrain/geomipmap/TerrainGrid.java</file>
+            <file>file:/E:/NetBeansProjects/clockworkengine/branches/3.0/engine/src/core/com/clockwork/math/FastMath.java</file>
+            <file>file:/E:/NetBeansProjects/clockworkengine/branches/3.0/engine/src/core/com/clockwork/app/Application.java</file>
+            <file>file:/E:/NetBeansProjects/clockworkengine/branches/3.0/engine/src/core/com/clockwork/app/state/AppStateManager.java</file>
+            <file>file:/E:/NetBeansProjects/clockworkengine/branches/3.0/engine/src/test/clockworktest/effect/TestSoftParticles.java</file>
+            <file>file:/E:/NetBeansProjects/clockworkengine/branches/3.0/engine/src/test/clockworktest/animation/TestCinematic.java</file>
+            <file>file:/E:/NetBeansProjects/clockworkengine/branches/3.0/engine/src/core/com/clockwork/animation/CompactQuaternionArray.java</file>
+            <file>file:/E:/NetBeansProjects/clockworkengine/branches/3.0/engine/src/core/com/clockwork/renderer/ViewPort.java</file>
+            <file>file:/E:/NetBeansProjects/clockworkengine/branches/3.0/engine/src/core/com/clockwork/app/StatsView.java</file>
+            <file>file:/E:/NetBeansProjects/clockworkengine/branches/3.0/engine/src/test/clockworktest/post/TestMultiplesFilters.java</file>
+            <file>file:/E:/NetBeansProjects/clockworkengine/branches/3.0/engine/src/core/com/clockwork/util/SafeArrayList.java</file>
             <file>file:/E:/NetBeansProjects/clockworkengine/branches/3.0/engine/src/test/clockworktest/post/TestFog.java</file>
+            <file>file:/E:/NetBeansProjects/clockworkengine/branches/3.0/engine/src/core/com/clockwork/shadow/PssmShadowUtil.java</file>
+            <file>file:/E:/NetBeansProjects/clockworkengine/branches/3.0/engine/src/core/com/clockwork/cinematic/events/AbstractCinematicEvent.java</file>
+            <file>file:/E:/NetBeansProjects/clockworkengine/branches/3.0/engine/src/core/com/clockwork/app/SimpleApplication.java</file>
+            <file>file:/E:/NetBeansProjects/clockworkengine/branches/3.0/engine/src/core/com/clockwork/asset/AssetManager.java</file>
+            <file>file:/E:/NetBeansProjects/clockworkengine/branches/3.0/engine/src/core/com/clockwork/renderer/RenderManager.java</file>
+            <file>file:/E:/NetBeansProjects/clockworkengine/branches/3.0/engine/src/core/com/clockwork/renderer/Camera.java</file>
+            <file>file:/E:/NetBeansProjects/clockworkengine/branches/3.0/engine/src/core/com/clockwork/scene/Mesh.java</file>
+            <file>file:/E:/NetBeansProjects/clockworkengine/branches/3.0/engine/src/core/checkers/quals/SubtypeOf.java</file>
+            <file>file:/E:/NetBeansProjects/clockworkengine/branches/3.0/engine/src/core/com/clockwork/material/RenderState.java</file>
+            <file>file:/E:/NetBeansProjects/clockworkengine/branches/3.0/engine/src/core/com/clockwork/util/SkyFactory.java</file>
         </group>
     </open-files>
 </project-private>

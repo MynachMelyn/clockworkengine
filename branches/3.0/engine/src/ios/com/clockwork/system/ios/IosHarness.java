@@ -2,7 +2,7 @@
 package com.clockwork.system.ios;
 
 import com.clockwork.app.Application;
-import com.clockwork.system.JmeSystem;
+import com.clockwork.system.CWSystem;
 
 /**
  */
@@ -12,7 +12,7 @@ public abstract class IosHarness extends ObjcNativeObject {
 
     public IosHarness(long appDelegate) {
         super(appDelegate);
-        JmeSystem.setSystemDelegate(new JmeIosSystem());
+        CWSystem.setSystemDelegate(new CWIosSystem());
     }
 
     public abstract void appPaused();

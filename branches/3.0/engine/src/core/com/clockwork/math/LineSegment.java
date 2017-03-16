@@ -545,14 +545,14 @@ public class LineSegment implements Cloneable, Savable, java.io.Serializable {
         return origin.subtract((direction.mult(extent, store)), store);
     }
 
-    public void write(JmeExporter e) throws IOException {
+    public void write(CWExporter e) throws IOException {
         OutputCapsule capsule = e.getCapsule(this);
         capsule.write(origin, "origin", Vector3f.ZERO);
         capsule.write(direction, "direction", Vector3f.ZERO);
         capsule.write(extent, "extent", 0);
     }
 
-    public void read(JmeImporter e) throws IOException {
+    public void read(CWImporter e) throws IOException {
         InputCapsule capsule = e.getCapsule(this);
         origin = (Vector3f) capsule.readSavable("origin", Vector3f.ZERO.clone());
         direction = (Vector3f) capsule.readSavable("direction", Vector3f.ZERO.clone());

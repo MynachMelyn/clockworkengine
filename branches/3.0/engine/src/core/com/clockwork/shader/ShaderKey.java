@@ -3,8 +3,8 @@ package com.clockwork.shader;
 
 import com.clockwork.asset.AssetKey;
 import com.clockwork.export.InputCapsule;
-import com.clockwork.export.JmeExporter;
-import com.clockwork.export.JmeImporter;
+import com.clockwork.export.CWExporter;
+import com.clockwork.export.CWImporter;
 import com.clockwork.export.OutputCapsule;
 import java.io.IOException;
 
@@ -105,7 +105,7 @@ public class ShaderKey extends AssetKey<Shader> {
     }
 
     @Override
-    public void write(JmeExporter ex) throws IOException{
+    public void write(CWExporter ex) throws IOException{
         super.write(ex);
         OutputCapsule oc = ex.getCapsule(this);
         oc.write(fragName, "fragment_name", null);
@@ -114,7 +114,7 @@ public class ShaderKey extends AssetKey<Shader> {
     }
 
     @Override
-    public void read(JmeImporter im) throws IOException{
+    public void read(CWImporter im) throws IOException{
         super.read(im);
         InputCapsule ic = im.getCapsule(this);
         fragName = ic.readString("fragment_name", null);

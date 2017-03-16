@@ -212,7 +212,7 @@ public class TestPostWater extends SimpleApplication {
 
     private void createFire() {
         /**
-         * Uses Texture from jme3-test-data library!
+         * Uses Texture from CW-test-data library!
          */
         ParticleEmitter fire = new ParticleEmitter("Emitter", ParticleMesh.Type.Triangle, 30);
         Material mat_red = new Material(assetManager, "Common/MatDefs/Misc/Particle.j3md");

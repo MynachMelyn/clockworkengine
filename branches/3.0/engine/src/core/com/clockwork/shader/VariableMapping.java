@@ -2,8 +2,8 @@
 package com.clockwork.shader;
 
 import com.clockwork.export.InputCapsule;
-import com.clockwork.export.JmeExporter;
-import com.clockwork.export.JmeImporter;
+import com.clockwork.export.CWExporter;
+import com.clockwork.export.CWImporter;
 import com.clockwork.export.OutputCapsule;
 import com.clockwork.export.Savable;
 import java.io.IOException;
@@ -130,12 +130,12 @@ public class VariableMapping implements Savable {
     }
 
     /**
-     * jme seralization (not used)
+     * CW seralization (not used)
      *
      * @param ex the exporter
      * @throws IOException
      */
-    public void write(JmeExporter ex) throws IOException {
+    public void write(CWExporter ex) throws IOException {
         OutputCapsule oc = (OutputCapsule) ex.getCapsule(this);
         oc.write(leftVariable, "leftVariable", null);
         oc.write(rightVariable, "rightVariable", null);
@@ -145,12 +145,12 @@ public class VariableMapping implements Savable {
     }
 
     /**
-     * jme seralization (not used)
+     * CW seralization (not used)
      *
      * @param im the importer
      * @throws IOException
      */
-    public void read(JmeImporter im) throws IOException {
+    public void read(CWImporter im) throws IOException {
         InputCapsule ic = (InputCapsule) im.getCapsule(this);
         leftVariable = (ShaderNodeVariable) ic.readSavable("leftVariable", null);
         rightVariable = (ShaderNodeVariable) ic.readSavable("rightVariable", null);

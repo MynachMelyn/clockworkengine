@@ -200,7 +200,7 @@ public class SceneLoader extends DefaultHandler implements AssetLoader {
             // XXX: It doesn't seem any exporters actually emit this type?
             light = new AmbientLight();
         } else {
-            logger.log(Level.WARNING, "No matching jME3 LightType found for OGRE LightType: {0}", lightType);
+            logger.log(Level.WARNING, "No matching CW LightType found for OGRE LightType: {0}", lightType);
         }
         logger.log(Level.FINEST, "{0} created.", light);
 
@@ -487,7 +487,7 @@ public class SceneLoader extends DefaultHandler implements AssetLoader {
             // Android needs the namespace aware flag set to true 
             // Kirill 30.06.2011
             // Now, hack is applied for both desktop and android to avoid
-            // checking with JmeSystem.
+            // checking with CWSystem.
             SAXParserFactory factory = SAXParserFactory.newInstance();
             factory.setNamespaceAware(true);
             XMLReader xr = factory.newSAXParser().getXMLReader();

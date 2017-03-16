@@ -145,7 +145,7 @@ public class InputStreamSrc extends Element {
                         return false;
                     
                     postMessage(Message.newStreamStatus(this, true, Pad.OK, "activating"));
-                    return startTask("JmeVideo-Src-Stream-" + Debug.genId());
+                    return startTask("CWVideo-Src-Stream-" + Debug.genId());
                 default:
                     return false;
             }

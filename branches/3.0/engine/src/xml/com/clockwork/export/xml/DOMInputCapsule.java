@@ -17,7 +17,7 @@ import java.util.logging.Logger;
 import org.w3c.dom.*;
 
 /**
- * Part of the jME XML IO system as introduced in the google code jmexml project.
+ * Part of the CW XML IO system as introduced in the google code CWxml project.
  *
  */
 public class DOMInputCapsule implements InputCapsule {

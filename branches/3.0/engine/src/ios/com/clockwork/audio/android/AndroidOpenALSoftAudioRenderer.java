@@ -39,7 +39,7 @@ public class AndroidOpenALSoftAudioRenderer implements AndroidAudioRenderer, Run
     private int reverbFxSlot = -1;
     // Update audio 20 times per second
     private static final float UPDATE_RATE = 0.05f;
-    private final Thread audioThread = new Thread(this, "jME3 Audio Thread");
+    private final Thread audioThread = new Thread(this, "CW Audio Thread");
     private final AtomicBoolean threadLock = new AtomicBoolean(false);
     private boolean initialized = false;
 
@@ -1387,7 +1387,7 @@ public class AndroidOpenALSoftAudioRenderer implements AndroidAudioRenderer, Run
 
     /** Load jni .so on initialization */
     static {
-//         System.loadLibrary("openalsoftjme");
+//         System.loadLibrary("openalsoftCW");
     }
 
 }

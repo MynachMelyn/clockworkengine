@@ -283,7 +283,7 @@ public class SafeArrayList<E> implements List<E> {
     
     public List<E> subList(int fromIndex, int toIndex) {
     
-        // So far JME doesn't use subList that I can see so I'm nerfing it.
+        // So far CW doesn't use subList that I can see so I'm nerfing it.
         List<E> raw =  Arrays.asList(getArray()).subList(fromIndex, toIndex);
         return Collections.unmodifiableList(raw);
     }

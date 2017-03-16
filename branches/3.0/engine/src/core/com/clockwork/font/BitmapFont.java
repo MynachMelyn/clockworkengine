@@ -6,7 +6,7 @@ import com.clockwork.material.Material;
 import java.io.IOException;
 
 /**
- * Represents a font within jME that is generated with the AngelCode Bitmap Font Generator
+ * Represents a font within CW that is generated with the AngelCode Bitmap Font Generator
  * 
  */
 public class BitmapFont implements Savable {
@@ -121,14 +121,14 @@ public class BitmapFont implements Savable {
     }
 
     @Override
-    public void write(JmeExporter ex) throws IOException {
+    public void write(CWExporter ex) throws IOException {
         OutputCapsule oc = ex.getCapsule(this);
         oc.write(charSet, "charSet", null);
         oc.write(pages, "pages", null);
     }
 
     @Override
-    public void read(JmeImporter im) throws IOException {
+    public void read(CWImporter im) throws IOException {
         InputCapsule ic = im.getCapsule(this);
         charSet = (BitmapCharacterSet) ic.readSavable("charSet", null);
         Savable[] pagesSavable = ic.readSavableArray("pages", null);

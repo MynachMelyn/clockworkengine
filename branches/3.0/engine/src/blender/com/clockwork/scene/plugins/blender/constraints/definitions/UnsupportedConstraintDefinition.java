@@ -4,7 +4,7 @@ import com.clockwork.math.Transform;
 
 /**
  * This class represents a constraint that is defined by blender but not
- * supported by either importer ot jme. It only wirtes down a warning when
+ * supported by either importer ot CW. It only wirtes down a warning when
  * baking is called.
  * 
  * 

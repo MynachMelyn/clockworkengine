@@ -7,8 +7,8 @@ import com.clockwork.cinematic.Cinematic;
 import com.clockwork.cinematic.MotionPath;
 import com.clockwork.cinematic.PlayState;
 import com.clockwork.export.InputCapsule;
-import com.clockwork.export.JmeExporter;
-import com.clockwork.export.JmeImporter;
+import com.clockwork.export.CWExporter;
+import com.clockwork.export.CWImporter;
 import com.clockwork.export.OutputCapsule;
 import com.clockwork.math.Quaternion;
 import com.clockwork.math.Vector3f;
@@ -170,7 +170,7 @@ public class MotionEvent extends AbstractCinematicEvent implements Control {
     }
 
     @Override
-    public void write(JmeExporter ex) throws IOException {
+    public void write(CWExporter ex) throws IOException {
         super.write(ex);
         OutputCapsule oc = ex.getCapsule(this);
         oc.write(lookAt, "lookAt", Vector3f.ZERO);
@@ -181,7 +181,7 @@ public class MotionEvent extends AbstractCinematicEvent implements Control {
     }
 
     @Override
-    public void read(JmeImporter im) throws IOException {
+    public void read(CWImporter im) throws IOException {
         super.read(im);
         InputCapsule in = im.getCapsule(this);
         lookAt = (Vector3f) in.readSavable("lookAt", Vector3f.ZERO);

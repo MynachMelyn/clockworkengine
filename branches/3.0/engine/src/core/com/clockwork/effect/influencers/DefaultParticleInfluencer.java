@@ -4,8 +4,8 @@ package com.clockwork.effect.influencers;
 import com.clockwork.effect.Particle;
 import com.clockwork.effect.shapes.EmitterShape;
 import com.clockwork.export.InputCapsule;
-import com.clockwork.export.JmeExporter;
-import com.clockwork.export.JmeImporter;
+import com.clockwork.export.CWExporter;
+import com.clockwork.export.CWImporter;
 import com.clockwork.export.OutputCapsule;
 import com.clockwork.math.FastMath;
 import com.clockwork.math.Vector3f;
@@ -49,16 +49,16 @@ public class DefaultParticleInfluencer implements ParticleInfluencer {
     }
 
     @Override
-    public void write(JmeExporter ex) throws IOException {
+    public void write(CWExporter ex) throws IOException {
         OutputCapsule oc = ex.getCapsule(this);
         oc.write(initialVelocity, "initialVelocity", Vector3f.ZERO);
         oc.write(velocityVariation, "variation", 0.2f);
     }
 
     @Override
-    public void read(JmeImporter im) throws IOException {
+    public void read(CWImporter im) throws IOException {
         InputCapsule ic = im.getCapsule(this);
-        // NOTE: In previous versions of jME3, initialVelocity was called startVelocity
+        // NOTE: In previous versions of CW, initialVelocity was called startVelocity
         if (ic.getSavableVersion(DefaultParticleInfluencer.class) == 0){
             initialVelocity = (Vector3f) ic.readSavable("startVelocity", Vector3f.ZERO.clone());
         }else{

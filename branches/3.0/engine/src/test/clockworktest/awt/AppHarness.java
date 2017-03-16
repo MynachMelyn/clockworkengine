@@ -4,8 +4,8 @@ package clockworktest.awt;
 
 import com.clockwork.app.Application;
 import com.clockwork.system.AppSettings;
-import com.clockwork.system.JmeCanvasContext;
-import com.clockwork.system.JmeSystem;
+import com.clockwork.system.CWCanvasContext;
+import com.clockwork.system.CWSystem;
 import java.applet.Applet;
 import java.awt.Canvas;
 import java.awt.Graphics;
@@ -20,7 +20,7 @@ import javax.swing.SwingUtilities;
  */
 public class AppHarness extends Applet {
 
-    private JmeCanvasContext context;
+    private CWCanvasContext context;
     private Canvas canvas;
     private Application app;
 
@@ -45,7 +45,7 @@ public class AppHarness extends Applet {
         settings.setHeight(getHeight());
         settings.setAudioRenderer(null);
 
-        JmeSystem.setLowPermissions(true);
+        CWSystem.setLowPermissions(true);
 
         try{
             Class<? extends Application> clazz = (Class<? extends Application>) Class.forName(appClass);
@@ -61,7 +61,7 @@ public class AppHarness extends Applet {
         app.setSettings(settings);
         app.createCanvas();
         
-        context = (JmeCanvasContext) app.getContext();
+        context = (CWCanvasContext) app.getContext();
         canvas = context.getCanvas();
         canvas.setSize(getWidth(), getHeight());
         

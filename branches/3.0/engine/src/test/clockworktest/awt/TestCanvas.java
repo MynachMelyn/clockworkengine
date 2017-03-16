@@ -5,8 +5,8 @@ package clockworktest.awt;
 import com.clockwork.app.Application;
 import com.clockwork.app.SimpleApplication;
 import com.clockwork.system.AppSettings;
-import com.clockwork.system.JmeCanvasContext;
-import com.clockwork.util.JmeFormatter;
+import com.clockwork.system.CWCanvasContext;
+import com.clockwork.util.CWFormatter;
 import java.awt.BorderLayout;
 import java.awt.Canvas;
 import java.awt.Container;
@@ -23,25 +23,25 @@ import javax.swing.*;
 
 public class TestCanvas {
 
-    private static JmeCanvasContext context;
+    private static CWCanvasContext context;
     private static Canvas canvas;
     private static Application app;
     private static JFrame frame;
     private static Container canvasPanel1, canvasPanel2;
     private static Container currentPanel;
     private static JTabbedPane tabbedPane;
-    private static final String appClass = "jme3test.post.TestRenderToTexture";
+    private static final String appClass = "CWtest.post.TestRenderToTexture";
 
     private static void createTabs(){
         tabbedPane = new JTabbedPane();
         
         canvasPanel1 = new JPanel();
         canvasPanel1.setLayout(new BorderLayout());
-        tabbedPane.addTab("jME3 Canvas 1", canvasPanel1);
+        tabbedPane.addTab("CW Canvas 1", canvasPanel1);
         
         canvasPanel2 = new JPanel();
         canvasPanel2.setLayout(new BorderLayout());
-        tabbedPane.addTab("jME3 Canvas 2", canvasPanel2);
+        tabbedPane.addTab("CW Canvas 2", canvasPanel2);
         
         frame.getContentPane().add(tabbedPane);
         
@@ -187,7 +187,7 @@ public class TestCanvas {
         app.createCanvas();
         app.startCanvas();
 
-        context = (JmeCanvasContext) app.getContext();
+        context = (CWCanvasContext) app.getContext();
         canvas = context.getCanvas();
         canvas.setSize(settings.getWidth(), settings.getHeight());
     }
@@ -207,7 +207,7 @@ public class TestCanvas {
     }
 
     public static void main(String[] args){
-        JmeFormatter formatter = new JmeFormatter();
+        CWFormatter formatter = new CWFormatter();
 
         Handler consoleHandler = new ConsoleHandler();
         consoleHandler.setFormatter(formatter);

@@ -13,7 +13,7 @@ import com.clockwork.renderer.RenderManager;
 import com.clockwork.renderer.Renderer;
 import com.clockwork.renderer.ViewPort;
 import com.clockwork.system.*;
-import com.clockwork.system.JmeContext.Type;
+import com.clockwork.system.CWContext.Type;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.Callable;
@@ -26,7 +26,7 @@ import java.util.logging.Logger;
  * The Application class represents an instance of a
  * real-time 3D rendering application.
  *
- * An Application provides all the tools that are commonly used in jME3
+ * An Application provides all the tools that are commonly used in CW
  * applications.
  *
  * Applications *SHOULD NOT EXTEND* this class but extend com.clockwork.app.SimpleApplication instead.
@@ -44,7 +44,7 @@ public class Application implements SystemListener {
     protected ViewPort viewPort;
     protected ViewPort guiViewPort;
 
-    protected JmeContext context;
+    protected CWContext context;
     protected AppSettings settings;
     protected Timer timer = new NanoTimer();
     protected Camera cam;
@@ -124,11 +124,11 @@ public class Application implements SystemListener {
                         return;
                     }
                 }
-                assetManager = JmeSystem.newAssetManager(url);
+                assetManager = CWSystem.newAssetManager(url);
             }
         }
         if (assetManager == null){
-            assetManager = JmeSystem.newAssetManager(
+            assetManager = CWSystem.newAssetManager(
                     Thread.currentThread().getContextClassLoader()
                     .getResource("com/clockwork/asset/Desktop.cfg"));
         }
@@ -163,7 +163,7 @@ public class Application implements SystemListener {
     /**
      * Sets the Timer implementation that will be used for calculating
      * frame times.  By default, Application will use the Timer as returned
-     * by the current JmeContext implementation.
+     * by the current CWContext implementation.
      */
     public void setTimer(Timer timer){
         this.timer = timer;
@@ -196,7 +196,7 @@ public class Application implements SystemListener {
 
     private void initAudio(){
         if (settings.getAudioRenderer() != null && context.getType() != Type.Headless){
-            audioRenderer = JmeSystem.newAudioRenderer(settings);
+            audioRenderer = CWSystem.newAudioRenderer(settings);
             audioRenderer.initialize();
             AudioContext.setAudioRenderer(audioRenderer);
 
@@ -314,9 +314,9 @@ public class Application implements SystemListener {
     }
 
     /**
-     * @return The JmeContext display context} for the application
+     * @return The CWContext display context} for the application
      */
-    public JmeContext getContext(){
+    public CWContext getContext(){
         return context;
     }
 
@@ -330,10 +330,10 @@ public class Application implements SystemListener {
     /**
      * Starts the application in Type#Display display} mode.
      *
-     * see #start(com.clockwork.system.JmeContext.Type)
+     * see #start(com.clockwork.system.CWContext.Type)
      */
     public void start(){
-        start(JmeContext.Type.Display);
+        start(CWContext.Type.Display);
     }
 
     /**
@@ -341,7 +341,7 @@ public class Application implements SystemListener {
      * Creating a rendering context and executing
      * the main loop in a separate thread.
      */
-    public void start(JmeContext.Type contextType){
+    public void start(CWContext.Type contextType){
         if (context != null && context.isCreated()){
             logger.warning("start() called when application already created!");
             return;
@@ -352,7 +352,7 @@ public class Application implements SystemListener {
         }
 
         logger.log(Level.FINE, "Starting application: {0}", getClass().getName());
-        context = JmeSystem.newContext(settings, contextType);
+        context = CWSystem.newContext(settings, contextType);
         context.setSystemListener(this);
         context.create(false);
     }
@@ -361,15 +361,15 @@ public class Application implements SystemListener {
      * Initializes the application's canvas for use.
      * 
      * After calling this method, cast the #getContext() context} to
-     * JmeCanvasContext},
-     * then acquire the canvas with JmeCanvasContext#getCanvas() }
+     * CWCanvasContext},
+     * then acquire the canvas with CWCanvasContext#getCanvas() }
      * and attach it to an AWT/Swing Frame.
      * The rendering thread will start when the canvas becomes visible on
      * screen, however if you wish to start the context immediately you
      * may call #startCanvas() } to force the rendering thread
      * to start.
      *
-     * see JmeCanvasContext
+     * see CWCanvasContext
      * see Type#Canvas
      */
     public void createCanvas(){
@@ -383,7 +383,7 @@ public class Application implements SystemListener {
         }
 
         logger.log(Level.FINE, "Starting application: {0}", getClass().getName());
-        context = JmeSystem.newContext(settings, JmeContext.Type.Canvas);
+        context = CWSystem.newContext(settings, CWContext.Type.Canvas);
         context.setSystemListener(this);
     }
 
@@ -490,10 +490,10 @@ public class Application implements SystemListener {
         logger.log(Level.SEVERE, errMsg, t);
         // Display error message on screen
         if (t != null) {
-            JmeSystem.showErrorDialog(errMsg + "\n" + t.getClass().getSimpleName() +
+            CWSystem.showErrorDialog(errMsg + "\n" + t.getClass().getSimpleName() +
                     (t.getMessage() != null ? ": " +  t.getMessage() : ""));
         } else {
-            JmeSystem.showErrorDialog(errMsg);
+            CWSystem.showErrorDialog(errMsg);
         }
 
         stop(); // stop the application
@@ -530,7 +530,7 @@ public class Application implements SystemListener {
     }
 
     /**
-     * Enqueues a task/callable object to execute in the jME3
+     * Enqueues a task/callable object to execute in the CW
      * rendering thread.
      * 
      * Callables are executed right at the beginning of the main loop.

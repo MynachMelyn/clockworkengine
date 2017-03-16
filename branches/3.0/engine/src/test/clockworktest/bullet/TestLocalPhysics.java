@@ -12,7 +12,7 @@ import com.clockwork.scene.Node;
 import com.clockwork.scene.shape.Sphere;
 
 /**
- * This is a basic Test of jbullet-jme functions
+ * This is a basic Test of jbullet-CW functions
  *
  */
 public class TestLocalPhysics extends SimpleApplication {

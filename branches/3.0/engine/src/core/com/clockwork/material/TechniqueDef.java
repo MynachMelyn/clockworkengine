@@ -379,7 +379,7 @@ public class TechniqueDef implements Savable {
         return worldBinds;
     }
 
-    public void write(JmeExporter ex) throws IOException{
+    public void write(CWExporter ex) throws IOException{
         OutputCapsule oc = ex.getCapsule(this);
         oc.write(name, "name", null);
         oc.write(vertName, "vertName", null);
@@ -401,7 +401,7 @@ public class TechniqueDef implements Savable {
 //        oc.write(worldBinds, "worldBinds", null);
     }
 
-    public void read(JmeImporter im) throws IOException{
+    public void read(CWImporter im) throws IOException{
         InputCapsule ic = im.getCapsule(this);
         name = ic.readString("name", null);
         vertName = ic.readString("vertName", null);

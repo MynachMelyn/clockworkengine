@@ -17,7 +17,7 @@ public class BitmapCharacterSet implements Savable {
     private int pageSize;
 
     @Override
-    public void write(JmeExporter ex) throws IOException {
+    public void write(CWExporter ex) throws IOException {
         OutputCapsule oc = ex.getCapsule(this);
         oc.write(lineHeight, "lineHeight", 0);
         oc.write(base, "base", 0);
@@ -54,7 +54,7 @@ public class BitmapCharacterSet implements Savable {
     }
 
     @Override
-    public void read(JmeImporter im) throws IOException {
+    public void read(CWImporter im) throws IOException {
         InputCapsule ic = im.getCapsule(this);
         lineHeight = ic.readInt("lineHeight", 0);
         base = ic.readInt("base", 0);

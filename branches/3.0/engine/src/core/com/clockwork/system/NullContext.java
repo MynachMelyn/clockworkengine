@@ -12,7 +12,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class NullContext implements JmeContext, Runnable {
+public class NullContext implements CWContext, Runnable {
 
     protected static final Logger logger = Logger.getLogger(NullContext.class.getName());
 

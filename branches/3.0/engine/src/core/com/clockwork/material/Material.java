@@ -1089,7 +1089,7 @@ public class Material implements CloneableSmartAsset, Cloneable, Savable {
         r.renderMesh(geom.getMesh(), geom.getLodLevel(), 1);
     }
 
-    public void write(JmeExporter ex) throws IOException {
+    public void write(CWExporter ex) throws IOException {
         OutputCapsule oc = ex.getCapsule(this);
         oc.write(def.getAssetName(), "material_def", null);
         oc.write(additionalState, "render_state", null);
@@ -1097,7 +1097,7 @@ public class Material implements CloneableSmartAsset, Cloneable, Savable {
         oc.writeStringSavableMap(paramValues, "parameters", null);
     }
 
-    public void read(JmeImporter im) throws IOException {
+    public void read(CWImporter im) throws IOException {
         InputCapsule ic = im.getCapsule(this);
 
         additionalState = (RenderState) ic.readSavable("render_state", null);
@@ -1165,7 +1165,7 @@ public class Material implements CloneableSmartAsset, Cloneable, Savable {
             }
             
             if (im.getFormatVersion() == 0 && param.getName().startsWith("m_")) {
-                // Ancient version of jME3 ...
+                // Ancient version of CW ...
                 param.setName(param.getName().substring(2));
             }
             

@@ -157,7 +157,7 @@ public class BatchNode extends Node implements Savable {
         //we set the batch geometries to ignore transforms to avoid transforms of parent nodes to be applied twice        
         for (Batch batch : batches.getArray()) {
             batch.geometry.setIgnoreTransform(true);
-            batch.geometry.setUserData(UserData.JME_PHYSICSIGNORE, true);
+            batch.geometry.setUserData(UserData.CW_PHYSICSIGNORE, true);
         }
         updateGeometricState();
     }
@@ -378,7 +378,7 @@ public class BatchNode extends Node implements Savable {
 //        return null;//material;
 //    }
     @Override
-    public void write(JmeExporter ex) throws IOException {
+    public void write(CWExporter ex) throws IOException {
         super.write(ex);
         OutputCapsule oc = ex.getCapsule(this);
 //
@@ -390,7 +390,7 @@ public class BatchNode extends Node implements Savable {
     }
 
     @Override
-    public void read(JmeImporter im) throws IOException {
+    public void read(CWImporter im) throws IOException {
         super.read(im);
         InputCapsule ic = im.getCapsule(this);
 

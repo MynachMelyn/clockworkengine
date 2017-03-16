@@ -194,7 +194,7 @@ public class SkeletonControl extends AbstractControl implements Cloneable {
                 Geometry geom = (Geometry) child;
 
                 // is this geometry using a shared mesh?
-                Mesh childSharedMesh = geom.getUserData(UserData.JME_SHAREDMESH);
+                Mesh childSharedMesh = geom.getUserData(UserData.CW_SHAREDMESH);
 
                 if (childSharedMesh != null) {
                     // Don’t bother with non-animated shared meshes
@@ -678,7 +678,7 @@ public class SkeletonControl extends AbstractControl implements Cloneable {
     }
 
     @Override
-    public void write(JmeExporter ex) throws IOException {
+    public void write(CWExporter ex) throws IOException {
         super.write(ex);
         OutputCapsule oc = ex.getCapsule(this);
         oc.write(skeleton, "skeleton", null);
@@ -686,7 +686,7 @@ public class SkeletonControl extends AbstractControl implements Cloneable {
     }
 
     @Override
-    public void read(JmeImporter im) throws IOException {
+    public void read(CWImporter im) throws IOException {
         super.read(im);
         InputCapsule in = im.getCapsule(this);
         skeleton = (Skeleton) in.readSavable("skeleton", null);

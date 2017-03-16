@@ -5,8 +5,8 @@ import com.clockwork.bullet.joints.motors.RotationalLimitMotor;
 import com.clockwork.bullet.joints.motors.TranslationalLimitMotor;
 import com.clockwork.bullet.objects.PhysicsRigidBody;
 import com.clockwork.export.InputCapsule;
-import com.clockwork.export.JmeExporter;
-import com.clockwork.export.JmeImporter;
+import com.clockwork.export.CWExporter;
+import com.clockwork.export.CWImporter;
 import com.clockwork.export.OutputCapsule;
 import com.clockwork.math.Matrix3f;
 import com.clockwork.math.Vector3f;
@@ -132,7 +132,7 @@ public class SixDofJoint extends PhysicsJoint {
     native long createJoint(long objectIdA, long objectIdB, Vector3f pivotA, Matrix3f rotA, Vector3f pivotB, Matrix3f rotB, boolean useLinearReferenceFrameA);
 
     @Override
-    public void read(JmeImporter im) throws IOException {
+    public void read(CWImporter im) throws IOException {
         super.read(im);
         InputCapsule capsule = im.getCapsule(this);
 
@@ -167,7 +167,7 @@ public class SixDofJoint extends PhysicsJoint {
     }
 
     @Override
-    public void write(JmeExporter ex) throws IOException {
+    public void write(CWExporter ex) throws IOException {
         super.write(ex);
         OutputCapsule capsule = ex.getCapsule(this);
         capsule.write(angularUpperLimit, "angularUpperLimit", new Vector3f(Vector3f.POSITIVE_INFINITY));

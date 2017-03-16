@@ -49,7 +49,7 @@ public class TestBatchNode extends SimpleApplication {
 
         /**
          * A cube with a color "bleeding" through transparent texture. Uses
-         * Texture from jme3-test-data library!
+         * Texture from CW-test-data library!
          */
         Box boxshape4 = new Box(Vector3f.ZERO, 1f, 1f, 1f);
         cube = new Geometry("cube1", boxshape4);
@@ -60,7 +60,7 @@ public class TestBatchNode extends SimpleApplication {
 //        mat.setBoolean("UseMaterialColors", true);
         /**
          * A cube with a color "bleeding" through transparent texture. Uses
-         * Texture from jme3-test-data library!
+         * Texture from CW-test-data library!
          */
         Box box = new Box(Vector3f.ZERO, 1f, 1f, 1f);
         cube2 = new Geometry("cube2", box);

@@ -94,7 +94,7 @@ public class TextureHelper extends AbstractBlenderHelper {
      *            texture structure filled with data
      * @param blenderContext
      *            the blender context
-     * @return the texture that can be used by JME engine
+     * @return the texture that can be used by CW engine
      * @throws BlenderFileException
      *             this exception is thrown when the blend file structure is
      *             somehow invalid or corrupted
@@ -458,7 +458,7 @@ public class TextureHelper extends AbstractBlenderHelper {
      *            the image flag
      * @param blenderContext
      *            the blender context
-     * @return the texture that can be used by JME engine
+     * @return the texture that can be used by CW engine
      * @throws BlenderFileException
      *             this exception is thrown when the blend file structure is
      *             somehow invalid or corrupted

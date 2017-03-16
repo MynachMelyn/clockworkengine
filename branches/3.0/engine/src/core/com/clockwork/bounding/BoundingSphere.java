@@ -5,8 +5,8 @@ import com.clockwork.collision.Collidable;
 import com.clockwork.collision.CollisionResult;
 import com.clockwork.collision.CollisionResults;
 import com.clockwork.collision.UnsupportedCollisionException;
-import com.clockwork.export.JmeExporter;
-import com.clockwork.export.JmeImporter;
+import com.clockwork.export.CWExporter;
+import com.clockwork.export.CWImporter;
 import com.clockwork.math.*;
 import com.clockwork.util.BufferUtils;
 import com.clockwork.util.TempVars;
@@ -802,22 +802,22 @@ public class BoundingSphere extends BoundingVolume {
     }
 
     @Override
-    public void write(JmeExporter e) throws IOException {
+    public void write(CWExporter e) throws IOException {
         super.write(e);
         try {
             e.getCapsule(this).write(radius, "radius", 0);
         } catch (IOException ex) {
-            logger.logp(Level.SEVERE, this.getClass().toString(), "write(JMEExporter)", "Exception", ex);
+            logger.logp(Level.SEVERE, this.getClass().toString(), "write(CWExporter)", "Exception", ex);
         }
     }
 
     @Override
-    public void read(JmeImporter e) throws IOException {
+    public void read(CWImporter e) throws IOException {
         super.read(e);
         try {
             radius = e.getCapsule(this).readFloat("radius", 0);
         } catch (IOException ex) {
-            logger.logp(Level.SEVERE, this.getClass().toString(), "read(JMEImporter)", "Exception", ex);
+            logger.logp(Level.SEVERE, this.getClass().toString(), "read(CWImporter)", "Exception", ex);
         }
     }
 

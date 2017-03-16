@@ -125,7 +125,7 @@ public final class Matrix3f implements Savable, Cloneable, java.io.Serializable 
 
     /**
      * get retrieves a value from the matrix at the given
-     * position. If the position is invalid a JmeException is
+     * position. If the position is invalid a CWException is
      * thrown.
      * 
      * @param i
@@ -531,7 +531,7 @@ public final class Matrix3f implements Savable, Cloneable, java.io.Serializable 
 
     /**
      * set places a given value into the matrix at the given
-     * position. If the position is invalid a JmeException is
+     * position. If the position is invalid a CWException is
      * thrown.
      * 
      * @param i
@@ -594,7 +594,7 @@ public final class Matrix3f implements Savable, Cloneable, java.io.Serializable 
      * 
      * @param matrix
      *            the new values of the matrix.
-     * @throws JmeException
+     * @throws CWException
      *             if the array is not of size 9.
      * @return this
      */
@@ -1220,7 +1220,7 @@ public final class Matrix3f implements Savable, Cloneable, java.io.Serializable 
         return true;
     }
 
-    public void write(JmeExporter e) throws IOException {
+    public void write(CWExporter e) throws IOException {
         OutputCapsule cap = e.getCapsule(this);
         cap.write(m00, "m00", 1);
         cap.write(m01, "m01", 0);
@@ -1233,7 +1233,7 @@ public final class Matrix3f implements Savable, Cloneable, java.io.Serializable 
         cap.write(m22, "m22", 1);
     }
 
-    public void read(JmeImporter e) throws IOException {
+    public void read(CWImporter e) throws IOException {
         InputCapsule cap = e.getCapsule(this);
         m00 = cap.readFloat("m00", 1);
         m01 = cap.readFloat("m01", 0);

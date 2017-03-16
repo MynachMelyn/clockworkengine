@@ -1,8 +1,8 @@
 package com.clockwork.input;
 
 import com.clockwork.export.InputCapsule;
-import com.clockwork.export.JmeExporter;
-import com.clockwork.export.JmeImporter;
+import com.clockwork.export.CWExporter;
+import com.clockwork.export.CWImporter;
 import com.clockwork.export.OutputCapsule;
 import com.clockwork.input.controls.*;
 import com.clockwork.math.FastMath;
@@ -19,7 +19,7 @@ import com.clockwork.input.*;
 /**
  * A camera that follows a spatial and can turn around it by dragging the mouse
  */
-public class BetterChaseCamera implements ActionListener, AnalogListener, Control/*, JMECloneable */{
+public class BetterChaseCamera implements ActionListener, AnalogListener, Control/*, CWCloneable */{
 
     protected Spatial target = null;
     protected float minVerticalRotation = 0.00f;
@@ -576,7 +576,7 @@ public class BetterChaseCamera implements ActionListener, AnalogListener, Contro
     }
 
     /*@Override   
-    public Object jmeClone() {
+    public Object CWClone() {
         ChaseCamera cc = new ChaseCamera(cam, inputManager);
         cc.target = target;
         cc.setMaxDistance(getMaxDistance());
@@ -629,7 +629,7 @@ public class BetterChaseCamera implements ActionListener, AnalogListener, Contro
      * @param ex the exporter
      * @throws IOException
      */
-    public void write(JmeExporter ex) throws IOException {
+    public void write(CWExporter ex) throws IOException {
         throw new UnsupportedOperationException("remove ChaseCamera before saving");
     }
 
@@ -638,7 +638,7 @@ public class BetterChaseCamera implements ActionListener, AnalogListener, Contro
      * @param im
      * @throws IOException
      */
-    public void read(JmeImporter im) throws IOException {
+    public void read(CWImporter im) throws IOException {
         InputCapsule ic = im.getCapsule(this);
         maxDistance = ic.readFloat("maxDistance", 40);
         minDistance = ic.readFloat("minDistance", 1);

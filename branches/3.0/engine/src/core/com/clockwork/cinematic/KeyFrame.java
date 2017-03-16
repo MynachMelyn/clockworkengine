@@ -34,13 +34,13 @@ public class KeyFrame implements Savable {
         return cinematicEvents.isEmpty();
     }
 
-    public void write(JmeExporter ex) throws IOException {
+    public void write(CWExporter ex) throws IOException {
         OutputCapsule oc = ex.getCapsule(this);
         oc.writeSavableArrayList((ArrayList) cinematicEvents, "cinematicEvents", null);
         oc.write(index, "index", 0);
     }
 
-    public void read(JmeImporter im) throws IOException {
+    public void read(CWImporter im) throws IOException {
         InputCapsule ic = im.getCapsule(this);
         cinematicEvents = ic.readSavableArrayList("cinematicEvents", null);
         index=ic.readInt("index", 0);

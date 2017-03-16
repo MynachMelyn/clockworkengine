@@ -239,7 +239,7 @@ public final class Skeleton implements Savable {
         return sb.toString();
     }
 
-    public void read(JmeImporter im) throws IOException {
+    public void read(CWImporter im) throws IOException {
         InputCapsule input = im.getCapsule(this);
 
         Savable[] boneRootsAsSav = input.readSavableArray("rootBones", null);
@@ -258,7 +258,7 @@ public final class Skeleton implements Savable {
         }
     }
 
-    public void write(JmeExporter ex) throws IOException {
+    public void write(CWExporter ex) throws IOException {
         OutputCapsule output = ex.getCapsule(this);
         output.write(rootBones, "rootBones", null);
         output.write(boneList, "boneList", null);

@@ -11,7 +11,7 @@ import java.util.logging.Logger;
 
 /**
  * stores transform info of a PhysicsNode in a threadsafe manner to
- * allow multithreaded access from the jme scenegraph and the bullet physicsspace
+ * allow multithreaded access from the CW scenegraph and the bullet physicsspace
  */
 public class RigidBodyMotionState {
     long motionStateId = 0;
@@ -31,7 +31,7 @@ public class RigidBodyMotionState {
     private native long createMotionState();
 
     /**
-     * applies the current transform to the given jme Node if the location has been updated on the physics side
+     * applies the current transform to the given CW Node if the location has been updated on the physics side
      * @param spatial
      */
     public boolean applyTransform(Spatial spatial) {

@@ -271,7 +271,7 @@ public final class LightList implements Iterable<Light>, Savable, Cloneable {
         }
     }
 
-    public void write(JmeExporter ex) throws IOException {
+    public void write(CWExporter ex) throws IOException {
         OutputCapsule oc = ex.getCapsule(this);
 //        oc.write(owner, "owner", null);
 
@@ -282,7 +282,7 @@ public final class LightList implements Iterable<Light>, Savable, Cloneable {
         oc.writeSavableArrayList(lights, "lights", null);
     }
 
-    public void read(JmeImporter im) throws IOException {
+    public void read(CWImporter im) throws IOException {
         InputCapsule ic = im.getCapsule(this);
 //        owner = (Spatial) ic.readSavable("owner", null);
 

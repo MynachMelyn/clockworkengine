@@ -6,7 +6,7 @@ import com.clockwork.math.Vector3f;
 import com.clockwork.scene.Geometry;
 import com.clockwork.scene.shape.Box;
 import com.clockwork.system.AppSettings;
-import com.clockwork.system.JmeCanvasContext;
+import com.clockwork.system.CWCanvasContext;
 import java.awt.Canvas;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
@@ -25,7 +25,7 @@ public class TestSafeCanvas extends SimpleApplication {
         app.createCanvas();
         app.startCanvas(true);
 
-        JmeCanvasContext context = (JmeCanvasContext) app.getContext();
+        CWCanvasContext context = (CWCanvasContext) app.getContext();
         Canvas canvas = context.getCanvas();
         canvas.setSize(settings.getWidth(), settings.getHeight());
 

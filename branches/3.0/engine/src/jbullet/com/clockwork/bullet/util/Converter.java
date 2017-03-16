@@ -13,7 +13,7 @@ import java.nio.FloatBuffer;
 
 /**
  * Nice convenience methods for conversion between javax.vecmath and com.clockwork.math
- * Objects, also some jme to jbullet mesh conversion.
+ * Objects, also some CW to jbullet mesh conversion.
  */
 public class Converter {
 
@@ -223,13 +223,13 @@ public class Converter {
     }
 
     public static Mesh convert(IndexedMesh mesh) {
-        Mesh jmeMesh = new Mesh();
+        Mesh CWMesh = new Mesh();
 
-        jmeMesh.setBuffer(Type.Index, 3, BufferUtils.createShortBuffer(mesh.numTriangles * 3));
-        jmeMesh.setBuffer(Type.Position, 3, BufferUtils.createFloatBuffer(mesh.numVertices * 3));
+        CWMesh.setBuffer(Type.Index, 3, BufferUtils.createShortBuffer(mesh.numTriangles * 3));
+        CWMesh.setBuffer(Type.Position, 3, BufferUtils.createFloatBuffer(mesh.numVertices * 3));
 
-        IndexBuffer indicess = jmeMesh.getIndexBuffer();
-        FloatBuffer vertices = jmeMesh.getFloatBuffer(Type.Position);
+        IndexBuffer indicess = CWMesh.getIndexBuffer();
+        FloatBuffer vertices = CWMesh.getFloatBuffer(Type.Position);
 
         for (int i = 0; i < mesh.numTriangles * 3; i++) {
             indicess.put(i, mesh.triangleIndexBase.getInt(i * 4));
@@ -238,11 +238,11 @@ public class Converter {
         for (int i = 0; i < mesh.numVertices * 3; i++) {
             vertices.put(i, mesh.vertexBase.getFloat(i * 4));
         }
-        jmeMesh.updateCounts();
-        jmeMesh.updateBound();
-        jmeMesh.getFloatBuffer(Type.Position).clear();
+        CWMesh.updateCounts();
+        CWMesh.updateBound();
+        CWMesh.getFloatBuffer(Type.Position).clear();
 
-        return jmeMesh;
+        return CWMesh;
     }
 
     public static Mesh convert(HeightfieldTerrainShape heightfieldShape) {

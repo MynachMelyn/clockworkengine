@@ -10,7 +10,7 @@ import java.util.logging.Logger;
 /**
  * This Object holds information about a jbullet CollisionShape to be able to reuse
  * CollisionShapes (as suggested in bullet manuals)
- * TODO: add static methods to create shapes from nodes (like jbullet-jme constructor)
+ * TODO: add static methods to create shapes from nodes (like jbullet-CW constructor)
  */
 public abstract class CollisionShape implements Savable {
 
@@ -76,13 +76,13 @@ public abstract class CollisionShape implements Savable {
     
     private native void setMargin(long objectId, float margin);
 
-    public void write(JmeExporter ex) throws IOException {
+    public void write(CWExporter ex) throws IOException {
         OutputCapsule capsule = ex.getCapsule(this);
         capsule.write(scale, "scale", new Vector3f(1, 1, 1));
         capsule.write(getMargin(), "margin", 0.0f);
     }
 
-    public void read(JmeImporter im) throws IOException {
+    public void read(CWImporter im) throws IOException {
         InputCapsule capsule = im.getCapsule(this);
         this.scale = (Vector3f) capsule.readSavable("scale", new Vector3f(1, 1, 1));
         this.margin = capsule.readFloat("margin", 0.0f);

@@ -6,8 +6,8 @@ import com.clockwork.app.Application;
 import com.clockwork.cinematic.Cinematic;
 import com.clockwork.cinematic.PlayState;
 import com.clockwork.export.InputCapsule;
-import com.clockwork.export.JmeExporter;
-import com.clockwork.export.JmeImporter;
+import com.clockwork.export.CWExporter;
+import com.clockwork.export.CWImporter;
 import com.clockwork.export.OutputCapsule;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -17,7 +17,7 @@ import java.util.List;
  * This call contains the basic behaviour of a cinematic event.
  * Every cinematic event must extend this class.
  * 
- * A cinematic event must be given an inital duration in seconds 
+ * A cinematic event must be given an initial duration in seconds 
  * (duration of the event at speed = 1). Default is 10 sec.
  */
 public abstract class AbstractCinematicEvent implements CinematicEvent {
@@ -35,7 +35,7 @@ public abstract class AbstractCinematicEvent implements CinematicEvent {
     protected List<CinematicEventListener> listeners;
 
     /**
-     * Contruct a cinematic event (empty constructor).
+     * Construct a cinematic event (empty constructor).
      */
     public AbstractCinematicEvent() {
     }
@@ -233,7 +233,7 @@ public abstract class AbstractCinematicEvent implements CinematicEvent {
      * @param ex exporter
      * @throws IOException 
      */
-    public void write(JmeExporter ex) throws IOException {
+    public void write(CWExporter ex) throws IOException {
         OutputCapsule oc = ex.getCapsule(this);
         oc.write(playState, "playState", PlayState.Stopped);
         oc.write(speed, "speed", 1);
@@ -246,7 +246,7 @@ public abstract class AbstractCinematicEvent implements CinematicEvent {
      * @param im importer
      * @throws IOException 
      */
-    public void read(JmeImporter im) throws IOException {
+    public void read(CWImporter im) throws IOException {
         InputCapsule ic = im.getCapsule(this);
         playState = ic.readEnum("playState", PlayState.class, PlayState.Stopped);
         speed = ic.readFloat("speed", 1);

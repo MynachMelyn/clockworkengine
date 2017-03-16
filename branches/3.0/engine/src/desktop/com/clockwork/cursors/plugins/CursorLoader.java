@@ -32,10 +32,10 @@ public class CursorLoader implements AssetLoader {
     /**
      * Loads and return a cursor file of one of the following format: .ani, .cur and .ico.
      * @param info The AssetInfo} describing the cursor file.
-     * @return A JmeCursor representation of the LWJGL's Cursor.
+     * @return A CWCursor representation of the LWJGL's Cursor.
      * @throws IOException if the file is not found.
      */
-    public JmeCursor load(AssetInfo info) throws IOException {
+    public CWCursor load(AssetInfo info) throws IOException {
 
         isIco = false;
         isAni = false;
@@ -62,7 +62,7 @@ public class CursorLoader implements AssetLoader {
         }
     }
 
-    private JmeCursor loadCursor(InputStream inStream) throws IOException {
+    private CWCursor loadCursor(InputStream inStream) throws IOException {
 
         byte[] icoimages = new byte[0]; // new byte [0] facilitates read()
 
@@ -171,7 +171,7 @@ public class CursorLoader implements AssetLoader {
                         }
                     }
                 }
-                return setJmeCursor(ciDat);
+                return setCWCursor(ciDat);
 
             } else if (riff == 0x58464952) {
                 throw new IllegalArgumentException("Big-Endian RIFX is not supported. Sorry.");
@@ -193,27 +193,27 @@ public class CursorLoader implements AssetLoader {
         CursorImageData cid = new CursorImageData(bi, 0, 0, 0, 0);
         cid.completeCursor();
 
-        return setJmeCursor(cid);
+        return setCWCursor(cid);
     }
 
-    private JmeCursor setJmeCursor(CursorImageData cid) {
-        JmeCursor jmeCursor = new JmeCursor();
+    private CWCursor setCWCursor(CursorImageData cid) {
+        CWCursor CWCursor = new CWCursor();
 
         // set cursor's params.
-        jmeCursor.setWidth(cid.width);
-        jmeCursor.setHeight(cid.height);
-        jmeCursor.setxHotSpot(cid.xHotSpot);
-        jmeCursor.setyHotSpot(cid.yHotSpot);
-        jmeCursor.setNumImages(cid.numImages);
-        jmeCursor.setImagesDelay(cid.imgDelay);
-        jmeCursor.setImagesData(cid.data);
+        CWCursor.setWidth(cid.width);
+        CWCursor.setHeight(cid.height);
+        CWCursor.setxHotSpot(cid.xHotSpot);
+        CWCursor.setyHotSpot(cid.yHotSpot);
+        CWCursor.setNumImages(cid.numImages);
+        CWCursor.setImagesDelay(cid.imgDelay);
+        CWCursor.setImagesData(cid.data);
 //        System.out.println("Width = " + cid.width);
 //        System.out.println("Height = " + cid.height);
 //        System.out.println("HSx = " + cid.xHotSpot);
 //        System.out.println("HSy = " + cid.yHotSpot);
 //        System.out.println("# img = " + cid.numImages);
 
-        return jmeCursor;
+        return CWCursor;
     }
 
     private BufferedImage[] parseICOImage(byte[] icoimage) throws IOException {

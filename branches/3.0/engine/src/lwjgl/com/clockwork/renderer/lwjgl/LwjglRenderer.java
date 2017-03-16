@@ -165,7 +165,7 @@ public class LwjglRenderer implements Renderer {
                     break;
                 }
 
-            // so that future OpenGL revisions wont break jme3
+            // so that future OpenGL revisions wont break CW
 
             // fall through intentional
             case 400:

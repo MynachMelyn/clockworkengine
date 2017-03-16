@@ -24,7 +24,7 @@ public class ThreadingManager {
 
     protected class LoadingThreadFactory implements ThreadFactory {
         public Thread newThread(Runnable r) {
-            Thread t = new Thread(r, "jME3-threadpool-" + (nextThreadId++));
+            Thread t = new Thread(r, "CW-threadpool-" + (nextThreadId++));
             t.setDaemon(true);
             t.setPriority(Thread.MIN_PRIORITY);
             return t;
@@ -49,7 +49,7 @@ public class ThreadingManager {
     }
 
     public static boolean isLoadingThread() {
-        return Thread.currentThread().getName().startsWith("jME3-threadpool");
+        return Thread.currentThread().getName().startsWith("CW-threadpool");
     }
 
 

@@ -2,8 +2,8 @@
 package com.clockwork.bullet.collision.shapes;
 
 import com.clockwork.export.InputCapsule;
-import com.clockwork.export.JmeExporter;
-import com.clockwork.export.JmeImporter;
+import com.clockwork.export.CWExporter;
+import com.clockwork.export.CWImporter;
 import com.clockwork.export.OutputCapsule;
 import com.clockwork.scene.Mesh;
 import com.clockwork.scene.VertexBuffer.Type;
@@ -33,7 +33,7 @@ public class HullCollisionShape extends CollisionShape {
     }
 
     @Override
-    public void write(JmeExporter ex) throws IOException {
+    public void write(CWExporter ex) throws IOException {
         super.write(ex);
 
         OutputCapsule capsule = ex.getCapsule(this);
@@ -41,7 +41,7 @@ public class HullCollisionShape extends CollisionShape {
     }
 
     @Override
-    public void read(JmeImporter im) throws IOException {
+    public void read(CWImporter im) throws IOException {
         super.read(im);
         InputCapsule capsule = im.getCapsule(this);
 

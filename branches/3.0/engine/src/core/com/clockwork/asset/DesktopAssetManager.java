@@ -30,7 +30,7 @@ import java.util.logging.Logger;
 
 /**
  * AssetManager is the primary method for managing and loading
- * assets inside jME.
+ * assets inside CW.
  *
  */
 public class DesktopAssetManager implements AssetManager {

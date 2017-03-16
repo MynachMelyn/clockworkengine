@@ -5,7 +5,7 @@ import checkers.quals.TypeQualifier;
 import java.lang.annotation.*;
 
 /**
- * This class contains the Annotation definitions for jME3. Mostly these are used
+ * This class contains the Annotation definitions for CW. Mostly these are used
  * for code error checking.
  */
 public class Annotations {

@@ -1,8 +1,8 @@
 
 package com.clockwork.terrain.geomipmap.lodcalc;
 
-import com.clockwork.export.JmeExporter;
-import com.clockwork.export.JmeImporter;
+import com.clockwork.export.CWExporter;
+import com.clockwork.export.CWImporter;
 import com.clockwork.math.FastMath;
 import com.clockwork.math.Vector3f;
 import com.clockwork.renderer.Camera;
@@ -109,11 +109,11 @@ public class PerspectiveLodCalculator implements LodCalculator {
         }
     }
 
-    public void write(JmeExporter ex) throws IOException {
+    public void write(CWExporter ex) throws IOException {
         
     }
 
-    public void read(JmeImporter im) throws IOException {
+    public void read(CWImporter im) throws IOException {
     }
 
     public boolean usesVariableLod() {

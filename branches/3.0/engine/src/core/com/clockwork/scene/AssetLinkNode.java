@@ -5,8 +5,8 @@ import com.clockwork.asset.AssetInfo;
 import com.clockwork.asset.AssetManager;
 import com.clockwork.asset.ModelKey;
 import com.clockwork.export.InputCapsule;
-import com.clockwork.export.JmeExporter;
-import com.clockwork.export.JmeImporter;
+import com.clockwork.export.CWExporter;
+import com.clockwork.export.CWImporter;
 import com.clockwork.export.OutputCapsule;
 import com.clockwork.export.binary.BinaryImporter;
 import com.clockwork.util.SafeArrayList;
@@ -116,7 +116,7 @@ public class AssetLinkNode extends Node {
     }
 
     @Override
-    public void read(JmeImporter e) throws IOException {
+    public void read(CWImporter e) throws IOException {
         super.read(e);
         InputCapsule capsule = e.getCapsule(this);
         BinaryImporter importer = BinaryImporter.getInstance();
@@ -142,7 +142,7 @@ public class AssetLinkNode extends Node {
     }
 
     @Override
-    public void write(JmeExporter e) throws IOException {
+    public void write(CWExporter e) throws IOException {
         SafeArrayList<Spatial> childs = children;
         children = new SafeArrayList<Spatial>(Spatial.class);
         super.write(e);

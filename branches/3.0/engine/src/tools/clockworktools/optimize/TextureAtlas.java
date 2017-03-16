@@ -346,7 +346,7 @@ public class TextureAtlas {
     private Image convertImageToAwt(Image source) {
         //use awt dependent classes without actual dependency via reflection
         try {
-            Class clazz = Class.forName("jme3tools.converters.ImageToAwt");
+            Class clazz = Class.forName("CWtools.converters.ImageToAwt");
             if (clazz == null) {
                 return null;
             }

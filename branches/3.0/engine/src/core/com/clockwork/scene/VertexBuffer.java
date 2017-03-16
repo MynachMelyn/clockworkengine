@@ -991,7 +991,7 @@ public class VertexBuffer extends NativeObject implements Savable, Cloneable {
         return ((long)OBJTYPE_VERTEXBUFFER << 32) | ((long)id);
     }
     
-    public void write(JmeExporter ex) throws IOException {
+    public void write(CWExporter ex) throws IOException {
         OutputCapsule oc = ex.getCapsule(this);
         oc.write(components, "components", 0);
         oc.write(usage, "usage", Usage.Dynamic);
@@ -1025,7 +1025,7 @@ public class VertexBuffer extends NativeObject implements Savable, Cloneable {
         }
     }
 
-    public void read(JmeImporter im) throws IOException {
+    public void read(CWImporter im) throws IOException {
         InputCapsule ic = im.getCapsule(this);
         components = ic.readInt("components", 0);
         usage = ic.readEnum("usage", Usage.class, Usage.Dynamic);

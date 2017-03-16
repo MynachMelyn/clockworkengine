@@ -3,7 +3,7 @@
 package com.clockwork.export.xml;
 
 import com.clockwork.export.FormatVersion;
-import com.clockwork.export.JmeExporter;
+import com.clockwork.export.CWExporter;
 import com.clockwork.export.OutputCapsule;
 import com.clockwork.export.Savable;
 import com.clockwork.export.SavableClassUtil;
@@ -20,7 +20,7 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
 /**
- * Part of the jME XML IO system as introduced in the google code jmexml project.
+ * Part of the CW XML IO system as introduced in the google code CWxml project.
  *
  */
 public class DOMOutputCapsule implements OutputCapsule {
@@ -28,10 +28,10 @@ public class DOMOutputCapsule implements OutputCapsule {
     private static final String dataAttributeName = "data";
     private Document doc;
     private Element currentElement;
-    private JmeExporter exporter;
+    private CWExporter exporter;
     private Map<Savable, Element> writtenSavables = new IdentityHashMap<Savable, Element>();
 
-    public DOMOutputCapsule(Document doc, JmeExporter exporter) {
+    public DOMOutputCapsule(Document doc, CWExporter exporter) {
         this.doc = doc;
         this.exporter = exporter;
         currentElement = null;
@@ -448,7 +448,7 @@ public class DOMOutputCapsule implements OutputCapsule {
         } else {
             el = appendElement(name);
             
-            // jME3 NEW: Append version number(s)
+            // CW NEW: Append version number(s)
             int[] versions = SavableClassUtil.getSavableVersions(object.getClass());
             StringBuilder sb = new StringBuilder();
             for (int i = 0; i < versions.length; i++){

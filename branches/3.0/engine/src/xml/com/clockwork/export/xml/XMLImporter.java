@@ -5,7 +5,7 @@ package com.clockwork.export.xml;
 import com.clockwork.asset.AssetInfo;
 import com.clockwork.asset.AssetManager;
 import com.clockwork.export.InputCapsule;
-import com.clockwork.export.JmeImporter;
+import com.clockwork.export.CWImporter;
 import com.clockwork.export.Savable;
 import java.io.File;
 import java.io.FileInputStream;
@@ -15,7 +15,7 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import org.xml.sax.SAXException;
 
-public class XMLImporter implements JmeImporter {
+public class XMLImporter implements CWImporter {
 
     private AssetManager assetManager;
     private DOMInputCapsule domIn;

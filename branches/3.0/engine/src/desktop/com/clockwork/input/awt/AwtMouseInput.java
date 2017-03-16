@@ -1,12 +1,12 @@
 
 package com.clockwork.input.awt;
 
-import com.clockwork.cursors.plugins.JmeCursor;
+import com.clockwork.cursors.plugins.CWCursor;
 import com.clockwork.input.MouseInput;
 import com.clockwork.input.RawInputListener;
 import com.clockwork.input.event.MouseButtonEvent;
 import com.clockwork.input.event.MouseMotionEvent;
-import com.clockwork.system.JmeSystem;
+import com.clockwork.system.CWSystem;
 import com.clockwork.system.Platform;
 import java.awt.*;
 import java.awt.event.*;
@@ -111,10 +111,10 @@ public class AwtMouseInput implements MouseInput, MouseListener, MouseWheelListe
     }
 
     public void setCursorVisible(boolean visible) {
-//        if(JmeSystem.getPlatform() != Platform.MacOSX32 &&
-//                JmeSystem.getPlatform() != Platform.MacOSX64 &&
-//                JmeSystem.getPlatform() != Platform.MacOSX_PPC32 &&
-//                JmeSystem.getPlatform() != Platform.MacOSX_PPC64){
+//        if(CWSystem.getPlatform() != Platform.MacOSX32 &&
+//                CWSystem.getPlatform() != Platform.MacOSX64 &&
+//                CWSystem.getPlatform() != Platform.MacOSX_PPC32 &&
+//                CWSystem.getPlatform() != Platform.MacOSX_PPC64){
         if (this.visible != visible) {
             lastKnownLocation.x = lastKnownLocation.y = 0;
 
@@ -190,12 +190,12 @@ public class AwtMouseInput implements MouseInput, MouseListener, MouseWheelListe
     }
 
     public void mouseClicked(MouseEvent awtEvt) {
-//        MouseButtonEvent evt = new MouseButtonEvent(getJMEButtonIndex(arg0), false);
+//        MouseButtonEvent evt = new MouseButtonEvent(getCWButtonIndex(arg0), false);
 //        listener.onMouseButtonEvent(evt);
     }
 
     public void mousePressed(MouseEvent awtEvt) {
-        MouseButtonEvent evt = new MouseButtonEvent(getJMEButtonIndex(awtEvt), true, awtEvt.getX(), awtEvt.getY());
+        MouseButtonEvent evt = new MouseButtonEvent(getCWButtonIndex(awtEvt), true, awtEvt.getX(), awtEvt.getY());
         evt.setTime(awtEvt.getWhen());
         synchronized (eventQueue) {
             eventQueue.add(evt);
@@ -203,7 +203,7 @@ public class AwtMouseInput implements MouseInput, MouseListener, MouseWheelListe
     }
 
     public void mouseReleased(MouseEvent awtEvt) {
-        MouseButtonEvent evt = new MouseButtonEvent(getJMEButtonIndex(awtEvt), false, awtEvt.getX(), awtEvt.getY());
+        MouseButtonEvent evt = new MouseButtonEvent(getCWButtonIndex(awtEvt), false, awtEvt.getX(), awtEvt.getY());
         evt.setTime(awtEvt.getWhen());
         synchronized (eventQueue) {
             eventQueue.add(evt);
@@ -271,7 +271,7 @@ public class AwtMouseInput implements MouseInput, MouseListener, MouseWheelListe
         }
     }
 
-    private int getJMEButtonIndex(MouseEvent awtEvt) {
+    private int getCWButtonIndex(MouseEvent awtEvt) {
         int index;
         switch (awtEvt.getButton()) {
             default:
@@ -288,6 +288,6 @@ public class AwtMouseInput implements MouseInput, MouseListener, MouseWheelListe
         return index;
     }
 
-    public void setNativeCursor(JmeCursor cursor) {
+    public void setNativeCursor(CWCursor cursor) {
     }
 }

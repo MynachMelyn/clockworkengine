@@ -1,8 +1,8 @@
 
 package com.clockwork.scene;
 
-import com.clockwork.export.JmeExporter;
-import com.clockwork.export.JmeImporter;
+import com.clockwork.export.CWExporter;
+import com.clockwork.export.CWImporter;
 import com.clockwork.light.Light;
 import com.clockwork.scene.control.LightControl;
 import com.clockwork.scene.control.LightControl.ControlDirection;
@@ -64,13 +64,13 @@ public class LightNode extends Node {
     }
     
     @Override
-    public void read(JmeImporter im) throws IOException {
+    public void read(CWImporter im) throws IOException {
         super.read(im);
         lightControl = (LightControl)im.getCapsule(this).readSavable("lightControl", null);
     }
 
     @Override
-    public void write(JmeExporter ex) throws IOException {
+    public void write(CWExporter ex) throws IOException {
         super.write(ex);
         ex.getCapsule(this).write(lightControl, "lightControl", null);
     }

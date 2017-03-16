@@ -89,7 +89,7 @@ public abstract class PhysicsJoint implements Savable {
         getBodyB().removeJoint(this);
     }
 
-    public void write(JmeExporter ex) throws IOException {
+    public void write(CWExporter ex) throws IOException {
         OutputCapsule capsule = ex.getCapsule(this);
         capsule.write(nodeA, "nodeA", null);
         capsule.write(nodeB, "nodeB", null);
@@ -97,7 +97,7 @@ public abstract class PhysicsJoint implements Savable {
         capsule.write(pivotB, "pivotB", null);
     }
 
-    public void read(JmeImporter im) throws IOException {
+    public void read(CWImporter im) throws IOException {
         InputCapsule capsule = im.getCapsule(this);
         this.nodeA = ((PhysicsRigidBody) capsule.readSavable("nodeA", new PhysicsRigidBody()));
         this.nodeB = (PhysicsRigidBody) capsule.readSavable("nodeB", new PhysicsRigidBody());

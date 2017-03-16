@@ -5,8 +5,8 @@ import com.clockwork.bullet.PhysicsSpace;
 import com.clockwork.bullet.collision.shapes.CollisionShape;
 import com.clockwork.bullet.objects.PhysicsCharacter;
 import com.clockwork.export.InputCapsule;
-import com.clockwork.export.JmeExporter;
-import com.clockwork.export.JmeImporter;
+import com.clockwork.export.CWExporter;
+import com.clockwork.export.CWImporter;
 import com.clockwork.export.OutputCapsule;
 import com.clockwork.math.Quaternion;
 import com.clockwork.math.Vector3f;
@@ -165,7 +165,7 @@ public class CharacterControl extends PhysicsCharacter implements PhysicsControl
     }
 
     @Override
-    public void write(JmeExporter ex) throws IOException {
+    public void write(CWExporter ex) throws IOException {
         super.write(ex);
         OutputCapsule oc = ex.getCapsule(this);
         oc.write(enabled, "enabled", true);
@@ -176,7 +176,7 @@ public class CharacterControl extends PhysicsCharacter implements PhysicsControl
     }
 
     @Override
-    public void read(JmeImporter im) throws IOException {
+    public void read(CWImporter im) throws IOException {
         super.read(im);
         InputCapsule ic = im.getCapsule(this);
         enabled = ic.readBoolean("enabled", true);

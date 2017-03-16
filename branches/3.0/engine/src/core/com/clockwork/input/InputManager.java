@@ -2,7 +2,7 @@
 package com.clockwork.input;
 
 import com.clockwork.app.Application;
-import com.clockwork.cursors.plugins.JmeCursor;
+import com.clockwork.cursors.plugins.CWCursor;
 import com.clockwork.input.controls.*;
 import com.clockwork.input.event.*;
 import com.clockwork.math.FastMath;
@@ -378,12 +378,12 @@ public class InputManager implements RawInputListener {
      * Set cursor to null to show default system cursor.
      * To hide the cursor completely, use #setCursorVisible(boolean) }.
      *
-     * @param jmeCursor The cursor to set, or null to reset to system cursor.
+     * @param CWCursor The cursor to set, or null to reset to system cursor.
      *
-     * see JmeCursor
+     * see CWCursor
      */
-    public void setMouseCursor(JmeCursor jmeCursor) {
-        mouse.setNativeCursor(jmeCursor);
+    public void setMouseCursor(CWCursor CWCursor) {
+        mouse.setNativeCursor(CWCursor);
     }
 
     /**

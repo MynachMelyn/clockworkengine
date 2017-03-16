@@ -169,7 +169,7 @@ public class ImageToAwt {
 
 
     /**
-     * Convert an AWT image to jME image.
+     * Convert an AWT image to CW image.
      */
     public static void convert(BufferedImage image, Format format, ByteBuffer buf){
         DecodeParams p = params.get(format);

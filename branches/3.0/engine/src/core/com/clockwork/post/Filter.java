@@ -289,7 +289,7 @@ public abstract class Filter implements Savable {
      * @param ex
      * @throws IOException
      */
-    public void write(JmeExporter ex) throws IOException {
+    public void write(CWExporter ex) throws IOException {
         OutputCapsule oc = ex.getCapsule(this);
         oc.write(name, "name", "");
         oc.write(enabled, "enabled", true);
@@ -300,7 +300,7 @@ public abstract class Filter implements Savable {
      * is loaded else only basic properties of the filter will be loaded
      * This method should always begin by super.read(im);
      */
-    public void read(JmeImporter im) throws IOException {
+    public void read(CWImporter im) throws IOException {
         InputCapsule ic = im.getCapsule(this);
         name = ic.readString("name", "");
         enabled = ic.readBoolean("enabled", true);

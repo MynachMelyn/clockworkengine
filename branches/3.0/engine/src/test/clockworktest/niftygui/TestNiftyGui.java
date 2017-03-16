@@ -5,7 +5,7 @@ package clockworktest.niftygui;
 import com.clockwork.app.SimpleApplication;
 import com.clockwork.material.Material;
 import com.clockwork.math.Vector3f;
-import com.clockwork.niftygui.NiftyJmeDisplay;
+import com.clockwork.niftygui.NiftyCWDisplay;
 import com.clockwork.scene.Geometry;
 import com.clockwork.scene.shape.Box;
 import de.lessvoid.nifty.Nifty;
@@ -30,12 +30,12 @@ public class TestNiftyGui extends SimpleApplication implements ScreenController 
         geom.setMaterial(mat);
         rootNode.attachChild(geom);
 
-        NiftyJmeDisplay niftyDisplay = new NiftyJmeDisplay(assetManager,
+        NiftyCWDisplay niftyDisplay = new NiftyCWDisplay(assetManager,
                                                           inputManager,
                                                           audioRenderer,
                                                           guiViewPort);
         nifty = niftyDisplay.getNifty();
-        nifty.fromXml("Interface/Nifty/HelloJme.xml", "start", this);
+        nifty.fromXml("Interface/Nifty/HelloCW.xml", "start", this);
 
         // attach the nifty display to the gui view port as a processor
         guiViewPort.addProcessor(niftyDisplay);

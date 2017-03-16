@@ -3,9 +3,9 @@
 package com.clockwork.system.lwjgl;
 
 import com.clockwork.system.AppSettings;
-import com.clockwork.system.JmeCanvasContext;
-import com.clockwork.system.JmeContext.Type;
-import com.clockwork.system.JmeSystem;
+import com.clockwork.system.CWCanvasContext;
+import com.clockwork.system.CWContext.Type;
+import com.clockwork.system.CWSystem;
 import com.clockwork.system.Platform;
 import java.awt.Canvas;
 import java.util.logging.Level;
@@ -18,7 +18,7 @@ import org.lwjgl.opengl.Display;
 import org.lwjgl.opengl.Pbuffer;
 import org.lwjgl.opengl.PixelFormat;
 
-public class LwjglCanvas extends LwjglAbstractDisplay implements JmeCanvasContext {
+public class LwjglCanvas extends LwjglAbstractDisplay implements CWCanvasContext {
 
     protected static final int TASK_NOTHING = 0,
                                TASK_DESTROY_DISPLAY = 1,
@@ -26,7 +26,7 @@ public class LwjglCanvas extends LwjglAbstractDisplay implements JmeCanvasContex
                                TASK_COMPLETE = 3;
     
 //    protected static final boolean USE_SHARED_CONTEXT =
-//                Boolean.parseBoolean(System.getProperty("jme3.canvas.sharedctx", "true"));
+//                Boolean.parseBoolean(System.getProperty("CW.canvas.sharedctx", "true"));
     
     protected static final boolean USE_SHARED_CONTEXT = false;
     
@@ -366,8 +366,8 @@ public class LwjglCanvas extends LwjglAbstractDisplay implements JmeCanvasContex
                     // freezes the application.
                     // On Mac it freezes the application.
                     // On Linux it fixes a crash with X Window System.
-                    if (JmeSystem.getPlatform() == Platform.Windows32
-                     || JmeSystem.getPlatform() == Platform.Windows64){
+                    if (CWSystem.getPlatform() == Platform.Windows32
+                     || CWSystem.getPlatform() == Platform.Windows64){
                         //Display.setParent(null);
                     }
                 //} catch (LWJGLException ex) {

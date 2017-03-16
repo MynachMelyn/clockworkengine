@@ -623,7 +623,7 @@ public final class Bone implements Savable {
 
     @Override
     @SuppressWarnings("unchecked")
-    public void read(JmeImporter im) throws IOException {
+    public void read(CWImporter im) throws IOException {
         InputCapsule input = im.getCapsule(this);
 
         name = input.readString("name", null);
@@ -647,7 +647,7 @@ public final class Bone implements Savable {
     }
 
     @Override
-    public void write(JmeExporter ex) throws IOException {
+    public void write(CWExporter ex) throws IOException {
         OutputCapsule output = ex.getCapsule(this);
 
         output.write(name, "name", null);

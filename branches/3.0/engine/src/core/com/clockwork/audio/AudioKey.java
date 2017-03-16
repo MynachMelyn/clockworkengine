@@ -6,8 +6,8 @@ import com.clockwork.asset.AssetProcessor;
 import com.clockwork.asset.cache.AssetCache;
 import com.clockwork.asset.cache.WeakRefAssetCache;
 import com.clockwork.export.InputCapsule;
-import com.clockwork.export.JmeExporter;
-import com.clockwork.export.JmeImporter;
+import com.clockwork.export.CWExporter;
+import com.clockwork.export.CWImporter;
 import com.clockwork.export.OutputCapsule;
 import java.io.IOException;
 
@@ -131,7 +131,7 @@ public class AudioKey extends AssetKey<AudioData> {
     }
     
     @Override
-    public void write(JmeExporter ex) throws IOException{
+    public void write(CWExporter ex) throws IOException{
         super.write(ex);
         OutputCapsule oc = ex.getCapsule(this);
         oc.write(stream, "do_stream", false);
@@ -139,7 +139,7 @@ public class AudioKey extends AssetKey<AudioData> {
     }
 
     @Override
-    public void read(JmeImporter im) throws IOException{
+    public void read(CWImporter im) throws IOException{
         super.read(im);
         InputCapsule ic = im.getCapsule(this);
         stream = ic.readBoolean("do_stream", false);

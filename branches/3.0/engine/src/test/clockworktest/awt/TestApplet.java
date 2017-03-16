@@ -5,8 +5,8 @@ package clockworktest.awt;
 import com.clockwork.app.Application;
 import com.clockwork.app.SimpleApplication;
 import com.clockwork.system.AppSettings;
-import com.clockwork.system.JmeCanvasContext;
-import com.clockwork.system.JmeSystem;
+import com.clockwork.system.CWCanvasContext;
+import com.clockwork.system.CWSystem;
 import java.applet.Applet;
 import java.awt.Canvas;
 import java.awt.Graphics;
@@ -15,7 +15,7 @@ import javax.swing.SwingUtilities;
 
 public class TestApplet extends Applet {
 
-    private static JmeCanvasContext context;
+    private static CWCanvasContext context;
     private static Application app;
     private static Canvas canvas;
     private static TestApplet applet;
@@ -29,7 +29,7 @@ public class TestApplet extends Applet {
         settings.setHeight(480);
 //        settings.setRenderer(AppSettings.JOGL);
 
-        JmeSystem.setLowPermissions(true);
+        CWSystem.setLowPermissions(true);
 
         try{
             Class<? extends Application> clazz = (Class<? extends Application>) Class.forName(appClass);
@@ -45,7 +45,7 @@ public class TestApplet extends Applet {
         app.setSettings(settings);
         app.createCanvas();
         
-        context = (JmeCanvasContext) app.getContext();
+        context = (CWCanvasContext) app.getContext();
         canvas = context.getCanvas();
         canvas.setSize(settings.getWidth(), settings.getHeight());
     }
@@ -82,7 +82,7 @@ public class TestApplet extends Applet {
     @Override
     public void init(){
         applet = this;
-        createCanvas("jme3test.model.shape.TestBox");
+        createCanvas("CWtest.model.shape.TestBox");
         startApp();
         app.setPauseOnLostFocus(false);
         System.out.println("applet:init");

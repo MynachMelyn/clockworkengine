@@ -2,11 +2,11 @@
 package com.clockwork.texture.image;
 
 import com.clockwork.math.ColorRGBA;
-import com.clockwork.system.JmeSystem;
+import com.clockwork.system.CWSystem;
 import com.clockwork.texture.Image;
 
 /**
- * Utility class for reading and writing from jME3 Image images}.
+ * Utility class for reading and writing from CW Image images}.
  * 
  * Allows directly manipulating pixels of the image by writing and 
  * reading ColorRGBA colors} at any coordinate, without
@@ -43,7 +43,7 @@ public abstract class ImageRaster {
      * arrays or cubemaps.
      */
     public static ImageRaster create(Image image, int slices) {
-        return JmeSystem.createImageRaster(image, slices);
+        return CWSystem.createImageRaster(image, slices);
     }
     
     /**
@@ -55,7 +55,7 @@ public abstract class ImageRaster {
         if (image.getData().size() > 1) {
             throw new IllegalStateException("Use constructor that takes slices argument to read from multislice image");
         }
-        return JmeSystem.createImageRaster(image, 0);
+        return CWSystem.createImageRaster(image, 0);
     }
     
     public ImageRaster() {

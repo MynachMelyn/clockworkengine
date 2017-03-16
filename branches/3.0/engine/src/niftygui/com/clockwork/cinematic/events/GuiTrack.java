@@ -3,8 +3,8 @@ package com.clockwork.cinematic.events;
 
 import com.clockwork.animation.LoopMode;
 import com.clockwork.export.InputCapsule;
-import com.clockwork.export.JmeExporter;
-import com.clockwork.export.JmeImporter;
+import com.clockwork.export.CWExporter;
+import com.clockwork.export.CWImporter;
 import com.clockwork.export.OutputCapsule;
 import de.lessvoid.nifty.Nifty;
 import de.lessvoid.nifty.screen.NullScreen;
@@ -75,14 +75,14 @@ public class GuiTrack extends AbstractCinematicEvent {
     }
 
     @Override
-    public void write(JmeExporter ex) throws IOException {
+    public void write(CWExporter ex) throws IOException {
         super.write(ex);
         OutputCapsule oc = ex.getCapsule(this);
         oc.write(screen, "screen", "");
     }
 
     @Override
-    public void read(JmeImporter im) throws IOException {
+    public void read(CWImporter im) throws IOException {
         super.read(im);
         InputCapsule ic = im.getCapsule(this);
         screen = ic.readString("screen", "");

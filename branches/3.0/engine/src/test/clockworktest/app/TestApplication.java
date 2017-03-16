@@ -4,7 +4,7 @@ package clockworktest.app;
 
 import com.clockwork.app.Application;
 import com.clockwork.system.AppSettings;
-import com.clockwork.system.JmeContext.Type;
+import com.clockwork.system.CWContext.Type;
 
 /**
  * Test Application functionality, such as create, restart, destroy, etc.

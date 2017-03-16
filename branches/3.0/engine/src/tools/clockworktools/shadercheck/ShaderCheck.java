@@ -10,7 +10,7 @@ import com.clockwork.shader.DefineList;
 import com.clockwork.shader.Shader;
 import com.clockwork.shader.ShaderKey;
 import com.clockwork.shader.plugins.GLSLLoader;
-import com.clockwork.system.JmeSystem;
+import com.clockwork.system.CWSystem;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -25,7 +25,7 @@ public class ShaderCheck {
     };
     
     private static void initAssetManager(){
-        assetManager = JmeSystem.newAssetManager();
+        assetManager = CWSystem.newAssetManager();
         assetManager.registerLocator(".", FileLocator.class);
         assetManager.registerLocator("/", ClasspathLocator.class);
         assetManager.registerLoader(J3MLoader.class, "j3m");

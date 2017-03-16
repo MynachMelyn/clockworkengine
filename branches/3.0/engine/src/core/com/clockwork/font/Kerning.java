@@ -29,13 +29,13 @@ public class Kerning implements Savable {
         this.amount = amount;
     }
 
-    public void write(JmeExporter ex) throws IOException {
+    public void write(CWExporter ex) throws IOException {
         OutputCapsule oc = ex.getCapsule(this);
         oc.write(second, "second", 0);
         oc.write(amount, "amount", 0);
     }
 
-    public void read(JmeImporter im) throws IOException {
+    public void read(CWImporter im) throws IOException {
         InputCapsule ic = im.getCapsule(this);
         second = ic.readInt("second", 0);
         amount = ic.readInt("amount", 0);

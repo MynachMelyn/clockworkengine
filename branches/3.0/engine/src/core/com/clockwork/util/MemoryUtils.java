@@ -9,10 +9,6 @@ import javax.management.MBeanServer;
 import javax.management.MalformedObjectNameException;
 import javax.management.ObjectName;
 
-/**
- * See thread http://jmonkeyengine.org/forum/topic/monitor-direct-memory-usage-in-your-app/#post-205999
- * 
- */
 public class MemoryUtils {
     private static MBeanServer mbeans = ManagementFactory.getPlatformMBeanServer();
     private static ObjectName directPool;
@@ -56,7 +52,6 @@ public class MemoryUtils {
     /**
      * 
      * @return Should return the total direct memory available, result seem off
-     * see post http://jmonkeyengine.org/forum/topic/monitor-direct-memory-usage-in-your-app/#post-205999
      */
     public static long getDirectMemoryTotalCapacity() {
         try {

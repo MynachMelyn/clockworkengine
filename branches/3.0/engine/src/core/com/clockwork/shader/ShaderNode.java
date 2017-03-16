@@ -2,8 +2,8 @@
 package com.clockwork.shader;
 
 import com.clockwork.export.InputCapsule;
-import com.clockwork.export.JmeExporter;
-import com.clockwork.export.JmeImporter;
+import com.clockwork.export.CWExporter;
+import com.clockwork.export.CWImporter;
 import com.clockwork.export.OutputCapsule;
 import com.clockwork.export.Savable;
 import java.io.IOException;
@@ -19,7 +19,7 @@ import java.util.List;
  * output variables. This node can be activated based on a condition, and has
  * input and ouput mapping.
  *
- * This class is not intended to be used by JME users directly. It's the
+ * This class is not intended to be used by CW users directly. It's the
  * stucture for loading shader nodes from a J3md ùaterial definition file
  *
  * 
@@ -142,13 +142,13 @@ public class ShaderNode implements Savable {
     }
 
     /**
-     * jme seralization
+     * CW seralization
      *
      * @param ex the exporter
      * @throws IOException
      */
     @Override
-    public void write(JmeExporter ex) throws IOException {
+    public void write(CWExporter ex) throws IOException {
         OutputCapsule oc = (OutputCapsule) ex.getCapsule(this);
         oc.write(name, "name", "");
         oc.write(definition, "definition", null);
@@ -158,13 +158,13 @@ public class ShaderNode implements Savable {
     }
 
     /**
-     * jme seralization 
+     * CW seralization 
      *
      * @param im the importer
      * @throws IOException
      */
     @Override
-    public void read(JmeImporter im) throws IOException {
+    public void read(CWImporter im) throws IOException {
         InputCapsule ic = (InputCapsule) im.getCapsule(this);
         name = ic.readString("name", "");
         definition = (ShaderNodeDefinition) ic.readSavable("definition", null);

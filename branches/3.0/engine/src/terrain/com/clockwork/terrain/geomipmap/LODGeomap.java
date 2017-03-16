@@ -1,8 +1,8 @@
 
 package com.clockwork.terrain.geomipmap;
 
-import com.clockwork.export.JmeExporter;
-import com.clockwork.export.JmeImporter;
+import com.clockwork.export.CWExporter;
+import com.clockwork.export.CWImporter;
 import com.clockwork.math.FastMath;
 import com.clockwork.math.Triangle;
 import com.clockwork.math.Vector2f;
@@ -1165,12 +1165,12 @@ public class LODGeomap extends GeoMap {
     }
 
     @Override
-    public void write(JmeExporter ex) throws IOException {
+    public void write(CWExporter ex) throws IOException {
         super.write(ex);
     }
 
     @Override
-    public void read(JmeImporter im) throws IOException {
+    public void read(CWImporter im) throws IOException {
         super.read(im);
     }
 }

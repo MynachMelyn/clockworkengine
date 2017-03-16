@@ -137,14 +137,14 @@ public final class Rectangle implements Savable, Cloneable, java.io.Serializable
         return result;
     }
 
-    public void write(JmeExporter e) throws IOException {
+    public void write(CWExporter e) throws IOException {
         OutputCapsule capsule = e.getCapsule(this);
         capsule.write(a, "a", Vector3f.ZERO);
         capsule.write(b, "b", Vector3f.ZERO);
         capsule.write(c, "c", Vector3f.ZERO);
     }
 
-    public void read(JmeImporter e) throws IOException {
+    public void read(CWImporter e) throws IOException {
         InputCapsule capsule = e.getCapsule(this);
         a = (Vector3f) capsule.readSavable("a", Vector3f.ZERO.clone());
         b = (Vector3f) capsule.readSavable("b", Vector3f.ZERO.clone());

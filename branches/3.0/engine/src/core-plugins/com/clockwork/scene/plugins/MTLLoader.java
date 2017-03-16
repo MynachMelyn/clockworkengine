@@ -246,7 +246,7 @@ public class MTLLoader implements AssetLoader {
                     break;
             }
         }else if (cmd.equals("ke") || cmd.equals("ni")){
-            // Ni: index of refraction - unsupported in jME
+            // Ni: index of refraction - unsupported in CW
             // Ke: emission color
             return skipLine();
         }else{

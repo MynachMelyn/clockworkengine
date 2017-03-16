@@ -106,12 +106,12 @@ public class AwtKeyInput implements KeyInput, KeyListener {
     }
 
     /**
-     * convertJmeCode converts KeyInput key codes to AWT key codes.
+     * convertCWCode converts KeyInput key codes to AWT key codes.
      *
-     * @param key jme KeyInput key code
+     * @param key CW KeyInput key code
      * @return awt KeyEvent key code
      */
-    public static int convertJmeCode( int key ) {
+    public static int convertCWCode( int key ) {
         switch ( key ) {
             case KEY_ESCAPE:
                 return KeyEvent.VK_ESCAPE;
@@ -348,7 +348,7 @@ public class AwtKeyInput implements KeyInput, KeyListener {
      * convertAwtKey converts AWT key codes to KeyInput key codes.
      *
      * @param key awt KeyEvent key code
-     * @return jme KeyInput key code
+     * @return CW KeyInput key code
      */
     public static int convertAwtKey(int key) {
         switch ( key ) {

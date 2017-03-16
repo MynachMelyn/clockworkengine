@@ -21,7 +21,7 @@ import java.util.List;
 
 /**
  * AssetManager provides an interface for managing the data assets
- * of a jME3 application.
+ * of a CW application.
  * 
  * The asset manager provides a means to register AssetLocator}s,
  * which are used to find asset data on disk, network, or other file system.
@@ -275,7 +275,7 @@ public interface AssetManager {
 
     /**
      * Loads a 3D model with a ModelKey. 
-     * Models can be jME3 object files (J3O) or OgreXML/OBJ files.
+     * Models can be CW object files (J3O) or OgreXML/OBJ files.
      * @param key Asset key of the model to load
      * @return The model that was loaded
      *
@@ -284,7 +284,7 @@ public interface AssetManager {
     public Spatial loadModel(ModelKey key);
 
     /**
-     * Loads a 3D model. Models can be jME3 object files (J3O) or
+     * Loads a 3D model. Models can be CW object files (J3O) or
      * OgreXML/OBJ files.
      * @param name Asset name of the model to load
      * @return The model that was loaded

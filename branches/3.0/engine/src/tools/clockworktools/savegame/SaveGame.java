@@ -5,7 +5,7 @@ import com.clockwork.asset.AssetManager;
 import com.clockwork.export.Savable;
 import com.clockwork.export.binary.BinaryExporter;
 import com.clockwork.export.binary.BinaryImporter;
-import com.clockwork.system.JmeSystem;
+import com.clockwork.system.CWSystem;
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.File;
@@ -31,7 +31,7 @@ public class SaveGame {
      * @param data The Savable to save
      */
     public static void saveGame(String gamePath, String dataName, Savable data) {
-        saveGame(gamePath, dataName, data, JmeSystem.StorageFolderType.External);
+        saveGame(gamePath, dataName, data, CWSystem.StorageFolderType.External);
     }
 
     /**
@@ -41,16 +41,16 @@ public class SaveGame {
      * @param data The Savable to save
      * @param storageType The specific type of folder to use to save the data
      */
-    public static void saveGame(String gamePath, String dataName, Savable data, JmeSystem.StorageFolderType storageType) {
+    public static void saveGame(String gamePath, String dataName, Savable data, CWSystem.StorageFolderType storageType) {
         if (storageType == null) {
             Logger.getLogger(SaveGame.class.getName()).log(Level.SEVERE, "Base Storage Folder Type is null, using External!");
-            storageType = JmeSystem.StorageFolderType.External;
+            storageType = CWSystem.StorageFolderType.External;
         }
 
         BinaryExporter ex = BinaryExporter.getInstance();
         OutputStream os = null;
         try {
-            File baseFolder = JmeSystem.getStorageFolder(storageType);
+            File baseFolder = CWSystem.getStorageFolder(storageType);
             if (baseFolder == null) {
                 Logger.getLogger(SaveGame.class.getName()).log(Level.SEVERE, "Error creating save file!");
                 throw new IllegalStateException("SaveGame dataset cannot be created");
@@ -94,7 +94,7 @@ public class SaveGame {
      * @return The savable that was saved
      */
     public static Savable loadGame(String gamePath, String dataName) {
-        return loadGame(gamePath, dataName, null, JmeSystem.StorageFolderType.External);
+        return loadGame(gamePath, dataName, null, CWSystem.StorageFolderType.External);
     }
 
     /**
@@ -104,7 +104,7 @@ public class SaveGame {
      * @param storageType The specific type of folder to use to save the data
      * @return The savable that was saved
      */
-    public static Savable loadGame(String gamePath, String dataName, JmeSystem.StorageFolderType storageType) {
+    public static Savable loadGame(String gamePath, String dataName, CWSystem.StorageFolderType storageType) {
         return loadGame(gamePath, dataName, null, storageType);
     }
 
@@ -116,7 +116,7 @@ public class SaveGame {
      * @return The savable that was saved or null if none was found
      */
     public static Savable loadGame(String gamePath, String dataName, AssetManager manager) {
-        return loadGame(gamePath, dataName, manager, JmeSystem.StorageFolderType.External);
+        return loadGame(gamePath, dataName, manager, CWSystem.StorageFolderType.External);
     }
 
     /**
@@ -127,16 +127,16 @@ public class SaveGame {
      * @param storageType The specific type of folder to use to save the data
      * @return The savable that was saved or null if none was found
      */
-    public static Savable loadGame(String gamePath, String dataName, AssetManager manager, JmeSystem.StorageFolderType storageType) {
+    public static Savable loadGame(String gamePath, String dataName, AssetManager manager, CWSystem.StorageFolderType storageType) {
         if (storageType == null) {
             Logger.getLogger(SaveGame.class.getName()).log(Level.SEVERE, "Base Storage Folder Type is null, using External!");
-            storageType = JmeSystem.StorageFolderType.External;
+            storageType = CWSystem.StorageFolderType.External;
         }
 
         InputStream is = null;
         Savable sav = null;
         try {
-            File baseFolder = JmeSystem.getStorageFolder(storageType);
+            File baseFolder = CWSystem.getStorageFolder(storageType);
             if (baseFolder == null) {
                 Logger.getLogger(SaveGame.class.getName()).log(Level.SEVERE, "Error reading base storage folder!");
                 return null;

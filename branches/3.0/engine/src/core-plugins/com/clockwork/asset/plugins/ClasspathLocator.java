@@ -2,7 +2,7 @@
 package com.clockwork.asset.plugins;
 
 import com.clockwork.asset.*;
-import com.clockwork.system.JmeSystem;
+import com.clockwork.system.CWSystem;
 import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -44,7 +44,7 @@ public class ClasspathLocator implements AssetLocator {
 //            name = root + name;
 //        }
 
-        if (JmeSystem.isLowPermissions()){
+        if (CWSystem.isLowPermissions()){
             url = ClasspathLocator.class.getResource("/" + name);
         }else{
             url = Thread.currentThread().getContextClassLoader().getResource(name);

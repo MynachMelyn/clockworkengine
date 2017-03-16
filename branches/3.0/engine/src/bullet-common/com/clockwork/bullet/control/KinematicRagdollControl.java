@@ -18,8 +18,8 @@ import com.clockwork.bullet.control.ragdoll.RagdollUtils;
 import com.clockwork.bullet.joints.SixDofJoint;
 import com.clockwork.bullet.objects.PhysicsRigidBody;
 import com.clockwork.export.InputCapsule;
-import com.clockwork.export.JmeExporter;
-import com.clockwork.export.JmeImporter;
+import com.clockwork.export.CWExporter;
+import com.clockwork.export.CWImporter;
 import com.clockwork.export.OutputCapsule;
 import com.clockwork.export.Savable;
 import com.clockwork.math.Quaternion;
@@ -109,7 +109,7 @@ public class KinematicRagdollControl extends AbstractPhysicsControl implements P
             return rigidBody;
         }
 
-        public void write(JmeExporter ex) throws IOException {
+        public void write(CWExporter ex) throws IOException {
             OutputCapsule oc = ex.getCapsule(this);
             oc.write(rigidBody, "rigidBody", null);
             oc.write(bone, "bone", null);
@@ -119,7 +119,7 @@ public class KinematicRagdollControl extends AbstractPhysicsControl implements P
             oc.write(startBlendingPos, "startBlendingPos", new Vector3f());
         }
 
-        public void read(JmeImporter im) throws IOException {
+        public void read(CWImporter im) throws IOException {
             InputCapsule ic = im.getCapsule(this);
             rigidBody = (PhysicsRigidBody) ic.readSavable("rigidBody", null);
             bone = (Bone) ic.readSavable("bone", null);
@@ -781,7 +781,7 @@ public class KinematicRagdollControl extends AbstractPhysicsControl implements P
      * @throws IOException
      */
     @Override
-    public void write(JmeExporter ex) throws IOException {
+    public void write(CWExporter ex) throws IOException {
         super.write(ex);
         OutputCapsule oc = ex.getCapsule(this);
         oc.write(boneList.toArray(new String[boneList.size()]), "boneList", new String[0]);
@@ -809,7 +809,7 @@ public class KinematicRagdollControl extends AbstractPhysicsControl implements P
      * @throws IOException
      */
     @Override
-    public void read(JmeImporter im) throws IOException {
+    public void read(CWImporter im) throws IOException {
         super.read(im);
         InputCapsule ic = im.getCapsule(this);
         String[] loadedBoneList = ic.readStringArray("boneList", new String[0]);

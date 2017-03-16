@@ -8,8 +8,8 @@ import com.clockwork.collision.Collidable;
 import com.clockwork.collision.CollisionResults;
 import com.clockwork.collision.UnsupportedCollisionException;
 import com.clockwork.export.InputCapsule;
-import com.clockwork.export.JmeExporter;
-import com.clockwork.export.JmeImporter;
+import com.clockwork.export.CWExporter;
+import com.clockwork.export.CWImporter;
 import com.clockwork.export.OutputCapsule;
 import com.clockwork.math.*;
 import com.clockwork.scene.Geometry;
@@ -860,7 +860,7 @@ public class TerrainPatch extends Geometry {
 
 
     @Override
-    public void write(JmeExporter ex) throws IOException {
+    public void write(CWExporter ex) throws IOException {
         // the mesh is removed, and reloaded when read() is called
         // this reduces the save size to 10% by not saving the mesh
         Mesh temp = getMesh();
@@ -883,7 +883,7 @@ public class TerrainPatch extends Geometry {
     }
 
     @Override
-    public void read(JmeImporter im) throws IOException {
+    public void read(CWImporter im) throws IOException {
         super.read(im);
         InputCapsule ic = im.getCapsule(this);
         size = ic.readInt("size", 16);

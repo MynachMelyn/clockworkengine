@@ -139,7 +139,7 @@ import com.clockwork.scene.plugins.blender.objects.ObjectHelper;
 
     /**
      * This method returns the data read from the WORLD file block. The block contains data that can be stored as
-     * separate jme features and therefore cannot be returned as a single jME scene feature.
+     * separate CW features and therefore cannot be returned as a single CW scene feature.
      * @param structure
      *            the structure with WORLD block data
      * @return data read from the WORLD block that can be added to the scene

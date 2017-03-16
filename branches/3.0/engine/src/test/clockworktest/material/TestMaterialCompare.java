@@ -6,13 +6,13 @@ import com.clockwork.asset.TextureKey;
 import com.clockwork.material.Material;
 import com.clockwork.material.RenderState.BlendMode;
 import com.clockwork.math.ColorRGBA;
-import com.clockwork.system.JmeSystem;
+import com.clockwork.system.CWSystem;
 import com.clockwork.texture.Texture;
 
 public class TestMaterialCompare {
 
     public static void main(String[] args) {
-        AssetManager assetManager = JmeSystem.newAssetManager(
+        AssetManager assetManager = CWSystem.newAssetManager(
                 TestMaterialCompare.class.getResource("/com/clockwork/asset/Desktop.cfg"));
         
         // Cloned materials

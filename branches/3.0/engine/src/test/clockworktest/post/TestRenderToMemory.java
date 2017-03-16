@@ -16,7 +16,7 @@ import com.clockwork.renderer.queue.RenderQueue;
 import com.clockwork.scene.Geometry;
 import com.clockwork.scene.shape.Box;
 import com.clockwork.system.AppSettings;
-import com.clockwork.system.JmeContext.Type;
+import com.clockwork.system.CWContext.Type;
 import com.clockwork.texture.FrameBuffer;
 import com.clockwork.texture.Image.Format;
 import com.clockwork.texture.Texture2D;

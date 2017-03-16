@@ -64,7 +64,7 @@ public class TestTransparentShadow extends SimpleApplication {
 
         rootNode.attachChild(tree);
 
-        /** Uses Texture from jme3-test-data library! */
+        /** Uses Texture from CW-test-data library! */
         ParticleEmitter fire = new ParticleEmitter("Emitter", ParticleMesh.Type.Triangle, 30);
         Material mat_red = new Material(assetManager, "Common/MatDefs/Misc/Particle.j3md");
         mat_red.setTexture("Texture", assetManager.loadTexture("Effects/Explosion/flame.png"));

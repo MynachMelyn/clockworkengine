@@ -85,7 +85,7 @@ public final class Pose implements Savable, Cloneable {
         }
     }
 
-    public void write(JmeExporter e) throws IOException {
+    public void write(CWExporter e) throws IOException {
         OutputCapsule out = e.getCapsule(this);
         out.write(name, "name", "");
         out.write(targetMeshIndex, "meshIndex", -1);
@@ -93,7 +93,7 @@ public final class Pose implements Savable, Cloneable {
         out.write(indices, "indices", null);
     }
 
-    public void read(JmeImporter i) throws IOException {
+    public void read(CWImporter i) throws IOException {
         InputCapsule in = i.getCapsule(this);
         name = in.readString("name", "");
         targetMeshIndex = in.readInt("meshIndex", -1);

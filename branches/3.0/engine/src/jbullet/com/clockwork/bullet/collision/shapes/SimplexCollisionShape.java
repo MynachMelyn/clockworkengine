@@ -4,8 +4,8 @@ package com.clockwork.bullet.collision.shapes;
 import com.bulletphysics.collision.shapes.BU_Simplex1to4;
 import com.clockwork.bullet.util.Converter;
 import com.clockwork.export.InputCapsule;
-import com.clockwork.export.JmeExporter;
-import com.clockwork.export.JmeImporter;
+import com.clockwork.export.CWExporter;
+import com.clockwork.export.CWImporter;
 import com.clockwork.export.OutputCapsule;
 import com.clockwork.math.Vector3f;
 import java.io.IOException;
@@ -46,7 +46,7 @@ public class SimplexCollisionShape extends CollisionShape {
         createShape();
     }
 
-    public void write(JmeExporter ex) throws IOException {
+    public void write(CWExporter ex) throws IOException {
         super.write(ex);
         OutputCapsule capsule = ex.getCapsule(this);
         capsule.write(vector1, "simplexPoint1", null);
@@ -55,7 +55,7 @@ public class SimplexCollisionShape extends CollisionShape {
         capsule.write(vector4, "simplexPoint4", null);
     }
 
-    public void read(JmeImporter im) throws IOException {
+    public void read(CWImporter im) throws IOException {
         super.read(im);
         InputCapsule capsule = im.getCapsule(this);
         vector1 = (Vector3f) capsule.readSavable("simplexPoint1", null);

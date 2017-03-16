@@ -236,7 +236,7 @@ public final class Matrix4f implements Savable, Cloneable, java.io.Serializable 
 
     /**
      * get retrieves a value from the matrix at the given
-     * position. If the position is invalid a JmeException is
+     * position. If the position is invalid a CWException is
      * thrown.
      * 
      * @param i
@@ -406,7 +406,7 @@ public final class Matrix4f implements Savable, Cloneable, java.io.Serializable 
 
     /**
      * set places a given value into the matrix at the given
-     * position. If the position is invalid a JmeException is
+     * position. If the position is invalid a CWException is
      * thrown.
      * 
      * @param i
@@ -491,7 +491,7 @@ public final class Matrix4f implements Savable, Cloneable, java.io.Serializable 
      * 
      * @param matrix
      *            the matrix to set the value to.
-     * @throws JmeException
+     * @throws CWException
      *             if the array is not of size 16.
      */
     public void set(float[][] matrix) {
@@ -1768,7 +1768,7 @@ public final class Matrix4f implements Savable, Cloneable, java.io.Serializable 
      * 
      * @param translation
      *            the new values for the translation.
-     * @throws JmeException
+     * @throws CWException
      *             if translation is not size 3.
      */
     public void setTranslation(float[] translation) {
@@ -1815,7 +1815,7 @@ public final class Matrix4f implements Savable, Cloneable, java.io.Serializable 
      * 
      * @param translation
      *            the new values for the inverse translation.
-     * @throws JmeException
+     * @throws CWException
      *             if translation is not size 3.
      */
     public void setInverseTranslation(float[] translation) {
@@ -1885,7 +1885,7 @@ public final class Matrix4f implements Savable, Cloneable, java.io.Serializable 
      * 
      * @param angles
      *            the Euler angles in radians.
-     * @throws JmeException
+     * @throws CWException
      *             if angles is not size 3.
      */
     public void setInverseRotationRadians(float[] angles) {
@@ -1922,7 +1922,7 @@ public final class Matrix4f implements Savable, Cloneable, java.io.Serializable 
      * 
      * @param angles
      *            the Euler angles in degrees.
-     * @throws JmeException
+     * @throws CWException
      *             if angles is not size 3.
      */
     public void setInverseRotationDegrees(float[] angles) {
@@ -1944,7 +1944,7 @@ public final class Matrix4f implements Savable, Cloneable, java.io.Serializable 
      * 
      * @param vec
      *            the Vector3f data to be translated.
-     * @throws JmeException
+     * @throws CWException
      *             if the size of the Vector3f is not 3.
      */
     public void inverseTranslateVect(float[] vec) {
@@ -1965,7 +1965,7 @@ public final class Matrix4f implements Savable, Cloneable, java.io.Serializable 
      * 
      * @param data
      *            the Vector3f to be translated.
-     * @throws JmeException
+     * @throws CWException
      *             if the size of the Vector3f is not 3.
      */
     public void inverseTranslateVect(Vector3f data) {
@@ -1981,7 +1981,7 @@ public final class Matrix4f implements Savable, Cloneable, java.io.Serializable 
      * 
      * @param data
      *            the Vector3f to be translated.
-     * @throws JmeException
+     * @throws CWException
      *             if the size of the Vector3f is not 3.
      */
     public void translateVect(Vector3f data) {
@@ -2175,7 +2175,7 @@ public final class Matrix4f implements Savable, Cloneable, java.io.Serializable 
         return true;
     }
 
-    public void write(JmeExporter e) throws IOException {
+    public void write(CWExporter e) throws IOException {
         OutputCapsule cap = e.getCapsule(this);
         cap.write(m00, "m00", 1);
         cap.write(m01, "m01", 0);
@@ -2195,7 +2195,7 @@ public final class Matrix4f implements Savable, Cloneable, java.io.Serializable 
         cap.write(m33, "m33", 1);
     }
 
-    public void read(JmeImporter e) throws IOException {
+    public void read(CWImporter e) throws IOException {
         InputCapsule cap = e.getCapsule(this);
         m00 = cap.readFloat("m00", 1);
         m01 = cap.readFloat("m01", 0);

@@ -3,8 +3,8 @@ package com.clockwork.terrain.geomipmap;
 
 import com.clockwork.bounding.BoundingBox;
 import com.clockwork.export.InputCapsule;
-import com.clockwork.export.JmeExporter;
-import com.clockwork.export.JmeImporter;
+import com.clockwork.export.CWExporter;
+import com.clockwork.export.CWImporter;
 import com.clockwork.export.OutputCapsule;
 import com.clockwork.material.Material;
 import com.clockwork.math.FastMath;
@@ -469,7 +469,7 @@ public class TerrainGrid extends TerrainQuad {
         final ThreadFactory threadFactory = new ThreadFactory() {
             public Thread newThread(Runnable r) {
                 Thread th = new Thread(r);
-                th.setName("jME TerrainGrid Thread");
+                th.setName("CW TerrainGrid Thread");
                 th.setDaemon(true);
                 return th;
             }
@@ -501,7 +501,7 @@ public class TerrainGrid extends TerrainQuad {
     }
     
     @Override
-    public void read(JmeImporter im) throws IOException {
+    public void read(CWImporter im) throws IOException {
         super.read(im);
         InputCapsule c = im.getCapsule(this);
         name = c.readString("name", null);
@@ -520,7 +520,7 @@ public class TerrainGrid extends TerrainQuad {
     }
 
     @Override
-    public void write(JmeExporter ex) throws IOException {
+    public void write(CWExporter ex) throws IOException {
         super.write(ex);
         OutputCapsule c = ex.getCapsule(this);
         c.write(gridTileLoader, "terrainQuadGrid", null);

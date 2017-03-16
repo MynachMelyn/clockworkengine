@@ -15,7 +15,7 @@ import java.util.logging.Logger;
 
 /**
  */
-public final class BinaryImporter implements JmeImporter {
+public final class BinaryImporter implements CWImporter {
     private static final Logger logger = Logger.getLogger(BinaryImporter.class
             .getName());
 
@@ -78,7 +78,7 @@ public final class BinaryImporter implements JmeImporter {
             
             return s;
         } catch (IOException ex) {
-            logger.log(Level.SEVERE, "An error occured while loading jME binary object", ex);
+            logger.log(Level.SEVERE, "An error occured while loading CW binary object", ex);
         } finally {
             if (is != null){
                 try {
@@ -132,7 +132,7 @@ public final class BinaryImporter implements JmeImporter {
         for(int i = 0; i < numClasses; i++) {
             String alias = readString(bis, aliasWidth);
             
-            // jME3 NEW: Read class version number
+            // CW NEW: Read class version number
             int[] classHierarchyVersions;
             if (formatVersion >= 1){
                 int classHierarchySize = bis.read();

@@ -1,11 +1,11 @@
 package clockworktest.gui;
 
 import com.clockwork.app.SimpleApplication;
-import com.clockwork.cursors.plugins.JmeCursor;
+import com.clockwork.cursors.plugins.CWCursor;
 import java.util.ArrayList;
 
 /**
- * This test class demonstrate how to change cursor in jME3.
+ * This test class demonstrate how to change cursor in CW.
  *
  * NOTE: This will not work on Android as it does not support cursors.
  *
@@ -13,7 +13,7 @@ import java.util.ArrayList;
  */
 public class TestCursor extends SimpleApplication {
 
-    private ArrayList<JmeCursor> cursors = new ArrayList<JmeCursor>();
+    private ArrayList<CWCursor> cursors = new ArrayList<CWCursor>();
     private long sysTime;
     private int count = 0;
 
@@ -32,7 +32,7 @@ public class TestCursor extends SimpleApplication {
         inputManager.setCursorVisible(true);
 
         /*
-         * To make jME3 use a custom cursor it is as simple as putting the
+         * To make CW use a custom cursor it is as simple as putting the
          * .cur/.ico/.ani file in an asset directory. Here we use
          * "Textures/GUI/Cursors".
          *
@@ -48,9 +48,9 @@ public class TestCursor extends SimpleApplication {
          * The animated cursor has been made by Pointer Adic and can be found here:
          * http://www.rw-designer.com/cursor-set/monkey
          */
-        cursors.add((JmeCursor) assetManager.loadAsset("Textures/Cursors/meme.cur"));
-        cursors.add((JmeCursor) assetManager.loadAsset("Textures/Cursors/nyancat.ico"));
-        cursors.add((JmeCursor) assetManager.loadAsset("Textures/Cursors/monkey.ani"));
+        cursors.add((CWCursor) assetManager.loadAsset("Textures/Cursors/meme.cur"));
+        cursors.add((CWCursor) assetManager.loadAsset("Textures/Cursors/nyancat.ico"));
+        cursors.add((CWCursor) assetManager.loadAsset("Textures/Cursors/monkey.ani"));
 
         sysTime = System.currentTimeMillis();
         inputManager.setMouseCursor(cursors.get(count));
@@ -67,7 +67,7 @@ public class TestCursor extends SimpleApplication {
             }
             sysTime = currentTime;
             // 8 seconds have passed,
-            // tell jME3 to swith to a different cursor.
+            // tell CW to swith to a different cursor.
             inputManager.setMouseCursor(cursors.get(count));
         }
 

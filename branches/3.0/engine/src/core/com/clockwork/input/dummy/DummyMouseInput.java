@@ -1,7 +1,7 @@
 
 package com.clockwork.input.dummy;
 
-import com.clockwork.cursors.plugins.JmeCursor;
+import com.clockwork.cursors.plugins.CWCursor;
 import com.clockwork.input.MouseInput;
 
 /**
@@ -20,7 +20,7 @@ public class DummyMouseInput extends DummyInput implements MouseInput {
         return 0;
     }
 
-    public void setNativeCursor(JmeCursor cursor) {
+    public void setNativeCursor(CWCursor cursor) {
     }
 
 }

@@ -3,8 +3,8 @@ package com.clockwork.bullet.control;
 
 import com.clockwork.bullet.PhysicsSpace;
 import com.clockwork.export.InputCapsule;
-import com.clockwork.export.JmeExporter;
-import com.clockwork.export.JmeImporter;
+import com.clockwork.export.CWExporter;
+import com.clockwork.export.CWImporter;
 import com.clockwork.export.OutputCapsule;
 import com.clockwork.math.Quaternion;
 import com.clockwork.math.Vector3f;
@@ -195,7 +195,7 @@ public abstract class AbstractPhysicsControl implements PhysicsControl {
     }
 
     @Override
-    public void write(JmeExporter ex) throws IOException {
+    public void write(CWExporter ex) throws IOException {
         OutputCapsule oc = ex.getCapsule(this);
         oc.write(enabled, "enabled", true);
         oc.write(applyLocal, "applyLocalPhysics", false);
@@ -203,7 +203,7 @@ public abstract class AbstractPhysicsControl implements PhysicsControl {
     }
 
     @Override
-    public void read(JmeImporter im) throws IOException {
+    public void read(CWImporter im) throws IOException {
         InputCapsule ic = im.getCapsule(this);
         enabled = ic.readBoolean("enabled", true);
         spatial = (Spatial) ic.readSavable("spatial", null);

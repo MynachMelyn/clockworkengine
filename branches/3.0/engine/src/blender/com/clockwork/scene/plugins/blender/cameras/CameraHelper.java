@@ -34,11 +34,11 @@ public class CameraHelper extends AbstractBlenderHelper {
     }
 
     /**
-     * This method converts the given structure to jme camera.
+     * This method converts the given structure to CW camera.
      * 
      * @param structure
      *            camera structure
-     * @return jme camera object
+     * @return CW camera object
      * @throws BlenderFileException
      *             an exception is thrown when there are problems with the
      *             blender file
@@ -52,13 +52,13 @@ public class CameraHelper extends AbstractBlenderHelper {
     }
 
     /**
-     * This method converts the given structure to jme camera. Should be used form blender 2.5+.
+     * This method converts the given structure to CW camera. Should be used form blender 2.5+.
      * 
      * @param structure
      *            camera structure
      * @param sceneStructure
      *            scene structure
-     * @return jme camera object
+     * @return CW camera object
      * @throws BlenderFileException
      *             an exception is thrown when there are problems with the
      *             blender file
@@ -115,11 +115,11 @@ public class CameraHelper extends AbstractBlenderHelper {
     }
 
     /**
-     * This method converts the given structure to jme camera. Should be used form blender 2.49.
+     * This method converts the given structure to CW camera. Should be used form blender 2.49.
      * 
      * @param structure
      *            camera structure
-     * @return jme camera object
+     * @return CW camera object
      * @throws BlenderFileException
      *             an exception is thrown when there are problems with the
      *             blender file

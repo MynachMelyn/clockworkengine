@@ -122,7 +122,7 @@ public class BitmapCharacter implements Savable, Cloneable {
             return i.intValue();
     }
 
-    public void write(JmeExporter ex) throws IOException {
+    public void write(CWExporter ex) throws IOException {
         OutputCapsule oc = ex.getCapsule(this);
         oc.write(c, "c", 0);
         oc.write(x, "x", 0);
@@ -147,7 +147,7 @@ public class BitmapCharacter implements Savable, Cloneable {
         oc.write(amounts, "amounts", null);
     }
 
-    public void read(JmeImporter im) throws IOException {
+    public void read(CWImporter im) throws IOException {
         InputCapsule ic = im.getCapsule(this);
         c = (char) ic.readInt("c", 0);
         x = ic.readInt("x", 0);

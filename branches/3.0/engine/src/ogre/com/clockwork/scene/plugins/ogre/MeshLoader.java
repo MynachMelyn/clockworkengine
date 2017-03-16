@@ -145,7 +145,7 @@ public class MeshLoader extends DefaultHandler implements AssetLoader {
 
 //    private boolean isUsingSharedVerts(Geometry geom) {
     // Old code for buffer sharer
-    //return geom.getUserData(UserData.JME_SHAREDMESH) != null;
+    //return geom.getUserData(UserData.CW_SHAREDMESH) != null;
 //    }
     private void startFaces(String count) throws SAXException {
         int numFaces = parseInt(count);
@@ -183,7 +183,7 @@ public class MeshLoader extends DefaultHandler implements AssetLoader {
     private void applyMaterial(Geometry geom, String matName) {
         Material mat = null;
         if (matName.endsWith(".j3m")) {
-            // load as native jme3 material instance
+            // load as native CW material instance
             try {
                 mat = assetManager.loadMaterial(matName);
             } catch (AssetNotFoundException ex) {
@@ -249,7 +249,7 @@ public class MeshLoader extends DefaultHandler implements AssetLoader {
         if (usesSharedVerts) {
             // Old code for buffer sharer
             // this mesh is shared!
-            //geom.setUserData(UserData.JME_SHAREDMESH, sharedMesh);
+            //geom.setUserData(UserData.CW_SHAREDMESH, sharedMesh);
         }
 
         applyMaterial(geom, matName);
@@ -841,7 +841,7 @@ public class MeshLoader extends DefaultHandler implements AssetLoader {
             // Android needs the namespace aware flag set to true                 
             // Kirill 30.06.2011
             // Now, hack is applied for both desktop and android to avoid
-            // checking with JmeSystem.
+            // checking with CWSystem.
             SAXParserFactory factory = SAXParserFactory.newInstance();
             factory.setNamespaceAware(true);
 

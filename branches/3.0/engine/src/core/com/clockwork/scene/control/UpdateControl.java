@@ -27,7 +27,7 @@ public class UpdateControl extends AbstractControl {
     private final ConcurrentLinkedQueue<AppTask<?>> taskQueue = new ConcurrentLinkedQueue<AppTask<?>>();
 
     /**
-     * Enqueues a task/callable object to execute in the jME3
+     * Enqueues a task/callable object to execute in the CW
      * rendering thread.
      */
     public <V> Future<V> enqueue(Callable<V> callable) {

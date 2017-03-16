@@ -1,7 +1,7 @@
 
 package com.clockwork.system.ios;
 
-import com.clockwork.util.JmeFormatter;
+import com.clockwork.util.CWFormatter;
 import java.util.logging.Handler;
 import java.util.logging.Level;
 import java.util.logging.LogRecord;
@@ -11,7 +11,7 @@ import java.util.logging.LogRecord;
  */
 public class IosLogHandler  extends Handler {
 
-    JmeFormatter formatter = new JmeFormatter();
+    CWFormatter formatter = new CWFormatter();
 
     public IosLogHandler() {
     }

@@ -2,8 +2,8 @@
 package clockworktest.light;
 
 import com.clockwork.app.SimpleApplication;
-import com.clockwork.export.JmeExporter;
-import com.clockwork.export.JmeImporter;
+import com.clockwork.export.CWExporter;
+import com.clockwork.export.CWImporter;
 import com.clockwork.export.Savable;
 import com.clockwork.font.BitmapText;
 import com.clockwork.input.KeyInput;

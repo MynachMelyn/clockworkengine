@@ -6,8 +6,8 @@ import com.clockwork.bounding.BoundingVolume;
 import com.clockwork.collision.Collidable;
 import com.clockwork.collision.CollisionResults;
 import com.clockwork.export.InputCapsule;
-import com.clockwork.export.JmeExporter;
-import com.clockwork.export.JmeImporter;
+import com.clockwork.export.CWExporter;
+import com.clockwork.export.CWImporter;
 import com.clockwork.export.OutputCapsule;
 import com.clockwork.material.Material;
 import com.clockwork.math.FastMath;
@@ -1709,7 +1709,7 @@ public class TerrainQuad extends Node implements Terrain {
     }
 
     @Override
-    public void read(JmeImporter e) throws IOException {
+    public void read(CWImporter e) throws IOException {
         super.read(e);
         InputCapsule c = e.getCapsule(this);
         size = c.readInt("size", 0);
@@ -1729,7 +1729,7 @@ public class TerrainQuad extends Node implements Terrain {
     }
 
     @Override
-    public void write(JmeExporter e) throws IOException {
+    public void write(CWExporter e) throws IOException {
         super.write(e);
         OutputCapsule c = e.getCapsule(this);
         c.write(size, "size", 0);

@@ -10,8 +10,8 @@ import com.clockwork.renderer.Renderer;
 import com.clockwork.renderer.lwjgl.LwjglGL1Renderer;
 import com.clockwork.renderer.lwjgl.LwjglRenderer;
 import com.clockwork.system.AppSettings;
-import com.clockwork.system.JmeContext;
-import com.clockwork.system.JmeSystem;
+import com.clockwork.system.CWContext;
+import com.clockwork.system.CWSystem;
 import com.clockwork.system.SystemListener;
 import com.clockwork.system.Timer;
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -24,7 +24,7 @@ import org.lwjgl.opengl.*;
 /**
  * A LWJGL implementation of a graphics context.
  */
-public abstract class LwjglContext implements JmeContext {
+public abstract class LwjglContext implements CWContext {
 
     private static final Logger logger = Logger.getLogger(LwjglContext.class.getName());
 

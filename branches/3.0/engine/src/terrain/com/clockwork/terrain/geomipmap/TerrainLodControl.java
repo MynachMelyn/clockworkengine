@@ -2,8 +2,8 @@
 package com.clockwork.terrain.geomipmap;
 
 import com.clockwork.export.InputCapsule;
-import com.clockwork.export.JmeExporter;
-import com.clockwork.export.JmeImporter;
+import com.clockwork.export.CWExporter;
+import com.clockwork.export.CWImporter;
 import com.clockwork.export.OutputCapsule;
 import com.clockwork.math.Vector3f;
 import com.clockwork.renderer.Camera;
@@ -94,7 +94,7 @@ public class TerrainLodControl extends AbstractControl {
         return Executors.newSingleThreadExecutor(new ThreadFactory() {
             public Thread newThread(Runnable r) {
                 Thread th = new Thread(r);
-                th.setName("jME Terrain Thread");
+                th.setName("CW Terrain Thread");
                 th.setDaemon(true);
                 return th;
             }
@@ -359,7 +359,7 @@ public class TerrainLodControl extends AbstractControl {
     }
 
     @Override
-    public void write(JmeExporter ex) throws IOException {
+    public void write(CWExporter ex) throws IOException {
         super.write(ex);
         OutputCapsule oc = ex.getCapsule(this);
         oc.write((Node)terrain, "terrain", null);
@@ -367,7 +367,7 @@ public class TerrainLodControl extends AbstractControl {
     }
 
     @Override
-    public void read(JmeImporter im) throws IOException {
+    public void read(CWImporter im) throws IOException {
         super.read(im);
         InputCapsule ic = im.getCapsule(this);
         terrain = (Terrain) ic.readSavable("terrain", null);

@@ -8,8 +8,8 @@ import com.clockwork.collision.Collidable;
 import com.clockwork.collision.CollisionResults;
 import com.clockwork.collision.UnsupportedCollisionException;
 import com.clockwork.export.InputCapsule;
-import com.clockwork.export.JmeExporter;
-import com.clockwork.export.JmeImporter;
+import com.clockwork.export.CWExporter;
+import com.clockwork.export.CWImporter;
 import com.clockwork.export.OutputCapsule;
 import com.clockwork.math.FastMath;
 import com.clockwork.math.Matrix4f;
@@ -432,7 +432,7 @@ public class BIHTree implements CollisionData {
         }
     }
 
-    public void write(JmeExporter ex) throws IOException {
+    public void write(CWExporter ex) throws IOException {
         OutputCapsule oc = ex.getCapsule(this);
         oc.write(mesh, "mesh", null);
         oc.write(root, "root", null);
@@ -441,7 +441,7 @@ public class BIHTree implements CollisionData {
         oc.write(triIndices, "indices", null);
     }
 
-    public void read(JmeImporter im) throws IOException {
+    public void read(CWImporter im) throws IOException {
         InputCapsule ic = im.getCapsule(this);
         mesh = (Mesh) ic.readSavable("mesh", null);
         root = (BIHNode) ic.readSavable("root", null);

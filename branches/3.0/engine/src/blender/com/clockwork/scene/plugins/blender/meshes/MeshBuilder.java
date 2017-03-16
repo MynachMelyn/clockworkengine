@@ -34,13 +34,13 @@ import com.clockwork.util.BufferUtils;
      * positions (it simply tells which vertex is referenced where in the result list).
      */
     private Map<Integer, Map<Integer, List<Integer>>> globalVertexReferenceMap;
-    /** The following map sorts vertices by material number (because in jme Mesh can have only one material). */
+    /** The following map sorts vertices by material number (because in CW Mesh can have only one material). */
     private Map<Integer, List<Vector3f>>              normalMap        = new HashMap<Integer, List<Vector3f>>();
-    /** The following map sorts vertices by material number (because in jme Mesh can have only one material). */
+    /** The following map sorts vertices by material number (because in CW Mesh can have only one material). */
     private Map<Integer, List<Vector3f>>              vertexMap        = new HashMap<Integer, List<Vector3f>>();
-    /** The following map sorts vertices colors by material number (because in jme Mesh can have only one material). */
+    /** The following map sorts vertices colors by material number (because in CW Mesh can have only one material). */
     private Map<Integer, List<byte[]>>                vertexColorsMap  = new HashMap<Integer, List<byte[]>>();
-    /** The following map sorts indexes by material number (because in jme Mesh can have only one material). */
+    /** The following map sorts indexes by material number (because in CW Mesh can have only one material). */
     private Map<Integer, List<Integer>>               indexMap         = new HashMap<Integer, List<Integer>>();
     /** A collection of user defined UV coordinates (one mesh can have more than one such mappings). */
     private UserUVCollection                          userUVCollection = new UserUVCollection();
@@ -172,7 +172,7 @@ import com.clockwork.util.BufferUtils;
                 } else if (uvsForFace != null) {
                     //if the index is used then check if the vertexe's UV coordinates match, if yes then the vertex doesn't have separate UV's
                     //in different faces so we can use it here as well, if UV's are different in separate faces the we need to add this vert
-                    //because in jme one vertex can have only on UV coordinate
+                    //because in CW one vertex can have only on UV coordinate
                     boolean vertexAlreadyUsed = false;
                     for (Integer vertexIndex : vertexReferenceMap.get(index[i])) {
                         int vertexUseCounter = 0;

@@ -33,7 +33,7 @@ public class TestTangentGenBadModels extends SimpleApplication {
 
     @Override
     public void simpleInitApp() {
-//        assetManager.registerLocator("http://jme-glsl-shaders.googlecode.com/hg/assets/Models/LightBlow/", UrlLocator.class);
+//        assetManager.registerLocator("http://CW-glsl-shaders.googlecode.com/hg/assets/Models/LightBlow/", UrlLocator.class);
 //        assetManager.registerLocator("http://jmonkeyengine.googlecode.com/files/", UrlLocator.class);
         
         final Spatial badModel = assetManager.loadModel("Models/TangentBugs/test.blend");

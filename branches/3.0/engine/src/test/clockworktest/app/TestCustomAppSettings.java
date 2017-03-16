@@ -9,7 +9,7 @@ import java.util.prefs.BackingStoreException;
 
 public class TestCustomAppSettings {
     
-    private static final String APPSETTINGS_KEY = "JME_AppSettingsTest";
+    private static final String APPSETTINGS_KEY = "CW_AppSettingsTest";
     
     private static void assertEqual(Object a, Object b) {
         if (!a.equals(b)){

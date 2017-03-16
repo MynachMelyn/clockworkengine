@@ -26,7 +26,7 @@ import java.util.logging.Logger;
 
 /**
  * BufferUtils is a helper class for generating nio buffers from
- * jME data classes such as Vectors and ColorRGBA.
+ * CW data classes such as Vectors and ColorRGBA.
  * 
  * 
  * @version $Id: BufferUtils.java,v 1.16 2007/10/29 16:56:18 nca Exp $

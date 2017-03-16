@@ -7,8 +7,8 @@ import java.util.List;
 
 import com.clockwork.asset.AssetManager;
 import com.clockwork.export.InputCapsule;
-import com.clockwork.export.JmeExporter;
-import com.clockwork.export.JmeImporter;
+import com.clockwork.export.CWExporter;
+import com.clockwork.export.CWImporter;
 import com.clockwork.export.OutputCapsule;
 import com.clockwork.export.Savable;
 import com.clockwork.material.Material;
@@ -602,7 +602,7 @@ public abstract class AbstractShadowRenderer implements SceneProcessor, Savable 
      *
      * @param im importer (not null)
      */
-    public void read(JmeImporter im) throws IOException {
+    public void read(CWImporter im) throws IOException {
         InputCapsule ic = (InputCapsule) im.getCapsule(this);
         assetManager = im.getAssetManager();
         nbShadowMaps = ic.readInt("nbShadowMaps", 1);
@@ -622,7 +622,7 @@ public abstract class AbstractShadowRenderer implements SceneProcessor, Savable 
      *
      * @param ex exporter (not null)
      */
-    public void write(JmeExporter ex) throws IOException {
+    public void write(CWExporter ex) throws IOException {
         OutputCapsule oc = (OutputCapsule) ex.getCapsule(this);
         oc.write(nbShadowMaps, "nbShadowMaps", 1);
         oc.write(shadowMapSize, "shadowMapSize", 0);

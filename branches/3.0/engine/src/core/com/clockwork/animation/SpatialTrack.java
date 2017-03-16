@@ -2,8 +2,8 @@
 package com.clockwork.animation;
 
 import com.clockwork.export.InputCapsule;
-import com.clockwork.export.JmeExporter;
-import com.clockwork.export.JmeImporter;
+import com.clockwork.export.CWExporter;
+import com.clockwork.export.CWImporter;
 import com.clockwork.export.OutputCapsule;
 import com.clockwork.math.Quaternion;
 import com.clockwork.math.Vector3f;
@@ -224,7 +224,7 @@ public class SpatialTrack implements Track {
     }
 	
     @Override
-    public void write(JmeExporter ex) throws IOException {
+    public void write(CWExporter ex) throws IOException {
         OutputCapsule oc = ex.getCapsule(this);
         oc.write(translations, "translations", null);
         oc.write(rotations, "rotations", null);
@@ -233,7 +233,7 @@ public class SpatialTrack implements Track {
     }
 
     @Override
-    public void read(JmeImporter im) throws IOException {
+    public void read(CWImporter im) throws IOException {
         InputCapsule ic = im.getCapsule(this);
         translations = (CompactVector3Array) ic.readSavable("translations", null);
         rotations = (CompactQuaternionArray) ic.readSavable("rotations", null);

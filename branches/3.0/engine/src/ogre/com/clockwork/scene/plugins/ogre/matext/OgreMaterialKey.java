@@ -6,7 +6,7 @@ import com.clockwork.material.MaterialList;
 
 /**
  * OgreMaterialKey allows specifying material extensions, which map
- * from Ogre3D base materials to jME3 materials
+ * from Ogre3D base materials to CW materials
  */
 public class OgreMaterialKey extends AssetKey<MaterialList> {
 
@@ -48,7 +48,7 @@ public class OgreMaterialKey extends AssetKey<MaterialList> {
     
     /**
      * Set the MaterialExtensionSet} to use for mapping base materials to
-     * jME3 matdefs when loading. Set to
+     * CW matdefs when loading. Set to
      * null to disable this functionality.
      *
      * @param matExts The MaterialExtensionSet} to use

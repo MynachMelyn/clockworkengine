@@ -9,8 +9,8 @@ import com.clockwork.bullet.collision.shapes.CollisionShape;
 import com.clockwork.bullet.collision.shapes.CompoundCollisionShape;
 import com.clockwork.bullet.objects.PhysicsRigidBody;
 import com.clockwork.export.InputCapsule;
-import com.clockwork.export.JmeExporter;
-import com.clockwork.export.JmeImporter;
+import com.clockwork.export.CWExporter;
+import com.clockwork.export.CWImporter;
 import com.clockwork.export.OutputCapsule;
 import com.clockwork.math.FastMath;
 import com.clockwork.math.Quaternion;
@@ -637,7 +637,7 @@ public class BetterCharacterControl extends AbstractPhysicsControl implements Ph
     }
 
     @Override
-    public void write(JmeExporter ex) throws IOException {
+    public void write(CWExporter ex) throws IOException {
         super.write(ex);
         OutputCapsule oc = ex.getCapsule(this);
         oc.write(radius, "radius", 1);
@@ -648,7 +648,7 @@ public class BetterCharacterControl extends AbstractPhysicsControl implements Ph
     }
 
     @Override
-    public void read(JmeImporter im) throws IOException {
+    public void read(CWImporter im) throws IOException {
         super.read(im);
         InputCapsule in = im.getCapsule(this);
         this.radius = in.readFloat("radius", 1);

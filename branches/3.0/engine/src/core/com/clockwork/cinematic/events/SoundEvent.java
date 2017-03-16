@@ -7,8 +7,8 @@ import com.clockwork.audio.AudioNode;
 import com.clockwork.audio.AudioSource;
 import com.clockwork.cinematic.Cinematic;
 import com.clockwork.export.InputCapsule;
-import com.clockwork.export.JmeExporter;
-import com.clockwork.export.JmeImporter;
+import com.clockwork.export.CWExporter;
+import com.clockwork.export.CWImporter;
 import com.clockwork.export.OutputCapsule;
 import java.io.IOException;
 
@@ -180,7 +180,7 @@ public class SoundEvent extends AbstractCinematicEvent {
     }
 
     @Override
-    public void write(JmeExporter ex) throws IOException {
+    public void write(CWExporter ex) throws IOException {
         super.write(ex);
         OutputCapsule oc = ex.getCapsule(this);
         oc.write(path, "path", "");
@@ -188,7 +188,7 @@ public class SoundEvent extends AbstractCinematicEvent {
     }
 
     @Override
-    public void read(JmeImporter im) throws IOException {
+    public void read(CWImporter im) throws IOException {
         super.read(im);
         InputCapsule ic = im.getCapsule(this);
         path = ic.readString("path", "");

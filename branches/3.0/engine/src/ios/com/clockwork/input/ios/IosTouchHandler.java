@@ -16,7 +16,7 @@ import java.util.logging.Logger;
 
 /**
  * AndroidTouchHandler is the base class that receives touch inputs from the 
- * Android system and creates the TouchEvents for jME.  This class is designed
+ * Android system and creates the TouchEvents for CW.  This class is designed
  * to handle the base touch events for Android rev 9 (Android 2.3).  This is
  * extended by other classes to add features that were introducted after
  * Android rev 9.
@@ -45,25 +45,25 @@ public class IosTouchHandler {
     public void actionDown(int pointerId, long time, float x, float y) {
         logger.log(Level.FINE, "Inject input pointer: {0}, time: {1}, x: {2}, y: {3}", 
                 new Object[]{pointerId, time, x, y});
-        float jmeX = iosInput.getJmeX(x);
-        float jmeY = iosInput.invertY(iosInput.getJmeY(y));
+        float CWX = iosInput.getCWX(x);
+        float CWY = iosInput.invertY(iosInput.getCWY(y));
         TouchEvent touch = iosInput.getFreeTouchEvent();
-        touch.set(TouchEvent.Type.DOWN, jmeX, jmeY, 0, 0);
+        touch.set(TouchEvent.Type.DOWN, CWX, CWY, 0, 0);
         touch.setPointerId(pointerId);//TODO: pointer ID
         touch.setTime(time);
         touch.setPressure(1.0f);
         //touch.setPressure(event.getPressure(pointerIndex)); //TODO: preassure
 
-        lastPositions.put(pointerId, new Vector2f(jmeX, jmeY));
+        lastPositions.put(pointerId, new Vector2f(CWX, CWY));
 
         processEvent(touch);
     }
     
     public void actionUp(int pointerId, long time, float x, float y) {
-        float jmeX = iosInput.getJmeX(x);
-        float jmeY = iosInput.invertY(iosInput.getJmeY(y));
+        float CWX = iosInput.getCWX(x);
+        float CWY = iosInput.invertY(iosInput.getCWY(y));
         TouchEvent touch = iosInput.getFreeTouchEvent();
-        touch.set(TouchEvent.Type.UP, jmeX, jmeY, 0, 0);
+        touch.set(TouchEvent.Type.UP, CWX, CWY, 0, 0);
         touch.setPointerId(pointerId);//TODO: pointer ID
         touch.setTime(time);
         touch.setPressure(1.0f);
@@ -74,24 +74,24 @@ public class IosTouchHandler {
     }
     
     public void actionMove(int pointerId, long time, float x, float y) {
-        float jmeX = iosInput.getJmeX(x);
-        float jmeY = iosInput.invertY(iosInput.getJmeY(y));
+        float CWX = iosInput.getCWX(x);
+        float CWY = iosInput.invertY(iosInput.getCWY(y));
         Vector2f lastPos = lastPositions.get(pointerId);
         if (lastPos == null) {
-            lastPos = new Vector2f(jmeX, jmeY);
+            lastPos = new Vector2f(CWX, CWY);
             lastPositions.put(pointerId, lastPos);
         }
 
-        float dX = jmeX - lastPos.x;
-        float dY = jmeY - lastPos.y;
+        float dX = CWX - lastPos.x;
+        float dY = CWY - lastPos.y;
         if (dX != 0 || dY != 0) {
             TouchEvent touch = iosInput.getFreeTouchEvent();
-            touch.set(TouchEvent.Type.MOVE, jmeX, jmeY, dX, dY);
+            touch.set(TouchEvent.Type.MOVE, CWX, CWY, dX, dY);
             touch.setPointerId(pointerId);
             touch.setTime(time);
             touch.setPressure(1.0f);
             //touch.setPressure(event.getPressure(p));
-            lastPos.set(jmeX, jmeY);
+            lastPos.set(CWX, CWY);
 
             processEvent(touch);
         }

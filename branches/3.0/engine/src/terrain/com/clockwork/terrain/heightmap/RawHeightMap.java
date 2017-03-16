@@ -44,7 +44,7 @@ public class RawHeightMap extends AbstractHeightMap {
      *            the RAW file to use as the heightmap.
      * @param size
      *            the size of the RAW (must be square).
-     * @throws JmeException
+     * @throws CWException
      *             if the filename is null or not RAW, and if the size is 0 or
      *             less.
      */
@@ -107,7 +107,7 @@ public class RawHeightMap extends AbstractHeightMap {
 
     /**
      * load fills the height data array with the appropriate data
-     * from the set RAW image. If the RAW image has not been set a JmeException
+     * from the set RAW image. If the RAW image has not been set a CWException
      * will be thrown.
      *
      * @return true if the load is successfull, false otherwise.
@@ -186,7 +186,7 @@ public class RawHeightMap extends AbstractHeightMap {
      *
      * @param filename
      *            the new file to use for the height data.
-     * @throws JmeException
+     * @throws CWException
      *             if the file is null or not RAW.
      */
     public void setFilename(String filename) throws Exception {
@@ -206,7 +206,7 @@ public class RawHeightMap extends AbstractHeightMap {
      *
      * @param stream
      *            the new stream to use for the height data.
-     * @throws JmeException
+     * @throws CWException
      *             if the stream is null or not RAW.
      */
     public void setHeightStream(InputStream stream) throws Exception {

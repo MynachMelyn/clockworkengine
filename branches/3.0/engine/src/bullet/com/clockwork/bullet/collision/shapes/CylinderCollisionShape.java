@@ -2,8 +2,8 @@
 package com.clockwork.bullet.collision.shapes;
 
 import com.clockwork.export.InputCapsule;
-import com.clockwork.export.JmeExporter;
-import com.clockwork.export.JmeImporter;
+import com.clockwork.export.CWExporter;
+import com.clockwork.export.CWImporter;
 import com.clockwork.export.OutputCapsule;
 import com.clockwork.math.Vector3f;
 import java.io.IOException;
@@ -58,14 +58,14 @@ public class CylinderCollisionShape extends CollisionShape {
         Logger.getLogger(this.getClass().getName()).log(Level.WARNING, "CylinderCollisionShape cannot be scaled");
     }
 
-    public void write(JmeExporter ex) throws IOException {
+    public void write(CWExporter ex) throws IOException {
         super.write(ex);
         OutputCapsule capsule = ex.getCapsule(this);
         capsule.write(halfExtents, "halfExtents", new Vector3f(0.5f, 0.5f, 0.5f));
         capsule.write(axis, "axis", 1);
     }
 
-    public void read(JmeImporter im) throws IOException {
+    public void read(CWImporter im) throws IOException {
         super.read(im);
         InputCapsule capsule = im.getCapsule(this);
         halfExtents = (Vector3f) capsule.readSavable("halfExtents", new Vector3f(0.5f, 0.5f, 0.5f));

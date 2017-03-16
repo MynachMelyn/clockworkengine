@@ -479,7 +479,7 @@ public abstract class Texture implements CloneableSmartAsset, Savable, Cloneable
         }
         final Texture other = (Texture) obj;
         
-        // NOTE: Since images are generally considered unique assets in jME3,
+        // NOTE: Since images are generally considered unique assets in CW,
         // using the image's equals() implementation is not neccessary here
         // (would be too slow)
         if (this.image != other.image) {
@@ -503,7 +503,7 @@ public abstract class Texture implements CloneableSmartAsset, Savable, Cloneable
     @Override
     public int hashCode() {
         int hash = 5;
-        // NOTE: Since images are generally considered unique assets in jME3,
+        // NOTE: Since images are generally considered unique assets in CW,
         // using the image's hashCode() implementation is not neccessary here
         // (would be too slow)
         hash = 67 * hash + (this.image != null ? System.identityHashCode(this.image) : 0);
@@ -539,7 +539,7 @@ public abstract class Texture implements CloneableSmartAsset, Savable, Cloneable
     @Deprecated
     public abstract Texture createSimpleClone();
 
-    public void write(JmeExporter e) throws IOException {
+    public void write(CWExporter e) throws IOException {
         OutputCapsule capsule = e.getCapsule(this);
         capsule.write(name, "name", null);
         
@@ -557,7 +557,7 @@ public abstract class Texture implements CloneableSmartAsset, Savable, Cloneable
                 MagFilter.Bilinear);
     }
 
-    public void read(JmeImporter e) throws IOException {
+    public void read(CWImporter e) throws IOException {
         InputCapsule capsule = e.getCapsule(this);
         name = capsule.readString("name", null);
         key = (TextureKey) capsule.readSavable("key", null);

@@ -1,8 +1,8 @@
 
 package com.clockwork.scene.plugins.ogre;
 
-//import static com.jmex.model.XMLUtil.getAttribute;
-//import static com.jmex.model.XMLUtil.getIntAttribute;
+//import static com.CWx.model.XMLUtil.getAttribute;
+//import static com.CWx.model.XMLUtil.getIntAttribute;
 //
 //import java.util.ArrayList;
 //import java.util.List;
@@ -11,8 +11,8 @@ package com.clockwork.scene.plugins.ogre;
 //import org.w3c.dom.Node;
 //
 //import com.clockwork.math.Vector3f;
-//import com.jmex.model.XMLUtil;
-//import com.jmex.model.ogrexml.anim.PoseTrack.PoseFrame;
+//import com.CWx.model.XMLUtil;
+//import com.CWx.model.ogrexml.anim.PoseTrack.PoseFrame;
 
 /**
  * Utility class used by OgreLoader to load poses and mesh animations.

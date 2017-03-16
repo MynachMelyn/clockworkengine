@@ -814,7 +814,7 @@ public class Image extends NativeObject implements Savable /*, Cloneable*/ {
         return hash;
     }
 
-    public void write(JmeExporter e) throws IOException {
+    public void write(CWExporter e) throws IOException {
         OutputCapsule capsule = e.getCapsule(this);
         capsule.write(format, "format", Format.RGBA8);
         capsule.write(width, "width", 0);
@@ -825,7 +825,7 @@ public class Image extends NativeObject implements Savable /*, Cloneable*/ {
         capsule.writeByteBufferArrayList(data, "data", null);
     }
 
-    public void read(JmeImporter e) throws IOException {
+    public void read(CWImporter e) throws IOException {
         InputCapsule capsule = e.getCapsule(this);
         format = capsule.readEnum("format", Format.class, Format.RGBA8);
         width = capsule.readInt("width", 0);

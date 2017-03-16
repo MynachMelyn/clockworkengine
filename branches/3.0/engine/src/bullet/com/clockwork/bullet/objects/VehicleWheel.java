@@ -330,7 +330,7 @@ public class VehicleWheel implements Savable {
     public native float getDeltaRotation(long wheelId, int wheelIndex);
 
     @Override
-    public void read(JmeImporter im) throws IOException {
+    public void read(CWImporter im) throws IOException {
         InputCapsule capsule = im.getCapsule(this);
         wheelSpatial = (Spatial) capsule.readSavable("wheelSpatial", null);
         frontWheel = capsule.readBoolean("frontWheel", false);
@@ -349,7 +349,7 @@ public class VehicleWheel implements Savable {
     }
 
     @Override
-    public void write(JmeExporter ex) throws IOException {
+    public void write(CWExporter ex) throws IOException {
         OutputCapsule capsule = ex.getCapsule(this);
         capsule.write(wheelSpatial, "wheelSpatial", null);
         capsule.write(frontWheel, "frontWheel", false);

@@ -104,7 +104,7 @@ public class TerrainGridTileLoaderTest extends SimpleApplication {
         this.terrain.setLocalTranslation(0, 0, 0);
         this.terrain.setLocalScale(2f, 1f, 2f);
 //        try {
-//            BinaryExporter.getInstance().save(terrain, new File("/Users/normenhansen/Documents/Code/jme3/engine/src/test-data/TerrainGrid/"
+//            BinaryExporter.getInstance().save(terrain, new File("/Users/normenhansen/Documents/Code/CW/engine/src/test-data/TerrainGrid/"
 //                    + "TerrainGrid.j3o"));
 //        } catch (IOException ex) {
 //            Logger.getLogger(TerrainFractalGridTest.class.getName()).log(Level.SEVERE, null, ex);

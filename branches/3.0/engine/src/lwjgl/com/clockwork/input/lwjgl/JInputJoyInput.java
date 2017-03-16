@@ -256,7 +256,7 @@ public class JInputJoyInput implements JoyInput {
                 yAxis = axis;
             } else if( id == Axis.POV ) {
                 
-                // Add two fake axes for the JME provided convenience
+                // Add two fake axes for the CW provided convenience
                 // axes: AXIS_POV_X, AXIS_POV_Y
                 povX = new DefaultJoystickAxis( getInputManager(), 
                                                 this, getAxisCount(), JoystickAxis.POV_X, 

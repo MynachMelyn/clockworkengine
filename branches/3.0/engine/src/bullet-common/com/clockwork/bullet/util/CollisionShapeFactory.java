@@ -50,7 +50,7 @@ public class CollisionShapeFactory {
             Node rootNode, CompoundCollisionShape shape, boolean meshAccurate, boolean dynamic) {
         for (Spatial spatial : rootNode.getChildren()) {
             if (spatial instanceof TerrainQuad) {
-                Boolean bool = spatial.getUserData(UserData.JME_PHYSICSIGNORE);
+                Boolean bool = spatial.getUserData(UserData.CW_PHYSICSIGNORE);
                 if (bool != null && bool.booleanValue()) {
                     continue; // go to the next child in the loop
                 }
@@ -62,7 +62,7 @@ public class CollisionShapeFactory {
             } else if (spatial instanceof Node) {
                 createCompoundShape(realRootNode, (Node) spatial, shape, meshAccurate, dynamic);
             } else if (spatial instanceof TerrainPatch) {
-                Boolean bool = spatial.getUserData(UserData.JME_PHYSICSIGNORE);
+                Boolean bool = spatial.getUserData(UserData.CW_PHYSICSIGNORE);
                 if (bool != null && bool.booleanValue()) {
                     continue; // go to the next child in the loop
                 }
@@ -72,7 +72,7 @@ public class CollisionShapeFactory {
                         trans.getTranslation(),
                         trans.getRotation().toRotationMatrix());
             } else if (spatial instanceof Geometry) {
-                Boolean bool = spatial.getUserData(UserData.JME_PHYSICSIGNORE);
+                Boolean bool = spatial.getUserData(UserData.CW_PHYSICSIGNORE);
                 if (bool != null && bool.booleanValue()) {
                     continue; // go to the next child in the loop
                 }

@@ -12,7 +12,7 @@ import com.clockwork.scene.Spatial;
 
 /**
  * stores transform info of a PhysicsNode in a threadsafe manner to
- * allow multithreaded access from the jme scenegraph and the bullet physicsspace
+ * allow multithreaded access from the CW scenegraph and the bullet physicsspace
  */
 public class RigidBodyMotionState extends MotionState {
     //stores the bullet transform
@@ -25,7 +25,7 @@ public class RigidBodyMotionState extends MotionState {
     private Quaternion localRotationQuat = new Quaternion();
     //keep track of transform changes
     private boolean physicsLocationDirty = false;
-    private boolean jmeLocationDirty = false;
+    private boolean CWLocationDirty = false;
     //temp variable for conversion
     private Quaternion tmp_inverseWorldRotation = new Quaternion();
     private PhysicsVehicle vehicle;
@@ -50,7 +50,7 @@ public class RigidBodyMotionState extends MotionState {
      * @param worldTrans
      */
     public void setWorldTransform(Transform worldTrans) {
-        if (jmeLocationDirty) {
+        if (CWLocationDirty) {
             return;
         }
         motionStateTrans.set(worldTrans);
@@ -68,7 +68,7 @@ public class RigidBodyMotionState extends MotionState {
     }
 
     /**
-     * applies the current transform to the given jme Node if the location has been updated on the physics side
+     * applies the current transform to the given CW Node if the location has been updated on the physics side
      * @param spatial
      */
     public boolean applyTransform(Spatial spatial) {
@@ -146,7 +146,7 @@ public class RigidBodyMotionState extends MotionState {
 //    }
 //    
 //    /**
-//     * called from jme when the location of the jme Node changes
+//     * called from CW when the location of the CW Node changes
 //     * @param location
 //     * @param rotation
 //     */
@@ -156,20 +156,20 @@ public class RigidBodyMotionState extends MotionState {
 //        worldRotation.set(rotation.toRotationMatrix());
 //        Converter.convert(worldLocation, motionStateTrans.origin);
 //        Converter.convert(worldRotation, motionStateTrans.basis);
-//        jmeLocationDirty = true;
+//        CWLocationDirty = true;
 //    }
 //
 //    /**
-//     * applies the current transform to the given RigidBody if the value has been changed on the jme side
+//     * applies the current transform to the given RigidBody if the value has been changed on the CW side
 //     * @param rBody
 //     */
 //    public synchronized void applyTransform(RigidBody rBody) {
-//        if (!jmeLocationDirty) {
+//        if (!CWLocationDirty) {
 //            return;
 //        }
 //        assert (rBody != null);
 //        rBody.setWorldTransform(motionStateTrans);
 //        rBody.activate();
-//        jmeLocationDirty = false;
+//        CWLocationDirty = false;
 //    }
 }

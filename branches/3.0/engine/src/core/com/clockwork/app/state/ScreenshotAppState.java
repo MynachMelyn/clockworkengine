@@ -12,7 +12,7 @@ import com.clockwork.renderer.RenderManager;
 import com.clockwork.renderer.Renderer;
 import com.clockwork.renderer.ViewPort;
 import com.clockwork.renderer.queue.RenderQueue;
-import com.clockwork.system.JmeSystem;
+import com.clockwork.system.CWSystem;
 import com.clockwork.texture.FrameBuffer;
 import com.clockwork.util.BufferUtils;
 import java.io.File;
@@ -133,7 +133,7 @@ public class ScreenshotAppState extends AbstractAppState implements ActionListen
 
             File file;
             if (filePath == null) {
-                file = new File(JmeSystem.getStorageFolder() + File.separator + appName + shotIndex + ".png").getAbsoluteFile();
+                file = new File(CWSystem.getStorageFolder() + File.separator + appName + shotIndex + ".png").getAbsoluteFile();
             } else {
                 file = new File(filePath + appName + shotIndex + ".png").getAbsoluteFile();
             }
@@ -142,7 +142,7 @@ public class ScreenshotAppState extends AbstractAppState implements ActionListen
             OutputStream outStream = null;
             try {
                 outStream = new FileOutputStream(file);
-                JmeSystem.writeImageFile(outStream, "png", outBuf, width, height);
+                CWSystem.writeImageFile(outStream, "png", outBuf, width, height);
             } catch (IOException ex) {
                 logger.log(Level.SEVERE, "Error while saving screenshot", ex);
             } finally {

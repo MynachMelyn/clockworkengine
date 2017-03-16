@@ -1,7 +1,7 @@
 
 package com.clockwork.input;
 
-import com.clockwork.cursors.plugins.JmeCursor;
+import com.clockwork.cursors.plugins.CWCursor;
 
 /**
  * A specific API for interfacing with the mouse.
@@ -56,5 +56,5 @@ public interface MouseInput extends Input {
      * Sets the cursor to use.
      * @param cursor The cursor to use.
      */
-    public void setNativeCursor(JmeCursor cursor);
+    public void setNativeCursor(CWCursor cursor);
 }

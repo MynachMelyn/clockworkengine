@@ -3,8 +3,8 @@ package com.clockwork.bullet.collision.shapes;
 
 import com.clockwork.bullet.collision.shapes.infos.ChildCollisionShape;
 import com.clockwork.export.InputCapsule;
-import com.clockwork.export.JmeExporter;
-import com.clockwork.export.JmeImporter;
+import com.clockwork.export.CWExporter;
+import com.clockwork.export.CWImporter;
 import com.clockwork.export.OutputCapsule;
 import com.clockwork.math.Matrix3f;
 import com.clockwork.math.Vector3f;
@@ -102,13 +102,13 @@ public class CompoundCollisionShape extends CollisionShape {
     
     private native long removeChildShape(long objectId, long childId);
     
-    public void write(JmeExporter ex) throws IOException {
+    public void write(CWExporter ex) throws IOException {
         super.write(ex);
         OutputCapsule capsule = ex.getCapsule(this);
         capsule.writeSavableArrayList(children, "children", new ArrayList<ChildCollisionShape>());
     }
 
-    public void read(JmeImporter im) throws IOException {
+    public void read(CWImporter im) throws IOException {
         super.read(im);
         InputCapsule capsule = im.getCapsule(this);
         children = capsule.readSavableArrayList("children", new ArrayList<ChildCollisionShape>());

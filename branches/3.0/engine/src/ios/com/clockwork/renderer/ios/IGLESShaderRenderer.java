@@ -29,7 +29,7 @@ import java.util.EnumSet;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import jme3tools.shader.ShaderDebug;
+import CWtools.shader.ShaderDebug;
 
 /**
  * The Renderer is responsible for taking rendering commands and
@@ -119,17 +119,17 @@ public class IGLESShaderRenderer implements Renderer {
         logger.log(Level.FINE, "IGLESShaderRenderer clearBuffers");
         int bits = 0;
         if (color) {
-            bits = JmeIosGLES.GL_COLOR_BUFFER_BIT;
+            bits = CWIosGLES.GL_COLOR_BUFFER_BIT;
         }
         if (depth) {
-            bits |= JmeIosGLES.GL_DEPTH_BUFFER_BIT;
+            bits |= CWIosGLES.GL_DEPTH_BUFFER_BIT;
         }
         if (stencil) {
-            bits |= JmeIosGLES.GL_STENCIL_BUFFER_BIT;
+            bits |= CWIosGLES.GL_STENCIL_BUFFER_BIT;
         }
         if (bits != 0) {
-            JmeIosGLES.glClear(bits);
-            JmeIosGLES.checkGLError();
+            CWIosGLES.glClear(bits);
+            CWIosGLES.checkGLError();
         }
     }
 
@@ -140,8 +140,8 @@ public class IGLESShaderRenderer implements Renderer {
      */
     public void setBackgroundColor(ColorRGBA color) {
         logger.log(Level.FINE, "IGLESShaderRenderer setBackgroundColor");
-        JmeIosGLES.glClearColor(color.r, color.g, color.b, color.a);
-        JmeIosGLES.checkGLError();
+        CWIosGLES.glClearColor(color.r, color.g, color.b, color.a);
+        CWIosGLES.checkGLError();
     }
 
     /**
@@ -161,36 +161,36 @@ public class IGLESShaderRenderer implements Renderer {
          */
         
         if (state.isDepthTest() && !context.depthTestEnabled) {
-            JmeIosGLES.glEnable(JmeIosGLES.GL_DEPTH_TEST);
-            JmeIosGLES.glDepthFunc(JmeIosGLES.GL_LEQUAL);
-            JmeIosGLES.checkGLError();
+            CWIosGLES.glEnable(CWIosGLES.GL_DEPTH_TEST);
+            CWIosGLES.glDepthFunc(CWIosGLES.GL_LEQUAL);
+            CWIosGLES.checkGLError();
             context.depthTestEnabled = true;
         } else if (!state.isDepthTest() && context.depthTestEnabled) {
-            JmeIosGLES.glDisable(JmeIosGLES.GL_DEPTH_TEST);
-            JmeIosGLES.checkGLError();
+            CWIosGLES.glDisable(CWIosGLES.GL_DEPTH_TEST);
+            CWIosGLES.checkGLError();
             context.depthTestEnabled = false;
         }
 //		if (state.getDepthFunc() != context.depthFunc) {
-//			JmeIosGLES.glDepthFunc(convertTestFunction(state.getDepthFunc()));
+//			CWIosGLES.glDepthFunc(convertTestFunction(state.getDepthFunc()));
 //			context.depthFunc = state.getDepthFunc();
 //		}
 
         if (state.isDepthWrite() && !context.depthWriteEnabled) {
-            JmeIosGLES.glDepthMask(true);
-            JmeIosGLES.checkGLError();
+            CWIosGLES.glDepthMask(true);
+            CWIosGLES.checkGLError();
             context.depthWriteEnabled = true;
         } else if (!state.isDepthWrite() && context.depthWriteEnabled) {
-            JmeIosGLES.glDepthMask(false);
-            JmeIosGLES.checkGLError();
+            CWIosGLES.glDepthMask(false);
+            CWIosGLES.checkGLError();
             context.depthWriteEnabled = false;
         }
         if (state.isColorWrite() && !context.colorWriteEnabled) {
-            JmeIosGLES.glColorMask(true, true, true, true);
-            JmeIosGLES.checkGLError();
+            CWIosGLES.glColorMask(true, true, true, true);
+            CWIosGLES.checkGLError();
             context.colorWriteEnabled = true;
         } else if (!state.isColorWrite() && context.colorWriteEnabled) {
-            JmeIosGLES.glColorMask(false, false, false, false);
-            JmeIosGLES.checkGLError();
+            CWIosGLES.glColorMask(false, false, false, false);
+            CWIosGLES.checkGLError();
             context.colorWriteEnabled = false;
         }
 //        if (state.isPointSprite() && !context.pointSprite) {
@@ -204,10 +204,10 @@ public class IGLESShaderRenderer implements Renderer {
 
         if (state.isPolyOffset()) {
             if (!context.polyOffsetEnabled) {
-                JmeIosGLES.glEnable(JmeIosGLES.GL_POLYGON_OFFSET_FILL);
-                JmeIosGLES.glPolygonOffset(state.getPolyOffsetFactor(),
+                CWIosGLES.glEnable(CWIosGLES.GL_POLYGON_OFFSET_FILL);
+                CWIosGLES.glPolygonOffset(state.getPolyOffsetFactor(),
                         state.getPolyOffsetUnits());
-                JmeIosGLES.checkGLError();
+                CWIosGLES.checkGLError();
 
                 context.polyOffsetEnabled = true;
                 context.polyOffsetFactor = state.getPolyOffsetFactor();
@@ -215,9 +215,9 @@ public class IGLESShaderRenderer implements Renderer {
             } else {
                 if (state.getPolyOffsetFactor() != context.polyOffsetFactor
                         || state.getPolyOffsetUnits() != context.polyOffsetUnits) {
-                    JmeIosGLES.glPolygonOffset(state.getPolyOffsetFactor(),
+                    CWIosGLES.glPolygonOffset(state.getPolyOffsetFactor(),
                             state.getPolyOffsetUnits());
-                    JmeIosGLES.checkGLError();
+                    CWIosGLES.checkGLError();
 
                     context.polyOffsetFactor = state.getPolyOffsetFactor();
                     context.polyOffsetUnits = state.getPolyOffsetUnits();
@@ -225,8 +225,8 @@ public class IGLESShaderRenderer implements Renderer {
             }
         } else {
             if (context.polyOffsetEnabled) {
-                JmeIosGLES.glDisable(JmeIosGLES.GL_POLYGON_OFFSET_FILL);
-                JmeIosGLES.checkGLError();
+                CWIosGLES.glDisable(CWIosGLES.GL_POLYGON_OFFSET_FILL);
+                CWIosGLES.checkGLError();
 
                 context.polyOffsetEnabled = false;
                 context.polyOffsetFactor = 0;
@@ -235,27 +235,27 @@ public class IGLESShaderRenderer implements Renderer {
         }
         if (state.getFaceCullMode() != context.cullMode) {
             if (state.getFaceCullMode() == RenderState.FaceCullMode.Off) {
-                JmeIosGLES.glDisable(JmeIosGLES.GL_CULL_FACE);
-                JmeIosGLES.checkGLError();
+                CWIosGLES.glDisable(CWIosGLES.GL_CULL_FACE);
+                CWIosGLES.checkGLError();
             } else {
-                JmeIosGLES.glEnable(JmeIosGLES.GL_CULL_FACE);
-                JmeIosGLES.checkGLError();
+                CWIosGLES.glEnable(CWIosGLES.GL_CULL_FACE);
+                CWIosGLES.checkGLError();
             }
 
             switch (state.getFaceCullMode()) {
                 case Off:
                     break;
                 case Back:
-                    JmeIosGLES.glCullFace(JmeIosGLES.GL_BACK);
-                    JmeIosGLES.checkGLError();
+                    CWIosGLES.glCullFace(CWIosGLES.GL_BACK);
+                    CWIosGLES.checkGLError();
                     break;
                 case Front:
-                    JmeIosGLES.glCullFace(JmeIosGLES.GL_FRONT);
-                    JmeIosGLES.checkGLError();
+                    CWIosGLES.glCullFace(CWIosGLES.GL_FRONT);
+                    CWIosGLES.checkGLError();
                     break;
                 case FrontAndBack:
-                    JmeIosGLES.glCullFace(JmeIosGLES.GL_FRONT_AND_BACK);
-                    JmeIosGLES.checkGLError();
+                    CWIosGLES.glCullFace(CWIosGLES.GL_FRONT_AND_BACK);
+                    CWIosGLES.checkGLError();
                     break;
                 default:
                     throw new UnsupportedOperationException("Unrecognized face cull mode: "
@@ -267,39 +267,39 @@ public class IGLESShaderRenderer implements Renderer {
 
         if (state.getBlendMode() != context.blendMode) {
             if (state.getBlendMode() == RenderState.BlendMode.Off) {
-                JmeIosGLES.glDisable(JmeIosGLES.GL_BLEND);
-                JmeIosGLES.checkGLError();
+                CWIosGLES.glDisable(CWIosGLES.GL_BLEND);
+                CWIosGLES.checkGLError();
             } else {
-                JmeIosGLES.glEnable(JmeIosGLES.GL_BLEND);
+                CWIosGLES.glEnable(CWIosGLES.GL_BLEND);
                 switch (state.getBlendMode()) {
                     case Off:
                         break;
                     case Additive:
-                        JmeIosGLES.glBlendFunc(JmeIosGLES.GL_ONE, JmeIosGLES.GL_ONE);
+                        CWIosGLES.glBlendFunc(CWIosGLES.GL_ONE, CWIosGLES.GL_ONE);
                         break;
                     case AlphaAdditive:
-                        JmeIosGLES.glBlendFunc(JmeIosGLES.GL_SRC_ALPHA, JmeIosGLES.GL_ONE);
+                        CWIosGLES.glBlendFunc(CWIosGLES.GL_SRC_ALPHA, CWIosGLES.GL_ONE);
                         break;
                     case Color:
-                        JmeIosGLES.glBlendFunc(JmeIosGLES.GL_ONE, JmeIosGLES.GL_ONE_MINUS_SRC_COLOR);
+                        CWIosGLES.glBlendFunc(CWIosGLES.GL_ONE, CWIosGLES.GL_ONE_MINUS_SRC_COLOR);
                         break;
                     case Alpha:
-                        JmeIosGLES.glBlendFunc(JmeIosGLES.GL_SRC_ALPHA, JmeIosGLES.GL_ONE_MINUS_SRC_ALPHA);
+                        CWIosGLES.glBlendFunc(CWIosGLES.GL_SRC_ALPHA, CWIosGLES.GL_ONE_MINUS_SRC_ALPHA);
                         break;
                     case PremultAlpha:
-                        JmeIosGLES.glBlendFunc(JmeIosGLES.GL_ONE, JmeIosGLES.GL_ONE_MINUS_SRC_ALPHA);
+                        CWIosGLES.glBlendFunc(CWIosGLES.GL_ONE, CWIosGLES.GL_ONE_MINUS_SRC_ALPHA);
                         break;
                     case Modulate:
-                        JmeIosGLES.glBlendFunc(JmeIosGLES.GL_DST_COLOR, JmeIosGLES.GL_ZERO);
+                        CWIosGLES.glBlendFunc(CWIosGLES.GL_DST_COLOR, CWIosGLES.GL_ZERO);
                         break;
                     case ModulateX2:
-                        JmeIosGLES.glBlendFunc(JmeIosGLES.GL_DST_COLOR, JmeIosGLES.GL_SRC_COLOR);
+                        CWIosGLES.glBlendFunc(CWIosGLES.GL_DST_COLOR, CWIosGLES.GL_SRC_COLOR);
                         break;
                     default:
                         throw new UnsupportedOperationException("Unrecognized blend mode: "
                                 + state.getBlendMode());
                 }
-                JmeIosGLES.checkGLError();
+                CWIosGLES.checkGLError();
             }
             context.blendMode = state.getBlendMode();
         }
@@ -314,8 +314,8 @@ public class IGLESShaderRenderer implements Renderer {
      */
     public void setDepthRange(float start, float end) {
         logger.log(Level.FINE, "IGLESShaderRenderer setDepthRange");
-        JmeIosGLES.glDepthRangef(start, end);
-        JmeIosGLES.checkGLError();
+        CWIosGLES.glDepthRangef(start, end);
+        CWIosGLES.checkGLError();
     }
 
     /**
@@ -323,8 +323,8 @@ public class IGLESShaderRenderer implements Renderer {
      */
     public void onFrame() {
         logger.log(Level.FINE, "IGLESShaderRenderer onFrame");
-        //JmeIosGLES.checkGLErrorForced();
-        JmeIosGLES.checkGLError();
+        //CWIosGLES.checkGLErrorForced();
+        CWIosGLES.checkGLError();
 
         objManager.deleteUnused(this);
     }
@@ -361,8 +361,8 @@ public class IGLESShaderRenderer implements Renderer {
     public void setViewPort(int x, int y, int width, int height) {
         logger.log(Level.FINE, "IGLESShaderRenderer setViewPort");
         if (x != vpX || vpY != y || vpW != width || vpH != height) {
-            JmeIosGLES.glViewport(x, y, width, height);
-            JmeIosGLES.checkGLError();
+            CWIosGLES.glViewport(x, y, width, height);
+            CWIosGLES.checkGLError();
 
             vpX = x;
             vpY = y;
@@ -384,13 +384,13 @@ public class IGLESShaderRenderer implements Renderer {
     public void setClipRect(int x, int y, int width, int height) {
         logger.log(Level.FINE, "IGLESShaderRenderer setClipRect");
         if (!context.clipRectEnabled) {
-            JmeIosGLES.glEnable(JmeIosGLES.GL_SCISSOR_TEST);
-            JmeIosGLES.checkGLError();
+            CWIosGLES.glEnable(CWIosGLES.GL_SCISSOR_TEST);
+            CWIosGLES.checkGLError();
             context.clipRectEnabled = true;
         }
         if (clipX != x || clipY != y || clipW != width || clipH != height) {
-            JmeIosGLES.glScissor(x, y, width, height);
-            JmeIosGLES.checkGLError();
+            CWIosGLES.glScissor(x, y, width, height);
+            CWIosGLES.checkGLError();
             clipX = x;
             clipY = y;
             clipW = width;
@@ -405,8 +405,8 @@ public class IGLESShaderRenderer implements Renderer {
     public void clearClipRect() {
         logger.log(Level.FINE, "IGLESShaderRenderer clearClipRect");
         if (context.clipRectEnabled) {
-            JmeIosGLES.glDisable(JmeIosGLES.GL_SCISSOR_TEST);
-            JmeIosGLES.checkGLError();
+            CWIosGLES.glDisable(CWIosGLES.GL_SCISSOR_TEST);
+            CWIosGLES.checkGLError();
             context.clipRectEnabled = false;
 
             clipX = 0;
@@ -470,15 +470,15 @@ public class IGLESShaderRenderer implements Renderer {
 
         for (ShaderSource source : shader.getSources()) {
             if (source.getId() != -1) {
-                JmeIosGLES.glDetachShader(shader.getId(), source.getId());
-                JmeIosGLES.checkGLError();
+                CWIosGLES.glDetachShader(shader.getId(), source.getId());
+                CWIosGLES.checkGLError();
 
                 deleteShaderSource(source);
             }
         }
 
-        JmeIosGLES.glDeleteProgram(shader.getId());
-        JmeIosGLES.checkGLError();
+        CWIosGLES.glDeleteProgram(shader.getId());
+        CWIosGLES.checkGLError();
 
         statistics.onDeleteShader();
         shader.resetObject();
@@ -498,8 +498,8 @@ public class IGLESShaderRenderer implements Renderer {
 
         source.clearUpdateNeeded();
 
-        JmeIosGLES.glDeleteShader(source.getId());
-        JmeIosGLES.checkGLError();
+        CWIosGLES.glDeleteShader(source.getId());
+        CWIosGLES.checkGLError();
 
         source.resetObject();
     }
@@ -547,8 +547,8 @@ public class IGLESShaderRenderer implements Renderer {
 
 //                    int textureType = convertTextureType(tex.getType(), tex.getImage().getMultiSamples(), rb.getFace());
                     int textureType = convertTextureType(tex.getType());
-                    JmeIosGLES.glGenerateMipmap(textureType);
-                    JmeIosGLES.checkGLError();
+                    CWIosGLES.glGenerateMipmap(textureType);
+                    CWIosGLES.checkGLError();
                 }
             }
         }
@@ -556,8 +556,8 @@ public class IGLESShaderRenderer implements Renderer {
         if (fb == null) {
             // unbind any fbos
             if (context.boundFBO != 0) {
-                JmeIosGLES.glBindFramebuffer(JmeIosGLES.GL_FRAMEBUFFER, 0);
-                JmeIosGLES.checkGLError();
+                CWIosGLES.glBindFramebuffer(CWIosGLES.GL_FRAMEBUFFER, 0);
+                CWIosGLES.checkGLError();
 
                 statistics.onFrameBufferUse(null, true);
 
@@ -588,8 +588,8 @@ public class IGLESShaderRenderer implements Renderer {
             }
 
             if (context.boundFBO != fb.getId()) {
-                JmeIosGLES.glBindFramebuffer(JmeIosGLES.GL_FRAMEBUFFER, fb.getId());
-                JmeIosGLES.checkGLError();
+                CWIosGLES.glBindFramebuffer(CWIosGLES.GL_FRAMEBUFFER, fb.getId());
+                CWIosGLES.checkGLError();
 
                 statistics.onFrameBufferUse(fb, true);
 
@@ -627,7 +627,7 @@ public class IGLESShaderRenderer implements Renderer {
                     if (context.boundDrawBuf != 100 + fb.getNumColorBuffers()) {
                         //intBuf16.clear();
                         for (int i = 0; i < 16; i++) {
-                            intBuf16[i] = i < fb.getNumColorBuffers() ? JmeIosGLES.GL_COLOR_ATTACHMENT0 + i : 0;
+                            intBuf16[i] = i < fb.getNumColorBuffers() ? CWIosGLES.GL_COLOR_ATTACHMENT0 + i : 0;
                         }
 
                         //intBuf16.flip();// TODO: flip
@@ -638,8 +638,8 @@ public class IGLESShaderRenderer implements Renderer {
                     RenderBuffer rb = fb.getColorBuffer(fb.getTargetIndex());
                     // select this draw buffer
                     if (context.boundDrawBuf != rb.getSlot()) {
-                        JmeIosGLES.glActiveTexture(convertAttachmentSlot(rb.getSlot()));
-                        JmeIosGLES.checkGLError();
+                        CWIosGLES.glActiveTexture(convertAttachmentSlot(rb.getSlot()));
+                        CWIosGLES.checkGLError();
 
                         context.boundDrawBuf = rb.getSlot();
                     }
@@ -690,9 +690,9 @@ public class IGLESShaderRenderer implements Renderer {
             setFrameBuffer(null);
         }
 
-        //JmeIosGLES.glReadPixels2(vpX, vpY, vpW, vpH, JmeIosGLES.GL_RGBA, JmeIosGLES.GL_UNSIGNED_BYTE, byteBuf.array(), 0, vpW * vpH * 4);
-        JmeIosGLES.glReadPixels(vpX, vpY, vpW, vpH, JmeIosGLES.GL_RGBA, JmeIosGLES.GL_UNSIGNED_BYTE, byteBuf);
-        JmeIosGLES.checkGLError();
+        //CWIosGLES.glReadPixels2(vpX, vpY, vpW, vpH, CWIosGLES.GL_RGBA, CWIosGLES.GL_UNSIGNED_BYTE, byteBuf.array(), 0, vpW * vpH * 4);
+        CWIosGLES.glReadPixels(vpX, vpY, vpW, vpH, CWIosGLES.GL_RGBA, CWIosGLES.GL_UNSIGNED_BYTE, byteBuf);
+        CWIosGLES.checkGLError();
     }
 
     /**
@@ -702,8 +702,8 @@ public class IGLESShaderRenderer implements Renderer {
         logger.log(Level.FINE, "IGLESShaderRenderer deleteFrameBuffer");
         if (fb.getId() != -1) {
             if (context.boundFBO == fb.getId()) {
-                JmeIosGLES.glBindFramebuffer(JmeIosGLES.GL_FRAMEBUFFER, 0);
-                JmeIosGLES.checkGLError();
+                CWIosGLES.glBindFramebuffer(CWIosGLES.GL_FRAMEBUFFER, 0);
+                CWIosGLES.checkGLError();
 
                 context.boundFBO = 0;
             }
@@ -716,8 +716,8 @@ public class IGLESShaderRenderer implements Renderer {
             }
 
             intBuf1[0] = fb.getId();
-            JmeIosGLES.glDeleteFramebuffers(1, intBuf1, 0);
-            JmeIosGLES.checkGLError();
+            CWIosGLES.glDeleteFramebuffers(1, intBuf1, 0);
+            CWIosGLES.checkGLError();
 
             fb.resetObject();
 
@@ -755,12 +755,12 @@ public class IGLESShaderRenderer implements Renderer {
 
         if (textures[unit] != image) {
             if (context.boundTextureUnit != unit) {
-                JmeIosGLES.glActiveTexture(JmeIosGLES.GL_TEXTURE0 + unit);
+                CWIosGLES.glActiveTexture(CWIosGLES.GL_TEXTURE0 + unit);
                 context.boundTextureUnit = unit;
             }
 
-            JmeIosGLES.glBindTexture(type, texId);
-            JmeIosGLES.checkGLError();
+            CWIosGLES.glBindTexture(type, texId);
+            CWIosGLES.checkGLError();
 
             textures[unit] = image;
 
@@ -795,8 +795,8 @@ public class IGLESShaderRenderer implements Renderer {
         if (texId != -1) {
             intBuf1[0] = texId;
 
-            JmeIosGLES.glDeleteTextures(1, intBuf1, 0);
-            JmeIosGLES.checkGLError();
+            CWIosGLES.glDeleteTextures(1, intBuf1, 0);
+            CWIosGLES.checkGLError();
 
             image.resetObject();
 
@@ -815,8 +815,8 @@ public class IGLESShaderRenderer implements Renderer {
         boolean created = false;
         if (bufId == -1) {
             // create buffer
-            JmeIosGLES.glGenBuffers(1, intBuf1, 0);
-            JmeIosGLES.checkGLError();
+            CWIosGLES.glGenBuffers(1, intBuf1, 0);
+            CWIosGLES.checkGLError();
 
             bufId = intBuf1[0];
             vb.setId(bufId);
@@ -828,18 +828,18 @@ public class IGLESShaderRenderer implements Renderer {
         // bind buffer
         int target;
         if (vb.getBufferType() == VertexBuffer.Type.Index) {
-            target = JmeIosGLES.GL_ELEMENT_ARRAY_BUFFER;
+            target = CWIosGLES.GL_ELEMENT_ARRAY_BUFFER;
             if (context.boundElementArrayVBO != bufId) {
-                JmeIosGLES.glBindBuffer(target, bufId);
-                JmeIosGLES.checkGLError();
+                CWIosGLES.glBindBuffer(target, bufId);
+                CWIosGLES.checkGLError();
 
                 context.boundElementArrayVBO = bufId;
             }
         } else {
-            target = JmeIosGLES.GL_ARRAY_BUFFER;
+            target = CWIosGLES.GL_ARRAY_BUFFER;
             if (context.boundArrayVBO != bufId) {
-                JmeIosGLES.glBindBuffer(target, bufId);
-                JmeIosGLES.checkGLError();
+                CWIosGLES.glBindBuffer(target, bufId);
+                CWIosGLES.checkGLError();
 
                 context.boundArrayVBO = bufId;
             }
@@ -855,22 +855,22 @@ public class IGLESShaderRenderer implements Renderer {
             switch (vb.getFormat()) {
                 case Byte:
                 case UnsignedByte:
-					JmeIosGLES.glBufferData(target, size, (ByteBuffer) vb.getData(), usage);
-                    JmeIosGLES.checkGLError();
+					CWIosGLES.glBufferData(target, size, (ByteBuffer) vb.getData(), usage);
+                    CWIosGLES.checkGLError();
                     break;
                 case Short:
                 case UnsignedShort:
-                    JmeIosGLES.glBufferData(target, size, (ShortBuffer) vb.getData(), usage);
-                    JmeIosGLES.checkGLError();
+                    CWIosGLES.glBufferData(target, size, (ShortBuffer) vb.getData(), usage);
+                    CWIosGLES.checkGLError();
                     break;
                 case Int:
                 case UnsignedInt:
-                    JmeIosGLES.glBufferData(target, size, (IntBuffer) vb.getData(), usage);
-                    JmeIosGLES.checkGLError();
+                    CWIosGLES.glBufferData(target, size, (IntBuffer) vb.getData(), usage);
+                    CWIosGLES.checkGLError();
                     break;
                 case Float:
-                    JmeIosGLES.glBufferData(target, size, (FloatBuffer) vb.getData(), usage);
-                    JmeIosGLES.checkGLError();
+                    CWIosGLES.glBufferData(target, size, (FloatBuffer) vb.getData(), usage);
+                    CWIosGLES.checkGLError();
                     break;
                 default:
                     throw new RuntimeException("Unknown buffer format.");
@@ -881,22 +881,22 @@ public class IGLESShaderRenderer implements Renderer {
             switch (vb.getFormat()) {
                 case Byte:
                 case UnsignedByte:
-                    JmeIosGLES.glBufferSubData(target, 0, size, (ByteBuffer) vb.getData());
-                    JmeIosGLES.checkGLError();
+                    CWIosGLES.glBufferSubData(target, 0, size, (ByteBuffer) vb.getData());
+                    CWIosGLES.checkGLError();
                     break;
                 case Short:
                 case UnsignedShort:
-                    JmeIosGLES.glBufferSubData(target, 0, size, (ShortBuffer) vb.getData());
-                    JmeIosGLES.checkGLError();
+                    CWIosGLES.glBufferSubData(target, 0, size, (ShortBuffer) vb.getData());
+                    CWIosGLES.checkGLError();
                     break;
                 case Int:
                 case UnsignedInt:
-                    JmeIosGLES.glBufferSubData(target, 0, size, (IntBuffer) vb.getData());
-                    JmeIosGLES.checkGLError();
+                    CWIosGLES.glBufferSubData(target, 0, size, (IntBuffer) vb.getData());
+                    CWIosGLES.checkGLError();
                     break;
                 case Float:
-                    JmeIosGLES.glBufferSubData(target, 0, size, (FloatBuffer) vb.getData());
-                    JmeIosGLES.checkGLError();
+                    CWIosGLES.glBufferSubData(target, 0, size, (FloatBuffer) vb.getData());
+                    CWIosGLES.checkGLError();
                     break;
                 default:
                     throw new RuntimeException("Unknown buffer format.");
@@ -916,8 +916,8 @@ public class IGLESShaderRenderer implements Renderer {
             // delete buffer
             intBuf1[0] = bufId;
 
-            JmeIosGLES.glDeleteBuffers(1, intBuf1, 0);
-            JmeIosGLES.checkGLError();
+            CWIosGLES.glDeleteBuffers(1, intBuf1, 0);
+            CWIosGLES.checkGLError();
 
             vb.resetObject();
         }
@@ -948,8 +948,8 @@ public class IGLESShaderRenderer implements Renderer {
         }
         */
         if (context.lineWidth != mesh.getLineWidth()) {
-            JmeIosGLES.glLineWidth(mesh.getLineWidth());
-            JmeIosGLES.checkGLError();
+            CWIosGLES.glLineWidth(mesh.getLineWidth());
+            CWIosGLES.checkGLError();
             context.lineWidth = mesh.getLineWidth();
         }
 
@@ -1011,11 +1011,11 @@ public class IGLESShaderRenderer implements Renderer {
     public void setAlphaToCoverage(boolean value) {
         logger.log(Level.FINE, "IGLESShaderRenderer setAlphaToCoverage");
         if (value) {
-            JmeIosGLES.glEnable(JmeIosGLES.GL_SAMPLE_ALPHA_TO_COVERAGE);
-            JmeIosGLES.checkGLError();
+            CWIosGLES.glEnable(CWIosGLES.GL_SAMPLE_ALPHA_TO_COVERAGE);
+            CWIosGLES.checkGLError();
         } else {
-            JmeIosGLES.glDisable(JmeIosGLES.GL_SAMPLE_ALPHA_TO_COVERAGE);
-            JmeIosGLES.checkGLError();
+            CWIosGLES.glDisable(CWIosGLES.GL_SAMPLE_ALPHA_TO_COVERAGE);
+            CWIosGLES.checkGLError();
         }
     }
     
@@ -1027,10 +1027,10 @@ public class IGLESShaderRenderer implements Renderer {
         Level store = logger.getLevel();
         logger.setLevel(Level.FINE);
         
-        logger.log(Level.FINE, "Vendor: {0}", JmeIosGLES.glGetString(JmeIosGLES.GL_VENDOR));
-        logger.log(Level.FINE, "Renderer: {0}", JmeIosGLES.glGetString(JmeIosGLES.GL_RENDERER));
-        logger.log(Level.FINE, "Version: {0}", JmeIosGLES.glGetString(JmeIosGLES.GL_VERSION));
-        logger.log(Level.FINE, "Shading Language Version: {0}", JmeIosGLES.glGetString(JmeIosGLES.GL_SHADING_LANGUAGE_VERSION));
+        logger.log(Level.FINE, "Vendor: {0}", CWIosGLES.glGetString(CWIosGLES.GL_VENDOR));
+        logger.log(Level.FINE, "Renderer: {0}", CWIosGLES.glGetString(CWIosGLES.GL_RENDERER));
+        logger.log(Level.FINE, "Version: {0}", CWIosGLES.glGetString(CWIosGLES.GL_VERSION));
+        logger.log(Level.FINE, "Shading Language Version: {0}", CWIosGLES.glGetString(CWIosGLES.GL_SHADING_LANGUAGE_VERSION));
 
         /*
         // Fix issue in TestRenderToMemory when GL_FRONT is the main
@@ -1046,14 +1046,14 @@ public class IGLESShaderRenderer implements Renderer {
          */
 
         // Check OpenGL version
-        int openGlVer = extractVersion("OpenGL ES ", JmeIosGLES.glGetString(JmeIosGLES.GL_VERSION));
+        int openGlVer = extractVersion("OpenGL ES ", CWIosGLES.glGetString(CWIosGLES.GL_VERSION));
         if (openGlVer == -1) {
             glslVer = -1;
             throw new UnsupportedOperationException("OpenGL ES 2.0+ is required for IGLESShaderRenderer!");
         }
 
         // Check shader language version
-        glslVer = extractVersion("OpenGL ES GLSL ES ", JmeIosGLES.glGetString(JmeIosGLES.GL_SHADING_LANGUAGE_VERSION));
+        glslVer = extractVersion("OpenGL ES GLSL ES ", CWIosGLES.glGetString(CWIosGLES.GL_SHADING_LANGUAGE_VERSION));
         switch (glslVer) {
             // TODO: When new versions of OpenGL ES shader language come out,
             // update this.
@@ -1062,35 +1062,35 @@ public class IGLESShaderRenderer implements Renderer {
                 break;
         }
 
-        JmeIosGLES.glGetIntegerv(JmeIosGLES.GL_MAX_VERTEX_TEXTURE_IMAGE_UNITS, intBuf16, 0);
+        CWIosGLES.glGetIntegerv(CWIosGLES.GL_MAX_VERTEX_TEXTURE_IMAGE_UNITS, intBuf16, 0);
         vertexTextureUnits = intBuf16[0];
         logger.log(Level.FINE, "VTF Units: {0}", vertexTextureUnits);
         if (vertexTextureUnits > 0) {
             caps.add(Caps.VertexTextureFetch);
         }
 
-        JmeIosGLES.glGetIntegerv(JmeIosGLES.GL_MAX_TEXTURE_IMAGE_UNITS, intBuf16, 0);
+        CWIosGLES.glGetIntegerv(CWIosGLES.GL_MAX_TEXTURE_IMAGE_UNITS, intBuf16, 0);
         fragTextureUnits = intBuf16[0];
         logger.log(Level.FINE, "Texture Units: {0}", fragTextureUnits);
 
         // Multiply vector count by 4 to get float count.
-        JmeIosGLES.glGetIntegerv(JmeIosGLES.GL_MAX_VERTEX_UNIFORM_VECTORS, intBuf16, 0);
+        CWIosGLES.glGetIntegerv(CWIosGLES.GL_MAX_VERTEX_UNIFORM_VECTORS, intBuf16, 0);
         vertexUniforms = intBuf16[0] * 4;
         logger.log(Level.FINER, "Vertex Uniforms: {0}", vertexUniforms);
 
-        JmeIosGLES.glGetIntegerv(JmeIosGLES.GL_MAX_FRAGMENT_UNIFORM_VECTORS, intBuf16, 0);
+        CWIosGLES.glGetIntegerv(CWIosGLES.GL_MAX_FRAGMENT_UNIFORM_VECTORS, intBuf16, 0);
         fragUniforms = intBuf16[0] * 4;
         logger.log(Level.FINER, "Fragment Uniforms: {0}", fragUniforms);
 
-        JmeIosGLES.glGetIntegerv(JmeIosGLES.GL_MAX_VARYING_VECTORS, intBuf16, 0);
+        CWIosGLES.glGetIntegerv(CWIosGLES.GL_MAX_VARYING_VECTORS, intBuf16, 0);
         int varyingFloats = intBuf16[0] * 4;
         logger.log(Level.FINER, "Varying Floats: {0}", varyingFloats);
 
-        JmeIosGLES.glGetIntegerv(JmeIosGLES.GL_MAX_VERTEX_ATTRIBS, intBuf16, 0);
+        CWIosGLES.glGetIntegerv(CWIosGLES.GL_MAX_VERTEX_ATTRIBS, intBuf16, 0);
         vertexAttribs = intBuf16[0];
         logger.log(Level.FINE, "Vertex Attributes: {0}", vertexAttribs);
 
-        JmeIosGLES.glGetIntegerv(JmeIosGLES.GL_SUBPIXEL_BITS, intBuf16, 0);
+        CWIosGLES.glGetIntegerv(CWIosGLES.GL_SUBPIXEL_BITS, intBuf16, 0);
         int subpixelBits = intBuf16[0];
         logger.log(Level.FINE, "Subpixel Bits: {0}", subpixelBits);
 
@@ -1102,15 +1102,15 @@ public class IGLESShaderRenderer implements Renderer {
 //        maxTriCount = intBuf16.get(0);
 //        logger.log(Level.FINER, "Preferred Batch Index Count: {0}", maxTriCount);
 
-        JmeIosGLES.glGetIntegerv(JmeIosGLES.GL_MAX_TEXTURE_SIZE, intBuf16, 0);
+        CWIosGLES.glGetIntegerv(CWIosGLES.GL_MAX_TEXTURE_SIZE, intBuf16, 0);
         maxTexSize = intBuf16[0];
         logger.log(Level.FINE, "Maximum Texture Resolution: {0}", maxTexSize);
 
-        JmeIosGLES.glGetIntegerv(JmeIosGLES.GL_MAX_CUBE_MAP_TEXTURE_SIZE, intBuf16, 0);
+        CWIosGLES.glGetIntegerv(CWIosGLES.GL_MAX_CUBE_MAP_TEXTURE_SIZE, intBuf16, 0);
         maxCubeTexSize = intBuf16[0];
         logger.log(Level.FINE, "Maximum CubeMap Resolution: {0}", maxCubeTexSize);
 
-        JmeIosGLES.glGetIntegerv(JmeIosGLES.GL_MAX_RENDERBUFFER_SIZE, intBuf16, 0);
+        CWIosGLES.glGetIntegerv(CWIosGLES.GL_MAX_RENDERBUFFER_SIZE, intBuf16, 0);
         maxRBSize = intBuf16[0];
         logger.log(Level.FINER, "FBO RB Max Size: {0}", maxRBSize);
 
@@ -1193,19 +1193,19 @@ public class IGLESShaderRenderer implements Renderer {
         }
          */
 
-        String extensions = JmeIosGLES.glGetString(JmeIosGLES.GL_EXTENSIONS);
+        String extensions = CWIosGLES.glGetString(CWIosGLES.GL_EXTENSIONS);
         logger.log(Level.FINE, "GL_EXTENSIONS: {0}", extensions);
 
         // Get number of compressed formats available.
-        JmeIosGLES.glGetIntegerv(JmeIosGLES.GL_NUM_COMPRESSED_TEXTURE_FORMATS, intBuf16, 0);
+        CWIosGLES.glGetIntegerv(CWIosGLES.GL_NUM_COMPRESSED_TEXTURE_FORMATS, intBuf16, 0);
         int numCompressedFormats = intBuf16[0];
 
         // Allocate buffer for compressed formats.
         int[] compressedFormats = new int[numCompressedFormats];
-        JmeIosGLES.glGetIntegerv(JmeIosGLES.GL_COMPRESSED_TEXTURE_FORMATS, compressedFormats, 0);
+        CWIosGLES.glGetIntegerv(CWIosGLES.GL_COMPRESSED_TEXTURE_FORMATS, compressedFormats, 0);
 
         // Check for errors after all glGet calls.
-        JmeIosGLES.checkGLError();
+        CWIosGLES.checkGLError();
 
         // Print compressed formats.
         for (int i = 0; i < numCompressedFormats; i++) {
@@ -1215,8 +1215,8 @@ public class IGLESShaderRenderer implements Renderer {
         TextureUtil.loadTextureFeatures(extensions);
 
         applyRenderState(RenderState.DEFAULT);
-        JmeIosGLES.glDisable(JmeIosGLES.GL_DITHER);
-        JmeIosGLES.checkGLError();
+        CWIosGLES.glDisable(CWIosGLES.GL_DITHER);
+        CWIosGLES.checkGLError();
 
         logger.log(Level.FINE, "Caps: {0}", caps);
         logger.setLevel(store);
@@ -1243,18 +1243,18 @@ public class IGLESShaderRenderer implements Renderer {
 
     private void deleteRenderBuffer(FrameBuffer fb, RenderBuffer rb) {
         intBuf1[0] = rb.getId();
-        JmeIosGLES.glDeleteRenderbuffers(1, intBuf1, 0);
-        JmeIosGLES.checkGLError();
+        CWIosGLES.glDeleteRenderbuffers(1, intBuf1, 0);
+        CWIosGLES.checkGLError();
     }
     
 	private int convertUsage(Usage usage) {
         switch (usage) {
             case Static:
-                return JmeIosGLES.GL_STATIC_DRAW;
+                return CWIosGLES.GL_STATIC_DRAW;
             case Dynamic:
-                return JmeIosGLES.GL_DYNAMIC_DRAW;
+                return CWIosGLES.GL_DYNAMIC_DRAW;
             case Stream:
-                return JmeIosGLES.GL_STREAM_DRAW;
+                return CWIosGLES.GL_STREAM_DRAW;
             default:
                 throw new RuntimeException("Unknown usage type.");
         }
@@ -1264,8 +1264,8 @@ public class IGLESShaderRenderer implements Renderer {
     protected void bindProgram(Shader shader) {
         int shaderId = shader.getId();
         if (context.boundShaderProgram != shaderId) {
-            JmeIosGLES.glUseProgram(shaderId);
-            JmeIosGLES.checkGLError();
+            CWIosGLES.glUseProgram(shaderId);
+            CWIosGLES.checkGLError();
 
             statistics.onShaderUse(shader, true);
             boundShader = shader;
@@ -1294,8 +1294,8 @@ public class IGLESShaderRenderer implements Renderer {
         assert shader.getId() > 0;
 
         if (context.boundShaderProgram != shaderId) {
-            JmeIosGLES.glUseProgram(shaderId);
-            JmeIosGLES.checkGLError();
+            CWIosGLES.glUseProgram(shaderId);
+            CWIosGLES.checkGLError();
 
             statistics.onShaderUse(shader, true);
             boundShader = shader;
@@ -1337,83 +1337,83 @@ public class IGLESShaderRenderer implements Renderer {
         switch (uniform.getVarType()) {
             case Float:
                 Float f = (Float) uniform.getValue();
-                JmeIosGLES.glUniform1f(loc, f.floatValue());
+                CWIosGLES.glUniform1f(loc, f.floatValue());
                 break;
             case Vector2:
                 Vector2f v2 = (Vector2f) uniform.getValue();
-                JmeIosGLES.glUniform2f(loc, v2.getX(), v2.getY());
+                CWIosGLES.glUniform2f(loc, v2.getX(), v2.getY());
                 break;
             case Vector3:
                 Vector3f v3 = (Vector3f) uniform.getValue();
-                JmeIosGLES.glUniform3f(loc, v3.getX(), v3.getY(), v3.getZ());
+                CWIosGLES.glUniform3f(loc, v3.getX(), v3.getY(), v3.getZ());
                 break;
             case Vector4:
                 Object val = uniform.getValue();
                 if (val instanceof ColorRGBA) {
                     ColorRGBA c = (ColorRGBA) val;
-                    JmeIosGLES.glUniform4f(loc, c.r, c.g, c.b, c.a);
+                    CWIosGLES.glUniform4f(loc, c.r, c.g, c.b, c.a);
                 } else if (val instanceof Vector4f) {
                     Vector4f c = (Vector4f) val;
-                    JmeIosGLES.glUniform4f(loc, c.x, c.y, c.z, c.w);
+                    CWIosGLES.glUniform4f(loc, c.x, c.y, c.z, c.w);
                 } else {
                     Quaternion c = (Quaternion) uniform.getValue();
-                    JmeIosGLES.glUniform4f(loc, c.getX(), c.getY(), c.getZ(), c.getW());
+                    CWIosGLES.glUniform4f(loc, c.getX(), c.getY(), c.getZ(), c.getW());
                 }
                 break;
             case Boolean:
                 Boolean b = (Boolean) uniform.getValue();
-                JmeIosGLES.glUniform1i(loc, b.booleanValue() ? JmeIosGLES.GL_TRUE : JmeIosGLES.GL_FALSE);
+                CWIosGLES.glUniform1i(loc, b.booleanValue() ? CWIosGLES.GL_TRUE : CWIosGLES.GL_FALSE);
                 break;
             case Matrix3:
                 fb = (FloatBuffer) uniform.getValue();
                 assert fb.remaining() == 9;
-                JmeIosGLES.glUniformMatrix3fv(loc, 1, false, fb);
+                CWIosGLES.glUniformMatrix3fv(loc, 1, false, fb);
                 break;
             case Matrix4:
                 fb = (FloatBuffer) uniform.getValue();
                 assert fb.remaining() == 16;
-                JmeIosGLES.glUniformMatrix4fv(loc, 1, false, fb);
+                CWIosGLES.glUniformMatrix4fv(loc, 1, false, fb);
                 break;
             case IntArray:
                 ib = (IntBuffer) uniform.getValue();
-                JmeIosGLES.glUniform1iv(loc, ib.limit(), ib);
+                CWIosGLES.glUniform1iv(loc, ib.limit(), ib);
                 break;
             case FloatArray:
                 fb = (FloatBuffer) uniform.getValue();
-                JmeIosGLES.glUniform1fv(loc, fb.limit(), fb);
+                CWIosGLES.glUniform1fv(loc, fb.limit(), fb);
                 break;
             case Vector2Array:
                 fb = (FloatBuffer) uniform.getValue();
-                JmeIosGLES.glUniform2fv(loc, fb.limit() / 2, fb);
+                CWIosGLES.glUniform2fv(loc, fb.limit() / 2, fb);
                 break;
             case Vector3Array:
                 fb = (FloatBuffer) uniform.getValue();
-                JmeIosGLES.glUniform3fv(loc, fb.limit() / 3, fb);
+                CWIosGLES.glUniform3fv(loc, fb.limit() / 3, fb);
                 break;
             case Vector4Array:
                 fb = (FloatBuffer) uniform.getValue();
-                JmeIosGLES.glUniform4fv(loc, fb.limit() / 4, fb);
+                CWIosGLES.glUniform4fv(loc, fb.limit() / 4, fb);
                 break;
             case Matrix4Array:
                 fb = (FloatBuffer) uniform.getValue();
-                JmeIosGLES.glUniformMatrix4fv(loc, fb.limit() / 16, false, fb);
+                CWIosGLES.glUniformMatrix4fv(loc, fb.limit() / 16, false, fb);
                 break;
             case Int:
                 Integer i = (Integer) uniform.getValue();
-                JmeIosGLES.glUniform1i(loc, i.intValue());
+                CWIosGLES.glUniform1i(loc, i.intValue());
                 break;
             default:
                 throw new UnsupportedOperationException("Unsupported uniform type: " + uniform.getVarType());
         }
-        JmeIosGLES.checkGLError();
+        CWIosGLES.checkGLError();
     }
 
     protected void updateUniformLocation(Shader shader, Uniform uniform) {
         stringBuf.setLength(0);
         stringBuf.append(uniform.getName()).append('\0');
         updateNameBuffer();
-        int loc = JmeIosGLES.glGetUniformLocation(shader.getId(), uniform.getName());
-        JmeIosGLES.checkGLError();
+        int loc = CWIosGLES.glGetUniformLocation(shader.getId(), uniform.getName());
+        CWIosGLES.checkGLError();
 
         if (loc < 0) {
             uniform.setLocation(-1);
@@ -1441,8 +1441,8 @@ public class IGLESShaderRenderer implements Renderer {
         boolean needRegister = false;
         if (id == -1) {
             // create program
-            id = JmeIosGLES.glCreateProgram();
-            JmeIosGLES.checkGLError();
+            id = CWIosGLES.glCreateProgram();
+            CWIosGLES.checkGLError();
 
             if (id <= 0) {
                 throw new RendererException("Invalid ID received when trying to create shader program.");
@@ -1457,29 +1457,29 @@ public class IGLESShaderRenderer implements Renderer {
                 updateShaderSourceData(source);
             }
 
-            JmeIosGLES.glAttachShader(id, source.getId());
-            JmeIosGLES.checkGLError();
+            CWIosGLES.glAttachShader(id, source.getId());
+            CWIosGLES.checkGLError();
         }
 
         // link shaders to program
-        JmeIosGLES.glLinkProgram(id);
-        JmeIosGLES.checkGLError();
+        CWIosGLES.glLinkProgram(id);
+        CWIosGLES.checkGLError();
 
-        JmeIosGLES.glGetProgramiv(id, JmeIosGLES.GL_LINK_STATUS, intBuf1, 0);
-        JmeIosGLES.checkGLError();
+        CWIosGLES.glGetProgramiv(id, CWIosGLES.GL_LINK_STATUS, intBuf1, 0);
+        CWIosGLES.checkGLError();
 
-        boolean linkOK = intBuf1[0] == JmeIosGLES.GL_TRUE;
+        boolean linkOK = intBuf1[0] == CWIosGLES.GL_TRUE;
         String infoLog = null;
 
         if (VALIDATE_SHADER || !linkOK) {
-            JmeIosGLES.glGetProgramiv(id, JmeIosGLES.GL_INFO_LOG_LENGTH, intBuf1, 0);
-            JmeIosGLES.checkGLError();
+            CWIosGLES.glGetProgramiv(id, CWIosGLES.GL_INFO_LOG_LENGTH, intBuf1, 0);
+            CWIosGLES.checkGLError();
 
             int length = intBuf1[0];
             if (length > 3) {
                 // get infos
-                infoLog = JmeIosGLES.glGetProgramInfoLog(id);
-                JmeIosGLES.checkGLError();
+                infoLog = CWIosGLES.glGetProgramInfoLog(id);
+                CWIosGLES.checkGLError();
             }
         }
 
@@ -1519,8 +1519,8 @@ public class IGLESShaderRenderer implements Renderer {
         int texId = img.getId();
         if (texId == -1) {
             // create texture
-            JmeIosGLES.glGenTextures(1, intBuf1, 0);
-            JmeIosGLES.checkGLError();
+            CWIosGLES.glGenTextures(1, intBuf1, 0);
+            CWIosGLES.checkGLError();
 
             texId = intBuf1[0];
             img.setId(texId);
@@ -1533,14 +1533,14 @@ public class IGLESShaderRenderer implements Renderer {
         int target = convertTextureType(type);
         if (context.boundTextures[0] != img) {
             if (context.boundTextureUnit != 0) {
-                JmeIosGLES.glActiveTexture(JmeIosGLES.GL_TEXTURE0);
-                JmeIosGLES.checkGLError();
+                CWIosGLES.glActiveTexture(CWIosGLES.GL_TEXTURE0);
+                CWIosGLES.checkGLError();
 
                 context.boundTextureUnit = 0;
             }
 
-            JmeIosGLES.glBindTexture(target, texId);
-            JmeIosGLES.checkGLError();
+            CWIosGLES.glBindTexture(target, texId);
+            CWIosGLES.checkGLError();
 
             context.boundTextures[0] = img;
         }
@@ -1551,7 +1551,7 @@ public class IGLESShaderRenderer implements Renderer {
             img.setMipmapsGenerated(true);
         }
 
-        if (target == JmeIosGLES.GL_TEXTURE_CUBE_MAP) {
+        if (target == CWIosGLES.GL_TEXTURE_CUBE_MAP) {
             // Check max texture size before upload
             if (img.getWidth() > maxCubeTexSize || img.getHeight() > maxCubeTexSize) {
                 throw new RendererException("Cannot upload cubemap " + img + ". The maximum supported cubemap resolution is " + maxCubeTexSize);
@@ -1562,7 +1562,7 @@ public class IGLESShaderRenderer implements Renderer {
             }
         }
 
-        if (target == JmeIosGLES.GL_TEXTURE_CUBE_MAP) {
+        if (target == CWIosGLES.GL_TEXTURE_CUBE_MAP) {
             // Upload a cube map / sky box
             /*
             @SuppressWarnings("unchecked")
@@ -1574,19 +1574,19 @@ public class IGLESShaderRenderer implements Renderer {
                             + "Cubemap textures must contain 6 data units.");
                 }
                 for (int i = 0; i < 6; i++) {
-                    TextureUtil.uploadTextureBitmap(JmeIosGLES.GL_TEXTURE_CUBE_MAP_POSITIVE_X + i, bmps.get(i).getBitmap(), needMips);
+                    TextureUtil.uploadTextureBitmap(CWIosGLES.GL_TEXTURE_CUBE_MAP_POSITIVE_X + i, bmps.get(i).getBitmap(), needMips);
                     bmps.get(i).notifyBitmapUploaded();
                 }
             } else {
         	*/
-                // Standard jme3 image data
+                // Standard CW image data
                 List<ByteBuffer> data = img.getData();
                 if (data.size() != 6) {
                     throw new UnsupportedOperationException("Invalid texture: " + img
                             + "Cubemap textures must contain 6 data units.");
                 }
                 for (int i = 0; i < 6; i++) {
-                    TextureUtil.uploadTextureAny(img, JmeIosGLES.GL_TEXTURE_CUBE_MAP_POSITIVE_X + i, i, needMips);
+                    TextureUtil.uploadTextureAny(img, CWIosGLES.GL_TEXTURE_CUBE_MAP_POSITIVE_X + i, i, needMips);
                 }
             //}
         } else {
@@ -1609,10 +1609,10 @@ public class IGLESShaderRenderer implements Renderer {
         int minFilter = convertMinFilter(tex.getMinFilter());
         int magFilter = convertMagFilter(tex.getMagFilter());
 
-        JmeIosGLES.glTexParameteri(target, JmeIosGLES.GL_TEXTURE_MIN_FILTER, minFilter);
-        JmeIosGLES.checkGLError();
-        JmeIosGLES.glTexParameteri(target, JmeIosGLES.GL_TEXTURE_MAG_FILTER, magFilter);
-        JmeIosGLES.checkGLError();
+        CWIosGLES.glTexParameteri(target, CWIosGLES.GL_TEXTURE_MIN_FILTER, minFilter);
+        CWIosGLES.checkGLError();
+        CWIosGLES.glTexParameteri(target, CWIosGLES.GL_TEXTURE_MAG_FILTER, magFilter);
+        CWIosGLES.checkGLError();
 
         /*
         if (tex.getAnisotropicFilter() > 1){
@@ -1634,13 +1634,13 @@ public class IGLESShaderRenderer implements Renderer {
             //GLES20.glTexParameteri(target, GLES20.GL_TEXTURE_WRAP_R, convertWrapMode(tex.getWrap(WrapAxis.R)));
             case TwoDimensional:
             case TwoDimensionalArray:
-                JmeIosGLES.glTexParameteri(target, JmeIosGLES.GL_TEXTURE_WRAP_T, convertWrapMode(tex.getWrap(WrapAxis.T)));
+                CWIosGLES.glTexParameteri(target, CWIosGLES.GL_TEXTURE_WRAP_T, convertWrapMode(tex.getWrap(WrapAxis.T)));
 
                 // fall down here is intentional..
 //          case OneDimensional:
-                JmeIosGLES.glTexParameteri(target, JmeIosGLES.GL_TEXTURE_WRAP_S, convertWrapMode(tex.getWrap(WrapAxis.S)));
+                CWIosGLES.glTexParameteri(target, CWIosGLES.GL_TEXTURE_WRAP_S, convertWrapMode(tex.getWrap(WrapAxis.S)));
 
-                JmeIosGLES.checkGLError();
+                CWIosGLES.checkGLError();
                 break;
             default:
                 throw new UnsupportedOperationException("Unknown texture type: " + tex.getType());
@@ -1663,13 +1663,13 @@ public class IGLESShaderRenderer implements Renderer {
     private int convertTextureType(Texture.Type type) {
         switch (type) {
             case TwoDimensional:
-                return JmeIosGLES.GL_TEXTURE_2D;
+                return CWIosGLES.GL_TEXTURE_2D;
             //        case TwoDimensionalArray:
             //            return EXTTextureArray.GL_TEXTURE_2D_ARRAY_EXT;
 //            case ThreeDimensional:
             //               return GLES20.GL_TEXTURE_3D;
             case CubeMap:
-                return JmeIosGLES.GL_TEXTURE_CUBE_MAP;
+                return CWIosGLES.GL_TEXTURE_CUBE_MAP;
             default:
                 throw new UnsupportedOperationException("Unknown texture type: " + type);
         }
@@ -1678,9 +1678,9 @@ public class IGLESShaderRenderer implements Renderer {
     private int convertMagFilter(Texture.MagFilter filter) {
         switch (filter) {
             case Bilinear:
-                return JmeIosGLES.GL_LINEAR;
+                return CWIosGLES.GL_LINEAR;
             case Nearest:
-                return JmeIosGLES.GL_NEAREST;
+                return CWIosGLES.GL_NEAREST;
             default:
                 throw new UnsupportedOperationException("Unknown mag filter: " + filter);
         }
@@ -1689,17 +1689,17 @@ public class IGLESShaderRenderer implements Renderer {
     private int convertMinFilter(Texture.MinFilter filter) {
         switch (filter) {
             case Trilinear:
-                return JmeIosGLES.GL_LINEAR_MIPMAP_LINEAR;
+                return CWIosGLES.GL_LINEAR_MIPMAP_LINEAR;
             case BilinearNearestMipMap:
-                return JmeIosGLES.GL_LINEAR_MIPMAP_NEAREST;
+                return CWIosGLES.GL_LINEAR_MIPMAP_NEAREST;
             case NearestLinearMipMap:
-                return JmeIosGLES.GL_NEAREST_MIPMAP_LINEAR;
+                return CWIosGLES.GL_NEAREST_MIPMAP_LINEAR;
             case NearestNearestMipMap:
-                return JmeIosGLES.GL_NEAREST_MIPMAP_NEAREST;
+                return CWIosGLES.GL_NEAREST_MIPMAP_NEAREST;
             case BilinearNoMipMaps:
-                return JmeIosGLES.GL_LINEAR;
+                return CWIosGLES.GL_LINEAR;
             case NearestNoMipMaps:
-                return JmeIosGLES.GL_NEAREST;
+                return CWIosGLES.GL_NEAREST;
             default:
                 throw new UnsupportedOperationException("Unknown min filter: " + filter);
         }
@@ -1710,11 +1710,11 @@ public class IGLESShaderRenderer implements Renderer {
             case BorderClamp:
             case Clamp:
             case EdgeClamp:
-                return JmeIosGLES.GL_CLAMP_TO_EDGE;
+                return CWIosGLES.GL_CLAMP_TO_EDGE;
             case Repeat:
-                return JmeIosGLES.GL_REPEAT;
+                return CWIosGLES.GL_REPEAT;
             case MirroredRepeat:
-                return JmeIosGLES.GL_MIRRORED_REPEAT;
+                return CWIosGLES.GL_MIRRORED_REPEAT;
             default:
                 throw new UnsupportedOperationException("Unknown wrap mode: " + mode);
         }
@@ -1747,8 +1747,8 @@ public class IGLESShaderRenderer implements Renderer {
         if (indices != null) {
             drawTriangleList_Array(indices, mesh, count);
         } else {
-            JmeIosGLES.glDrawArrays(convertElementMode(mesh.getMode()), 0, mesh.getVertexCount());
-            JmeIosGLES.checkGLError();
+            CWIosGLES.glDrawArrays(convertElementMode(mesh.getMode()), 0, mesh.getVertexCount());
+            CWIosGLES.checkGLError();
         }
         clearVertexAttribs();
         clearTextureUnits();
@@ -1786,8 +1786,8 @@ public class IGLESShaderRenderer implements Renderer {
             drawTriangleList(indices, mesh, count);
         } else {
 //            throw new UnsupportedOperationException("Cannot render without index buffer");
-            JmeIosGLES.glDrawArrays(convertElementMode(mesh.getMode()), 0, mesh.getVertexCount());
-            JmeIosGLES.checkGLError();
+            CWIosGLES.glDrawArrays(convertElementMode(mesh.getMode()), 0, mesh.getVertexCount());
+            CWIosGLES.checkGLError();
         }
         clearVertexAttribs();
         clearTextureUnits();
@@ -1817,8 +1817,8 @@ public class IGLESShaderRenderer implements Renderer {
 //                updateNameBuffer();
 
                 String attributeName = "in" + vb.getBufferType().name();
-                loc = JmeIosGLES.glGetAttribLocation(programId, attributeName);
-                JmeIosGLES.checkGLError();
+                loc = CWIosGLES.glGetAttribLocation(programId, attributeName);
+                CWIosGLES.checkGLError();
 
                 // not really the name of it in the shader (inPosition\0) but
                 // the internal name of the enum (Position).
@@ -1832,8 +1832,8 @@ public class IGLESShaderRenderer implements Renderer {
 
             VertexBuffer[] attribs = context.boundAttribs;
             if (!context.attribIndexList.moveToNew(loc)) {
-                JmeIosGLES.glEnableVertexAttribArray(loc);
-                JmeIosGLES.checkGLError();
+                CWIosGLES.glEnableVertexAttribArray(loc);
+                CWIosGLES.checkGLError();
                 //System.out.println("Enabled ATTRIB IDX: "+loc);
             }
             if (attribs[loc] != vb) {
@@ -1846,8 +1846,8 @@ public class IGLESShaderRenderer implements Renderer {
                 }
 
                 if (context.boundArrayVBO != bufId) {
-                    JmeIosGLES.glBindBuffer(JmeIosGLES.GL_ARRAY_BUFFER, bufId);
-                    JmeIosGLES.checkGLError();
+                    CWIosGLES.glBindBuffer(CWIosGLES.GL_ARRAY_BUFFER, bufId);
+                    CWIosGLES.checkGLError();
 
                     context.boundArrayVBO = bufId;
                 }
@@ -1863,14 +1863,14 @@ public class IGLESShaderRenderer implements Renderer {
 				*/
                 logger.warning("iTODO Android22Workaround");
 				
-                JmeIosGLES.glVertexAttribPointer(loc,
+                CWIosGLES.glVertexAttribPointer(loc,
                                     vb.getNumComponents(),
                                     convertVertexBufferFormat(vb.getFormat()),
                                     vb.isNormalized(),
                                     vb.getStride(),
                                     null);
 					
-                JmeIosGLES.checkGLError();
+                CWIosGLES.checkGLError();
 
                 attribs[loc] = vb;
             }
@@ -1888,8 +1888,8 @@ public class IGLESShaderRenderer implements Renderer {
         ARBDrawInstanced.glDrawArraysInstancedARB(convertElementMode(mode), 0,
         vertCount, count);
         }else{*/
-        JmeIosGLES.glDrawArrays(convertElementMode(mode), 0, vertCount);
-        JmeIosGLES.checkGLError();
+        CWIosGLES.glDrawArrays(convertElementMode(mode), 0, vertCount);
+        CWIosGLES.checkGLError();
         /*
         }*/
     }
@@ -1911,8 +1911,8 @@ public class IGLESShaderRenderer implements Renderer {
         }
 
         if (context.boundElementArrayVBO != bufId) {
-            JmeIosGLES.glBindBuffer(JmeIosGLES.GL_ELEMENT_ARRAY_BUFFER, bufId);
-            JmeIosGLES.checkGLError();
+            CWIosGLES.glBindBuffer(CWIosGLES.GL_ELEMENT_ARRAY_BUFFER, bufId);
+            CWIosGLES.checkGLError();
 
             context.boundElementArrayVBO = bufId;
         }
@@ -1958,8 +1958,8 @@ public class IGLESShaderRenderer implements Renderer {
                      */
                 } else {
                     indexBuf.getData().position(curOffset);
-                    JmeIosGLES.glDrawElements(elMode, elementLength, fmt, indexBuf.getData());
-                    JmeIosGLES.checkGLError();
+                    CWIosGLES.glDrawElements(elMode, elementLength, fmt, indexBuf.getData());
+                    CWIosGLES.checkGLError();
                     /*
                     glDrawRangeElements(elMode,
                     0,
@@ -1986,20 +1986,20 @@ public class IGLESShaderRenderer implements Renderer {
             } else {
 				logger.log(Level.FINE, "IGLESShaderRenderer drawTriangleList TODO check");
                 indexData.rewind();
-                JmeIosGLES.glDrawElementsIndex(
+                CWIosGLES.glDrawElementsIndex(
                         convertElementMode(mesh.getMode()),
                         indexBuf.getData().limit(),
                         convertVertexBufferFormat(indexBuf.getFormat()),
                         0);
 				/*TODO:
                 indexData.rewind();
-                JmeIosGLES.glDrawElements(
+                CWIosGLES.glDrawElements(
                         convertElementMode(mesh.getMode()),
                         indexBuf.getData().limit(),
                         convertVertexBufferFormat(indexBuf.getFormat()),
                         0);
                 */
-                JmeIosGLES.checkGLError();
+                CWIosGLES.checkGLError();
             }
         }
     }
@@ -2007,19 +2007,19 @@ public class IGLESShaderRenderer implements Renderer {
     public int convertElementMode(Mesh.Mode mode) {
         switch (mode) {
             case Points:
-                return JmeIosGLES.GL_POINTS;
+                return CWIosGLES.GL_POINTS;
             case Lines:
-                return JmeIosGLES.GL_LINES;
+                return CWIosGLES.GL_LINES;
             case LineLoop:
-                return JmeIosGLES.GL_LINE_LOOP;
+                return CWIosGLES.GL_LINE_LOOP;
             case LineStrip:
-                return JmeIosGLES.GL_LINE_STRIP;
+                return CWIosGLES.GL_LINE_STRIP;
             case Triangles:
-                return JmeIosGLES.GL_TRIANGLES;
+                return CWIosGLES.GL_TRIANGLES;
             case TriangleFan:
-                return JmeIosGLES.GL_TRIANGLE_FAN;
+                return CWIosGLES.GL_TRIANGLE_FAN;
             case TriangleStrip:
-                return JmeIosGLES.GL_TRIANGLE_STRIP;
+                return CWIosGLES.GL_TRIANGLE_STRIP;
             default:
                 throw new UnsupportedOperationException("Unrecognized mesh mode: " + mode);
         }
@@ -2029,26 +2029,26 @@ public class IGLESShaderRenderer implements Renderer {
     private int convertVertexBufferFormat(Format format) {
         switch (format) {
             case Byte:
-                return JmeIosGLES.GL_BYTE;
+                return CWIosGLES.GL_BYTE;
             case UnsignedByte:
-                return JmeIosGLES.GL_UNSIGNED_BYTE;
+                return CWIosGLES.GL_UNSIGNED_BYTE;
             case Short:
-                return JmeIosGLES.GL_SHORT;
+                return CWIosGLES.GL_SHORT;
             case UnsignedShort:
-                return JmeIosGLES.GL_UNSIGNED_SHORT;
+                return CWIosGLES.GL_UNSIGNED_SHORT;
             case Int:
-                return JmeIosGLES.GL_INT;
+                return CWIosGLES.GL_INT;
             case UnsignedInt:
-                return JmeIosGLES.GL_UNSIGNED_INT;
+                return CWIosGLES.GL_UNSIGNED_INT;
             /*
             case Half:
             return NVHalfFloat.GL_HALF_FLOAT_NV;
             //                return ARBHalfFloatVertex.GL_HALF_FLOAT;
              */
             case Float:
-                return JmeIosGLES.GL_FLOAT;
+                return CWIosGLES.GL_FLOAT;
 //            case Double:
-//                return JmeIosGLES.GL_DOUBLE;
+//                return CWIosGLES.GL_DOUBLE;
             default:
                 throw new RuntimeException("Unknown buffer format.");
 
@@ -2060,8 +2060,8 @@ public class IGLESShaderRenderer implements Renderer {
         for (int i = 0; i < attribList.oldLen; i++) {
             int idx = attribList.oldList[i];
 
-            JmeIosGLES.glDisableVertexAttribArray(idx);
-            JmeIosGLES.checkGLError();
+            CWIosGLES.glDisableVertexAttribArray(idx);
+            CWIosGLES.checkGLError();
 
             context.boundAttribs[idx] = null;
         }
@@ -2089,8 +2089,8 @@ public class IGLESShaderRenderer implements Renderer {
         int id = fb.getId();
         if (id == -1) {
             // create FBO
-            JmeIosGLES.glGenFramebuffers(1, intBuf1, 0);
-            JmeIosGLES.checkGLError();
+            CWIosGLES.glGenFramebuffers(1, intBuf1, 0);
+            CWIosGLES.checkGLError();
 
             id = intBuf1[0];
             fb.setId(id);
@@ -2100,8 +2100,8 @@ public class IGLESShaderRenderer implements Renderer {
         }
 
         if (context.boundFBO != id) {
-            JmeIosGLES.glBindFramebuffer(JmeIosGLES.GL_FRAMEBUFFER, id);
-            JmeIosGLES.checkGLError();
+            CWIosGLES.glBindFramebuffer(CWIosGLES.GL_FRAMEBUFFER, id);
+            CWIosGLES.checkGLError();
 
             // binding an FBO automatically sets draw buf to GL_COLOR_ATTACHMENT0
             context.boundDrawBuf = 0;
@@ -2133,12 +2133,12 @@ public class IGLESShaderRenderer implements Renderer {
             updateRenderTexture(fb, rb);
         }
         if (needAttach) {
-            JmeIosGLES.glFramebufferRenderbuffer(JmeIosGLES.GL_FRAMEBUFFER,
+            CWIosGLES.glFramebufferRenderbuffer(CWIosGLES.GL_FRAMEBUFFER,
                     convertAttachmentSlot(rb.getSlot()),
-                    JmeIosGLES.GL_RENDERBUFFER,
+                    CWIosGLES.GL_RENDERBUFFER,
                     rb.getId());
 
-            JmeIosGLES.checkGLError();
+            CWIosGLES.checkGLError();
         }
     }
 
@@ -2155,29 +2155,29 @@ public class IGLESShaderRenderer implements Renderer {
             setupTextureParams(tex);
         }
 
-        JmeIosGLES.glFramebufferTexture2D(JmeIosGLES.GL_FRAMEBUFFER,
+        CWIosGLES.glFramebufferTexture2D(CWIosGLES.GL_FRAMEBUFFER,
                 convertAttachmentSlot(rb.getSlot()),
                 convertTextureType(tex.getType()),
                 image.getId(),
                 0);
 
-        JmeIosGLES.checkGLError();
+        CWIosGLES.checkGLError();
     }
 
 
     private void updateRenderBuffer(FrameBuffer fb, RenderBuffer rb) {
         int id = rb.getId();
         if (id == -1) {
-            JmeIosGLES.glGenRenderbuffers(1, intBuf1, 0);
-            JmeIosGLES.checkGLError();
+            CWIosGLES.glGenRenderbuffers(1, intBuf1, 0);
+            CWIosGLES.checkGLError();
 
             id = intBuf1[0];
             rb.setId(id);
         }
 
         if (context.boundRB != id) {
-            JmeIosGLES.glBindRenderbuffer(JmeIosGLES.GL_RENDERBUFFER, id);
-            JmeIosGLES.checkGLError();
+            CWIosGLES.glBindRenderbuffer(CWIosGLES.GL_RENDERBUFFER, id);
+            CWIosGLES.checkGLError();
 
             context.boundRB = id;
         }
@@ -2206,12 +2206,12 @@ public class IGLESShaderRenderer implements Renderer {
 //                    fb.getWidth(),
 //                    fb.getHeight());
         } else {
-            JmeIosGLES.glRenderbufferStorage(JmeIosGLES.GL_RENDERBUFFER,
+            CWIosGLES.glRenderbufferStorage(CWIosGLES.GL_RENDERBUFFER,
                     imageFormat.renderBufferStorageFormat,
                     fb.getWidth(),
                     fb.getHeight());
 
-            JmeIosGLES.checkGLError();
+            CWIosGLES.checkGLError();
         }
     }
 
@@ -2219,9 +2219,9 @@ public class IGLESShaderRenderer implements Renderer {
     private int convertAttachmentSlot(int attachmentSlot) {
         // can also add support for stencil here
         if (attachmentSlot == -100) {
-            return JmeIosGLES.GL_DEPTH_ATTACHMENT;
+            return CWIosGLES.GL_DEPTH_ATTACHMENT;
         } else if (attachmentSlot == 0) {
-            return JmeIosGLES.GL_COLOR_ATTACHMENT0;
+            return CWIosGLES.GL_COLOR_ATTACHMENT0;
         } else {
             throw new UnsupportedOperationException("Android does not support multiple color attachments to an FBO");
         }
@@ -2239,19 +2239,19 @@ public class IGLESShaderRenderer implements Renderer {
     }
 
     private void checkFrameBufferError() {
-        int status = JmeIosGLES.glCheckFramebufferStatus(JmeIosGLES.GL_FRAMEBUFFER);
+        int status = CWIosGLES.glCheckFramebufferStatus(CWIosGLES.GL_FRAMEBUFFER);
         switch (status) {
-            case JmeIosGLES.GL_FRAMEBUFFER_COMPLETE:
+            case CWIosGLES.GL_FRAMEBUFFER_COMPLETE:
                 break;
-            case JmeIosGLES.GL_FRAMEBUFFER_UNSUPPORTED:
+            case CWIosGLES.GL_FRAMEBUFFER_UNSUPPORTED:
                 //Choose different formats
                 throw new IllegalStateException("Framebuffer object format is "
                         + "unsupported by the video hardware.");
-            case JmeIosGLES.GL_FRAMEBUFFER_INCOMPLETE_ATTACHMENT:
+            case CWIosGLES.GL_FRAMEBUFFER_INCOMPLETE_ATTACHMENT:
                 throw new IllegalStateException("Framebuffer has erronous attachment.");
-            case JmeIosGLES.GL_FRAMEBUFFER_INCOMPLETE_MISSING_ATTACHMENT:
+            case CWIosGLES.GL_FRAMEBUFFER_INCOMPLETE_MISSING_ATTACHMENT:
                 throw new IllegalStateException("Framebuffer doesn't have any renderbuffers attached.");
-            case JmeIosGLES.GL_FRAMEBUFFER_INCOMPLETE_DIMENSIONS:
+            case CWIosGLES.GL_FRAMEBUFFER_INCOMPLETE_DIMENSIONS:
                 throw new IllegalStateException("Framebuffer attachments must have same dimensions.");
 //            case GLES20.GL_FRAMEBUFFER_INCOMPLETE_FORMATS:
 //                throw new IllegalStateException("Framebuffer attachments must have same formats.");
@@ -2272,28 +2272,28 @@ public class IGLESShaderRenderer implements Renderer {
     private void printRealRenderBufferInfo(FrameBuffer fb, RenderBuffer rb, String name) {
         System.out.println("== Renderbuffer " + name + " ==");
         System.out.println("RB ID: " + rb.getId());
-        System.out.println("Is proper? " + JmeIosGLES.glIsRenderbuffer(rb.getId()));
+        System.out.println("Is proper? " + CWIosGLES.glIsRenderbuffer(rb.getId()));
 
         int attachment = convertAttachmentSlot(rb.getSlot());
 
         //intBuf16.clear();
-        JmeIosGLES.glGetFramebufferAttachmentParameteriv(JmeIosGLES.GL_FRAMEBUFFER,
-                attachment, JmeIosGLES.GL_FRAMEBUFFER_ATTACHMENT_OBJECT_TYPE, intBuf16, 0);
+        CWIosGLES.glGetFramebufferAttachmentParameteriv(CWIosGLES.GL_FRAMEBUFFER,
+                attachment, CWIosGLES.GL_FRAMEBUFFER_ATTACHMENT_OBJECT_TYPE, intBuf16, 0);
         int type = intBuf16[0];
 
         //intBuf16.clear();
-        JmeIosGLES.glGetFramebufferAttachmentParameteriv(JmeIosGLES.GL_FRAMEBUFFER,
-                attachment, JmeIosGLES.GL_FRAMEBUFFER_ATTACHMENT_OBJECT_NAME, intBuf16, 0);
+        CWIosGLES.glGetFramebufferAttachmentParameteriv(CWIosGLES.GL_FRAMEBUFFER,
+                attachment, CWIosGLES.GL_FRAMEBUFFER_ATTACHMENT_OBJECT_NAME, intBuf16, 0);
         int rbName = intBuf16[0];
 
         switch (type) {
-            case JmeIosGLES.GL_NONE:
+            case CWIosGLES.GL_NONE:
                 System.out.println("Type: None");
                 break;
-            case JmeIosGLES.GL_TEXTURE:
+            case CWIosGLES.GL_TEXTURE:
                 System.out.println("Type: Texture");
                 break;
-            case JmeIosGLES.GL_RENDERBUFFER:
+            case CWIosGLES.GL_RENDERBUFFER:
                 System.out.println("Type: Buffer");
                 System.out.println("RB ID: " + rbName);
                 break;
@@ -2314,14 +2314,14 @@ public class IGLESShaderRenderer implements Renderer {
         System.out.println("=== OpenGL FBO State ===");
         System.out.println("Context doublebuffered? " + doubleBuffer);
         System.out.println("FBO ID: " + fbId);
-        System.out.println("Is proper? " + JmeIosGLES.glIsFramebuffer(fbId));
+        System.out.println("Is proper? " + CWIosGLES.glIsFramebuffer(fbId));
 //        System.out.println("Is bound to draw? " + (fbId == curDrawBinding));
 //        System.out.println("Is bound to read? " + (fbId == curReadBinding));
 //        System.out.println("Draw buffer: " + drawBuf);
 //        System.out.println("Read buffer: " + readBuf);
 
         if (context.boundFBO != fbId) {
-            JmeIosGLES.glBindFramebuffer(JmeIosGLES.GL_FRAMEBUFFER, fbId);
+            CWIosGLES.glBindFramebuffer(CWIosGLES.GL_FRAMEBUFFER, fbId);
             context.boundFBO = fbId;
         }
 
@@ -2369,18 +2369,18 @@ public class IGLESShaderRenderer implements Renderer {
                 int elementLength = elementLengths[i];
 
                 indexBuf.getData().position(curOffset);
-                JmeIosGLES.glDrawElements(elMode, elementLength, fmt, indexBuf.getData());
-                JmeIosGLES.checkGLError();
+                CWIosGLES.glDrawElements(elMode, elementLength, fmt, indexBuf.getData());
+                CWIosGLES.checkGLError();
 
                 curOffset += elementLength * elSize;
             }
         } else {
-           JmeIosGLES.glDrawElements(
+           CWIosGLES.glDrawElements(
                     convertElementMode(mesh.getMode()),
                     indexBuf.getData().limit(),
                     convertVertexBufferFormat(indexBuf.getFormat()),
                     indexBuf.getData());
-            JmeIosGLES.checkGLError();
+            CWIosGLES.checkGLError();
         }
     }
 
@@ -2402,8 +2402,8 @@ public class IGLESShaderRenderer implements Renderer {
             } else if (loc == -2) {
                 String attributeName = "in" + vb.getBufferType().name();
 
-                loc = JmeIosGLES.glGetAttribLocation(programId, attributeName);
-                JmeIosGLES.checkGLError();
+                loc = CWIosGLES.glGetAttribLocation(programId, attributeName);
+                CWIosGLES.checkGLError();
 
                 if (loc < 0) {
                     attrib.setLocation(-1);
@@ -2421,17 +2421,17 @@ public class IGLESShaderRenderer implements Renderer {
                 avb.getData().position(vb.getOffset());
 
                 // Upload attribute data
-                JmeIosGLES.glVertexAttribPointer(loc,
+                CWIosGLES.glVertexAttribPointer(loc,
                         vb.getNumComponents(),
                         convertVertexBufferFormat(vb.getFormat()),
                         vb.isNormalized(),
                         vb.getStride(),
                         avb.getData());
 
-                JmeIosGLES.checkGLError();
+                CWIosGLES.checkGLError();
 
-                JmeIosGLES.glEnableVertexAttribArray(loc);
-                JmeIosGLES.checkGLError();
+                CWIosGLES.glEnableVertexAttribArray(loc);
+                CWIosGLES.checkGLError();
 
                 attribs[loc] = vb;
             } // if (attribs[loc] != vb)
@@ -2449,8 +2449,8 @@ public class IGLESShaderRenderer implements Renderer {
         int id = source.getId();
         if (id == -1) {
             // Create id
-            id = JmeIosGLES.glCreateShader(convertShaderType(source.getType()));
-            JmeIosGLES.checkGLError();
+            id = CWIosGLES.glCreateShader(convertShaderType(source.getType()));
+            CWIosGLES.checkGLError();
 
             if (id <= 0) {
                 throw new RendererException("Invalid ID received when trying to create shader.");
@@ -2476,7 +2476,7 @@ public class IGLESShaderRenderer implements Renderer {
         if (powerVr && source.getType() == ShaderType.Vertex) {
             // XXX: This is to fix a bug in old PowerVR, remove
             // when no longer applicable.
-            JmeIosGLES.glShaderSource(
+            CWIosGLES.glShaderSource(
                     id, source.getDefines()
                     + source.getSource());
         } else {
@@ -2484,7 +2484,7 @@ public class IGLESShaderRenderer implements Renderer {
             if (source.getType() == ShaderType.Fragment) {
                 precision =  "precision mediump float;\n";
             }
-            JmeIosGLES.glShaderSource(
+            CWIosGLES.glShaderSource(
                     id,
                     precision
                     +source.getDefines()
@@ -2497,21 +2497,21 @@ public class IGLESShaderRenderer implements Renderer {
 //        System.out.println("range "+range[0]+"," +range[1]);
 //        System.out.println("precision "+precision[0]);
 
-        JmeIosGLES.glCompileShader(id);
-        JmeIosGLES.checkGLError();
+        CWIosGLES.glCompileShader(id);
+        CWIosGLES.checkGLError();
 
-        JmeIosGLES.glGetShaderiv(id, JmeIosGLES.GL_COMPILE_STATUS, intBuf1, 0);
-        JmeIosGLES.checkGLError();
+        CWIosGLES.glGetShaderiv(id, CWIosGLES.GL_COMPILE_STATUS, intBuf1, 0);
+        CWIosGLES.checkGLError();
 
-        boolean compiledOK = intBuf1[0] == JmeIosGLES.GL_TRUE;
+        boolean compiledOK = intBuf1[0] == CWIosGLES.GL_TRUE;
         String infoLog = null;
 
         if (VALIDATE_SHADER || !compiledOK) {
             // even if compile succeeded, check
             // log for warnings
-            JmeIosGLES.glGetShaderiv(id, JmeIosGLES.GL_INFO_LOG_LENGTH, intBuf1, 0);
-            JmeIosGLES.checkGLError();
-            infoLog = JmeIosGLES.glGetShaderInfoLog(id);
+            CWIosGLES.glGetShaderiv(id, CWIosGLES.GL_INFO_LOG_LENGTH, intBuf1, 0);
+            CWIosGLES.checkGLError();
+            infoLog = CWIosGLES.glGetShaderInfoLog(id);
         }
 
         if (compiledOK) {
@@ -2536,9 +2536,9 @@ public class IGLESShaderRenderer implements Renderer {
     public int convertShaderType(ShaderType type) {
         switch (type) {
             case Fragment:
-                return JmeIosGLES.GL_FRAGMENT_SHADER;
+                return CWIosGLES.GL_FRAGMENT_SHADER;
             case Vertex:
-                return JmeIosGLES.GL_VERTEX_SHADER;
+                return CWIosGLES.GL_VERTEX_SHADER;
 //            case Geometry:
 //                return ARBGeometryShader4.GL_GEOMETRY_SHADER_ARB;
             default:
@@ -2549,21 +2549,21 @@ public class IGLESShaderRenderer implements Renderer {
 	private int convertTestFunction(RenderState.TestFunction testFunc) {
 		switch (testFunc) {
 			case Never:
-				return JmeIosGLES.GL_NEVER;
+				return CWIosGLES.GL_NEVER;
 			case Less:
-				return JmeIosGLES.GL_LESS;
+				return CWIosGLES.GL_LESS;
 			case LessOrEqual:
-				return JmeIosGLES.GL_LEQUAL;
+				return CWIosGLES.GL_LEQUAL;
 			case Greater:
-				return JmeIosGLES.GL_GREATER;
+				return CWIosGLES.GL_GREATER;
 			case GreaterOrEqual:
-				return JmeIosGLES.GL_GEQUAL;
+				return CWIosGLES.GL_GEQUAL;
 			case Equal:
-				return JmeIosGLES.GL_EQUAL;
+				return CWIosGLES.GL_EQUAL;
 			case NotEqual:
-				return JmeIosGLES.GL_NOTEQUAL;
+				return CWIosGLES.GL_NOTEQUAL;
 			case Always:
-				return JmeIosGLES.GL_ALWAYS;
+				return CWIosGLES.GL_ALWAYS;
 			default:
 				throw new UnsupportedOperationException("Unrecognized test function: " + testFunc);
 		}

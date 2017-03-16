@@ -18,7 +18,7 @@ import com.clockwork.material.Material;
 import com.clockwork.math.ColorRGBA;
 import com.clockwork.math.FastMath;
 import com.clockwork.math.Vector3f;
-import com.clockwork.niftygui.NiftyJmeDisplay;
+import com.clockwork.niftygui.NiftyCWDisplay;
 import com.clockwork.post.FilterPostProcessor;
 import com.clockwork.post.filters.FadeFilter;
 import com.clockwork.renderer.Caps;
@@ -53,7 +53,7 @@ public class TestCinematic extends SimpleApplication {
     @Override
     public void simpleInitApp() {
         //just some text
-        NiftyJmeDisplay niftyDisplay = new NiftyJmeDisplay(getAssetManager(),
+        NiftyCWDisplay niftyDisplay = new NiftyCWDisplay(getAssetManager(),
                 getInputManager(),
                 getAudioRenderer(),
                 getGuiViewPort());

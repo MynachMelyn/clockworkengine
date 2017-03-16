@@ -170,7 +170,7 @@ public final class Ring implements Savable, Cloneable, java.io.Serializable {
         return result;
     }
 
-    public void write(JmeExporter e) throws IOException {
+    public void write(CWExporter e) throws IOException {
         OutputCapsule capsule = e.getCapsule(this);
         capsule.write(center, "center", Vector3f.ZERO);
         capsule.write(up, "up", Vector3f.UNIT_Z);
@@ -178,7 +178,7 @@ public final class Ring implements Savable, Cloneable, java.io.Serializable {
         capsule.write(outerRadius, "outerRadius", 1f);
     }
 
-    public void read(JmeImporter e) throws IOException {
+    public void read(CWImporter e) throws IOException {
         InputCapsule capsule = e.getCapsule(this);
         center = (Vector3f) capsule.readSavable("center",
                 Vector3f.ZERO.clone());

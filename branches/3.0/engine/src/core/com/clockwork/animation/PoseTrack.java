@@ -57,13 +57,13 @@ public final class PoseTrack implements Track {
             }
         }
 
-        public void write(JmeExporter e) throws IOException {
+        public void write(CWExporter e) throws IOException {
             OutputCapsule out = e.getCapsule(this);
             out.write(poses, "poses", null);
             out.write(weights, "weights", null);
         }
 
-        public void read(JmeImporter i) throws IOException {
+        public void read(CWImporter i) throws IOException {
             InputCapsule in = i.getCapsule(this);
             weights = in.readFloatArray("weights", null);
             
@@ -157,7 +157,7 @@ public final class PoseTrack implements Track {
     }
     
     @Override
-    public void write(JmeExporter e) throws IOException {
+    public void write(CWExporter e) throws IOException {
         OutputCapsule out = e.getCapsule(this);
         out.write(targetMeshIndex, "meshIndex", 0);
         out.write(frames, "frames", null);
@@ -165,7 +165,7 @@ public final class PoseTrack implements Track {
     }
 
     @Override
-    public void read(JmeImporter i) throws IOException {
+    public void read(CWImporter i) throws IOException {
         InputCapsule in = i.getCapsule(this);
         targetMeshIndex = in.readInt("meshIndex", 0);
         times = in.readFloatArray("times", null);

@@ -45,7 +45,7 @@ import com.clockwork.util.BufferUtils;
  */
 /* package */class ArmatureModifier extends Modifier {
     private static final Logger LOGGER                     = Logger.getLogger(ArmatureModifier.class.getName());
-    private static final int    MAXIMUM_WEIGHTS_PER_VERTEX = 4;                                                 // JME
+    private static final int    MAXIMUM_WEIGHTS_PER_VERTEX = 4;                                                 // CW
                                                                                                                  // limitation
 
     private Skeleton            skeleton;
@@ -322,7 +322,7 @@ import com.clockwork.util.BufferUtils;
                 //we fetch the referenced vertices here
                 List<Integer> vertexIndices = vertexReferenceMap.get(Integer.valueOf(vertexIndex));
                 if (vertexIndices != null) {
-                    // total amount of wights assigned to the vertex (max. 4 in JME)
+                    // total amount of wights assigned to the vertex (max. 4 in CW)
                     int totweight = ((Number) dvert.getFieldValue("totweight")).intValue();
                     Pointer pDW = (Pointer) dvert.getFieldValue("dw");
                     if (totweight > 0 && groupToBoneIndexMap != null) {

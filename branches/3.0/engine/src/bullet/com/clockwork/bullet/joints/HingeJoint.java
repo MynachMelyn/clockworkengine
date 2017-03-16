@@ -3,8 +3,8 @@ package com.clockwork.bullet.joints;
 
 import com.clockwork.bullet.objects.PhysicsRigidBody;
 import com.clockwork.export.InputCapsule;
-import com.clockwork.export.JmeExporter;
-import com.clockwork.export.JmeImporter;
+import com.clockwork.export.CWExporter;
+import com.clockwork.export.CWImporter;
 import com.clockwork.export.OutputCapsule;
 import com.clockwork.math.Vector3f;
 import java.io.IOException;
@@ -126,7 +126,7 @@ public class HingeJoint extends PhysicsJoint {
 
     private native float getHingeAngle(long objectId);
 
-    public void write(JmeExporter ex) throws IOException {
+    public void write(CWExporter ex) throws IOException {
         super.write(ex);
         OutputCapsule capsule = ex.getCapsule(this);
         capsule.write(axisA, "axisA", new Vector3f());
@@ -146,7 +146,7 @@ public class HingeJoint extends PhysicsJoint {
         capsule.write(getMaxMotorImpulse(), "maxMotorImpulse", 0.0f);
     }
 
-    public void read(JmeImporter im) throws IOException {
+    public void read(CWImporter im) throws IOException {
         super.read(im);
         InputCapsule capsule = im.getCapsule(this);
         this.axisA = (Vector3f) capsule.readSavable("axisA", new Vector3f());

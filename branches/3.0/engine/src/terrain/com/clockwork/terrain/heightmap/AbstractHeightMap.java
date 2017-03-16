@@ -79,7 +79,7 @@ public abstract class AbstractHeightMap implements HeightMap {
      *            the new size of the terrain.
      * @throws Exception 
      *
-     * @throws JmeException
+     * @throws CWException
      *             if the size is less than or equal to zero.
      */
     public void setSize(int size) throws Exception {
@@ -98,7 +98,7 @@ public abstract class AbstractHeightMap implements HeightMap {
      * @param filter
      *            the erosion value.
      * @throws Exception 
-     * @throws JmeException
+     * @throws CWException
      *             if filter is less than 0 or greater than 1.
      */
     public void setMagnificationFilter(float filter) throws Exception {
@@ -215,7 +215,7 @@ public abstract class AbstractHeightMap implements HeightMap {
      * @return true if the save was successful, false otherwise.
      * @throws Exception 
      *
-     * @throws JmeException
+     * @throws CWException
      *             if filename is null.
      */
     public boolean save(String filename) throws Exception {

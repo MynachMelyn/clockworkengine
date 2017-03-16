@@ -215,7 +215,7 @@ public final class MaterialContext {
         if (loadedTextures != null && loadedTextures.size() > 0) {
             int textureIndex = 0;
             if(loadedTextures.size() > 8) {
-                LOGGER.log(Level.WARNING, "The blender file has defined more than {0} different textures. JME supports only {0} UV mappings.", TextureHelper.TEXCOORD_TYPES.length);
+                LOGGER.log(Level.WARNING, "The blender file has defined more than {0} different textures. CW supports only {0} UV mappings.", TextureHelper.TEXCOORD_TYPES.length);
             }
             for (Entry<Number, CombinedTexture> entry : loadedTextures.entrySet()) {
                 if(textureIndex < TextureHelper.TEXCOORD_TYPES.length) {
@@ -228,7 +228,7 @@ public final class MaterialContext {
                     uvCoordsBuffer.setupData(Usage.Static, 2, Format.Float, BufferUtils.createFloatBuffer(uvs.toArray(new Vector2f[uvs.size()])));
                     geometry.getMesh().setBuffer(uvCoordsBuffer);
                 } else {
-                    LOGGER.log(Level.WARNING, "The texture could not be applied because JME only supports up to {0} different UV's.", TextureHelper.TEXCOORD_TYPES.length);
+                    LOGGER.log(Level.WARNING, "The texture could not be applied because CW only supports up to {0} different UV's.", TextureHelper.TEXCOORD_TYPES.length);
                 }
             }
         }
@@ -276,7 +276,7 @@ public final class MaterialContext {
                 if (!shadeless) {
                     material.setTexture(MaterialHelper.TEXTURE_TYPE_ALPHA, texture);
                 } else {
-                    LOGGER.warning("JME does not support alpha map on unshaded material. Material name is " + name);
+                    LOGGER.warning("CW does not support alpha map on unshaded material. Material name is " + name);
                 }
                 break;
             case MTEX_AMB:

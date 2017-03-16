@@ -389,7 +389,7 @@ public abstract class Spatial implements Savable, Cloneable, Collidable, Cloneab
      *            where to look at in terms of world coordinates
      * @param upVector
      *            a vector indicating the (local) up direction. (typically {0,
-     *            1, 0} in jME.)
+     *            1, 0} in CW.)
      */
     public void lookAt(Vector3f position, Vector3f upVector) {
         Vector3f worldTranslation = getWorldTranslation();
@@ -1254,7 +1254,7 @@ public abstract class Spatial implements Savable, Cloneable, Collidable, Cloneab
         return true;
     }
 
-    public void write(JmeExporter ex) throws IOException {
+    public void write(CWExporter ex) throws IOException {
         OutputCapsule capsule = ex.getCapsule(this);
         capsule.write(name, "name", null);
         capsule.write(worldBound, "world_bound", null);
@@ -1270,7 +1270,7 @@ public abstract class Spatial implements Savable, Cloneable, Collidable, Cloneab
         capsule.writeStringSavableMap(userData, "user_data", null);
     }
 
-    public void read(JmeImporter im) throws IOException {
+    public void read(CWImporter im) throws IOException {
         InputCapsule ic = im.getCapsule(this);
 
         name = ic.readString("name", null);

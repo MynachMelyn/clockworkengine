@@ -12,7 +12,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class IGLESContext implements JmeContext {
+public class IGLESContext implements CWContext {
 
     private static final Logger logger = Logger.getLogger(IGLESContext.class.getName());
     protected final AtomicBoolean created = new AtomicBoolean(false);
@@ -35,8 +35,8 @@ public class IGLESContext implements JmeContext {
     }
 
     @Override
-    public JmeContext.Type getType() {
-        return JmeContext.Type.Display;
+    public CWContext.Type getType() {
+        return CWContext.Type.Display;
     }
 
     @Override

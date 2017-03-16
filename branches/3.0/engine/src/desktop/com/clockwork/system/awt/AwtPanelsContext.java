@@ -11,9 +11,9 @@ import com.clockwork.renderer.Renderer;
 import com.clockwork.system.*;
 import java.util.ArrayList;
 
-public class AwtPanelsContext implements JmeContext {
+public class AwtPanelsContext implements CWContext {
 
-    protected JmeContext actualContext;
+    protected CWContext actualContext;
     protected AppSettings settings = new AppSettings(true);
     protected SystemListener listener;
     protected ArrayList<AwtPanel> panels = new ArrayList<AwtPanel>();
@@ -175,7 +175,7 @@ public class AwtPanelsContext implements JmeContext {
             throw new IllegalStateException("Already created");
         }
 
-        actualContext = JmeSystem.newContext(settings, Type.OffscreenSurface);
+        actualContext = CWSystem.newContext(settings, Type.OffscreenSurface);
         actualContext.setSystemListener(new AwtPanelsListener());
         actualContext.create(waitFor);
     }

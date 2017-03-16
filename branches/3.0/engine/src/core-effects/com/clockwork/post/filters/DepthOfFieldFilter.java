@@ -3,8 +3,8 @@ package com.clockwork.post.filters;
 
 import com.clockwork.asset.AssetManager;
 import com.clockwork.export.InputCapsule;
-import com.clockwork.export.JmeExporter;
-import com.clockwork.export.JmeImporter;
+import com.clockwork.export.CWExporter;
+import com.clockwork.export.CWImporter;
 import com.clockwork.export.OutputCapsule;
 import com.clockwork.material.Material;
 import com.clockwork.post.Filter;
@@ -131,7 +131,7 @@ public class DepthOfFieldFilter extends Filter {
     }
 
     @Override
-    public void write(JmeExporter ex) throws IOException {
+    public void write(CWExporter ex) throws IOException {
         super.write(ex);
         OutputCapsule oc = ex.getCapsule(this);
         oc.write(blurScale, "blurScale", 1f);
@@ -140,7 +140,7 @@ public class DepthOfFieldFilter extends Filter {
     }
 
     @Override
-    public void read(JmeImporter im) throws IOException {
+    public void read(CWImporter im) throws IOException {
         super.read(im);
         InputCapsule ic = im.getCapsule(this);
         blurScale = ic.readFloat("blurScale", 1f);

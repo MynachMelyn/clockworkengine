@@ -2,7 +2,7 @@
 
 package com.clockwork.input.lwjgl;
 
-import com.clockwork.cursors.plugins.JmeCursor;
+import com.clockwork.cursors.plugins.CWCursor;
 import com.clockwork.input.MouseInput;
 import com.clockwork.input.RawInputListener;
 import com.clockwork.input.event.MouseButtonEvent;
@@ -121,18 +121,18 @@ public class LwjglMouseInput implements MouseInput {
         return Sys.getTime() * LwjglTimer.LWJGL_TIME_TO_NANOS;
     }
 
-    public void setNativeCursor(JmeCursor jmeCursor) {
+    public void setNativeCursor(CWCursor CWCursor) {
         try {
             Cursor newCursor = null;
-            if (jmeCursor != null) {
+            if (CWCursor != null) {
                  newCursor = new Cursor(
-                        jmeCursor.getWidth(),
-                        jmeCursor.getHeight(),
-                        jmeCursor.getXHotSpot(),
-                        jmeCursor.getYHotSpot(),
-                        jmeCursor.getNumImages(),
-                        jmeCursor.getImagesData(),
-                        jmeCursor.getImagesDelay());
+                        CWCursor.getWidth(),
+                        CWCursor.getHeight(),
+                        CWCursor.getXHotSpot(),
+                        CWCursor.getYHotSpot(),
+                        CWCursor.getNumImages(),
+                        CWCursor.getImagesData(),
+                        CWCursor.getImagesDelay());
             }
             Mouse.setNativeCursor(newCursor);
         } catch (LWJGLException ex) {

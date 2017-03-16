@@ -10,8 +10,8 @@ import com.clockwork.input.lwjgl.JInputJoyInput;
 import com.clockwork.input.lwjgl.LwjglKeyInput;
 import com.clockwork.input.lwjgl.LwjglMouseInput;
 import com.clockwork.system.AppSettings;
-import com.clockwork.system.JmeContext.Type;
-import com.clockwork.system.JmeSystem;
+import com.clockwork.system.CWContext.Type;
+import com.clockwork.system.CWSystem;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -62,7 +62,7 @@ public abstract class LwjglAbstractDisplay extends LwjglContext implements Runna
      */
     protected boolean initInThread(){
         try {
-            if (!JmeSystem.isLowPermissions()){
+            if (!CWSystem.isLowPermissions()){
                 // Enable uncaught exception handler only for current thread
                 Thread.currentThread().setUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler() {
                     public void uncaughtException(Thread thread, Throwable thrown) {
@@ -171,7 +171,7 @@ public abstract class LwjglAbstractDisplay extends LwjglContext implements Runna
     public void run(){
         if (listener == null)
             throw new IllegalStateException("SystemListener is not set on context!"
-                                          + "Must set with JmeContext.setSystemListner().");
+                                          + "Must set with CWContext.setSystemListner().");
 
         logger.log(Level.FINE, "Using LWJGL {0}", Sys.getVersion());
         if (!initInThread()) {

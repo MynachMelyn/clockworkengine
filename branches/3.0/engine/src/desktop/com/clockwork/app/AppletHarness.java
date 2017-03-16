@@ -2,8 +2,8 @@
 package com.clockwork.app;
 
 import com.clockwork.system.AppSettings;
-import com.clockwork.system.JmeCanvasContext;
-import com.clockwork.system.JmeSystem;
+import com.clockwork.system.CWCanvasContext;
+import com.clockwork.system.CWSystem;
 import java.applet.Applet;
 import java.awt.Canvas;
 import java.awt.Graphics;
@@ -22,7 +22,7 @@ public class AppletHarness extends Applet {
     public static final HashMap<Application, Applet> appToApplet
                          = new HashMap<Application, Applet>();
 
-    protected JmeCanvasContext context;
+    protected CWCanvasContext context;
     protected Canvas canvas;
     protected Application app;
 
@@ -50,7 +50,7 @@ public class AppletHarness extends Applet {
                 JOptionPane.showMessageDialog(this, "An error has occured while "
                                                   + "loading applet configuration"
                                                   + ex.getMessage(),
-                                              "jME3 Applet",
+                                              "CW Applet",
                                               JOptionPane.ERROR_MESSAGE);
                 ex.printStackTrace();
             } finally {
@@ -69,7 +69,7 @@ public class AppletHarness extends Applet {
         settings.setWidth(getWidth());
         settings.setHeight(getHeight());
 
-        JmeSystem.setLowPermissions(true);
+        CWSystem.setLowPermissions(true);
 
         try{
             Class<? extends Application> clazz = (Class<? extends Application>) Class.forName(appClass);
@@ -86,7 +86,7 @@ public class AppletHarness extends Applet {
         app.setSettings(settings);
         app.createCanvas();
 
-        context = (JmeCanvasContext) app.getContext();
+        context = (CWCanvasContext) app.getContext();
         canvas = context.getCanvas();
         canvas.setSize(getWidth(), getHeight());
 

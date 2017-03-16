@@ -3,8 +3,8 @@ package com.clockwork.bullet.collision.shapes;
 
 import com.clockwork.bullet.PhysicsSpace;
 import com.clockwork.export.InputCapsule;
-import com.clockwork.export.JmeExporter;
-import com.clockwork.export.JmeImporter;
+import com.clockwork.export.CWExporter;
+import com.clockwork.export.CWImporter;
 import com.clockwork.export.OutputCapsule;
 import java.io.IOException;
 import java.util.logging.Level;
@@ -40,7 +40,7 @@ public class ConeCollisionShape extends CollisionShape {
         return radius;
     }
 
-    public void write(JmeExporter ex) throws IOException {
+    public void write(CWExporter ex) throws IOException {
         super.write(ex);
         OutputCapsule capsule = ex.getCapsule(this);
         capsule.write(radius, "radius", 0.5f);
@@ -48,7 +48,7 @@ public class ConeCollisionShape extends CollisionShape {
         capsule.write(axis, "axis", PhysicsSpace.AXIS_Y);
     }
 
-    public void read(JmeImporter im) throws IOException {
+    public void read(CWImporter im) throws IOException {
         super.read(im);
         InputCapsule capsule = im.getCapsule(this);
         radius = capsule.readFloat("radius", 0.5f);

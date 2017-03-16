@@ -13,8 +13,8 @@ import com.clockwork.renderer.queue.RenderQueue.Bucket;
 import com.clockwork.scene.Node;
 import com.clockwork.scene.Spatial.CullHint;
 import com.clockwork.system.AppSettings;
-import com.clockwork.system.JmeContext.Type;
-import com.clockwork.system.JmeSystem;
+import com.clockwork.system.CWContext.Type;
+import com.clockwork.system.CWSystem;
 
 /**
  * SimpleApplication is the base class for all applications.
@@ -92,7 +92,7 @@ public abstract class SimpleApplication extends Application {
 
         // show settings dialog
         if (showSettings) {
-            if (!JmeSystem.showSettingsDialog(settings, loadSettings)) {
+            if (!CWSystem.showSettingsDialog(settings, loadSettings)) {
                 return;
             }
         }

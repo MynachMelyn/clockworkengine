@@ -6,8 +6,8 @@ import com.bulletphysics.collision.shapes.TriangleIndexVertexArray;
 import com.bulletphysics.extras.gimpact.GImpactMeshShape;
 import com.clockwork.bullet.util.Converter;
 import com.clockwork.export.InputCapsule;
-import com.clockwork.export.JmeExporter;
-import com.clockwork.export.JmeImporter;
+import com.clockwork.export.CWExporter;
+import com.clockwork.export.CWImporter;
 import com.clockwork.export.OutputCapsule;
 import com.clockwork.math.Vector3f;
 import com.clockwork.scene.Mesh;
@@ -49,13 +49,13 @@ public class GImpactCollisionShape extends CollisionShape{
     }
 
     /**
-     * creates a jme mesh from the collision shape, only needed for debugging
+     * creates a CW mesh from the collision shape, only needed for debugging
      */
-    public Mesh createJmeMesh(){
+    public Mesh createCWMesh(){
         return Converter.convert(bulletMesh);
     }
 
-    public void write(JmeExporter ex) throws IOException {
+    public void write(CWExporter ex) throws IOException {
         super.write(ex);
         OutputCapsule capsule = ex.getCapsule(this);
         capsule.write(worldScale, "worldScale", new Vector3f(1, 1, 1));
@@ -68,7 +68,7 @@ public class GImpactCollisionShape extends CollisionShape{
         capsule.write(vertexBase.array(), "vertexBase", new byte[0]);
     }
 
-    public void read(JmeImporter im) throws IOException {
+    public void read(CWImporter im) throws IOException {
         super.read(im);
         InputCapsule capsule = im.getCapsule(this);
         worldScale = (Vector3f) capsule.readSavable("worldScale", new Vector3f(1, 1, 1));

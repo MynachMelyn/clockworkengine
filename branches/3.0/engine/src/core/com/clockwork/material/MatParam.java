@@ -255,7 +255,7 @@ When arrays can be inserted in J3M files
         }
     }
 
-    public void write(JmeExporter ex) throws IOException {
+    public void write(CWExporter ex) throws IOException {
         OutputCapsule oc = ex.getCapsule(this);
         oc.write(type, "varType", null);
         oc.write(name, "name", null);
@@ -275,7 +275,7 @@ When arrays can be inserted in J3M files
         }
     }
 
-    public void read(JmeImporter im) throws IOException {
+    public void read(CWImporter im) throws IOException {
         InputCapsule ic = im.getCapsule(this);
         type = ic.readEnum("varType", VarType.class, null);
         name = ic.readString("name", null);

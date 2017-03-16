@@ -40,7 +40,7 @@ public class MaterialExtensionLoader {
             String aliasName = split[1];
             String texturePath = split[2];
 
-            String jmeParamName = matExt.getTextureMapping(aliasName);
+            String CWParamName = matExt.getTextureMapping(aliasName);
 
             TextureKey texKey = new TextureKey(texturePath, false);
             texKey.setGenerateMips(true);
@@ -57,7 +57,7 @@ public class MaterialExtensionLoader {
                 tex.setKey(texKey);
             }
             
-            material.setTexture(jmeParamName, tex);
+            material.setTexture(CWParamName, tex);
         }
     }
 
@@ -74,7 +74,7 @@ public class MaterialExtensionLoader {
             return null;
         }
 
-        material = new Material(assetManager, matExt.getJmeMatDefName());
+        material = new Material(assetManager, matExt.getCWMatDefName());
         for (Statement extMatStat : statement.getContents()){
             readExtendingMaterialStatement(extMatStat);
         }

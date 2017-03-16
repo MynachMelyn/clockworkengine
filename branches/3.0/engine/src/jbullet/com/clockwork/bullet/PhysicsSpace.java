@@ -49,7 +49,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * PhysicsSpace - The central jbullet-jme physics space
+ * PhysicsSpace - The central jbullet-CW physics space
  */
 public class PhysicsSpace {
 

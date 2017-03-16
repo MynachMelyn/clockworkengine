@@ -3,10 +3,10 @@
 package clockworktest.app.state;
 
 import com.clockwork.app.Application;
-import com.clockwork.niftygui.NiftyJmeDisplay;
+import com.clockwork.niftygui.NiftyCWDisplay;
 import com.clockwork.scene.Spatial;
 import com.clockwork.system.AppSettings;
-import com.clockwork.system.JmeContext;
+import com.clockwork.system.CWContext;
 
 public class TestAppStates extends Application {
 
@@ -16,7 +16,7 @@ public class TestAppStates extends Application {
     }
 
     @Override
-    public void start(JmeContext.Type contextType){
+    public void start(CWContext.Type contextType){
         AppSettings settings = new AppSettings(true);
         settings.setResolution(1024, 768);
         setSettings(settings);
@@ -39,11 +39,11 @@ public class TestAppStates extends Application {
         model.setMaterial(assetManager.loadMaterial("Interface/Logo/Logo.j3m"));
         state.getRootNode().attachChild(model);
 
-        NiftyJmeDisplay niftyDisplay = new NiftyJmeDisplay(assetManager,
+        NiftyCWDisplay niftyDisplay = new NiftyCWDisplay(assetManager,
                                                            inputManager,
                                                            audioRenderer,
                                                            guiViewPort);
-        niftyDisplay.getNifty().fromXml("Interface/Nifty/HelloJme.xml", "start");
+        niftyDisplay.getNifty().fromXml("Interface/Nifty/HelloCW.xml", "start");
         guiViewPort.addProcessor(niftyDisplay);
     }
 

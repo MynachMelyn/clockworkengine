@@ -18,7 +18,7 @@ public class DefineList implements Savable, Cloneable {
     private String compiled = null;
     private int cachedHashCode = 0;
 
-    public void write(JmeExporter ex) throws IOException{
+    public void write(CWExporter ex) throws IOException{
         OutputCapsule oc = ex.getCapsule(this);
 
         String[] keys = new String[defines.size()];
@@ -35,7 +35,7 @@ public class DefineList implements Savable, Cloneable {
         oc.write(vals, "vals", null);
     }
 
-    public void read(JmeImporter im) throws IOException{
+    public void read(CWImporter im) throws IOException{
         InputCapsule ic = im.getCapsule(this);
 
         String[] keys = ic.readStringArray("keys", null);

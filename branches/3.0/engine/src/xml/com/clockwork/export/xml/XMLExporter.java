@@ -2,7 +2,7 @@
 
 package com.clockwork.export.xml;
 
-import com.clockwork.export.JmeExporter;
+import com.clockwork.export.CWExporter;
 import com.clockwork.export.OutputCapsule;
 import com.clockwork.export.Savable;
 import java.io.File;
@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.io.OutputStream;
 import javax.xml.parsers.DocumentBuilderFactory;
 
-public class XMLExporter implements JmeExporter {
+public class XMLExporter implements CWExporter {
     
     public static final String ELEMENT_MAPENTRY = "MapEntry";	
     public static final String ELEMENT_KEY = "Key";	

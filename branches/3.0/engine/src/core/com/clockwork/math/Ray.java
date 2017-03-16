@@ -463,13 +463,13 @@ public final class Ray implements Savable, Cloneable, Collidable, java.io.Serial
         return getClass().getSimpleName() + " [Origin: " + origin + ", Direction: " + direction + "]";
     }
 
-    public void write(JmeExporter e) throws IOException {
+    public void write(CWExporter e) throws IOException {
         OutputCapsule capsule = e.getCapsule(this);
         capsule.write(origin, "origin", Vector3f.ZERO);
         capsule.write(direction, "direction", Vector3f.ZERO);
     }
 
-    public void read(JmeImporter e) throws IOException {
+    public void read(CWImporter e) throws IOException {
         InputCapsule capsule = e.getCapsule(this);
         origin = (Vector3f) capsule.readSavable("origin", Vector3f.ZERO.clone());
         direction = (Vector3f) capsule.readSavable("direction", Vector3f.ZERO.clone());

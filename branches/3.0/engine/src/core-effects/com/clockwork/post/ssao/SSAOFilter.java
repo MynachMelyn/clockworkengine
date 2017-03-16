@@ -3,8 +3,8 @@ package com.clockwork.post.ssao;
 
 import com.clockwork.asset.AssetManager;
 import com.clockwork.export.InputCapsule;
-import com.clockwork.export.JmeExporter;
-import com.clockwork.export.JmeImporter;
+import com.clockwork.export.CWExporter;
+import com.clockwork.export.CWImporter;
 import com.clockwork.export.OutputCapsule;
 import com.clockwork.material.Material;
 import com.clockwork.math.Vector2f;
@@ -277,7 +277,7 @@ public class SSAOFilter extends Filter {
     }
 
     @Override
-    public void write(JmeExporter ex) throws IOException {
+    public void write(CWExporter ex) throws IOException {
         super.write(ex);
         OutputCapsule oc = ex.getCapsule(this);
         oc.write(sampleRadius, "sampleRadius", 5.1f);
@@ -287,7 +287,7 @@ public class SSAOFilter extends Filter {
     }
 
     @Override
-    public void read(JmeImporter im) throws IOException {
+    public void read(CWImporter im) throws IOException {
         super.read(im);
         InputCapsule ic = im.getCapsule(this);
         sampleRadius = ic.readFloat("sampleRadius", 5.1f);

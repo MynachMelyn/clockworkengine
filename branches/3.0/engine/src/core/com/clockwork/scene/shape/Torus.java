@@ -2,8 +2,8 @@
 package com.clockwork.scene.shape;
 
 import com.clockwork.export.InputCapsule;
-import com.clockwork.export.JmeExporter;
-import com.clockwork.export.JmeImporter;
+import com.clockwork.export.CWExporter;
+import com.clockwork.export.CWImporter;
 import com.clockwork.export.OutputCapsule;
 import com.clockwork.math.FastMath;
 import com.clockwork.math.Vector3f;
@@ -70,7 +70,7 @@ public class Torus extends Mesh {
     }
 
     @Override
-    public void read(JmeImporter e) throws IOException {
+    public void read(CWImporter e) throws IOException {
         super.read(e);
         InputCapsule capsule = e.getCapsule(this);
         circleSamples = capsule.readInt("circleSamples", 0);
@@ -210,7 +210,7 @@ public class Torus extends Mesh {
     }
 
     @Override
-    public void write(JmeExporter e) throws IOException {
+    public void write(CWExporter e) throws IOException {
         super.write(e);
         OutputCapsule capsule = e.getCapsule(this);
         capsule.write(circleSamples, "circleSamples", 0);

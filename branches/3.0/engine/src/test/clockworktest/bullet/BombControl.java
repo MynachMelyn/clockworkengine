@@ -15,8 +15,8 @@ import com.clockwork.bullet.objects.PhysicsRigidBody;
 import com.clockwork.effect.ParticleEmitter;
 import com.clockwork.effect.ParticleMesh.Type;
 import com.clockwork.effect.shapes.EmitterSphereShape;
-import com.clockwork.export.JmeExporter;
-import com.clockwork.export.JmeImporter;
+import com.clockwork.export.CWExporter;
+import com.clockwork.export.CWImporter;
 import com.clockwork.material.Material;
 import com.clockwork.math.ColorRGBA;
 import com.clockwork.math.Vector3f;
@@ -174,12 +174,12 @@ public class BombControl extends RigidBodyControl implements PhysicsCollisionLis
     
     
     @Override
-    public void read(JmeImporter im) throws IOException {
+    public void read(CWImporter im) throws IOException {
         throw new UnsupportedOperationException("Reading not supported.");
     }
 
     @Override
-    public void write(JmeExporter ex) throws IOException {
+    public void write(CWExporter ex) throws IOException {
         throw new UnsupportedOperationException("Saving not supported.");
     }
 }

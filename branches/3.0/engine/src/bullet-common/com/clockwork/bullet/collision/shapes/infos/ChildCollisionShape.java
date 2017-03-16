@@ -26,14 +26,14 @@ public class ChildCollisionShape implements Savable {
         this.shape = shape;
     }
 
-    public void write(JmeExporter ex) throws IOException {
+    public void write(CWExporter ex) throws IOException {
         OutputCapsule capsule = ex.getCapsule(this);
         capsule.write(location, "location", new Vector3f());
         capsule.write(rotation, "rotation", new Matrix3f());
         capsule.write(shape, "shape", new BoxCollisionShape(new Vector3f(1, 1, 1)));
     }
 
-    public void read(JmeImporter im) throws IOException {
+    public void read(CWImporter im) throws IOException {
         InputCapsule capsule = im.getCapsule(this);
         location = (Vector3f) capsule.readSavable("location", new Vector3f());
         rotation = (Matrix3f) capsule.readSavable("rotation", new Matrix3f());

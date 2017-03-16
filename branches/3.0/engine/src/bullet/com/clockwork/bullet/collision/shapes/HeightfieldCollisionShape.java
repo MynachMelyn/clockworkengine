@@ -2,8 +2,8 @@
 package com.clockwork.bullet.collision.shapes;
 
 import com.clockwork.export.InputCapsule;
-import com.clockwork.export.JmeExporter;
-import com.clockwork.export.JmeImporter;
+import com.clockwork.export.CWExporter;
+import com.clockwork.export.CWImporter;
 import com.clockwork.export.OutputCapsule;
 import com.clockwork.math.FastMath;
 import com.clockwork.math.Vector3f;
@@ -108,12 +108,12 @@ public class HeightfieldCollisionShape extends CollisionShape {
 
     private native long createShape(int heightStickWidth, int heightStickLength, ByteBuffer heightfieldData, float heightScale, float minHeight, float maxHeight, int upAxis, boolean flipQuadEdges);
 
-    public Mesh createJmeMesh() {
+    public Mesh createCWMesh() {
         //TODO return Converter.convert(bulletMesh);
         return null;
     }
 
-    public void write(JmeExporter ex) throws IOException {
+    public void write(CWExporter ex) throws IOException {
         super.write(ex);
         OutputCapsule capsule = ex.getCapsule(this);
         capsule.write(heightStickWidth, "heightStickWidth", 0);
@@ -126,7 +126,7 @@ public class HeightfieldCollisionShape extends CollisionShape {
         capsule.write(flipQuadEdges, "flipQuadEdges", false);
     }
 
-    public void read(JmeImporter im) throws IOException {
+    public void read(CWImporter im) throws IOException {
         super.read(im);
         InputCapsule capsule = im.getCapsule(this);
         heightStickWidth = capsule.readInt("heightStickWidth", 0);

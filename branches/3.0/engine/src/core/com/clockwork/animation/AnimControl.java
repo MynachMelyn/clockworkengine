@@ -307,7 +307,7 @@ public final class AnimControl extends AbstractControl implements Cloneable {
     }
 
     @Override
-    public void write(JmeExporter ex) throws IOException {
+    public void write(CWExporter ex) throws IOException {
         super.write(ex);
         OutputCapsule oc = ex.getCapsule(this);
         oc.write(skeleton, "skeleton", null);
@@ -315,7 +315,7 @@ public final class AnimControl extends AbstractControl implements Cloneable {
     }
 
     @Override
-    public void read(JmeImporter im) throws IOException {
+    public void read(CWImporter im) throws IOException {
         super.read(im);
         InputCapsule in = im.getCapsule(this);
         skeleton = (Skeleton) in.readSavable("skeleton", null);

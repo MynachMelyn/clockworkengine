@@ -2,8 +2,8 @@
 package com.clockwork.audio;
 
 import com.clockwork.export.InputCapsule;
-import com.clockwork.export.JmeExporter;
-import com.clockwork.export.JmeImporter;
+import com.clockwork.export.CWExporter;
+import com.clockwork.export.CWImporter;
 import com.clockwork.export.OutputCapsule;
 import com.clockwork.util.NativeObject;
 import java.io.IOException;
@@ -46,7 +46,7 @@ public class LowPassFilter extends Filter {
         this.updateNeeded = true;
     }
 
-    public void write(JmeExporter ex) throws IOException{
+    public void write(CWExporter ex) throws IOException{
         super.write(ex);
         OutputCapsule oc = ex.getCapsule(this);
         oc.write(volume, "volume", 0);
@@ -54,7 +54,7 @@ public class LowPassFilter extends Filter {
     }
 
     @Override
-    public void read(JmeImporter im) throws IOException{
+    public void read(CWImporter im) throws IOException{
         super.read(im);
         InputCapsule ic = im.getCapsule(this);
         volume = ic.readFloat("volume", 0);

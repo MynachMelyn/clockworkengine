@@ -21,7 +21,7 @@ public class TestTextureArray extends SimpleApplication
    @Override
    public void simpleInitApp()
    {
-       Material mat = new Material(assetManager, "jme3test/texture/UnshadedArray.j3md");
+       Material mat = new Material(assetManager, "CWtest/texture/UnshadedArray.j3md");
        
        for (Caps caps : renderManager.getRenderer().getCaps()) {
            System.out.println(caps.name());

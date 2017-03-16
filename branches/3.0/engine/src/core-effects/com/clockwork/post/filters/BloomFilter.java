@@ -3,8 +3,8 @@ package com.clockwork.post.filters;
 
 import com.clockwork.asset.AssetManager;
 import com.clockwork.export.InputCapsule;
-import com.clockwork.export.JmeExporter;
-import com.clockwork.export.JmeImporter;
+import com.clockwork.export.CWExporter;
+import com.clockwork.export.CWImporter;
 import com.clockwork.export.OutputCapsule;
 import com.clockwork.material.Material;
 import com.clockwork.math.ColorRGBA;
@@ -21,7 +21,7 @@ import java.util.ArrayList;
  * There are 2 mode : Scene and Objects.
  * Scene mode extracts the bright parts of the scene to make them glow
  * Object mode make objects glow according to their material's glowMap or their GlowColor
- * see <a href="http://jmonkeyengine.org/wiki/doku.php/jme3:advanced:bloom_and_glow">advanced:bloom_and_glow</a> for more details
+ * see <a href="http://jmonkeyengine.org/wiki/doku.php/CW:advanced:bloom_and_glow">advanced:bloom_and_glow</a> for more details
  * 
  * 
  */
@@ -274,7 +274,7 @@ public class BloomFilter extends Filter {
     }
 
     @Override
-    public void write(JmeExporter ex) throws IOException {
+    public void write(CWExporter ex) throws IOException {
         super.write(ex);
         OutputCapsule oc = ex.getCapsule(this);
         oc.write(glowMode, "glowMode", GlowMode.Scene);
@@ -286,7 +286,7 @@ public class BloomFilter extends Filter {
     }
 
     @Override
-    public void read(JmeImporter im) throws IOException {
+    public void read(CWImporter im) throws IOException {
         super.read(im);
         InputCapsule ic = im.getCapsule(this);
         glowMode = ic.readEnum("glowMode", GlowMode.class, GlowMode.Scene);

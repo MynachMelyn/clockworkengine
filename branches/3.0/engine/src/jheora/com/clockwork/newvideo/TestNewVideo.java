@@ -16,7 +16,7 @@ import java.io.FileNotFoundException;
 public class TestNewVideo extends SimpleApplication implements BusHandler {
 
     private Picture picture;
-    private JmeVideoPipeline p;
+    private CWVideoPipeline p;
     private int frame = 0;
 
     public static void main(String[] args){
@@ -29,7 +29,7 @@ public class TestNewVideo extends SimpleApplication implements BusHandler {
 
     private void createVideo(){
         Debug.level = Debug.INFO;
-        p = new JmeVideoPipeline(this);
+        p = new CWVideoPipeline(this);
         p.getBus().addHandler(this);
         try {
             p.inputStream = new FileInputStream("E:\\VideoTest.ogv");

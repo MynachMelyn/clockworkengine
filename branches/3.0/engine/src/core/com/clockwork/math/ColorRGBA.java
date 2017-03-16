@@ -437,7 +437,7 @@ public final class ColorRGBA implements Savable, Cloneable, java.io.Serializable
         return hash;
     }
 
-    public void write(JmeExporter e) throws IOException {
+    public void write(CWExporter e) throws IOException {
         OutputCapsule capsule = e.getCapsule(this);
         capsule.write(r, "r", 0);
         capsule.write(g, "g", 0);
@@ -445,7 +445,7 @@ public final class ColorRGBA implements Savable, Cloneable, java.io.Serializable
         capsule.write(a, "a", 0);
     }
 
-    public void read(JmeImporter e) throws IOException {
+    public void read(CWImporter e) throws IOException {
         InputCapsule capsule = e.getCapsule(this);
         r = capsule.readFloat("r", 0);
         g = capsule.readFloat("g", 0);

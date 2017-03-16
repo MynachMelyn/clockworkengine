@@ -153,18 +153,18 @@ public class IosInputHandler implements TouchInput {
     }
     
     public float invertX(float origX) {
-        return getJmeX(width) - origX;
+        return getCWX(width) - origX;
     }
     
     public float invertY(float origY) {
-        return getJmeY(height) - origY;
+        return getCWY(height) - origY;
     }
     
-    public float getJmeX(float origX) {
+    public float getCWX(float origX) {
         return origX * scaleX;
     }
     
-    public float getJmeY(float origY) {
+    public float getCWY(float origY) {
         return origY * scaleY;
     }
 

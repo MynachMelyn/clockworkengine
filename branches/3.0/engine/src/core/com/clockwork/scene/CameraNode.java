@@ -1,8 +1,8 @@
 
 package com.clockwork.scene;
 
-import com.clockwork.export.JmeExporter;
-import com.clockwork.export.JmeImporter;
+import com.clockwork.export.CWExporter;
+import com.clockwork.export.CWImporter;
 import com.clockwork.renderer.Camera;
 import com.clockwork.scene.control.CameraControl;
 import com.clockwork.scene.control.CameraControl.ControlDirection;
@@ -64,13 +64,13 @@ public class CameraNode extends Node {
 //    }
     
     @Override
-    public void read(JmeImporter im) throws IOException {
+    public void read(CWImporter im) throws IOException {
         super.read(im);
         camControl = (CameraControl)im.getCapsule(this).readSavable("camControl", null);
     }
 
     @Override
-    public void write(JmeExporter ex) throws IOException {
+    public void write(CWExporter ex) throws IOException {
         super.write(ex);
         ex.getCapsule(this).write(camControl, "camControl", null);
     }

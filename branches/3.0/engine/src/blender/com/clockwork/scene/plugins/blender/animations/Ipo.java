@@ -127,7 +127,7 @@ public class Ipo {
      *            this flag indicates if the track belongs to a spatial or to a
      *            bone; the diference is important because it appears that bones
      *            in blender have the same type of coordinate system (Y as UP)
-     *            as jme while other features have different one (Z is UP)
+     *            as CW while other features have different one (Z is UP)
      * @return bone track for the specified bone
      */
     public Track calculateTrack(int targetIndex, Quaternion localQuaternionRotation, int startFrame, int stopFrame, int fps, boolean spatialTrack) {

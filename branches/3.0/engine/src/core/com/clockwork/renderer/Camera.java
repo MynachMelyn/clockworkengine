@@ -779,7 +779,7 @@ public class Camera implements Savable, Cloneable {
      *
      * @param pos           where to look at in terms of world coordinates
      * @param worldUpVector a normalized vector indicating the up direction of the world.
-     *                      (typically {0, 1, 0} in jME.)
+     *                      (typically {0, 1, 0} in CW.)
      */
     public void lookAt(Vector3f pos, Vector3f worldUpVector) {
         TempVars vars = TempVars.get();
@@ -1382,7 +1382,7 @@ public class Camera implements Savable, Cloneable {
                 + "near=" + frustumNear + ", far=" + frustumFar + "]";
     }
 
-    public void write(JmeExporter e) throws IOException {
+    public void write(CWExporter e) throws IOException {
         OutputCapsule capsule = e.getCapsule(this);
         capsule.write(location, "location", Vector3f.ZERO);
         capsule.write(rotation, "rotation", Quaternion.DIRECTION_Z);
@@ -1405,7 +1405,7 @@ public class Camera implements Savable, Cloneable {
         capsule.write(name, "name", null);
     }
 
-    public void read(JmeImporter e) throws IOException {
+    public void read(CWImporter e) throws IOException {
         InputCapsule capsule = e.getCapsule(this);
         location = (Vector3f) capsule.readSavable("location", Vector3f.ZERO.clone());
         rotation = (Quaternion) capsule.readSavable("rotation", Quaternion.DIRECTION_Z.clone());

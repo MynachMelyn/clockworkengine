@@ -3,7 +3,7 @@
 package com.clockwork.system.lwjgl;
 
 import com.clockwork.system.AppSettings;
-import com.clockwork.system.JmeContext.Type;
+import com.clockwork.system.CWContext.Type;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import java.nio.ByteBuffer;

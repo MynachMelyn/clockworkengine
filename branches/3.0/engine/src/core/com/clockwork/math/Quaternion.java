@@ -1242,7 +1242,7 @@ public final class Quaternion implements Savable, Cloneable, java.io.Serializabl
      *            where to look at in terms of local coordinates
      * @param up
      *            a vector indicating the local up direction.
-     *            (typically {0, 1, 0} in jME.)
+     *            (typically {0, 1, 0} in CW.)
      */
     public void lookAt(Vector3f direction, Vector3f up) {
         TempVars vars = TempVars.get();
@@ -1253,7 +1253,7 @@ public final class Quaternion implements Savable, Cloneable, java.io.Serializabl
         vars.release();
     }
 
-    public void write(JmeExporter e) throws IOException {
+    public void write(CWExporter e) throws IOException {
         OutputCapsule cap = e.getCapsule(this);
         cap.write(x, "x", 0);
         cap.write(y, "y", 0);
@@ -1261,7 +1261,7 @@ public final class Quaternion implements Savable, Cloneable, java.io.Serializabl
         cap.write(w, "w", 1);
     }
 
-    public void read(JmeImporter e) throws IOException {
+    public void read(CWImporter e) throws IOException {
         InputCapsule cap = e.getCapsule(this);
         x = cap.readFloat("x", 0);
         y = cap.readFloat("y", 0);

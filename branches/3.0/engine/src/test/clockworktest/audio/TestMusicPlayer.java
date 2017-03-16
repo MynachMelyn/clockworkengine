@@ -9,7 +9,7 @@ import com.clockwork.audio.AudioSource.Status;
 import com.clockwork.audio.plugins.OGGLoader;
 import com.clockwork.audio.plugins.WAVLoader;
 import com.clockwork.system.AppSettings;
-import com.clockwork.system.JmeSystem;
+import com.clockwork.system.CWSystem;
 import java.io.*;
 import javax.swing.JFileChooser;
 
@@ -32,7 +32,7 @@ public class TestMusicPlayer extends javax.swing.JFrame {
         AppSettings settings = new AppSettings(true);
         settings.setRenderer(null); // disable rendering
         settings.setAudioRenderer("LWJGL");
-        ar = JmeSystem.newAudioRenderer(settings);
+        ar = CWSystem.newAudioRenderer(settings);
         ar.initialize();
         ar.setListener(listener);
         AudioContext.setAudioRenderer(ar);

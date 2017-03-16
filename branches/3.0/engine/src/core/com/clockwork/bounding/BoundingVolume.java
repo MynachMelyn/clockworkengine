@@ -2,8 +2,8 @@
 package com.clockwork.bounding;
 
 import com.clockwork.collision.Collidable;
-import com.clockwork.export.JmeExporter;
-import com.clockwork.export.JmeImporter;
+import com.clockwork.export.CWExporter;
+import com.clockwork.export.CWImporter;
 import com.clockwork.export.Savable;
 import com.clockwork.math.*;
 import java.io.IOException;
@@ -33,7 +33,7 @@ public abstract class BoundingVolume implements Savable, Cloneable, Collidable {
         AABB, 
         
         /**
-         * Currently unsupported by jME3.
+         * Currently unsupported by CW.
          */
         Capsule;
     }
@@ -281,11 +281,11 @@ public abstract class BoundingVolume implements Savable, Cloneable, Collidable {
         }
     }
 
-    public void write(JmeExporter e) throws IOException {
+    public void write(CWExporter e) throws IOException {
         e.getCapsule(this).write(center, "center", Vector3f.ZERO);
     }
 
-    public void read(JmeImporter e) throws IOException {
+    public void read(CWImporter e) throws IOException {
         center = (Vector3f) e.getCapsule(this).readSavable("center", Vector3f.ZERO.clone());
     }
  

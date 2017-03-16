@@ -1,8 +1,8 @@
 
 package com.clockwork.effect.shapes;
 
-import com.clockwork.export.JmeExporter;
-import com.clockwork.export.JmeImporter;
+import com.clockwork.export.CWExporter;
+import com.clockwork.export.CWImporter;
 import com.clockwork.export.OutputCapsule;
 import com.clockwork.math.Vector3f;
 import java.io.IOException;
@@ -54,13 +54,13 @@ public class EmitterPointShape implements EmitterShape {
     }
 
     @Override
-    public void write(JmeExporter ex) throws IOException {
+    public void write(CWExporter ex) throws IOException {
         OutputCapsule oc = ex.getCapsule(this);
         oc.write(point, "point", null);
     }
 
     @Override
-    public void read(JmeImporter im) throws IOException {
+    public void read(CWImporter im) throws IOException {
         this.point = (Vector3f) im.getCapsule(this).readSavable("point", null);
     }
 }

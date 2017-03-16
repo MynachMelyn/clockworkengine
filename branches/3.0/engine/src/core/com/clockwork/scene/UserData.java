@@ -17,13 +17,13 @@ public final class UserData implements Savable {
      * Boolean type on Geometries to indicate that physics collision
      * shape generation should ignore them.
      */
-    public static final String JME_PHYSICSIGNORE = "JmePhysicsIgnore";
+    public static final String CW_PHYSICSIGNORE = "CWPhysicsIgnore";
     
     /**
      * For geometries using shared mesh, this will specify the shared
      * mesh reference.
      */
-    public static final String JME_SHAREDMESH = "JmeSharedMesh";
+    public static final String CW_SHAREDMESH = "CWSharedMesh";
     
     protected byte type;
     protected Object value;
@@ -69,7 +69,7 @@ public final class UserData implements Savable {
         }
     }
 
-    public void write(JmeExporter ex) throws IOException {
+    public void write(CWExporter ex) throws IOException {
         OutputCapsule oc = ex.getCapsule(this);
         oc.write(type, "type", (byte)0);
 
@@ -99,7 +99,7 @@ public final class UserData implements Savable {
         }
     }
 
-    public void read(JmeImporter im) throws IOException {
+    public void read(CWImporter im) throws IOException {
         InputCapsule ic = im.getCapsule(this);
         type = ic.readByte("type", (byte) 0);
 

@@ -5,7 +5,7 @@ package clockworktest.niftygui;
 import com.clockwork.app.SimpleApplication;
 import com.clockwork.material.Material;
 import com.clockwork.math.Vector3f;
-import com.clockwork.niftygui.NiftyJmeDisplay;
+import com.clockwork.niftygui.NiftyCWDisplay;
 import com.clockwork.renderer.Camera;
 import com.clockwork.renderer.ViewPort;
 import com.clockwork.scene.Geometry;
@@ -29,7 +29,7 @@ public class TestNiftyToMesh extends SimpleApplication{
     public void simpleInitApp() {
        ViewPort niftyView = renderManager.createPreView("NiftyView", new Camera(1024, 768));
        niftyView.setClearFlags(true, true, true);
-        NiftyJmeDisplay niftyDisplay = new NiftyJmeDisplay(assetManager,
+        NiftyCWDisplay niftyDisplay = new NiftyCWDisplay(assetManager,
                                                           inputManager,
                                                           audioRenderer,
                                                           niftyView);

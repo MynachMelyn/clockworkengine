@@ -5,8 +5,8 @@ import com.clockwork.bullet.PhysicsSpace;
 import com.clockwork.bullet.collision.shapes.CollisionShape;
 import com.clockwork.bullet.objects.infos.VehicleTuning;
 import com.clockwork.export.InputCapsule;
-import com.clockwork.export.JmeExporter;
-import com.clockwork.export.JmeImporter;
+import com.clockwork.export.CWExporter;
+import com.clockwork.export.CWImporter;
 import com.clockwork.export.OutputCapsule;
 import com.clockwork.math.Vector3f;
 import com.clockwork.scene.Spatial;
@@ -464,7 +464,7 @@ public class PhysicsVehicle extends PhysicsRigidBody {
     }
 
     @Override
-    public void read(JmeImporter im) throws IOException {
+    public void read(CWImporter im) throws IOException {
         InputCapsule capsule = im.getCapsule(this);
         tuning = new VehicleTuning();
         tuning.frictionSlip = capsule.readFloat("frictionSlip", 10.5f);
@@ -479,7 +479,7 @@ public class PhysicsVehicle extends PhysicsRigidBody {
     }
 
     @Override
-    public void write(JmeExporter ex) throws IOException {
+    public void write(CWExporter ex) throws IOException {
         OutputCapsule capsule = ex.getCapsule(this);
         capsule.write(tuning.frictionSlip, "frictionSlip", 10.5f);
         capsule.write(tuning.maxSuspensionTravelCm, "maxSuspensionTravelCm", 500f);
